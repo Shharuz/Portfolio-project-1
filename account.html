@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Живые Бактерии</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/normalize.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="slider/swiper-bundle.min.css">
+    <style>
+        input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
+    </style>
+</head>
+
+<body onload="resetCheked()">
+    <header>
+        <div class="header-container">
+            <a href="https://livebacteria.local/" class="logo">
+                <img class="header__logo" src="img/HeroBee.png" alt="honeybee">
+            </a>
+            <nav class="header__nav" aria-labelledby="primary-navigation">
+                <div class="header__nav__burger-wrapper-for-line">
+                    <div class="header__nav__burger-wrapper-for-line_line"></div>
+                    <div class="header__nav__burger-wrapper-for-line_line"></div>
+                    <div class="header__nav__burger-wrapper-for-line_line"></div>
+                </div>
+                <ul class="header__nav__main-list">
+                    <li class="header__nav__main-list__item bg-none_col-accent_border-accent">
+                        <svg viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.33398 14.8917V14.0583H16.6673V14.8917H3.33398ZM3.33398 10.9167V10.0833H16.6673V10.9167H3.33398ZM3.33398 6.94167V6.10834H16.6673V6.94167H3.33398Z" fill="#73C167" />
+                        </svg>
+                        <a href="https://livebacteria.local/catalogMainPage.html" class="go-to-catalog">Каталог</a>
+                        <div class="arrow-rigth-wrapper">
+                            <div class="arrow-right"></div>
+                        </div>
+                        <ul class="header__nav__main-list__item__sub-list">
+                            <div class="list-wrapper">
+                                <li class="header__nav__main-list__item__sub-list__item">
+                                    <a href="https://livebacteria.local/catalogCategories.html?bacteria-for-septic">Бактерии для септика</a>
+                                    <div class="arrow-rigth-wrapper">
+                                        <div class="arrow-right"></div>
+                                    </div>
+                                    <ul class="header__nav__main-list__item__sub-list__item__last-list">
+                                        <div class="list-wrapper">
+                                            <li><a href="https://livebacteria.local/catalogCategories.html?bacteria-for-septic?biosept">Биосепт</a></li>
+                                            <li><a href="https://livebacteria.local/catalogCategories.html?bacteria-for-septic?green-pine">Зелёная сосна</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="header__nav__main-list__item__sub-list__item">
+                                    <a href="https://livebacteria.local/catalogCategories.html?Fermentation-mats">Ферментационная подстилка</a>
+                                    <div class="arrow-rigth-wrapper">
+                                        <div class="arrow-right"></div>
+                                    </div>
+                                    <ul class="header__nav__main-list__item__sub-list__item__last-list">
+                                        <div class="list-wrapper">
+                                            <li><a href="">Для коз и овец</a></li>
+                                            <li><a href="">Для коров</a></li>
+                                            <li><a href="">Для птиц</a></li>
+                                            <li><a href="">Для свиней</a></li>
+                                            <li><a href="">Универсальная</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="header__nav__main-list__item__sub-list__item"><a href="https://livebacteria.local/catalogCategories.html?Composting">Компостирование</a></li>
+                                <li class="header__nav__main-list__item__sub-list__item"><a href="https://livebacteria.local/catalogCategories.html?clearWater">Очистка сточных вод</a></li>
+                                <li class="header__nav__main-list__item__sub-list__item">
+                                    <a href="https://livebacteria.local/catalogCategories.html?For-soil-and-plants">Для почвы и растений</a>
+                                    <div class="arrow-rigth-wrapper">
+                                        <div class="arrow-right"></div>
+                                    </div>
+                                    <ul class="header__nav__main-list__item__sub-list__item__last-list">
+                                        <div class="list-wrapper">
+                                            <li><a href="https://livebacteria.local/catalogCategories.html?For-soil-and-plants?from-pests">От вредителей</a></li>
+                                            <li><a href="https://livebacteria.local/catalogCategories.html?For-soil-and-plants?mycorrhiza">Микориза</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="header__nav__main-list__item"><a href="https://livebacteria.local/directory.html">Справочник</a>
+                        <div class="arrow-rigth-wrapper">
+                            <div class="arrow-right"></div>
+                        </div>
+                        <ul class="header__nav__main-list__item__sub-list">
+                            <div class="list-wrapper">
+                                <li><a href="https://livebacteria.local/blog.html">Блог</a></li>
+                                <li><a href="https://livebacteria.local/questions.html">Вопрос-ответ</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="header__nav__main-list__item"><a href="https://livebacteria.local/howToBuy.html">Как и где купить</a>
+                    </li>
+                    <li class="header__nav__main-list__item"><a href="https://livebacteria.local/aboutUs.html">О нас</a>
+                        <div class="arrow-rigth-wrapper">
+                            <div class="arrow-right"></div>
+                        </div>
+                        <ul class="header__nav__main-list__item__sub-list">
+                            <div class="list-wrapper">
+                                <li><a href="https://livebacteria.local/reviews.html">Отзывы</a></li>
+                                <li><a href="https://livebacteria.local/forPartners.html">Стать диллером</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="header__nav__main-list__item"><a href="https://livebacteria.local/contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__tel">
+                <a href="tel:+79055907315">+7 905 590-73-15</a>
+                <a href="tel:+74957756554">+7 495 775-65-54</a>
+            </div>
+            <div class="header__items">
+                <button class="header__items__search">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2605 2.37769C6.28196 2.37769 2.24609 6.41355 2.24609 11.3921C2.24609 16.3705 6.28196 20.4064 11.2605 20.4064C16.239 20.4064 20.2748 16.3705 20.2748 11.3921C20.2748 6.41355 16.239 2.37769 11.2605 2.37769ZM0.746094 11.3921C0.746094 5.58513 5.45354 0.877686 11.2605 0.877686C17.0674 0.877686 21.7748 5.58513 21.7748 11.3921C21.7748 14.0854 20.7622 16.5422 19.0968 18.4024L24.0882 23.2827C24.3844 23.5723 24.3897 24.0472 24.1001 24.3433C23.8105 24.6395 23.3357 24.6449 23.0395 24.3553L18.0192 19.4466C16.1916 20.9818 13.834 21.9064 11.2605 21.9064C5.45354 21.9064 0.746094 17.199 0.746094 11.3921Z" fill="#BBBBBB" />
+                    </svg>
+                </button>
+                <button class="header__items__call bg-accent_col-title-light"><img src="img/icons/call.svg" alt="call"><span>Заказать звонок</span></button>
+                <div class="header__items__authorization__wrapper-login">
+                    <a href="#" class="header__items__authorization">
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.5 12C16.02 12 20.5 14.0933 20.5 16.6667V20H0.5V16.6667C0.5 14.0933 4.98 12 10.5 12ZM19.1667 16.6667C19.1667 14.8267 15.2867 13.3333 10.5 13.3333C5.71333 13.3333 1.83333 14.8267 1.83333 16.6667V18.6667H19.1667V16.6667ZM10.5 0C11.7377 0 12.9247 0.491666 13.7998 1.36684C14.675 2.24201 15.1667 3.42899 15.1667 4.66667C15.1667 5.90434 14.675 7.09133 13.7998 7.9665C12.9247 8.84167 11.7377 9.33333 10.5 9.33333C9.26232 9.33333 8.07534 8.84167 7.20017 7.9665C6.325 7.09133 5.83333 5.90434 5.83333 4.66667C5.83333 3.42899 6.325 2.24201 7.20017 1.36684C8.07534 0.491666 9.26232 0 10.5 0ZM10.5 1.33333C9.61594 1.33333 8.7681 1.68452 8.14298 2.30964C7.51786 2.93477 7.16667 3.78261 7.16667 4.66667C7.16667 5.55072 7.51786 6.39857 8.14298 7.02369C8.7681 7.64881 9.61594 8 10.5 8C11.3841 8 12.2319 7.64881 12.857 7.02369C13.4821 6.39857 13.8333 5.55072 13.8333 4.66667C13.8333 3.78261 13.4821 2.93477 12.857 2.30964C12.2319 1.68452 11.3841 1.33333 10.5 1.33333Z" fill="#73C167" />
+                        </svg>
+                    </a>
+                    <a href="#" class="header__items__shopping-card">
+                        <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.2368 18.1579C20.9348 18.1579 21.6041 18.413 22.0976 18.867C22.5912 19.321 22.8684 19.9368 22.8684 20.5789C22.8684 21.2211 22.5912 21.8369 22.0976 22.2909C21.6041 22.7449 20.9348 23 20.2368 23C19.5389 23 18.8696 22.7449 18.376 22.2909C17.8825 21.8369 17.6053 21.2211 17.6053 20.5789C17.6053 19.9368 17.8825 19.321 18.376 18.867C18.8696 18.413 19.5389 18.1579 20.2368 18.1579ZM20.2368 19.3684C19.8879 19.3684 19.5532 19.496 19.3064 19.723C19.0597 19.95 18.9211 20.2579 18.9211 20.5789C18.9211 20.9 19.0597 21.2079 19.3064 21.4349C19.5532 21.6619 19.8879 21.7895 20.2368 21.7895C20.5858 21.7895 20.9205 21.6619 21.1672 21.4349C21.414 21.2079 21.5526 20.9 21.5526 20.5789C21.5526 20.2579 21.414 19.95 21.1672 19.723C20.9205 19.496 20.5858 19.3684 20.2368 19.3684ZM8.39474 18.1579C9.09268 18.1579 9.76203 18.413 10.2555 18.867C10.7491 19.321 11.0263 19.9368 11.0263 20.5789C11.0263 21.2211 10.7491 21.8369 10.2555 22.2909C9.76203 22.7449 9.09268 23 8.39474 23C7.6968 23 7.02745 22.7449 6.53393 22.2909C6.04041 21.8369 5.76316 21.2211 5.76316 20.5789C5.76316 19.9368 6.04041 19.321 6.53393 18.867C7.02745 18.413 7.6968 18.1579 8.39474 18.1579ZM8.39474 19.3684C8.04577 19.3684 7.71109 19.496 7.46433 19.723C7.21758 19.95 7.07895 20.2579 7.07895 20.5789C7.07895 20.9 7.21758 21.2079 7.46433 21.4349C7.71109 21.6619 8.04577 21.7895 8.39474 21.7895C8.74371 21.7895 9.07838 21.6619 9.32514 21.4349C9.5719 21.2079 9.71053 20.9 9.71053 20.5789C9.71053 20.2579 9.5719 19.95 9.32514 19.723C9.07838 19.496 8.74371 19.3684 8.39474 19.3684ZM22.8684 3.63158H4.80263L8.1579 10.8947H18.9211C19.3553 10.8947 19.7368 10.7011 19.9737 10.4105L23.9211 5.56842C24.0921 5.36263 24.1842 5.10842 24.1842 4.84211C24.1842 4.52105 24.0456 4.21315 23.7988 3.98613C23.5521 3.75912 23.2174 3.63158 22.8684 3.63158ZM18.9211 12.1053H8.22368L7.21053 13.9937L7.07895 14.5263C7.07895 14.8474 7.21758 15.1553 7.46433 15.3823C7.71109 15.6093 8.04577 15.7368 8.39474 15.7368H22.8684V16.9474H8.39474C7.6968 16.9474 7.02745 16.6923 6.53393 16.2383C6.04041 15.7842 5.76316 15.1684 5.76316 14.5263C5.76277 14.1156 5.87597 13.7115 6.09211 13.3521L7.03947 11.5726L2.26316 1.21053H0.5V0H3.13158L4.25 2.42105H22.8684C23.5664 2.42105 24.2357 2.67613 24.7292 3.13016C25.2227 3.5842 25.5 4.2 25.5 4.84211C25.5 5.44737 25.2763 5.95579 24.9079 6.36737L21.0789 11.0763C20.6053 11.6937 19.8158 12.1053 18.9211 12.1053Z" fill="#73C167" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <nav class="secondary-nav" aria-labelledby="secondary-navigation">
+            <ul>
+                <li><a href="https://livebacteria.local/">Главная</a></li>
+                <li><a href="">Аккаунт</a></li>
+                <li>
+                    <a href="https://livebacteria.local/" class="secondary-nav__arrow-back"><svg width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM1 4.5H24V3.5H1V4.5Z" fill="#73C167" />
+                        </svg></a>
+                    <p>Настройки</p>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section class="account">
+            <div class="container for-Buy-ques-bl-acc">
+                <h2>Аккаунт</h2>
+                <div class="account__categories radio-category">
+                    <input type="radio" id="your-details" name="account__category" checked>
+                    <label for="your-details">
+                        <p>Ваши данные</p>
+                    </label>
+                    <input type="radio" id="favorites" name="account__category" >
+                    <label for="favorites">
+                        <p>Избранное</p>
+                    </label>
+                    <input type="radio" id="basket" name="account__category">
+                    <label for="basket">
+                        <p>Корзина</p>
+                    </label>
+                </div>
+                <form action="" data-anchor="your-details">
+                    <div class="account__form__content__block">
+                        <div class="form__item ">
+                            <label for="account__name">Имя пользователя<span>*</span></label>
+                            <input type="text" id="account__name" name="account__name" placeholder="Иванов Иван">
+                        </div>
+                        <div class="form__item ">
+                            <label for="account__tel">Контактный телефон<span>*</span></label>
+                            <input type="tel" data-tel-input id="account__tel" class="phone" name="account__tel" placeholder="+7 (ХХХ) ХХХ ХХ ХХ">
+                        </div>
+                        <div class="form__item ">
+                            <label for="account__email">E-mail <span>*</span></label>
+                            <input type="email" id="account__email" name="account__email" placeholder="mail@domen.com">
+                        </div>
+                        <div class="form__item form__item__password ">
+                            <label for="account__password">Пароль <span>*</span></label>
+                            <input type="password" id="account__password" class="hide-show-password" name="account__password" placeholder="Пароль" autocomplete="on"><span class="eye hide-eye"></span>
+                        </div>
+                    </div>
+                    <div class="account__form__content__block">
+                        <fieldset class="form--radio--legal-entity--personal">
+                            <div class="fieldset__item">
+                                <input type="radio" id="legal-entity" name="person" checked />
+                                <label for="legal-entity">Юридическое лицо</label>
+                            </div>
+                            <div class="fieldset__item">
+                                <input type="radio" id="individual" name="person" />
+                                <label for="individual">Физическое лицо</label>
+                            </div>
+                        </fieldset>
+                        <div class="form__item">
+                            <label for="account__name__block2">Имя <span>*</span></label>
+                            <input type="text" id="account__name__block2" name="account__name__block2" placeholder="Иван">
+                        </div>
+                        <div class="form__item">
+                            <label for="account__surname">Фамилия<span>*</span></label>
+                            <input type="text" id="account__surname" name="account__surname" placeholder="Иванов">
+                        </div>
+                        <div class="form__item">
+                            <label for="account__tax-number">ИНН<span>*</span></label>
+                            <input type="text" id="account__tax-number" name="account__tax-number" placeholder="56432456">
+                        </div>
+                        <div class="form__item">
+                            <label for="account__bik">БИК<span>*</span></label>
+                            <input type="text" id="account__bik" name="account__bik" placeholder="4556464321">
+                        </div>
+                        <div class="form__item">
+                            <label for="account__cor-account">Кор. счет<span>*</span></label>
+                            <input type="text" id="account__cor-account" name="account__cor-account" placeholder="455345656">
+                        </div>
+                        <div class="form__item" data-hide="individual">
+                            <label for="account__calculated-account">Расчетный счет<span>*</span></label>
+                            <input type="text" id="account__calculated-account" name="account__calculated-account" placeholder="465456465456">
+                        </div>
+                    </div>
+                    <button type="submit" class="link-under-the-button bg-accent_col-title-light">Сохранить изменения</button>
+                </form>
+                <div class="account__content account__favorites hide" data-anchor="favorites">
+                    <div class="account__content__change-content">
+                        <div class="account__content__change-content__wrapper">
+                            <div class="account__content__change-content__item input-label-custom" data-for-change-content="add-selected-to-shopping-cart">
+                                <input type="checkbox" data-for-change-content="master-checkbox" id="master-checkbox-favirites" name="master-checkbox-favirites" class="input-label-custom__input">
+                                <label for="master-checkbox-favirites">Выбрать все</label>
+                            </div>
+                            <div class="account__content__change-content__item">
+                                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.27622 20.0002C8.06519 20.0002 8.70478 19.3606 8.70478 18.5716C8.70478 17.7827 8.06519 17.1431 7.27622 17.1431C6.48724 17.1431 5.84766 17.7827 5.84766 18.5716C5.84766 19.3606 6.48724 20.0002 7.27622 20.0002Z" fill="#636363" />
+                                    <path d="M17.2762 20.0002C18.0652 20.0002 18.7048 19.3606 18.7048 18.5716C18.7048 17.7827 18.0652 17.1431 17.2762 17.1431C16.4872 17.1431 15.8477 17.7827 15.8477 18.5716C15.8477 19.3606 16.4872 20.0002 17.2762 20.0002Z" fill="#636363" />
+                                    <path d="M20.1327 3.57155H4.28993L3.70422 0.57157C3.67082 0.407802 3.58106 0.260931 3.45054 0.156521C3.32003 0.0521115 3.15704 -0.00322461 2.98993 0.000145313H0.132812V1.42871H2.40422L5.13278 15.1429C5.16617 15.3067 5.25593 15.4535 5.38645 15.5579C5.51696 15.6624 5.67995 15.7177 5.84706 15.7143H18.7041V14.2858H6.43277L5.84706 11.4286H18.7041C18.8692 11.4327 19.0306 11.3794 19.1609 11.2778C19.2911 11.1762 19.3821 11.0326 19.4184 10.8715L20.8469 4.44297C20.8709 4.33699 20.8703 4.22694 20.8453 4.12121C20.8203 4.01548 20.7715 3.91684 20.7026 3.83281C20.6338 3.74878 20.5466 3.68157 20.4478 3.6363C20.3491 3.59102 20.2413 3.56888 20.1327 3.57155ZM18.1327 10.0001H5.57563L4.57564 5.00011H19.2398L18.1327 10.0001Z" fill="#636363" />
+                                </svg>
+                                <p >Добавить выбранное в корзину</p>
+                            </div>
+                            <div class="account__content__change-content__item" data-for-change-content="delete-selected">
+                                <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.8634 7.69955e-09C11.7609 -5.99906e-05 12.6243 0.350532 13.2767 0.979855C13.929 1.60918 14.3207 2.46952 14.3716 3.3844L14.377 3.58751H20.0527C20.2581 3.58757 20.4559 3.66726 20.606 3.81046C20.7561 3.95366 20.8474 4.1497 20.8614 4.35897C20.8754 4.56824 20.8111 4.77513 20.6814 4.93785C20.5518 5.10056 20.3665 5.20696 20.163 5.23556L20.0527 5.24328H19.1922L17.8084 19.6154C17.739 20.3319 17.4225 20.9999 16.9154 21.5002C16.4082 22.0004 15.7434 22.3003 15.0397 22.3463L14.8494 22.3529H6.87741C6.17195 22.3529 5.48949 22.0968 4.95199 21.6302C4.41448 21.1637 4.05696 20.5173 3.94332 19.8064L3.91845 19.6143L2.53357 5.24328H1.6741C1.47817 5.24327 1.28886 5.17082 1.1412 5.03933C0.993532 4.90783 0.897496 4.72619 0.870849 4.52799L0.863281 4.4154C0.86329 4.21534 0.934247 4.02205 1.06303 3.87127C1.19182 3.7205 1.36972 3.62244 1.56383 3.59524L1.6741 3.58751H7.34985C7.34985 2.63604 7.72003 1.72355 8.37895 1.05076C9.03787 0.377968 9.93155 7.69955e-09 10.8634 7.69955e-09ZM17.5629 5.24328H4.16278L5.53253 19.452C5.56286 19.7691 5.69969 20.0656 5.9198 20.2914C6.13991 20.5171 6.42975 20.6582 6.74011 20.6905L6.87741 20.6972H14.8494C15.4981 20.6972 16.0483 20.228 16.1737 19.5911L16.1954 19.452L17.5619 5.24328H17.5629ZM12.7553 8.27887C12.9513 8.27888 13.1406 8.35133 13.2882 8.48282C13.4359 8.61432 13.5319 8.79596 13.5586 8.99416L13.5661 9.10675V16.8337C13.5661 17.0435 13.488 17.2454 13.3478 17.3986C13.2075 17.5519 13.0155 17.6451 12.8106 17.6594C12.6056 17.6737 12.403 17.608 12.2436 17.4757C12.0843 17.3433 11.9801 17.1541 11.9521 16.9463L11.9445 16.8337V9.10675C11.9445 8.88718 12.0299 8.67661 12.182 8.52135C12.334 8.36609 12.5403 8.27887 12.7553 8.27887ZM8.97149 8.27887C9.16743 8.27888 9.35673 8.35133 9.50439 8.48282C9.65206 8.61432 9.7481 8.79596 9.77474 8.99416L9.78231 9.10675V16.8337C9.78225 17.0435 9.70421 17.2454 9.56396 17.3986C9.42371 17.5519 9.23171 17.6451 9.02676 17.6594C8.8218 17.6737 8.61917 17.608 8.45981 17.4757C8.30045 17.3433 8.19624 17.1541 8.16824 16.9463L8.16067 16.8337V9.10675C8.16067 8.88718 8.2461 8.67661 8.39815 8.52135C8.55021 8.36609 8.75645 8.27887 8.97149 8.27887ZM10.8634 1.65577C10.3886 1.65579 9.93116 1.8381 9.58189 2.1665C9.23261 2.49491 9.01705 2.9454 8.97798 3.42855L8.97149 3.58751H12.7553C12.7553 3.07518 12.556 2.58384 12.2012 2.22157C11.8464 1.8593 11.3652 1.65577 10.8634 1.65577Z" fill="#636363" />
+                                </svg>
+                                <p >Удалить выбранное</p>
+                            </div>
+                            <div class="account__content__change-content__item" data-for-change-content="clear-favorites">
+                                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.8633 17L1.86328 1M17.8633 1L1.86328 17" stroke="#636363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <p >Очистить избранное</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account__content__product">
+                        <div class="account__content__product__wrapper">
+                            <input type="checkbox" name="item-checkbox" class="input-custom-without-label">
+                            <img class="account__content__product__wrapper__img" src="img/accountBioactivate.png" alt="Bioactivate">
+                            <div class="account__content__product__wrapper__descr">
+                                <div class="account__content__product__wrapper__descr__title-raiting">
+                                    <h4>Биоактиватор</h4>
+                                    <div class="allPageCard__raiting">
+                                        <p class="product-article">Арт.: 21002050</p>
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account__content__product__wrapper__descr__buy allPageCard__buy">
+                                    <span class="price">1000 ₽</span>
+                                    <a href="" class="bg-accent_col-title-light buy__a">
+                                        <img class="buy__a__img" src="img/icons/basket-white.svg" alt="basket">
+                                        В корзину</a>
+                                    <div class="trash">
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.23685 0.580566C7.81585 0.580528 8.37293 0.806716 8.79379 1.21273C9.21465 1.61875 9.46739 2.17381 9.50017 2.76405L9.50366 2.89509H13.1654C13.298 2.89513 13.4256 2.94654 13.5224 3.03893C13.6192 3.13131 13.6781 3.25779 13.6872 3.3928C13.6962 3.52782 13.6547 3.6613 13.5711 3.76627C13.4874 3.87125 13.3679 3.9399 13.2366 3.95834L13.1654 3.96333H12.6102L11.7175 13.2357C11.6727 13.6979 11.4685 14.1289 11.1413 14.4517C10.8141 14.7744 10.3852 14.9679 9.93122 14.9975L9.80846 15.0018H4.66524C4.21011 15.0018 3.76981 14.8365 3.42303 14.5356C3.07625 14.2346 2.8456 13.8175 2.77228 13.3589L2.75624 13.2349L1.86276 3.96333H1.30827C1.18186 3.96332 1.05972 3.91658 0.964457 3.83175C0.869189 3.74691 0.80723 3.62972 0.790039 3.50185L0.785156 3.42921C0.785162 3.30014 0.830941 3.17544 0.914028 3.07816C0.997115 2.98089 1.11189 2.91763 1.23712 2.90007L1.30827 2.89509H4.97004C4.97004 2.28124 5.20886 1.69253 5.63397 1.25847C6.05908 0.824417 6.63565 0.580566 7.23685 0.580566ZM11.5591 3.96333H2.91387L3.79757 13.1303C3.81714 13.3348 3.90542 13.5261 4.04743 13.6718C4.18944 13.8174 4.37642 13.9084 4.57666 13.9293L4.66524 13.9336H9.80846C10.2269 13.9336 10.582 13.6309 10.6629 13.22L10.6768 13.1303L11.5584 3.96333H11.5591ZM8.45744 5.92177C8.58385 5.92178 8.70598 5.96852 8.80125 6.05335C8.89652 6.13819 8.95848 6.25538 8.97567 6.38325L8.98055 6.45589V11.441C8.98051 11.5763 8.93016 11.7066 8.83968 11.8055C8.7492 11.9044 8.62532 11.9645 8.4931 11.9737C8.36087 11.983 8.23014 11.9406 8.12732 11.8552C8.02451 11.7698 7.95728 11.6477 7.93921 11.5137L7.93433 11.441V6.45589C7.93433 6.31423 7.98944 6.17838 8.08755 6.07821C8.18565 5.97804 8.3187 5.92177 8.45744 5.92177ZM6.01626 5.92177C6.14267 5.92178 6.2648 5.96852 6.36007 6.05335C6.45534 6.13819 6.5173 6.25538 6.53449 6.38325L6.53937 6.45589V11.441C6.53933 11.5763 6.48898 11.7066 6.3985 11.8055C6.30801 11.9044 6.18414 11.9645 6.05191 11.9737C5.91968 11.983 5.78896 11.9406 5.68614 11.8552C5.58333 11.7698 5.5161 11.6477 5.49803 11.5137L5.49315 11.441V6.45589C5.49315 6.31423 5.54826 6.17838 5.64636 6.07821C5.74447 5.97804 5.87752 5.92177 6.01626 5.92177ZM7.23685 1.64881C6.93052 1.64882 6.6354 1.76644 6.41006 1.97831C6.18473 2.19018 6.04565 2.48082 6.02044 2.79254L6.01626 2.89509H8.45744C8.45744 2.56455 8.32884 2.24756 8.09994 2.01383C7.87103 1.78011 7.56057 1.64881 7.23685 1.64881Z" fill="#73C167" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account__content__product">
+                        <div class="account__content__product__wrapper">
+                            <input type="checkbox" name="item-checkbox" class="input-custom-without-label">
+                            <img class="account__content__product__wrapper__img" src="img/accountBioactivate.png" alt="Bioactivate">
+                            <div class="account__content__product__wrapper__descr">
+                                <div class="account__content__product__wrapper__descr__title-raiting">
+                                    <h4>Биоактиватор</h4>
+                                    <div class="allPageCard__raiting">
+                                        <p class="product-article">Арт.: 21002050</p>
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account__content__product__wrapper__descr__buy allPageCard__buy">
+                                    <span class="price">1000 ₽</span>
+                                    <a href="" class="bg-accent_col-title-light buy__a">
+                                        <img class="buy__a__img" src="img/icons/basket-white.svg" alt="basket">
+                                        В корзину</a>
+                                    <div class="trash">
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.23685 0.580566C7.81585 0.580528 8.37293 0.806716 8.79379 1.21273C9.21465 1.61875 9.46739 2.17381 9.50017 2.76405L9.50366 2.89509H13.1654C13.298 2.89513 13.4256 2.94654 13.5224 3.03893C13.6192 3.13131 13.6781 3.25779 13.6872 3.3928C13.6962 3.52782 13.6547 3.6613 13.5711 3.76627C13.4874 3.87125 13.3679 3.9399 13.2366 3.95834L13.1654 3.96333H12.6102L11.7175 13.2357C11.6727 13.6979 11.4685 14.1289 11.1413 14.4517C10.8141 14.7744 10.3852 14.9679 9.93122 14.9975L9.80846 15.0018H4.66524C4.21011 15.0018 3.76981 14.8365 3.42303 14.5356C3.07625 14.2346 2.8456 13.8175 2.77228 13.3589L2.75624 13.2349L1.86276 3.96333H1.30827C1.18186 3.96332 1.05972 3.91658 0.964457 3.83175C0.869189 3.74691 0.80723 3.62972 0.790039 3.50185L0.785156 3.42921C0.785162 3.30014 0.830941 3.17544 0.914028 3.07816C0.997115 2.98089 1.11189 2.91763 1.23712 2.90007L1.30827 2.89509H4.97004C4.97004 2.28124 5.20886 1.69253 5.63397 1.25847C6.05908 0.824417 6.63565 0.580566 7.23685 0.580566ZM11.5591 3.96333H2.91387L3.79757 13.1303C3.81714 13.3348 3.90542 13.5261 4.04743 13.6718C4.18944 13.8174 4.37642 13.9084 4.57666 13.9293L4.66524 13.9336H9.80846C10.2269 13.9336 10.582 13.6309 10.6629 13.22L10.6768 13.1303L11.5584 3.96333H11.5591ZM8.45744 5.92177C8.58385 5.92178 8.70598 5.96852 8.80125 6.05335C8.89652 6.13819 8.95848 6.25538 8.97567 6.38325L8.98055 6.45589V11.441C8.98051 11.5763 8.93016 11.7066 8.83968 11.8055C8.7492 11.9044 8.62532 11.9645 8.4931 11.9737C8.36087 11.983 8.23014 11.9406 8.12732 11.8552C8.02451 11.7698 7.95728 11.6477 7.93921 11.5137L7.93433 11.441V6.45589C7.93433 6.31423 7.98944 6.17838 8.08755 6.07821C8.18565 5.97804 8.3187 5.92177 8.45744 5.92177ZM6.01626 5.92177C6.14267 5.92178 6.2648 5.96852 6.36007 6.05335C6.45534 6.13819 6.5173 6.25538 6.53449 6.38325L6.53937 6.45589V11.441C6.53933 11.5763 6.48898 11.7066 6.3985 11.8055C6.30801 11.9044 6.18414 11.9645 6.05191 11.9737C5.91968 11.983 5.78896 11.9406 5.68614 11.8552C5.58333 11.7698 5.5161 11.6477 5.49803 11.5137L5.49315 11.441V6.45589C5.49315 6.31423 5.54826 6.17838 5.64636 6.07821C5.74447 5.97804 5.87752 5.92177 6.01626 5.92177ZM7.23685 1.64881C6.93052 1.64882 6.6354 1.76644 6.41006 1.97831C6.18473 2.19018 6.04565 2.48082 6.02044 2.79254L6.01626 2.89509H8.45744C8.45744 2.56455 8.32884 2.24756 8.09994 2.01383C7.87103 1.78011 7.56057 1.64881 7.23685 1.64881Z" fill="#73C167" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account__content__product">
+                        <div class="account__content__product__wrapper">
+                            <input type="checkbox" name="item-checkbox" class="input-custom-without-label">
+                            <img class="account__content__product__wrapper__img" src="img/accountBioactivate.png" alt="Bioactivate">
+                            <div class="account__content__product__wrapper__descr">
+                                <div class="account__content__product__wrapper__descr__title-raiting">
+                                    <h4>Биоактиватор</h4>
+                                    <div class="allPageCard__raiting">
+                                        <p class="product-article">Арт.: 21002050</p>
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account__content__product__wrapper__descr__buy allPageCard__buy">
+                                    <span class="price">1000 ₽</span>
+                                    <a href="" class="bg-accent_col-title-light buy__a">
+                                        <img class="buy__a__img" src="img/icons/basket-white.svg" alt="basket">
+                                        В корзину</a>
+                                    <div class="trash">
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.23685 0.580566C7.81585 0.580528 8.37293 0.806716 8.79379 1.21273C9.21465 1.61875 9.46739 2.17381 9.50017 2.76405L9.50366 2.89509H13.1654C13.298 2.89513 13.4256 2.94654 13.5224 3.03893C13.6192 3.13131 13.6781 3.25779 13.6872 3.3928C13.6962 3.52782 13.6547 3.6613 13.5711 3.76627C13.4874 3.87125 13.3679 3.9399 13.2366 3.95834L13.1654 3.96333H12.6102L11.7175 13.2357C11.6727 13.6979 11.4685 14.1289 11.1413 14.4517C10.8141 14.7744 10.3852 14.9679 9.93122 14.9975L9.80846 15.0018H4.66524C4.21011 15.0018 3.76981 14.8365 3.42303 14.5356C3.07625 14.2346 2.8456 13.8175 2.77228 13.3589L2.75624 13.2349L1.86276 3.96333H1.30827C1.18186 3.96332 1.05972 3.91658 0.964457 3.83175C0.869189 3.74691 0.80723 3.62972 0.790039 3.50185L0.785156 3.42921C0.785162 3.30014 0.830941 3.17544 0.914028 3.07816C0.997115 2.98089 1.11189 2.91763 1.23712 2.90007L1.30827 2.89509H4.97004C4.97004 2.28124 5.20886 1.69253 5.63397 1.25847C6.05908 0.824417 6.63565 0.580566 7.23685 0.580566ZM11.5591 3.96333H2.91387L3.79757 13.1303C3.81714 13.3348 3.90542 13.5261 4.04743 13.6718C4.18944 13.8174 4.37642 13.9084 4.57666 13.9293L4.66524 13.9336H9.80846C10.2269 13.9336 10.582 13.6309 10.6629 13.22L10.6768 13.1303L11.5584 3.96333H11.5591ZM8.45744 5.92177C8.58385 5.92178 8.70598 5.96852 8.80125 6.05335C8.89652 6.13819 8.95848 6.25538 8.97567 6.38325L8.98055 6.45589V11.441C8.98051 11.5763 8.93016 11.7066 8.83968 11.8055C8.7492 11.9044 8.62532 11.9645 8.4931 11.9737C8.36087 11.983 8.23014 11.9406 8.12732 11.8552C8.02451 11.7698 7.95728 11.6477 7.93921 11.5137L7.93433 11.441V6.45589C7.93433 6.31423 7.98944 6.17838 8.08755 6.07821C8.18565 5.97804 8.3187 5.92177 8.45744 5.92177ZM6.01626 5.92177C6.14267 5.92178 6.2648 5.96852 6.36007 6.05335C6.45534 6.13819 6.5173 6.25538 6.53449 6.38325L6.53937 6.45589V11.441C6.53933 11.5763 6.48898 11.7066 6.3985 11.8055C6.30801 11.9044 6.18414 11.9645 6.05191 11.9737C5.91968 11.983 5.78896 11.9406 5.68614 11.8552C5.58333 11.7698 5.5161 11.6477 5.49803 11.5137L5.49315 11.441V6.45589C5.49315 6.31423 5.54826 6.17838 5.64636 6.07821C5.74447 5.97804 5.87752 5.92177 6.01626 5.92177ZM7.23685 1.64881C6.93052 1.64882 6.6354 1.76644 6.41006 1.97831C6.18473 2.19018 6.04565 2.48082 6.02044 2.79254L6.01626 2.89509H8.45744C8.45744 2.56455 8.32884 2.24756 8.09994 2.01383C7.87103 1.78011 7.56057 1.64881 7.23685 1.64881Z" fill="#73C167" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account__content account__basket hide" data-anchor="basket">
+                    <div class="account__content__change-content">
+                        <div class="account__content__change-content__wrapper">
+                            <div class="account__content__change-content__item input-label-custom">
+                                <input type="checkbox" data-for-change-content="master-checkbox" id="master-checkbox-basket" name="master-checkbox-basket" class="input-label-custom__input">
+                                <label for="master-checkbox-basket">Выбрать все</label>
+                            </div>
+                            <div class="account__content__change-content__item" data-for-change-content="delete-selected">
+                                <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.8634 7.69955e-09C11.7609 -5.99906e-05 12.6243 0.350532 13.2767 0.979855C13.929 1.60918 14.3207 2.46952 14.3716 3.3844L14.377 3.58751H20.0527C20.2581 3.58757 20.4559 3.66726 20.606 3.81046C20.7561 3.95366 20.8474 4.1497 20.8614 4.35897C20.8754 4.56824 20.8111 4.77513 20.6814 4.93785C20.5518 5.10056 20.3665 5.20696 20.163 5.23556L20.0527 5.24328H19.1922L17.8084 19.6154C17.739 20.3319 17.4225 20.9999 16.9154 21.5002C16.4082 22.0004 15.7434 22.3003 15.0397 22.3463L14.8494 22.3529H6.87741C6.17195 22.3529 5.48949 22.0968 4.95199 21.6302C4.41448 21.1637 4.05696 20.5173 3.94332 19.8064L3.91845 19.6143L2.53357 5.24328H1.6741C1.47817 5.24327 1.28886 5.17082 1.1412 5.03933C0.993532 4.90783 0.897496 4.72619 0.870849 4.52799L0.863281 4.4154C0.86329 4.21534 0.934247 4.02205 1.06303 3.87127C1.19182 3.7205 1.36972 3.62244 1.56383 3.59524L1.6741 3.58751H7.34985C7.34985 2.63604 7.72003 1.72355 8.37895 1.05076C9.03787 0.377968 9.93155 7.69955e-09 10.8634 7.69955e-09ZM17.5629 5.24328H4.16278L5.53253 19.452C5.56286 19.7691 5.69969 20.0656 5.9198 20.2914C6.13991 20.5171 6.42975 20.6582 6.74011 20.6905L6.87741 20.6972H14.8494C15.4981 20.6972 16.0483 20.228 16.1737 19.5911L16.1954 19.452L17.5619 5.24328H17.5629ZM12.7553 8.27887C12.9513 8.27888 13.1406 8.35133 13.2882 8.48282C13.4359 8.61432 13.5319 8.79596 13.5586 8.99416L13.5661 9.10675V16.8337C13.5661 17.0435 13.488 17.2454 13.3478 17.3986C13.2075 17.5519 13.0155 17.6451 12.8106 17.6594C12.6056 17.6737 12.403 17.608 12.2436 17.4757C12.0843 17.3433 11.9801 17.1541 11.9521 16.9463L11.9445 16.8337V9.10675C11.9445 8.88718 12.0299 8.67661 12.182 8.52135C12.334 8.36609 12.5403 8.27887 12.7553 8.27887ZM8.97149 8.27887C9.16743 8.27888 9.35673 8.35133 9.50439 8.48282C9.65206 8.61432 9.7481 8.79596 9.77474 8.99416L9.78231 9.10675V16.8337C9.78225 17.0435 9.70421 17.2454 9.56396 17.3986C9.42371 17.5519 9.23171 17.6451 9.02676 17.6594C8.8218 17.6737 8.61917 17.608 8.45981 17.4757C8.30045 17.3433 8.19624 17.1541 8.16824 16.9463L8.16067 16.8337V9.10675C8.16067 8.88718 8.2461 8.67661 8.39815 8.52135C8.55021 8.36609 8.75645 8.27887 8.97149 8.27887ZM10.8634 1.65577C10.3886 1.65579 9.93116 1.8381 9.58189 2.1665C9.23261 2.49491 9.01705 2.9454 8.97798 3.42855L8.97149 3.58751H12.7553C12.7553 3.07518 12.556 2.58384 12.2012 2.22157C11.8464 1.8593 11.3652 1.65577 10.8634 1.65577Z" fill="#636363" />
+                                </svg>
+                                <p >Удалить выбранное</p>
+                            </div>
+                            <div class="account__content__change-content__item" data-for-change-content="clear-basket">
+                                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.8633 17L1.86328 1M17.8633 1L1.86328 17" stroke="#636363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <p >Очистить корзину</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account__content__product">
+                        <div class="account__content__product__wrapper">
+                            <input type="checkbox" name="item-checkbox" class="input-custom-without-label">
+                            <img class="account__content__product__img" src="img/accountBioactivate.png" alt="Bioactivate">
+                            <div class="account__content__product__wrapper__descr block-that-has-counter">
+                                <div class="account__content__product__wrapper__descr__title-raiting">
+                                    <h4>Биоактиватор для дачных туалетов и выгребных ям Зеленая Сосна, 300гр.</h4>
+                                    <div class="allPageCard__raiting">
+                                        <p class="product-article">Арт.: 21002050</p>
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account__content__product__wrapper__descr__buy allPageCard__buy">
+                                    <span class="price">Итоговая цена:</span>
+                                    <span class="price price-relative-input">1000 ₽</span>
+                                    <div class="counter">
+                                        <button class="decrement-btn">-</button>
+                                        <input type="text" class="counter-value" value="1">
+                                        <button class="increment-btn">+</button>
+                                    </div>
+                                    <div class="trash">
+                                        <svg width="20" height="22" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.23685 0.580566C7.81585 0.580528 8.37293 0.806716 8.79379 1.21273C9.21465 1.61875 9.46739 2.17381 9.50017 2.76405L9.50366 2.89509H13.1654C13.298 2.89513 13.4256 2.94654 13.5224 3.03893C13.6192 3.13131 13.6781 3.25779 13.6872 3.3928C13.6962 3.52782 13.6547 3.6613 13.5711 3.76627C13.4874 3.87125 13.3679 3.9399 13.2366 3.95834L13.1654 3.96333H12.6102L11.7175 13.2357C11.6727 13.6979 11.4685 14.1289 11.1413 14.4517C10.8141 14.7744 10.3852 14.9679 9.93122 14.9975L9.80846 15.0018H4.66524C4.21011 15.0018 3.76981 14.8365 3.42303 14.5356C3.07625 14.2346 2.8456 13.8175 2.77228 13.3589L2.75624 13.2349L1.86276 3.96333H1.30827C1.18186 3.96332 1.05972 3.91658 0.964457 3.83175C0.869189 3.74691 0.80723 3.62972 0.790039 3.50185L0.785156 3.42921C0.785162 3.30014 0.830941 3.17544 0.914028 3.07816C0.997115 2.98089 1.11189 2.91763 1.23712 2.90007L1.30827 2.89509H4.97004C4.97004 2.28124 5.20886 1.69253 5.63397 1.25847C6.05908 0.824417 6.63565 0.580566 7.23685 0.580566ZM11.5591 3.96333H2.91387L3.79757 13.1303C3.81714 13.3348 3.90542 13.5261 4.04743 13.6718C4.18944 13.8174 4.37642 13.9084 4.57666 13.9293L4.66524 13.9336H9.80846C10.2269 13.9336 10.582 13.6309 10.6629 13.22L10.6768 13.1303L11.5584 3.96333H11.5591ZM8.45744 5.92177C8.58385 5.92178 8.70598 5.96852 8.80125 6.05335C8.89652 6.13819 8.95848 6.25538 8.97567 6.38325L8.98055 6.45589V11.441C8.98051 11.5763 8.93016 11.7066 8.83968 11.8055C8.7492 11.9044 8.62532 11.9645 8.4931 11.9737C8.36087 11.983 8.23014 11.9406 8.12732 11.8552C8.02451 11.7698 7.95728 11.6477 7.93921 11.5137L7.93433 11.441V6.45589C7.93433 6.31423 7.98944 6.17838 8.08755 6.07821C8.18565 5.97804 8.3187 5.92177 8.45744 5.92177ZM6.01626 5.92177C6.14267 5.92178 6.2648 5.96852 6.36007 6.05335C6.45534 6.13819 6.5173 6.25538 6.53449 6.38325L6.53937 6.45589V11.441C6.53933 11.5763 6.48898 11.7066 6.3985 11.8055C6.30801 11.9044 6.18414 11.9645 6.05191 11.9737C5.91968 11.983 5.78896 11.9406 5.68614 11.8552C5.58333 11.7698 5.5161 11.6477 5.49803 11.5137L5.49315 11.441V6.45589C5.49315 6.31423 5.54826 6.17838 5.64636 6.07821C5.74447 5.97804 5.87752 5.92177 6.01626 5.92177ZM7.23685 1.64881C6.93052 1.64882 6.6354 1.76644 6.41006 1.97831C6.18473 2.19018 6.04565 2.48082 6.02044 2.79254L6.01626 2.89509H8.45744C8.45744 2.56455 8.32884 2.24756 8.09994 2.01383C7.87103 1.78011 7.56057 1.64881 7.23685 1.64881Z" fill="#73C167" />
+                                        </svg>
+                                    </div>
+                                    <p class="add-info-price disc">Скидка<span>500 ₽</span></p>
+                                    <p class="add-info-price tax">НДС:<span>20 ₽</span></p>
+                                </div>
+                                <p class="additional-info-counter"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account__content__product">
+                        <div class="account__content__product__wrapper">
+                            <input type="checkbox" name="item-checkbox" class="input-custom-without-label">
+                            <img class="account__content__product__img" src="img/accountBioactivate.png" alt="Bioactivate">
+                            <div class="account__content__product__wrapper__descr block-that-has-counter">
+                                <div class="account__content__product__wrapper__descr__title-raiting">
+                                    <h4>Биоактиватор для дачных туалетов и выгребных ям Зеленая Сосна, 300гр.</h4>
+                                    <div class="allPageCard__raiting">
+                                        <p class="product-article">Арт.: 21002050</p>
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account__content__product__wrapper__descr__buy allPageCard__buy">
+                                    <span class="price">Итоговая цена:</span>
+                                    <span class="price price-relative-input">1578 ₽</span>
+                                    <div class="counter">
+                                        <button class="decrement-btn">-</button>
+                                        <input type="text" class="counter-value" value="1">
+                                        <button class="increment-btn">+</button>
+                                    </div>
+                                    <div class="trash">
+                                        <svg width="20" height="22" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.23685 0.580566C7.81585 0.580528 8.37293 0.806716 8.79379 1.21273C9.21465 1.61875 9.46739 2.17381 9.50017 2.76405L9.50366 2.89509H13.1654C13.298 2.89513 13.4256 2.94654 13.5224 3.03893C13.6192 3.13131 13.6781 3.25779 13.6872 3.3928C13.6962 3.52782 13.6547 3.6613 13.5711 3.76627C13.4874 3.87125 13.3679 3.9399 13.2366 3.95834L13.1654 3.96333H12.6102L11.7175 13.2357C11.6727 13.6979 11.4685 14.1289 11.1413 14.4517C10.8141 14.7744 10.3852 14.9679 9.93122 14.9975L9.80846 15.0018H4.66524C4.21011 15.0018 3.76981 14.8365 3.42303 14.5356C3.07625 14.2346 2.8456 13.8175 2.77228 13.3589L2.75624 13.2349L1.86276 3.96333H1.30827C1.18186 3.96332 1.05972 3.91658 0.964457 3.83175C0.869189 3.74691 0.80723 3.62972 0.790039 3.50185L0.785156 3.42921C0.785162 3.30014 0.830941 3.17544 0.914028 3.07816C0.997115 2.98089 1.11189 2.91763 1.23712 2.90007L1.30827 2.89509H4.97004C4.97004 2.28124 5.20886 1.69253 5.63397 1.25847C6.05908 0.824417 6.63565 0.580566 7.23685 0.580566ZM11.5591 3.96333H2.91387L3.79757 13.1303C3.81714 13.3348 3.90542 13.5261 4.04743 13.6718C4.18944 13.8174 4.37642 13.9084 4.57666 13.9293L4.66524 13.9336H9.80846C10.2269 13.9336 10.582 13.6309 10.6629 13.22L10.6768 13.1303L11.5584 3.96333H11.5591ZM8.45744 5.92177C8.58385 5.92178 8.70598 5.96852 8.80125 6.05335C8.89652 6.13819 8.95848 6.25538 8.97567 6.38325L8.98055 6.45589V11.441C8.98051 11.5763 8.93016 11.7066 8.83968 11.8055C8.7492 11.9044 8.62532 11.9645 8.4931 11.9737C8.36087 11.983 8.23014 11.9406 8.12732 11.8552C8.02451 11.7698 7.95728 11.6477 7.93921 11.5137L7.93433 11.441V6.45589C7.93433 6.31423 7.98944 6.17838 8.08755 6.07821C8.18565 5.97804 8.3187 5.92177 8.45744 5.92177ZM6.01626 5.92177C6.14267 5.92178 6.2648 5.96852 6.36007 6.05335C6.45534 6.13819 6.5173 6.25538 6.53449 6.38325L6.53937 6.45589V11.441C6.53933 11.5763 6.48898 11.7066 6.3985 11.8055C6.30801 11.9044 6.18414 11.9645 6.05191 11.9737C5.91968 11.983 5.78896 11.9406 5.68614 11.8552C5.58333 11.7698 5.5161 11.6477 5.49803 11.5137L5.49315 11.441V6.45589C5.49315 6.31423 5.54826 6.17838 5.64636 6.07821C5.74447 5.97804 5.87752 5.92177 6.01626 5.92177ZM7.23685 1.64881C6.93052 1.64882 6.6354 1.76644 6.41006 1.97831C6.18473 2.19018 6.04565 2.48082 6.02044 2.79254L6.01626 2.89509H8.45744C8.45744 2.56455 8.32884 2.24756 8.09994 2.01383C7.87103 1.78011 7.56057 1.64881 7.23685 1.64881Z" fill="#73C167" />
+                                        </svg>
+                                    </div>
+                                    <p class="add-info-price disc">Скидка<span>500 ₽</span></p>
+                                    <p class="add-info-price tax">НДС:<span>20 ₽</span></p>
+                                </div>
+                                <p class="additional-info-counter"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account__content__product">
+                        <div class="account__content__product__wrapper">
+                            <input type="checkbox" name="item-checkbox" class="input-custom-without-label">
+                            <img class="account__content__product__img" src="img/accountBioactivate.png" alt="Bioactivate">
+                            <div class="account__content__product__wrapper__descr block-that-has-counter">
+                                <div class="account__content__product__wrapper__descr__title-raiting">
+                                    <h4>Биоактиватор для дачных туалетов и выгребных ям Зеленая Сосна, 300гр.</h4>
+                                    <div class="allPageCard__raiting">
+                                        <p class="product-article">Арт.: 21002050</p>
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account__content__product__wrapper__descr__buy allPageCard__buy">
+                                    <span class="price">Итоговая цена:</span>
+                                    <span class="price price-relative-input">256 ₽</span>
+                                    <div class="counter">
+                                        <button class="decrement-btn">-</button>
+                                        <input type="text" class="counter-value" value="1">
+                                        <button class="increment-btn">+</button>
+                                    </div>
+                                    <div class="trash">
+                                        <svg width="20" height="22" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.23685 0.580566C7.81585 0.580528 8.37293 0.806716 8.79379 1.21273C9.21465 1.61875 9.46739 2.17381 9.50017 2.76405L9.50366 2.89509H13.1654C13.298 2.89513 13.4256 2.94654 13.5224 3.03893C13.6192 3.13131 13.6781 3.25779 13.6872 3.3928C13.6962 3.52782 13.6547 3.6613 13.5711 3.76627C13.4874 3.87125 13.3679 3.9399 13.2366 3.95834L13.1654 3.96333H12.6102L11.7175 13.2357C11.6727 13.6979 11.4685 14.1289 11.1413 14.4517C10.8141 14.7744 10.3852 14.9679 9.93122 14.9975L9.80846 15.0018H4.66524C4.21011 15.0018 3.76981 14.8365 3.42303 14.5356C3.07625 14.2346 2.8456 13.8175 2.77228 13.3589L2.75624 13.2349L1.86276 3.96333H1.30827C1.18186 3.96332 1.05972 3.91658 0.964457 3.83175C0.869189 3.74691 0.80723 3.62972 0.790039 3.50185L0.785156 3.42921C0.785162 3.30014 0.830941 3.17544 0.914028 3.07816C0.997115 2.98089 1.11189 2.91763 1.23712 2.90007L1.30827 2.89509H4.97004C4.97004 2.28124 5.20886 1.69253 5.63397 1.25847C6.05908 0.824417 6.63565 0.580566 7.23685 0.580566ZM11.5591 3.96333H2.91387L3.79757 13.1303C3.81714 13.3348 3.90542 13.5261 4.04743 13.6718C4.18944 13.8174 4.37642 13.9084 4.57666 13.9293L4.66524 13.9336H9.80846C10.2269 13.9336 10.582 13.6309 10.6629 13.22L10.6768 13.1303L11.5584 3.96333H11.5591ZM8.45744 5.92177C8.58385 5.92178 8.70598 5.96852 8.80125 6.05335C8.89652 6.13819 8.95848 6.25538 8.97567 6.38325L8.98055 6.45589V11.441C8.98051 11.5763 8.93016 11.7066 8.83968 11.8055C8.7492 11.9044 8.62532 11.9645 8.4931 11.9737C8.36087 11.983 8.23014 11.9406 8.12732 11.8552C8.02451 11.7698 7.95728 11.6477 7.93921 11.5137L7.93433 11.441V6.45589C7.93433 6.31423 7.98944 6.17838 8.08755 6.07821C8.18565 5.97804 8.3187 5.92177 8.45744 5.92177ZM6.01626 5.92177C6.14267 5.92178 6.2648 5.96852 6.36007 6.05335C6.45534 6.13819 6.5173 6.25538 6.53449 6.38325L6.53937 6.45589V11.441C6.53933 11.5763 6.48898 11.7066 6.3985 11.8055C6.30801 11.9044 6.18414 11.9645 6.05191 11.9737C5.91968 11.983 5.78896 11.9406 5.68614 11.8552C5.58333 11.7698 5.5161 11.6477 5.49803 11.5137L5.49315 11.441V6.45589C5.49315 6.31423 5.54826 6.17838 5.64636 6.07821C5.74447 5.97804 5.87752 5.92177 6.01626 5.92177ZM7.23685 1.64881C6.93052 1.64882 6.6354 1.76644 6.41006 1.97831C6.18473 2.19018 6.04565 2.48082 6.02044 2.79254L6.01626 2.89509H8.45744C8.45744 2.56455 8.32884 2.24756 8.09994 2.01383C7.87103 1.78011 7.56057 1.64881 7.23685 1.64881Z" fill="#73C167" />
+                                        </svg>
+                                    </div>
+                                    <p class="add-info-price disc">Скидка<span>500 ₽</span></p>
+                                    <p class="add-info-price tax">НДС:<span>20 ₽</span></p>
+                                </div>
+                                <p class="additional-info-counter">5 кор.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account__content__product">
+                        <div class="account__content__product__wrapper">
+                            <input type="checkbox" name="item-checkbox" class="input-custom-without-label">
+                            <img class="account__content__product__img" src="img/accountBioactivate.png" alt="Bioactivate">
+                            <div class="account__content__product__wrapper__descr block-that-has-counter">
+                                <div class="account__content__product__wrapper__descr__title-raiting">
+                                    <h4>Биоактиватор для дачных туалетов и выгребных ям Зеленая Сосна, 300гр.</h4>
+                                    <div class="allPageCard__raiting">
+                                        <p class="product-article">Арт.: 21002050</p>
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account__content__product__wrapper__descr__buy allPageCard__buy">
+                                    <span class="price">Итоговая цена:</span>
+                                    <span class="price price-relative-input">300 ₽</span>
+                                    <div class="counter">
+                                        <button class="decrement-btn">-</button>
+                                        <input type="text" class="counter-value" value="1">
+                                        <button class="increment-btn">+</button>
+                                    </div>
+                                    <div class="trash">
+                                        <svg width="20" height="22" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.23685 0.580566C7.81585 0.580528 8.37293 0.806716 8.79379 1.21273C9.21465 1.61875 9.46739 2.17381 9.50017 2.76405L9.50366 2.89509H13.1654C13.298 2.89513 13.4256 2.94654 13.5224 3.03893C13.6192 3.13131 13.6781 3.25779 13.6872 3.3928C13.6962 3.52782 13.6547 3.6613 13.5711 3.76627C13.4874 3.87125 13.3679 3.9399 13.2366 3.95834L13.1654 3.96333H12.6102L11.7175 13.2357C11.6727 13.6979 11.4685 14.1289 11.1413 14.4517C10.8141 14.7744 10.3852 14.9679 9.93122 14.9975L9.80846 15.0018H4.66524C4.21011 15.0018 3.76981 14.8365 3.42303 14.5356C3.07625 14.2346 2.8456 13.8175 2.77228 13.3589L2.75624 13.2349L1.86276 3.96333H1.30827C1.18186 3.96332 1.05972 3.91658 0.964457 3.83175C0.869189 3.74691 0.80723 3.62972 0.790039 3.50185L0.785156 3.42921C0.785162 3.30014 0.830941 3.17544 0.914028 3.07816C0.997115 2.98089 1.11189 2.91763 1.23712 2.90007L1.30827 2.89509H4.97004C4.97004 2.28124 5.20886 1.69253 5.63397 1.25847C6.05908 0.824417 6.63565 0.580566 7.23685 0.580566ZM11.5591 3.96333H2.91387L3.79757 13.1303C3.81714 13.3348 3.90542 13.5261 4.04743 13.6718C4.18944 13.8174 4.37642 13.9084 4.57666 13.9293L4.66524 13.9336H9.80846C10.2269 13.9336 10.582 13.6309 10.6629 13.22L10.6768 13.1303L11.5584 3.96333H11.5591ZM8.45744 5.92177C8.58385 5.92178 8.70598 5.96852 8.80125 6.05335C8.89652 6.13819 8.95848 6.25538 8.97567 6.38325L8.98055 6.45589V11.441C8.98051 11.5763 8.93016 11.7066 8.83968 11.8055C8.7492 11.9044 8.62532 11.9645 8.4931 11.9737C8.36087 11.983 8.23014 11.9406 8.12732 11.8552C8.02451 11.7698 7.95728 11.6477 7.93921 11.5137L7.93433 11.441V6.45589C7.93433 6.31423 7.98944 6.17838 8.08755 6.07821C8.18565 5.97804 8.3187 5.92177 8.45744 5.92177ZM6.01626 5.92177C6.14267 5.92178 6.2648 5.96852 6.36007 6.05335C6.45534 6.13819 6.5173 6.25538 6.53449 6.38325L6.53937 6.45589V11.441C6.53933 11.5763 6.48898 11.7066 6.3985 11.8055C6.30801 11.9044 6.18414 11.9645 6.05191 11.9737C5.91968 11.983 5.78896 11.9406 5.68614 11.8552C5.58333 11.7698 5.5161 11.6477 5.49803 11.5137L5.49315 11.441V6.45589C5.49315 6.31423 5.54826 6.17838 5.64636 6.07821C5.74447 5.97804 5.87752 5.92177 6.01626 5.92177ZM7.23685 1.64881C6.93052 1.64882 6.6354 1.76644 6.41006 1.97831C6.18473 2.19018 6.04565 2.48082 6.02044 2.79254L6.01626 2.89509H8.45744C8.45744 2.56455 8.32884 2.24756 8.09994 2.01383C7.87103 1.78011 7.56057 1.64881 7.23685 1.64881Z" fill="#73C167" />
+                                        </svg>
+                                    </div>
+                                    <p class="add-info-price disc">Скидка<span>500 ₽</span></p>
+                                    <p class="add-info-price tax">НДС:<span>20 ₽</span></p>
+                                </div>
+                                <p class="additionalCounterInfo additional-info-counter"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account__content__total hide" data-anchor="basket">
+                    <h5>Общая сумма</h5>
+                    <span class="price">6000₽</span>
+                    <h5>Срок сборки</h5>
+                    <span class="assembly-time">2 - 5 раб. дней.</span>
+                    <p>Срок сборки чуть дольше, поскольку товар «Ферментационная подстилка для коров 500 г» изготавливается индивидуально</p>
+                </div>
+                <a href="https://livebacteria.local/placingAnOrder.html" class="bg-accent_col-title-light account__content__place-an-order hide" data-anchor="basket">Оформить заказ</a>
+        </section>
+    </main>
+     <div class="modal hide">
+        <div class="modal__block modal__login hide">
+            <form action="">
+                <h3>Войдите в свой аккаунт</h3>
+                <p>Пожалуйста, авторизуйтесь на этой странице. Если вы еще не зарегистрированы, пожалуйста, перейдите на <a href="#" id='GoToRegistr'>страницу регистрации.</a></p>
+                <div class="form__item">
+                    <label for="login__email">E-mail <span>*</span></label>
+                    <input type="email" id="login__email" name="login__email" placeholder="mail@domen.com">
+                </div>
+                <div class="form__item form__item__password">
+                    <label for="login__password">Пароль <span>*</span></label>
+                    <input type="password" id="login__password" class="hide-show-password" name="login__password" placeholder="Пароль">
+                    <span class="eye hide-eye"></span>
+                </div>
+                <div class="form__item input-label-custom consent">
+                        <input type="checkbox" id="forPartners__checkbox" name="forPartners__checkbox" class="input-label-custom__input">
+                        <label for="forPartners__checkbox"><i>Я соглашаюсь с</i> <a href="#" class="goToPolitics">обработкой персональных данных и политикой конфиденциальности</a></label>
+                    </div>
+                <button type="submit" class="link-under-the-button bg-accent_col-title-light">Войти</button>
+                <a href="#" id='GoToForgot-your-password'>Забыли пароль?</a>
+            </form>
+            <img src="img/cows_of_the_field2.png" alt="cows of the field">
+            <div class="modal__close modal__close-reg">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+        <div class="modal__block modal__registr hide">
+            <form action="">
+                <h3>Зарегистрироваться</h3>
+                <p>Впервые на сайте? Заполните форму и создайте свой личный кабинет. Если вы уже зарегистрированы, пожалуйста, перейдите на <a href="#" class="goToLogin">страницу входа.</a></p>
+                <div class="form__item">
+                    <label for="registr__name">Имя пользователя<span>*</span></label>
+                    <input type="text" id="registr__name" name="registr__name" placeholder="Иванов Иван">
+                </div>
+                <div class="form__item">
+                    <label for="registr__tel">Контактный телефон<span>*</span></label>
+                    <input type="tel" data-tel-input id="registr__tel" class="phone" name="registr__tel" placeholder="+7 (ХХХ) ХХХ ХХ ХХ">
+                </div>
+                <div class="form__item">
+                    <label for="registr__email">E-mail <span>*</span></label>
+                    <input type="email" id="registr__email" name="registr__email" placeholder="mail@domen.com">
+                </div>
+                <div class="form__item form__item__password">
+                    <label for="registr__password">Пароль <span>*</span></label>
+                    <input type="password" id="registr__password" class="hide-show-password" name="registr__password" placeholder="Пароль" autocomplete="on"><span class="eye hide-eye"></span>
+                </div>
+                <div class="form__item input-label-custom consent">
+                        <input type="checkbox" id="forPartners__checkbox" name="forPartners__checkbox" class="input-label-custom__input">
+                        <label for="forPartners__checkbox"><i>Я соглашаюсь с</i> <a href="#" class="goToPolitics">обработкой персональных данных и политикой конфиденциальности</a></label>
+                    </div>
+                <button type="submit" class="bg-accent_col-title-light">Зарегистрироваться</button>
+            </form>
+            <img src="img/cows_of_the_field1.png" alt="cows of the field">
+            <div class="modal__close modal__close-reg">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+        <div class="modal__block modal__callback hide">
+            <form action="">
+                <h3>Заказать звонок</h3>
+                <p>Оставьте свои данные и наши специалисты свяжутся с вами в ближайшее время</p>
+                <div class="form__item">
+                    <label for="callback__name">Ваше имя<span>*</span></label>
+                    <input type="text" id="callback__name" name="callback__name" placeholder="Иванов Иван">
+                </div>
+                <div class="form__item">
+                    <label for="callback__tel">Контактный телефон<span>*</span></label>
+                    <input type="tel" data-tel-input id="callback__tel" class="phone" name="callback__tel" placeholder="+7 (ХХХ) ХХХ ХХ ХХ">
+                </div>
+                <div class="form__item form__item__textarea">
+                    <label for="callback__comment">Комментарий</label>
+                    <textarea id="callback__comment" name="callback__comment" rows="6" cols="30" placeholder="Комментарий"></textarea>
+                </div>
+                <div class="form__item input-label-custom consent">
+                        <input type="checkbox" id="forPartners__checkbox" name="forPartners__checkbox" class="input-label-custom__input">
+                        <label for="forPartners__checkbox"><i>Я соглашаюсь с</i> <a href="#" class="goToPolitics">обработкой персональных данных и политикой конфиденциальности</a></label>
+                    </div>
+                <button type="submit" class="bg-accent_col-title-light">отправить</button>
+            </form>
+            <div class="modal__close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+        <div class="modal__block modal__forgot-your-password hide">
+            <form action="">
+                <h3>Забыли пароль?</h3>
+                <p>Введите e-mail, указанный при регистрации и мы отправим на него код для восстановления доступа</p>
+                <div class="form__item">
+                    <label for="forgot-your-password__email">E-mail <span>*</span></label>
+                    <input type="email" id="forgot-your-password__email" name="forgot-your-password__email" placeholder="mail@domen.com">
+                </div>
+                <button type="button" id="GoToCodeFromSms" class="link-under-the-button bg-accent_col-title-light">Отправить код</button>
+                <a href="#" class="goToLogin">Войти</a>
+            </form>
+            <img src="img/cows_of_the_field2.png" alt="cows of the field">
+            <div class="modal__close modal__close-reg">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+        <div class="modal__block modal__code-from-sms hide">
+            <form action="">
+                <h3>Забыли пароль?</h3>
+                <p>Введите код из письма</p>
+                <fieldset id="OTPinputs">
+                    <legend>Код <span>*</span></legend>
+                    <input class="OTPinput" type="text" inputmode="numeric" maxlength="1" />
+                    <input class="OTPinput" type="text" inputmode="numeric" maxlength="1" />
+                    <input class="OTPinput" type="text" inputmode="numeric" maxlength="1" />
+                    <input class="OTPinput" type="text" inputmode="numeric" maxlength="1" />
+                </fieldset>
+                <button type="button" id="GoToNewPassword" class=" bg-accent_col-title-light">Подтвердить</button>
+                <button type="submit" class="resend">Отправить повторно</button>
+            </form>
+            <img src="img/cows_of_the_field2.png" alt="cows of the field">
+            <div class="modal__close modal__close-reg">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+        <div class="modal__block modal__new-password hide">
+            <form action="">
+                <h3>Забыли пароль?</h3>
+                <p>Введите новый пароль</p>
+                <div class="form__item form__item__password">
+                    <label for="new-password">Новый пароль <span>*</span></label>
+                    <input type="password" id="new-password" class="hide-show-password passCheck" name="new-password" placeholder="Пароль"><span class="eye hide-eye"></span>
+                </div>
+                <div class="form__item form__item__password">
+                    <label for="repeat-password">Повторите пароль <span>*</span></label>
+                    <input type="password" id="repeat-password" class="hide-show-password passCheck" name="repeat-password" placeholder="Пароль"><span class="eye hide-eye"></span>
+                </div>
+                <span class="passwords-do-not-match"></span>
+                <button type="submit" id="password-check" class="bg-accent_col-title-light">Сменить</button>
+            </form>
+            <img src="img/cows_of_the_field2.png" alt="cows of the field">
+            <div class="modal__close modal__close-reg">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+        <div class="modal__block modal__ask-a-question hide">
+            <form action="#">
+                <h3>Задать вопрос</h3>
+                <p>Если у вас остались вопросы, заполните форму ниже, и наши специалисты проконсультируют вас
+                </p>
+                <div class="form__item">
+                    <label for="ask-a-question__name">Ваше имя<span>*</span></label>
+                    <input type="text" id="ask-a-question__name" name="ask-a-question__name" placeholder="Иванов Иван">
+                </div>
+                <div class="form__item">
+                    <label for="ask-a-question__email">E-mail <span>*</span></label>
+                    <input type="email" id="ask-a-question__email" name="ask-a-question__email" placeholder="mail@domen.com">
+                </div>
+                <div class="form__item">
+                    <label for="ask-a-question__tel">Контактный телефон<span>*</span></label>
+                    <input type="tel" data-tel-input id="ask-a-question__tel" class="phone" name="ask-a-question__tel" placeholder="+7 (ХХХ) ХХХ ХХ ХХ">
+                </div>
+                <div class="form__item form__item__textarea ask">
+                    <label for="ask-a-question__question">Ваш вопрос</label>
+                    <textarea id="ask-a-question__question" name="ask-a-question__question" rows="6" cols="30" wrap="off" placeholder="Вопрос"></textarea>
+                </div>
+                <div class="form__item input-label-custom consent">
+                        <input type="checkbox" id="forPartners__checkbox" name="forPartners__checkbox" class="input-label-custom__input">
+                        <label for="forPartners__checkbox"><i>Я соглашаюсь с</i> <a href="#" class="goToPolitics">обработкой персональных данных и политикой конфиденциальности</a></label>
+                    </div>
+                <button type="submit" class="bg-accent_col-title-light">задать вопрос</button>
+            </form>
+            <div class="modal__close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="modal-politics hide-politics">
+        <div class="modal-politics__wrapper">
+            <div class="modal-politics__container">
+                <h4>Соглашение на обработку персональных данных</h4>
+                <p>Предоставляя свои персональные данные Покупатель даёт согласие на обработку, хранение и использование своих персональных данных на основании ФЗ № 152-ФЗ «О персональных данных» от 27.07.2006 г. в следующих целях:</p>
+                <p>Регистрации Пользователя на сайте</p>
+                <p>Осуществление клиентской поддержки</p>
+                <p>Получения Пользователем информации о маркетинговых событиях</p>
+                <p>Выполнение Продавцом обязательств перед Покупателем</p>
+                <p>Проведения аудита и прочих внутренних исследований с целью повышения качества предоставляемых услуг.</p>
+                <p>Под персональными данными подразумевается любая информация личного характера, позволяющая установить личность Покупателя такая как:</p>
+                <p>Фамилия, Имя, Отчество</p>
+                <p>Дата рождения</p>
+                <p>Контактный телефон</p>
+                <p>Адрес электронной почты</p>
+                <p>Почтовый адрес</p>
+                <p>Персональные данные Покупателей хранятся исключительно на электронных носителях и обрабатываются с использованием автоматизированных систем, за исключением случаев, когда неавтоматизированная обработка персональных данных необходима в связи с исполнением требований законодательства.</p>
+                <p>Продавец обязуется не передавать полученные персональные данные третьим лицам, за исключением следующих случаев:</p>
+                <p>По запросам уполномоченных органов государственной власти РФ только по основаниям и в порядке, установленным законодательством РФ</p>
+                <p>Стратегическим партнерам, которые работают с Продавцом для предоставления продуктов и услуг, таких как оплата или доставка товара, или тем из них, которые помогают Продавцу реализовывать продукты и услуги потребителям. Мы предоставляем третьим лицам минимальный объем персональных данных, необходимый только для оказания требуемой услуги или проведения необходимой транзакции.</p>
+                <p>Продавец оставляет за собой право вносить изменения в одностороннем порядке в настоящие правила, при условии, что изменения не противоречат действующему законодательству РФ. Изменения условий настоящих правил вступают в силу после их публикации на Сайте.</p>
+                <button type="button" class="bg-accent_col-title-light politic-button-close">я согласен (-на)</button>
+            </div>
+            <div class="modal-politics__close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7601 1.39833C17.8361 1.32227 17.8965 1.23197 17.9376 1.13259C17.9788 1.03321 18 0.92669 18 0.819121C18 0.711553 17.9788 0.605038 17.9376 0.505657C17.8965 0.406277 17.8361 0.315977 17.7601 0.239915C17.684 0.163852 17.5937 0.103517 17.4943 0.062352C17.395 0.0211873 17.2884 0 17.1809 0C17.0733 0 16.9668 0.0211873 16.8674 0.062352C16.768 0.103517 16.6777 0.163852 16.6017 0.239915L9 7.84322L1.39833 0.239915C1.32227 0.163852 1.23197 0.103517 1.13259 0.062352C1.03321 0.0211873 0.92669 8.01448e-10 0.819121 0C0.711553 -8.01448e-10 0.605038 0.0211873 0.505657 0.062352C0.406277 0.103517 0.315977 0.163852 0.239915 0.239915C0.163852 0.315977 0.103517 0.406277 0.062352 0.505657C0.0211873 0.605038 -8.01448e-10 0.711553 0 0.819121C8.01448e-10 0.92669 0.0211873 1.03321 0.062352 1.13259C0.103517 1.23197 0.163852 1.32227 0.239915 1.39833L7.84322 9L0.239915 16.6017C0.0862998 16.7553 0 16.9636 0 17.1809C0 17.3981 0.0862998 17.6065 0.239915 17.7601C0.39353 17.9137 0.601877 18 0.819121 18C1.03637 18 1.24471 17.9137 1.39833 17.7601L9 10.1568L16.6017 17.7601C16.7553 17.9137 16.9636 18 17.1809 18C17.3981 18 17.6065 17.9137 17.7601 17.7601C17.9137 17.6065 18 17.3981 18 17.1809C18 16.9636 17.9137 16.7553 17.7601 16.6017L10.1568 9L17.7601 1.39833Z" fill="#636363" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="widget">
+        <ul class="widget__ul hide">
+            <li class="widget__ul__li widget-open-modal"><img src="img/icons/widget/widgetPhone.svg" alt="widgetPhone"></li>
+            <li class="widget__ul__li"><a href="https://wa.me/+79055907315" target="_blank"><img src="img/icons/widget/widgetWhatsapp.svg" alt="widgetWhatsapp"></a></li>
+            <li class="widget__ul__li widget-open-modal"><img src="img/icons/widget/widgetMail.svg" alt="widgetMail"></li>
+            <li class="widget__ul__li"><a href="https://livebacteria.local/questions.html"><img src="img/icons/widget/widgetQuestion.svg" alt="widgetQuestion"></a></li>
+            <li class="widget__ul__li"><a href="https://t.me/+79055907315" target="_blank"><img src="img/icons/widget/widgetTelegram.svg" alt="widgetTelegram"></a></li>
+        </ul>
+        <div class="widget__trigger">
+            <div class="widget__trigger__main">
+                <img src="img/icons/widget/widgetWhatsappWithoutPhone.svg" alt="widgetWhatsappWithoutPhone">
+            </div>
+            <div class="widget__trigger__cross hidetrigger">
+                <img src="img/icons/widget/cross.svg" alt="cross">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-container__headlines">
+                <div class="wrapper-for-logo">
+                    <img src="img/logo-live-bacteria.png" alt="footer-logo" class="footer-container__headlines__logo">
+                </div>
+                <h4>Покупателю</h4>
+                <h4>Информация</h4>
+                <h4>Связаться с нами</h4>
+            </div>
+            <div class="footer-container__content">
+                <div class="add-block-for-align-content"></div>
+                <nav class="footer-container__content__navigation">
+                    <ul>
+                        <li><a href="https://livebacteria.local/catalogMainPage.html">Каталог</a></li>
+                        <li><a href="https://livebacteria.local/howToBuy.html">Купить на маркетплейсах</a></li>
+                        <li><a href="https://livebacteria.local/reviews.html">Отзывы</a></li>
+                        <li><a href="https://livebacteria.local/questions.html">Вопрос - Ответ</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://livebacteria.local/aboutUs.html">О компании</a></li>
+                        <li><a href="https://livebacteria.local/forPartners.html">Стать дилером</a></li>
+                        <li><a href="https://livebacteria.local/blog.html">Блог</a></li>
+                        <li><a href="https://livebacteria.local/contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <ul class="footer-container__content__contacts">
+                    <li class="footer-container__content__contacts__tel">
+                        <ul>
+                            <li><a href="tel:+74957756554">+7 495 775-65-54</a><span>(офис)</span></li>
+                            <li><a href="tel:+79055907315">+7 905 590-73-15</a><span>(отдел продаж)</span></li>
+                        </ul>
+                    </li>
+                    <li class="footer-container__content__contacts__email">
+                        <ul>
+                            <li><a href="mailto:info@live-bacteria.ru">info@live-bacteria.ru</a><span>(офис)</span></li>
+                            <li><a href="mailto:sale@live-bacteria.ru">sale@live-bacteria.ru</a><span>(отдел продаж)</span></li>
+                        </ul>
+                    </li>
+                    <li class="footer-container__content__contacts__adress"><a href="https://yandex.ru/maps/org/zhivyye_bakterii/245021850657/?ll=37.531082%2C55.689452&z=11">г. Москва, ул. Верейская, д. 29, стр. 153</a></li>
+                </ul>
+            </div>
+            <p class="footer-container__content__copyright">2023 © Живые Бактерии™</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="script/modal.js"></script>
+    <script type="text/javascript" src="script/pass-eye.js"></script>
+    <script type="text/javascript" src="script/PhoneMask.js"></script>
+    <script type="text/javascript" src="script/OTP-Input-field(sms).js"></script>
+    <script type="text/javascript" src="script/Widget.js"></script>
+    <script type="text/javascript" src="script/textareaGrow.js"></script>
+    <script type="text/javascript" src="script/categoriesRadio.js"></script>
+    <script type="text/javascript" src="script/radioPerson.js"></script>
+    <script type="text/javascript" src="script/buttonFormConsentCheck.js"></script>
+    <script type="text/javascript" src="script/workingWithFavoritesContent.js"></script>
+    <script type="text/javascript" src="script/counter-goods.js"></script>
+    <!--<script type="text/javascript" src="script/secondaryNavArrowLinks320.js"></script>-->
+</body>
+
+</html>
