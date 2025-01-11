@@ -3093,15 +3093,29 @@ main .placingAnOrder .container form .consent {
   left: 0;
   background-color: rgba(51, 51, 51, 0.74);
   z-index: 2;
+  /*.modal__review {
+      form {
+          .form__item__textarea {
+              margin: 60px 0;
+
+              textarea {
+                  width: 730px;
+                  height: 300px;
+              }
+          }
+      }
+  }*/
 }
 .modal .modal__block {
   position: relative;
   display: flex;
+  justify-content: center;
   gap: 14px;
-  max-width: 1320px;
+  max-width: 1377px;
   width: 100%;
   height: fit-content;
   margin-top: 258px;
+  margin-left: 52px;
 }
 .modal .modal__block .modal__close {
   display: flex;
@@ -3109,25 +3123,18 @@ main .placingAnOrder .container form .consent {
   justify-content: center;
   width: 44px;
   height: 44px;
-  position: absolute;
   background-color: #FFFFFF;
   border-radius: 100%;
   cursor: pointer;
-  right: -68px;
 }
 .modal .modal__block .modal__close svg {
   pointer-events: none;
 }
-.modal .modal__block .modal__close-reg {
-  right: -58px;
-}
-.modal .modal__login {
-  margin-left: -6px;
+.modal .modal__block .modal__close-feedback {
+  margin-left: 7px;
 }
 .modal .modal__registr {
-  max-width: 1285px;
   margin-top: 223px;
-  margin-left: -7px;
 }
 .modal .modal__registr form p {
   width: 605px;
@@ -3137,7 +3144,6 @@ main .placingAnOrder .container form .consent {
 }
 .modal .modal__forgot-your-password form p {
   margin: 16px 0 39px;
-  padding: 0 80px;
 }
 .modal .modal__forgot-your-password form .form__item {
   margin-bottom: 40px;
@@ -3176,12 +3182,14 @@ main .placingAnOrder .container form .consent {
 }
 .modal .modal__callback {
   margin-top: 202px;
+  margin-left: 68px;
 }
 .modal .modal__callback form p {
-  padding: 0 150px;
+  padding: 0 66px;
 }
 .modal .modal__ask-a-question {
   margin-top: 187px;
+  margin-left: 68px;
 }
 .modal .modal__ask-a-question form {
   max-width: min-content;
@@ -3214,18 +3222,11 @@ main .placingAnOrder .container form .consent {
   margin: 23px 0 13px;
 }
 .modal .modal__ask-a-question form .consent label {
-  width: 120px;
+  width: 522px;
   padding: 0;
 }
 .modal .ask-a-question-big-review {
   margin-top: 87px;
-}
-.modal .modal__review form .form__item__textarea {
-  margin: 60px 0;
-}
-.modal .modal__review form .form__item__textarea textarea {
-  width: 730px;
-  height: 300px;
 }
 .modal .hide {
   display: none;

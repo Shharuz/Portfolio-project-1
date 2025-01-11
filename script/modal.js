@@ -21,8 +21,8 @@ const closeBtnPolitics = document.querySelector('.politic-button-close');
 const widgetOpenModal = document.querySelectorAll('.widget-open-modal');
 const askAQuestion = document.querySelector('.modal__ask-a-question');
 const contactOpenModalQuestion = document.querySelector('.modalquestion');
-const openModalReview = document.querySelector('.card-rewiews__leave-feedback');
-const modalReview = document.querySelector('.modal__review');
+//const openModalReview = document.querySelector('.card-rewiews__leave-feedback');
+//const modalReview = document.querySelector('.modal__review');
 
 
 
@@ -49,7 +49,7 @@ function closeModal(e) {
         codeFromSms.classList.add('hide');
         newPassword.classList.add('hide');
         askAQuestion.classList.add('hide');
-        modalReview.classList.add('hide');
+        //modalReview.classList.add('hide');
 
     } else if (e.target == politics) {
         politics.classList.add('hide-politics');
@@ -68,7 +68,7 @@ function closebtn(e) {
         codeFromSms.classList.add('hide');
         newPassword.classList.add('hide');
         askAQuestion.classList.add('hide');
-        modalReview.classList.add('hide');
+        //modalReview.classList.add('hide');
     }
 
 };
@@ -120,6 +120,6 @@ if( contactOpenModalQuestion ){
     contactOpenModalQuestion.addEventListener('click', () => openModal(modal, askAQuestion));
 };
 
-openModalReview.addEventListener('click', () => openModal(modal, modalReview));
+//openModalReview.addEventListener('click', () => openModal(modal, modalReview));
 
 
