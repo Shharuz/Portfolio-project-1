@@ -4069,44 +4069,40 @@ main {
     .modal__block {
         position: relative;
         display: flex;
+        justify-content: center;
         gap: 14px;
-        max-width: 1320px;
+        max-width: 1377px;
         width: 100%;
         height: fit-content;
         margin-top: 258px;
-        
-
-
+        margin-left: 52px;
         .modal__close {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 44px;
             height: 44px;
-            position: absolute;
             background-color: $title-light;
             border-radius: 100%;
             cursor: pointer;
-            right: -68px;
-
             svg {
                 pointer-events: none;
             }
         }
-
-        .modal__close-reg {
-            right: -58px;
+        .modal__close-feedback{
+            margin-left: 7px;
         }
+        
     }
 
     .modal__login { 
-        margin-left: -6px;
+        
     }
 
     .modal__registr {
-        max-width: 1285px;
+        
         margin-top: 223px;
-        margin-left: -7px;
+       
         form{
             p{
                 width: 605px;
@@ -4121,7 +4117,6 @@ main {
 
             p {
                 margin: 16px 0 39px;
-                padding: 0 80px;
             }
 
             .form__item {
@@ -4176,17 +4171,17 @@ main {
 
     .modal__callback {
         margin-top: 202px;
-
+        margin-left: 68px;
         form {
             p {
-                padding: 0 150px;
+                padding: 0 66px;
             }
         }
     }
 
     .modal__ask-a-question {
         margin-top: 187px;
-
+        margin-left: 68px;
         form {
             max-width: min-content;
             width: auto;
@@ -4228,7 +4223,7 @@ main {
                 margin: 23px 0 13px;
 
                 label {
-                    width: 120px;
+                    width: 522px;
                     padding: 0;
                 }
             }
@@ -4239,7 +4234,7 @@ main {
         margin-top: 87px;
     }
 
-    .modal__review {
+    /*.modal__review {
         form {
             .form__item__textarea {
                 margin: 60px 0;
@@ -4250,7 +4245,7 @@ main {
                 }
             }
         }
-    }
+    }*/
 
     .hide {
         display: none;
