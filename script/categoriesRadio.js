@@ -3,10 +3,6 @@
 const itemsCategoriesRadio = document.querySelectorAll('.radio-category input[type=radio]');//in the element with the class radio-category, all inputs of the radio type are taken
 const collectionOfElementsForhideShow = document.querySelectorAll('[data-anchor]')//collection of all elements with attribute data-anchor
 
-
-
-
-
 itemsCategoriesRadio.forEach((item) => {
 
     item.addEventListener('change', () => {
