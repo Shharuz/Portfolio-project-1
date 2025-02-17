@@ -96,26 +96,13 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a spec
         };
     };
 
-
-
-
-
-
-
-    let collectionOfFilteredCard = [];
-    addFilteredCardsToCollection(collectionOfFilteredCard); //on line 292
-
-    getСollectionOfFilteredCard(collectionOfFilteredCard); //on line 159
+    createCollectionFilteredCards();
 
     choiceHowToSort();
 
-
-    createSliderNavElemAndMove(collectionOfFilteredCard); //on line 301
-
-
+    createSliderNavElemAndMove(); //on line 301
 
 };
-
 
 
 function filterCard(e) {
@@ -139,14 +126,11 @@ function filterCard(e) {
         item.remove();
     });
 
-    let collectionOfFilteredCard = [];
-    addFilteredCardsToCollection(collectionOfFilteredCard); //on line 292
+    createCollectionFilteredCards();
 
-    getСollectionOfFilteredCard(collectionOfFilteredCard); //on line 159
-    //console.log(collectionOfFilteredCard);
     choiceHowToSort();
 
-    createSliderNavElemAndMove(collectionOfFilteredCard); //on line 301
+    createSliderNavElemAndMove(); //on line 301
 
 };
 
@@ -155,19 +139,27 @@ category.forEach((item) => {
 });
 
 
+let collectionOfFilteredCardForAll = [];
+
+function createCollectionFilteredCards() {
+    collectionOfFilteredCardForAll = [];
+    for (let itemallCards of allCards) {
+        if (!itemallCards.classList.contains('hide')) {
+            collectionOfFilteredCardForAll.push(itemallCards)
+        }
+    }
+};
+
 function filterByManufacturerWeightPrice() {
-    removeWrapperFor6Cards(); //on line 755
-
-    let minPrice = priceRangeInput[0].value;
-    let maxPrice = priceRangeInput[1].value;
-
+    removeWrapperFor6Cards();
     for (let itemCard of collectionOfFilteredCardForAll) {
-        itemCard.classList.add('hide');
+        if (itemCard.classList.contains('hide')) {
+            itemCard.classList.remove('hide')
+        }
     };
+
     let manufacturerAll = document.querySelectorAll('#manufacturer input[type=checkbox]');
     let weightInGramsAll = document.querySelectorAll('#weightInGrams input[type=checkbox]');
-
-
 
     let checkInputCheckedInManufacturerAllAndweightInGramsAll = function() { //check that at least 1 element is selected in both manufacturer and weightInGrams
         let countManufact = 0;
@@ -184,27 +176,26 @@ function filterByManufacturerWeightPrice() {
             }
         };
         if (countManufact >= 1 && countWeight >= 1) {
-            return true
-        } else if (countManufact == 0 && countWeight == 0) {
-            return false
+            return 1
+        } else if (countManufact >= 1 || countWeight >= 1) {
+            return 2
         };
-
-        console.log(countManufact);
-        console.log(countWeight);
 
     };
 
 
-
-    if (checkInputCheckedInManufacturerAllAndweightInGramsAll()) {
+    if (checkInputCheckedInManufacturerAllAndweightInGramsAll() == 1) {
+        for (let itemCard of collectionOfFilteredCardForAll) {
+            itemCard.classList.add('hide');
+        };
 
         for (let itemManufact of manufacturerAll) {
             if (itemManufact.checked) {
                 for (let itemCard of collectionOfFilteredCardForAll) {
-                    if (itemManufact.id == itemCard.getAttribute('data-manufacturer-filter')) { //if the ID of the checked manufacturer matches the data-manufacturer-filter of the card
-                        itemCard.classList.remove('hide'); //then it will remove the hide class of the card
-                    } //but since the hide class has been removed in certain cards, in order to additionally filter by weightInGrams, 
-                    for (let itemWeight of weightInGramsAll) { //you need to add the hide class here
+                    if (itemManufact.id == itemCard.getAttribute('data-manufacturer-filter')) {
+                        itemCard.classList.remove('hide');
+                    }
+                    for (let itemWeight of weightInGramsAll) {
                         if (!itemWeight.checked) {
                             for (let itemCard of collectionOfFilteredCardForAll) {
                                 if (itemWeight.id == itemCard.querySelector('.weightInGrams').innerHTML.slice(0, -2)) {
@@ -217,6 +208,7 @@ function filterByManufacturerWeightPrice() {
                 };
             };
         };
+
         let collectOfFilteredCardOfManufactAndWeight = [];
         for (let itemCard of allCards) {
             if (!itemCard.classList.contains('hide')) {
@@ -224,13 +216,14 @@ function filterByManufacturerWeightPrice() {
             };
         };
 
-        filterPrice(collectOfFilteredCardOfManufactAndWeight); //on line 267
-
-    } else if (checkInputCheckedInManufacturerAllAndweightInGramsAll() == false) {
+        filterPrice(collectOfFilteredCardOfManufactAndWeight);
 
 
-        filterPrice(collectionOfFilteredCardForAll);
-    } else {
+    } else if (checkInputCheckedInManufacturerAllAndweightInGramsAll() == 2) {
+        for (let itemCard of collectionOfFilteredCardForAll) {
+            itemCard.classList.add('hide');
+        };
+
         for (let itemManufact of manufacturerAll) {
             if (itemManufact.checked) {
                 for (let itemCard of collectionOfFilteredCardForAll) { //if any element from manufacturer is checked, 
@@ -249,6 +242,7 @@ function filterByManufacturerWeightPrice() {
                 }
             }
         }
+
         let collectOfFilteredCardOfManufactAndWeight = [];
         for (let itemCard of allCards) {
             if (!itemCard.classList.contains('hide')) {
@@ -256,13 +250,10 @@ function filterByManufacturerWeightPrice() {
             };
         };
 
-        filterPrice(collectOfFilteredCardOfManufactAndWeight); //on line 267
-    };
-
-
-
-
-
+        filterPrice(collectOfFilteredCardOfManufactAndWeight);
+    }
+    let minPrice = priceRangeInput[0].value;
+    let maxPrice = priceRangeInput[1].value;
     function filterPrice(par) {
         for (let itemCard of par) {
 
@@ -280,38 +271,15 @@ function filterByManufacturerWeightPrice() {
         item.remove();
     });
 
-    let collectionOfFilteredCard = [];
-    addFilteredCardsToCollection(collectionOfFilteredCard); //on line 292
-
-    getСollectionOfFilteredCard(collectionOfFilteredCard); //on line 159
-
-    choiceHowToSort();
-
-    createSliderNavElemAndMove(collectionOfFilteredCard); //on line 301
-
-    
-
 };
 
-let collectionOfFilteredCardForAll = [];
 
-function getСollectionOfFilteredCard(par) {
-    collectionOfFilteredCardForAll = par;
-};
-
-function addFilteredCardsToCollection(par) {
-    for (let item of allCards) {
-
-        if (!(item.classList.contains('hide'))) {
-            par.push(item)
-        }
-    };
-}
 //move pages by clicking on nav elements
-function createSliderNavElemAndMove(par) {
-    countCard.innerHTML = par.length + ' '; //the card counter is located above the cards (id="amount-card")
+function createSliderNavElemAndMove() {
 
-    let requiredNumber = Math.ceil(par.length / 6); //6 cards are displayed on the page, calculates the amount of pages for navigation elements (class="catalogCategories__cards-goods__pageNavigation")
+    countCard.innerHTML = collectionOfFilteredCardForAll.length + ' '; //the card counter is located above the cards (id="amount-card")
+
+    let requiredNumber = Math.ceil(collectionOfFilteredCardForAll.length / 6); //6 cards are displayed on the page, calculates the amount of pages for navigation elements (class="catalogCategories__cards-goods__pageNavigation")
     //console.log(requiredNumber);
 
 
@@ -750,9 +718,9 @@ function sortByDateReceived(par) {
 
 function applySorting(par) {
     if (par.length > 0) {
-        
+
         let amountAdditionalWrappers = Math.ceil(par.length / 6);
-        console.log(amountAdditionalWrappers);
+        //console.log(amountAdditionalWrappers);
         let additionalWrapper;
         for (let i = 0; i < par.length; ++i) {
 
