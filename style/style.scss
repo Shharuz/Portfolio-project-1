@@ -708,7 +708,8 @@ form {
         line-height: 1.35;
         width: 540px;
         margin: 16px 0 38px;
-        a{
+
+        a {
             display: inline-block;
         }
     }
@@ -2843,7 +2844,7 @@ main {
 
                 .catalogCategories__cards-goods {
                     width: 1248px;
-                    overflow: hidden;
+                    //overflow: hidden;
 
                     .catalogCategories__cards-goods__counter-filterTwo {
                         display: flex;
@@ -2924,6 +2925,13 @@ main {
                         transition: $main__transition;
                         column-gap: 24px;
                         row-gap: 40px;
+
+                        .wrapperFor6Cards {
+                            width: 1272px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            border: 1px solid red;
+                        }
 
                         .allPageCard {
                             opacity: 1;
@@ -4076,6 +4084,7 @@ main {
         height: fit-content;
         margin-top: 258px;
         margin-left: 52px;
+
         .modal__close {
             display: flex;
             align-items: center;
@@ -4085,26 +4094,26 @@ main {
             background-color: $title-light;
             border-radius: 100%;
             cursor: pointer;
+
             svg {
                 pointer-events: none;
             }
         }
-        .modal__close-feedback{
+
+        .modal__close-feedback {
             margin-left: 7px;
         }
-        
+
     }
 
-    .modal__login { 
-        
-    }
+    .modal__login {}
 
     .modal__registr {
-        
+
         margin-top: 223px;
-       
-        form{
-            p{
+
+        form {
+            p {
                 width: 605px;
             }
         }
@@ -4172,6 +4181,7 @@ main {
     .modal__callback {
         margin-top: 202px;
         margin-left: 68px;
+
         form {
             p {
                 padding: 0 66px;
@@ -4182,6 +4192,7 @@ main {
     .modal__ask-a-question {
         margin-top: 187px;
         margin-left: 68px;
+
         form {
             max-width: min-content;
             width: auto;

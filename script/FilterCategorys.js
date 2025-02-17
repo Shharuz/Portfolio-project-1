@@ -34,7 +34,7 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a spec
 
 
     //counts cards by manufacturer and weight
-    for (let itemInput of inputManufacturerWeight) { //1 element from the list is the manufacturer, then the cards are sorted 
+    for (let itemInput of inputManufacturerWeight) { //1 element from the list is the manufacturer, then the cards are filtering 
         //and the ID of this element is compared with the attribute data-manufacturer-filter of this card, which will match (1st condition), 
         //but the ID of this element will not match the second condition, thus only manufacturers will be counted, 
         //and when the element from the list is about weight, the ID of this element will not match the attribute data-manufacturer-filter, 
@@ -107,7 +107,7 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a spec
 
     getСollectionOfFilteredCard(collectionOfFilteredCard); //on line 159
 
-    sortPopularity(collectionOfFilteredCard); //on line 620
+    choiceHowToSort();
 
 
     createSliderNavElemAndMove(collectionOfFilteredCard); //on line 301
@@ -119,7 +119,7 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a spec
 
 
 function filterCard(e) {
-
+    removeWrapperFor6Cards(); //on line 755
 
     for (let item of allCards) {
         if (item.getAttribute('data-filter') == e.target.getAttribute("id")) { //filter relative data-filter
@@ -143,32 +143,27 @@ function filterCard(e) {
     addFilteredCardsToCollection(collectionOfFilteredCard); //on line 292
 
     getСollectionOfFilteredCard(collectionOfFilteredCard); //on line 159
-
-    sortPopularity(collectionOfFilteredCard); //on line 620
+    //console.log(collectionOfFilteredCard);
+    choiceHowToSort();
 
     createSliderNavElemAndMove(collectionOfFilteredCard); //on line 301
 
 };
 
 category.forEach((item) => {
-    item.addEventListener('click', filterCard);//on line 121
+    item.addEventListener('click', filterCard); //on line 121
 });
 
-let collectionOfFilteredCardForAll = [];
-
-function getСollectionOfFilteredCard(par) {
-    collectionOfFilteredCardForAll = par;
-};
 
 function filterByManufacturerWeightPrice() {
-
+    removeWrapperFor6Cards(); //on line 755
 
     let minPrice = priceRangeInput[0].value;
     let maxPrice = priceRangeInput[1].value;
 
-    for (let itemCard of collectionOfFilteredCardForAll) {
+    /*for (let itemCard of collectionOfFilteredCardForAll) {
         itemCard.classList.add('hide');
-    };
+    };*/
     let manufacturerAll = document.querySelectorAll('#manufacturer input[type=checkbox]');
     let weightInGramsAll = document.querySelectorAll('#weightInGrams input[type=checkbox]');
 
@@ -193,6 +188,10 @@ function filterByManufacturerWeightPrice() {
         } else if (countManufact == 0 && countWeight == 0) {
             return false
         };
+
+        console.log(countManufact);
+        console.log(countWeight);
+
     };
 
 
@@ -234,8 +233,8 @@ function filterByManufacturerWeightPrice() {
     } else {
         for (let itemManufact of manufacturerAll) {
             if (itemManufact.checked) {
-                for (let itemCard of collectionOfFilteredCardForAll) {//if any element from manufacturer is checked, 
-                    if (itemManufact.id == itemCard.getAttribute('data-manufacturer-filter')) {//then the ID of this element is compared with the data-manufacturer-filter card
+                for (let itemCard of collectionOfFilteredCardForAll) { //if any element from manufacturer is checked, 
+                    if (itemManufact.id == itemCard.getAttribute('data-manufacturer-filter')) { //then the ID of this element is compared with the data-manufacturer-filter card
                         itemCard.classList.remove('hide');
                     }
                 }
@@ -243,8 +242,8 @@ function filterByManufacturerWeightPrice() {
         }
         for (let itemWeight of weightInGramsAll) {
             if (itemWeight.checked) {
-                for (let itemCard of collectionOfFilteredCardForAll) {//if any element from weightInGrams is checked,
-                    if (itemWeight.id == itemCard.querySelector('.weightInGrams').innerHTML.slice(0, -2)) {//then the ID of this element is compared with the element with the class weightInGrams
+                for (let itemCard of collectionOfFilteredCardForAll) { //if any element from weightInGrams is checked,
+                    if (itemWeight.id == itemCard.querySelector('.weightInGrams').innerHTML.slice(0, -2)) { //then the ID of this element is compared with the element with the class weightInGrams
                         itemCard.classList.remove('hide');
                     }
                 }
@@ -257,7 +256,7 @@ function filterByManufacturerWeightPrice() {
             };
         };
 
-        filterPrice(collectOfFilteredCardOfManufactAndWeight);//on line 267
+        filterPrice(collectOfFilteredCardOfManufactAndWeight); //on line 267
     };
 
 
@@ -284,9 +283,20 @@ function filterByManufacturerWeightPrice() {
     let collectionOfFilteredCard = [];
     addFilteredCardsToCollection(collectionOfFilteredCard); //on line 292
 
+    getСollectionOfFilteredCard(collectionOfFilteredCard); //on line 159
+
+    sortPopularity(collectionOfFilteredCard);
 
     createSliderNavElemAndMove(collectionOfFilteredCard); //on line 301
 
+    
+
+};
+
+let collectionOfFilteredCardForAll = [];
+
+function getСollectionOfFilteredCard(par) {
+    collectionOfFilteredCardForAll = par;
 };
 
 function addFilteredCardsToCollection(par) {
@@ -303,49 +313,49 @@ function createSliderNavElemAndMove(par) {
 
     let requiredNumber = Math.ceil(par.length / 6); //6 cards are displayed on the page, calculates the amount of pages for navigation elements (class="catalogCategories__cards-goods__pageNavigation")
     //console.log(requiredNumber);
-    
-    createSliderNavElem(requiredNumber);
-    function createSliderNavElem(par) {
 
-        if (par <= 5) {
-            for (let i = 1; i <= par; ++i) {
-                if (i == 1) { //creates and adds a nav element and by assigning a class makes it green
-                    let navElem = document.createElement('span');
-                    navElem.classList.add('active');
-                    navElem.append(`${i}`);
-                    catalogCategories__next.before(navElem);
 
-                } else {
-                    let navElem = document.createElement('span'); //creates and adds other nav element
-                    navElem.append(`${i}`);
-                    catalogCategories__next.before(navElem);
-                }
-            }
-        } else {
-            for (let i = 1; i <= par; ++i) {
-                if (i == 1) {
-                    let navElem = document.createElement('span'); //creates and adds a nav element and by assigning a class makes it green
-                    navElem.classList.add('active');
-                    navElem.append(`${i}`);
-                    catalogCategories__next.before(navElem);
-                } else if (i > 1 && i < 4) { //creates and adds the second and third nav elements
-                    let navElem = document.createElement('span');
-                    navElem.append(`${i}`);
-                    catalogCategories__next.before(navElem);
-                } else if (i == 4) { //add ellipsis to the fourth element
-                    let navElem = document.createElement('span');
-                    navElem.append('...');
-                    catalogCategories__next.before(navElem); //in the fifth element add requiredNumber(on line 304), and in the browser it will look like nav element of the last page
-                    let navElemLast = document.createElement('span');
-                    navElemLast.append(`${par}`);
-                    catalogCategories__next.before(navElemLast);
-                } else {
-                    break;
-                }
+
+    //createSliderNavElem
+    if (requiredNumber <= 5) {
+        for (let i = 1; i <= requiredNumber; ++i) {
+            if (i == 1) { //creates and adds a nav element and by assigning a class makes it green
+                let navElem = document.createElement('span');
+                navElem.classList.add('active');
+                navElem.append(`${i}`);
+                catalogCategories__next.before(navElem);
+
+            } else {
+                let navElem = document.createElement('span'); //creates and adds other nav element
+                navElem.append(`${i}`);
+                catalogCategories__next.before(navElem);
             }
         }
+    } else {
+        for (let i = 1; i <= requiredNumber; ++i) {
+            if (i == 1) {
+                let navElem = document.createElement('span'); //creates and adds a nav element and by assigning a class makes it green
+                navElem.classList.add('active');
+                navElem.append(`${i}`);
+                catalogCategories__next.before(navElem);
+            } else if (i > 1 && i < 4) { //creates and adds the second and third nav elements
+                let navElem = document.createElement('span');
+                navElem.append(`${i}`);
+                catalogCategories__next.before(navElem);
+            } else if (i == 4) { //add ellipsis to the fourth element
+                let navElem = document.createElement('span');
+                navElem.append('...');
+                catalogCategories__next.before(navElem); //in the fifth element add requiredNumber(on line 304), and in the browser it will look like nav element of the last page
+                let navElemLast = document.createElement('span');
+                navElemLast.append(`${requiredNumber}`);
+                catalogCategories__next.before(navElemLast);
+            } else {
+                break;
+            }
+        }
+    }
 
-    };
+
     let collectionNavElementsSortCard = navCardsGoods.querySelectorAll('span'); //takes all navigation elements
     getNavElements(collectionNavElementsSortCard); //on line 460
 
@@ -618,9 +628,10 @@ function choiceHowToSort() {
 
 };
 
-sortList.addEventListener('change', choiceHowToSort);//on line 605
+sortList.addEventListener('change', choiceHowToSort); //on line 605
 
 function sortPopularity(par) {
+    removeWrapperFor6Cards(); //on line 755
 
     for (let itemPar of par) {
         let fill = 0;
@@ -638,9 +649,6 @@ function sortPopularity(par) {
 
         itemPar.querySelector('.allPageCard__raiting').setAttribute('data-raiting', `${raiting}`); //sets the data-raiting attribute on which sorting will be performed
     };
-
-
-
 
 
     for (let i = 1; i < par.length; ++i) {
@@ -662,15 +670,12 @@ function sortPopularity(par) {
         //thus, the cards are rearranged if the rating of the second card is greater than the rating of the first card, etc.
     };
 
+    applySorting(par); //on line 739
 
-
-    for (let itemPar of par) { //apply sorting to collection
-        wrapperForCards.append(itemPar);
-    };
 };
 
 function sortByName(par) {
-
+    removeWrapperFor6Cards(); //on line 755
 
 
 
@@ -687,13 +692,11 @@ function sortByName(par) {
 
 
 
-    for (let itemPar of par) { //apply sorting to collection
-        wrapperForCards.append(itemPar);
-    };
+    applySorting(par); //on line 739
 };
 
 function sortByPriceIncrease(par) {
-
+    removeWrapperFor6Cards(); //on line 755
 
     par.sort(function(a, b) {
 
@@ -706,13 +709,12 @@ function sortByPriceIncrease(par) {
         return 0;
     });
 
-    for (let itemPar of par) { //apply sorting to collection
-        wrapperForCards.append(itemPar);
-    };
+    applySorting(par); //on line 739
 
 }
 
 function sortByPriceDecrease(par) {
+    removeWrapperFor6Cards(); //on line 755
     par.sort(function(a, b) {
 
         if (+a.querySelector('.price').innerHTML.slice(0, -2) > +b.querySelector('.price').innerHTML.slice(0, -2)) {
@@ -724,14 +726,12 @@ function sortByPriceDecrease(par) {
         return 0;
     });
 
-    for (let itemPar of par) { //apply sorting to collection
-        wrapperForCards.append(itemPar);
-    };
+    applySorting(par); //on line 739
 
 }
 
 function sortByDateReceived(par) {
-
+    removeWrapperFor6Cards(); //on line 755
 
 
     par.sort(function(a, b) {
@@ -744,22 +744,46 @@ function sortByDateReceived(par) {
         }
         return 0;
     });
-    for (let itemPar of par) { //apply sorting to collection
-        wrapperForCards.append(itemPar);
-    };
+    applySorting(par); //on line 739
 
 }
 
+function applySorting(par) {
+    if (par.length > 0) {
+        
+        let amountAdditionalWrappers = Math.ceil(par.length / 6);
+        console.log(amountAdditionalWrappers);
+        let additionalWrapper;
+        for (let i = 0; i < par.length; ++i) {
+
+            if (i % 6 == 0) {
+                additionalWrapper = document.createElement('div');
+                additionalWrapper.className = "wrapperFor6Cards";
+                wrapperForCards.append(additionalWrapper);
+            }
+            additionalWrapper.append(par[i]);
+        }
+    }
+
+}
+
+function removeWrapperFor6Cards() { // WrapperFor6Cards == line 747
+    if (wrapperForCards.querySelectorAll(".wrapperFor6Cards").length > 0) { //extract product cards from WrapperFor6Cards and delete WrapperFor6Cards
+
+        collectM = wrapperForCards.querySelectorAll(".wrapperFor6Cards");
+
+
+        collectM.forEach((item) => {
+            let count = item.childNodes.length;
+            for (let i = 0; i < count; ++i) {
+                wrapperForCards.append(item.childNodes[0]);
+            }
+            item.remove();
+        });
+    };
+}
+
 btnApplyFilter.addEventListener('click', function() { filterByManufacturerWeightPrice() }); //on line 163
-
-
-
-
-
-
-
-
-
 
 
 

@@ -2196,7 +2196,6 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .filter 
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
   width: 1248px;
-  overflow: hidden;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__counter-filterTwo {
   display: flex;
@@ -2268,6 +2267,12 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .catalog
   transition: all 0.5s ease;
   column-gap: 24px;
   row-gap: 40px;
+}
+main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
+  width: 1272px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid red;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard {
   opacity: 1;
