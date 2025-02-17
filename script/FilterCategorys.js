@@ -96,12 +96,13 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a spec
         };
     };
 
-    createCollectionFilteredCards();
+    
 
     choiceHowToSort();
 
-    createSliderNavElemAndMove(); //on line 301
+    createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 301
 
+    
 };
 
 
@@ -126,12 +127,12 @@ function filterCard(e) {
         item.remove();
     });
 
-    createCollectionFilteredCards();
+    
 
     choiceHowToSort();
 
-    createSliderNavElemAndMove(); //on line 301
-
+    createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 301
+    
 };
 
 category.forEach((item) => {
@@ -148,10 +149,19 @@ function createCollectionFilteredCards() {
             collectionOfFilteredCardForAll.push(itemallCards)
         }
     }
+    return collectionOfFilteredCardForAll;
 };
+
+const btnApplyFilter = document.querySelector('#apply-filter'); //btn filterByManufacturerWeightPrice
+
+const priceRangeInput = document.querySelectorAll('.filter__form__price-range input[type="number"]') //block price range
+
 
 function filterByManufacturerWeightPrice() {
     removeWrapperFor6Cards();
+    let minPrice = priceRangeInput[0].value;
+    let maxPrice = priceRangeInput[1].value;
+    
     for (let itemCard of collectionOfFilteredCardForAll) {
         if (itemCard.classList.contains('hide')) {
             itemCard.classList.remove('hide')
@@ -251,19 +261,28 @@ function filterByManufacturerWeightPrice() {
         };
 
         filterPrice(collectOfFilteredCardOfManufactAndWeight);
+    } else{
+        filterPrice(collectionOfFilteredCardForAll)
     }
-    let minPrice = priceRangeInput[0].value;
-    let maxPrice = priceRangeInput[1].value;
+    
     function filterPrice(par) {
         for (let itemCard of par) {
-
-            if (parseInt(itemCard.querySelector('.price').innerHTML) > minPrice && parseInt(itemCard.querySelector('.price').innerHTML) < maxPrice) { //the comparison is with the price indicated on the card /minPrice maxPrice on line 166, 167
+            
+            if ( parseInt(itemCard.querySelector('.price').innerHTML) > minPrice && parseInt(itemCard.querySelector('.price').innerHTML) < maxPrice ) { //the comparison is with the price indicated on the card /minPrice maxPrice on line 166, 167
                 itemCard.classList.remove('hide');
             } else {
                 itemCard.classList.add('hide');
             }
         }
+        
     }
+
+    let collectAllFiltering = [];
+        for (let itemCard of allCards) {
+            if (!itemCard.classList.contains('hide')) {
+                collectAllFiltering.push(itemCard)
+            };
+        };
 
     wrapperForCards.style.transform = 'translateX(0)'; //resets wrapperForCards position and removes nav elements, creates new ones on line 288
     let elementNav = navCardsGoods.querySelectorAll('span');
@@ -271,15 +290,19 @@ function filterByManufacturerWeightPrice() {
         item.remove();
     });
 
+    
+    choiceHowToSort();
+    createSliderNavElemAndMove(collectAllFiltering);
+
 };
 
 
 //move pages by clicking on nav elements
-function createSliderNavElemAndMove() {
+function createSliderNavElemAndMove(par) {
 
-    countCard.innerHTML = collectionOfFilteredCardForAll.length + ' '; //the card counter is located above the cards (id="amount-card")
+    countCard.innerHTML = par.length + ' '; //the card counter is located above the cards (id="amount-card")
 
-    let requiredNumber = Math.ceil(collectionOfFilteredCardForAll.length / 6); //6 cards are displayed on the page, calculates the amount of pages for navigation elements (class="catalogCategories__cards-goods__pageNavigation")
+    let requiredNumber = Math.ceil(par.length / 6); //6 cards are displayed on the page, calculates the amount of pages for navigation elements (class="catalogCategories__cards-goods__pageNavigation")
     //console.log(requiredNumber);
 
 
@@ -575,23 +598,26 @@ catalogCategories__next.onclick = function() {
 
 
 
-
-const btnApplyFilter = document.querySelector('#apply-filter'); //btn filterByManufacturerWeightPrice
-
-const priceRangeInput = document.querySelectorAll('.filter__form__price-range input[type="number"]') //block price range
-
 function choiceHowToSort() {
+
+    collectionCardsForSorting = [];
+    for (let itemallCards of allCards) {
+        if (!itemallCards.classList.contains('hide')) {
+            collectionCardsForSorting.push(itemallCards)
+        };
+    };
+
     let selected = sortList.options[sortList.selectedIndex].value; //<select name="sortingList" id="sortingList">  -> <option value="popularity">    
     if (selected == 'popularity') {
-        sortPopularity(collectionOfFilteredCardForAll)
+        sortPopularity(collectionCardsForSorting)
     } else if (selected == 'title') {
-        sortByName(collectionOfFilteredCardForAll)
+        sortByName(collectionCardsForSorting)
     } else if (selected == 'byPriceAscending') {
-        sortByPriceIncrease(collectionOfFilteredCardForAll)
+        sortByPriceIncrease(collectionCardsForSorting)
     } else if (selected == 'byPriceDescending') {
-        sortByPriceDecrease(collectionOfFilteredCardForAll)
+        sortByPriceDecrease(collectionCardsForSorting)
     } else {
-        sortByDateReceived(collectionOfFilteredCardForAll);
+        sortByDateReceived(collectionCardsForSorting);
     }
 
 };
@@ -600,7 +626,7 @@ sortList.addEventListener('change', choiceHowToSort); //on line 605
 
 function sortPopularity(par) {
     removeWrapperFor6Cards(); //on line 755
-
+    
     for (let itemPar of par) {
         let fill = 0;
         let half = 0;
@@ -645,8 +671,7 @@ function sortPopularity(par) {
 function sortByName(par) {
     removeWrapperFor6Cards(); //on line 755
 
-
-
+    
     par.sort(function(a, b) {
 
         if (a.querySelector('h4').innerHTML.slice(0, a.querySelector('h4').innerHTML.indexOf('<span')) < b.querySelector('h4').innerHTML.slice(0, b.querySelector('h4').innerHTML.indexOf('<span'))) {

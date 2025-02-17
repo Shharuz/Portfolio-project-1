@@ -1,3 +1,5 @@
+const priceRangeInput = document.querySelectorAll('.filter__form__price-range input[type="number"]') //block price range
+
 /*removeWrapperFor6Cards(); //on line 755
 
     let minPrice = priceRangeInput[0].value;
