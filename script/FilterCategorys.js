@@ -161,9 +161,9 @@ function filterByManufacturerWeightPrice() {
     let minPrice = priceRangeInput[0].value;
     let maxPrice = priceRangeInput[1].value;
 
-    /*for (let itemCard of collectionOfFilteredCardForAll) {
+    for (let itemCard of collectionOfFilteredCardForAll) {
         itemCard.classList.add('hide');
-    };*/
+    };
     let manufacturerAll = document.querySelectorAll('#manufacturer input[type=checkbox]');
     let weightInGramsAll = document.querySelectorAll('#weightInGrams input[type=checkbox]');
 
@@ -285,7 +285,7 @@ function filterByManufacturerWeightPrice() {
 
     getСollectionOfFilteredCard(collectionOfFilteredCard); //on line 159
 
-    sortPopularity(collectionOfFilteredCard);
+    choiceHowToSort();
 
     createSliderNavElemAndMove(collectionOfFilteredCard); //on line 301
 
