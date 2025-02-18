@@ -2552,7 +2552,7 @@ main {
                 .filter {
                     width: clamp(274px, 50vw - 645px, 320px);
                     height: 625px;
-                    margin-right: clamp(44px, 50vw - 854px, 105px);
+                    margin-right: clamp(44px, 50vw - 850px, 110px);
                     min-width: 274px;
 
                     form {
@@ -2844,7 +2844,7 @@ main {
 
                 .catalogCategories__cards-goods {
                     width: 1248px;
-                    //overflow: hidden;
+                    overflow: hidden;
 
                     .catalogCategories__cards-goods__counter-filterTwo {
                         display: flex;
@@ -2923,14 +2923,13 @@ main {
                         flex-wrap: wrap;
                         flex-direction: column;
                         transition: $main__transition;
-                        column-gap: 24px;
-                        row-gap: 40px;
 
                         .wrapperFor6Cards {
                             width: 1272px;
                             display: flex;
                             flex-wrap: wrap;
-                            border: 1px solid red;
+                            column-gap: 24px;
+                            row-gap: 40px;
                         }
 
                         .allPageCard {

@@ -1964,7 +1964,7 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter {
 main .catalogCategories .container .catalogCategories__wrapperForFilter .filter {
   width: clamp(274px, 50vw - 645px, 320px);
   height: 625px;
-  margin-right: clamp(44px, 50vw - 854px, 105px);
+  margin-right: clamp(44px, 50vw - 850px, 110px);
   min-width: 274px;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .filter form {
@@ -2196,6 +2196,7 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .filter 
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
   width: 1248px;
+  overflow: hidden;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__counter-filterTwo {
   display: flex;
@@ -2265,14 +2266,13 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .catalog
   flex-wrap: wrap;
   flex-direction: column;
   transition: all 0.5s ease;
-  column-gap: 24px;
-  row-gap: 40px;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
   width: 1272px;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid red;
+  column-gap: 24px;
+  row-gap: 40px;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard {
   opacity: 1;
