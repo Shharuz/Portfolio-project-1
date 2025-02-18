@@ -2844,7 +2844,7 @@ main {
 
                 .catalogCategories__cards-goods {
                     width: 1248px;
-                    overflow: hidden;
+                    //overflow: hidden;
 
                     .catalogCategories__cards-goods__counter-filterTwo {
                         display: flex;
@@ -4769,7 +4769,11 @@ footer {
 
                         .catalogCategories__cards-goods__wrapperForCards {
                             height: 2299px;
-                            column-gap: 40px;
+
+                            //column-gap: 40px;
+                            .wrapperFor6Cards {
+                                column-gap: 40px;
+                            }
                         }
                     }
                 }
@@ -6058,53 +6062,59 @@ footer {
                         width: 740px;
 
                         .catalogCategories__cards-goods__wrapperForCards {
-                            column-gap: 20px;
-                            row-gap: 20px;
+
                             height: 1949px;
 
-                            .allPageCard {
-                                width: 360px;
-                                height: 630px;
-                                padding-top: 24px;
+                            .wrapperFor6Cards {
+                                width: 765px;
+                                column-gap: 20px;
+                                row-gap: 20px;
 
-                                .allPageCard__swiperImg {
-                                    height: 340px;
+                                .allPageCard {
+                                    width: 360px;
+                                    height: 630px;
+                                    padding-top: 24px;
 
-                                    .swiper-wrapper {
-                                        height: 86.2%;
+                                    .allPageCard__swiperImg {
+                                        height: 340px;
 
-                                        .swiper-slide {
-                                            a {
-                                                img {
-                                                    max-height: 295px;
+                                        .swiper-wrapper {
+                                            height: 86.2%;
+
+                                            .swiper-slide {
+                                                a {
+                                                    img {
+                                                        max-height: 295px;
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                }
 
-                                .allPageCard__raiting {
-                                    p {
-                                        font-size: 12px;
+                                    .allPageCard__raiting {
+                                        p {
+                                            font-size: 12px;
+                                        }
                                     }
-                                }
 
-                                h4 {
-                                    font-size: 18px;
-                                }
+                                    h4 {
+                                        font-size: 18px;
+                                    }
 
-                                p {
-                                    font-size: 14px;
-                                }
+                                    p {
+                                        font-size: 14px;
+                                    }
 
-                                .swiper-card__buy {
-                                    justify-content: flex-start;
+                                    .swiper-card__buy {
+                                        justify-content: flex-start;
 
-                                    .allPageCard__buy__a {
-                                        margin-right: 9px;
+                                        .allPageCard__buy__a {
+                                            margin-right: 9px;
+                                        }
                                     }
                                 }
                             }
+
                         }
                     }
                 }
@@ -6364,12 +6374,15 @@ footer {
                         .catalogCategories__cards-goods__wrapperForCards {
                             height: 2029px;
 
-                            .allPageCard {
-                                width: 260px;
-                                height: 656px;
-                                padding-left: 8.5px;
-                                padding-right: 8.5px;
+                            .wrapperFor6Cards {
+                                .allPageCard {
+                                    width: 260px;
+                                    height: 656px;
+                                    padding-left: 8.5px;
+                                    padding-right: 8.5px;
+                                }
                             }
+
                         }
                     }
                 }

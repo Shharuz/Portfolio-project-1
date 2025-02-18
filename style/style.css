@@ -2196,7 +2196,6 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .filter 
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
   width: 1248px;
-  overflow: hidden;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__counter-filterTwo {
   display: flex;
@@ -3646,6 +3645,8 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards {
     height: 2299px;
+  }
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
     column-gap: 40px;
   }
 }
@@ -4494,37 +4495,40 @@ footer .footer-container .footer-container__content__copyright {
     width: 740px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards {
-    column-gap: 20px;
-    row-gap: 20px;
     height: 1949px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
+    width: 765px;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard {
     width: 360px;
     height: 630px;
     padding-top: 24px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .allPageCard__swiperImg {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .allPageCard__swiperImg {
     height: 340px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .allPageCard__swiperImg .swiper-wrapper {
     height: 86.2%;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
     max-height: 295px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .allPageCard__raiting p {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .allPageCard__raiting p {
     font-size: 12px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard h4 {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard h4 {
     font-size: 18px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard p {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard p {
     font-size: 14px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .swiper-card__buy {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .swiper-card__buy {
     justify-content: flex-start;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .swiper-card__buy .allPageCard__buy__a {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .swiper-card__buy .allPageCard__buy__a {
     margin-right: 9px;
   }
   main .contacts .container .contacts__more-detail p {
@@ -4631,7 +4635,7 @@ footer .footer-container .footer-container__content__copyright {
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards {
     height: 2029px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard {
     width: 260px;
     height: 656px;
     padding-left: 8.5px;
