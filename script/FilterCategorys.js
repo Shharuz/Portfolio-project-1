@@ -11,7 +11,45 @@ let sortList = document.querySelector('#sortingList'); //card sorting element
 
 //console.log(blockCardsGoods.offsetWidth);
 //console.log(parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10));
+let originalWidth = blockCardsGoods.offsetWidth;
+let currentWidth = originalWidth;
+let step = 408;
+window.addEventListener('resize', alertWidth);
 
+function alertWidth() {
+    if (currentWidth != blockCardsGoods.offsetWidth && currentWidth > blockCardsGoods.offsetWidth) {
+        currentWidth = blockCardsGoods.offsetWidth;
+        if(currentWidth == 740){
+            step = 100;
+        }else if( currentWidth == 540 ){
+            step = 200;
+        }else if( currentWidth == 260 ){
+            step = 280 
+        }
+        console.log(currentWidth);
+        console.log(step);
+        let ammountPage = Number(navCardsGoods.querySelector('.active').innerHTML);
+        //console.log(ammountPage);
+        let currentTranslateX = parseInt(wrapperForCards.style.transform.slice(11, -3), 10);
+        wrapperForCards.style.transform = `translateX(${(currentTranslateX + (step * (ammountPage - 1) ))  + 'px'})`; 
+    }else if ( currentWidth != blockCardsGoods.offsetWidth && currentWidth < blockCardsGoods.offsetWidth ){
+        currentWidth = blockCardsGoods.offsetWidth;
+        if(currentWidth == 740){
+            step = 200;
+        }else if(currentWidth == 840){
+            step = 100;
+        }else if(currentWidth == 1248){
+            step = 408;
+        }
+        console.log(currentWidth);
+        console.log(step);
+        let ammountPage = Number(navCardsGoods.querySelector('.active').innerHTML);
+        //console.log(ammountPage);
+        let currentTranslateX = parseInt(wrapperForCards.style.transform.slice(11, -3), 10);
+        wrapperForCards.style.transform = `translateX(${(currentTranslateX - (step * (ammountPage - 1) ))  + 'px'})`; 
+    }
+
+};
 
 
 function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a specific category from the index.html catalogMainPage.html and filtering cards
@@ -96,13 +134,13 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a spec
         };
     };
 
-    
+
 
     choiceHowToSort();
 
     createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 301
 
-    
+
 };
 
 
@@ -127,12 +165,12 @@ function filterCard(e) {
         item.remove();
     });
 
-    
+
 
     choiceHowToSort();
 
     createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 301
-    
+
 };
 
 category.forEach((item) => {
@@ -161,7 +199,7 @@ function filterByManufacturerWeightPrice() {
     removeWrapperFor6Cards();
     let minPrice = priceRangeInput[0].value;
     let maxPrice = priceRangeInput[1].value;
-    
+
     for (let itemCard of collectionOfFilteredCardForAll) {
         if (itemCard.classList.contains('hide')) {
             itemCard.classList.remove('hide')
@@ -261,28 +299,28 @@ function filterByManufacturerWeightPrice() {
         };
 
         filterPrice(collectOfFilteredCardOfManufactAndWeight);
-    } else{
+    } else {
         filterPrice(collectionOfFilteredCardForAll)
     }
-    
+
     function filterPrice(par) {
         for (let itemCard of par) {
-            
-            if ( parseInt(itemCard.querySelector('.price').innerHTML) > minPrice && parseInt(itemCard.querySelector('.price').innerHTML) < maxPrice ) { //the comparison is with the price indicated on the card /minPrice maxPrice on line 166, 167
+
+            if (parseInt(itemCard.querySelector('.price').innerHTML) > minPrice && parseInt(itemCard.querySelector('.price').innerHTML) < maxPrice) { //the comparison is with the price indicated on the card /minPrice maxPrice on line 166, 167
                 itemCard.classList.remove('hide');
             } else {
                 itemCard.classList.add('hide');
             }
         }
-        
+
     }
 
     let collectAllFiltering = [];
-        for (let itemCard of allCards) {
-            if (!itemCard.classList.contains('hide')) {
-                collectAllFiltering.push(itemCard)
-            };
+    for (let itemCard of allCards) {
+        if (!itemCard.classList.contains('hide')) {
+            collectAllFiltering.push(itemCard)
         };
+    };
 
     wrapperForCards.style.transform = 'translateX(0)'; //resets wrapperForCards position and removes nav elements, creates new ones on line 288
     let elementNav = navCardsGoods.querySelectorAll('span');
@@ -290,7 +328,7 @@ function filterByManufacturerWeightPrice() {
         item.remove();
     });
 
-    
+
     choiceHowToSort();
     createSliderNavElemAndMove(collectAllFiltering);
 
@@ -355,8 +393,10 @@ function createSliderNavElemAndMove(par) {
     moveSlideOnClickNavElem(collectionNavElementsSortCard);
 }
 
-
-let widthBlock = 1272;
+//1920 ->catalogCategories__cards-goods 1248 widthBlock = 1272 // 1800 ->catalogCategories__cards-goods 840 widthBlock = 864 
+// 1100 ->catalogCategories__cards-goods 740 widthBlock = 764  // 790 ->catalogCategories__cards-goods 540 widthBlock = 564 
+// 590 ->catalogCategories__cards-goods 260 widthBlock = 284
+let widthBlock; //let widthBlock = 1272;
 
 let countBlock = 1;
 let position = 0;
@@ -374,7 +414,7 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
     par.forEach((item) => { //for each navigation element
         if (countChangeAmountBlock <= 5) {
             item.onclick = function(e) {
-
+                widthBlock = forAdaptive(); // for adaptive decrease or increase the distance the block will be moved
                 /*Why did I write this... it is unclear
                 if ((blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10)) != widthBlock) {
                     widthBlock = blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10);
@@ -394,6 +434,7 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
 
         if (countChangeAmountBlock > 5) {
             item.onclick = function(e) { //item == span from collection of created navigation elements(span span span...)
+                widthBlock = forAdaptive(); // for adaptive decrease or increase the distance the block will be moved
                 /*Why did I write this... it is unclear
                 if ((blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10)) != widthBlock) {
                     widthBlock = blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10);
@@ -466,6 +507,7 @@ function getNavElements(par) { //----
 
 //move pages by clicking on arrows
 catalogCategories__prev.onclick = function() {
+    widthBlock = forAdaptive(); // for adaptive decrease or increase the distance the block will be moved
     /*Why did I write this... it is unclear
      if ((blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10)) != widthBlock) {
          widthBlock = blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10);
@@ -530,7 +572,7 @@ catalogCategories__prev.onclick = function() {
 };
 
 catalogCategories__next.onclick = function() {
-
+    widthBlock = forAdaptive(); // for adaptive decrease or increase the distance the block will be moved
 
     /*Why did I write this... it is unclear
     if ((blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10)) != widthBlock) {
@@ -596,7 +638,20 @@ catalogCategories__next.onclick = function() {
     // }
 };
 
+function forAdaptive() {
+    if (blockCardsGoods.offsetWidth == 1248) {
+        return blockCardsGoods.offsetWidth + 24;
+    } else if (blockCardsGoods.offsetWidth == 840) {
+        return blockCardsGoods.offsetWidth + 24;
+    } else if (blockCardsGoods.offsetWidth == 740) {
+        return blockCardsGoods.offsetWidth + 24;
+    } else if (blockCardsGoods.offsetWidth == 540) {
+        return blockCardsGoods.offsetWidth + 24;
+    } else if (blockCardsGoods.offsetWidth == 260) {
+        return blockCardsGoods.offsetWidth + 24;
+    }
 
+}
 
 function choiceHowToSort() {
 
@@ -626,7 +681,7 @@ sortList.addEventListener('change', choiceHowToSort); //on line 605
 
 function sortPopularity(par) {
     removeWrapperFor6Cards(); //on line 755
-    
+
     for (let itemPar of par) {
         let fill = 0;
         let half = 0;
@@ -671,7 +726,7 @@ function sortPopularity(par) {
 function sortByName(par) {
     removeWrapperFor6Cards(); //on line 755
 
-    
+
     par.sort(function(a, b) {
 
         if (a.querySelector('h4').innerHTML.slice(0, a.querySelector('h4').innerHTML.indexOf('<span')) < b.querySelector('h4').innerHTML.slice(0, b.querySelector('h4').innerHTML.indexOf('<span'))) {

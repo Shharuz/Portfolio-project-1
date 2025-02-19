@@ -2195,7 +2195,9 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .filter 
   display: none;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
+  min-width: 1248px;
   width: 1248px;
+  overflow: hidden;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__counter-filterTwo {
   display: flex;
@@ -2264,7 +2266,6 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .catalog
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  transition: all 0.5s ease;
 }
 main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
   width: 1272px;
@@ -3633,6 +3634,7 @@ footer .footer-container .footer-container__content__copyright {
     padding-bottom: 80px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
+    min-width: 840px;
     width: 840px;
     margin: 0 auto;
   }
@@ -3647,6 +3649,7 @@ footer .footer-container .footer-container__content__copyright {
     height: 2299px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
+    width: 864px;
     column-gap: 40px;
   }
 }
@@ -4492,13 +4495,14 @@ footer .footer-container .footer-container__content__copyright {
     max-width: 209px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
+    min-width: 740px;
     width: 740px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards {
     height: 1949px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
-    width: 765px;
+    width: 764px;
     column-gap: 20px;
     row-gap: 20px;
   }
@@ -4611,6 +4615,7 @@ footer .footer-container .footer-container__content__copyright {
     right: 17%;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
+    min-width: 540px;
     width: 540px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__counter-filterTwo .counter-card #amount-card {
@@ -4634,6 +4639,9 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards {
     height: 2029px;
+  }
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
+    width: 564px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard {
     width: 260px;
@@ -5160,6 +5168,7 @@ footer .footer-container .footer-container__content__copyright {
     right: 0;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods {
+    min-width: 260px;
     width: 260px;
   }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__counter-filterTwo .counter-card #amount-card {
@@ -5171,38 +5180,41 @@ footer .footer-container .footer-container__content__copyright {
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards {
     height: 4057px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
+    width: 284px;
+  }
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard {
     padding-bottom: 24px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .allPageCard__swiperImg .swiper-wrapper {
     height: 86.8%;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .swiper-pagination-bullet {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .swiper-pagination-bullet {
     width: 53px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .allPageCard__raiting .stars {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .allPageCard__raiting .stars {
     width: 100px;
     margin-bottom: 5px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard h4 {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard h4 {
     margin: 13px 0 14px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .swiper-card__buy .price {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .swiper-card__buy .price {
     font-size: 24px;
     margin-bottom: 3px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .swiper-card__buy .swiper-card__buy__a {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .swiper-card__buy .swiper-card__buy__a {
     color: #FFFFFF;
     user-select: auto;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .swiper-card__buy .swiper-card__buy__a .swiper-card__buy__a__img {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .swiper-card__buy .swiper-card__buy__a .swiper-card__buy__a__img {
     top: 10px;
     left: 38px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .swiper-card__buy .like {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .swiper-card__buy .like {
     padding-left: 23px;
   }
-  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .allPageCard .swiper-card__buy .like img {
+  main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards .allPageCard .swiper-card__buy .like img {
     width: 20px;
     height: 20px;
   }

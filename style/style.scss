@@ -2843,8 +2843,9 @@ main {
                 }
 
                 .catalogCategories__cards-goods {
+                    min-width: 1248px;
                     width: 1248px;
-                    //overflow: hidden;
+                    overflow: hidden;
 
                     .catalogCategories__cards-goods__counter-filterTwo {
                         display: flex;
@@ -2922,7 +2923,7 @@ main {
                         display: flex;
                         flex-wrap: wrap;
                         flex-direction: column;
-                        transition: $main__transition;
+                        //transition: $main__transition;
 
                         .wrapperFor6Cards {
                             width: 1272px;
@@ -4753,6 +4754,7 @@ footer {
             .container {
                 .catalogCategories__wrapperForFilter {
                     .catalogCategories__cards-goods {
+                        min-width: 840px;
                         width: 840px;
                         margin: 0 auto;
 
@@ -4772,6 +4774,7 @@ footer {
 
                             //column-gap: 40px;
                             .wrapperFor6Cards {
+                                width: 864px;
                                 column-gap: 40px;
                             }
                         }
@@ -6059,6 +6062,7 @@ footer {
                 //.radio-category{}
                 .catalogCategories__wrapperForFilter {
                     .catalogCategories__cards-goods {
+                        min-width: 740px;
                         width: 740px;
 
                         .catalogCategories__cards-goods__wrapperForCards {
@@ -6066,7 +6070,7 @@ footer {
                             height: 1949px;
 
                             .wrapperFor6Cards {
-                                width: 765px;
+                                width: 764px;
                                 column-gap: 20px;
                                 row-gap: 20px;
 
@@ -6341,6 +6345,7 @@ footer {
                     }
 
                     .catalogCategories__cards-goods {
+                        min-width: 540px;
                         width: 540px;
 
                         .catalogCategories__cards-goods__counter-filterTwo {
@@ -6375,6 +6380,8 @@ footer {
                             height: 2029px;
 
                             .wrapperFor6Cards {
+                                width: 564px;
+
                                 .allPageCard {
                                     width: 260px;
                                     height: 656px;
@@ -7281,6 +7288,7 @@ footer {
                     }
 
                     .catalogCategories__cards-goods {
+                        min-width: 260px;
                         width: 260px;
 
                         .catalogCategories__cards-goods__counter-filterTwo {
@@ -7298,61 +7306,66 @@ footer {
                         .catalogCategories__cards-goods__wrapperForCards {
                             height: 4057px;
 
-                            .allPageCard {
-                                padding-bottom: 24px;
+                            .wrapperFor6Cards {
+                                width: 284px;
 
-                                .allPageCard__swiperImg {
-                                    .swiper-wrapper {
-                                        height: 86.8%;
-                                    }
+                                .allPageCard {
+                                    padding-bottom: 24px;
 
-                                    .swiper-card__swiperImg-pagination {
-                                        .swiper-pagination-bullet {
-                                            width: 53px;
+                                    .allPageCard__swiperImg {
+                                        .swiper-wrapper {
+                                            height: 86.8%;
                                         }
-                                    }
-                                }
 
-                                .allPageCard__raiting {
-                                    .stars {
-                                        width: 100px;
-                                        margin-bottom: 5px;
-                                    }
-                                }
-
-                                h4 {
-                                    margin: 13px 0 14px;
-                                }
-
-                                p {}
-
-                                .swiper-card__buy {
-                                    .price {
-                                        font-size: 24px;
-                                        margin-bottom: 3px;
-                                    }
-
-                                    .swiper-card__buy__a {
-                                        color: $title-light;
-                                        user-select: auto;
-
-                                        .swiper-card__buy__a__img {
-                                            top: 10px;
-                                            left: 38px;
+                                        .swiper-card__swiperImg-pagination {
+                                            .swiper-pagination-bullet {
+                                                width: 53px;
+                                            }
                                         }
                                     }
 
-                                    .like {
-                                        padding-left: 23px;
-
-                                        img {
-                                            width: 20px;
-                                            height: 20px;
+                                    .allPageCard__raiting {
+                                        .stars {
+                                            width: 100px;
+                                            margin-bottom: 5px;
                                         }
                                     }
-                                }
 
+                                    h4 {
+                                        margin: 13px 0 14px;
+                                    }
+
+                                    p {}
+
+                                    .swiper-card__buy {
+                                        .price {
+                                            font-size: 24px;
+                                            margin-bottom: 3px;
+                                        }
+
+                                        .swiper-card__buy__a {
+                                            color: $title-light;
+                                            user-select: auto;
+
+                                            .swiper-card__buy__a__img {
+                                                top: 10px;
+                                                left: 38px;
+                                            }
+                                        }
+
+                                        .like {
+                                            padding-left: 23px;
+
+                                            img {
+                                                width: 20px;
+                                                height: 20px;
+                                            }
+                                        }
+                                    }
+
+                                }
                             }
+
                         }
                     }
                 }
