@@ -8,31 +8,34 @@ const inputManufacturerWeight = document.querySelectorAll('.filter__form input[t
 let countCard = document.querySelector('#amount-card'); //card counting element
 let sortList = document.querySelector('#sortingList'); //card sorting element
 
+//there is a main filtering (by category) and there is an additional one (by manufacturer, weight and price), additional filtering is based on the main one
 
 //console.log(blockCardsGoods.offsetWidth);
 //console.log(parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10));
+
+//adaptive if you are not on the first slide
 let originalWidth = blockCardsGoods.offsetWidth;
 let currentWidth = originalWidth;
-let step = 408;
-window.addEventListener('resize', alertWidth);
+let step = 408;//step in pixels by which the slide is shifted according to the translateX()
+window.addEventListener('resize', adjustingSlideLayout);//each time the browser window is changed, the function is launched
 
-function alertWidth() {
-    if (currentWidth != blockCardsGoods.offsetWidth && currentWidth > blockCardsGoods.offsetWidth) {
+function adjustingSlideLayout() {
+    if (currentWidth != blockCardsGoods.offsetWidth && currentWidth > blockCardsGoods.offsetWidth) {//will only work when the width of blockCardsGoods changes 
         currentWidth = blockCardsGoods.offsetWidth;
-        if(currentWidth == 740){
+        if(currentWidth == 740){//will change the step value when changing the browser window size
             step = 100;
         }else if( currentWidth == 540 ){
             step = 200;
         }else if( currentWidth == 260 ){
             step = 280 
         }
-        console.log(currentWidth);
-        console.log(step);
-        let ammountPage = Number(navCardsGoods.querySelector('.active').innerHTML);
-        //console.log(ammountPage);
-        let currentTranslateX = parseInt(wrapperForCards.style.transform.slice(11, -3), 10);
-        wrapperForCards.style.transform = `translateX(${(currentTranslateX + (step * (ammountPage - 1) ))  + 'px'})`; 
-    }else if ( currentWidth != blockCardsGoods.offsetWidth && currentWidth < blockCardsGoods.offsetWidth ){
+        //console.log(currentWidth);
+        //console.log(step);
+        let pageNumber = Number(navCardsGoods.querySelector('.active').innerHTML);//find out which slide is selected
+        //console.log(pageNumber);
+        let currentTranslateX = parseInt(wrapperForCards.style.transform.slice(11, -3), 10);//get current values of translateX()
+        wrapperForCards.style.transform = `translateX(${(currentTranslateX + (step * (pageNumber - 1) ))  + 'px'})`; //adjust the slide position according to the selected page and browser window size
+    }else if ( currentWidth != blockCardsGoods.offsetWidth && currentWidth < blockCardsGoods.offsetWidth ){//everything is exactly the same as described above, but the browser window size increases
         currentWidth = blockCardsGoods.offsetWidth;
         if(currentWidth == 740){
             step = 200;
@@ -41,18 +44,18 @@ function alertWidth() {
         }else if(currentWidth == 1248){
             step = 408;
         }
-        console.log(currentWidth);
-        console.log(step);
-        let ammountPage = Number(navCardsGoods.querySelector('.active').innerHTML);
-        //console.log(ammountPage);
+        //console.log(currentWidth);
+        //console.log(step);
+        let pageNumber = Number(navCardsGoods.querySelector('.active').innerHTML);
+        //console.log(pageNumber);
         let currentTranslateX = parseInt(wrapperForCards.style.transform.slice(11, -3), 10);
-        wrapperForCards.style.transform = `translateX(${(currentTranslateX - (step * (ammountPage - 1) ))  + 'px'})`; 
+        wrapperForCards.style.transform = `translateX(${(currentTranslateX - (step * (pageNumber - 1) ))  + 'px'})`; 
     }
 
 };
 
 
-function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a specific category from the index.html catalogMainPage.html and filtering cards
+function changeCheckedRadioCatalogCategoriesAndFilter() { //main filtering /transition to a specific category from the index.html catalogMainPage.html and filtering cards
 
     for (let item of category) { //will go through all categories and assign a "checked" to the one with which the link address matches
 
@@ -136,16 +139,16 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //transition to a spec
 
 
 
-    choiceHowToSort();
+    choiceHowToSort();//on line 659
 
-    createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 301
+    createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 341 / createCollectionFilteredCards() on line 185
 
 
 };
 
 
-function filterCard(e) {
-    removeWrapperFor6Cards(); //on line 755
+function filterCard(e) { //main filtering
+    removeWrapperFor6Cards();//on line 821 
 
     for (let item of allCards) {
         if (item.getAttribute('data-filter') == e.target.getAttribute("id")) { //filter relative data-filter
@@ -159,7 +162,7 @@ function filterCard(e) {
 
 
 
-    wrapperForCards.style.transform = 'translateX(0)';
+    wrapperForCards.style.transform = 'translateX(0)';     //resets wrapperForCards position and removes nav elements
     let elementNav = navCardsGoods.querySelectorAll('span');
     elementNav.forEach((item) => {
         item.remove();
@@ -167,18 +170,18 @@ function filterCard(e) {
 
 
 
-    choiceHowToSort();
+    choiceHowToSort();//on line 659
 
-    createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 301
+    createSliderNavElemAndMove(createCollectionFilteredCards()); //on line 341 / createCollectionFilteredCards() on line 185
 
 };
 
 category.forEach((item) => {
-    item.addEventListener('click', filterCard); //on line 121
+    item.addEventListener('click', filterCard); 
 });
 
 
-let collectionOfFilteredCardForAll = [];
+let collectionOfFilteredCardForAll = [];// for all function
 
 function createCollectionFilteredCards() {
     collectionOfFilteredCardForAll = [];
@@ -195,13 +198,13 @@ const btnApplyFilter = document.querySelector('#apply-filter'); //btn filterByMa
 const priceRangeInput = document.querySelectorAll('.filter__form__price-range input[type="number"]') //block price range
 
 
-function filterByManufacturerWeightPrice() {
-    removeWrapperFor6Cards();
-    let minPrice = priceRangeInput[0].value;
+function filterByManufacturerWeightPrice() {//additional filtering
+    removeWrapperFor6Cards();//on line 821
+    let minPrice = priceRangeInput[0].value; // get initial price value
     let maxPrice = priceRangeInput[1].value;
 
-    for (let itemCard of collectionOfFilteredCardForAll) {
-        if (itemCard.classList.contains('hide')) {
+    for (let itemCard of collectionOfFilteredCardForAll) {//collection of cards as a result of the main filtering
+        if (itemCard.classList.contains('hide')) { //list items Manufacturer and Price, not selected
             itemCard.classList.remove('hide')
         }
     };
@@ -209,16 +212,16 @@ function filterByManufacturerWeightPrice() {
     let manufacturerAll = document.querySelectorAll('#manufacturer input[type=checkbox]');
     let weightInGramsAll = document.querySelectorAll('#weightInGrams input[type=checkbox]');
 
-    let checkInputCheckedInManufacturerAllAndweightInGramsAll = function() { //check that at least 1 element is selected in both manufacturer and weightInGrams
-        let countManufact = 0;
+    let checkInputCheckedInManufacturerAllAndweightInGramsAll = function() { //checks if 1(or more) item is selected in each list(first condition), 
+        let countManufact = 0;                                                //or 1(or more) in only one list(second condition)
         let countWeight = 0;
-        for (let itemManufact of manufacturerAll) {
+        for (let itemManufact of manufacturerAll) {//Counts the selected items
             if (itemManufact.checked) {
                 countManufact++
             }
         };
 
-        for (let itemWeight of weightInGramsAll) {
+        for (let itemWeight of weightInGramsAll) {//Counts the selected items
             if (itemWeight.checked) {
                 countWeight++
             }
@@ -232,18 +235,18 @@ function filterByManufacturerWeightPrice() {
     };
 
 
-    if (checkInputCheckedInManufacturerAllAndweightInGramsAll() == 1) {
+    if (checkInputCheckedInManufacturerAllAndweightInGramsAll() == 1) {//(first condition)
         for (let itemCard of collectionOfFilteredCardForAll) {
             itemCard.classList.add('hide');
         };
 
-        for (let itemManufact of manufacturerAll) {
-            if (itemManufact.checked) {
+        for (let itemManufact of manufacturerAll) {//an element from the manufacturer list is selected, then its ID is compared with the data-manufacturer-filter attribute of the card
+            if (itemManufact.checked) {            
                 for (let itemCard of collectionOfFilteredCardForAll) {
                     if (itemManufact.id == itemCard.getAttribute('data-manufacturer-filter')) {
                         itemCard.classList.remove('hide');
                     }
-                    for (let itemWeight of weightInGramsAll) {
+                    for (let itemWeight of weightInGramsAll) {//and here it will hide cards for which itemCard.querySelector('.weightInGrams').innerHTML.slice(0, -2) matches the ID of UNSELECTED elements from the list
                         if (!itemWeight.checked) {
                             for (let itemCard of collectionOfFilteredCardForAll) {
                                 if (itemWeight.id == itemCard.querySelector('.weightInGrams').innerHTML.slice(0, -2)) {
@@ -257,7 +260,7 @@ function filterByManufacturerWeightPrice() {
             };
         };
 
-        let collectOfFilteredCardOfManufactAndWeight = [];
+        let collectOfFilteredCardOfManufactAndWeight = [];  //creates a new collection for correct filtering by price
         for (let itemCard of allCards) {
             if (!itemCard.classList.contains('hide')) {
                 collectOfFilteredCardOfManufactAndWeight.push(itemCard)
@@ -267,7 +270,7 @@ function filterByManufacturerWeightPrice() {
         filterPrice(collectOfFilteredCardOfManufactAndWeight);
 
 
-    } else if (checkInputCheckedInManufacturerAllAndweightInGramsAll() == 2) {
+    } else if (checkInputCheckedInManufacturerAllAndweightInGramsAll() == 2) {//(second condition)
         for (let itemCard of collectionOfFilteredCardForAll) {
             itemCard.classList.add('hide');
         };
@@ -291,7 +294,7 @@ function filterByManufacturerWeightPrice() {
             }
         }
 
-        let collectOfFilteredCardOfManufactAndWeight = [];
+        let collectOfFilteredCardOfManufactAndWeight = [];//creates a new collection for correct filtering by price
         for (let itemCard of allCards) {
             if (!itemCard.classList.contains('hide')) {
                 collectOfFilteredCardOfManufactAndWeight.push(itemCard)
@@ -300,13 +303,13 @@ function filterByManufacturerWeightPrice() {
 
         filterPrice(collectOfFilteredCardOfManufactAndWeight);
     } else {
-        filterPrice(collectionOfFilteredCardForAll)
+        filterPrice(collectionOfFilteredCardForAll);//when nothing is selected
     }
 
     function filterPrice(par) {
         for (let itemCard of par) {
 
-            if (parseInt(itemCard.querySelector('.price').innerHTML) > minPrice && parseInt(itemCard.querySelector('.price').innerHTML) < maxPrice) { //the comparison is with the price indicated on the card /minPrice maxPrice on line 166, 167
+            if (parseInt(itemCard.querySelector('.price').innerHTML) > minPrice && parseInt(itemCard.querySelector('.price').innerHTML) < maxPrice) { //the comparison is with the price indicated on the card /minPrice maxPrice on line 203, 204
                 itemCard.classList.remove('hide');
             } else {
                 itemCard.classList.add('hide');
@@ -315,22 +318,22 @@ function filterByManufacturerWeightPrice() {
 
     }
 
-    let collectAllFiltering = [];
+    let collectAllFiltering = [];       //collection of cards that passed through all filters(category,manufacturer,weight,price)
     for (let itemCard of allCards) {
         if (!itemCard.classList.contains('hide')) {
             collectAllFiltering.push(itemCard)
         };
     };
 
-    wrapperForCards.style.transform = 'translateX(0)'; //resets wrapperForCards position and removes nav elements, creates new ones on line 288
+    wrapperForCards.style.transform = 'translateX(0)'; //resets wrapperForCards position and removes nav elements
     let elementNav = navCardsGoods.querySelectorAll('span');
     elementNav.forEach((item) => {
         item.remove();
     });
 
 
-    choiceHowToSort();
-    createSliderNavElemAndMove(collectAllFiltering);
+    choiceHowToSort();//on line 659
+    createSliderNavElemAndMove(collectAllFiltering);//on line 342
 
 };
 
@@ -374,7 +377,7 @@ function createSliderNavElemAndMove(par) {
             } else if (i == 4) { //add ellipsis to the fourth element
                 let navElem = document.createElement('span');
                 navElem.append('...');
-                catalogCategories__next.before(navElem); //in the fifth element add requiredNumber(on line 304), and in the browser it will look like nav element of the last page
+                catalogCategories__next.before(navElem); //in the fifth element add requiredNumber(on line 345), and in the browser it will look like nav element of the last page
                 let navElemLast = document.createElement('span');
                 navElemLast.append(`${requiredNumber}`);
                 catalogCategories__next.before(navElemLast);
@@ -386,11 +389,12 @@ function createSliderNavElemAndMove(par) {
 
 
     let collectionNavElementsSortCard = navCardsGoods.querySelectorAll('span'); //takes all navigation elements
-    getNavElements(collectionNavElementsSortCard); //on line 460
+    getNavElements(collectionNavElementsSortCard); //on line 506
 
-    callbackAmountBlock(requiredNumber); //on line 367
 
-    moveSlideOnClickNavElem(collectionNavElementsSortCard);
+    callbackAmountBlock(requiredNumber);// on line 410
+
+    moveSlideOnClickNavElem(collectionNavElementsSortCard);//on line 415
 }
 
 //1920 ->catalogCategories__cards-goods 1248 widthBlock = 1272 // 1800 ->catalogCategories__cards-goods 840 widthBlock = 864 
@@ -400,8 +404,8 @@ let widthBlock; //let widthBlock = 1272;
 
 let countBlock = 1;
 let position = 0;
-let countChangeAmountBlock; //--------------- equals requiredNumber(on line 304)
-//                                          |  - This is necessary for moveSlideOnClickNavElem(on line 372), catalogCategories__prev.onclick(on line 467) and catalogCategories__next.onclick(on line 529) to work.
+let countChangeAmountBlock; //--------------- equals requiredNumber()
+//                                          |  - This is necessary for moveSlideOnClickNavElem(), catalogCategories__prev.onclick() and catalogCategories__next.onclick() to work.
 //                                          |
 function callbackAmountBlock(par) { //-------
 
@@ -425,7 +429,7 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
 
                 //example: 3 nav elements, 1st block is displayed, 1st nav element with class 'active', translateX(0). Click on 3rd element
                 item.parentElement.querySelector('.active').classList.remove('active');
-                wrapperForCards.style.transform = `translateX(${(-widthBlock * (e.target.innerHTML - 1) ) + 'px'})`; //widthBlock(on line 360)
+                wrapperForCards.style.transform = `translateX(${(-widthBlock * (e.target.innerHTML - 1) ) + 'px'})`; //widthBlock
                 //translateX( -1272 * ( (e.target.innerHTML == 3) - 1) == -1272 * 2 == -2544px will shift to the left)
                 e.target.classList.add('active');
             }
@@ -447,7 +451,7 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
 
                 } */
 
-                if (!(e.target.innerHTML == '...')) { //same as on line 387
+                if (!(e.target.innerHTML == '...')) { 
                     item.parentElement.querySelector('.active').classList.remove('active');
                     wrapperForCards.style.transform = `translateX(${(-widthBlock * (e.target.innerHTML - 1)) + 'px'})`;
                     e.target.classList.add('active');
@@ -466,13 +470,13 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
                 };
                 if (e.target === par[3] && e.target.innerHTML == '...') { //there is an ellipsis in element 4
                     ++par[2].innerHTML; //3 element ++
-                    wrapperForCards.style.transform = `translateX(${(-widthBlock * (par[2].innerHTML - 1)) + 'px'})`; //same as on line 387
+                    wrapperForCards.style.transform = `translateX(${(-widthBlock * (par[2].innerHTML - 1)) + 'px'})`; 
                     item.parentElement.querySelector('.active').classList.remove('active');
                     par[2].classList.add('active');
 
                 } else if (e.target === par[1] && e.target.innerHTML == '...') { //there is an ellipsis in element 2
                     --par[2].innerHTML; //3 element --
-                    wrapperForCards.style.transform = `translateX(${(-widthBlock * (par[2].innerHTML - 1)) + 'px'})`; //same as on line 387
+                    wrapperForCards.style.transform = `translateX(${(-widthBlock * (par[2].innerHTML - 1)) + 'px'})`; 
                     item.parentElement.querySelector('.active').classList.remove('active');
                     par[2].classList.add('active');
                 };
@@ -498,7 +502,7 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
 };
 
 let allNavElements; //---------------
-//                                  | - This is necessary for catalogCategories__prev.onclick(on line 467) and catalogCategories__next.onclick(on line 529) to work.
+//                                  | - This is necessary for catalogCategories__prev.onclick() and catalogCategories__next.onclick() to work.
 function getNavElements(par) { //----
     allNavElements = par;
 
@@ -542,13 +546,13 @@ catalogCategories__prev.onclick = function() {
 
     if (countChangeAmountBlock > 5) {
         let navElemActive;
-        for (let item of allNavElements) {
-            if (item.classList.contains('active')) { //same as on line 557
+        for (let item of allNavElements) {//same as on line 536
+            if (item.classList.contains('active')) { 
                 navElemActive = item;
             }
         };
 
-        if (!(navElemActive.previousElementSibling == catalogCategories__prev) && !(navElemActive.innerHTML < (countChangeAmountBlock - 1) && navElemActive.innerHTML > 3)) { //same as on line 561, 562
+        if (!(navElemActive.previousElementSibling == catalogCategories__prev) && !(navElemActive.innerHTML < (countChangeAmountBlock - 1) && navElemActive.innerHTML > 3)) { 
 
             navElemActive.previousElementSibling.classList.add('active'); //active element < value (last element - 1)  and active element > 3
             navElemActive.classList.remove('active');
@@ -611,19 +615,19 @@ catalogCategories__next.onclick = function() {
     if (countChangeAmountBlock > 5) {
         let navElemActive;
         for (let item of allNavElements) {
-            if (item.classList.contains('active')) { //same as on line 557
+            if (item.classList.contains('active')) { //same as on line 603
                 navElemActive = item;
             }
         };
 
 
-        if (!(navElemActive.nextElementSibling == catalogCategories__next) && !(navElemActive.innerHTML > 2 && navElemActive.innerHTML < (countChangeAmountBlock - 2))) { //same as on line 561, 562
+        if (!(navElemActive.nextElementSibling == catalogCategories__next) && !(navElemActive.innerHTML > 2 && navElemActive.innerHTML < (countChangeAmountBlock - 2))) { 
             navElemActive.nextElementSibling.classList.add('active'); //active element > 2 and active element < value (last element - 2)
             navElemActive.classList.remove('active');
 
         };
 
-        if (position < -widthBlock * 2 && position > -widthBlock * (countChangeAmountBlock - 2)) { // value position on line 550
+        if (position < -widthBlock * 2 && position > -widthBlock * (countChangeAmountBlock - 2)) { // 
             ++allNavElements[2].innerHTML //do ++ in range from -3816px to -19080px(wrapperForCards: transform translateX()) / in browser <- 1 ... 4-15(range) ... 18 ->
         }
         if (allNavElements[2].innerHTML == countChangeAmountBlock - 2) {
@@ -638,7 +642,7 @@ catalogCategories__next.onclick = function() {
     // }
 };
 
-function forAdaptive() {
+function forAdaptive() {//changes the step by which the slide moves on different browser window sizes
     if (blockCardsGoods.offsetWidth == 1248) {
         return blockCardsGoods.offsetWidth + 24;
     } else if (blockCardsGoods.offsetWidth == 840) {
@@ -655,7 +659,7 @@ function forAdaptive() {
 
 function choiceHowToSort() {
 
-    collectionCardsForSorting = [];
+    collectionCardsForSorting = [];//collection of cards that passed through all filters
     for (let itemallCards of allCards) {
         if (!itemallCards.classList.contains('hide')) {
             collectionCardsForSorting.push(itemallCards)
@@ -677,10 +681,10 @@ function choiceHowToSort() {
 
 };
 
-sortList.addEventListener('change', choiceHowToSort); //on line 605
+sortList.addEventListener('change', choiceHowToSort); 
 
 function sortPopularity(par) {
-    removeWrapperFor6Cards(); //on line 755
+    removeWrapperFor6Cards(); //on line 822
 
     for (let itemPar of par) {
         let fill = 0;
@@ -719,12 +723,12 @@ function sortPopularity(par) {
         //thus, the cards are rearranged if the rating of the second card is greater than the rating of the first card, etc.
     };
 
-    applySorting(par); //on line 739
+    applySorting(par); //on line 803
 
 };
 
 function sortByName(par) {
-    removeWrapperFor6Cards(); //on line 755
+    removeWrapperFor6Cards(); //on line 822
 
 
     par.sort(function(a, b) {
@@ -740,11 +744,11 @@ function sortByName(par) {
 
 
 
-    applySorting(par); //on line 739
+    applySorting(par); //on line 803
 };
 
 function sortByPriceIncrease(par) {
-    removeWrapperFor6Cards(); //on line 755
+    removeWrapperFor6Cards(); //on line 822
 
     par.sort(function(a, b) {
 
@@ -757,12 +761,12 @@ function sortByPriceIncrease(par) {
         return 0;
     });
 
-    applySorting(par); //on line 739
+    applySorting(par); //on line 803
 
 }
 
 function sortByPriceDecrease(par) {
-    removeWrapperFor6Cards(); //on line 755
+    removeWrapperFor6Cards(); //on line 822
     par.sort(function(a, b) {
 
         if (+a.querySelector('.price').innerHTML.slice(0, -2) > +b.querySelector('.price').innerHTML.slice(0, -2)) {
@@ -774,12 +778,12 @@ function sortByPriceDecrease(par) {
         return 0;
     });
 
-    applySorting(par); //on line 739
+    applySorting(par); //on line 803
 
 }
 
 function sortByDateReceived(par) {
-    removeWrapperFor6Cards(); //on line 755
+    removeWrapperFor6Cards(); //on line 822
 
 
     par.sort(function(a, b) {
@@ -792,30 +796,30 @@ function sortByDateReceived(par) {
         }
         return 0;
     });
-    applySorting(par); //on line 739
+    applySorting(par); //on line 803
 
 }
 
 function applySorting(par) {
     if (par.length > 0) {
 
-        let amountAdditionalWrappers = Math.ceil(par.length / 6);
+        let amountAdditionalWrappers = Math.ceil(par.length / 6); // calculates the amount of wrappers
         //console.log(amountAdditionalWrappers);
         let additionalWrapper;
-        for (let i = 0; i < par.length; ++i) {
+        for (let i = 0; i < par.length; ++i) {//iterates over the cards 
 
-            if (i % 6 == 0) {
-                additionalWrapper = document.createElement('div');
-                additionalWrapper.className = "wrapperFor6Cards";
-                wrapperForCards.append(additionalWrapper);
+            if (i % 6 == 0) {                 //and after every 6 cards
+                additionalWrapper = document.createElement('div');//creates a div
+                additionalWrapper.className = "wrapperFor6Cards";//with the class wrapperFor6Cards
+                wrapperForCards.append(additionalWrapper);       //This div adds to wrapperForCards (on line 4)
             }
-            additionalWrapper.append(par[i]);
+            additionalWrapper.append(par[i]);//Inside the div, it adds a card
         }
     }
 
 }
 
-function removeWrapperFor6Cards() { // WrapperFor6Cards == line 747
+function removeWrapperFor6Cards() { 
     if (wrapperForCards.querySelectorAll(".wrapperFor6Cards").length > 0) { //extract product cards from WrapperFor6Cards and delete WrapperFor6Cards
 
         collectM = wrapperForCards.querySelectorAll(".wrapperFor6Cards");
@@ -831,7 +835,7 @@ function removeWrapperFor6Cards() { // WrapperFor6Cards == line 747
     };
 }
 
-btnApplyFilter.addEventListener('click', function() { filterByManufacturerWeightPrice() }); //on line 163
+btnApplyFilter.addEventListener('click', function() { filterByManufacturerWeightPrice() }); 
 
 
 
