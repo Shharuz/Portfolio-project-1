@@ -26,6 +26,6 @@ function hideFilter(e) {//rotate Svg
     
 };
 
-arrowSvgManufactWeight.forEach( (item) =>{//starts hideFilter on click svg
+arrowSvgManufactWeight.forEach( (item) =>{//starts hideFilter() on click svg
     item.addEventListener('click', hideFilter)
 } );
