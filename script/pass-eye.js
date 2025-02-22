@@ -27,12 +27,12 @@ function open(e) {
 
     //Now hides/shows only the input that relates to the pressed eye
 
-    if (e.target.previousElementSibling.type == 'password') {
-        e.target.previousElementSibling.type = 'text';
-        e.target.classList.remove('hide-eye')
+    if (e.target.previousElementSibling.type == 'password') {//when clicking on the eye if the input is of type 'password'
+        e.target.previousElementSibling.type = 'text';       //then replace with type 'text'
+        e.target.classList.remove('hide-eye')                //open eye through class removal
     } else {
-        e.target.previousElementSibling.type = 'password';
-        e.target.classList.add('hide-eye');
+        e.target.previousElementSibling.type = 'password';//otherwise assign the type 'password' (replaces symbols with dots)
+        e.target.classList.add('hide-eye');               //and will close the eye as a result of adding the class
     }
 
 };
@@ -43,14 +43,14 @@ eye.forEach((elem) => {
 
 
 btnPassCheck.addEventListener('click', function(e) {
-    if (!(twoInputPass[0].value == twoInputPass[1].value)) {
-        e.preventDefault();
-        messagePassMismatch.innerHTML = 'Несовпадение паролей';
+    if (!(twoInputPass[0].value == twoInputPass[1].value)) { //if the value of the first field does not match the value of the second field
+        e.preventDefault();                                  //then prevent the form from being submitted
+        messagePassMismatch.innerHTML = 'Несовпадение паролей';//and will display a message about the password mismatch
     };
 
 });
 
-twoInputPass.forEach((item) => {
+twoInputPass.forEach((item) => {          //with each new entry it will delete the message about password mismatch
     item.addEventListener('input', () => {
         if (messagePassMismatch.innerHTML) {
             messagePassMismatch.innerHTML = '';
