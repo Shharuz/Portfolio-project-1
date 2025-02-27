@@ -47,7 +47,7 @@ const closeBtnPolitics = document.querySelector('.politic-button-close');
 function openModal(modal, item) {//parameter modal == on line 15 / parameter item == login or registr and etc. on line 16
     if (navigator.userAgent.indexOf("Firefox") != -1) { //for textareaGrow.js to work in Firefox browser
          if(item.classList.contains('modal__ask-a-question')){
-            item.querySelector('textarea').setAttribute("Cols", `25`);
+            item.querySelector('textarea').setAttribute("Cols", `24`);
             
          }
      } 

@@ -21,10 +21,12 @@ const autoslide = () => {//the slider automatically reaches the desired position
     let valDifference = firstElemWidth - positionDiff;
 
 
-    if (slider.scrollLeft > prevScrollLeft) {//alignment when moving right
-        return slider.scrollLeft += positionDiff > firstElemWidth / 3 ? valDifference : -positionDiff;
-    }
-    slider.scrollLeft -= positionDiff > firstElemWidth / 3 ? valDifference : -positionDiff;//alignment when moving left
+    if (slider.scrollLeft > prevScrollLeft) {//aligns when you drag a slide from right to left
+        return slider.scrollLeft += positionDiff > firstElemWidth / 3 ? valDifference : -positionDiff;//while dragging a slide if true, then there will be a value of valDifference and transition to the next slide
+    }                                                                                                 //while dragging a slide if false, then the value will be -positionDiff and the slide will return to its original position
+    slider.scrollLeft -= positionDiff > firstElemWidth / 3 ? valDifference : -positionDiff;//aligns when you drag a slide from left to right
+    //while dragging a slide, if true, then there will be a value of valDifference and transition to the next slide
+    //while dragging a slide, if false, then the value will be -positionDiff and the slide will return to its original position
 }
 
 const dragStart = (e) => {
