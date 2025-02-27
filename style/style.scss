@@ -4338,15 +4338,17 @@ main {
 
     .widget__ul {
         list-style-type: none;
-        height: 320px;
+        max-height: 0px;
+       
         position: relative;
         bottom: -26px;
-        transition: height 1s;
+        transition: max-height 1s;
         overflow: hidden;
+        padding-bottom: 26px;
 
-
-        &.hide {
-            height: 0px;
+        &.visibleWidgetlist {
+            max-height: 320px;
+            transition: max-height 1s; 
         }
 
 
