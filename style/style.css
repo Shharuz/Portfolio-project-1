@@ -4763,9 +4763,10 @@ footer .footer-container .footer-container__content__copyright {
     right: 0;
     padding: 0 0 0 10px;
     transition: all 0.5s ease;
-  }
-  header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item .header__nav__main-list__item__sub-list__item__last-list .list-wrapper {
     overflow: hidden;
+    /*.list-wrapper {
+        overflow: hidden;
+    }*/
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item .open-list {
     grid-template-rows: 1fr;

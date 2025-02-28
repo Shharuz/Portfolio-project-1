@@ -6543,10 +6543,11 @@ footer {
                                         right: 0;
                                         padding: 0 0 0 10px;
                                         transition: $main__transition;
+                                        overflow: hidden;
 
-                                        .list-wrapper {
+                                        /*.list-wrapper {
                                             overflow: hidden;
-                                        }
+                                        }*/
                                     }
 
                                     .open-list {
