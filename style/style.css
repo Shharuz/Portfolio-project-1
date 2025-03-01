@@ -1915,22 +1915,28 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites h2 {
   margin-bottom: 39px;
   line-height: 1.395;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p {
-  line-height: 1.496;
+main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li {
+  display: grid;
+  grid-template-columns: 246px 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  color: #767676;
+  line-height: 1.4;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p:first-child {
-  width: 33.9%;
+main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li:not(:last-child) {
+  margin-bottom: 16px;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p:last-child {
+main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li span {
   color: #0D0D0D;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block .aboutUs-requisites-map__requisites__block__item,
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block .aboutUs-requisites-map__requisites__block-adress__item,
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block-adress .aboutUs-requisites-map__requisites__block__item,
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block-adress .aboutUs-requisites-map__requisites__block-adress__item {
-  display: flex;
-  margin-bottom: 14px;
-  column-gap: 5px;
+main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
+  margin-top: 16px;
+}
+main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li {
+  align-items: start;
+}
+main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li span {
+  grid-column-start: 2;
 }
 main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites a {
   width: 320px;
@@ -3903,22 +3909,20 @@ footer .footer-container .footer-container__content__copyright {
     letter-spacing: 0.5px;
     line-height: 1.365;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p {
-    line-height: 1.428;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li {
+    grid-template-columns: 1fr;
+    grid-template-rows: 22px 1fr;
+    align-items: start;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p:first-child {
-    width: auto;
-    margin-bottom: 8px;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li span {
+    margin-top: 7px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block {
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
     display: grid;
-    grid-template-columns: 46% 50%;
+    grid-template-columns: 235px 220px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block .aboutUs-requisites-map__requisites__block__item {
-    display: block;
-  }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block-adress .aboutUs-requisites-map__requisites__block-adress__item {
-    display: block;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li span {
+    grid-column-start: 1;
   }
   main .catalogCategories .container .catalogCategories__select-catagory label {
     height: 53px;
@@ -4446,33 +4450,22 @@ footer .footer-container .footer-container__content__copyright {
   main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites h2 {
     text-align: center;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p {
-    line-height: 1.47;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul {
+    width: 473px;
+    margin: 0 auto;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p:first-child {
-    margin-bottom: 0;
-  }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block {
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
     display: block;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block .aboutUs-requisites-map__requisites__block__item {
-    display: flex;
-    width: 473px;
-    margin: 0 auto 14px;
-    column-gap: 8px;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li {
+    grid-template-columns: 227px 1fr;
+    grid-template-rows: 1fr;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block .aboutUs-requisites-map__requisites__block__item p:first-child {
-    width: 220px;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li span {
+    margin-top: 0;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block .aboutUs-requisites-map__requisites__block__item p:last-child {
-    width: 220px;
-  }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block-adress .aboutUs-requisites-map__requisites__block-adress__item {
-    width: 471px;
-    margin: 0 auto 14px;
-  }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block-adress .aboutUs-requisites-map__requisites__block-adress__item p:first-child {
-    margin-bottom: 8px;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
+    margin-top: 11px;
   }
   main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites a {
     margin: 39px auto 0;
@@ -4675,7 +4668,7 @@ footer .footer-container .footer-container__content__copyright {
     top: -4px;
     right: -10px;
     padding-left: 11px;
-    transition: all 0.5s ease;
+    transition: transform 0.8s;
   }
   header .header-container .header__nav .arrow-rigth-wrapper .arrow-right {
     border: solid #73C167;
@@ -4697,6 +4690,7 @@ footer .footer-container .footer-container__content__copyright {
     padding: 1rem 1.5rem;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item {
+    overflow: hidden;
     align-items: flex-start;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child,
@@ -4731,7 +4725,7 @@ footer .footer-container .footer-container__content__copyright {
     top: -4px;
     right: -10px;
     padding-left: 11px;
-    transition: all 0.5s ease;
+    transition: transform 0.8s;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .arrow-rigth-wrapper .arrow-right {
     border: solid #73C167;
@@ -4748,28 +4742,28 @@ footer .footer-container .footer-container__content__copyright {
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item:after {
     display: none;
   }
-  header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item:hover .header__nav__main-list__item__sub-list__item__last-list {
-    display: grid;
+  header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item:hover {
+    /*.header__nav__main-list__item__sub-list__item__last-list {
+        display: block;
+    }*/
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item a {
     width: 90%;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item .header__nav__main-list__item__sub-list__item__last-list {
-    display: grid;
-    grid-template-rows: 0fr;
+    display: block;
     position: relative;
     width: auto;
     top: 0;
     right: 0;
     padding: 0 0 0 10px;
-    transition: all 0.5s ease;
+    max-height: 0;
     overflow: hidden;
-    /*.list-wrapper {
-        overflow: hidden;
-    }*/
+    transition: max-height 0.5s ease-out;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child .header__nav__main-list__item__sub-list .header__nav__main-list__item__sub-list__item .open-list {
-    grid-template-rows: 1fr;
+    transition: max-height 1.5s;
+    max-height: 600px;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:nth-child(1n) {
     flex: none;
@@ -4783,26 +4777,27 @@ footer .footer-container .footer-container__content__copyright {
     margin-bottom: 10px;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:nth-child(1n) .header__nav__main-list__item__sub-list {
+    display: block;
     padding-left: 10px;
     position: relative;
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: all 0.5s ease;
     padding: 0;
     top: 0;
     left: 0;
-  }
-  header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:nth-child(1n) .header__nav__main-list__item__sub-list .list-wrapper {
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.5s ease-out;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:nth-child(1n) .open-list {
-    grid-template-rows: 1fr;
+    transition: max-height 1.5s;
+    max-height: 600px;
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:after {
     display: none;
   }
-  header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:hover .header__nav__main-list__item__sub-list {
-    display: grid;
+  header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:hover {
+    /*.header__nav__main-list__item__sub-list {
+        display: block;
+    }*/
   }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item svg {
     display: none;
@@ -5709,6 +5704,9 @@ footer .footer-container .footer-container__content__copyright {
   main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul li:not(:last-child) {
     margin-bottom: 6px;
   }
+  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others a {
+    width: clamp(260px, 60vw - 28px, 320px);
+  }
   main .aboutUs-certificates {
     padding-top: clamp(40px, 156px - 20vw, 60px);
   }
@@ -5747,21 +5745,25 @@ footer .footer-container .footer-container__content__copyright {
     padding: 42px 30px 42px 30px;
     background-color: #FFFFFF;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p {
-    line-height: 1.425;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
+    margin: 0;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p:first-child {
-    margin-bottom: 8px;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li {
+    grid-template-columns: 1fr;
+    grid-template-rows: 22px 1fr;
+    align-items: center;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block .aboutUs-requisites-map__requisites__block__item {
-    display: block;
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li span {
+    margin-top: 8px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__block-adress .aboutUs-requisites-map__requisites__block-adress__item {
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
     width: auto;
+    margin-top: 13px;
   }
   main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites a {
     width: 260px;
     height: 45px;
+    margin-top: 33px;
   }
   main .aboutUs-requisites-map .container .aboutUs-requisites-map__map {
     height: clamp(294px, 600px - 54vw, 379px);
@@ -6043,6 +6045,9 @@ footer .footer-container .footer-container__content__copyright {
 @media screen and (max-width: 320px) {
   main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
     height: 78.1%;
+  }
+  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
+    width: 260px;
   }
 }
 

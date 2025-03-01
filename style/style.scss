@@ -25,6 +25,9 @@ $border-color: #BBBBBB;
 $colorH1H2H3H4: #202020;
 $main__transition: all 0.5s ease;
 $only-time__transition: 0.5s ease;
+$forArrowNavList: transform 0.8s;
+$forNavListDropUp: max-height 0.5s ease-out; //goes up0.5s ease;
+$forNavListDropDown: max-height 1.5s; //goes down
 $bg-body: #F3F3F3;
 $market-active: rgba(102, 102, 102, 0.4);
 $bg_card_span: #F9F9F9;
@@ -822,7 +825,7 @@ form {
         textarea {
             resize: vertical;
             padding-top: 13px;
-            
+
         }
     }
 
@@ -2473,30 +2476,38 @@ main {
                     line-height: 1.395;
                 }
 
+                ul {
+                    li {
+                        display: grid;
+                        grid-template-columns: 246px 1fr;
+                        grid-template-rows: 1fr;
+                        align-items: center;
+                        color: $text;
+                        line-height: 1.4;
 
-                p {
-                    line-height: 1.496;
+                        &:not(:last-child) {
+                            margin-bottom: 16px;
+                        }
 
-                    &:first-child {
-                        width: 33.9%;
-                    }
-
-                    &:last-child {
-
-                        color: $title;
+                        span {
+                            color: $title;
+                            
+                        }
                     }
                 }
 
-                .aboutUs-requisites-map__requisites__block,
-                .aboutUs-requisites-map__requisites__block-adress {
+                .aboutUs-requisites-map__requisites__first-list {}
 
-                    .aboutUs-requisites-map__requisites__block__item,
-                    .aboutUs-requisites-map__requisites__block-adress__item {
-                        display: flex;
-                        margin-bottom: 14px;
-                        column-gap: 5px;
+                .aboutUs-requisites-map__requisites__second-list {
+                    margin-top: 16px;
+
+                    li {
+                        align-items: start;
+                         span {
+                            
+                            grid-column-start: 2;
+                        }
                     }
-
                 }
 
                 a {
@@ -4339,7 +4350,7 @@ main {
     .widget__ul {
         list-style-type: none;
         max-height: 0px;
-       
+
         position: relative;
         bottom: -26px;
         transition: max-height 1s;
@@ -4348,7 +4359,7 @@ main {
 
         &.visibleWidgetlist {
             max-height: 320px;
-            transition: max-height 1s; 
+            transition: max-height 1s;
         }
 
 
@@ -5125,29 +5136,31 @@ footer {
                         line-height: 1.365;
                     }
 
-                    p {
-                        line-height: 1.428;
+                    ul {
 
-                        &:first-child {
-                            width: auto;
-                            margin-bottom: 8px;
+                        li {
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 22px 1fr;
+                            align-items: start;
+
+                            span {
+                                margin-top: 7px;
+                            }
                         }
                     }
 
-                    .aboutUs-requisites-map__requisites__block {
+                    .aboutUs-requisites-map__requisites__first-list {
                         display: grid;
-                        grid-template-columns: 46% 50%;
-
-                        .aboutUs-requisites-map__requisites__block__item {
-                            display: block;
-                        }
+                        grid-template-columns: 235px 220px;
                     }
 
-                    .aboutUs-requisites-map__requisites__block-adress {
-                        .aboutUs-requisites-map__requisites__block-adress__item {
-                            display: block;
-
+                    .aboutUs-requisites-map__requisites__second-list {
+                        li{
+                            span {
+                                grid-column-start: 1;
+                            }
                         }
+                        
                     }
 
                 }
@@ -5974,49 +5987,25 @@ footer {
                     h2 {
                         text-align: center;
                     }
-
-                    p {
-                        line-height: 1.47;
-
-                        &:first-child {
-                            margin-bottom: 0;
-                        }
+                    ul{
+                        width: 473px;
+                        margin: 0 auto;
                     }
 
-                    .aboutUs-requisites-map__requisites__block {
+                    .aboutUs-requisites-map__requisites__first-list {
                         display: block;
 
-                        .aboutUs-requisites-map__requisites__block__item {
-                            display: flex;
-                            width: 473px;
-                            margin: 0 auto 14px;
-                            column-gap: 8px;
-
-                            p {
-
-                                &:first-child {
-                                    width: 220px;
-
-                                }
-
-                                &:last-child {
-                                    width: 220px;
-                                }
+                        li {
+                            grid-template-columns: 227px 1fr;
+                            grid-template-rows: 1fr;
+                            span{
+                                margin-top: 0;
                             }
                         }
                     }
 
-                    .aboutUs-requisites-map__requisites__block-adress {
-                        .aboutUs-requisites-map__requisites__block-adress__item {
-                            width: 471px;
-                            margin: 0 auto 14px;
-
-                            p {
-                                &:first-child {
-                                    margin-bottom: 8px;
-                                }
-                            }
-                        }
+                    .aboutUs-requisites-map__requisites__second-list{
+                        margin-top: 11px;
                     }
 
                     a {
@@ -6430,7 +6419,7 @@ footer {
                     top: -4px;
                     right: -10px;
                     padding-left: 11px;
-                    transition: $main__transition;
+                    transition: $forArrowNavList;
 
                     .arrow-right {
                         border: solid $accent;
@@ -6458,6 +6447,7 @@ footer {
 
 
                     .header__nav__main-list__item {
+                        overflow: hidden;
                         align-items: flex-start;
 
                         &:first-child {
@@ -6486,6 +6476,7 @@ footer {
 
                             .arrow-rigth-wrapper {
                                 display: block;
+
                             }
 
                             .header__nav__main-list__item__sub-list {
@@ -6498,7 +6489,7 @@ footer {
                                     top: -4px;
                                     right: -10px;
                                     padding-left: 11px;
-                                    transition: $main__transition;
+                                    transition: $forArrowNavList;
 
 
                                     .arrow-right {
@@ -6517,15 +6508,16 @@ footer {
                                 }
 
                                 .header__nav__main-list__item__sub-list__item {
+
                                     &:after {
                                         display: none;
                                     }
 
 
                                     &:hover {
-                                        .header__nav__main-list__item__sub-list__item__last-list {
-                                            display: grid;
-                                        }
+                                        /*.header__nav__main-list__item__sub-list__item__last-list {
+                                            display: block;
+                                        }*/
                                     }
 
                                     a {
@@ -6535,23 +6527,20 @@ footer {
                                     }
 
                                     .header__nav__main-list__item__sub-list__item__last-list {
-                                        display: grid;
-                                        grid-template-rows: 0fr;
+                                        display: block;
                                         position: relative;
                                         width: auto;
                                         top: 0;
                                         right: 0;
                                         padding: 0 0 0 10px;
-                                        transition: $main__transition;
+                                        max-height: 0;
                                         overflow: hidden;
-
-                                        /*.list-wrapper {
-                                            overflow: hidden;
-                                        }*/
+                                        transition: $forNavListDropUp; //goes up
                                     }
 
                                     .open-list {
-                                        grid-template-rows: 1fr;
+                                        transition: $forNavListDropDown; //goes down
+                                        max-height: 600px;
                                     }
                                 }
                             }
@@ -6570,22 +6559,20 @@ footer {
                             }
 
                             .header__nav__main-list__item__sub-list {
+                                display: block;
                                 padding-left: 10px;
                                 position: relative;
-                                display: grid;
-                                grid-template-rows: 0fr;
-                                transition: $main__transition;
                                 padding: 0;
                                 top: 0;
                                 left: 0;
-
-                                .list-wrapper {
-                                    overflow: hidden;
-                                }
+                                max-height: 0;
+                                overflow: hidden;
+                                transition: $forNavListDropUp; //goes up
                             }
 
                             .open-list {
-                                grid-template-rows: 1fr;
+                                transition: $forNavListDropDown; //goes down
+                                max-height: 600px;
                             }
                         }
 
@@ -6596,9 +6583,9 @@ footer {
                         }
 
                         &:hover {
-                            .header__nav__main-list__item__sub-list {
-                                display: grid;
-                            }
+                            /*.header__nav__main-list__item__sub-list {
+                                display: block;
+                            }*/
                         }
 
                         svg {
@@ -8087,6 +8074,10 @@ footer {
                             }
                         }
                     }
+
+                    a {
+                        width: clamp(260px, 60vw - 28px, 320px);
+                    }
                 }
             }
         }
@@ -8132,8 +8123,6 @@ footer {
             padding-top: clamp(40px, 156px - 20vw, 60px);
             padding-bottom: clamp(60px, 20vw - 36px, 80px);
 
-
-
             .container {
                 row-gap: clamp(16px, 10vw - 18px, 40px);
                 width: auto;
@@ -8142,34 +8131,27 @@ footer {
                     padding: 42px 30px 42px 30px;
                     background-color: $title-light;
 
-                    p {
-                        line-height: 1.425;
+                    .aboutUs-requisites-map__requisites__first-list {
+                        margin: 0;
+                        li {
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 22px 1fr;
+                            align-items: center;
 
-                        &:first-child {
-                            margin-bottom: 8px;
-                        }
-                    }
-
-                    .aboutUs-requisites-map__requisites__block {
-
-                        .aboutUs-requisites-map__requisites__block__item {
-                            display: block;
-                        }
-                    }
-
-                    .aboutUs-requisites-map__requisites__block-adress {
-                        .aboutUs-requisites-map__requisites__block-adress__item {
-                            width: auto;
-
-                            p {
-                                &:first-child {}
+                            span {
+                                margin-top: 8px;
                             }
                         }
+                    }
+                    .aboutUs-requisites-map__requisites__second-list{
+                        width: auto;
+                        margin-top: 13px;
                     }
 
                     a {
                         width: 260px;
                         height: 45px;
+                        margin-top: 33px;
                     }
 
                 }
@@ -8716,6 +8698,21 @@ footer {
                 .swiper-wrapper {
                     height: 78.1%;
                 }
+            }
+        }
+        .aboutUs-requisites-map {
+
+            .container {
+
+                .aboutUs-requisites-map__requisites {
+
+                    .aboutUs-requisites-map__requisites__first-list {
+                        width: 260px;
+                    }
+                    .aboutUs-requisites-map__requisites__second-list{
+                        
+                    }
+                }  
             }
         }
     }
