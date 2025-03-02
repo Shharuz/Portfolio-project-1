@@ -772,61 +772,10 @@ main .links-online-store a:active:before {
   background-color: rgba(102, 102, 102, 0.4);
   transition: all 0.5s ease;
 }
-main .forBlogAccountHowToBuyQuestionsCategory {
+main .forCategoryAllPages {
   display: flex;
-  /*input[type='radio'] {
-      display: none;
-
-      &:checked {
-          &+label {
-              background-color: $accent;
-              border: 1px solid $accent;
-              transition: $main__transition;
-              color: $title-light;
-              transition: $main__transition;
-
-
-              span {
-                  border: 1px solid $title-light;
-                  color: $title-light;
-
-              }
-          }
-      }
-  }
-
-  label {
-      display: flex;
-      border: 1px solid $border-color;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 1;
-      height: 59px;
-      background-color: $title-light;
-      padding: 0 5px 0 5px;
-      font-weight: 500;
-      font-size: clamp(14px, 2vw - 18px, 20px);
-      color: $title;
-      letter-spacing: 0.5px;
-      min-width: max-content;
-
-
-      span {
-          display: inline-block;
-          width: 22px;
-          height: 22px;
-          border: 1px solid $text-light;
-          color: $text;
-          margin-left: 16px;
-          font-weight: 400;
-          font-size: 12px;
-          text-align: center;
-          padding-top: 3px;
-          margin-left: 16px;
-      }
-  }*/
 }
-main .forBlogAccountHowToBuyQuestionsCategory p {
+main .forCategoryAllPages p {
   display: flex;
   border: 1px solid #BBBBBB;
   justify-content: center;
@@ -841,7 +790,7 @@ main .forBlogAccountHowToBuyQuestionsCategory p {
   letter-spacing: 0.5px;
   min-width: max-content;
 }
-main .forBlogAccountHowToBuyQuestionsCategory p span {
+main .forCategoryAllPages p span {
   display: inline-block;
   width: 22px;
   height: 22px;
@@ -854,17 +803,17 @@ main .forBlogAccountHowToBuyQuestionsCategory p span {
   padding-top: 3px;
   margin-left: 16px;
 }
-main .forBlogAccountHowToBuyQuestionsCategory p:hover {
+main .forCategoryAllPages p:hover {
   cursor: pointer;
 }
-main .forBlogAccountHowToBuyQuestionsCategory .highlighted {
+main .forCategoryAllPages .highlighted {
   background-color: #73C167;
   border: 1px solid #73C167;
   transition: all 0.5s ease;
   color: #FFFFFF;
   transition: all 0.5s ease;
 }
-main .forBlogAccountHowToBuyQuestionsCategory .highlighted span {
+main .forCategoryAllPages .highlighted span {
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
 }

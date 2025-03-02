@@ -1,6 +1,6 @@
 //For howToBuy.html, blog.html, account.html, questions.html
 
-const itemsCategories = document.querySelectorAll('.forBlogAccountHowToBuyQuestionsCategory p');//in the element with the class radio-category, all inputs of the radio type are taken
+const itemsCategories = document.querySelectorAll('.forCategoryAllPages p');//in the element with the class radio-category, all inputs of the radio type are taken
 const collectionOfElementsForhideShow = document.querySelectorAll('[data-anchor]')//collection of all elements with attribute data-anchor
 
 

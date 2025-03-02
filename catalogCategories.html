@@ -148,27 +148,12 @@
     <main>
         <section class="catalogCategories">
             <div class="container">
-                <div class="catalogCategories__select-catagory radio-category">
-                    <input type="radio" id="bacteria-for-septic" name="catalogCategories">
-                    <label for="bacteria-for-septic">
-                        <p>Бактерии для септика </p><span></span>
-                    </label>
-                    <input type="radio" id="Fermentation-mats" name="catalogCategories">
-                    <label for="Fermentation-mats">
-                        <p>Ферментационные подстилки</p><span></span>
-                    </label>
-                    <input type="radio" id="clearWater" name="catalogCategories">
-                    <label for="clearWater">
-                        <p>Очистка сточных вод</p><span></span>
-                    </label>
-                    <input type="radio" id="Composting" name="catalogCategories">
-                    <label for="Composting">
-                        <p>Компостирование</p><span></span>
-                    </label>
-                    <input type="radio" id="For-soil-and-plants" name="catalogCategories">
-                    <label for="For-soil-and-plants">
-                        <p>Для почвы и растений</p><span></span>
-                    </label>
+                <div class="catalogCategories__select-catagory forCategoryAllPages">
+                    <p id="bacteria-for-septic">Бактерии для септика<span></span></p>
+                    <p id="Fermentation-mats">Ферментационные подстилки<span></span></p>
+                    <p id="clearWater">Очистка сточных вод<span></span></p>
+                    <p id="Composting">Компостирование<span></span></p>
+                    <p id="For-soil-and-plants">Для почвы и растений<span></span></p>
                 </div>
                 <div class="catalogCategories__wrapperForFilter">
                     <div class="filter">
@@ -178,7 +163,7 @@
                                 <legend>Производитель</legend>
                                 <div class="wrapperForHidden">
                                     <div class="filter__form__item input-label-custom">
-                                        <input type="checkbox" id="biosept" name="manufacturer" class="input-label-custom__input">
+                                       <input type="checkbox" id="biosept" name="manufacturer" class="input-label-custom__input">
                                         <label for="biosept">БиоСепт</label>
                                         <span class="count-goods"></span>
                                     </div>
