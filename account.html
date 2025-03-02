@@ -22,7 +22,7 @@
     </style>
 </head>
 
-<body onload="resetCheked()">
+<body>
     <header>
         <div class="header-container">
             <a href="https://livebacteria.local/" class="logo">
@@ -149,20 +149,12 @@
         <section class="account">
             <div class="container for-Buy-ques-bl-acc">
                 <h2>Аккаунт</h2>
-                <div class="account__categories radio-category">
-                    <input type="radio" id="your-details" name="account__category" checked>
-                    <label for="your-details">
-                        <p>Ваши данные</p>
-                    </label>
-                    <input type="radio" id="favorites" name="account__category">
-                    <label for="favorites">
-                        <p>Избранное</p>
-                    </label>
-                    <input type="radio" id="basket" name="account__category">
-                    <label for="basket">
-                        <p>Корзина</p>
-                    </label>
+                <div class="account__categories forBlogAccountHowToBuyQuestionsCategory">
+                    <p id="your-details" class="highlighted">Ваши данные</p>
+                    <p id="favorites">Избранное</p>
+                    <p id="basket">Корзина</p>
                 </div>
+                
                 <form action="" data-anchor="your-details">
                     <div class="account__form__content__block">
                         <div class="form__item ">
@@ -528,6 +520,7 @@
                     <p>Срок сборки чуть дольше, поскольку товар «Ферментационная подстилка для коров 500 г» изготавливается индивидуально</p>
                 </div>
                 <a href="https://livebacteria.local/placingAnOrder.html" class="bg-accent_col-title-light account__content__place-an-order hide" data-anchor="basket">Оформить заказ</a>
+            </div>
         </section>
     </main>
     <div class="modal hide">

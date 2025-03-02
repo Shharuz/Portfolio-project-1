@@ -971,10 +971,10 @@ main {
 
     }
 
-    .radio-category {
+    .forBlogAccountHowToBuyQuestionsCategory {
         display: flex;
 
-        input[type='radio'] {
+        /*input[type='radio'] {
             display: none;
 
             &:checked {
@@ -982,11 +982,9 @@ main {
                     background-color: $accent;
                     border: 1px solid $accent;
                     transition: $main__transition;
-
-                    p {
-                        color: $title-light;
-                        transition: $main__transition;
-                    }
+                    color: $title-light;
+                    transition: $main__transition;
+                    
 
                     span {
                         border: 1px solid $title-light;
@@ -1006,14 +1004,12 @@ main {
             height: 59px;
             background-color: $title-light;
             padding: 0 5px 0 5px;
-
-            p {
-                font-weight: 500;
-                font-size: clamp(14px, 2vw - 18px, 20px);
-                color: $title;
-                letter-spacing: 0.5px;
-                min-width: max-content;
-            }
+            font-weight: 500;
+            font-size: clamp(14px, 2vw - 18px, 20px);
+            color: $title;
+            letter-spacing: 0.5px;
+            min-width: max-content;
+            
 
             span {
                 display: inline-block;
@@ -1027,6 +1023,53 @@ main {
                 text-align: center;
                 padding-top: 3px;
                 margin-left: 16px;
+            }
+        }*/
+        p {
+            display: flex;
+            border: 1px solid $border-color;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            height: 59px;
+            background-color: $title-light;
+            padding: 0 5px 0 5px;
+            font-weight: 500;
+            font-size: clamp(14px, 2vw - 18px, 20px);
+            color: $title;
+            letter-spacing: 0.5px;
+            min-width: max-content;
+
+            span {
+                display: inline-block;
+                width: 22px;
+                height: 22px;
+                border: 1px solid $text-light;
+                color: $text;
+                margin-left: 16px;
+                font-weight: 400;
+                font-size: 12px;
+                text-align: center;
+                padding-top: 3px;
+                margin-left: 16px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .highlighted {
+            background-color: $accent;
+            border: 1px solid $accent;
+            transition: $main__transition;
+            color: $title-light;
+            transition: $main__transition;
+
+            span {
+                border: 1px solid $title-light;
+                color: $title-light;
+
             }
         }
     }
@@ -2491,7 +2534,7 @@ main {
 
                         span {
                             color: $title;
-                            
+
                         }
                     }
                 }
@@ -2503,8 +2546,9 @@ main {
 
                     li {
                         align-items: start;
-                         span {
-                            
+
+                        span {
+
                             grid-column-start: 2;
                         }
                     }
@@ -2523,6 +2567,9 @@ main {
                 position: relative;
                 width: 100%;
 
+                iframe {
+                    border: hidden;
+                }
             }
         }
     }
@@ -3445,12 +3492,10 @@ main {
     /*&&&&&&&&&&&      article           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      account           &&&&&&&&&&&&&&*/
     .account {
-        padding-top: 35px;
-
         .container {
             .account__categories {
                 gap: 4px;
-                margin: 24px 0 42px;
+                margin: 28px 0 42px;
                 width: 72%;
 
                 label {
@@ -5155,12 +5200,12 @@ footer {
                     }
 
                     .aboutUs-requisites-map__requisites__second-list {
-                        li{
+                        li {
                             span {
                                 grid-column-start: 1;
                             }
                         }
-                        
+
                     }
 
                 }
@@ -5987,7 +6032,8 @@ footer {
                     h2 {
                         text-align: center;
                     }
-                    ul{
+
+                    ul {
                         width: 473px;
                         margin: 0 auto;
                     }
@@ -5998,13 +6044,14 @@ footer {
                         li {
                             grid-template-columns: 227px 1fr;
                             grid-template-rows: 1fr;
-                            span{
+
+                            span {
                                 margin-top: 0;
                             }
                         }
                     }
 
-                    .aboutUs-requisites-map__requisites__second-list{
+                    .aboutUs-requisites-map__requisites__second-list {
                         margin-top: 11px;
                     }
 
@@ -8133,6 +8180,7 @@ footer {
 
                     .aboutUs-requisites-map__requisites__first-list {
                         margin: 0;
+
                         li {
                             grid-template-columns: 1fr;
                             grid-template-rows: 22px 1fr;
@@ -8143,7 +8191,8 @@ footer {
                             }
                         }
                     }
-                    .aboutUs-requisites-map__requisites__second-list{
+
+                    .aboutUs-requisites-map__requisites__second-list {
                         width: auto;
                         margin-top: 13px;
                     }
@@ -8700,6 +8749,7 @@ footer {
                 }
             }
         }
+
         .aboutUs-requisites-map {
 
             .container {
@@ -8709,10 +8759,9 @@ footer {
                     .aboutUs-requisites-map__requisites__first-list {
                         width: 260px;
                     }
-                    .aboutUs-requisites-map__requisites__second-list{
-                        
-                    }
-                }  
+
+                    .aboutUs-requisites-map__requisites__second-list {}
+                }
             }
         }
     }
