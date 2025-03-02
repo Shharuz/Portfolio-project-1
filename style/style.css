@@ -800,7 +800,7 @@ main .forCategoryAllPages p span {
   font-weight: 400;
   font-size: 12px;
   text-align: center;
-  padding-top: 3px;
+  padding-top: 2px;
   margin-left: 16px;
 }
 main .forCategoryAllPages p:hover {
@@ -2419,6 +2419,9 @@ main .contacts .container .contacts__more-detail a {
 main .contacts .container .contacts__map {
   position: relative;
   width: calc(80% - 514px);
+}
+main .contacts .container .contacts__map iframe {
+  border: hidden;
 }
 main .forPartners {
   padding-bottom: clamp(80px, 6vw - 13px, 100px);
