@@ -1,5 +1,5 @@
 //for catalogCategories.html
-const category = document.querySelectorAll('input[type="radio"]'); //all categories
+const category = document.querySelectorAll('.forCategoryAllPages p'); //all categories
 let blockCardsGoods = document.querySelector('.catalogCategories__cards-goods'); //block in which there is counter, sorting, wrapperForCards, pageNavigation
 const wrapperForCards = document.querySelector(".catalogCategories__cards-goods__wrapperForCards");
 const allCards = document.querySelectorAll(".allPageCard");
@@ -60,7 +60,7 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //main filtering /tran
     for (let item of category) { //will go through all categories and assign a "checked" to the one with which the link address matches
 
         if (item.getAttribute('id') == window.location.href.split("?")[1]) {
-            item.setAttribute('checked', 'checked');
+            item.classList.add('highlighted');
         };
 
         let count = 0;
@@ -70,7 +70,7 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //main filtering /tran
             };
         };
 
-        item.nextElementSibling.childNodes[2].innerHTML = count; //the number of cards counted is located to the right of the category name
+        item.childNodes[1].innerHTML = count; //the number of cards counted is located to the right of the category name
     };
 
 
@@ -149,6 +149,16 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //main filtering /tran
 
 function filterCard(e) { //main filtering
     removeWrapperFor6Cards();//on line 821 
+    for ( let itemCategory of category ){
+        if( itemCategory.classList.contains('highlighted') ){
+            itemCategory.classList.remove('highlighted')
+        }
+        
+    }
+        
+    
+
+    e.target.classList.add('highlighted');
 
     for (let item of allCards) {
         if (item.getAttribute('data-filter') == e.target.getAttribute("id")) { //filter relative data-filter

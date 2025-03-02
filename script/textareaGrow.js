@@ -37,7 +37,7 @@
         //par2 - adjust textarea width increase when typing text, par3 - adjust textarea width decrease when typing text, 
         //par4, par5 - amount "cols";
          if (e.target.value.length > 25 && e.target.value.length <= 90) {
-             e.target.setAttribute("wrap", `off`);
+             e.target.setAttribute("wrap", `soft`);
              if (e.target.value.length - prevLength >= 2) {//for correct text insertion, when e.target.value.length > 25 && e.target.value.length <= 90
                  e.target.setAttribute("cols", `${ e.target.value.length - par1 }`)//textarea width adjusts to text after it is inserted
              }
@@ -53,10 +53,10 @@
              }
 
          } else if (e.target.value.length > 90) {//stop increasing taxetarea width
-             e.target.setAttribute("wrap", `on`);//wrap text to next line
+             e.target.setAttribute("wrap", `hard`);//wrap text to next line
              e.target.setAttribute("cols", par4);//set constant width taxetarea
          } else {                                //when all text is deleted at once
-             e.target.setAttribute("wrap", `off`);//Undo wrapping text to a new line
+             e.target.setAttribute("wrap", `soft`);//Undo wrapping text to a new line
              e.target.setAttribute("cols", par5);//set constant width taxetarea
              prevLength = 25;//return to default
          }
