@@ -187,6 +187,21 @@ header {
     justify-content: space-between;
     align-items: center;
 
+    @keyframes headerAppear {
+        from {
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    animation-name: headerAppear;
+    animation-duration: 1s;
+    animation-timing-function: ease;
 
 
     .header-container {
@@ -3144,7 +3159,8 @@ main {
             .contacts__map {
                 position: relative;
                 width: calc(80% - 514px);
-                iframe{
+
+                iframe {
                     border: hidden;
                 }
             }
