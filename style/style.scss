@@ -4084,6 +4084,47 @@ main {
     }
 
     /*&&&&&&&&&&&     placingAnOrder           &&&&&&&&&&&&&&*/
+    /*&&&&&&&&&&&     404           &&&&&&&&&&&&&&*/
+    .page404 {
+        width: 80%;
+        margin: 1% auto 0;
+        background: $title-light;
+        border-radius: 7vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        aspect-ratio: 16/9;
+
+        h1 {
+            text-align: center;
+            color: $accent;
+        }
+
+        a {
+            font-size: clamp(0.75rem, 2vw, 1.125rem);
+            text-align: center;
+            padding: 10px;
+            width: 30%;
+            transform: scale(1.025);
+            transition: transform 0.1s linear, box-shadow 0.05s linear;
+            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            aspect-ratio: 45 / 9;
+
+            &:hover {}
+
+            &:active {
+                transform: scale(1.0);
+                -webkit-box-shadow: 0px 0px 0px 0px rgba(34, 60, 80, 0.2);
+                -moz-box-shadow: 0px 0px 0px 0px rgba(34, 60, 80, 0.2);
+                box-shadow: 0px 0px 0px 0px rgba(34, 60, 80, 0.2);
+            }
+        }
+    }
+
+    /*&&&&&&&&&&&     404           &&&&&&&&&&&&&&*/
 }
 
 .modal {
@@ -4445,147 +4486,6 @@ main {
     display: none;
 }
 
-/*footer {
-    max-width: 1920px;
-    padding: 65.5px 0 54.5px 0;
-    background-color: $bg;
-    margin: 0 auto;
-
-    .footer-conteiner {
-        width: 1680px;
-        margin: 0 auto;
-        display: flex;
-        position: relative;
-
-        h3,
-        h4 {
-            color: $title-light;
-        }
-
-        h3 {
-            font-size: 30px;
-            letter-spacing: 1.2px;
-            padding-top: 7px;
-            line-height: 1.5;
-
-        }
-
-        h4 {
-            font-weight: 500;
-            font-size: 24px;
-            letter-spacing: 0.8px;
-            margin-bottom: 14px;
-            line-height: 1.4;
-        }
-
-        li,
-        p,
-        span {
-            color: $text-light;
-            font-weight: 400;
-
-        }
-
-        li,
-        p {
-            font-size: 18px;
-        }
-
-        p {
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-
-
-
-        ul {
-            list-style: none;
-
-            li {
-                margin-bottom: 11px;
-            }
-        }
-
-        a {
-            text-transform: none;
-            font-weight: 400;
-            padding-top: 0px;
-            text-align: left;
-
-            &:hover {
-                color: $accent;
-                transition: $main__transition;
-            }
-        }
-
-        .footer__to-the-buyer {
-            margin: 0 164px 0 220px;
-            padding-top: 17px;
-
-        }
-
-        .footer__information {
-            padding-top: 17px;
-        }
-
-        .footer__сonnect-with-us {
-            position: relative;
-            margin-left: auto;
-            width: 360px;
-
-            div:nth-child(n+1) {
-                margin-bottom: 16px;
-                margin-left: 43px;
-            }
-
-            .for-icons {
-                &:before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 24px;
-                    height: 24px;
-                    background-image: url("../img/icons/footer-tel.svg");
-                    background-repeat: no-repeat;
-                    left: -1px;
-                }
-
-                .footer__сonnect-with-us__office {
-                    position: relative;
-                    top: 0px;
-                    left: 5px;
-                    color: $text;
-                }
-            }
-
-            .mail {
-                &:before {
-                    background-image: url("../img/icons/footer-mail.svg");
-                }
-            }
-
-            .adress {
-                p {
-                    padding-right: 90px;
-                    line-height: 27px;
-                }
-
-                &:before {
-                    background-image: url("../img/icons/footer-location.svg");
-                }
-            }
-        }
-
-        span {
-            font-size: 16px;
-            position: absolute;
-            top: 73px;
-            left: 1px;
-        }
-    }
-
-}*/
 footer {
     max-width: 120rem;
     margin: 0 auto;
