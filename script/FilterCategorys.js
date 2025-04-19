@@ -1,4 +1,5 @@
 //for catalogCategories.html
+const body = document.querySelector('body'); 
 const category = document.querySelectorAll('.forCategoryAllPages p'); //all categories
 let blockCardsGoods = document.querySelector('.catalogCategories__cards-goods'); //block in which there is counter, sorting, wrapperForCards, pageNavigation
 const wrapperForCards = document.querySelector(".catalogCategories__cards-goods__wrapperForCards");
@@ -7,6 +8,9 @@ const navCardsGoods = document.querySelector('.catalogCategories__cards-goods__p
 const inputManufacturerWeight = document.querySelectorAll('.filter__form input[type="checkbox"]'); //takes all inputs in the filter block on the left
 let countCard = document.querySelector('#amount-card'); //card counting element
 let sortList = document.querySelector('#sortingList'); //card sorting element
+
+document.addEventListener("DOMContentLoaded", changeCheckedRadioCatalogCategoriesAndFilter);
+console.log('rrrr');
 
 //there is a main filtering (by category) and there is an additional one (by manufacturer, weight and price), additional filtering is based on the main one
 
@@ -53,6 +57,8 @@ function adjustingSlideLayout() {
     }
 
 };
+
+
 
 
 function changeCheckedRadioCatalogCategoriesAndFilter() { //main filtering /transition to a specific category from the index.html catalogMainPage.html and filtering cards

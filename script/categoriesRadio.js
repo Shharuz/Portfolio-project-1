@@ -25,9 +25,12 @@ itemsCategories.forEach((item) => {
     });
 });
 
+//console.log(itemsCategories[0]);
+
+//console.log(itemsCategories[0].childNodes[1].tagName);
 
 //for blog.html //counting the number of all articles and by categories
-if (itemsCategories[0].childNodes[1].tagName == 'SPAN') { //check that this piece of code only works on the blog.html
+if (itemsCategories[0].childNodes[1]) { //check that this piece of code only works on the blog.html
 
 //counting all articles
    let count = 0;  
