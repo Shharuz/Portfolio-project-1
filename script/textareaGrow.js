@@ -1,84 +1,39 @@
- const growTextarea = document.querySelector('#ask-a-question__question');
- const mainBlockAskAQues = document.querySelector('.modal__ask-a-question');
+const modalAsk = document.querySelector('.modal__ask-a-question');
+const askTextarea = document.querySelector('#ask-a-question__question');
+const parentAskTextarea = askTextarea.parentElement;
+//console.log(parentAskTextarea);
+let initialWidthAskTextarea = +(window.getComputedStyle(askTextarea).getPropertyValue("width").slice(0, -2));//the initial width of the textarea is taken
+//console.log(initialWidthAskTextarea);
 
- const heightStep = 24;
- const heightFirstRow = 37;
+//width and height restrictions at approximately line 938(scss)
 
- let prevLength = 25;//previous for e.target.value.length
+askTextarea.addEventListener('input', (e) => {
+    //console.log(askTextarea.scrollHeight)
+    if (window.innerWidth > 580) {
+        if (e.inputType == 'insertText' && askTextarea.value.length > 26 && askTextarea.value.length < 54) {
+            askTextarea.style.width = `${askTextarea.clientWidth += 10}px`; //if the number of entered characters matches the conditions above, the textarea will grow in width by 10px after each input
+        } else if (e.inputType == 'deleteContentBackward' && askTextarea.value.length > 26 && askTextarea.value.length < 54 && askTextarea.clientWidth > initialWidthAskTextarea) {
+            askTextarea.style.width = `${askTextarea.clientWidth -= 5}px`;//if there is a deletion of characters, the textarea will shrink
+        } else if (e.inputType == 'deleteContentBackward' && askTextarea.value.length <= 25) {
+            askTextarea.style.width = `${initialWidthAskTextarea}px`;//adjust textarea width to initial value
+        }
+            
+        console.log(e.data);
+        if (e.data != null && e.data.length > 1) {//if the entire review is inserted / e.data != null -> null = when pressing enter or backspace
+            askTextarea.style.width = '500px';
+        } else if (askTextarea.value.length < 1) {//if all text is deleted at once
+            askTextarea.style.width = `${initialWidthAskTextarea}px`;
+        }
 
+        if (askTextarea.value.length > 26) {//rearrange elements when textarea grows
+            parentAskTextarea.classList.add('textarea-column')
+            modalAsk.classList.add('modal__ask-a-question-big-ask')
+        } else {
+            parentAskTextarea.classList.remove('textarea-column')
+            modalAsk.classList.remove('modal__ask-a-question-big-ask')
+        }
+    }
 
- function grow(e) {
-
-     if (navigator.userAgent.indexOf("Firefox") != -1) {
-
-         growHeight();
-         growWidth(15, 1.07, 0.9, `100`, `24`);
-
-         moveElements(20);
-
-     } else {
-
-         growHeight();
-         growWidth(0, 1.3, 1.05, `114`, `30`)// on line 36
-
-         moveElements(36);
-     } 
-
-     function growHeight() {
-         //console.log(e.target.scrollHeight);
-         if (e.target.scrollHeight < 254) { //limit textarea growth horizontally
-             e.target.setAttribute("rows", `6`); //This is necessary so that when deleting text, the height of the textarea decreases
-             let requiredRowsValue = ((e.target.scrollHeight - heightFirstRow) / heightStep) + 1; //calculates the number of rows relative to scrollHeight
-             e.target.setAttribute("rows", `${requiredRowsValue}`); //and as the attribute(rows) value increases, it increases the height of the textarea
-         }
-     }
-
-     function growWidth(par1, par2, par3, par4, par5) {//par1 - needed mainly for Firefox, 
-        //par2 - adjust textarea width increase when typing text, par3 - adjust textarea width decrease when typing text, 
-        //par4, par5 - amount "cols";
-         if (e.target.value.length > 25 && e.target.value.length <= 90) {
-             e.target.setAttribute("wrap", `soft`);
-             if (e.target.value.length - prevLength >= 2) {//for correct text insertion, when e.target.value.length > 25 && e.target.value.length <= 90
-                 e.target.setAttribute("cols", `${ e.target.value.length - par1 }`)//textarea width adjusts to text after it is inserted
-             }
-             if (e.target.value.length > prevLength) {//every time you enter a character
-                 let currentCols = +e.target.getAttribute("cols");
-                 e.target.setAttribute("cols", `${ currentCols + par2}`);//increase attribute "cols"
-                 prevLength = e.target.value.length;//current length becomes previous
-
-             } else if (e.target.value.length < prevLength) {//every time a character is deleted
-                 let currentCols = +e.target.getAttribute("cols");
-                 e.target.setAttribute("cols", `${ currentCols - par3}`);//decrease attribute "cols"
-                 prevLength = e.target.value.length;//current length becomes previous
-             }
-
-         } else if (e.target.value.length > 90) {//stop increasing taxetarea width
-             e.target.setAttribute("wrap", `hard`);//wrap text to next line
-             e.target.setAttribute("cols", par4);//set constant width taxetarea
-         } else {                                //when all text is deleted at once
-             e.target.setAttribute("wrap", `soft`);//Undo wrapping text to a new line
-             e.target.setAttribute("cols", par5);//set constant width taxetarea
-             prevLength = 25;//return to default
-         }
-     }
-
-     function moveElements(par) {
-
-         if (e.target.value.length > par) {//label and textarea are arranged horizontally, 
-            //after entering a certain number of characters - they are centered and arranged vertically
-             e.target.parentElement.classList.add('textarea-column')
-         } else {
-             e.target.parentElement.classList.remove('textarea-column')
-         }
-         if (e.target.value.length > par) {//after increasing 'rows'(textarea), will move .modal__ask-a-question up, by decreasing the top margin
-             mainBlockAskAQues.classList.add('ask-a-question-big-review')
-         } else {
-             mainBlockAskAQues.classList.remove('ask-a-question-big-review')
-         }
-     }
-
-
-
- };
-
- growTextarea.addEventListener('input', grow);
+    askTextarea.style.height = "auto";  //textarea height growth
+    askTextarea.style.height = askTextarea.scrollHeight + "px";// 
+})

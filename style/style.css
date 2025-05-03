@@ -1,7 +1,13 @@
 @charset "UTF-8";
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #F3F3F3;
   font-family: "Manrope";
+  overflow-x: hidden;
+  position: relative;
 }
 body .sizewindow {
   position: fixed;
@@ -16,22 +22,27 @@ body .progress {
 }
 body .forSmoothScroll {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
-body .forSmoothScroll .forSmoothScroll__wrapper main .index-advantages h1 .lineh1 {
+body .forSmoothScroll .forSmoothScroll__wrapper main {
+  overflow-y: hidden;
+}
+body .forSmoothScroll .forSmoothScroll__wrapper main .index-advantages h1 .line {
   display: flex;
   justify-content: center;
   column-gap: 12px;
 }
-body .forSmoothScroll .forSmoothScroll__wrapper main .index-advantages h1 .lineh1 .wrapperForWordh1 {
+body .forSmoothScroll .forSmoothScroll__wrapper main .index-advantages h1 .line .wrapperForWord {
   display: flex;
 }
-body .forSmoothScroll .forSmoothScroll__wrapper main h2 .lineh2 {
+body .forSmoothScroll .forSmoothScroll__wrapper main h2 .line {
   display: flex;
   justify-content: center;
   column-gap: 12px;
 }
-body .forSmoothScroll .forSmoothScroll__wrapper main h2 .lineh2 .wrapperForWordh2 {
+body .forSmoothScroll .forSmoothScroll__wrapper main h2 .line .wrapperForWord {
   display: flex;
 }
 @keyframes appear {
@@ -639,14 +650,10 @@ form .form--radio--legal-entity--personal .fieldset__item input:checked:before {
 form .form__item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 508px;
   height: 52px;
   margin-bottom: 16px;
-}
-form .form__item label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 form .form__item label span {
   color: #73C167;
@@ -666,6 +673,7 @@ form .form__item textarea::placeholder {
 form .form__item input {
   max-width: 288px;
   width: 100%;
+  height: 52px;
 }
 form .form__item__password {
   position: relative;
@@ -689,17 +697,15 @@ form .form__item__textarea {
 form .form__item__textarea label {
   display: block;
   padding-top: 17px;
+  align-self: start;
 }
 form .form__item__textarea textarea {
   resize: vertical;
-  padding-top: 13px;
-}
-form .textarea-column {
-  flex-direction: column;
-  align-items: center;
-}
-form .textarea-column label {
-  text-align: center;
+  padding-top: 11px;
+  max-width: 100%;
+  min-width: 287px;
+  width: 287px;
+  max-height: 347px;
 }
 form .hide {
   display: none;
@@ -748,20 +754,20 @@ form a {
   text-decoration: underline;
 }
 form .consent {
-  width: 517px;
-  height: 22px;
-  margin: 23px 0 11px 0;
+  width: 520px;
+  height: auto;
+  margin: 22px 0 16px 0;
 }
 form .consent .input-label-custom__input {
   border: 1px solid red;
 }
 form .consent .input-label-custom__input + label {
   font-size: 12px;
-  height: 16px;
 }
 form .consent .input-label-custom__input + label::before {
   width: 20px;
   height: 20px;
+  float: left;
 }
 form .consent .input-label-custom__input:checked + label::after {
   background-size: 10px 10px;
@@ -772,13 +778,19 @@ form .consent .input-label-custom__input:checked + label::after {
   width: 16px;
 }
 form .consent label i {
+  width: max-content;
+  padding-top: 3px;
+  padding-left: 5px;
   font-style: normal;
+  float: left;
 }
 form .consent a {
+  padding-top: 3px;
   font-size: 12px;
 }
 
 main {
+  overflow-x: hidden;
   /*&&&&&&&&&&&      index             &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      index             &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      card             &&&&&&&&&&&&&&*/
@@ -3291,29 +3303,21 @@ main .page404 a:active {
   box-shadow: 0px 0px 0px 0px rgba(34, 60, 80, 0.2);
 }
 
-.modal {
+.modal,
+.modal-politics {
   width: 100%;
   height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   position: fixed;
+  overflow-y: scroll;
   top: 0;
   left: 0;
   background-color: rgba(51, 51, 51, 0.74);
-  z-index: 2;
-  /*.modal__review {
-      form {
-          .form__item__textarea {
-              margin: 60px 0;
-
-              textarea {
-                  width: 730px;
-                  height: 300px;
-              }
-          }
-      }
-  }*/
+  z-index: 5;
 }
+
 .modal .modal__block {
   position: relative;
   display: flex;
@@ -3323,7 +3327,7 @@ main .page404 a:active {
   width: 100%;
   height: fit-content;
   margin-top: 258px;
-  margin-left: 52px;
+  margin-left: 67px;
 }
 .modal .modal__block .modal__close {
   display: flex;
@@ -3350,14 +3354,11 @@ main .page404 a:active {
 .modal .modal__forgot-your-password form {
   padding: 94px 0px;
 }
-.modal .modal__forgot-your-password form p {
-  margin: 16px 0 39px;
-}
 .modal .modal__forgot-your-password form .form__item {
   margin-bottom: 40px;
 }
 .modal .modal__code-from-sms form {
-  padding: 105px 195px;
+  padding: 105px 0;
 }
 .modal .modal__code-from-sms form #OTPinputs {
   margin-bottom: 39px;
@@ -3378,10 +3379,6 @@ main .page404 a:active {
   justify-content: start;
   padding: 90px 101px;
 }
-.modal .modal__new-password form .form__item__password {
-  margin: 0 85px 16px 85px;
-  width: 100%;
-}
 .modal .modal__new-password form .passwords-do-not-match {
   color: red;
 }
@@ -3389,79 +3386,58 @@ main .page404 a:active {
   margin-top: 23px;
 }
 .modal .modal__callback {
-  margin-top: 202px;
-  margin-left: 68px;
+  margin-top: 203px;
+  margin-left: 80px;
 }
 .modal .modal__callback form p {
   padding: 0 66px;
 }
 .modal .modal__ask-a-question {
-  margin-top: 187px;
-  margin-left: 68px;
-}
-.modal .modal__ask-a-question form {
-  max-width: min-content;
-  width: auto;
-  padding: 42px 92.5px;
-  align-items: center;
+  margin-top: 188px;
+  margin-left: 81px;
 }
 .modal .modal__ask-a-question form p {
-  max-width: 415px;
-  width: 100%;
-  padding: 0;
-}
-.modal .modal__ask-a-question form .form__item {
-  justify-content: center;
-  min-width: 512px;
-  width: 100%;
-}
-.modal .modal__ask-a-question form .form__item label {
-  width: 224px;
-  justify-content: flex-start;
+  padding: 0 66px;
 }
 .modal .modal__ask-a-question form .form__item__textarea {
   -moz-font-size: 13px;
 }
-.modal .modal__ask-a-question form .form__item__textarea label {
-  padding-bottom: 16px;
+.modal .modal__ask-a-question form .textarea-column {
+  flex-direction: column;
+  align-items: center;
 }
-.modal .modal__ask-a-question form .consent {
-  min-width: 530px;
-  margin: 23px 0 13px;
+.modal .modal__ask-a-question form .textarea-column label {
+  align-self: center;
+  padding-bottom: 17px;
 }
-.modal .modal__ask-a-question form .consent label {
-  width: 522px;
-  padding: 0;
-}
-.modal .ask-a-question-big-review {
-  margin-top: 87px;
+.modal .modal__ask-a-question-big-ask {
+  margin-top: 50px;
 }
 .modal .hide {
   display: none;
 }
 
-.modal-politics {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(51, 51, 51, 0.74);
-  z-index: 2;
-  padding-top: 97px;
-}
 .modal-politics.hide-politics {
   display: none;
 }
 .modal-politics .modal-politics__wrapper {
-  width: 1178px;
-  height: 886px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1377px;
+  width: 100%;
+  height: fit-content;
+  margin-top: 97px;
+  margin-left: 75px;
 }
 .modal-politics .modal-politics__wrapper .modal-politics__container {
-  padding: 42px 69px 42px 69px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1178px;
+  width: 100%;
+  padding: 42px 69px;
+  justify-content: space-between;
   background-color: #FFFFFF;
   border-radius: 24px;
 }
@@ -3470,25 +3446,24 @@ main .page404 a:active {
   line-height: 1.5;
 }
 .modal-politics .modal-politics__wrapper .modal-politics__container p {
-  line-height: 1.3;
-  margin-bottom: 6.6px;
+  line-height: 1.33;
+  margin-bottom: 6px;
 }
 .modal-politics .modal-politics__wrapper .modal-politics__container p:first-of-type {
   margin-top: 7px;
 }
 .modal-politics .modal-politics__wrapper .modal-politics__container .politic-button-close {
   display: block;
-  margin: 28px auto 0;
+  margin: 21px auto 0;
 }
 .modal-politics .modal-politics__wrapper .modal-politics__close {
-  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  position: absolute;
-  top: 0;
-  right: -61px;
+  background-color: #FFFFFF;
   border-radius: 50px;
-  padding: 13px;
 }
 .modal-politics .modal-politics__wrapper .modal-politics__close svg {
   pointer-events: none;
@@ -3496,8 +3471,8 @@ main .page404 a:active {
 
 .widget {
   position: fixed;
-  right: 50px;
-  bottom: 40px;
+  right: 0.5vw;
+  bottom: 1vh;
   z-index: 3;
 }
 .widget .widget__ul {
@@ -4027,8 +4002,49 @@ footer .footer-container .footer-container__content__copyright {
     width: auto;
     height: clamp(437px, 50vw, 681px);
   }
+  .modal {
+    align-items: center;
+  }
+  .modal .modal__block {
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 680px;
+    gap: 11px;
+    margin-top: 0;
+    margin-left: 0;
+  }
   .modal .modal__block img {
     display: none;
+  }
+  .modal .modal__block .modal__close {
+    align-self: flex-end;
+  }
+  .modal .modal__ask-a-question,
+  .modal .modal__callback {
+    max-width: 715px;
+    margin-top: 148px;
+    align-self: flex-start;
+  }
+  .modal-politics .modal-politics__wrapper {
+    flex-direction: column-reverse;
+    align-self: flex-start;
+    gap: 10px;
+    margin-top: 51px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container p {
+    margin-bottom: 8px;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container .politic-button-close {
+    width: clamp(288px, 7vw + 222px, 320px);
+    height: clamp(45px, 3vw + 21px, 63px);
+    font-size: clamp(14px, 1vw + 5px, 18px);
+    margin-top: 29px;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__close {
+    align-self: flex-end;
   }
   footer .footer-container .footer-container__headlines .wrapper-for-logo {
     flex-basis: 285px;
@@ -4154,6 +4170,9 @@ footer .footer-container .footer-container__content__copyright {
   h2 {
     font-size: clamp(1.5rem, 4vw + 0.5rem, 3rem);
   }
+  h3 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
   header .header-container {
     width: 100%;
     padding: 0 1.875rem;
@@ -4246,6 +4265,9 @@ footer .footer-container .footer-container__content__copyright {
   header .header-container .header__items .header__items__authorization__wrapper-login {
     flex: 1 2.8rem;
   }
+  form h3 {
+    font-size: 40px;
+  }
   main {
     /*&&&&&&&&&&&      card             &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      aboutUs             &&&&&&&&&&&&&&*/
@@ -4280,9 +4302,9 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .index-offer {
     width: auto;
-  }
-  main .index-offer h3 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    /*h3 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }*/
   }
   main .index-offer .index-offer__container .index-offer__swiper {
     overflow: visible;
@@ -4643,6 +4665,15 @@ footer .footer-container .footer-container__content__copyright {
   main .contacts .container .contacts__more-detail .contacts__more-detail__items .contacts__more-detail__item:nth-of-type(3) {
     margin-bottom: 32px;
   }
+  .modal .modal__forgot-your-password form,
+  .modal .modal__code-from-sms form,
+  .modal .modal__new-password form {
+    padding: 42px 0;
+  }
+  .modal .modal__ask-a-question,
+  .modal .modal__callback {
+    margin-top: clamp(43px, 50vw - 348px, 148px);
+  }
   footer {
     padding-top: clamp(39px, 149px - 10vw, 45px);
   }
@@ -4683,7 +4714,25 @@ footer .footer-container .footer-container__content__copyright {
     width: fit-content;
   }
 }
+@media screen and (max-width: 800px) {
+  .modal-politics .modal-politics__wrapper {
+    width: 100%;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container h4 {
+    line-height: 1.4;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container p {
+    font-size: 16px;
+  }
+}
 @media screen and (max-width: 790px) {
+  form h3 {
+    font-size: clamp(24px, 10vw - 39px, 40px);
+  }
   main .catalogCategories .container .catalogCategories__wrapperForFilter .filter .filter__close {
     right: 17%;
   }
@@ -4721,6 +4770,67 @@ footer .footer-container .footer-container__content__copyright {
     height: 656px;
     padding-left: 8.5px;
     padding-right: 8.5px;
+  }
+  .modal {
+    align-items: flex-start;
+  }
+  .modal .modal__block {
+    margin-top: 51px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .modal .modal__block form .form__item__textarea textarea {
+    min-width: 260px;
+    width: 260px;
+  }
+  .modal .modal__block form .consent label i {
+    padding-top: 0px;
+  }
+  .modal .modal__block form .consent a {
+    padding-top: 0px;
+  }
+  .modal .modal__block form button {
+    width: clamp(260px, 50vw - 74px, 320px);
+    height: clamp(45px, 10vw - 15px, 63px);
+    font-size: clamp(14px, 5vw - 20px, 18px);
+  }
+  .modal .modal__registr form p {
+    width: 475px;
+  }
+  .modal .modal__ask-a-question,
+  .modal .modal__callback {
+    width: 90%;
+  }
+  .modal .modal__ask-a-question form p,
+  .modal .modal__callback form p {
+    padding: 0px 100px;
+  }
+  .modal .modal__ask-a-question form .form__item,
+  .modal .modal__callback form .form__item {
+    width: 422px;
+  }
+  .modal .modal__ask-a-question form .form__item label,
+  .modal .modal__callback form .form__item label {
+    line-height: 1.3;
+  }
+  .modal .modal__ask-a-question form .form__item input,
+  .modal .modal__callback form .form__item input {
+    max-width: 260px;
+  }
+  .modal .modal__ask-a-question form .form__item__textarea label,
+  .modal .modal__callback form .form__item__textarea label {
+    padding-top: 0;
+    margin-right: 58px;
+  }
+  .modal .modal__ask-a-question form .consent,
+  .modal .modal__callback form .consent {
+    width: 404px;
+    margin-top: 26px;
+  }
+  .modal .modal__ask-a-question form .consent label,
+  .modal .modal__callback form .consent label {
+    line-height: 1.42;
   }
 }
 @media screen and (max-width: 735px) {
@@ -4890,8 +5000,14 @@ footer .footer-container .footer-container__content__copyright {
     display: none;
   }
   form p {
-    font-size: 16px;
     line-height: 1.33;
+    width: 480px;
+  }
+  form .form__item {
+    width: 440px;
+  }
+  form .consent {
+    width: 410px;
   }
   main {
     /*&&&&&&&&&&&      card             &&&&&&&&&&&&&&*/
@@ -5198,6 +5314,9 @@ footer .footer-container .footer-container__content__copyright {
   main .forPartners .container {
     width: auto;
   }
+  main .forPartners .container form p {
+    font-size: 1rem;
+  }
   footer .footer-container {
     width: auto;
     padding: 0 30px 0 32px;
@@ -5294,6 +5413,9 @@ footer .footer-container .footer-container__content__copyright {
     width: 20px;
     height: 20px;
   }
+  main .forPartners .container form p {
+    font-size: clamp(0.875rem, 2.7vw, 1rem);
+  }
 }
 @media screen and (max-width: 580px) {
   h1 {
@@ -5306,7 +5428,6 @@ footer .footer-container .footer-container__content__copyright {
     line-height: 1.35;
   }
   form p {
-    font-size: 14px;
     line-height: 1.37;
     width: 259px;
     margin: 16px 0 34px;
@@ -5316,7 +5437,7 @@ footer .footer-container .footer-container__content__copyright {
   }
   form .form__item {
     height: auto;
-    margin-bottom: 19px;
+    margin-bottom: 20px;
   }
   form .form__item label {
     margin-bottom: 9px;
@@ -5324,38 +5445,34 @@ footer .footer-container .footer-container__content__copyright {
   form .form__item input {
     height: 52px;
   }
+  form .form__item__password:first-of-type {
+    margin-bottom: 40px;
+  }
+  form .form__item__password .eye {
+    top: 43px;
+  }
   form .form--radio--legal-entity--personal,
   form .form__item {
     width: 260px;
     flex-wrap: wrap;
   }
+  form #OTPinputs {
+    width: 255px;
+  }
   form .consent {
     width: 265px;
     height: 46px;
-    padding-left: 20px;
-  }
-  form .consent label {
-    display: block;
-    position: relative;
-    margin-bottom: 0;
-    padding-left: 10px;
-  }
-  form .consent label:before {
-    float: left;
-    position: absolute;
-    top: 0;
-    left: -19px;
   }
   form .consent label i {
-    float: left;
-    margin: 0;
-    width: 93px;
     font-size: 12px;
+    line-height: 1.4;
     font-style: normal;
+    padding-right: 3px;
   }
   form .consent label a {
     display: block;
     line-height: 1.4;
+    padding-left: 29px;
   }
   form button {
     width: clamp(260px, 60vw - 28px, 320px);
@@ -5506,6 +5623,10 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .index-catalog h2:first-child {
     display: none;
+  }
+  main .catalog-categories {
+    margin-top: 0;
+    margin-bottom: 0;
   }
   main .catalog-categories .catalog-categories__category:not(:last-child) {
     display: none;
@@ -5928,6 +6049,89 @@ footer .footer-container .footer-container__content__copyright {
     width: clamp(260px, 60vw - 25px, 320px);
     height: clamp(45px, 15vw - 23px, 63px);
     font-size: clamp(14px, 5vw - 8px, 18px);
+  }
+  main .forPartners .container form button {
+    width: clamp(260px, 60vw - 28px, 320px);
+    height: clamp(45px, 15vw - 24px, 63px);
+    font-size: clamp(14px, 5vw - 10px, 18px);
+  }
+  .modal form p {
+    margin: 16px 0 41px;
+  }
+  .modal form p a {
+    font-size: 14px;
+  }
+  .modal .modal__block {
+    width: 100%;
+  }
+  .modal .modal__block .modal__close {
+    margin-right: 10px;
+  }
+  .modal .modal__login form h3 {
+    padding: 0 20px;
+  }
+  .modal .modal__registr form p {
+    width: 255px;
+  }
+  .modal .modal__ask-a-question,
+  .modal .modal__callback {
+    margin-top: 23px;
+  }
+  .modal .modal__ask-a-question form p,
+  .modal .modal__callback form p {
+    padding: 0px 0px;
+  }
+  .modal .modal__ask-a-question form .form__item,
+  .modal .modal__callback form .form__item {
+    width: 260px;
+  }
+  .modal .modal__ask-a-question form .form__item label,
+  .modal .modal__callback form .form__item label {
+    line-height: 1.1;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container h4 {
+    font-size: 20px;
+  }
+  .modal-politics .modal-politics__wrapper .modal-politics__container .politic-button-close {
+    width: clamp(260px, 51vw - 7px, 288px);
+  }
+  .widget .widget__ul {
+    bottom: -19px;
+    padding-bottom: 23px;
+  }
+  .widget .widget__ul.visibleWidgetlist {
+    max-height: 160px;
+  }
+  .widget .widget__ul .widget__ul__li {
+    margin: 2.5px 0;
+    padding: 7.5px 7.5px;
+    width: 25px;
+    height: 25px;
+  }
+  .widget .widget__ul .widget__ul__li a img {
+    width: 10px;
+    height: 10px;
+  }
+  .widget .widget__trigger {
+    width: 25px;
+    height: 25px;
+  }
+  .widget .widget__trigger div {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+  }
+  .widget .widget__trigger div img {
+    width: 15px;
+    height: 15px;
+  }
+  .index-widget .widget__ul.visibleWidgetlist {
+    max-height: 160px;
   }
   footer .footer-container {
     padding: 0 30px 0 30px;
