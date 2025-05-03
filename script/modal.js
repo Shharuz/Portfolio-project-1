@@ -33,7 +33,7 @@ const closePolitics = document.querySelector('.modal-politics__close');
 const closeBtnPolitics = document.querySelector('.politic-button-close');
 //end
 
-
+//modal.style.height = `${modal.parentElement.offsetHeight}px`;//for textareaGrow.js
 
 
 

@@ -41,10 +41,15 @@ $p_placingAnOrder_total-paid: #ACACAC;
     height: 28px;
 }
 
+html {
+    overflow-x: hidden;
+}
 
 body {
     background-color: $bg-body;
     font-family: $font-main;
+    overflow-x: hidden;
+    position: relative;
 
     .sizewindow {
         position: fixed;
@@ -52,27 +57,32 @@ body {
         border: 1px solid green;
         z-index: 5;
     }
-    .progress{
-        background: linear-gradient(90deg,rgba(45, 130, 34, 1) 0%, rgba(115, 193, 103, 1) 50%, rgba(176, 230, 129, 1) 100%);
+
+    .progress {
+        background: linear-gradient(90deg, rgba(45, 130, 34, 1) 0%, rgba(115, 193, 103, 1) 50%, rgba(176, 230, 129, 1) 100%);
         height: 0.5vw;
         position: fixed;
-        
+
     }
 
     .forSmoothScroll {
         position: fixed;
+        display: flex;
+        flex-direction: column;
         width: 100%;
 
         .forSmoothScroll__wrapper {
             main {
+                overflow-y: hidden;
+
                 .index-advantages {
                     h1 {
-                        .lineh1 {
+                        .line {
                             display: flex;
                             justify-content: center;
                             column-gap: 12px;
 
-                            .wrapperForWordh1 {
+                            .wrapperForWord {
                                 display: flex;
                             }
                         }
@@ -80,12 +90,12 @@ body {
                 }
 
                 h2 {
-                    .lineh2 {
+                    .line {
                         display: flex;
                         justify-content: center;
                         column-gap: 12px;
 
-                        .wrapperForWordh2 {
+                        .wrapperForWord {
                             display: flex;
                         }
 
@@ -858,14 +868,13 @@ form {
     .form__item {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 508px;
         height: 52px;
         margin-bottom: 16px;
 
         label {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+
 
             span {
                 color: $accent;
@@ -888,8 +897,9 @@ form {
         input {
             max-width: 288px;
             width: 100%;
-
+            height: 52px;
         }
+
 
 
     }
@@ -919,23 +929,21 @@ form {
         label {
             display: block;
             padding-top: 17px;
+            align-self: start;
         }
 
         textarea {
             resize: vertical;
-            padding-top: 13px;
-
+            padding-top: 11px;
+            max-width: 100%;
+            min-width: 287px;
+            width: 287px;
+            //max-height: 227px;
+            max-height: 347px;
         }
     }
 
-    .textarea-column {
-        flex-direction: column;
-        align-items: center;
 
-        label {
-            text-align: center;
-        }
-    }
 
     .hide {
         display: none;
@@ -994,20 +1002,22 @@ form {
 
 
     .consent {
-        width: 517px;
-        height: 22px;
-        margin: 23px 0 11px 0;
+
+        width: 520px;
+        height: auto;
+        margin: 22px 0 16px 0;
 
         .input-label-custom__input {
             border: 1px solid red;
 
             &+label {
                 font-size: 12px;
-                height: 16px;
+                //height: 16px;
 
                 &::before {
                     width: 20px;
                     height: 20px;
+                    float: left;
                 }
 
             }
@@ -1023,18 +1033,26 @@ form {
         }
 
         label {
+
             i {
+                width: max-content;
+                padding-top: 3px;
+                padding-left: 5px;
                 font-style: normal;
+                float: left;
             }
         }
 
         a {
+            padding-top: 3px;
             font-size: 12px;
         }
     }
 }
 
 main {
+    overflow-x: hidden;
+
     .links-online-store {
         display: flex;
         column-gap: 16px;
@@ -4339,17 +4357,23 @@ main {
     /*&&&&&&&&&&&     404           &&&&&&&&&&&&&&*/
 }
 
-.modal {
+.modal,
+.modal-politics {
     width: 100%;
     height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    //position: absolute;
     position: fixed;
+    overflow-y: scroll;
     top: 0;
     left: 0;
     background-color: $bg-modal;
-    z-index: 2;
+    z-index: 5;
+}
 
+.modal {
     .modal__block {
         position: relative;
         display: flex;
@@ -4359,7 +4383,7 @@ main {
         width: 100%;
         height: fit-content;
         margin-top: 258px;
-        margin-left: 52px;
+        margin-left: 67px;
 
         .modal__close {
             display: flex;
@@ -4388,6 +4412,7 @@ main {
 
         margin-top: 223px;
 
+
         form {
             p {
                 width: 605px;
@@ -4401,7 +4426,7 @@ main {
             padding: 94px 0px;
 
             p {
-                margin: 16px 0 39px;
+                // margin: 16px 0 39px;
             }
 
             .form__item {
@@ -4413,7 +4438,7 @@ main {
 
     .modal__code-from-sms {
         form {
-            padding: 105px 195px;
+            padding: 105px 0;
 
             #OTPinputs {
                 margin-bottom: 39px;
@@ -4440,8 +4465,8 @@ main {
             padding: 90px 101px;
 
             .form__item__password {
-                margin: 0 85px 16px 85px;
-                width: 100%;
+                //margin: 0 85px 16px 85px;
+                //width: 100%;
             }
 
             .passwords-do-not-match {
@@ -4455,8 +4480,8 @@ main {
     }
 
     .modal__callback {
-        margin-top: 202px;
-        margin-left: 68px;
+        margin-top: 203px;
+        margin-left: 80px;
 
         form {
             p {
@@ -4466,73 +4491,34 @@ main {
     }
 
     .modal__ask-a-question {
-        margin-top: 187px;
-        margin-left: 68px;
+        margin-top: 188px;
+        margin-left: 81px;
 
         form {
-            max-width: min-content;
-            width: auto;
-            padding: 42px 92.5px;
-            align-items: center;
-
-            h3 {}
 
             p {
-                max-width: 415px;
-                width: 100%;
-                padding: 0;
-            }
-
-            .form__item {
-                justify-content: center;
-                min-width: 512px;
-                width: 100%;
-
-                label {
-                    width: 224px;
-                    justify-content: flex-start;
-
-                }
+                padding: 0 66px;
             }
 
             .form__item__textarea {
                 -moz-font-size: 13px;
-
-                label {
-                    padding-bottom: 16px;
-                }
             }
 
-
-
-            .consent {
-                min-width: 530px;
-                margin: 23px 0 13px;
+            .textarea-column {
+                flex-direction: column;
+                align-items: center;
 
                 label {
-                    width: 522px;
-                    padding: 0;
+                    align-self: center;
+                    padding-bottom: 17px;
                 }
             }
         }
     }
 
-    .ask-a-question-big-review {
-        margin-top: 87px;
+    .modal__ask-a-question-big-ask {
+        margin-top: 50px;
     }
-
-    /*.modal__review {
-        form {
-            .form__item__textarea {
-                margin: 60px 0;
-
-                textarea {
-                    width: 730px;
-                    height: 300px;
-                }
-            }
-        }
-    }*/
 
     .hide {
         display: none;
@@ -4541,28 +4527,29 @@ main {
 }
 
 .modal-politics {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: $bg-modal;
-    z-index: 2;
-    padding-top: 97px;
 
     &.hide-politics {
         display: none;
     }
 
     .modal-politics__wrapper {
-        width: 1178px;
-        height: 886px;
         position: relative;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        max-width: 1377px;
+        width: 100%;
+        height: fit-content;
+        margin-top: 97px;
+        margin-left: 75px;
 
         .modal-politics__container {
-            padding: 42px 69px 42px 69px;
+            display: flex;
+            flex-direction: column;
+            max-width: 1178px;
+            width: 100%;
+            padding: 42px 69px;
+            justify-content: space-between;
             background-color: $title-light;
             border-radius: 24px;
 
@@ -4572,8 +4559,8 @@ main {
             }
 
             p {
-                line-height: 1.3;
-                margin-bottom: 6.6px;
+                line-height: 1.33;
+                margin-bottom: 6px;
 
                 &:first-of-type {
                     margin-top: 7px;
@@ -4583,20 +4570,19 @@ main {
 
             .politic-button-close {
                 display: block;
-                margin: 28px auto 0;
+                margin: 21px auto 0;
             }
 
         }
 
         .modal-politics__close {
-            background-color: $title-light;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 44px;
             height: 44px;
-            position: absolute;
-            top: 0;
-            right: -61px;
+            background-color: $title-light;
             border-radius: 50px;
-            padding: 13px;
 
             svg {
                 pointer-events: none;
@@ -4609,8 +4595,8 @@ main {
 .widget {
 
     position: fixed;
-    right: 50px;
-    bottom: 40px;
+    right: 0.5vw;
+    bottom: 1vh;
     z-index: 3;
 
     .widget__ul {
@@ -4624,6 +4610,7 @@ main {
 
         &.visibleWidgetlist {
             max-height: 320px;
+            //max-height: 17vw;
             transition: max-height 1s;
         }
 
@@ -4634,6 +4621,8 @@ main {
             padding: 15px 15px;
             width: 50px;
             height: 50px;
+            //width: 2.5vw;
+            //height: 2.5vw;
             border-radius: 50%;
             background-color: $title-light;
             border: 1px solid $bg-body;
@@ -4642,6 +4631,8 @@ main {
                 padding-top: 0;
 
                 img {
+                    //width: 1vw;
+                    //height: 1vw;
 
                     width: 20px;
                     height: 20px;
@@ -4653,6 +4644,8 @@ main {
     .widget__trigger {
         width: 50px;
         height: 50px;
+        //width: 2.5vw;
+        //height: 2.5vw;
         position: relative;
         z-index: 3;
         background-color: $text-light;
@@ -4662,6 +4655,8 @@ main {
             position: absolute;
             width: 50px;
             height: 50px;
+            //width: 2.5vw;
+            //height: 2.5vw;
             transition: opacity 1s;
             border-radius: 50%;
             padding: 10px;
@@ -4669,6 +4664,8 @@ main {
             img {
                 width: 30px;
                 height: 30px;
+                //width: 1.55vw;
+                //height: 1.55vw;
             }
 
             &.widget__trigger__main {
@@ -4720,9 +4717,7 @@ main {
         }
     }
 
-}
-
-//due to the addition of the wrapper (.forSmoothScroll)
+}//due to the addition of the wrapper (.forSmoothScroll)
 
 .hide {
     display: none;
@@ -5434,11 +5429,61 @@ footer {
     }
 
     .modal {
+        align-items: center;
+
         .modal__block {
+            flex-direction: column-reverse;
+            align-items: center;
+            max-width: 680px;
+            gap: 11px;
+            margin-top: 0;
+            margin-left: 0;
+
             img {
                 display: none;
             }
+
+            .modal__close {
+                align-self: flex-end;
+            }
         }
+
+        .modal__ask-a-question,
+        .modal__callback {
+            max-width: 715px;
+            margin-top: 148px;
+            align-self: flex-start;
+        }
+
+    }
+
+    .modal-politics {
+        .modal-politics__wrapper {
+            flex-direction: column-reverse;
+            align-self: flex-start;
+            gap: 10px;
+            margin-top: 51px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+
+            .modal-politics__container {
+                p{
+                    margin-bottom: 8px;
+                }
+                .politic-button-close {
+                    width: clamp(288px, 7vw + 222px, 320px);
+                    height: clamp(45px, 3vw + 21px, 63px);
+                    font-size: clamp(14px, 1vw + 5px, 18px);
+                    margin-top: 29px;
+                }
+            }
+
+            .modal-politics__close {
+                align-self: flex-end;
+            }
+        }
+
     }
 
     footer {
@@ -5627,6 +5672,10 @@ footer {
 
     }
 
+    h3 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
     header {
         .header-container {
             width: 100%;
@@ -5753,6 +5802,12 @@ footer {
 
     }
 
+    form {
+        h3 {
+            font-size: 40px;
+        }
+    }
+
     main {
         .radio-category {
             label {
@@ -5764,9 +5819,9 @@ footer {
         .index-offer {
             width: auto;
 
-            h3 {
+            /*h3 {
                 font-size: clamp(1.5rem, 4vw, 2.5rem);
-            }
+            }*/
 
             .index-offer__container {
                 .index-offer__swiper {
@@ -6383,6 +6438,26 @@ footer {
 
     }
 
+    .modal {
+        .modal__block {
+            .modal__close {}
+        }
+
+        .modal__forgot-your-password,
+        .modal__code-from-sms,
+        .modal__new-password {
+            form {
+                padding: 42px 0;
+            }
+        }
+
+        .modal__ask-a-question,
+        .modal__callback {
+            margin-top: clamp(43px, 50vw - 348px, 148px);
+
+        }
+    }
+
     footer {
 
         padding-top: clamp(39px, 149px - 10vw, 45px);
@@ -6480,9 +6555,34 @@ footer {
         }
 
     }
+
+    .modal-politics {
+        .modal-politics__wrapper {
+            width: 100%;
+
+            .modal-politics__container {
+                padding-left: 27px;
+                padding-right: 27px;
+
+                h4 {
+                    line-height: 1.4;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 790px) {
+    form {
+        h3 {
+            font-size: clamp(24px, calc(10vw - 39px), 40px);
+        }
+    }
+
     main {
         .catalogCategories {
             .container {
@@ -6545,6 +6645,99 @@ footer {
             }
         }
     }
+
+    .modal {
+
+        align-items: flex-start;
+
+        .modal__block {
+            margin-top: 51px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+
+            form {
+
+                .form__item__textarea {
+                    textarea {
+                        min-width: 260px;
+                        width: 260px;
+                    }
+                }
+
+                .consent {
+                    label {
+                        i {
+                            padding-top: 0px;
+                        }
+                    }
+
+                    a {
+                        padding-top: 0px;
+
+                    }
+
+                }
+
+                button {
+                    width: clamp(260px, calc(50vw - 74px), 320px);
+                    height: clamp(45px, calc(10vw - 15px), 63px);
+                    font-size: clamp(14px, 5vw - 20px, 18px);
+                }
+
+            }
+        }
+
+        .modal__registr {
+            form {
+                p {
+                    width: 475px;
+                }
+            }
+        }
+
+        .modal__ask-a-question,
+        .modal__callback {
+            width: 90%;
+
+            form {
+                p {
+                    padding: 0px 100px;
+                }
+
+                .form__item {
+                    width: 422px;
+
+                    label {
+                        line-height: 1.3;
+                    }
+
+                    input {
+                        max-width: 260px;
+                    }
+                }
+
+                .form__item__textarea {
+                    label {
+                        padding-top: 0;
+                        margin-right: 58px;
+                    }
+
+                }
+
+                .consent {
+                    width: 404px;
+                    margin-top: 26px;
+
+                    label {
+                        line-height: 1.42;
+                    }
+                }
+            }
+        }
+    }
+
+
 
 }
 
@@ -6779,11 +6972,19 @@ footer {
 
     }
 
-
     form {
+
         p {
-            font-size: 16px;
             line-height: 1.33;
+            width: 480px;
+        }
+
+        .form__item {
+            width: 440px;
+        }
+
+        .consent {
+            width: 410px;
         }
     }
 
@@ -7322,6 +7523,11 @@ footer {
             .container {
                 width: auto;
 
+                form {
+                    p {
+                        font-size: 1rem;
+                    }
+                }
 
             }
         }
@@ -7519,6 +7725,19 @@ footer {
                 }
             }
         }
+
+        .forPartners {
+            .container {
+
+                form {
+                    p {
+                        font-size: clamp(0.875rem, 2.7vw, 1rem);
+                    }
+                }
+
+            }
+        }
+
     }
 
 }
@@ -7539,7 +7758,6 @@ footer {
         }
 
         p {
-            font-size: 14px;
             line-height: 1.37;
             width: 259px;
             margin: 16px 0 34px;
@@ -7551,7 +7769,7 @@ footer {
 
         .form__item {
             height: auto;
-            margin-bottom: 19px;
+            margin-bottom: 20px;
 
             label {
                 margin-bottom: 9px;
@@ -7562,41 +7780,44 @@ footer {
             }
         }
 
+        .form__item__password {
+            &:first-of-type {
+                margin-bottom: 40px;
+            }
+
+            .eye {
+                top: 43px;
+            }
+        }
+
         .form--radio--legal-entity--personal,
         .form__item {
             width: 260px;
             flex-wrap: wrap;
         }
 
+        #OTPinputs {
+            width: 255px;
+        }
+
         .consent {
             width: 265px;
             height: 46px;
-            padding-left: 20px;
 
             label {
-                display: block;
-                position: relative;
-                margin-bottom: 0;
-                padding-left: 10px;
-
-                &:before {
-                    float: left;
-                    position: absolute;
-                    top: 0;
-                    left: -19px;
-                }
+                &:before {}
 
                 i {
-                    float: left;
-                    margin: 0;
-                    width: 93px;
                     font-size: 12px;
-                    font-style: normal
+                    line-height: 1.4;
+                    font-style: normal;
+                    padding-right: 3px;
                 }
 
                 a {
                     display: block;
                     line-height: 1.4;
+                    padding-left: 29px;
                 }
             }
         }
@@ -7794,7 +8015,8 @@ footer {
         }
 
         .catalog-categories {
-
+            margin-top: 0;
+            margin-bottom: 0;
             .catalog-categories__category {
                 &:not(:last-child) {
                     display: none;
@@ -8489,7 +8711,13 @@ footer {
         /*&&&&&&&&&&&      forPartners            &&&&&&&&&&&&&&*/
         .forPartners {
             .container {
-                form {}
+                form {
+                    button {
+                        width: clamp(260px, 60vw - 28px, 320px);
+                        height: clamp(45px, 15vw - 24px, 63px);
+                        font-size: clamp(14px, 5vw - 10px, 18px);
+                    }
+                }
             }
         }
 
@@ -8526,6 +8754,132 @@ footer {
 
 
         /*&&&&&&&&&&&     placingAnOrder           &&&&&&&&&&&&&&*/
+    }
+
+    .modal {
+        form {
+            p {
+                margin: 16px 0 41px;
+
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .modal__block {
+            width: 100%;
+
+            .modal__close {
+                margin-right: 10px;
+            }
+        }
+
+        .modal__login {
+            form {
+                h3 {
+                    padding: 0 20px;
+                }
+            }
+        }
+
+        .modal__registr {
+            form {
+                p {
+                    width: 255px;
+                }
+            }
+        }
+
+        .modal__ask-a-question,
+        .modal__callback {
+            margin-top: 23px;
+
+
+            form {
+                p {
+                    padding: 0px 0px;
+                }
+
+                .form__item {
+                    width: 260px;
+
+                    label {
+                        line-height: 1.1;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .modal-politics {
+        .modal-politics__wrapper {
+            .modal-politics__container {
+                padding-left: 30px;
+                padding-right: 30px;
+                h4{
+                    font-size: 20px;
+                }
+                .politic-button-close {
+                    width: clamp(260px, 51vw - 7px, 288px);
+                    
+                }
+            }
+        }
+
+    }
+
+    .widget {
+        .widget__ul {
+            bottom: -19px;
+            padding-bottom: 23px;
+
+            &.visibleWidgetlist {
+                max-height: 160px;
+            }
+
+            .widget__ul__li {
+                margin: 2.5px 0;
+                padding: 7.5px 7.5px;
+                width: 25px;
+                height: 25px;
+
+                a {
+                    img {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
+
+        .widget__trigger {
+            width: 25px;
+            height: 25px;
+
+            div {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                padding: 5px;
+
+                img {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+        }
+
+    }
+
+    .index-widget {
+        .widget__ul {
+            &.visibleWidgetlist {
+                max-height: 160px;
+            }
+        }
     }
 
     footer {
