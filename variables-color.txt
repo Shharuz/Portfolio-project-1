@@ -36,7 +36,7 @@ $p_placingAnOrder_total-paid: #ACACAC;
 ../img/icons/checkedMark.svg
 
 
-
+48  48  40
 
 
 
