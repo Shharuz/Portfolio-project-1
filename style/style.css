@@ -2692,18 +2692,25 @@ main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__
   margin-top: 31px;
 }
 main .howToBuy {
-  padding: 35px 0 100px;
+  padding-bottom: clamp(80px, 20vw - 280px, 100px);
 }
 main .howToBuy .container {
   max-width: 1038px;
 }
+main .howToBuy .container h2 {
+  line-height: 1.39;
+}
 main .howToBuy .container p {
   line-height: 1.4;
+  font-size: 16px;
 }
 main .howToBuy .container .howToBuy__categories {
-  gap: 4px;
+  column-gap: 4px;
   width: 93%;
-  margin: 24px 0 40px;
+  margin: 24px 0 clamp(24px, 4vw - 36px, 40px);
+}
+main .howToBuy .container .howToBuy__categories p {
+  font-size: 20px;
 }
 main .howToBuy .container .howToBuy__marketplace {
   display: flex;
@@ -2712,7 +2719,7 @@ main .howToBuy .container .howToBuy__marketplace {
 }
 main .howToBuy .container .howToBuy__marketplace .links-online-store {
   margin-top: 22px;
-  width: 46.5%;
+  width: 482px;
 }
 main .howToBuy .container .hide {
   display: none;
@@ -4725,6 +4732,16 @@ footer .footer-container .footer-container__content__copyright {
     grid-template-columns: 1fr;
     margin-top: clamp(24px, 400px - 35vw, 40px);
   }
+  main .howToBuy .container p {
+    line-height: 1.38;
+  }
+  main .howToBuy .container .howToBuy__categories {
+    width: clamp(93%, 900px - 20vw, 100%);
+  }
+  main .howToBuy .container .howToBuy__categories p {
+    height: 51px;
+    font-size: clamp(14px, 3vw - 13px, 20px);
+  }
   .modal .modal__forgot-your-password form,
   .modal .modal__code-from-sms form,
   .modal .modal__new-password form {
@@ -6151,6 +6168,25 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item {
     padding: 32px clamp(30px, 10vw - 13px, 45px) 28px;
+  }
+  main .howToBuy .container h2 {
+    line-height: 1.29;
+  }
+  main .howToBuy .container p {
+    font-size: clamp(14px, 10vw - 42px, 16px);
+  }
+  main .howToBuy .container .howToBuy__categories {
+    flex-direction: column;
+    margin: clamp(16px, 6vw - 10px, 24px) 0 clamp(16px, 6vw - 10px, 24px);
+  }
+  main .howToBuy .container .howToBuy__categories p {
+    height: clamp(39px, 10vw - 1px, 51px);
+  }
+  main .howToBuy .container .howToBuy__marketplace p {
+    line-height: 1.44;
+  }
+  main .howToBuy .container .howToBuy__marketplace .links-online-store {
+    width: clamp(260px, 100vw - 97px, 482px);
   }
   .modal form p {
     margin: 16px 0 41px;
