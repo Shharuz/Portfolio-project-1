@@ -2672,7 +2672,10 @@ main .directory .container .directory-categories .directory-categories__item:act
   transition: all 0.5s ease;
 }
 main .reviews {
-  padding: 34px 0 100px;
+  padding-bottom: 100px;
+}
+main .reviews .container h2 {
+  line-height: 1.39;
 }
 main .reviews .container .reviews__wrapper-for-item {
   display: grid;

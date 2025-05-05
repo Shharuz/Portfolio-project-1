@@ -3508,9 +3508,13 @@ main {
     /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
     .reviews {
-        padding: 34px 0 100px;
+        padding-bottom: 100px;
 
         .container {
+            h2{
+                //line-height: 1.4;
+                line-height: 1.39;
+            }
             .reviews__wrapper-for-item {
                 display: grid;
                 grid-template-columns: 830px 830px;
