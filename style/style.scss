@@ -48,8 +48,9 @@ html {
 body {
     background-color: $bg-body;
     font-family: $font-main;
-    overflow-x: hidden;
+    //overflow-x: hidden;
     position: relative;
+    padding-top: clamp(1rem, 1vw, 1.125rem);
 
     .sizewindow {
         position: fixed;
@@ -62,7 +63,7 @@ body {
         background: linear-gradient(90deg, rgba(45, 130, 34, 1) 0%, rgba(115, 193, 103, 1) 50%, rgba(176, 230, 129, 1) 100%);
         height: 0.5vw;
         position: fixed;
-
+        top: 0px;
     }
 
     .forSmoothScroll {
@@ -275,7 +276,7 @@ label {
 header {
     width: clamp(1360px, 93vw, 1754px);
     border-radius: 105px;
-    margin: clamp(1rem, 1vw, 1.125rem) auto 0;
+    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: space-between;
@@ -1961,6 +1962,27 @@ main {
         h2 {
             line-height: 1.4;
 
+            &:first-child {
+                .line {
+                    .wrapperForWord {
+                        &:first-child {
+                            color: $accent;
+                        }
+                    }
+                }
+            }
+
+            &:last-of-type {
+
+                .line {
+                    .wrapperForWord {
+                        &:nth-child(3) {
+                            color: $accent;
+                        }
+                    }
+                }
+            }
+
         }
     }
 
@@ -3431,12 +3453,15 @@ main {
     /*&&&&&&&&&&&      forPartners           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
     .directory {
-        padding: 33px 0 100px;
+        padding-bottom: 100px;
 
         .container {
-            background-color: $title-light;
-            border-radius: 32px;
+            max-width: 1674px;
+            width: 100%;
             padding: 67px 100px 106px;
+            border-radius: 32px;
+            background-color: $title-light;
+
 
             h2 {
                 text-align: center;
@@ -4717,7 +4742,9 @@ main {
         }
     }
 
-}//due to the addition of the wrapper (.forSmoothScroll)
+}
+
+//due to the addition of the wrapper (.forSmoothScroll)
 
 .hide {
     display: none;
@@ -5394,7 +5421,21 @@ footer {
 
         /*&&&&&&&&&&&      forPartners           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
+        .directory {
+            padding-bottom: 80px;
 
+            .container {
+                padding: 67px 86px 135px;
+
+                h2 {
+                    line-height: 1.5;
+                }
+
+                .directory-categories {
+                    margin-top: 61px;
+                }
+            }
+        }
 
         /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
@@ -5468,9 +5509,10 @@ footer {
             width: 90%;
 
             .modal-politics__container {
-                p{
+                p {
                     margin-bottom: 8px;
                 }
+
                 .politic-button-close {
                     width: clamp(288px, 7vw + 222px, 320px);
                     height: clamp(45px, 3vw + 21px, 63px);
@@ -5924,6 +5966,24 @@ footer {
         .index-catalog {
             border-radius: clamp(1.875rem, 15vw - 3.75rem, 5.625rem);
 
+            h2 {
+                line-height: 1.4;
+
+                &:last-of-type {
+
+                    .line {
+                        &:last-child {
+                            .wrapperForWord {
+                                &:first-child {
+                                    color: $accent;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
         }
 
         .catalog-categories {
@@ -6405,6 +6465,40 @@ footer {
         /*&&&&&&&&&&&      forPartners           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
 
+        .directory {
+            padding-bottom: 77px;
+
+            .container {
+                padding: 48px 0px 72px;
+
+                h2 {}
+
+                .directory-categories {
+                    //margin-left: -28px;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 22px;
+
+                    .directory-categories__item {
+                        flex-direction: row;
+                        justify-content: center;
+                        width: 100%;
+                        max-width: 537px;
+                        column-gap: 16px;
+                        padding: 15px 0;
+
+                        svg {
+                            margin-bottom: 0;
+                        }
+
+                        span {
+                            width: 180px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
 
         /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
@@ -7113,6 +7207,7 @@ footer {
 
         .index-aboutUs {
             width: auto;
+            margin-bottom: 0px;
             padding-top: clamp(3.25rem, 15vw - 1.875rem, 5rem);
             padding-bottom: clamp(61px, 20vw - 74px, 73px);
 
@@ -7743,6 +7838,9 @@ footer {
 }
 
 @media screen and (max-width: 580px) {
+    body{
+        overflow-x: hidden;
+    }
     h1 {
         font-size: clamp(1.5rem, 6.9vw, 2.5rem);
 
@@ -8017,6 +8115,7 @@ footer {
         .catalog-categories {
             margin-top: 0;
             margin-bottom: 0;
+
             .catalog-categories__category {
                 &:not(:last-child) {
                     display: none;
@@ -8723,7 +8822,32 @@ footer {
 
         /*&&&&&&&&&&&      forPartners           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
+        .directory {
+           
 
+            .container {
+               padding: 48px 30px 63px;
+
+                h2 {}
+
+                .directory-categories {
+                    
+
+                    .directory-categories__item {
+                        max-width: initial;
+                        svg {
+                           
+                        }
+
+                        span {
+                            font-size: 18px;
+                            width: 117px; 
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
 
         /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
@@ -8818,12 +8942,14 @@ footer {
             .modal-politics__container {
                 padding-left: 30px;
                 padding-right: 30px;
-                h4{
+
+                h4 {
                     font-size: 20px;
                 }
+
                 .politic-button-close {
                     width: clamp(260px, 51vw - 7px, 288px);
-                    
+
                 }
             }
         }
@@ -8953,11 +9079,11 @@ footer {
 }
 
 @media screen and (max-width: 450px) {
+    body {
+        padding-top: 5px;
+    }
 
     header {
-        margin-top: 5px;
-
-
         .header-container {
             .logo {
                 order: 2;

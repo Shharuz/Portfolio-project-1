@@ -500,7 +500,7 @@ function smooth() {
                         }else if (y == 1){
                             if (window.innerWidth > 801) {
                                 startAnimLetterWordH2 = startAnimSection + 200;
-                                endAnimLetterWordH2 = (endAnimSection + 200) - 130;
+                                endAnimLetterWordH2 = (endAnimSection + 200) - 100;
                             } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
                                 startAnimLetterWordH2 = startAnimSection + 200;
                                 endAnimLetterWordH2 = (endAnimSection + 200) - 80;
