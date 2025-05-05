@@ -3512,7 +3512,7 @@ main {
 
         .container {
             h2 {
-                //line-height: 1.4;
+
                 line-height: 1.39;
             }
 
@@ -3539,20 +3539,29 @@ main {
     /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
     .howToBuy {
-        padding: 35px 0 100px;
+        padding-bottom: clamp(80px, 20vw - 280px, 100px);
 
         .container {
             max-width: 1038px;
 
+            h2 {
+
+                line-height: 1.39;
+            }
+
             p {
                 line-height: 1.4;
+                font-size: 16px;
             }
 
             .howToBuy__categories {
-                gap: 4px;
+                column-gap: 4px;
                 width: 93%;
-                margin: 24px 0 40px;
+                margin: 24px 0 clamp(24px, 4vw - 36px, 40px); 
 
+                p {
+                    font-size: 20px;
+                }
             }
 
             .howToBuy__marketplace {
@@ -3562,7 +3571,7 @@ main {
 
                 .links-online-store {
                     margin-top: 22px;
-                    width: 46.5%;
+                    width: 482px;
                 }
             }
 
@@ -6530,7 +6539,37 @@ footer {
 
         /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
+        .howToBuy {
 
+
+            .container {
+
+
+                h2 {}
+
+                p{
+                   line-height: 1.38; 
+                }
+
+                .howToBuy__categories {
+                    width: clamp(93%, 900px - 20vw, 100%);
+                    
+                    p {
+                        height: 51px;
+                        font-size: clamp(14px, 3vw - 13px, 20px);
+                        
+                    }
+                }
+
+                .howToBuy__marketplace {
+
+
+                    .links-online-store {}
+                }
+
+
+            }
+        }
 
         /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
@@ -8914,6 +8953,7 @@ footer {
 
                     .reviews__wrapper-for-item__item {
                         padding: 32px clamp(30px, 10vw - 13px, 45px) 28px;
+
                         h4 {}
 
                         p {}
@@ -8926,7 +8966,40 @@ footer {
 
         /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
+        .howToBuy {
 
+
+            .container {
+                h2{
+                    line-height: 1.29;
+                }
+
+                p {
+                    font-size: clamp(14px, 10vw - 42px, 16px);
+                }
+
+                .howToBuy__categories {
+                    flex-direction: column;
+                    //margin-top: clamp(16px, 6vw - 10px, 24px);
+                    margin: clamp(16px, 6vw - 10px, 24px) 0 clamp(16px, 6vw - 10px, 24px);
+                    p{
+                        height: clamp(39px, 10vw - 1px, 51px);
+                    }
+                }
+
+                .howToBuy__marketplace {
+                    p{
+                        line-height: 1.44;
+                    }
+
+                    .links-online-store {
+                        width: clamp(260px, 100vw - 97px, 482px);
+                    }
+                }
+
+                .hide {}
+            }
+        }
 
         /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
