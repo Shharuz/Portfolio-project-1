@@ -858,14 +858,12 @@ main .forCategoryAllPages p {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  height: 59px;
   background-color: #FFFFFF;
-  padding: 0 5px 0 5px;
+  padding: 14px 13.5px;
   font-weight: 500;
   font-size: clamp(14px, 2vw - 18px, 20px);
   color: #0D0D0D;
   letter-spacing: 0.5px;
-  min-width: max-content;
 }
 main .forCategoryAllPages p span {
   display: inline-block;
@@ -878,7 +876,7 @@ main .forCategoryAllPages p span {
   font-size: 12px;
   text-align: center;
   padding-top: 2px;
-  margin-left: 16px;
+  flex-shrink: 0;
 }
 main .forCategoryAllPages p:hover {
   cursor: pointer;
@@ -2517,8 +2515,27 @@ main .catalogCategories .container .catalogCategories__wrapperForFilter .catalog
   font-weight: 500;
   cursor: pointer;
 }
-main .contacts {
-  padding-bottom: 95px;
+main .contacts,
+main .forPartners,
+main .directory,
+main .reviews,
+main .howToBuy,
+main .questions,
+main .blog,
+main .articleOrVideo,
+main .placingAnOrder {
+  padding-bottom: clamp(80px, 6vw - 15px, 100px);
+}
+main .contacts .container h2,
+main .forPartners .container h2,
+main .directory .container h2,
+main .reviews .container h2,
+main .howToBuy .container h2,
+main .questions .container h2,
+main .blog .container h2,
+main .articleOrVideo .container h2,
+main .placingAnOrder .container h2 {
+  line-height: 1.39;
 }
 main .contacts .container {
   display: flex;
@@ -2532,7 +2549,6 @@ main .contacts .container .contacts__more-detail {
   margin: 11px 0 17px;
 }
 main .contacts .container .contacts__more-detail h2 {
-  line-height: 1.5;
   margin-bottom: 36px;
 }
 main .contacts .container .contacts__more-detail p {
@@ -2606,9 +2622,6 @@ main .contacts .container .contacts__map {
 main .contacts .container .contacts__map iframe {
   border: hidden;
 }
-main .forPartners {
-  padding-bottom: clamp(80px, 6vw - 13px, 100px);
-}
 main .forPartners .container {
   display: flex;
   gap: 20px;
@@ -2617,9 +2630,6 @@ main .forPartners .container form {
   max-width: 829px;
   width: 100%;
 }
-main .forPartners .container form h2 {
-  line-height: 1.4;
-}
 main .forPartners .container form .hide {
   display: none;
 }
@@ -2627,9 +2637,6 @@ main .forPartners .container img {
   width: clamp(533px, 65vw - 418px, 829px);
   object-fit: cover;
   border-radius: 24px;
-}
-main .directory {
-  padding-bottom: 100px;
 }
 main .directory .container {
   max-width: 1674px;
@@ -2671,12 +2678,6 @@ main .directory .container .directory-categories .directory-categories__item:act
   background-color: rgba(217, 217, 217, 0.6);
   transition: all 0.5s ease;
 }
-main .reviews {
-  padding-bottom: clamp(80px, 20vw - 280px, 100px);
-}
-main .reviews .container h2 {
-  line-height: 1.39;
-}
 main .reviews .container .reviews__wrapper-for-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2691,14 +2692,8 @@ main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__
 main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item .full-review {
   margin-top: 31px;
 }
-main .howToBuy {
-  padding-bottom: clamp(80px, 20vw - 280px, 100px);
-}
 main .howToBuy .container {
   max-width: 1038px;
-}
-main .howToBuy .container h2 {
-  line-height: 1.39;
 }
 main .howToBuy .container p {
   line-height: 1.4;
@@ -2724,13 +2719,13 @@ main .howToBuy .container .howToBuy__marketplace .links-online-store {
 main .howToBuy .container .hide {
   display: none;
 }
-main .questions {
-  padding: 35px 0 88px;
-}
 main .questions .container .questions__categories {
+  width: 100%;
   gap: 4px;
   margin: 24px 0;
-  align-self: stretch;
+}
+main .questions .container .questions__categories p:first-child {
+  min-width: fit-content;
 }
 main .questions .container .questions__question-and-answer {
   max-width: 1269px;
@@ -2742,17 +2737,21 @@ main .questions .container .questions__question-and-answer .questions__question-
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  padding: 32px 45px 15px 45px;
+  padding: 32px 45px 32px 45px;
   border-radius: 32px;
+}
+main .questions .container .questions__question-and-answer .questions__question-and-answer__item:not(:last-child) {
   margin-bottom: 8px;
 }
 main .questions .container .questions__question-and-answer .questions__question-and-answer__item h4 {
-  margin-bottom: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  height: 33px;
 }
 main .questions .container .questions__question-and-answer .questions__question-and-answer__item svg {
   position: absolute;
-  top: 44px;
-  right: 53px;
+  top: 45px;
+  right: 54px;
   z-index: 1;
   transition: all 0.5s ease;
 }
@@ -2771,18 +2770,15 @@ main .questions .container .questions__question-and-answer .questions__question-
   overflow: hidden;
 }
 main .questions .container .questions__question-and-answer .questions__question-and-answer__item .questions__question-and-answer__item__text .item__text__row p {
-  line-height: 1.3;
+  padding-top: 14px;
+  line-height: 1.35;
 }
 main .questions .container .questions__question-and-answer .questions__question-and-answer__item .open-question {
   grid-template-rows: 1fr;
   transform: translateY(0px);
-  padding-bottom: 17px;
 }
 main .questions .container .hide {
   display: none;
-}
-main .blog {
-  padding: 34px 0 100px;
 }
 main .blog .container {
   row-gap: 40px;
@@ -2802,9 +2798,6 @@ main .blog .container .blog__reviews {
 }
 main .blog .container .hide {
   display: none;
-}
-main .articleOrVideo {
-  padding: 35px 0 96px;
 }
 main .articleOrVideo .container {
   display: flex;
@@ -3105,9 +3098,6 @@ main .account .container .account__content__place-an-order {
 }
 main .account .container .hide {
   display: none;
-}
-main .placingAnOrder {
-  padding: 34px 0px 100px;
 }
 main .placingAnOrder .container form {
   background-color: inherit;
@@ -3710,6 +3700,10 @@ footer .footer-container .footer-container__content__copyright {
 }
 
 @media screen and (max-width: 1820px) {
+  main {
+    /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
+    /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
+  }
   main .catalogCategories {
     padding-bottom: 80px;
   }
@@ -3731,6 +3725,14 @@ footer .footer-container .footer-container__content__copyright {
   main .catalogCategories .container .catalogCategories__wrapperForFilter .catalogCategories__cards-goods .catalogCategories__cards-goods__wrapperForCards .wrapperFor6Cards {
     width: 864px;
     column-gap: 40px;
+  }
+  main .questions .container .questions__categories {
+    width: 88%;
+  }
+  main .questions .container .questions__categories p {
+    line-height: 1.4;
+    padding-left: 36px;
+    padding-right: 36px;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -4742,6 +4744,24 @@ footer .footer-container .footer-container__content__copyright {
     height: 51px;
     font-size: clamp(14px, 3vw - 13px, 20px);
   }
+  main .questions .container .questions__categories {
+    width: clamp(88%, 1000px - 8vw, 100%);
+  }
+  main .questions .container .questions__categories p {
+    padding-left: clamp(13.5px, 20vw - 183px, 36px);
+    padding-right: clamp(13.5px, 20vw - 183px, 36px);
+  }
+  main .questions .container .questions__categories p:not(:first-child) span {
+    margin-left: 0;
+  }
+  main .questions .container .questions__question-and-answer .questions__question-and-answer__item h4 {
+    font-size: clamp(20px, 3vw - 9px, 24px);
+    letter-spacing: 0.4px;
+    height: 31px;
+  }
+  main .questions .container .questions__question-and-answer .questions__question-and-answer__item .questions__question-and-answer__item__text .item__text__row p {
+    line-height: 1.37;
+  }
   .modal .modal__forgot-your-password form,
   .modal .modal__code-from-sms form,
   .modal .modal__new-password form {
@@ -5403,6 +5423,32 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item p {
     line-height: 1.45;
+  }
+  main .questions .container {
+    width: 100%;
+  }
+  main .questions .container .questions__categories {
+    width: auto;
+    flex-flow: wrap;
+    gap: 6px;
+    margin: 24px 30px;
+  }
+  main .questions .container .questions__categories p {
+    letter-spacing: 0.3px;
+  }
+  main .questions .container .questions__categories p:not(:first-child) span {
+    margin-left: 16px;
+  }
+  main .questions .container .questions__question-and-answer .questions__question-and-answer__item {
+    padding: 32px clamp(30px, 20vw - 102px, 45px) 32px;
+  }
+  main .questions .container .questions__question-and-answer .questions__question-and-answer__item svg {
+    top: 44px;
+    right: 39px;
+  }
+  main .questions .container .questions__question-and-answer .questions__question-and-answer__item .questions__question-and-answer__item__text .item__text__row p {
+    font-size: 16px;
+    padding-right: 25px;
   }
   footer .footer-container {
     width: auto;
@@ -6187,6 +6233,31 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .howToBuy .container .howToBuy__marketplace .links-online-store {
     width: clamp(260px, 100vw - 97px, 482px);
+  }
+  main .questions .container h2 {
+    letter-spacing: 0.5px;
+    line-height: 1.29;
+  }
+  main .questions .container .questions__categories {
+    margin: clamp(16px, 6vw - 10px, 24px) 30px;
+    gap: 5px;
+  }
+  main .questions .container .questions__categories p {
+    font-size: clamp(12px, 3vw - 3px, 14px);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  main .questions .container .questions__categories p:not(:first-child) span {
+    margin-left: 0px;
+  }
+  main .questions .container .questions__question-and-answer .questions__question-and-answer__item {
+    padding-right: 7px;
+    padding-bottom: 34px;
+  }
+  main .questions .container .questions__question-and-answer .questions__question-and-answer__item h4 {
+    max-width: 218px;
+    height: auto;
+    font-size: clamp(16px, 4vw - 3px, 20px);
   }
   .modal form p {
     margin: 16px 0 41px;

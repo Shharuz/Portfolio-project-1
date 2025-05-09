@@ -1098,14 +1098,14 @@ main {
             justify-content: center;
             align-items: center;
             flex-grow: 1;
-            height: 59px;
+            //height: 59px;
             background-color: $title-light;
-            padding: 0 5px 0 5px;
+            padding: 14px 13.5px;
             font-weight: 500;
             font-size: clamp(14px, 2vw - 18px, 20px);
             color: $title;
             letter-spacing: 0.5px;
-            min-width: max-content;
+            //min-width: max-content;
 
             span {
                 display: inline-block;
@@ -1118,7 +1118,7 @@ main {
                 font-size: 12px;
                 text-align: center;
                 padding-top: 2px;
-                margin-left: 16px;
+                flex-shrink: 0;
             }
 
             &:hover {
@@ -3294,10 +3294,27 @@ main {
     }
 
     /*&&&&&&&&&&&      catalogCategories            &&&&&&&&&&&&&&*/
+    .contacts,
+    .forPartners,
+    .directory,
+    .reviews,
+    .howToBuy,
+    .questions,
+    .blog,
+    .articleOrVideo,
+    .placingAnOrder {
+        padding-bottom: clamp(80px, 6vw - 15px, 100px);
+
+        .container {
+            h2 {
+
+                line-height: 1.39;
+            }
+        }
+    }
+
     /*&&&&&&&&&&&      contacts            &&&&&&&&&&&&&&*/
     .contacts {
-        padding-bottom: 95px;
-
         .container {
             display: flex;
             column-gap: 20px;
@@ -3310,7 +3327,7 @@ main {
                 margin: 11px 0 17px;
 
                 h2 {
-                    line-height: 1.5;
+                    //line-height: 1.5;
                     margin-bottom: 36px;
                 }
 
@@ -3422,8 +3439,6 @@ main {
     /*&&&&&&&&&&&      contacts            &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      forPartners            &&&&&&&&&&&&&&*/
     .forPartners {
-        padding-bottom: clamp(80px, 6vw - 13px, 100px);
-
         .container {
             display: flex;
             gap: 20px;
@@ -3431,10 +3446,6 @@ main {
             form {
                 max-width: 829px;
                 width: 100%;
-
-                h2 {
-                    line-height: 1.4;
-                }
 
                 .hide {
                     display: none;
@@ -3453,8 +3464,6 @@ main {
     /*&&&&&&&&&&&      forPartners           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
     .directory {
-        padding-bottom: 100px;
-
         .container {
             max-width: 1674px;
             width: 100%;
@@ -3508,14 +3517,7 @@ main {
     /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
     .reviews {
-        padding-bottom: clamp(80px, 20vw - 280px, 100px);
-
         .container {
-            h2 {
-
-                line-height: 1.39;
-            }
-
             .reviews__wrapper-for-item {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -3539,15 +3541,8 @@ main {
     /*&&&&&&&&&&&      reviews           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
     .howToBuy {
-        padding-bottom: clamp(80px, 20vw - 280px, 100px);
-
         .container {
             max-width: 1038px;
-
-            h2 {
-
-                line-height: 1.39;
-            }
 
             p {
                 line-height: 1.4;
@@ -3557,7 +3552,7 @@ main {
             .howToBuy__categories {
                 column-gap: 4px;
                 width: 93%;
-                margin: 24px 0 clamp(24px, 4vw - 36px, 40px); 
+                margin: 24px 0 clamp(24px, 4vw - 36px, 40px);
 
                 p {
                     font-size: 20px;
@@ -3584,15 +3579,17 @@ main {
     /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
     .questions {
-        padding: 35px 0 88px;
-
         .container {
-
             .questions__categories {
+                width: 100%;
                 gap: 4px;
                 margin: 24px 0;
-                align-self: stretch;
-
+                //align-self: stretch;
+                p {
+                    &:first-child {
+                        min-width: fit-content;
+                    }
+                }
             }
 
             .questions__question-and-answer {
@@ -3606,19 +3603,23 @@ main {
                     display: grid;
                     grid-template-rows: 0fr;
                     overflow: hidden;
-                    padding: 32px 45px 15px 45px;
+                    padding: 32px 45px 32px 45px;
                     border-radius: 32px;
-                    margin-bottom: 8px;
 
+                    &:not(:last-child) {
+                        margin-bottom: 8px;
+                    }
 
                     h4 {
-                        margin-bottom: 17px;
+                        line-height: 1.4;
+                        letter-spacing: 0.5px;
+                        height: 33px;
                     }
 
                     svg {
                         position: absolute;
-                        top: 44px;
-                        right: 53px;
+                        top: 45px;
+                        right: 54px;
                         z-index: 1;
                         transition: $main__transition;
                     }
@@ -3641,7 +3642,8 @@ main {
                             overflow: hidden;
 
                             p {
-                                line-height: 1.3;
+                                padding-top: 14px;
+                                line-height: 1.35;
                             }
                         }
                     }
@@ -3649,7 +3651,7 @@ main {
                     .open-question {
                         grid-template-rows: 1fr;
                         transform: translateY(0px);
-                        padding-bottom: 17px;
+                        //padding-bottom: 20px;
                     }
                 }
 
@@ -3665,10 +3667,7 @@ main {
     /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
     .blog {
-        padding: 34px 0 100px;
-
         .container {
-
             row-gap: 40px;
 
             h2 {
@@ -3698,8 +3697,6 @@ main {
     /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      article           &&&&&&&&&&&&&&*/
     .articleOrVideo {
-        padding: 35px 0 96px;
-
         .container {
             display: flex;
             justify-content: space-between;
@@ -4117,15 +4114,13 @@ main {
     /*&&&&&&&&&&&      account           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&     placingAnOrder           &&&&&&&&&&&&&&*/
     .placingAnOrder {
-        padding: 34px 0px 100px;
-
         .container {
             form {
                 background-color: inherit;
                 max-width: 1116px;
                 padding: 0;
 
-                h2 {}
+
 
                 .placingAnOrder__form__block {
 
@@ -4988,6 +4983,56 @@ footer {
                 }
             }
         }
+
+        /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
+        .questions {
+            .container {
+                .questions__categories {
+                    width: 88%;
+
+                    p {
+                        line-height: 1.4;
+                        padding-left: 36px;
+                        padding-right: 36px;
+                    }
+                }
+
+                .questions__question-and-answer {
+
+
+
+                    .questions__question-and-answer__item {
+
+                        &:not(:last-child) {}
+
+                        h4 {}
+
+                        svg {}
+
+                        .rotate-svg-questions {}
+
+                        .questions__question-and-answer__item__text {
+
+
+
+                            .item__text__row {
+
+
+                                p {}
+                            }
+                        }
+
+                        .open-question {}
+                    }
+
+
+                }
+
+
+            }
+        }
+
+        /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
     }
 }
 
@@ -6547,17 +6592,17 @@ footer {
 
                 h2 {}
 
-                p{
-                   line-height: 1.38; 
+                p {
+                    line-height: 1.38;
                 }
 
                 .howToBuy__categories {
                     width: clamp(93%, 900px - 20vw, 100%);
-                    
+
                     p {
                         height: 51px;
                         font-size: clamp(14px, 3vw - 13px, 20px);
-                        
+
                     }
                 }
 
@@ -6574,6 +6619,62 @@ footer {
         /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
 
+        .questions {
+            .container {
+                .questions__categories {
+                   width: clamp(88%, 1000px - 8vw, 100%);
+
+                    p {
+                        padding-left:clamp(13.5px, 20vw - 183px, 36px);
+                        padding-right:clamp(13.5px, 20vw - 183px, 36px);
+                        &:not(:first-child){
+                            span{
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+
+                .questions__question-and-answer {
+
+
+
+                    .questions__question-and-answer__item {
+
+                        &:not(:last-child) {}
+
+                        h4 {
+                            font-size: clamp(20px, 3vw - 9px, 24px);
+                            letter-spacing: 0.4px;
+                            height: 31px;
+                        }
+
+                        svg {}
+
+                        .rotate-svg-questions {}
+
+                        .questions__question-and-answer__item__text {
+
+                            .item__text__row {
+
+
+                                p {
+                                    line-height: 1.37;
+                                }
+                            }
+                        }
+
+                        .open-question {
+                           
+                        }
+                    }
+
+
+                }
+
+
+            }
+        }
 
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
@@ -7726,7 +7827,66 @@ footer {
 
         /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
+        .questions {
+            .container {
+                width: 100%;
+                .questions__categories {
+                    width: auto;
+                    flex-flow: wrap;
+                    gap: 6px;
+                    margin: 24px 30px;
+                    
+                    p {
 
+                       letter-spacing: 0.3px;
+                        &:not(:first-child){
+                            span{
+                               margin-left: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .questions__question-and-answer {
+
+
+
+                    .questions__question-and-answer__item {
+                        padding: 32px clamp(30px, 20vw - 102px, 45px) 32px;
+                        &:not(:last-child) {}
+
+                        h4 {
+                           
+                        }
+
+                        svg {
+                            top: 44px;
+                            right: 39px;
+                        }
+
+                        .rotate-svg-questions {}
+
+                        .questions__question-and-answer__item__text {
+
+                            .item__text__row {
+
+
+                                p {
+                                    font-size: 16px;
+                                    padding-right: 25px;
+                                }
+                            }
+                        }
+
+                        .open-question {}
+                    }
+
+
+                }
+
+
+            }
+        }
 
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
@@ -8970,7 +9130,7 @@ footer {
 
 
             .container {
-                h2{
+                h2 {
                     line-height: 1.29;
                 }
 
@@ -8982,13 +9142,14 @@ footer {
                     flex-direction: column;
                     //margin-top: clamp(16px, 6vw - 10px, 24px);
                     margin: clamp(16px, 6vw - 10px, 24px) 0 clamp(16px, 6vw - 10px, 24px);
-                    p{
+
+                    p {
                         height: clamp(39px, 10vw - 1px, 51px);
                     }
                 }
 
                 .howToBuy__marketplace {
-                    p{
+                    p {
                         line-height: 1.44;
                     }
 
@@ -9003,7 +9164,69 @@ footer {
 
         /*&&&&&&&&&&&      howToBuy           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
+        .questions {
+            .container {
+                h2{
+                    letter-spacing: 0.5px;
+                    line-height: 1.29;
+                }
+                
+                .questions__categories {
+                    margin: clamp(16px, 6vw - 10px, 24px) 30px;
+                    gap: 5px;
+                    p {
+                      font-size: clamp(12px, 3vw - 3px, 14px);
+                      padding-left: 20px;
+                      padding-right: 20px;
+                        &:not(:first-child){
+                            span{
+                              margin-left: 0px
+                            }
+                        }
+                    }
+                }
 
+                .questions__question-and-answer {
+
+
+
+                    .questions__question-and-answer__item {
+                        padding-right: 7px;
+                        padding-bottom: 34px;
+                        &:not(:last-child) {}
+
+                        h4 {
+                            max-width: 218px;
+                            height: auto;
+                            font-size: clamp(16px, 4vw - 3px, 20px);
+                        }
+
+                        svg {
+                            
+                        }
+
+                        .rotate-svg-questions {}
+
+                        .questions__question-and-answer__item__text {
+
+                            .item__text__row {
+
+
+                                p {
+                                   //padding-top: 29px;
+                                }
+                            }
+                        }
+
+                        .open-question {}
+                    }
+
+
+                }
+
+
+            }
+        }
 
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
