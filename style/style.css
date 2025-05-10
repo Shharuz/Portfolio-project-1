@@ -966,9 +966,7 @@ main .review .full-review .name-box .date {
   line-height: 1.7;
 }
 main .blog-article-min {
-  display: flex;
-  flex-direction: column;
-  flex: 1 406px;
+  max-width: 406px;
 }
 main .blog-article-min a {
   text-transform: none;
@@ -990,6 +988,7 @@ main .blog-article-min .linkToCategoryBlog {
 }
 main .blog-article-min h5 {
   margin: 10px 0 6px;
+  line-height: 1.23;
 }
 main .blog-article-min h5 a {
   font-weight: 500;
@@ -2781,19 +2780,19 @@ main .questions .container .hide {
   display: none;
 }
 main .blog .container {
-  row-gap: 40px;
-}
-main .blog .container h2 {
-  margin-bottom: 3px;
+  row-gap: clamp(24px, 5vw - 56px, 40px);
 }
 main .blog .container .blog__categories {
+  width: clamp(59.5%, 1100px - 6vw, 86%);
   gap: 4px;
-  width: 59.5%;
+}
+main .blog .container .blog__categories p {
+  font-size: 20px;
 }
 main .blog .container .blog__reviews {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
   row-gap: 40px;
 }
 main .blog .container .hide {
@@ -3690,7 +3689,7 @@ footer .footer-container .footer-container__content .footer-container__content__
 }
 footer .footer-container .footer-container__content .footer-container__content__contacts .footer-container__content__contacts__adress a {
   width: 222px;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 footer .footer-container .footer-container__content__copyright {
   position: absolute;
@@ -4034,6 +4033,9 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .directory .container .directory-categories {
     margin-top: 61px;
+  }
+  main .blog .container .blog__reviews {
+    grid-template-columns: repeat(3, 1fr);
   }
   .modal {
     align-items: center;
@@ -4762,6 +4764,16 @@ footer .footer-container .footer-container__content__copyright {
   main .questions .container .questions__question-and-answer .questions__question-and-answer__item .questions__question-and-answer__item__text .item__text__row p {
     line-height: 1.37;
   }
+  main .blog .container .blog__categories {
+    width: clamp(86%, 1000px - 5vw, 91%);
+  }
+  main .blog .container .blog__categories p {
+    font-size: clamp(14px, 2vw - 2px, 20px);
+  }
+  main .blog .container .blog__reviews {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: clamp(20px, 7vw - 37px, 40px);
+  }
   .modal .modal__forgot-your-password form,
   .modal .modal__code-from-sms form,
   .modal .modal__new-password form {
@@ -5135,6 +5147,9 @@ footer .footer-container .footer-container__content__copyright {
     /*&&&&&&&&&&&     placingAnOrder           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&     placingAnOrder           &&&&&&&&&&&&&&*/
   }
+  main .blog-article-min h5 {
+    margin: 10px 0 9px;
+  }
   main .index-offer {
     padding-bottom: clamp(3.75rem, 10vw, 4.875rem);
   }
@@ -5449,6 +5464,15 @@ footer .footer-container .footer-container__content__copyright {
   main .questions .container .questions__question-and-answer .questions__question-and-answer__item .questions__question-and-answer__item__text .item__text__row p {
     font-size: 16px;
     padding-right: 25px;
+  }
+  main .blog .container .blog__categories {
+    justify-content: center;
+  }
+  main .blog .container .blog__reviews .blog-article-min h5 a {
+    font-size: clamp(18px, 4vw - 9px, 20px);
+  }
+  main .blog .container .blog__reviews .blog-article-min p {
+    font-size: clamp(14px, 3vw - 6px, 16px);
   }
   footer .footer-container {
     width: auto;
@@ -6258,6 +6282,19 @@ footer .footer-container .footer-container__content__copyright {
     max-width: 218px;
     height: auto;
     font-size: clamp(16px, 4vw - 3px, 20px);
+  }
+  main .blog .container {
+    row-gap: clamp(16px, 5vw - 5px, 24px);
+  }
+  main .blog .container h2 {
+    line-height: 1.32;
+  }
+  main .blog .container .blog__categories {
+    flex-direction: column;
+    width: 100%;
+  }
+  main .blog .container .blog__reviews {
+    grid-template-columns: 1fr;
   }
   .modal form p {
     margin: 16px 0 41px;

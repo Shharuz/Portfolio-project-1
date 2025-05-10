@@ -1238,9 +1238,7 @@ main {
     }
 
     .blog-article-min {
-        display: flex;
-        flex-direction: column;
-        flex: 1 406px;
+        max-width: 406px;
 
         a {
             text-transform: none;
@@ -1264,6 +1262,8 @@ main {
 
         h5 {
             margin: 10px 0 6px;
+            //line-height: 1.25;
+            line-height: 1.23;
 
             a {
                 font-weight: 500;
@@ -3584,6 +3584,7 @@ main {
                 width: 100%;
                 gap: 4px;
                 margin: 24px 0;
+
                 //align-self: stretch;
                 p {
                     &:first-child {
@@ -3668,23 +3669,23 @@ main {
     /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
     .blog {
         .container {
-            row-gap: 40px;
+            row-gap: clamp(24px, 5vw - 56px, 40px);
 
-            h2 {
-                margin-bottom: 3px;
-            }
+            h2 {}
 
             .blog__categories {
+                width: clamp(59.5%, 1100px - 6vw, 86%);
                 gap: 4px;
 
-                width: 59.5%;
-
+                p {
+                    font-size: 20px;
+                }
             }
 
             .blog__reviews {
-                display: flex;
-                flex-wrap: wrap;
-                column-gap: 18px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: 20px;
                 row-gap: 40px;
             }
 
@@ -4926,7 +4927,7 @@ footer {
 
                     a {
                         width: 222px;
-                        line-height: 1.3;
+                        line-height: 1.4;
                     }
                 }
             }
@@ -5512,6 +5513,20 @@ footer {
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
 
+        .blog {
+            .container {
+
+
+                h2 {}
+
+                .blog__categories {}
+
+                .blog__reviews {
+                    grid-template-columns: repeat(3, 1fr);
+                    //padding: 0 3.5px; //потому что дизайнер
+                }
+            }
+        }
 
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      article           &&&&&&&&&&&&&&*/
@@ -5762,6 +5777,7 @@ footer {
 @media screen and (max-width: 1100px) {
     .container {
         width: clamp(690px, 100vw - 60px, 1040px);
+        //width: clamp(690px, 100vw - 60px, 1040px);
     }
 
     h1 {
@@ -6622,13 +6638,14 @@ footer {
         .questions {
             .container {
                 .questions__categories {
-                   width: clamp(88%, 1000px - 8vw, 100%);
+                    width: clamp(88%, 1000px - 8vw, 100%);
 
                     p {
-                        padding-left:clamp(13.5px, 20vw - 183px, 36px);
-                        padding-right:clamp(13.5px, 20vw - 183px, 36px);
-                        &:not(:first-child){
-                            span{
+                        padding-left: clamp(13.5px, 20vw - 183px, 36px);
+                        padding-right: clamp(13.5px, 20vw - 183px, 36px);
+
+                        &:not(:first-child) {
+                            span {
                                 margin-left: 0;
                             }
                         }
@@ -6664,9 +6681,7 @@ footer {
                             }
                         }
 
-                        .open-question {
-                           
-                        }
+                        .open-question {}
                     }
 
 
@@ -6678,7 +6693,27 @@ footer {
 
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
+        .blog {
+            .container {
 
+
+                h2 {}
+
+                .blog__categories {
+                    width: clamp(86%, 1000px - 5vw, 91%);
+
+                    p {
+                        font-size: clamp(14px, 2vw - 2px, 20px);
+                    }
+                }
+
+                .blog__reviews {
+                    grid-template-columns: repeat(2, 1fr);
+                    row-gap: clamp(20px, 7vw - 37px, 40px);
+
+                }
+            }
+        }
 
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      article           &&&&&&&&&&&&&&*/
@@ -7248,6 +7283,14 @@ footer {
 
 
     main {
+        .blog-article-min {
+            h5 {
+                margin: 10px 0 9px;
+            }
+
+        }
+
+
         .index-offer {
             padding-bottom: clamp(3.75rem, 10vw, 4.875rem);
 
@@ -7830,18 +7873,20 @@ footer {
         .questions {
             .container {
                 width: 100%;
+
                 .questions__categories {
                     width: auto;
                     flex-flow: wrap;
                     gap: 6px;
                     margin: 24px 30px;
-                    
+
                     p {
 
-                       letter-spacing: 0.3px;
-                        &:not(:first-child){
-                            span{
-                               margin-left: 16px;
+                        letter-spacing: 0.3px;
+
+                        &:not(:first-child) {
+                            span {
+                                margin-left: 16px;
                             }
                         }
                     }
@@ -7853,11 +7898,10 @@ footer {
 
                     .questions__question-and-answer__item {
                         padding: 32px clamp(30px, 20vw - 102px, 45px) 32px;
+
                         &:not(:last-child) {}
 
-                        h4 {
-                           
-                        }
+                        h4 {}
 
                         svg {
                             top: 44px;
@@ -7890,7 +7934,35 @@ footer {
 
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
+        .blog {
+            .container {
 
+
+                h2 {}
+
+                .blog__categories {
+                    //width: 680px; //for PP
+                    //align-self: flex-start; //for PP
+                    justify-content: center;
+                    p {}
+                }
+
+                .blog__reviews {
+                    .blog-article-min {
+                        h5 {
+                            a {
+                                font-size: clamp(18px, 4vw - 9px, 20px);
+
+                            }
+                        }
+
+                        p {
+                            font-size: clamp(14px, 3vw - 6px, 16px);
+                        }
+                    }
+                }
+            }
+        }
 
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      article           &&&&&&&&&&&&&&*/
@@ -9166,21 +9238,23 @@ footer {
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         .questions {
             .container {
-                h2{
+                h2 {
                     letter-spacing: 0.5px;
                     line-height: 1.29;
                 }
-                
+
                 .questions__categories {
                     margin: clamp(16px, 6vw - 10px, 24px) 30px;
                     gap: 5px;
+
                     p {
-                      font-size: clamp(12px, 3vw - 3px, 14px);
-                      padding-left: 20px;
-                      padding-right: 20px;
-                        &:not(:first-child){
-                            span{
-                              margin-left: 0px
+                        font-size: clamp(12px, 3vw - 3px, 14px);
+                        padding-left: 20px;
+                        padding-right: 20px;
+
+                        &:not(:first-child) {
+                            span {
+                                margin-left: 0px
                             }
                         }
                     }
@@ -9193,6 +9267,7 @@ footer {
                     .questions__question-and-answer__item {
                         padding-right: 7px;
                         padding-bottom: 34px;
+
                         &:not(:last-child) {}
 
                         h4 {
@@ -9201,9 +9276,7 @@ footer {
                             font-size: clamp(16px, 4vw - 3px, 20px);
                         }
 
-                        svg {
-                            
-                        }
+                        svg {}
 
                         .rotate-svg-questions {}
 
@@ -9213,7 +9286,7 @@ footer {
 
 
                                 p {
-                                   //padding-top: 29px;
+                                    //padding-top: 29px;
                                 }
                             }
                         }
@@ -9230,7 +9303,22 @@ footer {
 
         /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
+        .blog {
+            .container {
+                row-gap: clamp(16px, 5vw - 5px, 24px);
 
+                h2 {line-height: 1.32}
+
+                .blog__categories {
+                    flex-direction: column;//remove for PP
+                    width: 100%;           //remove for PP
+                }
+
+                .blog__reviews {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
 
         /*&&&&&&&&&&&      blog           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&      article           &&&&&&&&&&&&&&*/
