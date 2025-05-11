@@ -29,21 +29,26 @@ body .forSmoothScroll {
 }
 body .forSmoothScroll .forSmoothScroll__wrapper main {
   overflow-y: hidden;
+  /*.index-aboutUs {
+      h2 {
+          .lineh2 {
+              justify-content: start;
+          }
+
+          @media screen and (max-width: 1400px) {
+              .lineh2 {
+                  justify-content: center;
+              }
+          }
+      }
+  }*/
 }
-body .forSmoothScroll .forSmoothScroll__wrapper main .index-advantages h1 .line {
+body .forSmoothScroll .forSmoothScroll__wrapper main .line {
   display: flex;
   justify-content: center;
   column-gap: 12px;
 }
-body .forSmoothScroll .forSmoothScroll__wrapper main .index-advantages h1 .line .wrapperForWord {
-  display: flex;
-}
-body .forSmoothScroll .forSmoothScroll__wrapper main h2 .line {
-  display: flex;
-  justify-content: center;
-  column-gap: 12px;
-}
-body .forSmoothScroll .forSmoothScroll__wrapper main h2 .line .wrapperForWord {
+body .forSmoothScroll .forSmoothScroll__wrapper main .line .wrapperForWord {
   display: flex;
 }
 @keyframes appear {
@@ -54,14 +59,6 @@ body .forSmoothScroll .forSmoothScroll__wrapper main h2 .line .wrapperForWord {
   to {
     opacity: 1;
     transform: translateY(0px);
-  }
-}
-body .forSmoothScroll .forSmoothScroll__wrapper main .index-aboutUs h2 .lineh2 {
-  justify-content: start;
-}
-@media screen and (max-width: 1400px) {
-  body .forSmoothScroll .forSmoothScroll__wrapper main .index-aboutUs h2 .lineh2 {
-    justify-content: center;
   }
 }
 
@@ -3850,9 +3847,14 @@ footer .footer-container .footer-container__content__copyright {
     padding-top: 2.0625rem;
     background-position: calc(100% + 11.4375rem) 100%, -4% 121%;
     background-size: 27.3125rem, 16.25rem;
+    animation: none;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .index-offer__online-store__wrapper {
+    animation: none;
   }
   main .index-offer .index-offer__container .index-offer__online-store .links-online-store {
     margin-top: -2.625rem;
+    animation: none;
   }
   main .index-advantages {
     max-width: 70.5rem;

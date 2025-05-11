@@ -76,32 +76,16 @@ body {
             main {
                 overflow-y: hidden;
 
-                .index-advantages {
-                    h1 {
-                        .line {
-                            display: flex;
-                            justify-content: center;
-                            column-gap: 12px;
+                .line {
+                    display: flex;
+                    justify-content: center;
+                    column-gap: 12px;
 
-                            .wrapperForWord {
-                                display: flex;
-                            }
-                        }
-                    }
-                }
-
-                h2 {
-                    .line {
+                    .wrapperForWord {
                         display: flex;
-                        justify-content: center;
-                        column-gap: 12px;
-
-                        .wrapperForWord {
-                            display: flex;
-                        }
-
                     }
                 }
+
 
                 @keyframes appear {
                     from {
@@ -115,15 +99,7 @@ body {
                     }
                 }
 
-                .index-catalog {
-                    .swiper-card {
-                        .swiper-wrapper {
-                            .swiper-slide {}
-                        }
-                    }
-                }
-
-                .index-aboutUs {
+                /*.index-aboutUs {
                     h2 {
                         .lineh2 {
                             justify-content: start;
@@ -135,7 +111,7 @@ body {
                             }
                         }
                     }
-                }
+                }*/
             }
 
         }
@@ -5172,9 +5148,15 @@ footer {
                     padding-top: 2.0625rem;
                     background-position: calc(100% + 11.4375rem) 100%, -4% 121%;
                     background-size: 27.3125rem, 16.25rem;
+                    animation: none;
+
+                    .index-offer__online-store__wrapper{
+                        animation: none;
+                    }
 
                     .links-online-store {
                         margin-top: -2.625rem;
+                        animation: none;
                     }
                 }
             }
