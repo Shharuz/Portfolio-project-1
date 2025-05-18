@@ -16,6 +16,12 @@ const swiperCard = document.querySelector('.swiper-card');
 //console.log(swiperCard);
 const elementsIndexAboutUS = document.querySelectorAll('.index-aboutUs aside p, .index-aboutUs__wrapper-forswiper, .index-aboutUs__more-details-reviews a');
 //console.log(elementsIndexAboutUS);
+const indexOnlineStore = document.querySelector('.index-offer__online-store');
+//console.log(indexOnlineStore);
+const p_indexOnlineStore = indexOnlineStore.querySelector('p');
+//console.log(p_indexOnlineStore);
+const linksOnlineStore = indexOnlineStore.querySelectorAll('a');
+//console.log(linksOnlineStore);
 const progress = document.querySelector('.progress');
 
 const sizewindow = document.querySelector('.sizewindow');
@@ -37,6 +43,9 @@ const h2 = document.querySelectorAll('h2');
 
 creatingWrappers(h2[0], 'Каталог нашей продукции', 1, 0, 0, 0); //approximately on line 128
 
+////Preparing indexOnlineStore-H3(adding wrappers) for animation
+const h3 = indexOnlineStore.querySelector('h3');
+creatingWrappers(h3, 'Мы на маркетплейсах', 1, 0, 0, 0); //approximately on line 128
 
 window.addEventListener('resize', changeBodyStartEndAnimPrep); //approximately on line 58
 window.addEventListener('DOMContentLoaded', changeBodyStartEndAnimPrep);
@@ -277,6 +286,184 @@ function smooth() {
                     }
                 }
 
+                //animation indexOnlineStore
+                if (window.innerWidth <= 1400) {
+                    let startAnimindexOnlineStore = startAnimSection - 299;
+                    let endAnimindexOnlineStore = endAnimSection - 299;
+                    //comments see approximately line 303
+                    let animindexOnlineStorePathLength = endAnimindexOnlineStore - startAnimindexOnlineStore;
+                    if (blockPosY > startAnimindexOnlineStore && blockPosY < endAnimindexOnlineStore) {
+                        let indexOnlineStoreTransY = (endAnimindexOnlineStore - blockPosY) * 100 / 100;
+                        let indexOnlineStoreOpac = 0;
+
+                        let stepindexOnlineStoreOpac = 100 / animindexOnlineStorePathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
+                        if (indexOnlineStoreTransY > 0 && indexOnlineStoreTransY < animindexOnlineStorePathLength) {
+                            indexOnlineStoreOpac = 1 - ((indexOnlineStoreTransY / 100 * stepindexOnlineStoreOpac * 100) / 100);
+                        }
+
+                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, ${indexOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${indexOnlineStoreOpac.toFixed(4)};`);
+
+                    } else if (blockPosY > endAnimindexOnlineStore) {
+                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                    } else if (blockPosY < startAnimindexOnlineStore) {
+                        indexOnlineStore.setAttribute('style', `opacity: 0;`);
+                    }
+
+                    //animate indexOnlineStore h3
+                    let collectline = h3.querySelectorAll('.line');
+
+                    for (let i = 0; i < collectline.length; ++i) {
+                        let h3Words = collectline[i].querySelectorAll('.wrapperForWord');
+                        let h3AllLetters = [];
+                        for (let word of h3Words) {
+                            let h3Wordletters = word.querySelectorAll('.wrapperSymbol');
+                            for (let letter of h3Wordletters) {
+                                h3AllLetters.push(letter);
+                            }
+                        }
+
+                        if (window.innerWidth > 801) {
+                            startAnimLetterWordh3 = startAnimindexOnlineStore;
+                            endAnimLetterWordh3 = endAnimindexOnlineStore - 120;
+                        } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
+                            startAnimLetterWordh3 = startAnimindexOnlineStore;
+                            endAnimLetterWordh3 = endAnimindexOnlineStore - 70;
+                        } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
+                            startAnimLetterWordh3 = startAnimindexOnlineStore;
+                            endAnimLetterWordh3 = endAnimindexOnlineStore - 50;
+                        }
+
+
+
+
+                        for (let i = 0; i < h3AllLetters.length; ++i) {
+                            if (window.innerWidth >= 801) {
+                                tilt = 0.5
+                            } else if ((window.innerWidth <= 800)) {
+                                tilt = 0.4
+                            }
+                            startAnimLetterWordh3 += i * tilt // how much each subsequent letter will 
+                            endAnimLetterWordh3 += i * tilt // be lower than the previous one (the overall slope of the line) 0.2 weaker slope > 0.4 > 0.8 more tilt
+                            //comments see approximately line 303
+                            let animationh3WordLetterPathLength = endAnimLetterWordh3 - startAnimLetterWordh3;
+                            if (blockPosY > startAnimLetterWordh3 && blockPosY < endAnimLetterWordh3) {
+                                let h3WordsLetterTransY = (endAnimLetterWordh3 - blockPosY) * 100 / 100;
+                                let h3WordsLetterOpac = 0;
+
+                                let steph3WordsLetterOpac = 100 / animationh3WordLetterPathLength; // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
+                                if (h3WordsLetterTransY > 0 && h3WordsLetterTransY < animationh3WordLetterPathLength) {
+                                    h3WordsLetterOpac = 1 - ((h3WordsLetterTransY / 100 * steph3WordsLetterOpac * 100) / 100);
+                                }
+
+                                h3AllLetters[i].setAttribute('style', `transform: translate3d(0px, ${h3WordsLetterTransY.toFixed(2)}px, 0px); opacity: ${h3WordsLetterOpac.toFixed(4)};`);
+                            } else if (blockPosY > endAnimLetterWordh3) {
+                                h3AllLetters[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                            } else if (blockPosY < startAnimLetterWordh3) {
+                                h3AllLetters[i].setAttribute('style', `opacity: 0;`);
+                            }
+                        }
+                    }
+
+                    //animate indexOnlineStore p
+                    let startAnimp_indexOnlineStore;
+                    let endAnimp_indexOnlineStore;
+
+                    if (window.innerWidth > 801) {
+                        startAnimp_indexOnlineStore = startAnimindexOnlineStore;
+                        endAnimp_indexOnlineStore = endAnimindexOnlineStore - 50;
+                    } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
+                        startAnimp_indexOnlineStore = startAnimindexOnlineStore;
+                        endAnimp_indexOnlineStore = endAnimindexOnlineStore - 30;
+                    } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
+                        startAnimp_indexOnlineStore = startAnimindexOnlineStore;
+                        endAnimp_indexOnlineStore = endAnimindexOnlineStore - 10;
+                    }
+                    
+                    let animp_indexOnlineStorePathLength = endAnimp_indexOnlineStore - startAnimp_indexOnlineStore;
+                    if (blockPosY > startAnimp_indexOnlineStore && blockPosY < endAnimp_indexOnlineStore) {
+                        let p_indexOnlineStoreTransY = (endAnimp_indexOnlineStore - blockPosY) * 100 / 100;
+                        let p_indexOnlineStoreOpac = 0;
+
+                        let stepp_indexOnlineStoreOpac = 100 / animp_indexOnlineStorePathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
+                        if (p_indexOnlineStoreTransY > 0 && p_indexOnlineStoreTransY < animp_indexOnlineStorePathLength) {
+                            p_indexOnlineStoreOpac = 1 - ((p_indexOnlineStoreTransY / 100 * stepp_indexOnlineStoreOpac * 100) / 100);
+                        }
+
+                        p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, ${p_indexOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${p_indexOnlineStoreOpac.toFixed(4)};`);
+
+                    } else if (blockPosY > endAnimp_indexOnlineStore) {
+                        p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                    } else if (blockPosY < startAnimp_indexOnlineStore) {
+                        p_indexOnlineStore.setAttribute('style', `opacity: 0;`);
+                    }
+
+                    //animate linksOnlineStore
+                    let startAnimlinksOnlineStore;
+                    let endAnimlinksOnlineStore;
+                    if (window.innerWidth > 801) {
+                        startAnimlinksOnlineStore = startAnimindexOnlineStore;
+                        endAnimlinksOnlineStore = endAnimindexOnlineStore - 100;
+                    } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
+                        startAnimlinksOnlineStore = startAnimindexOnlineStore;
+                        endAnimlinksOnlineStore = endAnimindexOnlineStore - 70;
+                    } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
+                        startAnimlinksOnlineStore = startAnimindexOnlineStore;
+                        endAnimlinksOnlineStore = endAnimindexOnlineStore - 50;
+                    }
+
+
+                    for (let i = 0; i < linksOnlineStore.length; ++i) { //customize the appearance of elements
+
+                        startAnimlinksOnlineStore += 30;
+                        endAnimlinksOnlineStore += 30;
+
+                        let animlinksOnlineStorePathLength = endAnimlinksOnlineStore - startAnimlinksOnlineStore;
+                        if (blockPosY > startAnimlinksOnlineStore && blockPosY < endAnimlinksOnlineStore) {
+                            let linksOnlineStoreTransY = (endAnimlinksOnlineStore - blockPosY) * 100 / 100;
+                            let linksOnlineStoreOpac = 0;
+
+                            let steplinksOnlineStoreOpac = 100 / animlinksOnlineStorePathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
+                            if (linksOnlineStoreTransY > 0 && linksOnlineStoreTransY < animlinksOnlineStorePathLength) {
+                                linksOnlineStoreOpac = 1 - ((linksOnlineStoreTransY / 100 * steplinksOnlineStoreOpac * 100) / 100);
+                            }
+                            if (window.innerWidth > 1100) {
+                                linksOnlineStore[i].setAttribute('style', `transform: translate3d(${linksOnlineStoreTransY.toFixed(2)}px, 0px, 0px); opacity: ${linksOnlineStoreOpac.toFixed(4)};`);
+                            } else {
+                                linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, ${linksOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${linksOnlineStoreOpac.toFixed(4)};`);
+                            }
+
+
+                        } else if (blockPosY > endAnimlinksOnlineStore) {
+                            linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                        } else if (blockPosY < startAnimlinksOnlineStore) {
+                            linksOnlineStore[i].setAttribute('style', `opacity: 0;`);
+                        }
+                    }
+
+
+                } else {
+                    indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+
+                    let h3Words = h3.querySelectorAll('.wrapperForWord');
+                    let h3AllLetters = [];
+                    for (let word of h3Words) {
+                        let h3Wordletters = word.querySelectorAll('.wrapperSymbol');
+                        for (let letter of h3Wordletters) {
+                            h3AllLetters.push(letter);
+                        }
+                    }
+                    for (let i = 0; i < h3AllLetters.length; ++i) {
+                        h3AllLetters[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                    }
+
+                    p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+
+                    for (let i = 0; i < linksOnlineStore.length; ++i) {
+                        linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                    }
+
+                }
+
                 //animation h1
                 let collectline = allSection[i].querySelectorAll('.line');
                 for (let line of collectline) {
@@ -392,6 +579,7 @@ function smooth() {
                         indexAdvantagesBlockItems[i].setAttribute('style', `opacity: 0;`);
                     }
                 }
+
             } else if (i == 2) {
                 if (window.innerHeight > 1081 && window.innerWidth > 1401) {
                     if (startAnimSection != 500) {
@@ -497,7 +685,7 @@ function smooth() {
                                 startAnimLetterWordH2 = startAnimSection;
                                 endAnimLetterWordH2 = endAnimSection - 50;
                             }
-                        }else if (y == 1){
+                        } else if (y == 1) {
                             if (window.innerWidth > 801) {
                                 startAnimLetterWordH2 = startAnimSection + 200;
                                 endAnimLetterWordH2 = (endAnimSection + 200) - 100;
