@@ -29,24 +29,11 @@ body .forSmoothScroll {
 }
 body .forSmoothScroll .forSmoothScroll__wrapper main {
   overflow-y: hidden;
-  /*.index-aboutUs {
-      h2 {
-          .lineh2 {
-              justify-content: start;
-          }
-
-          @media screen and (max-width: 1400px) {
-              .lineh2 {
-                  justify-content: center;
-              }
-          }
-      }
-  }*/
 }
 body .forSmoothScroll .forSmoothScroll__wrapper main .line {
   display: flex;
   justify-content: center;
-  column-gap: 12px;
+  column-gap: 11px;
 }
 body .forSmoothScroll .forSmoothScroll__wrapper main .line .wrapperForWord {
   display: flex;
@@ -621,7 +608,11 @@ form .form--radio--legal-entity--personal {
   justify-content: left;
   position: relative;
   column-gap: 29px;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
+}
+form .form--radio--legal-entity--personal .fieldset__item {
+  display: flex;
+  align-items: center;
 }
 form .form--radio--legal-entity--personal .fieldset__item input {
   appearance: none;
@@ -629,9 +620,9 @@ form .form--radio--legal-entity--personal .fieldset__item input {
   width: 22px;
   height: 22px;
   border: 1px solid #BBBBBB;
-  margin-right: 5px;
+  margin-right: 8px;
   position: relative;
-  top: 4px;
+  top: 0px;
 }
 form .form--radio--legal-entity--personal .fieldset__item input:checked {
   border: 1px solid #73C167;
@@ -651,6 +642,8 @@ form .form__item {
   align-items: center;
   width: 508px;
   height: 52px;
+}
+form .form__item:not(:last-child) {
   margin-bottom: 16px;
 }
 form .form__item label span {
@@ -1486,6 +1479,7 @@ main .index-advantages {
   max-width: 1214px;
   margin: 0 auto;
   padding-bottom: clamp(4.375rem, 6.75rem - 2vw, 5rem);
+  opacity: 0;
 }
 main .index-advantages h1 {
   text-align: center;
@@ -2826,87 +2820,68 @@ main .articleOrVideo .container a {
   width: 320px;
   height: 63px;
 }
+main .account .container h2 {
+  line-height: 1.39;
+}
 main .account .container .account__categories {
   gap: 4px;
-  margin: 28px 0 42px;
-  width: 72%;
+  margin: 24px 0 clamp(24px, 5vw - 56px, 40px);
+  width: clamp(728px, 95vw - 610px, 1208px);
 }
-main .account .container .account__categories label {
-  width: 33%;
+main .account .container .account__categories p {
+  font-size: 20px;
 }
 main .account .container form {
   flex-flow: row wrap;
   padding: 0;
-  gap: 20px 20px;
+  gap: 40px 20px;
   background: none;
   max-width: 1450px;
-  margin-bottom: 100px;
+  margin-bottom: clamp(38px, 20vw - 284px, 100px);
 }
 main .account .container form .account__form__content__block {
   flex: 1 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 510px;
-  padding: 42px 0 25px;
+  padding: 42px 0;
   background-color: #FFFFFF;
   border-radius: 24px;
 }
-main .account .container form .account__form__content__block .form--radio--legal-entity--personal {
-  align-self: start;
-  margin-left: 14.3%;
-  margin-bottom: 13px;
-}
-main .account .container form .account__form__content__block .form--radio--legal-entity--personal .fieldset__item {
-  display: flex;
-  align-items: center;
-}
-main .account .container form .account__form__content__block .form--radio--legal-entity--personal .fieldset__item input {
-  top: 0;
+main .account .container form .account__form__content__block:first-child {
+  height: 510px;
 }
 main .account .container form button {
-  margin: 23px auto 0;
+  margin: 0 auto;
 }
 main .account .container .account__content {
-  width: 82.7%;
-  padding: 42px 50px;
+  width: clamp(82.7%, 1400px - 17vw, 100%);
+  padding: 41px 0;
   border-radius: 24px;
   background-color: #FFFFFF;
-  margin-bottom: 98px;
-}
-main .account .container .account__content > * {
-  border-bottom: 1px solid #EBEBEB;
 }
 main .account .container .account__content .account__content__change-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-bottom: 37px;
+  width: 1047px;
+  margin: 0 auto;
 }
-main .account .container .account__content .account__content__change-content .account__content__change-content__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 63px;
-  max-width: 1047px;
-  width: 100%;
-}
-main .account .container .account__content .account__content__change-content .account__content__change-content__wrapper .account__content__change-content__item {
+main .account .container .account__content .account__content__change-content .account__content__change-content__item {
   display: flex;
   column-gap: 16px;
   cursor: pointer;
 }
-main .account .container .account__content .account__content__change-content .account__content__change-content__wrapper .account__content__change-content__item:first-child {
-  flex-grow: 1;
-}
-main .account .container .account__content .account__content__change-content .account__content__change-content__wrapper .account__content__change-content__item:first-child .input-label-custom__input + label {
+main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input + label {
   font-size: 16px;
   height: 21px;
 }
-main .account .container .account__content .account__content__change-content .account__content__change-content__wrapper .account__content__change-content__item:first-child .input-label-custom__input + label::before {
+main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input + label::before {
   width: 24px;
   height: 24px;
   margin-right: 16px;
 }
-main .account .container .account__content .account__content__change-content .account__content__change-content__wrapper .account__content__change-content__item:first-child .input-label-custom__input:checked + label::after {
+main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input:checked + label::after {
   background-size: 15px 15px;
   left: 3px;
   top: 1px;
@@ -2914,191 +2889,140 @@ main .account .container .account__content .account__content__change-content .ac
   height: 20px;
   width: 20px;
 }
-main .account .container .account__content .account__content__change-content .account__content__change-content__wrapper .account__content__change-content__item svg {
+main .account .container .account__content .account__content__change-content .account__content__change-content__item svg {
   flex-shrink: 0;
 }
 main .account .container .account__content .account__content__product {
-  display: flex;
-  justify-content: center;
-}
-main .account .container .account__content .account__content__product:nth-child(n+3) .account__content__product__wrapper {
+  margin: 0 50px;
   padding: 39px 0;
+  border-bottom: 1px solid #EBEBEB;
+  /*&:first-child{
+      padding: 16px 0;
+      border: 1px solid red;
+  } 
+  &:first-of-type{
+      padding: 16px 0;
+      border: 1px solid red;
+  }  */
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 27px;
-  align-items: center;
-  max-width: 1028px;
-  width: 100%;
+main .account .container .account__content .account__content__product:nth-child(-n+2) {
   padding: 16px 0;
 }
+main .account .container .account__content .account__content__product:nth-child(-n+2) {
+  border-top: 1px solid #EBEBEB;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper {
+  display: grid;
+  grid-template-columns: 60px 170px 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 1047px;
+  width: 100%;
+  margin: 0 auto;
+}
 main .account .container .account__content .account__content__product .account__content__product__wrapper input {
-  width: 22px;
-  height: 22px;
+  margin-left: 10px;
+  grid-row: 1/span 2;
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr {
-  flex-grow: 1;
+main .account .container .account__content .account__content__product .account__content__product__wrapper img {
+  grid-row: 1/span 2;
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 8px;
+main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: end;
+  margin-bottom: 3px;
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting h4 {
-  flex: 2 70%;
-  color: #0D0D0D;
+main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  top: -22px;
+  left: 15px;
+  grid-row: 1/span 2;
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting .allPageCard__raiting {
-  flex: 1 28%;
-}
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting .allPageCard__raiting .product-article {
+main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting p {
   font-size: 12px;
-  margin-bottom: 8px;
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy {
+main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+  margin-top: 8px;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+  grid-column: 3;
+  grid-row: 2;
+  margin-top: 8px;
   justify-content: flex-start;
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .price {
+main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy span {
   font-size: 20px;
+  margin-right: 34px;
+  letter-spacing: 0.4px;
 }
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .buy__a {
-  width: 160px;
-  height: 35px;
-  padding-top: 7px;
-  font-size: 14px;
-  margin: 0 7px 0 34px;
-}
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .buy__a img {
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: -2px;
-}
-main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .trash {
-  width: 70px;
-  height: 35px;
-  border: 1px solid #73C167;
-  border-radius: 4px;
+main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #73C167;
+  border-radius: 4px;
+}
+main .account .container .account__favorites {
+  margin-bottom: clamp(80px, 6vw - 15px, 100px);
+}
+main .account .container .account__favorites .account__content__change-content .account__content__change-content__item:first-child {
+  margin-right: 65px;
+}
+main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a {
+  width: 160px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a img {
+  margin-right: 10px;
+}
+main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
+  width: 70px;
+  height: 35px;
   margin-left: 7px;
 }
 main .account .container .account__basket {
   margin-bottom: 0px;
 }
 main .account .container .account__basket .account__content__change-content {
-  padding-bottom: 20px;
-  border-bottom: none;
+  width: 599px;
 }
-main .account .container .account__basket .account__content__change-content .account__content__change-content__wrapper {
-  justify-content: center;
-  column-gap: 53px;
-}
-main .account .container .account__basket .account__content__change-content .account__content__change-content__wrapper .account__content__change-content__item:first-child {
-  flex-grow: 0;
-}
-main .account .container .account__basket .account__content__product:nth-child(n+3) .account__content__product__wrapper {
-  padding: 19px 0 13px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper {
-  max-width: 950px;
-  column-gap: 44px;
-  padding: 12px 0;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__img {
-  height: 108px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting {
-  flex-direction: column-reverse;
-  align-items: start;
-  margin-bottom: 18px;
-  padding-top: 3px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting h4 {
-  font-size: 18px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting .allPageCard__raiting .product-article {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__title-raiting .allPageCard__raiting .stars {
-  display: none;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy {
-  align-items: center;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .price:first-of-type {
-  font-size: 16px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .price:last-of-type {
-  font-size: 24px;
-  width: 19%;
-  padding-left: 11px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .counter .counter-value {
-  width: 30px;
-  height: 35px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .counter .counter-value10 {
-  width: 36px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .counter .counter-value100 {
-  width: 43px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .trash {
-  width: 40px;
-  height: 40px;
-  margin-left: 11px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .add-info-price:first-of-type {
-  width: 30%;
-  text-align: center;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .account__content__product__wrapper__descr__buy .add-info-price span {
-  font-size: 18px;
-  color: #0D0D0D;
-  margin-left: 8px;
-}
-main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__descr .additional-info-counter {
-  font-size: 12px;
-  text-align: center;
-  margin-left: -144px;
-  margin-top: 5px;
-}
-main .account .container .account__content__total {
+main .account .container .account__total {
   width: 82.7%;
   margin-top: 38px;
   padding: 42px 179.5px;
   background-color: #FFFFFF;
   display: grid;
   grid-template-columns: 0.4fr 0.5fr 1fr;
-  grid-template-rows: 1.7fr 1fr;
+  grid-template-rows: 72px 1fr;
   column-gap: 38px;
+  border-radius: 24px;
 }
-main .account .container .account__content__total h5:last-of-type {
+main .account .container .account__total h5:last-of-type {
   grid-column-start: 1;
   grid-row-start: 2;
 }
-main .account .container .account__content__total .price {
+main .account .container .account__total .price {
   font-weight: 500;
   font-size: 24px;
   color: #73C167;
 }
-main .account .container .account__content__total .assembly-time {
+main .account .container .account__total .assembly-time {
   grid-column-start: 2;
   grid-row-start: 2;
   font-weight: 500;
   font-size: 24px;
   color: #0D0D0D;
 }
-main .account .container .account__content__total p {
+main .account .container .account__total p {
   grid-column-start: 3;
   grid-row-start: 2;
   font-size: 14px;
 }
-main .account .container .account__content__place-an-order {
+main .account .container .account__place-an-order {
   width: 320px;
   height: 62px;
   margin: 39px 0 52px;
@@ -3242,13 +3166,6 @@ main .placingAnOrder .container form .placingAnOrder__form__block fieldset {
   padding: 26px 0 32px;
   flex-wrap: wrap;
   justify-content: center;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block fieldset .form--radio--legal-entity--personal {
-  border: none;
-  padding: 0;
-  justify-content: center;
-  margin-bottom: 14px;
-  border: none;
 }
 main .placingAnOrder .container form .placingAnOrder__form__block fieldset legend {
   font-weight: 500;
@@ -3706,6 +3623,103 @@ footer .footer-container .footer-container__content__copyright {
   font-size: clamp(0.75rem, 1vw - 0.1875rem, 1rem);
 }
 
+@media screen and (min-width: 1401px) {
+  main .account .container .account__basket {
+    margin-bottom: 0px;
+  }
+  main .account .container .account__basket .account__content__product {
+    padding: 21px 0 17px;
+  }
+  main .account .container .account__basket .account__content__product:nth-child(-n+2) {
+    padding-top: 0;
+    padding-bottom: 16px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper {
+    position: relative;
+    grid-template-columns: 66px 132px 1fr;
+    grid-template-rows: repeat(2, 55px);
+    max-width: 950px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .input-custom-without-label {
+    margin-left: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper img {
+    width: 89px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 i {
+    font-style: normal;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    position: initial;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting p {
+    font-size: 14px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    align-items: center;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy * {
+    flex-shrink: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price {
+    font-size: 16px;
+    letter-spacing: 0px;
+    margin-right: 12px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price-relative-input {
+    font-size: 24px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter {
+    margin-left: 43px;
+    margin-right: 11px;
+    flex-shrink: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter .counter-value {
+    margin: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like, main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 8px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like img {
+    width: auto;
+    height: auto;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .add-info-price span {
+    margin-left: 11px;
+    font-size: 18px;
+    color: #0D0D0D;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .disc {
+    margin-left: 52px;
+    margin-right: 22px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .additional-info-counter {
+    font-size: 12px;
+    position: relative;
+    bottom: 0px;
+    left: 497px;
+  }
+}
 @media screen and (max-width: 1820px) {
   main {
     /*&&&&&&&&&&&      questions           &&&&&&&&&&&&&&*/
@@ -3848,6 +3862,7 @@ footer .footer-container .footer-container__content__copyright {
     background-position: calc(100% + 11.4375rem) 100%, -4% 121%;
     background-size: 27.3125rem, 16.25rem;
     animation: none;
+    opacity: 0;
   }
   main .index-offer .index-offer__container .index-offer__online-store .index-offer__online-store__wrapper {
     animation: none;
@@ -4064,6 +4079,69 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .articleOrVideo .container .articleOrVideo__info-txt p:not(:last-child) {
     margin-bottom: 7px;
+  }
+  main .account .container form {
+    flex-flow: column nowrap;
+    gap: 0px;
+    margin-bottom: clamp(38px, 400px - 26vw, 80px);
+  }
+  main .account .container form .account__form__content__block {
+    padding: 42px 104px;
+  }
+  main .account .container form .account__form__content__block:last-of-type {
+    margin: 24px 0 24px;
+  }
+  main .account .container .account__favorites .account__content__change-content {
+    width: 90.5%;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 {
+    margin-bottom: 6px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 i {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+    display: flex;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price-relative-input {
+    display: block;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter {
+    margin-right: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter .counter-value {
+    margin: 0;
+    width: 30px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like, main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
+    width: 40px;
+    height: 40px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 8px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like img {
+    width: auto;
+    height: auto;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .add-info-price {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .additional-info-counter {
+    display: none;
+  }
+  main .account .container .account__total {
+    display: none;
+  }
+  main .account .container .account__place-an-order {
+    margin: 24px 0 80px;
   }
   .modal {
     align-items: center;
@@ -4814,6 +4892,62 @@ footer .footer-container .footer-container__content__copyright {
   main .articleOrVideo .container a {
     margin-top: 24px;
   }
+  main .account {
+    padding-bottom: 80px;
+  }
+  main .account .container form {
+    margin-bottom: 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    width: 574px;
+    grid-template-columns: 60px 170px 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input {
+    grid-row: 1/span 3;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper img {
+    grid-row: 1/span 3;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: center;
+    justify-self: left;
+    top: 0;
+    left: 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    grid-column: 3;
+    grid-row: 3;
+    flex-wrap: nowrap;
+    margin-top: 1px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy span {
+    width: auto;
+  }
+  main .account .container .account__favorites {
+    margin-bottom: 0;
+  }
+  main .account .container .account__favorites .account__content__change-content {
+    display: grid;
+    grid-template-columns: 1.09fr 1fr;
+    width: 576px;
+    row-gap: 23px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper {
+    width: 566px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    top: -6px;
+  }
+  main .account .container .account__place-an-order {
+    margin: 24px 0 0 0;
+  }
   .modal .modal__forgot-your-password form,
   .modal .modal__code-from-sms form,
   .modal .modal__new-password form {
@@ -4920,14 +5054,19 @@ footer .footer-container .footer-container__content__copyright {
     padding-left: 8.5px;
     padding-right: 8.5px;
   }
+  main .account .container {
+    width: 100%;
+  }
+  main .account .container .account__categories {
+    width: 100%;
+    padding: 0 30.5px;
+  }
   .modal {
     align-items: flex-start;
   }
   .modal .modal__block {
-    margin-top: 51px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    margin-top: clamp(51px, 80vw - 429px, 195px);
+    width: 100%;
   }
   .modal .modal__block form .form__item__textarea textarea {
     min-width: 260px;
@@ -4950,18 +5089,15 @@ footer .footer-container .footer-container__content__copyright {
   .modal .modal__ask-a-question,
   .modal .modal__callback {
     width: 90%;
-  }
-  .modal .modal__ask-a-question form p,
-  .modal .modal__callback form p {
-    padding: 0px 100px;
+    margin-top: 43px;
   }
   .modal .modal__ask-a-question form .form__item,
   .modal .modal__callback form .form__item {
-    width: 422px;
+    width: clamp(422px, 80vw - 124px, 508px);
   }
   .modal .modal__ask-a-question form .form__item label,
   .modal .modal__callback form .form__item label {
-    line-height: 1.3;
+    line-height: 1.4;
   }
   .modal .modal__ask-a-question form .form__item input,
   .modal .modal__callback form .form__item input {
@@ -4970,11 +5106,9 @@ footer .footer-container .footer-container__content__copyright {
   .modal .modal__ask-a-question form .form__item__textarea label,
   .modal .modal__callback form .form__item__textarea label {
     padding-top: 0;
-    margin-right: 58px;
   }
   .modal .modal__ask-a-question form .consent,
   .modal .modal__callback form .consent {
-    width: 404px;
     margin-top: 26px;
   }
   .modal .modal__ask-a-question form .consent label,
@@ -4983,6 +5117,9 @@ footer .footer-container .footer-container__content__copyright {
   }
 }
 @media screen and (max-width: 735px) {
+  body .forSmoothScroll .forSmoothScroll__wrapper main .line {
+    column-gap: 5px;
+  }
   .container {
     width: clamp(260px, 110vw - 120px, 690px);
   }
@@ -5151,9 +5288,6 @@ footer .footer-container .footer-container__content__copyright {
   form p {
     line-height: 1.33;
     width: 480px;
-  }
-  form .form__item {
-    width: 440px;
   }
   form .consent {
     width: 410px;
@@ -5514,6 +5648,49 @@ footer .footer-container .footer-container__content__copyright {
   main .blog .container .blog__reviews .blog-article-min p {
     font-size: clamp(14px, 3vw - 6px, 16px);
   }
+  main .account .container form .account__form__content__block {
+    width: 100%;
+    padding: 42px 0;
+  }
+  main .account .container form .account__form__content__block:last-of-type {
+    margin: clamp(16px, 15vw - 84px, 24px) 0 24px;
+  }
+  main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input + label {
+    font-size: 14px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    grid-template-columns: clamp(37px, 1vw - 1px, 60px) 170px 1fr;
+    grid-template-rows: 1fr 0.8fr 1fr;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input {
+    margin-left: clamp(-12px, -200px + 29vw, 10px);
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    font-size: clamp(20px, 10vw - 49px, 24px);
+    margin-bottom: 10px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    top: -6px;
+  }
+  main .account .container .account__favorites {
+    margin-bottom: 0;
+  }
+  main .account .container .account__favorites .account__content__change-content {
+    width: 87%;
+    row-gap: 28px;
+  }
+  main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a {
+    width: clamp(128px, 30vw - 60px, 160px);
+  }
+  main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a img {
+    display: none;
+  }
+  main .account .container .account__basket {
+    margin-bottom: 0;
+  }
+  main .account .container .account__basket .account__content__change-content {
+    width: clamp(514px, 83vw - 9px, 599px);
+  }
   footer .footer-container {
     width: auto;
     padding: 0 30px 0 32px;
@@ -5632,29 +5809,21 @@ footer .footer-container .footer-container__content__copyright {
     width: 259px;
     margin: 16px 0 34px;
   }
-  form .form--radio--legal-entity--personal {
-    row-gap: 24px;
-  }
+  form .form--radio--legal-entity--personal,
   form .form__item {
+    width: clamp(260px, 100vw - 72px, 508px);
     height: auto;
-    margin-bottom: 20px;
+  }
+  form .form--radio--legal-entity--personal {
+    row-gap: 16px;
+    flex-wrap: wrap;
   }
   form .form__item label {
     margin-bottom: 9px;
-  }
-  form .form__item input {
-    height: 52px;
+    min-width: 119px;
   }
   form .form__item__password:first-of-type {
     margin-bottom: 40px;
-  }
-  form .form__item__password .eye {
-    top: 43px;
-  }
-  form .form--radio--legal-entity--personal,
-  form .form__item {
-    width: 260px;
-    flex-wrap: wrap;
   }
   form #OTPinputs {
     width: 255px;
@@ -5662,6 +5831,7 @@ footer .footer-container .footer-container__content__copyright {
   form .consent {
     width: 265px;
     height: 46px;
+    padding-left: 0;
   }
   form .consent label i {
     font-size: 12px;
@@ -6356,14 +6526,72 @@ footer .footer-container .footer-container__content__copyright {
     margin-top: clamp(16px, 5vw - 5px, 24px);
     font-size: clamp(12px, 4vw - 5px, 18px);
   }
+  main .account {
+    padding-bottom: clamp(60px, 15vw - 7px, 80px);
+  }
+  main .account .container h2 {
+    line-height: 1.29;
+  }
+  main .account .container .account__categories {
+    flex-direction: column;
+  }
+  main .account .container .account__categories p {
+    font-size: clamp(16px, 4vw - 3px, 20px);
+    padding: clamp(9px, 3vw - 3px, 14px) 13.5px;
+    line-height: 1.29;
+  }
+  main .account .container form .account__form__content__block .form__item label {
+    line-height: 1.3;
+  }
+  main .account .container .account__content .account__content__change-content {
+    display: block;
+    width: 82%;
+  }
+  main .account .container .account__content .account__content__change-content .account__content__change-content__item {
+    padding-left: clamp(0px, 50vw - 169px, 120px);
+  }
+  main .account .container .account__content .account__content__change-content .account__content__change-content__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  main .account .container .account__content .account__content__product {
+    margin: 0 clamp(30px, 20vw - 66px, 50px);
+  }
+  main .account .container .account__content .account__content__product:nth-child(-n+2) {
+    padding: 39px 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    grid-template-columns: 37px clamp(145px, 30vw - 4px, 170px) 1fr;
+    grid-template-rows: 0.6fr 0.6fr 0.6fr;
+    width: 100%;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input {
+    margin-left: 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    line-height: 1.3;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+    width: 100px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    flex-wrap: wrap;
+    min-width: 220px;
+    margin-top: 6px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy span {
+    width: 70%;
+    margin-bottom: 5px;
+  }
+  main .account .container .account__place-an-order {
+    width: clamp(260px, 60vw - 28px, 320px);
+    height: clamp(45px, 15vw - 24px, 63px);
+    font-size: clamp(14px, 5vw - 10px, 18px);
+  }
   .modal form p {
     margin: 16px 0 41px;
   }
   .modal form p a {
     font-size: 14px;
-  }
-  .modal .modal__block {
-    width: 100%;
   }
   .modal .modal__block .modal__close {
     margin-right: 10px;
@@ -6377,6 +6605,14 @@ footer .footer-container .footer-container__content__copyright {
   .modal .modal__ask-a-question,
   .modal .modal__callback {
     margin-top: 23px;
+    width: clamp(90%, 900px - 70vw, 100%);
+  }
+  .modal .modal__ask-a-question form,
+  .modal .modal__callback form {
+    /*.form__item__textarea{
+        width: 260px;
+        flex-wrap: wrap;
+    }*/
   }
   .modal .modal__ask-a-question form p,
   .modal .modal__callback form p {
@@ -6385,10 +6621,8 @@ footer .footer-container .footer-container__content__copyright {
   .modal .modal__ask-a-question form .form__item,
   .modal .modal__callback form .form__item {
     width: 260px;
-  }
-  .modal .modal__ask-a-question form .form__item label,
-  .modal .modal__callback form .form__item label {
-    line-height: 1.1;
+    flex-wrap: wrap;
+    padding-left: 0;
   }
   .modal-politics .modal-politics__wrapper .modal-politics__container {
     padding-left: 30px;
@@ -6534,6 +6768,18 @@ footer .footer-container .footer-container__content__copyright {
     width: 0.9375rem;
     height: 1.25rem;
   }
+  form .form--radio--legal-entity--personal,
+  form .form__item {
+    padding-left: clamp(0px, 50vw - 180px, 45px);
+    flex-wrap: wrap;
+  }
+  form .form__item__password .eye {
+    top: 48px;
+    right: clamp(17px, 50vw - 165px, 60px);
+  }
+  form .consent {
+    padding-left: 0;
+  }
   main {
     /*&&&&&&&&&&&      card             &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      aboutUs             &&&&&&&&&&&&&&*/
@@ -6624,6 +6870,24 @@ footer .footer-container .footer-container__content__copyright {
   main .catalogCategories .container .catalogCategories__select-catagory label {
     justify-content: space-between;
   }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    display: block;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input, main .account .container .account__content .account__content__product .account__content__product__wrapper h4, main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting, main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    margin-left: auto;
+    margin-right: auto;
+    width: min-content;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper img {
+    margin: 27px auto;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    margin-bottom: 13px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter .counter-value {
+    width: 30px;
+    margin: 0;
+  }
 }
 @media screen and (max-width: 320px) {
   main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
@@ -6631,6 +6895,10 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
     width: 260px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4, main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting, main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

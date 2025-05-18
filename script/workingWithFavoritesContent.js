@@ -73,7 +73,7 @@ clearBas.forEach((item) => {
             item.parentElement.parentElement.remove()
         };
 
-        total.classList.add('hide')
+        total.classList.add('hide')//counter-goods.js line 13
     });
 });
 
@@ -86,13 +86,14 @@ function countAllPrice() {
     let allGoodsBasket = document.querySelectorAll('.account__basket .price-relative-input');
 
     if (allGoodsBasket.length == 0) { //if the products are deleted, then the block with the final price is also deleted
-        total.classList.add('hide')
+        total.classList.add('hide')//counter-goods.js line 13
     } else {
         let sumPrice = 0;
         for (let itemallGoodsBasket of allGoodsBasket) {//only the price of the product is taken (string), 
             sumPrice += Number(itemallGoodsBasket.innerHTML.slice(0, -2));//is converted to a number and added to sumPrice
         }
         totalPrice.innerHTML = sumPrice + " ₽"         //the sumPrice value is inserted into the block with the total amount of goods
+        //counter-goods.js line 14
     }
 
 

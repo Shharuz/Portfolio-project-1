@@ -4,13 +4,14 @@ const blockThatHasCounter = document.querySelectorAll('.block-that-has-counter')
 let allGoodsBasket;
 let total;
 let totalPrice;
+let additionalInfoCounter;
 
 
 //for account.html
-if (document.querySelectorAll('.account__basket')) {
+if (document.querySelector('.account__basket')) {
     allGoodsBasket = document.querySelectorAll('.account__basket .price-relative-input');//the price is taken relative to the input
-    total = document.querySelector('.account__content__total'); //a block is taken in which there is an element with a total price
-    totalPrice = document.querySelector('.account__content__total .price');//the total price is taken
+    total = document.querySelector('.account__total'); //a block is taken in which there is an element with a total price
+    totalPrice = document.querySelector('.account__total .price');//the total price is taken
 }
 
 
@@ -48,13 +49,6 @@ blockThatHasCounter.forEach((item) => {
     }
 
 
-    //for account.html
-    let additionalInfoCounter;
-    if (item.querySelector('.additional-info-counter')) {//checks if there is an element with class additional-info-counter
-        additionalInfoCounter = item.querySelector('.additional-info-counter');//and take this
-    }//necessary for counting boxes (1 box = 10 items)
-
-
     incrementBtn.addEventListener('click', () => {
 
         let inputValue = Number(inputCount.value);//takes the string value of the input and converts it to a number
@@ -67,12 +61,15 @@ blockThatHasCounter.forEach((item) => {
         growInput(increaseInputValue);//transition to 129
 
         //for account.html
-        if (item.querySelector('.additional-info-counter')) {
-
+        if (item.nextElementSibling.classList.contains('additional-info-counter')) {
+            additionalInfoCounter = item.nextElementSibling;
             countTheBoxes(increaseInputValue);//transition to 142
 
         };
-        countAllPrice();//transition to 150
+        if (document.querySelector('.account__basket')){
+            countAllPrice();//transition to 150
+        }
+        
 
 
     });
@@ -87,12 +84,15 @@ blockThatHasCounter.forEach((item) => {
 
             growInput(decreaseInputValue);   //transition to 129
 
-            if (item.querySelector('.additional-info-counter')) {
+            if (item.nextElementSibling.classList.contains('additional-info-counter')) {
+                additionalInfoCounter = item.nextElementSibling;
                 countTheBoxes(decreaseInputValue);//transition to 142
             }
 
         }
-        countAllPrice();//transition to 150
+        if (document.querySelector('.account__basket')){
+            countAllPrice();//transition to 150
+        }
 
     });
 
@@ -102,10 +102,13 @@ blockThatHasCounter.forEach((item) => {
         changePrice(e.target.value);//transition to 109
         growInput(Number(e.target.value));//transition to 129
 
-        if (item.querySelector('.additional-info-counter')) {
+        if (item.nextElementSibling.classList.contains('additional-info-counter')) {
+            additionalInfoCounter = item.nextElementSibling;
             countTheBoxes(e.target.value);//transition to 142
         };
-        countAllPrice();//transition to 150
+        if (document.querySelector('.account__basket')){
+            countAllPrice();//transition to 150
+        }
     });
 
     function changePrice(par) {
