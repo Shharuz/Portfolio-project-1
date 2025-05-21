@@ -4003,6 +4003,7 @@ main {
 
                 p {
                     width: auto;
+                    font-size: 16px;
                 }
 
 
@@ -4013,26 +4014,25 @@ main {
                     padding: clamp(60px, 200px - 8vw, 80px) 35px;
                     border-radius: 24px;
 
-                    &>* {
-                        border-bottom: 1px solid $border-color;
-                    }
-
                     .placingAnOrder__form__block__item {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        padding: clamp(32px, 200px - 9vw, 47px) 0;
+                        padding: clamp(31.5px, 200px - 9vw, 47px) 0;
 
                         &:first-child {
-                          padding-top: 0;
-                          padding-bottom: clamp(32px, 200px - 9vw, 47px);
+                            padding-top: 0;
+                            padding-bottom: clamp(32px, 200px - 9vw, 47px);
                         }
 
                         &:last-child {
                             padding-top: clamp(32px, 200px - 9vw, 47px);
                             padding-bottom: 0;
-                            border-top: 1px solid $border-color;
-                            border-bottom: none;
+
+                        }
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid $border-color;
                         }
 
                         h5 {
@@ -4066,6 +4066,7 @@ main {
                                     h6 {
                                         padding-right: 15px;
                                         line-height: 1.4;
+
                                         i {
                                             font-style: normal;
                                         }
@@ -4113,8 +4114,69 @@ main {
                             }
                         }
 
+                        fieldset {
+                            border: none;
+
+                            legend {
+                                font-weight: 500;
+                                font-size: 20px;
+                                line-height: 1.4;
+                                color: $colorH1H2H3H4;
+                                text-align: center;
+                                margin-bottom: 32px;
+                            }
+
+                            .form__item {}
+
+                            #customFileInput {
+                                display: none;
+                            }
+
+                            .for-custom-file-input {
+                                font-weight: 400;
+                                font-size: 16px;
+                                color: $accent;
+                                text-decoration: underline;
+                                cursor: pointer;
+                                display: block;
+                                text-align: center;
+                                padding-top: 3px;
+                            }
+
+
+
+                            .hide {
+                                display: none;
+                            }
+                        }
+
+                        .form--radio--legal-entity--personal {
+                            width: 100%;
+                            border: none;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            gap: 29px;
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                            .fieldset__item{
+                                input{
+                                    flex-shrink: 0;
+                                }
+                            }
+                        }
+
+                        &:nth-child(2){
+                            fieldset{
+                                legend{
+                                    margin-bottom: clamp(32px, 200px - 9vw, 47px);
+                                }
+                            }
+                        }
+
                         a {
                             align-self: start;
+
                             padding-left: 16px;
                         }
 
@@ -4123,9 +4185,9 @@ main {
                         }
 
                         .delivery {
-                            line-height: 1.6;
+                            line-height: 1.7;
                             color: $title;
-                            padding: 0 214px;
+                            padding-top: 14px;
 
                         }
 
@@ -4133,7 +4195,7 @@ main {
                             font-weight: 500;
                             font-size: 24px;
                             color: $accent;
-                            margin: 22px 0 7px;
+                            margin: 21px 0 5px;
 
                         }
 
@@ -4146,9 +4208,9 @@ main {
                         .placingAnOrder__form__block__item__paid {
                             width: 512px;
                             display: grid;
-                            grid-template-columns: 0.63fr 1fr;
-                            grid-template-rows: 24px 24px 60px;
-                            margin-top: 31px;
+                            grid-template-columns: 0.64fr 1fr;
+                            grid-template-rows: 21px 21px 46px;
+                            margin-top: 32px;
                             row-gap: 6px;
                             align-items: center;
 
@@ -4156,73 +4218,34 @@ main {
                                 text-align: left;
                                 color: $p_placingAnOrder_total-paid;
                                 padding: 0;
+                                &:last-of-type{
+                                    align-self: end;
+                                }
                             }
 
                             span {
                                 font-weight: 400;
                                 font-size: 16px;
                                 color: $title-p;
+                                &:last-of-type{
+                                    align-self: end;
+                                    font-weight: 500;
+                                    font-size: 20px;
+                                }
                             }
-
-                            .placingAnOrder__form__block__item__paid__total {
-                                font-weight: 500;
-                                font-size: 20px;
-                            }
                         }
 
-                    }
-
-                    fieldset {
-                        border: none;
-                        border-bottom: 1px solid $border-color;
-                        padding: 26px 0 32px;
-                        flex-wrap: wrap;
-                        justify-content: center;
-
-                        legend {
-                            font-weight: 500;
-                            font-size: 20px;
-                            color: $colorH1H2H3H4;
-                            text-align: center;
-                            padding-top: 32px;
-                        }
-
-                        .form__item {
-                            width: 49%;
-                            margin: 0 auto 16px;
-
-                        }
-
-                        #customFileInput {
-                            display: none;
-                        }
-
-                        .for-custom-file-input {
-                            font-weight: 400;
-                            font-size: 16px;
-                            color: $accent;
-                            text-decoration: underline;
-                            cursor: pointer;
-                            display: block;
-                            text-align: center;
-                            padding-top: 3px;
-                        }
-
-
-
-                        .hide {
-                            display: none;
-                        }
-                    }
-
-                    .form--radio--legal-entity--personal {
-                        width: 100%;
-                        border: none;
                     }
 
                 }
 
+                .consent{
+                    margin-top: 0px;
+                }
 
+                button{
+                    border-radius: 8px;
+                }
             }
         }
     }
@@ -5690,33 +5713,40 @@ footer {
             .container {
                 form {
                     width: clamp(736px, 80vw - 4px, 1116px);
-
+                    
                     .placingAnOrder__form__block {
                         .placingAnOrder__form__block__item {
+                            h5{
+                                line-height: 1.3;
+                            }
                             .placingAnOrder__form__block__item__wrapper {
-                                
+                                width: clamp(690px, 73vw - 10px, 1012px); 
                                 .placingAnOrder__form__block__item__wrapper__card {
                                     width: 245px;
 
                                     .placingAnOrder__form__block__item__wrapper__card__descr {
                                         h6 {
                                             font-size: 16px;
+
                                             i {
                                                 display: none;
                                             }
                                         }
 
-                                        .placingAnOrder__form__block__item__wrapper__card__descr__buy{
-                                            span{
+                                        .placingAnOrder__form__block__item__wrapper__card__descr__buy {
+                                            span {
                                                 display: none;
                                             }
-                                            .add-info-price{
+
+                                            .add-info-price {
                                                 display: none;
                                             }
-                                            .additional-info-card{
-                                                &:not(:last-child){
+
+                                            .additional-info-card {
+                                                &:not(:last-child) {
                                                     display: none;
                                                 }
+
                                                 margin-left: 0;
                                             }
                                         }
@@ -5724,6 +5754,16 @@ footer {
                                     }
                                 }
                             }
+                            a{
+                                line-height: 1.3;
+                            }
+                            .placingAnOrder__form__block__item__paid{
+                                grid-template-rows: 25px 18px 46px;
+                            }
+                        }
+
+                        .hide1400 {
+                            display: none;
                         }
                     }
                 }
@@ -7025,22 +7065,25 @@ footer {
             .container {
                 form {
                     .placingAnOrder__form__block {
-                        padding: clamp(40px, 15vw - 85px, 80px) 35px;
+                        padding: clamp(40px, 15vw - 85px, 80px) clamp(0px, 15vw - 129px, 35px); 
+
                         .placingAnOrder__form__block__item {
                             .placingAnOrder__form__block__item__wrapper {
-                                
+
                                 .placingAnOrder__form__block__item__wrapper__card {
-                                    width: clamp(227px, 1vw - 1px, 245px); 
-
+                                    width: clamp(227px, 1vw - 1px, 245px);
+                                    padding: 12px 8px;
                                     .placingAnOrder__form__block__item__wrapper__card__descr {
-                                        
 
-                                        .placingAnOrder__form__block__item__wrapper__card__descr__buy{
-                                            
-                                        }
+
+                                        .placingAnOrder__form__block__item__wrapper__card__descr__buy {}
 
                                     }
                                 }
+                            }
+
+                            a{
+                                padding-left: 25px;
                             }
                         }
                     }
@@ -8427,7 +8470,27 @@ footer {
                 width: 100%;
 
                 form {
-                    width: 100%
+                    width: 100%;
+                    .placingAnOrder__form__block{
+                        .placingAnOrder__form__block__item{
+                            .placingAnOrder__form__block__item__wrapper{
+                                width: clamp(512px, 135vw - 302px, 690px);
+                            }
+                            a{
+                                padding-left: 44px;
+                            }
+
+                            .delivery{
+                                width: 70%;
+                                line-height: 1.5;
+                                padding-top: 16px;
+                            }
+                        }
+                    }
+
+                    .consent{
+                        width: 520px;
+                    }
                 }
             }
         }
@@ -9945,7 +10008,78 @@ footer {
             padding-bottom: clamp(60px, 40vw - 72px, 160px);
 
             .container {
-                form {}
+                form {
+                    h2{
+                        line-height: 1.33;
+                    }
+                    .placingAnOrder__form__block{
+                        padding: 40px clamp(0px, 100px - 17vw, 30px);
+                        .placingAnOrder__form__block__item{
+                            .placingAnOrder__form__block__item__wrapper{
+                                width: 100%;
+                                justify-content: center;
+                            }
+
+                            fieldset{
+                                .form__item{
+                                    label{
+                                        line-height: 1.3;
+                                    }
+                                }
+                            }
+
+                            .form--radio--legal-entity--personal{
+                                justify-content: start;
+                            }
+
+                            a{
+                                padding-left: 0;
+                                align-self: center;
+                            }
+
+                            &:nth-child(2){
+                                .form--radio--legal-entity--personal{
+                                    padding: 0 16%;
+                                }
+                            }
+
+                            &:nth-child(3){
+                                padding-left: clamp(0px, 25vw - 95px, 50px);
+                                .form--radio--legal-entity--personal{
+                                    .fieldset__item{
+                                        align-items: flex-start;
+                                        label{
+                                            line-height: 1.4;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .delivery{
+                                width: 100%;
+                                text-align: left;
+                                line-height: 1.43;
+                            }
+                            .placingAnOrder__form__block__item__paid{
+                                width: 90%;
+                                grid-template-rows: 1fr;
+                                p{
+                                    &:last-of-type{
+                                        margin-top: 23px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .consent{
+                        width: 260px;
+                        margin-bottom: 20px;
+                        i, a{
+                            padding-top: 0;
+                        }
+                    }
+                }
             }
         }
 
@@ -10513,7 +10647,20 @@ footer {
         /*&&&&&&&&&&&      account           &&&&&&&&&&&&&&*/
         /*&&&&&&&&&&&     placingAnOrder           &&&&&&&&&&&&&&*/
 
-
+        .placingAnOrder{
+            .container{
+                form{
+                    .placingAnOrder__form__block{
+                        .placingAnOrder__form__block__item{
+                            .placingAnOrder__form__block__item__paid{
+                                width: 74%;
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         /*&&&&&&&&&&&     placingAnOrder           &&&&&&&&&&&&&&*/
     }
 

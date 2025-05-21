@@ -3037,6 +3037,7 @@ main .placingAnOrder .container form {
 }
 main .placingAnOrder .container form p {
   width: auto;
+  font-size: 16px;
 }
 main .placingAnOrder .container form .placingAnOrder__form__block {
   width: 100%;
@@ -3045,14 +3046,11 @@ main .placingAnOrder .container form .placingAnOrder__form__block {
   padding: clamp(60px, 200px - 8vw, 80px) 35px;
   border-radius: 24px;
 }
-main .placingAnOrder .container form .placingAnOrder__form__block > * {
-  border-bottom: 1px solid #BBBBBB;
-}
 main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(32px, 200px - 9vw, 47px) 0;
+  padding: clamp(31.5px, 200px - 9vw, 47px) 0;
 }
 main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:first-child {
   padding-top: 0;
@@ -3061,8 +3059,9 @@ main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrde
 main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:last-child {
   padding-top: clamp(32px, 200px - 9vw, 47px);
   padding-bottom: 0;
-  border-top: 1px solid #BBBBBB;
-  border-bottom: none;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:not(:last-child) {
+  border-bottom: 1px solid #BBBBBB;
 }
 main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item h5 {
   font-size: 20px;
@@ -3126,74 +3125,21 @@ main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrde
   font-size: 12px;
   margin-left: auto;
 }
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item a {
-  align-self: start;
-  padding-left: 16px;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item p {
-  margin: 0;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .delivery {
-  line-height: 1.6;
-  color: #0D0D0D;
-  padding: 0 214px;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__amount-days {
-  font-weight: 500;
-  font-size: 24px;
-  color: #73C167;
-  margin: 22px 0 7px;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__addInfo {
-  padding: 0 270px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid {
-  width: 512px;
-  display: grid;
-  grid-template-columns: 0.63fr 1fr;
-  grid-template-rows: 24px 24px 60px;
-  margin-top: 31px;
-  row-gap: 6px;
-  align-items: center;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid p {
-  text-align: left;
-  color: #ACACAC;
-  padding: 0;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid span {
-  font-weight: 400;
-  font-size: 16px;
-  color: #353535;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid .placingAnOrder__form__block__item__paid__total {
-  font-weight: 500;
-  font-size: 20px;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block fieldset {
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item fieldset {
   border: none;
-  border-bottom: 1px solid #BBBBBB;
-  padding: 26px 0 32px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
-main .placingAnOrder .container form .placingAnOrder__form__block fieldset legend {
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item fieldset legend {
   font-weight: 500;
   font-size: 20px;
+  line-height: 1.4;
   color: #202020;
   text-align: center;
-  padding-top: 32px;
+  margin-bottom: 32px;
 }
-main .placingAnOrder .container form .placingAnOrder__form__block fieldset .form__item {
-  width: 49%;
-  margin: 0 auto 16px;
-}
-main .placingAnOrder .container form .placingAnOrder__form__block fieldset #customFileInput {
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item fieldset #customFileInput {
   display: none;
 }
-main .placingAnOrder .container form .placingAnOrder__form__block fieldset .for-custom-file-input {
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item fieldset .for-custom-file-input {
   font-weight: 400;
   font-size: 16px;
   color: #73C167;
@@ -3203,12 +3149,80 @@ main .placingAnOrder .container form .placingAnOrder__form__block fieldset .for-
   text-align: center;
   padding-top: 3px;
 }
-main .placingAnOrder .container form .placingAnOrder__form__block fieldset .hide {
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item fieldset .hide {
   display: none;
 }
-main .placingAnOrder .container form .placingAnOrder__form__block .form--radio--legal-entity--personal {
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .form--radio--legal-entity--personal {
   width: 100%;
   border: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 29px;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .form--radio--legal-entity--personal:last-child {
+  margin-bottom: 0;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .form--radio--legal-entity--personal .fieldset__item input {
+  flex-shrink: 0;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:nth-child(2) fieldset legend {
+  margin-bottom: clamp(32px, 200px - 9vw, 47px);
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item a {
+  align-self: start;
+  padding-left: 16px;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item p {
+  margin: 0;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .delivery {
+  line-height: 1.7;
+  color: #0D0D0D;
+  padding-top: 14px;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__amount-days {
+  font-weight: 500;
+  font-size: 24px;
+  color: #73C167;
+  margin: 21px 0 5px;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__addInfo {
+  padding: 0 270px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid {
+  width: 512px;
+  display: grid;
+  grid-template-columns: 0.64fr 1fr;
+  grid-template-rows: 21px 21px 46px;
+  margin-top: 32px;
+  row-gap: 6px;
+  align-items: center;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid p {
+  text-align: left;
+  color: #ACACAC;
+  padding: 0;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid p:last-of-type {
+  align-self: end;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid span {
+  font-weight: 400;
+  font-size: 16px;
+  color: #353535;
+}
+main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid span:last-of-type {
+  align-self: end;
+  font-weight: 500;
+  font-size: 20px;
+}
+main .placingAnOrder .container form .consent {
+  margin-top: 0px;
+}
+main .placingAnOrder .container form button {
+  border-radius: 8px;
 }
 main .page404 {
   width: 80%;
@@ -4156,6 +4170,12 @@ footer .footer-container .footer-container__content__copyright {
   main .placingAnOrder .container form {
     width: clamp(736px, 80vw - 4px, 1116px);
   }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item h5 {
+    line-height: 1.3;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__wrapper {
+    width: clamp(690px, 73vw - 10px, 1012px);
+  }
   main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__wrapper .placingAnOrder__form__block__item__wrapper__card {
     width: 245px;
   }
@@ -4175,6 +4195,15 @@ footer .footer-container .footer-container__content__copyright {
     margin-left: 0;
   }
   main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__wrapper .placingAnOrder__form__block__item__wrapper__card .placingAnOrder__form__block__item__wrapper__card__descr .placingAnOrder__form__block__item__wrapper__card__descr__buy .additional-info-card:not(:last-child) {
+    display: none;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item a {
+    line-height: 1.3;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid {
+    grid-template-rows: 25px 18px 46px;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .hide1400 {
     display: none;
   }
   .modal {
@@ -4986,10 +5015,14 @@ footer .footer-container .footer-container__content__copyright {
     padding-bottom: clamp(80px, 500px - 39vw, 160px);
   }
   main .placingAnOrder .container form .placingAnOrder__form__block {
-    padding: clamp(40px, 15vw - 85px, 80px) 35px;
+    padding: clamp(40px, 15vw - 85px, 80px) clamp(0px, 15vw - 129px, 35px);
   }
   main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__wrapper .placingAnOrder__form__block__item__wrapper__card {
     width: clamp(227px, 1vw - 1px, 245px);
+    padding: 12px 8px;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item a {
+    padding-left: 25px;
   }
   .modal .modal__forgot-your-password form,
   .modal .modal__code-from-sms form,
@@ -5739,6 +5772,20 @@ footer .footer-container .footer-container__content__copyright {
   }
   main .placingAnOrder .container form {
     width: 100%;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__wrapper {
+    width: clamp(512px, 135vw - 302px, 690px);
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item a {
+    padding-left: 44px;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .delivery {
+    width: 70%;
+    line-height: 1.5;
+    padding-top: 16px;
+  }
+  main .placingAnOrder .container form .consent {
+    width: 520px;
   }
   footer .footer-container {
     width: auto;
@@ -6639,6 +6686,57 @@ footer .footer-container .footer-container__content__copyright {
   main .placingAnOrder {
     padding-bottom: clamp(60px, 40vw - 72px, 160px);
   }
+  main .placingAnOrder .container form h2 {
+    line-height: 1.33;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block {
+    padding: 40px clamp(0px, 100px - 17vw, 30px);
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item fieldset .form__item label {
+    line-height: 1.3;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .form--radio--legal-entity--personal {
+    justify-content: start;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item a {
+    padding-left: 0;
+    align-self: center;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:nth-child(2) .form--radio--legal-entity--personal {
+    padding: 0 16%;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:nth-child(3) {
+    padding-left: clamp(0px, 25vw - 95px, 50px);
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:nth-child(3) .form--radio--legal-entity--personal .fieldset__item {
+    align-items: flex-start;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item:nth-child(3) .form--radio--legal-entity--personal .fieldset__item label {
+    line-height: 1.4;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .delivery {
+    width: 100%;
+    text-align: left;
+    line-height: 1.43;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid {
+    width: 90%;
+    grid-template-rows: 1fr;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid p:last-of-type {
+    margin-top: 23px;
+  }
+  main .placingAnOrder .container form .consent {
+    width: 260px;
+    margin-bottom: 20px;
+  }
+  main .placingAnOrder .container form .consent i, main .placingAnOrder .container form .consent a {
+    padding-top: 0;
+  }
   .modal form p {
     margin: 16px 0 41px;
   }
@@ -6942,6 +7040,10 @@ footer .footer-container .footer-container__content__copyright {
   main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter .counter-value {
     width: 30px;
     margin: 0;
+  }
+  main .placingAnOrder .container form .placingAnOrder__form__block .placingAnOrder__form__block__item .placingAnOrder__form__block__item__paid {
+    width: 74%;
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 320px) {
