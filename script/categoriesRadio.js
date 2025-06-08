@@ -19,6 +19,8 @@ itemsCategories.forEach((item) => {
                 itemCollect.classList.remove('hide');
             } else if (item.id == itemCollect.getAttribute('data-anchor')) {//there are: 1. input with change event 2. element (div or p) with data-anchor attribute
                  itemCollect.classList.remove('hide');                      // if input id matches element (div or p) data-anchor attribute, then remove class hide from element (div or p)
+                 //fix display footer on howToBuy.html (for animateFooter.js)
+                 footer.classList.add('footerVisible');
             }
 
         }

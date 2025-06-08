@@ -68,7 +68,7 @@ let tmpForPrepThirdH2Adaptiv;
 function changeBodyStartEndAnimPrep() {
     //gives the height of the body so that scrolling occurs
     heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-    body.setAttribute('style', `height:${heightForScroll}px`);
+    body.setAttribute('style', `height:${heightForScroll + 100}px`);
 
     sizewindow.innerHTML = window.innerWidth;
     //Preparing H1(adding wrappers) for animation
@@ -957,3 +957,28 @@ function smooth() {
 function linear(arg1, arg2, arg3) {
     return (1 - arg3) * arg1 + arg3 * arg2;
 }
+
+const swiperCardIndexSlides = swiperCard.querySelectorAll(".addAnimSwiperIndex");//start by selecting all the Slides
+console.log()
+function reveal() {
+  
+
+  for (let i = 0; i < swiperCardIndexSlides.length; i++) {
+    const windowHeight = window.innerHeight;//windowHeight gets the height of the viewport (innerHeight)
+    const elementTop = swiperCardIndexSlides[i].getBoundingClientRect().top; //calculates the distance from the top of the viewport to the top of the block
+    const elementVisible = 150;//animation will start when the block is 150px away from the bottom of the viewport.
+
+
+
+//If this condition is true, it means the block is within the viewport, and the class swiper-slideIndexVisible, 
+//which has the style changes, is added. If the block is not within the defined 
+//visibility area, the swiper-slideIndexVisible class is removed, reverting the animation.
+    if (elementTop < windowHeight - elementVisible) {
+      swiperCardIndexSlides[i].classList.add("swiper-slideIndexVisible");
+ } else {
+      swiperCardIndexSlides[i].classList.remove("swiper-slideIndexVisible");
+ }
+ }
+}
+
+window.addEventListener("scroll", reveal);
