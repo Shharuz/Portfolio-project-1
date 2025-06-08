@@ -6,6 +6,7 @@ html {
 body {
   background-color: #F3F3F3;
   font-family: "Manrope";
+  overflow-y: hidden;
   position: relative;
   padding-top: clamp(1rem, 1vw, 1.125rem);
 }
@@ -47,6 +48,9 @@ body .forSmoothScroll .forSmoothScroll__wrapper main .line .wrapperForWord {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+body #smooth-wrapper #smooth-content {
+  padding-top: clamp(1rem, 1vw, 1.125rem);
 }
 
 .container {
@@ -168,6 +172,45 @@ label {
   font-weight: 400;
   font-size: 1rem;
   color: #767676;
+}
+
+.preload {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #F3F3F3;
+}
+.preload:before {
+  position: absolute;
+  content: "";
+  width: inherit;
+  height: 50px;
+  background-color: #F3F3F3;
+  top: -45px;
+}
+.preload .preload__open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  top: 45%;
+  left: 45%;
+  background-color: #F3F3F3;
+  border-radius: 24px;
+  z-index: 11;
+}
+.preload .preload__open .preload__open__txt {
+  font-size: 2vw;
+  color: #73C167;
+  cursor: pointer;
+}
+.preload .preload__cell {
+  background-color: #73C167;
 }
 
 header {
@@ -444,6 +487,10 @@ header .header-container .header__items .header__items__authorization__wrapper-l
 header .header-container .header__items .header__items__authorization__wrapper-login a:hover svg path {
   fill: #FFFFFF;
   transition: all 0.5s ease;
+}
+
+.stopCssAnimHeader {
+  animation: none;
 }
 
 .secondary-nav {
@@ -781,7 +828,7 @@ form .consent a {
 }
 
 main {
-  overflow-x: hidden;
+  overflow-x: clip;
   /*&&&&&&&&&&&      index             &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      index             &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      card             &&&&&&&&&&&&&&*/
@@ -1112,6 +1159,609 @@ main .swiper-card {
 }
 main .swiper-card .swiper-wrapper .swiper-slide-visible {
   opacity: 1;
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex {
+  transition: transform 1s, opacity 1s;
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+1) {
+  transform: translate3d(150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+2) {
+  transform: translate3d(300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+3) {
+  transform: translate3d(450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+4) {
+  transform: translate3d(600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+5) {
+  transform: translate3d(750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+6) {
+  transform: translate3d(900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+7) {
+  transform: translate3d(1050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+8) {
+  transform: translate3d(1200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+9) {
+  transform: translate3d(1350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+10) {
+  transform: translate3d(1500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+11) {
+  transform: translate3d(1650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+12) {
+  transform: translate3d(1800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+13) {
+  transform: translate3d(1950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+14) {
+  transform: translate3d(2100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+15) {
+  transform: translate3d(2250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+16) {
+  transform: translate3d(2400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+17) {
+  transform: translate3d(2550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+18) {
+  transform: translate3d(2700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+19) {
+  transform: translate3d(2850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+20) {
+  transform: translate3d(3000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+21) {
+  transform: translate3d(3150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+22) {
+  transform: translate3d(3300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+23) {
+  transform: translate3d(3450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+24) {
+  transform: translate3d(3600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+25) {
+  transform: translate3d(3750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+26) {
+  transform: translate3d(3900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+27) {
+  transform: translate3d(4050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+28) {
+  transform: translate3d(4200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+29) {
+  transform: translate3d(4350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+30) {
+  transform: translate3d(4500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+31) {
+  transform: translate3d(4650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+32) {
+  transform: translate3d(4800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+33) {
+  transform: translate3d(4950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+34) {
+  transform: translate3d(5100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+35) {
+  transform: translate3d(5250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+36) {
+  transform: translate3d(5400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+37) {
+  transform: translate3d(5550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+38) {
+  transform: translate3d(5700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+39) {
+  transform: translate3d(5850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+40) {
+  transform: translate3d(6000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+41) {
+  transform: translate3d(6150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+42) {
+  transform: translate3d(6300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+43) {
+  transform: translate3d(6450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+44) {
+  transform: translate3d(6600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+45) {
+  transform: translate3d(6750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+46) {
+  transform: translate3d(6900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+47) {
+  transform: translate3d(7050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+48) {
+  transform: translate3d(7200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+49) {
+  transform: translate3d(7350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+50) {
+  transform: translate3d(7500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+51) {
+  transform: translate3d(7650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+52) {
+  transform: translate3d(7800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+53) {
+  transform: translate3d(7950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+54) {
+  transform: translate3d(8100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+55) {
+  transform: translate3d(8250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+56) {
+  transform: translate3d(8400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+57) {
+  transform: translate3d(8550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+58) {
+  transform: translate3d(8700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+59) {
+  transform: translate3d(8850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+60) {
+  transform: translate3d(9000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+61) {
+  transform: translate3d(9150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+62) {
+  transform: translate3d(9300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+63) {
+  transform: translate3d(9450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+64) {
+  transform: translate3d(9600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+65) {
+  transform: translate3d(9750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+66) {
+  transform: translate3d(9900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+67) {
+  transform: translate3d(10050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+68) {
+  transform: translate3d(10200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+69) {
+  transform: translate3d(10350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+70) {
+  transform: translate3d(10500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+71) {
+  transform: translate3d(10650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+72) {
+  transform: translate3d(10800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+73) {
+  transform: translate3d(10950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+74) {
+  transform: translate3d(11100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+75) {
+  transform: translate3d(11250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+76) {
+  transform: translate3d(11400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+77) {
+  transform: translate3d(11550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+78) {
+  transform: translate3d(11700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+79) {
+  transform: translate3d(11850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+80) {
+  transform: translate3d(12000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+81) {
+  transform: translate3d(12150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+82) {
+  transform: translate3d(12300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+83) {
+  transform: translate3d(12450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+84) {
+  transform: translate3d(12600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+85) {
+  transform: translate3d(12750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+86) {
+  transform: translate3d(12900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+87) {
+  transform: translate3d(13050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+88) {
+  transform: translate3d(13200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+89) {
+  transform: translate3d(13350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+90) {
+  transform: translate3d(13500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+91) {
+  transform: translate3d(13650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+92) {
+  transform: translate3d(13800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+93) {
+  transform: translate3d(13950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+94) {
+  transform: translate3d(14100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+95) {
+  transform: translate3d(14250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+96) {
+  transform: translate3d(14400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+97) {
+  transform: translate3d(14550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+98) {
+  transform: translate3d(14700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+99) {
+  transform: translate3d(14850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+100) {
+  transform: translate3d(15000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+1) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+2) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+3) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+4) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+5) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+6) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+7) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+8) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+9) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+10) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+11) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+12) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+13) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+14) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+15) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+16) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+17) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+18) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+19) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+20) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+21) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+22) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+23) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+24) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+25) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+26) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+27) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+28) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+29) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+30) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+31) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+32) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+33) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+34) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+35) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+36) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+37) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+38) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+39) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+40) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+41) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+42) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+43) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+44) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+45) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+46) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+47) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+48) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+49) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+50) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+51) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+52) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+53) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+54) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+55) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+56) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+57) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+58) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+59) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+60) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+61) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+62) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+63) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+64) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+65) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+66) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+67) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+68) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+69) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+70) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+71) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+72) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+73) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+74) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+75) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+76) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+77) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+78) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+79) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+80) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+81) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+82) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+83) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+84) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+85) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+86) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+87) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+88) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+89) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+90) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+91) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+92) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+93) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+94) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+95) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+96) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+97) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+98) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+99) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+100) {
+  transform: translate3d(0px, 0px, 0px);
 }
 main .allPageCard {
   opacity: 0.5;
@@ -1954,6 +2604,9 @@ main .aboutUs-who .container {
   display: flex;
   column-gap: 18px;
 }
+main .aboutUs-who .container .aboutUs-who__description {
+  flex: 1;
+}
 main .aboutUs-who .container .aboutUs-who__description p {
   line-height: 1.4;
   margin-bottom: 3px;
@@ -1967,8 +2620,24 @@ main .aboutUs-who .container .aboutUs-who__description a {
 main .aboutUs-who .container .aboutUs-who__description a:first-of-type {
   margin-right: 24px;
 }
-main .aboutUs-who .container .aboutUs-who__testTube {
+main .aboutUs-who .container .aboutUs-who__conteinerImg {
+  position: relative;
   width: clamp(471px, 80vw - 706px, 830px);
+}
+main .aboutUs-who .container .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__testTube {
+  visibility: hidden;
+}
+main .aboutUs-who .container .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__containerForAnim {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  position: absolute;
+  top: 0;
+}
+main .aboutUs-who .container .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__containerForAnim span {
+  display: block;
+  background: url(../img/testTube.png);
+  background-repeat: no-repeat;
 }
 main .aboutUs-about-production {
   padding-top: 100px;
@@ -1988,6 +2657,15 @@ main .aboutUs-about-production .container .aboutUs-about-production__more-detail
   align-items: center;
   width: 546px;
   padding: 0 19.5px;
+}
+main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #flask {
+  visibility: hidden;
+}
+main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #microscope {
+  visibility: hidden;
+}
+main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #petriDishes {
+  visibility: hidden;
 }
 main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item h4 {
   margin: 17px 0 5px;
@@ -3541,6 +4219,10 @@ footer .footer-container {
   width: clamp(1060px, 101vw - 254px, 1684px);
   margin: 0 auto;
   position: relative;
+  opacity: 0;
+  top: 100px;
+  transition: all 1s;
+  transition-timing-function: cubic-bezier(0, 0, 0, 0.9);
 }
 footer .footer-container .footer-container__headlines {
   display: flex;
@@ -3643,6 +4325,10 @@ footer .footer-container .footer-container__content__copyright {
   top: 55px;
   color: #D9D9D9;
   font-size: clamp(0.75rem, 1vw - 0.1875rem, 1rem);
+}
+footer .footerVisible {
+  opacity: 1;
+  top: 0px;
 }
 
 @media screen and (min-width: 1401px) {
@@ -4695,7 +5381,7 @@ footer .footer-container .footer-container__content__copyright {
     flex-direction: column;
     row-gap: 60px;
   }
-  main .aboutUs-who .container .aboutUs-who__testTube {
+  main .aboutUs-who .container .aboutUs-who__conteinerImg {
     width: auto;
   }
   main .aboutUs-about-production {
@@ -5888,9 +6574,6 @@ footer .footer-container .footer-container__content__copyright {
   }
 }
 @media screen and (max-width: 580px) {
-  body {
-    overflow-x: hidden;
-  }
   h1 {
     font-size: clamp(1.5rem, 6.9vw, 2.5rem);
   }
@@ -6734,7 +7417,8 @@ footer .footer-container .footer-container__content__copyright {
     width: 260px;
     margin-bottom: 20px;
   }
-  main .placingAnOrder .container form .consent i, main .placingAnOrder .container form .consent a {
+  main .placingAnOrder .container form .consent i,
+  main .placingAnOrder .container form .consent a {
     padding-top: 0;
   }
   .modal form p {
