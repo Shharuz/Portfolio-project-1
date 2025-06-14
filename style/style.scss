@@ -51,7 +51,7 @@ body {
     //overflow-x: hidden;
     overflow-y: hidden;
     position: relative;
-    padding-top: clamp(1rem, 1vw, 1.125rem);
+    padding: clamp(1rem, 1vw, 1.125rem) 0;
 
     .sizewindow {
         position: fixed;
@@ -67,11 +67,40 @@ body {
         top: 0px;
     }
 
+    .progressAboutUs {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 15px;
+        border: none;
+        background: transparent;
+        z-index: 10;
+
+        &::-webkit-progress-bar {
+            background: transparent;
+        }
+
+        &::-webkit-progress-value {
+            background: linear-gradient(90deg, rgba(45, 130, 34, 1) 0%, rgba(115, 193, 103, 1) 50%, rgba(176, 230, 129, 1) 100%);
+            background-attachment: fixed;
+        }
+
+        &::-moz-progress-bar {
+            background: linear-gradient(90deg, rgba(45, 130, 34, 1) 0%, rgba(115, 193, 103, 1) 50%, rgba(176, 230, 129, 1) 100%);
+            background-attachment: fixed;
+        }
+    }
+
     .forSmoothScroll {
         position: fixed;
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 100vh;
 
         .forSmoothScroll__wrapper {
             main {
@@ -84,6 +113,19 @@ body {
 
                     .wrapperForWord {
                         display: flex;
+                    }
+                }
+
+                .card-product-description,
+                .card-helpful-information,
+                .card-rewiews,
+                .card-slider {
+                    .line {
+
+                        justify-content: start;
+
+
+
                     }
                 }
 
@@ -112,6 +154,9 @@ body {
             padding-top: clamp(1rem, 1vw, 1.125rem);
         }
     }
+
+
+
 }
 
 
@@ -276,9 +321,10 @@ label {
         background-color: $bg-body;
         border-radius: 24px;
         z-index: 11;
+
         .preload__open__txt {
             font-size: 2vw;
-            color:$accent;
+            color: $accent;
             cursor: pointer;
         }
     }
@@ -296,6 +342,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 9;
 
     @keyframes headerAppear {
         from {
@@ -657,13 +705,35 @@ header {
 
 }
 
-.stopCssAnimHeader{
-        animation: none;
+.stopCssAnimHeader {
+    animation: none;
+}
+
+@keyframes appearSecondaryNav {
+    from {
+        transform: translateX(-100px);
     }
+
+    to {
+        transform: translateX(0px);
+    }
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
 
 .secondary-nav {
     height: 22px;
     margin: clamp(24px, 5vw - 56px, 40px) 0;
+    animation-name: appearSecondaryNav;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
 
     ul {
         display: flex;
@@ -2160,6 +2230,7 @@ main {
 
 
     .card-product-description {
+        opacity: 0;
 
         .container {
 
@@ -2296,9 +2367,15 @@ main {
                     min-width: 128px;
                     column-gap: 4px;
                     margin-left: auto;
+
+                    a {
+                        opacity: 0;
+                    }
                 }
 
                 span {
+                    opacity: 0;
+
                     &:first-of-type {
                         font-size: 16px;
                         width: 38px;
@@ -2322,11 +2399,13 @@ main {
                     align-self: baseline;
                     margin-left: 16px;
                     min-width: 62px;
+                    opacity: 0;
                 }
 
                 .counter {
                     margin-right: 8px;
                     margin-left: 39px;
+                    opacity: 0;
                 }
 
                 .buy__a {
@@ -2334,12 +2413,14 @@ main {
                     height: 40px;
                     font-size: 16px;
                     margin-right: 8px;
+                    opacity: 0;
                 }
 
                 .like {
                     width: 40px;
                     height: 40px;
                     padding-left: 8px;
+                    opacity: 0;
 
                     img {
                         width: initial;
@@ -2375,6 +2456,7 @@ main {
                     grid-template-columns: 249px 1fr;
 
                     p {
+                        opacity: 0;
                         margin-bottom: 16px;
 
                         &:nth-last-child(-n+2) {
@@ -2412,6 +2494,8 @@ main {
                 padding: 39px 90px 46px 50px;
                 background-color: $title-light;
                 border-radius: 32px;
+                position: relative;
+                z-index: 2;
 
                 h4 {
                     border-bottom: 1px solid $border-color;
@@ -2487,13 +2571,14 @@ main {
                 span {
                     font-weight: 500;
                     font-size: 24px;
-
+                    opacity: 0;
                 }
 
                 .stars {
                     width: 160px;
                     height: 34px;
                     margin: 0 15px 0 18px;
+                    opacity: 0;
 
                     .star {
                         width: 34px;
@@ -2507,7 +2592,9 @@ main {
                     }
                 }
 
-                p {}
+                p {
+                    opacity: 0;
+                }
 
             }
 
@@ -2630,7 +2717,7 @@ main {
 
             .aboutUs-who__conteinerImg {
                 position: relative;
-                
+
                 width: clamp(471px, 80vw - 706px, 830px);
 
                 .aboutUs-who__conteinerImg__testTube {
@@ -2639,8 +2726,8 @@ main {
 
                 .aboutUs-who__conteinerImg__containerForAnim {
                     display: grid;
-                    grid-template-columns: repeat(10, 1fr); //must match the cellColumn in animAboutUsSock.js(line 20)
-                    grid-template-rows: repeat(10, 1fr); //must match the cat cellRow in animAboutUsSock.js(line 20)
+                    grid-template-columns: repeat(10, 1fr); //must match the cellColumn in animAboutUsSock.js
+                    grid-template-rows: repeat(10, 1fr); //must match the cat cellRow in animAboutUsSock.js
                     position: absolute;
                     top: 0;
 
@@ -4653,7 +4740,7 @@ main {
 
     position: fixed;
     right: 0.5vw;
-    bottom: 1vh;
+    bottom: 5vh;
     z-index: 3;
 
     .widget__ul {
@@ -10444,6 +10531,7 @@ footer {
 @media screen and (max-width: 450px) {
     body {
         padding-top: 5px;
+        
     }
 
     header {

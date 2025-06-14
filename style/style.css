@@ -8,7 +8,7 @@ body {
   font-family: "Manrope";
   overflow-y: hidden;
   position: relative;
-  padding-top: clamp(1rem, 1vw, 1.125rem);
+  padding: clamp(1rem, 1vw, 1.125rem) 0;
 }
 body .sizewindow {
   position: fixed;
@@ -22,11 +22,35 @@ body .progress {
   position: fixed;
   top: 0px;
 }
+body .progressAboutUs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 15px;
+  border: none;
+  background: transparent;
+  z-index: 10;
+}
+body .progressAboutUs::-webkit-progress-bar {
+  background: transparent;
+}
+body .progressAboutUs::-webkit-progress-value {
+  background: linear-gradient(90deg, rgb(45, 130, 34) 0%, rgb(115, 193, 103) 50%, rgb(176, 230, 129) 100%);
+  background-attachment: fixed;
+}
+body .progressAboutUs::-moz-progress-bar {
+  background: linear-gradient(90deg, rgb(45, 130, 34) 0%, rgb(115, 193, 103) 50%, rgb(176, 230, 129) 100%);
+  background-attachment: fixed;
+}
 body .forSmoothScroll {
   position: fixed;
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100vh;
 }
 body .forSmoothScroll .forSmoothScroll__wrapper main {
   overflow-y: hidden;
@@ -38,6 +62,12 @@ body .forSmoothScroll .forSmoothScroll__wrapper main .line {
 }
 body .forSmoothScroll .forSmoothScroll__wrapper main .line .wrapperForWord {
   display: flex;
+}
+body .forSmoothScroll .forSmoothScroll__wrapper main .card-product-description .line,
+body .forSmoothScroll .forSmoothScroll__wrapper main .card-helpful-information .line,
+body .forSmoothScroll .forSmoothScroll__wrapper main .card-rewiews .line,
+body .forSmoothScroll .forSmoothScroll__wrapper main .card-slider .line {
+  justify-content: start;
 }
 @keyframes appear {
   from {
@@ -221,6 +251,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 9;
   animation-name: headerAppear;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
@@ -493,9 +525,26 @@ header .header-container .header__items .header__items__authorization__wrapper-l
   animation: none;
 }
 
+@keyframes appearSecondaryNav {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .secondary-nav {
   height: 22px;
   margin: clamp(24px, 5vw - 56px, 40px) 0;
+  animation-name: appearSecondaryNav;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
 }
 .secondary-nav ul {
   display: flex;
@@ -2278,6 +2327,9 @@ main .index-aboutUs .index-aboutUs__more-details-reviews {
 main .index-aboutUs .index-aboutUs__more-details-reviews a {
   flex: 1;
 }
+main .card-product-description {
+  opacity: 0;
+}
 main .card-product-description .container {
   display: grid;
   grid-template-columns: 40.3% 53.8%;
@@ -2384,6 +2436,12 @@ main .card-product-description .container .card-product-description__buy .links-
   column-gap: 4px;
   margin-left: auto;
 }
+main .card-product-description .container .card-product-description__buy .links-online-store a {
+  opacity: 0;
+}
+main .card-product-description .container .card-product-description__buy span {
+  opacity: 0;
+}
 main .card-product-description .container .card-product-description__buy span:first-of-type {
   font-size: 16px;
   width: 38px;
@@ -2401,21 +2459,25 @@ main .card-product-description .container .card-product-description__buy sup {
   align-self: baseline;
   margin-left: 16px;
   min-width: 62px;
+  opacity: 0;
 }
 main .card-product-description .container .card-product-description__buy .counter {
   margin-right: 8px;
   margin-left: 39px;
+  opacity: 0;
 }
 main .card-product-description .container .card-product-description__buy .buy__a {
   width: 200px;
   height: 40px;
   font-size: 16px;
   margin-right: 8px;
+  opacity: 0;
 }
 main .card-product-description .container .card-product-description__buy .like {
   width: 40px;
   height: 40px;
   padding-left: 8px;
+  opacity: 0;
 }
 main .card-product-description .container .card-product-description__buy .like img {
   width: initial;
@@ -2443,6 +2505,7 @@ main .card-product-description .container .card-product-description__about-the-p
   grid-template-columns: 249px 1fr;
 }
 main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features p {
+  opacity: 0;
   margin-bottom: 16px;
 }
 main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features p:nth-last-child(-n+2) {
@@ -2469,6 +2532,8 @@ main .card-helpful-information .container .card-helpful-information__articles {
   padding: 39px 90px 46px 50px;
   background-color: #FFFFFF;
   border-radius: 32px;
+  position: relative;
+  z-index: 2;
 }
 main .card-helpful-information .container .card-helpful-information__articles h4 {
   border-bottom: 1px solid #BBBBBB;
@@ -2527,11 +2592,13 @@ main .card-rewiews .container .card-rewiews__title h4 {
 main .card-rewiews .container .card-rewiews__title span {
   font-weight: 500;
   font-size: 24px;
+  opacity: 0;
 }
 main .card-rewiews .container .card-rewiews__title .stars {
   width: 160px;
   height: 34px;
   margin: 0 15px 0 18px;
+  opacity: 0;
 }
 main .card-rewiews .container .card-rewiews__title .stars .star {
   width: 34px;
@@ -2540,6 +2607,9 @@ main .card-rewiews .container .card-rewiews__title .stars .star {
 main .card-rewiews .container .card-rewiews__title .stars .star:before {
   line-height: 0.85;
   font-size: 34px;
+}
+main .card-rewiews .container .card-rewiews__title p {
+  opacity: 0;
 }
 main .card-rewiews .container .card-rewiews__item {
   padding: 26px 0;
@@ -4105,7 +4175,7 @@ main .page404 a:active {
 .widget {
   position: fixed;
   right: 0.5vw;
-  bottom: 1vh;
+  bottom: 5vh;
   z-index: 3;
 }
 .widget .widget__ul {
