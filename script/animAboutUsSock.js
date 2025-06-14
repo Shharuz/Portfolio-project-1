@@ -68,6 +68,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         //AboutUs: preload header, secondary-nav, aboutUs-who, animated
 
+
+
         tlpreload.to(preloadOpenTxt, {
                 scale: 1.5,
                 duration: 1,
@@ -351,6 +353,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                     let tlAboutUsWho = gsap.timeline();
                     let splitAboutUsH2 = SplitText.create(aboutUsWhoH2, { type: "words, chars" });
+                    tlpreload.kill();
                     tlAboutUsWho.set(preloadOpenTxt, {
                             scale: 1,
                         })
@@ -387,6 +390,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         }, "-=1")
                         .set(preload, {
                             autoAlpha: 0,
+                            zIndex: 0,
                         })
                         .set(abounUsHtml, { overflow: "auto" })
                         .from(headerAboutUs, { y: -200, autoAlpha: 0, ease: "expo.out", duration: 1.5, })
@@ -427,7 +431,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 ease: "power1.out",
                             }
                         }, 2.2);
-                    console.log(tlAboutUsWho);
+                    //console.log(tlAboutUsWho);
 
                     //GSDevTools.create({animation: tlAboutUsWho});
 
@@ -439,7 +443,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         preloadOpen.addEventListener('click', closePreload)
 
-
+        gsap.to('.progressAboutUs', {
+            value: 100,
+            ease: 'none',
+            //y: 500,
+            scrollTrigger: { scrub: 0.3 }
+        });
         //h2
         const h2About = document.querySelectorAll('section:not(.aboutUs-who) h2');
         h2About.forEach(h2 => {
@@ -607,8 +616,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         mmAboutUsAdvantages.add({
                 // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
-                isDesktop: `(min-width: ${mmAboutUsAdvantages}px)`,
-                isMobile: `(max-width: ${mmAboutUsAdvantages - 1}px)`,
+                isDesktop: `(min-width: ${breakPointAboutUsAdvantages}px)`,
+                isMobile: `(max-width: ${breakPointAboutUsAdvantages - 1}px)`,
                 reduceMotion: "(prefers-reduced-motion: reduce)",
             },
             (context) => {

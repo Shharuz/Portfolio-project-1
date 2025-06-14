@@ -68,7 +68,7 @@ let tmpForPrepThirdH2Adaptiv;
 function changeBodyStartEndAnimPrep() {
     //gives the height of the body so that scrolling occurs
     heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-    body.setAttribute('style', `height:${heightForScroll + 100}px`);
+    body.setAttribute('style', `height:${heightForScroll}px`);
 
     sizewindow.innerHTML = window.innerWidth;
     //Preparing H1(adding wrappers) for animation
@@ -94,6 +94,7 @@ function changeBodyStartEndAnimPrep() {
         if (tmpForPrepSecondH2Adaptiv != 0) {
             tmpForPrepSecondH2Adaptiv = 0;
             creatingWrappers(h2[1], 'Посмотрите самые популярные товары', 1, 0, 0, 0) //approximately on line 128
+            console.log('rrrrr')
         }
 
 
