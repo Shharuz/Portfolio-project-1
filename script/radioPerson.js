@@ -11,10 +11,12 @@ radioPerson.forEach((item) => {
         for (let itemformItems of formItems) {
             if (itemformItems.classList.contains('hide')) {//reveals all elements
                 itemformItems.classList.remove('hide')
+                alignBody()//for script/animation.js (smoothScroll)
             }
 
             if (item.id == itemformItems.getAttribute('data-hide')) {//if the radioPerson id matches the data-hide of the form element, it will hide it
                 itemformItems.classList.add('hide')
+                alignBody()//for script/animation.js (smoothScroll) 
             }
         }
         if (item.getAttribute('name') == 'delivery') {//similarly, see above

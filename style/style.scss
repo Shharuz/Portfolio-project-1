@@ -106,44 +106,46 @@ body {
             main {
                 overflow-y: hidden;
 
+
+            }
+
+            .card-product-description,
+            .card-helpful-information,
+            .card-rewiews,
+            .card-slider {
                 .line {
-                    display: flex;
-                    justify-content: center;
-                    column-gap: 11px;
 
-                    .wrapperForWord {
-                        display: flex;
-                    }
-                }
-
-                .card-product-description,
-                .card-helpful-information,
-                .card-rewiews,
-                .card-slider {
-                    .line {
-
-                        justify-content: start;
+                    justify-content: start;
 
 
 
-                    }
-                }
-
-
-                @keyframes appear {
-                    from {
-                        opacity: 0;
-                        transform: translateY(200px);
-                    }
-
-                    to {
-                        opacity: 1;
-                        transform: translateY(0px);
-                    }
                 }
             }
 
+
+            @keyframes appear {
+                from {
+                    opacity: 0;
+                    transform: translateY(200px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
         }
+
+    }
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    column-gap: 11px;
+
+    .wrapperForWord {
+        display: flex;
     }
 
     //for sock animate
@@ -2966,6 +2968,14 @@ main {
 
     /*&&&&&&&&&&&      aboutUs            &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      catalog            &&&&&&&&&&&&&&*/
+
+    @keyframes appearcatalogMainPage {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     .catalogMainPage {
         background-color: $title-light;
         text-align: center;
@@ -2973,7 +2983,58 @@ main {
         padding: 74px 0 33px;
         margin-bottom: clamp(80px, 6vw - 16px, 99px);
 
-        .catalog-categories {}
+        opacity: 0;
+        transform: translateY(50px);
+        animation-name: appearcatalogMainPage;
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+        animation-fill-mode: forwards;
+
+        h2 {
+            .line {
+                .wrapperForWord {
+                    &:first-child {
+                        color: $accent;
+                    }
+                }
+            }
+        }
+
+        .catalog-categories {
+            @keyframes appearscatalogCategoriesCategory {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            a {
+                animation: appearscatalogCategoriesCategory 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+                opacity: 0;
+
+                &:nth-child(1) {
+                    transform: translate(-50px, 30px);
+                }
+
+                &:nth-child(2) {}
+
+                &:nth-child(3) {
+                    transform: translate(50px, 30px);
+                }
+
+                &:nth-child(4) {
+                    transform: translate(-50px, 60px);
+                }
+
+                &:nth-child(5) {
+                    transform: translate(0, 60px);
+                }
+
+                &:nth-child(6) {
+                    transform: translate(50px, 60px);
+                }
+            }
+        }
     }
 
     /*&&&&&&&&&&&      catalog            &&&&&&&&&&&&&&*/
@@ -2989,16 +3050,98 @@ main {
 
             .catalogCategories__select-catagory {
                 margin-bottom: clamp(24px, 5vw - 56px, 40px);
+
+                p {
+                    transform: scale(0);
+                }
+
+                @keyframes appearbacteria-for-septic {
+
+                    to {
+                        transform: scale(1);
+                    }
+                }
+
+                #bacteria-for-septic {
+                    animation: appearbacteria-for-septic 0.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+                }
+
+                @keyframes appearFermentation-mats {
+
+                    to {
+                        transform: scale(1);
+                    }
+                }
+
+                #Fermentation-mats {
+                    animation: appearFermentation-mats 0.5s cubic-bezier(0, 0, 0, 0.9) 0.2s forwards;
+                }
+
+                @keyframes appearclearWater {
+
+                    to {
+                        transform: scale(1);
+                    }
+                }
+
+                #clearWater {
+                    animation: appearclearWater 0.5s cubic-bezier(0, 0, 0, 0.9) 0.4s forwards;
+                }
+
+                @keyframes appearComposting {
+
+                    to {
+                        transform: scale(1);
+                    }
+                }
+
+                #Composting {
+                    animation: appearComposting 0.5s cubic-bezier(0, 0, 0, 0.9) 0.6s forwards;
+                }
+
+                @keyframes appearFor-soil-and-plants {
+
+                    to {
+                        transform: scale(1);
+                    }
+                }
+
+                #For-soil-and-plants {
+                    animation: appearFor-soil-and-plants 0.5s cubic-bezier(0, 0, 0, 0.9) 0.8s forwards;
+                }
             }
 
             .catalogCategories__wrapperForFilter {
                 display: flex;
+
+                @keyframes appearfilter {
+
+                    to {
+
+                        transform: translateY(0px);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
 
                 .filter {
                     width: clamp(274px, 50vw - 645px, 320px);
                     height: 625px;
                     margin-right: clamp(44px, 50vw - 850px, 110px);
                     min-width: 274px;
+                    opacity: 0;
+                    transform: translateY(200px);
+                    animation: appearfilter 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 
                     form {
                         background: none;
@@ -3297,12 +3440,35 @@ main {
                         justify-content: space-between;
                         margin-bottom: 20px;
 
+                        @keyframes appearcounter-card {
+
+                            to {
+
+                                transform: translateX(0px);
+                            }
+
+                            0% {
+                                opacity: 0;
+                            }
+
+                            25% {
+                                opacity: 0;
+                            }
+
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+
                         .counter-card {
                             font-weight: 500;
                             font-size: 20px;
                             color: $text;
                             display: flex;
                             align-items: center;
+                            opacity: 0;
+                            transform: translateX(-300px);
+                            animation: appearcounter-card 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
 
                             #amount-card {
                                 font-size: 24px;
@@ -3312,8 +3478,31 @@ main {
                             }
                         }
 
+                        @keyframes appearfilterTwo {
+
+                            to {
+
+                                transform: translateX(0px);
+                            }
+
+                            0% {
+                                opacity: 0;
+                            }
+
+                            25% {
+                                opacity: 0;
+                            }
+
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+
                         .filterTwo {
                             position: relative;
+                            opacity: 0;
+                            transform: translateX(300px);
+                            animation: appearfilterTwo 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
 
                             &:after {
                                 content: " ";
@@ -3352,6 +3541,27 @@ main {
                             }
                         }
 
+                        @keyframes appearbth-filter {
+
+                            to {
+
+                                transform: translateY(0px);
+                            }
+
+                            0% {
+                                opacity: 0;
+                            }
+
+                            25% {
+                                opacity: 0;
+                            }
+
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+
+
                         .bth-filter {
                             display: none;
                             width: 220px;
@@ -3360,6 +3570,9 @@ main {
                             font-weight: 400;
                             font-size: 16px;
                             border-radius: 6px;
+                            opacity: 0;
+                            transform: translateX(-300px);
+                            animation: appearbth-filter 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
                         }
                     }
 
@@ -3466,6 +3679,7 @@ main {
     }
 
     /*&&&&&&&&&&&      catalogCategories            &&&&&&&&&&&&&&*/
+
     .contacts,
     .forPartners,
     .directory,
@@ -3478,12 +3692,105 @@ main {
         padding-bottom: clamp(80px, 6vw - 15px, 100px);
 
         .container {
-            h2 {
 
+            @keyframes appearH2 {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            h2 {
                 line-height: 1.39;
+                opacity: 0;
+                animation-name: appearH2;
+                animation-duration: 0.1s;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+
+
+
+                @keyframes appearH2chars {
+
+                    to {
+                        transform: translateY(0);
+
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+
+
+                }
+
+                .wrapperSymbol {
+                    animation-name: appearH2chars;
+                    animation-duration: 1s;
+                    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                    animation-fill-mode: forwards;
+
+                }
+
             }
         }
     }
+
+    .catalogMainPage {
+        @keyframes appearH2 {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            line-height: 1.39;
+            opacity: 0;
+            animation-name: appearH2;
+            animation-duration: 0.1s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+
+            @keyframes appearH2chars {
+
+                to {
+                    transform: translateY(0);
+
+                }
+
+                0% {
+                    opacity: 0;
+                }
+
+                25% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+
+
+            }
+
+            .wrapperSymbol {
+                animation-name: appearH2chars;
+                animation-duration: 1s;
+                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                animation-fill-mode: forwards;
+            }
+
+        }
+    }
+
+
 
     /*&&&&&&&&&&&      contacts            &&&&&&&&&&&&&&*/
     .contacts {
@@ -3491,12 +3798,36 @@ main {
             display: flex;
             column-gap: 20px;
 
+            @keyframes appearcontactsItems {
+
+                to {
+
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .contacts__more-detail,
+            .contacts__map {
+                opacity: 0;
+                clip-path: polygon(46% 43%, 57% 43%, 51% 48%, 40% 48%);
+                animation: appearcontactsItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+            }
+
             .contacts__more-detail {
                 width: calc(10% + 661px);
                 padding: 40px 50px 40px 50px;
                 background-color: $title-light;
                 border-radius: 24px;
                 margin: 11px 0 17px;
+
 
                 h2 {
                     //line-height: 1.5;
@@ -3528,8 +3859,31 @@ main {
                         padding-left: 41px;
                         border-bottom: 1px solid $border-color;
 
+                        @keyframes appearfirst-of-typeitem {
+
+                            to {
+
+                                transform: translateY(0px);
+                            }
+
+                            0% {
+                                opacity: 0;
+                            }
+
+                            25% {
+                                opacity: 0;
+                            }
+
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+
                         .contacts__more-detail__item {
                             position: relative;
+                            opacity: 0;
+                            transform: translateY(100px);
+                            animation: appearfirst-of-typeitem 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 
                             svg {
                                 position: absolute;
@@ -3555,10 +3909,36 @@ main {
                         padding-top: 32px;
                         padding-bottom: 39px;
 
+                        @keyframes appearlast-of-typeitem {
+
+                            to {
+
+                                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                            }
+
+                            0% {
+                                opacity: 0;
+                            }
+
+                            25% {
+                                opacity: 1;
+                            }
+
+                            100% {
+                                opacity: 1;
+                            }
+
+
+                        }
+
                         .contacts__more-detail__item {
                             display: grid;
                             grid-template-columns: 194px auto 1fr;
                             grid-template-rows: auto;
+
+                            opacity: 0;
+                            clip-path: polygon(46% 48%, 53% 48%, 53% 55%, 46% 55%);
+                            animation: appearlast-of-typeitem 1s cubic-bezier(0, 0, 0, 0.9) 0.5s forwards;
 
                             span:first-of-type {
                                 font-size: 16px;
@@ -3591,9 +3971,20 @@ main {
 
                 }
 
+                @keyframes appearmodalquestionBtn {
+
+                    to {
+
+                        transform: scale(1);
+                    }
+                }
+
                 a {
                     width: 320px;
                     height: 63px;
+
+                    transform: scale(0);
+                    animation: appearmodalquestionBtn 1s cubic-bezier(0, 0, 0, 0.9) 1s forwards;
                 }
             }
 
@@ -3621,6 +4012,38 @@ main {
                 .hide {
                     display: none;
                 }
+
+                @keyframes appearFormItems {
+
+                    to {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+                p,
+                fieldset,
+                .form__item,
+                button {
+                    opacity: 0;
+                    animation: appearFormItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+                }
+
+                p {
+                    transform: translateY(20px);
+                }
+
+                fieldset {
+                    transform: translateY(40px);
+                }
+
+                .form__item {
+                    transform: translateY(60px);
+                }
+
+                button {
+                    transform: translateY(80px);
+                }
             }
 
             img {
@@ -3628,13 +4051,66 @@ main {
                 object-fit: cover;
                 border-radius: 24px;
             }
+
+            @keyframes appearforPartnersItems {
+
+                to {
+
+                    clip-path: polygon(0 8%, 0 0, 8% 0, 93% 0, 100% 0, 100% 8%, 100% 93%, 100% 100%, 93% 100%, 7% 100%, 0 100%, 0 94%);
+                }
+
+                0% {
+                    opacity: 0;
+                }
+
+                25% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+
+
+            }
+
+            form,
+            img {
+                opacity: 0;
+                clip-path: polygon(37% 54%, 46% 55%, 40% 47%, 59% 46%, 54% 55%, 62% 51%, 62% 66%, 54% 61%, 58% 70%, 40% 70%, 46% 61%, 37% 65%);
+                animation: appearforPartnersItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+            }
         }
 
     }
 
     /*&&&&&&&&&&&      forPartners           &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      directory           &&&&&&&&&&&&&&*/
+    @keyframes appeardirectory {
+
+        to {
+
+            transform: translateY(0px);
+        }
+
+        0% {
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
     .directory {
+        opacity: 0;
+        transform: translateY(100px);
+        animation: appeardirectory 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+
         .container {
             max-width: 1674px;
             width: 100%;
@@ -3653,6 +4129,27 @@ main {
                 justify-content: center;
                 margin-top: 50px;
 
+                @keyframes appeardirectory-categories__item {
+
+                    to {
+
+                        transform: translate(0);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+
                 .directory-categories__item {
                     width: 31.5%;
                     padding: 12px 0;
@@ -3665,6 +4162,23 @@ main {
                     font-size: 20px;
                     color: $title;
                     text-transform: none;
+
+                    opacity: 0;
+                    animation: appeardirectory-categories__item 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+
+                    &:nth-child(1) {
+                        transform: translate(-100px, 100px);
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(0, 100px);
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(100px, 100px);
+                    }
+
+
 
                     svg {
                         margin-bottom: 16px;
@@ -3699,10 +4213,18 @@ main {
                 .reviews__wrapper-for-item__item {
                     padding: 32px 45px 29px;
                     height: max-content;
+                    opacity: 0;
+                    transform: translate(100px, 100px);
 
                     .full-review {
                         margin-top: 31px;
 
+                    }
+                }
+
+                @for $i from 1 through 6 {
+                    .reviews__wrapper-for-item__item:nth-child(n + #{$i}) {
+                        transform: translate($i * 40px, $i * 40px);
                     }
                 }
             }
@@ -3725,8 +4247,40 @@ main {
                 width: 93%;
                 margin: 24px 0 clamp(24px, 4vw - 36px, 40px);
 
+                @keyframes appearhowToBuy {
+
+                    to {
+
+                        transform: translateY(0px);
+                    }
+
+                    to {
+                        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
                 p {
                     font-size: 20px;
+                    opacity: 0;
+                    transform: translateY(120px);
+
+                    &:nth-child(2) {
+                        transform: translateY(70px);
+                    }
+
+                    animation: appearhowToBuy 1s cubic-bezier(0, 0, 0, 0.9) forwards;
                 }
             }
 
@@ -3735,9 +4289,31 @@ main {
                 flex-direction: column;
                 align-items: center;
 
+                @keyframes appearhowToBuyTxt {
+                    to {
+                        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+                    }
+                }
+
+
+                p {
+                    clip-path: polygon(48% 45%, 55% 45%, 55% 52%, 49% 52%);
+                    animation: appearhowToBuyTxt 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+                }
+
                 .links-online-store {
                     margin-top: 22px;
                     width: 482px;
+
+                    a {
+                        transform: translateY(120px);
+
+                        &:nth-child(2) {
+                            transform: translateY(70px);
+                        }
+
+                        animation: appearhowToBuy 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+                    }
                 }
             }
 
@@ -3757,11 +4333,41 @@ main {
                 margin: 24px 0;
 
                 //align-self: stretch;
+                @keyframes appearquestionscategories {
+
+                    to {
+
+                        transform: translateY(0px);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
                 p {
                     &:first-child {
                         min-width: fit-content;
                     }
+
+                    @for $i from 1 through 100 {
+                        &:nth-child(n + #{$i}) {
+                            opacity: 0;
+                            transform: translateY(50px);
+                            animation: appearquestionscategories 0.5s cubic-bezier(0, 0, 0, 0.9) #{$i * 0.3}s forwards;
+                        }
+                    }
+
                 }
+
             }
 
             .questions__question-and-answer {
@@ -3777,6 +4383,9 @@ main {
                     overflow: hidden;
                     padding: 32px 45px 32px 45px;
                     border-radius: 32px;
+
+                    opacity: 0;
+                    transform: translate(100px, 100px);
 
                     &:not(:last-child) {
                         margin-bottom: 8px;
@@ -3827,6 +4436,12 @@ main {
                     }
                 }
 
+                @for $i from 1 through 6 {
+                    .questions__question-and-answer__item:nth-child(n + #{$i}) {
+                        transform: translate($i * 40px, $i * 40px);
+                    }
+                }
+
 
             }
 
@@ -3848,8 +4463,36 @@ main {
                 width: clamp(59.5%, 1100px - 6vw, 86%);
                 gap: 4px;
 
+                @keyframes appearBlogcategories {
+
+                    to {
+
+                        transform: translateY(0px);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
                 p {
                     font-size: 20px;
+
+                    @for $i from 1 through 100 {
+                        &:nth-child(n + #{$i}) {
+                            opacity: 0;
+                            transform: translateY(30px);
+                            animation: appearBlogcategories 0.3s cubic-bezier(0, 0, 0, 0.9) #{$i * 0.2}s forwards;
+                        }
+                    }
                 }
             }
 
@@ -3858,6 +4501,18 @@ main {
                 grid-template-columns: repeat(4, 1fr);
                 column-gap: 20px;
                 row-gap: 40px;
+
+                .blog-article-min {
+                    opacity: 0;
+
+                    @for $i from 1 through 100 {
+                        &:nth-child(n + #{$i}) {
+                            opacity: 0;
+                            transform: translateY(#{$i * 30}px);
+                        }
+                    }
+
+                }
             }
 
             .hide {
@@ -3881,14 +4536,48 @@ main {
                 font-size: clamp(40px, 2vw + 10px, 48px);
             }
 
+            @keyframes appearImgArticleOrVideo {
+
+                to {
+                    clip-path: polygon(15% 0, 0 0, 0 31%, 0 100%, 16% 100%, 50% 100%, 81% 100%, 100% 100%, 100% 53%, 100% 0, 79% 0, 50% 0);
+                }
+            }
+
             img {
                 grid-row: 1 / span 4;
                 justify-self: end;
+
+                clip-path: polygon(47% 39%, 40% 44%, 45% 49%, 39% 53%, 46% 59%, 50% 53%, 53% 59%, 61% 54%, 55% 49%, 61% 45%, 54% 40%, 50% 45%);
+                animation: appearImgArticleOrVideo 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+            }
+
+            @keyframes appearArticleOrVideoInfo-txt {
+
+                to {
+
+                    transform: translateY(0px);
+                }
+
+                0% {
+                    opacity: 0;
+                }
+
+                25% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
             }
 
             .articleOrVideo__info-txt {
                 grid-column: 1;
                 grid-row: 3;
+
+                opacity: 0;
+                transform: translateY(100px);
+                animation: appearArticleOrVideoInfo-txt 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 
                 p {
                     font-size: 18px;
@@ -3900,12 +4589,25 @@ main {
                 }
             }
 
+            @keyframes appearArticleOrVideoInfo-btn-ref {
+
+                to {
+
+                    transform: scale(1);
+                }
+
+
+            }
+
             a {
                 grid-column: 1;
                 grid-row: 4;
                 width: 320px;
                 height: 63px;
                 //margin-top: clamp(24px, 5vw - 56px, 40px);
+
+                transform: scale(0);
+                animation: appearArticleOrVideoInfo-btn-ref 1s cubic-bezier(0, 0, 0, 0.9) forwards;
             }
         }
     }
@@ -3914,8 +4616,52 @@ main {
     /*&&&&&&&&&&&      account           &&&&&&&&&&&&&&*/
     .account {
         .container {
+
+            @keyframes appearH2 {
+                to {
+                    opacity: 1;
+                }
+            }
+
             h2 {
                 line-height: 1.39;
+                opacity: 0;
+                animation-name: appearH2;
+                animation-duration: 0.1s;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+
+
+
+                @keyframes appearH2chars {
+
+                    to {
+                        transform: translateY(0);
+
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+
+
+                }
+
+                .wrapperSymbol {
+                    animation-name: appearH2chars;
+                    animation-duration: 1s;
+                    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                    animation-fill-mode: forwards;
+
+                }
             }
 
             .account__categories {
@@ -3923,8 +4669,37 @@ main {
                 margin: 24px 0 clamp(24px, 5vw - 56px, 40px);
                 width: clamp(728px, 95vw - 610px, 1208px);
 
+                @keyframes appearAccountCategories {
+
+                    to {
+
+                        transform: translateY(0px);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
                 p {
                     font-size: 20px;
+
+                    @for $i from 1 through 100 {
+                        &:nth-child(n + #{$i}) {
+                            opacity: 0;
+                            transform: translateY(50px);
+
+                            animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) #{$i * 0.3}s forwards;
+                        }
+                    }
                 }
             }
 
@@ -3936,6 +4711,26 @@ main {
                 max-width: 1450px;
                 margin-bottom: clamp(38px, 20vw - 284px, 100px);
 
+                @keyframes appearAccount__form__content__block {
+
+                    to {
+                        
+                        transform: translateY(0px);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
                 .account__form__content__block {
                     flex: 1 40%;
                     display: flex;
@@ -3945,13 +4740,28 @@ main {
                     background-color: $title-light;
                     border-radius: 24px;
 
+opacity: 0;
+transform: translateY(100px);
+                    animation: appearAccount__form__content__block 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+
                     &:first-child {
                         height: 510px;
                     }
                 }
 
+                @keyframes appearAccount__form__button {
+
+                    to {
+                        
+                        transform: scale(1);
+                    }
+                }
+
                 button {
                     margin: 0 auto;
+
+                    transform: scale(0);
+                    animation: appearAccount__form__button 1s cubic-bezier(0, 0, 0, 0.9) forwards;
                 }
             }
 
@@ -4499,6 +5309,31 @@ main {
     }
 
     /*&&&&&&&&&&&     404           &&&&&&&&&&&&&&*/
+
+    @keyframes appearAnimateElementsOnScroll {
+
+        to {
+
+            transform: translate(0);
+        }
+
+        0% {
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .animateElementsOnScroll {
+
+        animation: appearAnimateElementsOnScroll 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+    }
 }
 
 .modal,
@@ -4514,7 +5349,7 @@ main {
     top: 0;
     left: 0;
     background-color: $bg-modal;
-    z-index: 5;
+    z-index: 11;
 }
 
 .modal {
@@ -6150,7 +6985,7 @@ footer {
                         height: 100%;
                         margin-right: 0;
                         background-color: $bg-modal;
-                        z-index: 3;
+                        z-index: 11;
 
                         .filter__form {
                             width: 394px;
@@ -8477,6 +9312,7 @@ footer {
 
                     .reviews__wrapper-for-item__item {
 
+
                         h4 {
                             font-size: clamp(18px, 10vw - 49px, 24px);
                         }
@@ -8487,6 +9323,8 @@ footer {
 
                         .full-review {}
                     }
+
+
                 }
             }
         }
@@ -10531,7 +11369,7 @@ footer {
 @media screen and (max-width: 450px) {
     body {
         padding-top: 5px;
-        
+
     }
 
     header {
