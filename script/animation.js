@@ -39,15 +39,15 @@ if (document.querySelector('.forSmoothScroll')) {
     let windowHeight;
     const elementVisible = 1; //animation will start when the block is 150px away from the bottom of the viewport.
     let scrollElements;
-    if(document.querySelectorAll(".reviews__wrapper-for-item__item").length > 0){
+    if (document.querySelectorAll(".reviews__wrapper-for-item__item").length > 0) {
         scrollElements = document.querySelectorAll(".reviews__wrapper-for-item__item"); //start by selecting all the block
-        
-    }else if (document.querySelectorAll(".questions__question-and-answer__item").length > 0){
+
+    } else if (document.querySelectorAll(".questions__question-and-answer__item").length > 0) {
         scrollElements = document.querySelectorAll(".questions__question-and-answer__item"); //start by selecting all the block 
-    }else if (document.querySelectorAll(".blog-article-min").length > 0){
+    } else if (document.querySelectorAll(".blog-article-min").length > 0) {
         scrollElements = document.querySelectorAll(".blog-article-min"); //start by selecting all the block 
     }
-    
+
     function getWindowHeight() {
         windowHeight = window.innerHeight; //windowHeight gets the height of the viewport (innerHeight)
     }
@@ -59,7 +59,7 @@ if (document.querySelector('.forSmoothScroll')) {
         //console.log(scrollElements)
         for (let i = 0; i < scrollElements.length; i++) {
             let elementTop = +scrollElements[i].getBoundingClientRect().top.toFixed(2); //calculates the distance from the top of the viewport to the top of the block
-            
+
             //If this condition is true, it means the block is within the viewport, and the class reveal, 
             //which has the style changes, is added. If the block is not within the defined 
             //visibility area, the reveal class is removed, reverting the animation.
@@ -89,14 +89,23 @@ if (document.querySelector('.forSmoothScroll')) {
 
 
         window.requestAnimationFrame(smooth);
-        appearElement();
+        //animate element reviews.html and questions.html
+        if (document.querySelectorAll(".reviews__wrapper-for-item__item").length > 0) {
+            appearElement();
+
+        } else if (document.querySelectorAll(".questions__question-and-answer__item").length > 0) {
+            appearElement();
+        } else if (document.querySelectorAll(".blog-article-min").length > 0) {
+            appearElement();
+        }
+
     }
 
     function linear(arg1, arg2, arg3) {
         return (1 - arg3) * arg1 + arg3 * arg2;
     }
 
-    
+
 }
 
 //split txt
@@ -107,7 +116,34 @@ let stringH;
 let arrayLettersH = [];
 
 
-creatingWrappers(h2, 1, 0, 0, 0, 0, 0);
+if (h2.id == 'h2catalogMainPage') {
+    let tmpAdaptiveH2;
+    h2catalogMainPageAdaptive();
+    window.addEventListener('resize', h2catalogMainPageAdaptive);
+
+    function h2catalogMainPageAdaptive() {
+        if (window.innerWidth > 580) {
+            if (tmpAdaptiveH2 != 0) {
+                tmpAdaptiveH2 = 0;
+                //console.log('0')    
+                creatingWrappers(h2, 1, 0, 0, 0, 0, 0);
+            }
+
+        } else if (window.innerWidth <= 580) {
+            if (tmpAdaptiveH2 != 1) {
+                tmpAdaptiveH2 = 1;
+                creatingWrappers(h2, 2, 2, 1, 0, 0, 0);
+            }
+        }
+    }
+}else if (h2.id == 'h2articleOrVideo'){
+    
+}else{
+    creatingWrappers(h2, 1, 0, 0, 0, 0, 0);
+}
+
+
+
 
 
 //arg1 = h1 or h2[i]
@@ -120,25 +156,34 @@ creatingWrappers(h2, 1, 0, 0, 0, 0, 0);
 function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6, arg7) {
 
     //for adaptive
-    if (arg1.childNodes[1] != undefined) {
-        let tmp = arg1.querySelectorAll('.wrapperForWord');
+    //console.log(arg1);
+    //console.log(arg1.childNodes.length);
+    //console.log(arg1.childNodes[0]);
+    //console.log(arg1.childNodes[0].nodeName)
+    for (let item of arg1.childNodes) {
+        //console.log(item)
+    }
+    if (arg1.childNodes[0].nodeName == 'DIV') {//checks if h2 is split into letters
+        let tmpWord = arg1.querySelectorAll('.wrapperForWord');//takes all the words
         let tmpArr = [];
-        for (let i = 0; i < tmp.length; ++i) {
-            let char = tmp[i].querySelectorAll('.wrapperSymbol');
+        for (let i = 0; i < tmpWord.length; ++i) {
+            let char = tmpWord[i].querySelectorAll('.wrapperSymbol');//takes all characters in each word
             for (let y = 0; y < char.length; ++y) {
                 //console.log(char[y].innerHTML)   
-                tmpArr.push(char[y].innerHTML);
-                if (y == (char.length - 1)) {
+                tmpArr.push(char[y].innerHTML);//сhar puts into array
+                if (y == (char.length - 1)) {//if the last character in a word, then it will add a space to the array
                     tmpArr.push(' ');
                 }
-                console.log(tmpArr)
+                //console.log(tmpArr)
             }
         }
-        arg1.innerHTML = "";
-        arg1.innerHTML = tmpArr.join("");
-
+        arg1.innerHTML = "";//will clear h2
+        arg1.innerHTML = tmpArr.join("");//the line cleared of wrappers will be added to h2
+        //arg1.append(tmpArr.join(""));
     }
-
+    /*if(arg1.childNodes[0].classList.contains('line')){
+             console.log('rrrrrrrr')
+    }*/
 
     stringH = arg1.innerHTML; //the content of the element (string) is put into a variable
     arg1.innerHTML = ''; //zeroing content to add wrappers with content
@@ -215,10 +260,11 @@ function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6, arg7) {
 }
 
 //h2 char prep for anim
+
 const h2Char = h2.querySelectorAll('.wrapperSymbol')
 //console.log(h2Char);
 let tmpH2CharTransY = 0;
-for (let char of h2Char) {
+for (let char of h2Char) {//will make a ladder
     char.style.transform = `translateY(${tmpH2CharTransY * 0.5}px)`;
     //console.log(char)
     tmpH2CharTransY += 15;

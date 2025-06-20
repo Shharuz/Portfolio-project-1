@@ -240,6 +240,7 @@ window.requestAnimationFrame(smooth);
 function smooth() {
     blockPosY = linear(blockPosY, scrPosY, speedAnim) //calculate forSmoothScrollWrapper position by linear interpolation method
     blockPosY = Math.floor(blockPosY * 100) / 100;
+
     //console.log(blockPosY,'blockPosY');
     //console.log(scrPosY);
     if (window.innerHeight <= 1440) {
