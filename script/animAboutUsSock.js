@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             smoothTouch: 0.1,
         });
 
-
-
-
         //AboutUs: preload variables
         const preload = document.querySelector('.preload');
         const preloadOpen = preload.querySelector('.preload__open');
@@ -40,10 +37,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let cellImg;
 
         function createImgForAnim() {
-            let cat = containerForAnim.querySelectorAll('span');
-            cat.forEach(item => {
+            //when resizing, removes cells
+            let varForDeleteCell = containerForAnim.querySelectorAll('span');
+            varForDeleteCell.forEach(item => {
                 item.remove()
             });
+
             for (let i = 0; i < cellRow; ++i) {
                 for (let y = 0; y < cellColumn; ++y) {
                     let cell = document.createElement('span');
@@ -53,24 +52,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     cell.style.height = heightCell + 'px';
                     //console.log(cell.clientWidth);
                     containerForAnim.appendChild(cell);
-                    cell.style.backgroundSize = img.width + 'px ' + img.height + "px"
-                    cell.style.backgroundPosition = -y * widthCell + "px " + -i * heightCell + "px, center";
+                    cell.style.backgroundSize = img.width + 'px ' + img.height + "px"; //each cell adds a full-size image as a background
+                    cell.style.backgroundPosition = -y * widthCell + "px " + -i * heightCell + "px, center";//shifts the background to the desired position
 
                 }
             }
 
-            cellImg = containerForAnim.querySelectorAll("span");
+            cellImg = containerForAnim.querySelectorAll("span");//creates a collection of variables for future animations
         }
         createImgForAnim();
         window.addEventListener('resize', () => {
             createImgForAnim();
         })
 
-        //AboutUs: preload header, secondary-nav, aboutUs-who, animated
-
-
-
-        tlpreload.to(preloadOpenTxt, {
+        //AboutUs: preload animated
+        tlpreload.to(preloadOpenTxt, {// txt 'click' animated
                 scale: 1.5,
                 duration: 1,
             })
@@ -78,7 +74,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 scale: 1,
                 duration: 0.1,
             })
-            .to(preloadCell, {
+            .to(preloadCell, {  // cell animated
                 scale: 0.9,
                 stagger: {
                     each: 0.1,
@@ -354,14 +350,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     let tlAboutUsWho = gsap.timeline();
                     let splitAboutUsH2 = SplitText.create(aboutUsWhoH2, { type: "words, chars" });
                     tlpreload.kill();
-                    tlAboutUsWho.set(preloadOpenTxt, {
+                    tlAboutUsWho.set(preloadOpenTxt, {//'stop' previous animation txt "click"
                             scale: 1,
                         })
-                        .to(preloadOpen, {
+                        .to(preloadOpen, { //btn disappearance
                             scale: 0.5,
                             autoAlpha: 0,
                         })
-                        .to(preloadCell, {
+                        .to(preloadCell, {//last wave
                             scale: 0.9,
                             stagger: {
                                 each: 0.1,
@@ -379,7 +375,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 ease: 'none',
                             }
                         }, "-=1")
-                        .to(preloadCell, {
+                        .to(preloadCell, {//cell disappearance (wave)
                             autoAlpha: 0,
                             stagger: {
                                 each: 0.1,
@@ -388,7 +384,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 ease: 'none',
                             }
                         }, "-=1")
-                        .set(preload, {
+                        .set(preload, {//container for cell - disappearance
                             autoAlpha: 0,
                             zIndex: 0,
                         })
@@ -411,7 +407,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         .fromTo(aboutUsWhoBtn, { ease: "back.out(1.7)", scale: 0, stagger: 0.2, }, { ease: "back.out(1.7)", scale: 1, stagger: 0.2, }, "-=0.5")
                         .from(cellImg, {
 
-                            scrollTrigger: isDesktop ? false : {
+                            scrollTrigger: isDesktop ? false : { //on desktop it animates immediately, but on mobile it animates relative to the scroll
                                 trigger: containerForAnim,
                                 scrub: 1.5,
                                 start: "top bottom-=100",
@@ -477,10 +473,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             end: "bottom center-=100",
                             //markers: true
                         },
-                        onComplete: () => {
+                        onComplete: () => {//after the animation of h2 chars appearing, it starts the color change animation
                             change.play();
                         },
-                        onUpdate: () => {
+                        onUpdate: () => {//when h2 chars are animating, it resets the color change animation and pauses it
                             change.progress(0)
                             change.pause();
                         },
@@ -524,7 +520,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             (context) => {
                 // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
                 let { isDesktop, isMobile, reduceMotion } = context.conditions;
-
+                //animation is set on each element without a cycle to more accurately control the morph of the svg
                 gsap.from(aboutUsAboutProduction__moreDetails__item[0], {
                     y: isDesktop ? 130 : 80,
                     autoAlpha: 0,
@@ -665,7 +661,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             type: "lines",
             onSplit(self) {
                 for (let i = 0; i < self.lines.length; ++i) {
-                    if ((i + 1) % 2 != 0) {
+                    if ((i + 1) % 2 != 0) {//animated odd
                         gsap.from(self.lines[i], {
                             x: -70,
                             y: (i + 1) * 10,
@@ -678,7 +674,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 //markers: true
                             },
                         });
-                    } else {
+                    } else {//animated even
                         gsap.from(self.lines[i], {
 
                             x: 70,

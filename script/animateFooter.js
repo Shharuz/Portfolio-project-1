@@ -23,7 +23,7 @@ function getScrollPercent() {
 
 }
 
-function visibleFooter() {
+function visibleFooter() {//if the scroll position is at the very bottom
     if (document.querySelector('body').offsetHeight - window.innerHeight == 0) {
         footer.classList.add('footerVisible');
     } else {
@@ -34,4 +34,3 @@ function visibleFooter() {
 window.addEventListener('scroll', getScrollPercent);
 window.addEventListener('resize', visibleFooter);
 
-//fix display footer on howToBuy.html

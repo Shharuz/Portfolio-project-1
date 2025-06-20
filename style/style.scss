@@ -410,7 +410,7 @@ header {
                         position: absolute;
                         top: 18px;
                         right: 5px;
-                        width: 90px;
+                        width: 73%;
                         height: 55px
                     }
 
@@ -526,7 +526,7 @@ header {
 
                         &:after {
                             top: 28px;
-                            width: 100px;
+                            width: 100%;
                             height: 48px;
                             margin: 0 auto;
                             right: initial;
@@ -2992,11 +2992,14 @@ main {
 
         h2 {
             .line {
-                .wrapperForWord {
-                    &:first-child {
-                        color: $accent;
+                &:first-child {
+                    .wrapperForWord {
+                        &:first-child {
+                            color: $accent;
+                        }
                     }
                 }
+
             }
         }
 
@@ -3114,39 +3117,43 @@ main {
             .catalogCategories__wrapperForFilter {
                 display: flex;
 
-                @keyframes appearfilter {
 
-                    to {
-
-                        transform: translateY(0px);
-                    }
-
-                    0% {
-                        opacity: 0;
-                    }
-
-                    25% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
-                }
 
                 .filter {
                     width: clamp(274px, 50vw - 645px, 320px);
                     height: 625px;
                     margin-right: clamp(44px, 50vw - 850px, 110px);
                     min-width: 274px;
-                    opacity: 0;
-                    transform: translateY(200px);
-                    animation: appearfilter 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+
+
+                    @keyframes appearfilterForm {
+
+                        to {
+
+                            transform: translateY(0px);
+                        }
+
+                        0% {
+                            opacity: 0;
+                        }
+
+                        25% {
+                            opacity: 0;
+                        }
+
+                        100% {
+                            opacity: 1;
+                        }
+                    }
 
                     form {
                         background: none;
                         padding: 0;
                         align-items: start;
+
+                        opacity: 0;
+                        transform: translateY(200px);
+                        animation: appearfilterForm 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 
                         .filter__form__reset-filter {
                             width: 260px;
@@ -3163,16 +3170,11 @@ main {
                             display: flex;
                         }
 
-
-
                         .rotateSvg {
                             transform: rotate(180deg);
                             -ms-transform: rotate(180deg);
                             -webkit-transform: rotate(180deg);
                         }
-
-
-
 
                         fieldset {
                             position: relative;
@@ -3699,6 +3701,33 @@ main {
                 }
             }
 
+            /*
+            @-webkit-keyframes appearH2 {
+                to {
+                    -webkit-opacity: 1;
+                }
+            }
+
+            @-moz-keyframes appearH2 {
+                to {
+                    -moz-opacity: 1;
+                }
+            }
+
+            @-o-keyframes appearH2 {
+                to {
+                    -o-opacity: 1;
+                }
+            }
+
+            @-ms-keyframes appearH2 {
+                to {
+                    -ms-opacity: 1;
+                }
+            }
+            */
+
+
             h2 {
                 line-height: 1.39;
                 opacity: 0;
@@ -3706,8 +3735,6 @@ main {
                 animation-duration: 0.1s;
                 animation-timing-function: linear;
                 animation-fill-mode: forwards;
-
-
 
                 @keyframes appearH2chars {
 
@@ -3727,10 +3754,84 @@ main {
                     100% {
                         opacity: 1;
                     }
-
-
                 }
 
+                /*
+                @-webkit-keyframes appearH2chars {
+                    to {
+                        transform: translateY(0);
+
+                    }
+
+                    0% {
+                        -webkit-opacity: 0;
+                    }
+
+                    25% {
+                        -webkit-opacity: 0;
+                    }
+
+                    100% {
+                        -webkit-opacity: 1;
+                    }
+                }
+
+                @-moz-keyframes appearH2chars {
+                    to {
+                        -moz-transform: translateY(0);
+                    }
+
+                    0% {
+                        -moz-opacity: 0;
+                    }
+
+                    25% {
+                        -moz-opacity: 0;
+                    }
+
+                    100% {
+                        -moz-opacity: 1;
+                    }
+                }
+
+                @-o-keyframes appearH2chars {
+                    to {
+                        -o-transform: translateY(0);
+
+                    }
+
+                    0% {
+                        -o-opacity: 0;
+                    }
+
+                    25% {
+                        -o-opacity: 0;
+                    }
+
+                    100% {
+                        -o-opacity: 1;
+                    }
+                }
+
+                @-ms-keyframes appearH2chars {
+                    to {
+                        -ms-transform: translateY(0);
+
+                    }
+
+                    0% {
+                        -ms-opacity: 0;
+                    }
+
+                    25% {
+                        -ms-opacity: 0;
+                    }
+
+                    100% {
+                        -ms-opacity: 1;
+                    }
+                }
+                */
                 .wrapperSymbol {
                     animation-name: appearH2chars;
                     animation-duration: 1s;
@@ -4534,6 +4635,7 @@ main {
                 grid-row: 1;
                 //margin-bottom: clamp(24px, 5vw - 56px, 40px);
                 font-size: clamp(40px, 2vw + 10px, 48px);
+                animation-duration: 2.5s;
             }
 
             @keyframes appearImgArticleOrVideo {
@@ -4714,7 +4816,7 @@ main {
                 @keyframes appearAccount__form__content__block {
 
                     to {
-                        
+
                         transform: translateY(0px);
                     }
 
@@ -4740,8 +4842,8 @@ main {
                     background-color: $title-light;
                     border-radius: 24px;
 
-opacity: 0;
-transform: translateY(100px);
+                    opacity: 0;
+                    transform: translateY(100px);
                     animation: appearAccount__form__content__block 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 
                     &:first-child {
@@ -4752,7 +4854,7 @@ transform: translateY(100px);
                 @keyframes appearAccount__form__button {
 
                     to {
-                        
+
                         transform: scale(1);
                     }
                 }
@@ -7675,8 +7777,34 @@ footer {
             }
 
             .catalog-categories {
-
                 margin-bottom: 61px;
+
+                a {
+
+                    &:nth-child(1) {
+                        transform: translate(-50px, 30px);
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(50px, 30px);
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(-50px, 60px);
+                    }
+
+                    &:nth-child(4) {
+                        transform: translate(50px, 60px);
+                    }
+
+                    &:nth-child(5) {
+                        transform: translate(-50px, 80px);
+                    }
+
+                    &:nth-child(6) {
+                        transform: translate(50px, 80px);
+                    }
+                }
             }
         }
 
@@ -10584,6 +10712,17 @@ footer {
                     height: initial;
                     border-radius: initial;
                 }
+
+
+
+                @for $i from 1 through 100 {
+                    a:nth-child(n + #{$i}) {
+                        transform: translate(0, $i * 20px);
+                    }
+                }
+
+
+
             }
 
         }
@@ -10814,6 +10953,12 @@ footer {
 
                     p {
                         height: clamp(39px, 10vw - 1px, 51px);
+
+                        @for $i from 1 through 100 {
+                            &:nth-child(n + #{$i}) {
+                                transform: translateY($i * 30px);
+                            }
+                        }
                     }
                 }
 

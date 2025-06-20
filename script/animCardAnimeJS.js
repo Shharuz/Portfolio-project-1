@@ -119,7 +119,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 }
             }
             arg1.innerHTML = "";
-            arg1.innerHTML = tmpArr.join("");
+            //arg1.innerHTML = tmpArr.join("");
+            arg1.append(tmpArr.join(""))
         }
 
         stringH = arg1.innerHTML; //the content of the element (string) is put into a variable
