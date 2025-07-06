@@ -13,7 +13,7 @@ body {
 body .sizewindow {
   position: fixed;
   background: white;
-  border: 1px solid green;
+  border: 2px solid green;
   z-index: 5;
 }
 body .progress {
