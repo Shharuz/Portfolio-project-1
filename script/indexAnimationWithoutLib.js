@@ -47,8 +47,9 @@ creatingWrappers(h2[0], 'Каталог нашей продукции', 1, 0, 0,
 const h3 = indexOnlineStore.querySelector('h3');
 creatingWrappers(h3, 'Мы на маркетплейсах', 1, 0, 0, 0); //approximately on line 128
 
-window.addEventListener('resize', changeBodyStartEndAnimPrep); //approximately on line 58
-window.addEventListener('DOMContentLoaded', changeBodyStartEndAnimPrep);
+
+window.addEventListener('resize', headingPrep); //approximately on line 58
+window.addEventListener('DOMContentLoaded', headingPrep);
 
 //variables so that rebuilding during resize works 1 time
 let tmpForPrepH1Adaptiv;
@@ -65,11 +66,18 @@ let tmpForPrepThirdH2Adaptiv;
 //arg6 = amount words in 3 line
 //arg7 = amount words
 
-function changeBodyStartEndAnimPrep() {
+function headingPrep() {
     //gives the height of the body so that scrolling occurs
-    heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-    body.setAttribute('style', `height:${heightForScroll}px`);
-
+    //bodyPadding = parseInt(window.getComputedStyle(body).getPropertyValue('padding').replace('px 0px', ''));
+    /*setTimeout(() => {
+        
+    }, 1500);*/ // 2000 milliseconds = 2 seconds
+    //console.log(forSmoothScrollWrapper);
+    //console.log(forSmoothScrollWrapper.scrollHeight);
+    //console.log(forSmoothScrollWrapper.offsetHeight);
+    //console.log(forSmoothScrollWrapper.clientHeight);
+    //console.log(cet.replace('px 0px', ''));
+    //console.log(bodyPadding);
     sizewindow.innerHTML = window.innerWidth;
     //Preparing H1(adding wrappers) for animation
     if (window.innerWidth > 736) {
@@ -94,7 +102,7 @@ function changeBodyStartEndAnimPrep() {
         if (tmpForPrepSecondH2Adaptiv != 0) {
             tmpForPrepSecondH2Adaptiv = 0;
             creatingWrappers(h2[1], 'Посмотрите самые популярные товары', 1, 0, 0, 0) //approximately on line 128
-            console.log('rrrrr')
+            //console.log('rrrrr')
         }
 
 
@@ -119,8 +127,6 @@ function changeBodyStartEndAnimPrep() {
         }
 
     }
-
-
 }
 
 //arg1 = h1 or h2[i]
@@ -202,12 +208,6 @@ function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6) {
 
 
 }
-
-
-//gives the height of the body so that scrolling occurs
-let heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-body.setAttribute('style', `height:${heightForScroll}px`);
-
 
 let scrPosY = 0; //for scroll positions
 let blockPosY = scrPosY; // for forSmoothScrollWrapper position
@@ -380,7 +380,7 @@ function smooth() {
                         startAnimp_indexOnlineStore = startAnimindexOnlineStore;
                         endAnimp_indexOnlineStore = endAnimindexOnlineStore - 10;
                     }
-                    
+
                     let animp_indexOnlineStorePathLength = endAnimp_indexOnlineStore - startAnimp_indexOnlineStore;
                     if (blockPosY > startAnimp_indexOnlineStore && blockPosY < endAnimp_indexOnlineStore) {
                         let p_indexOnlineStoreTransY = (endAnimp_indexOnlineStore - blockPosY) * 100 / 100;
@@ -960,27 +960,39 @@ function linear(arg1, arg2, arg3) {
     return (1 - arg3) * arg1 + arg3 * arg2;
 }
 
-const swiperCardIndexSlides = swiperCard.querySelectorAll(".addAnimSwiperIndex");//start by selecting all the Slides
+const swiperCardIndexSlides = swiperCard.querySelectorAll(".addAnimSwiperIndex"); //start by selecting all the Slides
 console.log()
+
 function reveal() {
-  
-
-  for (let i = 0; i < swiperCardIndexSlides.length; i++) {
-    const windowHeight = window.innerHeight;//windowHeight gets the height of the viewport (innerHeight)
-    const elementTop = swiperCardIndexSlides[i].getBoundingClientRect().top; //calculates the distance from the top of the viewport to the top of the block
-    const elementVisible = 150;//animation will start when the block is 150px away from the bottom of the viewport.
 
 
+    for (let i = 0; i < swiperCardIndexSlides.length; i++) {
+        const windowHeight = window.innerHeight; //windowHeight gets the height of the viewport (innerHeight)
+        const elementTop = swiperCardIndexSlides[i].getBoundingClientRect().top; //calculates the distance from the top of the viewport to the top of the block
+        const elementVisible = 150; //animation will start when the block is 150px away from the bottom of the viewport.
 
-//If this condition is true, it means the block is within the viewport, and the class swiper-slideIndexVisible, 
-//which has the style changes, is added. If the block is not within the defined 
-//visibility area, the swiper-slideIndexVisible class is removed, reverting the animation.
-    if (elementTop < windowHeight - elementVisible) {
-      swiperCardIndexSlides[i].classList.add("swiper-slideIndexVisible");
- } else {
-      swiperCardIndexSlides[i].classList.remove("swiper-slideIndexVisible");
- }
- }
+
+
+        //If this condition is true, it means the block is within the viewport, and the class swiper-slideIndexVisible, 
+        //which has the style changes, is added. If the block is not within the defined 
+        //visibility area, the swiper-slideIndexVisible class is removed, reverting the animation.
+        if (elementTop < windowHeight - elementVisible) {
+            swiperCardIndexSlides[i].classList.add("swiper-slideIndexVisible");
+        } else {
+            swiperCardIndexSlides[i].classList.remove("swiper-slideIndexVisible");
+        }
+    }
 }
 
 window.addEventListener("scroll", reveal);
+
+//gives the height of the body so that scrolling occurs
+let heightForScroll;
+
+window.addEventListener("load", changeBodyStartEndAnimPrep);
+window.addEventListener('resize', changeBodyStartEndAnimPrep)
+
+function changeBodyStartEndAnimPrep() {
+        heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+        body.setAttribute('style', `height:${heightForScroll}px`);
+}

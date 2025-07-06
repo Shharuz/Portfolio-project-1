@@ -47,8 +47,6 @@ body .progressAboutUs::-moz-progress-bar {
 }
 body .forSmoothScroll {
   position: fixed;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100vh;
 }
@@ -70,6 +68,10 @@ body .forSmoothScroll .forSmoothScroll__wrapper .card-slider .line {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+body #smooth-wrapper {
+  inset: initial !important;
+  overflow: visible !important;
 }
 
 .line {
@@ -3425,30 +3427,35 @@ main .questions .container,
 main .blog .container,
 main .articleOrVideo .container,
 main .placingAnOrder .container {
-  /*@keyframes appearH2 {
+  /*
+  @-webkit-keyframes appearH2 {
       to {
-          opacity: 1;
+          -webkit-opacity: 1;
       }
-  }*/
-}
-@-webkit-keyframes appearH2 {
-  to {
-    -webkit-opacity: 1;
   }
-}
-@-moz-keyframes appearH2 {
-  to {
-    -moz-opacity: 1;
+
+  @-moz-keyframes appearH2 {
+      to {
+          -moz-opacity: 1;
+      }
   }
-}
-@-o-keyframes appearH2 {
-  to {
-    -o-opacity: 1;
+
+  @-o-keyframes appearH2 {
+      to {
+          -o-opacity: 1;
+      }
   }
+
+  @-ms-keyframes appearH2 {
+      to {
+          -ms-opacity: 1;
+      }
+  }
+  */
 }
-@-ms-keyframes appearH2 {
+@keyframes appearH2 {
   to {
-    -ms-opacity: 1;
+    opacity: 1;
   }
 }
 main .contacts .container h2,

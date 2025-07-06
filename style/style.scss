@@ -48,7 +48,6 @@ html {
 body {
     background-color: $bg-body;
     font-family: $font-main;
-    //overflow-x: hidden;
     overflow-y: hidden;
     position: relative;
     padding: clamp(1rem, 1vw, 1.125rem) 0;
@@ -68,7 +67,6 @@ body {
     }
 
     .progressAboutUs {
-
         position: fixed;
         top: 0;
         left: 0;
@@ -97,32 +95,20 @@ body {
 
     .forSmoothScroll {
         position: fixed;
-        display: flex;
-        flex-direction: column;
         width: 100%;
         height: 100vh;
-
         .forSmoothScroll__wrapper {
             main {
                 overflow-y: hidden;
-
-
             }
-
             .card-product-description,
             .card-helpful-information,
             .card-rewiews,
             .card-slider {
                 .line {
-
                     justify-content: start;
-
-
-
                 }
             }
-
-
             @keyframes appear {
                 from {
                     opacity: 0;
@@ -137,6 +123,11 @@ body {
         }
 
     }
+
+    #smooth-wrapper{
+        inset: initial !important;
+        overflow: visible !important;
+    }
 }
 
 .line {
@@ -147,21 +138,12 @@ body {
     .wrapperForWord {
         display: flex;
     }
-
-    //for sock animate
-
     #smooth-wrapper {
-
         #smooth-content {
             padding-top: clamp(1rem, 1vw, 1.125rem);
         }
     }
-
-
-
 }
-
-
 
 .container {
     position: relative;
@@ -236,8 +218,6 @@ button {
     text-transform: uppercase;
     letter-spacing: -0.5px;
 }
-
-
 
 h1,
 h2,
@@ -5806,12 +5786,6 @@ main {
     display: none;
 }
 
-
-
-
-
-
-
 footer {
 
     max-width: 120rem;
@@ -6193,9 +6167,6 @@ footer {
                 }
 
                 .questions__question-and-answer {
-
-
-
                     .questions__question-and-answer__item {
 
                         &:not(:last-child) {}

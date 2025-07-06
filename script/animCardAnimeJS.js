@@ -1,18 +1,11 @@
 import { onScroll, stagger, utils, createTimeline, eases, createSpring, createScope, animate } from './AnimeJS/anime.esm.min.js';
+const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
+const body = document.querySelector('body');
 document.addEventListener("DOMContentLoaded", (event) => {
     //SMOOTH SCROLL
 
-    const body = document.querySelector('body');
-    const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
-
-    //gives the height of the body so that scrolling occurs
-    let heightForScroll;
-    heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-    body.setAttribute('style', `height:${heightForScroll}px`);
-    window.addEventListener('resize', () => {
-        heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-        body.setAttribute('style', `height:${heightForScroll}px`);
-    })
+    
+    
 
     let scrPosY = 0; //for scroll positions
     let blockPosY = scrPosY; // for forSmoothScrollWrapper position
@@ -196,8 +189,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             arg1.append(wrapperForWord); //adding a word with symbols to the created line (the line was created at about 175 and 184)
         }
     }
-
-
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -584,3 +575,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
 
 })
+
+
+//gives the height of the body so that scrolling occurs
+let heightForScroll;
+
+window.addEventListener("load", changeBodyStartEndAnimPrep);
+window.addEventListener('resize', changeBodyStartEndAnimPrep)
+
+function changeBodyStartEndAnimPrep() {
+        heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+        body.setAttribute('style', `height:${heightForScroll}px`);
+}
+
+
