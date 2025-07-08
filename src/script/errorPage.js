@@ -1,0 +1,1 @@
+import './allScripts/indexAnimationWithoutLib.js';

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.min.css">
+    <style>
+        input::-ms-reveal, 
+      input::-ms-clear {
+        display: none;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="forSmoothScroll">
+        <div class="forSmoothScroll__wrapper">
+            <%= require('html-loader!./header.html').default %>
+            <div class="container">
+                <nav class="secondary-nav">
+                    <ul>
+                        <li><a href="https://livebacteria.local/">Главная</a></li>
+                        <li><a href="https://livebacteria.local/catalogMainPage.html">Категории каталога</a></li>
+                        <li><a href="https://livebacteria.local/catalogCategories.html?bacteria-for-septic">Бактерии для септика</a></li>
+                        <li>
+                            <a href="" class="secondary-nav__arrow-back"><svg width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM1 4.5H24V3.5H1V4.5Z" fill="#73C167" />
+                                </svg></a>
+                            <p>Биоактиватор, Зеленая Сосна, 300гр.</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <main>
+                <section class="card-product-description">
+                    <div class="container">
+                        <div class="card-product-description__wrapper-for-swiper">
+                            <div class="swiper card-product-description__wrapper-for-swiper__swiperNav">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="img/septik1.webp" alt='productSeptik1'>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/septik2.webp" alt='productSeptik2'>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/septik3.webp" alt='productSeptik3'>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/septik4.webp" alt='productSeptik2'>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper card-product-description__wrapper-for-swiper__swiperImg">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="img/septik1.webp" alt='productSeptik1'>
+                                        <div class="zoom-preview"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/septik2.webp" alt='productSeptik2'>
+                                        <div class="zoom-preview"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/septik3.webp" alt='productSeptik3'>
+                                        <div class="zoom-preview"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/septik4.webp" alt='productSeptik4'>
+                                        <div class="zoom-preview"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-product-description__title-block">
+                            <h3>Биоактиватор для дачных туалетов и выгребных ям Зеленая Сосна, 300гр.</h3>
+                            <div class="allPageCard__raiting">
+                                <p class="product-article">арт. 1123456</p>
+                                <div class="stars">
+                                    <div class="star fill"></div>
+                                    <div class="star fill"></div>
+                                    <div class="star fill"></div>
+                                    <div class="star half"></div>
+                                    <div class="star empty"></div>
+                                </div>
+                                <span class="amount-reviews">5 отзывов</span>
+                            </div>
+                        </div>
+                        <div class="card-product-description__buy allPageCard__buy  block-that-has-counter">
+                            <div class="links-online-store">
+                                <a target="_blank" href="https://www.wildberries.ru/catalog/14235590/detail.aspx"><img src="img/WB.webp" alt="WB"></a>
+                                <a target="_blank" href="https://www.ozon.ru/product/sredstvo-dlya-septikov-vygrebnyh-yam-dachnyh-tualetov-bioaktivator-biosept-600-g-24-paketika-1343120776/"><img src="img/Ozon.webp" alt="Ozon"></a>
+                                <a target="_blank" href="https://market.yandex.ru/pr/533806990"><img src="img/YaMarket.webp" alt="YaMarket"></a>
+                            </div>
+                            <span class="price">Ваша цена:</span>
+                            <span class="price price-relative-input">1000 ₽</span>
+                            <sup>1500 ₽</sup>
+                            <div class="counter">
+                                <button class="decrement-btn">-</button>
+                                <input type="text" class="counter-value" value="1">
+                                <button class="increment-btn">+</button>
+                            </div>
+                            <a href="" class="bg-accent_col-title-light buy__a">В корзину</a>
+                            <button class="like"><img src="img/icons/heart.svg" alt="heart"></button>
+                        </div>
+                        <div class="card-product-description__about-the-product">
+                            <div class="card-product-description__about-the-product__main-text">
+                                <p>«Зелёная сосна» — концентрированный препарат для дачных туалетов, выгребных ям, вёдер, а также биотуалетов. Препарат обеззараживает, уничтожает вредных микроорганизмов, разлагает отходы жизнедеятельности человека, уменьшает зловоние и размножение мух. Бактерии, входящие в состав, активно работают при недостатке воды и высоких концентрациях фекалий и мочи.Биоактиватор «Зеленая сосна» разжижает отходы жизнедеятельности и разлагает их на нейтральные составляющие. Уже через 4 часа запах существенно снижается. Бактерии, входящие в состав, активно работают при недостатке воды и высоких концентрациях фекалий и мочи.Назначение:</p>
+                                <p>Эффективно разлагает фекалии, жиры, бумагу и органику;</p>
+                                <p>Устраняет неприятные запахи;</p>
+                                <p>Уменьшает объем ила;</p>
+                                <p>Повышает работоспособность септика;</p>
+                                <p>Экологически безопасный продукт для людей и животных.</p>
+                            </div>
+                            <div class="card-product-description__about-the-product__features">
+                                <p>Производитель</p>
+                                <p>БиоСепт</p>
+                                <p>Состав</p>
+                                <p>Сублимированные бактерии, пищевые энзимы, органический наполнитель, ароматизаторы (отдушка с запахом сосны).</p>
+                                <p>Дозировка</p>
+                                <p>1 пакет-саше (25 грамм) на 3-4 человека в неделю.</p>
+                                <p>Габариты (ВхШхГ), см</p>
+                                <p>8,4x9,5x17,9</p>
+                                <p>Вес</p>
+                                <p>300 г</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-helpful-information">
+                    <div class="container">
+                        <div class="card-helpful-information__articles">
+                            <h4 data-splitTXT=''>Статьи</h4>
+                            <div class="card-helpful-information__articles__block">
+                                <div class="blog-article-min card-helpful-information__articles__block__item">
+                                    <a href="https://livebacteria.local/article.html"><img src="img/blog-article-concentrate.webp" alt="concentrate"></a><a href="https://livebacteria.local/blog.html?video-broadcasts" class="linkToCategoryBlog">Видео-эфиры</a>
+                                    <h5><a href="https://livebacteria.local/article.html">Микробные концентраты от ООО Живые Бактерии</a></h5>
+                                    <p>В августе 2023 вышли в продажу микробные концентраты от компании ООО Живые Бактерии.</p>
+                                </div>
+                                <div class="blog-article-min card-helpful-information__articles__block__item">
+                                    <a href="https://livebacteria.local/article.html"><img src="img/blog-article-bird.webp" alt="birds"></a><a href="https://livebacteria.local/blog.html?product-reviews" class="linkToCategoryBlog">Обзоры товаров</a>
+                                    <h5><a href="https://livebacteria.local/article.html">Микробные концентраты от ООО Живые Бактерии</a></h5>
+                                    <p>В августе 2023 вышли в продажу микробные концентраты от компании ООО Живые Бактерии.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-documentation">
+                            <h4 data-splitTXT=''>Документы</h4>
+                            <p>Название инструкции</p>
+                            <p>Название инструкции</p>
+                            <p>Название инструкции</p>
+                            <p>Название инструкции</p>
+                            <p>Название инструкции</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="card-rewiews">
+                    <div class="container">
+                        <div class="card-rewiews__title">
+                            <h4 data-splitTXT=''>Отзывы</h4>
+                            <span>4,8</span>
+                            <div class="stars">
+                                <div class="star fill"></div>
+                                <div class="star fill"></div>
+                                <div class="star fill"></div>
+                                <div class="star half"></div>
+                                <div class="star empty"></div>
+                            </div>
+                            <p>5 отзывов</p>
+                        </div>
+                        <div class="card-rewiews__item">
+                            <div class="stars">
+                                <div class="star fill"></div>
+                                <div class="star fill"></div>
+                                <div class="star fill"></div>
+                                <div class="star half"></div>
+                                <div class="star empty"></div>
+                            </div>
+                            <p class="card-rewiews__item__text">Единственная фирма, которая работает в моем туалете. Реально, без всяких сюрпризов, работает так, как и ожидаешь. Запах убирает, содержимое разжижает и оно потом дренирует в почву. Молодцы. Качественная штука.</p>
+                            <div class="card-rewiews__item__name">
+                                <span>Наталья</span>
+                                <p>30 марта 2021</p>
+                            </div>
+                        </div>
+                        <div class="card-rewiews__item">
+                            <div class="stars">
+                                <div class="star fill"></div>
+                                <div class="star fill"></div>
+                                <div class="star fill"></div>
+                                <div class="star half"></div>
+                                <div class="star empty"></div>
+                            </div>
+                            <p class="card-rewiews__item__text">Единственная фирма, которая работает в моем туалете. Реально, без всяких сюрпризов, работает так, как и ожидаешь. Запах убирает, содержимое разжижает и оно потом дренирует в почву. Молодцы. Качественная штука.</p>
+                            <div class="card-rewiews__item__name">
+                                <span>Наталья</span>
+                                <p>30 марта 2021</p>
+                            </div>
+                        </div>
+                        <a href="#" class="card-rewiews__leave-feedback bg-accent_col-title-light">Отставить отзыв</a>
+                    </div>
+                </section>
+                <section class="card-slider">
+                    <div class="container">
+                        <h2 data-splitTXT=''>Похожие товары</h2>
+                        <div class="card-slider__swiper swiper-card">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide allPageCard">
+                                    <div class="card-slider__swiper-slide__swiperImg allPageCard__swiperImg">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-card__swiperImg-pagination"></div>
+                                    </div>
+                                    <div class="card-slider__swiper-slide__raiting allPageCard__raiting">
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                        <p class="product-article">Арт.: 21002050</p>
+                                    </div>
+                                    <h4>Скотный двор Глубокая подстилка для птиц</h4>
+                                    <p>Биоактиватор глубокой ферментационной (несменяемой) подстилки для птиц</p>
+                                    <div class="card-slider__swiper-slide__buy swiper-card__buy">
+                                        <span class="price">1086 ₽</span>
+                                        <a href="" class="bg-accent_col-title-light swiper-card__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide allPageCard">
+                                    <div class="card-slider__swiper-slide__swiperImg allPageCard__swiperImg">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-card__swiperImg-pagination"></div>
+                                    </div>
+                                    <div class="card-slider__swiper-slide__raiting allPageCard__raiting">
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                        <p class="product-article">Арт.: 21002050</p>
+                                    </div>
+                                    <h4>Биоактиватор</h4>
+                                    <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
+                                    <div class="card-slider__swiper-slide__buy swiper-card__buy">
+                                        <span class="price">1086 ₽</span>
+                                        <a href="" class="bg-accent_col-title-light swiper-card__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide allPageCard">
+                                    <div class="card-slider__swiper-slide__swiperImg allPageCard__swiperImg">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-card__swiperImg-pagination"></div>
+                                    </div>
+                                    <div class="card-slider__swiper-slide__raiting allPageCard__raiting">
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                        <p class="product-article">Арт.: 21002050</p>
+                                    </div>
+                                    <h4>Зеленая сосна, 300 г</h4>
+                                    <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
+                                    <div class="card-slider__swiper-slide__buy swiper-card__buy">
+                                        <span class="price">1086 ₽</span>
+                                        <a href="" class="bg-accent_col-title-light swiper-card__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide allPageCard">
+                                    <div class="card-slider__swiper-slide__swiperImg allPageCard__swiperImg">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-card__swiperImg-pagination"></div>
+                                    </div>
+                                    <div class="card-slider__swiper-slide__raiting allPageCard__raiting">
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                        <p class="product-article">Арт.: 21002050</p>
+                                    </div>
+                                    <h4>Зеленая сосна, 50 г</h4>
+                                    <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
+                                    <div class="card-slider__swiper-slide__buy swiper-card__buy">
+                                        <span class="price">1086 ₽</span>
+                                        <a href="" class="bg-accent_col-title-light swiper-card__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide allPageCard">
+                                    <div class="card-slider__swiper-slide__swiperImg allPageCard__swiperImg">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-card__swiperImg-pagination"></div>
+                                    </div>
+                                    <div class="card-slider__swiper-slide__raiting allPageCard__raiting">
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                        <p class="product-article">Арт.: 21002050</p>
+                                    </div>
+                                    <h4>Скотный двор Глубокая подстилка для птиц</h4>
+                                    <p>Биоактиватор глубокой ферментационной (несменяемой) подстилки для птиц</p>
+                                    <div class="card-slider__swiper-slide__buy swiper-card__buy">
+                                        <span class="price">1086 ₽</span>
+                                        <a href="" class="bg-accent_col-title-light swiper-card__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide allPageCard">
+                                    <div class="card-slider__swiper-slide__swiperImg allPageCard__swiperImg">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-card__swiperImg-pagination"></div>
+                                    </div>
+                                    <div class="card-slider__swiper-slide__raiting allPageCard__raiting">
+                                        <div class="stars">
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star fill"></div>
+                                            <div class="star half"></div>
+                                            <div class="star empty"></div>
+                                        </div>
+                                        <p class="product-article">Арт.: 21002050</p>
+                                    </div>
+                                    <h4>Биоактиватор</h4>
+                                    <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
+                                    <div class="card-slider__swiper-slide__buy swiper-card__buy">
+                                        <span class="price">1086 ₽</span>
+                                        <a href="" class="bg-accent_col-title-light swiper-card__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%= require('html-loader!./footer.html').default %>
+        </div>
+        <%= require('html-loader!./widget.html').default %>
+    </div>
+    <%= require('html-loader!./modal.html').default %>
+</body>
+
+</html>

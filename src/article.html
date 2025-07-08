@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.min.css">
+    <style>
+    input::-ms-reveal,
+    input::-ms-clear {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <%= require('html-loader!./header.html').default %>
+    <div class="container">
+        <nav class="secondary-nav">
+            <ul>
+                <li><a href="https://livebacteria.local/">Главная</a></li>
+                <li><a href="https://livebacteria.local/directory.html">Справочник</a></li>
+                <li><a href="https://livebacteria.local/blog.html">Блог</a></li>
+                <li>
+                    <a href="" class="secondary-nav__arrow-back"><svg width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM1 4.5H24V3.5H1V4.5Z" fill="#73C167" />
+                        </svg></a>
+                    <p>Микробные концентраты от ООО Живые Бактерии</p>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section class="articleOrVideo">
+            <div class="container">
+                <h2 id="h2articleOrVideo">Микробные концентраты от ООО Живые Бактерии</h2>
+                <img src="img/concentrate-full.webp" alt="concentrate">
+                <div class="articleOrVideo__info-txt">
+                    <p>В августе 2023 вышли в продажу микробные концентраты от компании ООО Живые Бактерии.</p>
+                    <p>К продаже доступны:</p>
+                    <p>Bacillus amyloliquefaciens</p>
+                    <p>Bacillus subtilis:</p>
+                    <p>Типовой штамм BS-230</p>
+                    <p>Штамм BS-299 для компостизации</p>
+                    <p>Bacillus mojavensis</p>
+                    <p>Приобрести можно через Яндекс маркет (как физлицам, так и юрлицам), а также напрямую через наш офис.</p>
+                </div>
+                <a href="https://livebacteria.local/blog.html" class="bg-accent_col-title-light">Все статьи</a>
+            </div>
+        </section>
+    </main>
+    <%= require('html-loader!./modal.html').default %>
+    <%= require('html-loader!./widget.html').default %>
+    <%= require('html-loader!./footer.html').default %>
+</body>
+
+</html>

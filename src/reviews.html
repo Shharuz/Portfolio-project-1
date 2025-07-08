@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.min.css">
+    <style>
+    input::-ms-reveal,
+    input::-ms-clear {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="forSmoothScroll">
+        <div class="forSmoothScroll__wrapper">
+            <%= require('html-loader!./header.html').default %>
+            <div class="container">
+                <nav class="secondary-nav">
+                    <ul>
+                        <li><a href="https://livebacteria.local/">Главная</a></li>
+                        <li><a href="https://livebacteria.local/directory.html">Справочник</a></li>
+                        <li>
+                            <a href="" class="secondary-nav__arrow-back"><svg width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM1 4.5H24V3.5H1V4.5Z" fill="#73C167" />
+                                </svg></a>
+                            <p>Отзывы</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <main>
+                <section class="reviews">
+                    <div class="container">
+                        <h2>Отзывы</h2>
+                        <div class="reviews__wrapper-for-item">
+                            <div class="reviews__wrapper-for-item__item review">
+                                <h4>«Все супер, работают на ура»</h4>
+                                <p>Бактерии получила, все супер, работают на ура, </p>
+                                <div class="full-review">
+                                    <div class="name-box">
+                                        <span class="name">Наталья</span>
+                                        <span class="date">30 марта 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__wrapper-for-item__item review">
+                                <h4>«Все супер, работают на ура»</h4>
+                                <p>Бактерии получила, все супер, работают на ура, пользуюсь не первый год, очень довольна. Брала уткам и гусям, все работает, сейчас насыпала курям, запах исчез уже через полчаса. Спасибо вам, за наш легкий труд! )</p>
+                                <div class="full-review">
+                                    <div class="name-box">
+                                        <span class="name">Наталья</span>
+                                        <span class="date">30 марта 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__wrapper-for-item__item review">
+                                <h4>«Все супер, работают на ура»</h4>
+                                <p>Бактерии получила, все супер, работают на ура, пользуюсь не первый год, очень довольна. Брала уткам и гусям, все работает, сейчас насыпала курям, запах исчез уже через полчаса. Спасибо вам, за наш легкий труд! )</p>
+                                <div class="full-review">
+                                    <div class="name-box">
+                                        <span class="name">Наталья</span>
+                                        <span class="date">30 марта 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__wrapper-for-item__item review">
+                                <h4>«Все супер, работают на ура»</h4>
+                                <p>Бактерии получила, все супер, работают на ура, пользуюсь не первый год, очень довольна. Брала уткам и гусям, все работает, сейчас насыпала курям, запах исчез уже через полчаса. Спасибо вам, за наш легкий труд! )
+                                    <!----> Бактерии получила, все супер, работают на ура, пользуюсь не первый год, очень довольна. Брала уткам и гусям, все работает, сейчас насыпала курям, запах исчез уже через полчаса. Спасибо вам, за наш легкий труд! ) </p>
+                                <div class="full-review">
+                                    <div class="name-box">
+                                        <span class="name">Наталья</span>
+                                        <span class="date">30 марта 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__wrapper-for-item__item review">
+                                <h4>«Все супер, работают на ура»</h4>
+                                <p>Бактерии получила, все супер, работают на ура, пользуюсь не первый год, очень довольна. Брала уткам и гусям, все работает, сейчас насыпала курям, запах исчез уже через полчаса. Спасибо вам, за наш легкий труд! )</p>
+                                <div class="full-review">
+                                    <div class="name-box">
+                                        <span class="name">Наталья</span>
+                                        <span class="date">30 марта 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__wrapper-for-item__item review">
+                                <h4>«Все супер, работают на ура»</h4>
+                                <p>Бактерии получила, все супер, работают на ура, пользуюсь не первый год, очень довольна. Брала уткам и гусям, все работает, сейчас насыпала курям, запах исчез уже через полчаса. Спасибо вам, за наш легкий труд! )</p>
+                                <div class="full-review">
+                                    <div class="name-box">
+                                        <span class="name">Наталья</span>
+                                        <span class="date">30 марта 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="reviews__wrapper-for-item__item review">
+                                <h4>«Все супер, работают на ура»</h4>
+                                <p>Бактерии получила, все супер, работают на ура, пользуюсь не первый год, очень довольна. Брала уткам и гусям, все работает, сейчас насыпала курям, запах исчез уже через полчаса. Спасибо вам, за наш легкий труд! )</p>
+                                <div class="full-review">
+                                    <div class="name-box">
+                                        <span class="name">Наталья</span>
+                                        <span class="date">30 марта 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%= require('html-loader!./footer.html').default %>
+        </div>
+        <%= require('html-loader!./widget.html').default %>
+    </div>
+    <%= require('html-loader!./modal.html').default %>
+</body>
+
+</html>
