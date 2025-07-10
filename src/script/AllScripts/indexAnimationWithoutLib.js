@@ -959,7 +959,7 @@ function linear(arg1, arg2, arg3) {
 }
 
 const swiperCardIndexSlides = swiperCard.querySelectorAll(".addAnimSwiperIndex"); //start by selecting all the Slides
-console.log()
+
 
 function reveal() {
 

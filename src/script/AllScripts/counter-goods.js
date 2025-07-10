@@ -2,8 +2,8 @@
 
 const blockThatHasCounter = document.querySelectorAll('.block-that-has-counter');
 let allGoodsBasket;
-let total;
-let totalPrice;
+export let total;
+export let totalPrice;
 let additionalInfoCounter;
 
 

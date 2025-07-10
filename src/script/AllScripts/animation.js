@@ -1,20 +1,21 @@
 //smooth scroll
-const bodyforSmoothScroll = document.querySelector('body');
+export const bodyforSmoothScroll = document.querySelector('body');
 
-if (document.querySelector('.forSmoothScroll')) {
-    const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
-
-    //gives the height of the body so that scrolling occurs
-    let heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-    bodyforSmoothScroll.setAttribute('style', `height:${heightForScroll}px`);
-
-
-    window.addEventListener('resize', alignBody)
-
-    function alignBody() { // script/radioPerson  /  script/categoriesRadio
+const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
+//let heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+let heightForScroll;
+export function alignBody() { // script/radioPerson  /  script/categoriesRadio
         heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
         bodyforSmoothScroll.setAttribute('style', `height:${heightForScroll}px`);
-    }
+    };
+
+if (document.querySelector('.forSmoothScroll')) {
+    
+
+    //gives the height of the body so that scrolling occurs
+    alignBody();
+    
+    window.addEventListener('resize', alignBody);
 
     let scrPosY = 0; //for scroll positions
     let blockPosY = scrPosY; // for forSmoothScrollWrapper position
@@ -108,6 +109,7 @@ if (document.querySelector('.forSmoothScroll')) {
 
 }
 
+
 //split txt
 const h2 = document.querySelector('h2')
 
@@ -115,7 +117,6 @@ const h2 = document.querySelector('h2')
 let stringH;
 let arrayLettersH = [];
 
-console.log(h2);
 if (h2 != null) {
     if (h2.id == 'h2catalogMainPage') {
         let tmpAdaptiveH2;

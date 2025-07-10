@@ -47,7 +47,7 @@ const dragging = (e) => {
     positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;//current cursor coordinates (counting from the left edge) subtract previous cursor coordinates (counting from the left edge)
     slider.scrollLeft = prevScrollLeft - positionDiff;
     //In general, the cursor coordinates are recalculated and assigned to the Element.scrollLeft property
-    console.log(slider.scrollLeft);
+    
 }
 
 const dragStop = (e) => {

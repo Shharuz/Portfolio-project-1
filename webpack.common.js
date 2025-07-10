@@ -14,7 +14,7 @@ const pages = [
     { chunks: ["directory"], page: '../directory.html', template: './src/directory.html', title: 'Справочник',},
     { chunks: ["forPartners"], page: '../forPartners.html', template: './src/forPartners.html', title: 'Стать дилером',},
     { chunks: ["howToBuy"], page: '../howToBuy.html', template: './src/howToBuy.html', title: 'Как купить',},
-    { chunks: ["index"], page: '../index.html', template: './src/index.html', title: 'Невероятные Живые Бактерии',},
+    { chunks: ["index"], page: '../index.html', template: './src/index.html', title: 'Живые Бактерии',},
     { chunks: ["placingAnOrder"], page: '../placingAnOrder.html', template: './src/placingAnOrder.html', title: 'Оформление заказа',},
     { chunks: ["questions"], page: '../questions.html', template: './src/questions.html', title: 'Вопрос - Ответ',},
     { chunks: ["reviews"], page: '../reviews.html', template: './src/reviews.html', title: 'Отзывы',},
@@ -31,9 +31,8 @@ const htmlPlugins = pages.map(page => {
 });
 
 
-
 module.exports = {
-
+    
     entry: {
         aboutUs: './src/script/aboutUs.js',
         account: './src/script/account.js',

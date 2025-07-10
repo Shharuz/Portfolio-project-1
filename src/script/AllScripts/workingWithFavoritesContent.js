@@ -1,4 +1,6 @@
 //for account.html
+import * as totalAll from './counter-goods.js'
+
 const masterCheckbox = document.querySelectorAll('[data-for-change-content="master-checkbox"]');
 const addSelected = document.querySelector('[data-for-change-content="add-selected-to-shopping-cart"]');
 const deleteSelected = document.querySelectorAll('[data-for-change-content="delete-selected"]');
@@ -73,7 +75,7 @@ clearBas.forEach((item) => {
             item.parentElement.parentElement.remove()
         };
 
-        total.classList.add('hide')//counter-goods.js line 13
+        totalAll.total.classList.add('hide')//counter-goods.js line 13
     });
 });
 
@@ -86,13 +88,13 @@ function countAllPrice() {
     let allGoodsBasket = document.querySelectorAll('.account__basket .price-relative-input');
 
     if (allGoodsBasket.length == 0) { //if the products are deleted, then the block with the final price is also deleted
-        total.classList.add('hide')//counter-goods.js line 13
+        totalAll.total.classList.add('hide')//counter-goods.js line 13
     } else {
         let sumPrice = 0;
         for (let itemallGoodsBasket of allGoodsBasket) {//only the price of the product is taken (string), 
             sumPrice += Number(itemallGoodsBasket.innerHTML.slice(0, -2));//is converted to a number and added to sumPrice
         }
-        totalPrice.innerHTML = sumPrice + " ₽"         //the sumPrice value is inserted into the block with the total amount of goods
+        totalAll.totalPrice.innerHTML = sumPrice + " ₽"         //the sumPrice value is inserted into the block with the total amount of goods
         //counter-goods.js line 14
     }
 

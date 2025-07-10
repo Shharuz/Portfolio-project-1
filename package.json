@@ -28,6 +28,7 @@
     "webpack-merge": "^6.0.1"
   },
   "dependencies": {
+    "gsap": "^3.13.0",
     "swiper": "^11.2.10"
   }
 }

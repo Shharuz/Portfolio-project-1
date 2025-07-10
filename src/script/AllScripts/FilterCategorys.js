@@ -10,7 +10,7 @@ let countCard = document.querySelector('#amount-card'); //card counting element
 let sortList = document.querySelector('#sortingList'); //card sorting element
 
 document.addEventListener("DOMContentLoaded", changeCheckedRadioCatalogCategoriesAndFilter);
-console.log('rrrr');
+
 
 //there is a main filtering (by category) and there is an additional one (by manufacturer, weight and price), additional filtering is based on the main one
 
@@ -59,8 +59,6 @@ function adjustingSlideLayout() {
 };
 
 
-
-
 function changeCheckedRadioCatalogCategoriesAndFilter() { //main filtering /transition to a specific category from the index.html catalogMainPage.html and filtering cards
 
     for (let item of category) { //will go through all categories and assign a "checked" to the one with which the link address matches
@@ -86,16 +84,15 @@ function changeCheckedRadioCatalogCategoriesAndFilter() { //main filtering /tran
         //but the ID of this element will not match the second condition, thus only manufacturers will be counted, 
         //and when the element from the list is about weight, the ID of this element will not match the attribute data-manufacturer-filter, 
         //but will match with itemCard.childNodes[5].childNodes[1].innerHTML.slice(0, -2) (the span element responsible for weight), 
-        //thus only the weight will be counted, and the manufacturer will be ignored
+        //thus only the weight will be counted, and the manufacturer will be ignored  
 
         let count = 0;
 
         for (let itemCard of allCards) {
 
-            if (itemInput.getAttribute('id') == itemCard.getAttribute('data-manufacturer-filter') || itemInput.getAttribute('id') == itemCard.childNodes[5].childNodes[1].innerHTML.slice(0, -2)) {
-
+            if (itemInput.getAttribute('id') == itemCard.getAttribute('data-manufacturer-filter') || itemInput.getAttribute('id') == itemCard.querySelector('.weightInGrams').innerHTML.slice(0, -2)) {//itemCard.querySelector('.price') itemCard.childNodes[5].childNodes[1]//
+                
                 count++
-
             };
 
             //console.log(itemCard.childNodes[5].childNodes[1])

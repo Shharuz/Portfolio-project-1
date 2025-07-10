@@ -1,11 +1,6 @@
 import './allScripts/headerNavBurgerOnMediaMax-width1120px.js';
 import './allScripts/headerNavBurgerOnMediaMax-width735px.js';
 import './allScripts/secondaryNavArrowLinks320.js';
-import './allScripts/sockAnim/gsap.min.js';
-import './allScripts/sockAnim/ScrollTrigger.min.js';
-import './allScripts/sockAnim/ScrollSmoother.min.js';
-import './allScripts/sockAnim/SplitText.min.js';
-import './allScripts/sockAnim/MorphSVGPlugin.min.js';
 import './allScripts/animAboutUsSock.js';
 import './allScripts/Widget.js';
 import './allScripts/modal.js';

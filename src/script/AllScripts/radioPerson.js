@@ -1,4 +1,6 @@
 //for forPartners.html, account.html, placingAnOrder.html,
+import { alignBody } from './animation.js';
+
 const radioPerson = document.querySelectorAll('.fieldset__item input[type="radio"]');
 const formItems = document.querySelectorAll('main .form__item');
 const delivery = document.querySelectorAll('main [data-hide-delivery]');//for delivery method on page placingAnOrder.html
@@ -11,12 +13,17 @@ radioPerson.forEach((item) => {
         for (let itemformItems of formItems) {
             if (itemformItems.classList.contains('hide')) {//reveals all elements
                 itemformItems.classList.remove('hide')
-                alignBody()//for script/animation.js (smoothScroll)
+                if (document.querySelector('.forSmoothScroll')){
+                    alignBody()//for script/animation.js (smoothScroll)
+                } 
             }
 
             if (item.id == itemformItems.getAttribute('data-hide')) {//if the radioPerson id matches the data-hide of the form element, it will hide it
                 itemformItems.classList.add('hide')
-                alignBody()//for script/animation.js (smoothScroll) 
+                if (document.querySelector('.forSmoothScroll')){
+                    alignBody()//for script/animation.js (smoothScroll)
+                }
+                
             }
         }
         if (item.getAttribute('name') == 'delivery') {//similarly, see above

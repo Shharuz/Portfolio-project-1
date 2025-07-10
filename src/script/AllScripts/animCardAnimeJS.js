@@ -557,7 +557,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         //card-slider__swiper
         const cardSliderSwiperWrapper = document.querySelector('.card-slider__swiper .swiper-wrapper');
         const cardSliderSwiperSlides = cardSliderSwiperWrapper.querySelectorAll(':scope > .swiper-slide');
-        console.log(cardSliderSwiperSlides)
 
          animate(cardSliderSwiperSlides,{
             x: { from: '30rem' },
