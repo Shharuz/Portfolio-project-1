@@ -3,21 +3,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 const pages = [
-    { chunks: ["aboutUs"], page: '../aboutUs.html', template: './src/aboutUs.html', title: 'О нас',},
-    { chunks: ["account"], page: '../account.html', template: './src/account.html', title: 'Аккаунт',},
-    { chunks: ["article"], page: '../article.html', template: './src/article.html', title: 'Статья',},
-    { chunks: ["blog"], page: '../blog.html', template: './src/blog.html', title: 'Блог',},
-    { chunks: ["card"], page: '../card.html', template: './src/card.html', title: 'Карточка товара',},
-    { chunks: ["catalogCategories"], page: '../catalogCategories.html', template: './src/catalogCategories.html', title: 'Каталог',},
-    { chunks: ["catalogMainPage"], page: '../catalogMainPage.html', template: './src/catalogMainPage.html', title: 'Категории каталога',},
-    { chunks: ["contacts"], page: '../contacts.html', template: './src/contacts.html', title: 'Контакты',},
-    { chunks: ["directory"], page: '../directory.html', template: './src/directory.html', title: 'Справочник',},
-    { chunks: ["forPartners"], page: '../forPartners.html', template: './src/forPartners.html', title: 'Стать дилером',},
-    { chunks: ["howToBuy"], page: '../howToBuy.html', template: './src/howToBuy.html', title: 'Как купить',},
-    { chunks: ["index"], page: '../index.html', template: './src/index.html', title: 'Живые Бактерии',},
-    { chunks: ["placingAnOrder"], page: '../placingAnOrder.html', template: './src/placingAnOrder.html', title: 'Оформление заказа',},
-    { chunks: ["questions"], page: '../questions.html', template: './src/questions.html', title: 'Вопрос - Ответ',},
-    { chunks: ["reviews"], page: '../reviews.html', template: './src/reviews.html', title: 'Отзывы',},
+    { chunks: ["aboutUs"], page: '../aboutUs.html', template: './src/aboutUs.html', title: ['О нас'], },
+    { chunks: ["account"], page: '../account.html', template: './src/account.html', title: ['Аккаунт'], },
+    { chunks: ["article"], page: '../article.html', template: './src/article.html', title: ['Статья'], },
+    { chunks: ["blog"], page: '../blog.html', template: './src/blog.html', title: ['Блог'], },
+    { chunks: ["card"], page: '../card.html', template: './src/card.html', title: ['Карточка товара'], },
+    { chunks: ["catalogCategories"], page: '../catalogCategories.html', template: './src/catalogCategories.html', title: ['Каталог'], },
+    { chunks: ["catalogMainPage"], page: '../catalogMainPage.html', template: './src/catalogMainPage.html', title: ['Категории каталога'], },
+    { chunks: ["contacts"], page: '../contacts.html', template: './src/contacts.html', title: ['Контакты'], },
+    { chunks: ["directory"], page: '../directory.html', template: './src/directory.html', title: ['Справочник'], },
+    { chunks: ["forPartners"], page: '../forPartners.html', template: './src/forPartners.html', title: ['Стать дилером'], },
+    { chunks: ["howToBuy"], page: '../howToBuy.html', template: './src/howToBuy.html', title: ['Как купить'], },
+    {
+        chunks: ["index"],
+        page: '../index.html',
+        template: './src/index.html',
+        title: [
+            ['Живые Бактерии']
+        ],
+    },
+    { chunks: ["placingAnOrder"], page: '../placingAnOrder.html', template: './src/placingAnOrder.html', title: ['Оформление заказа'], },
+    { chunks: ["questions"], page: '../questions.html', template: './src/questions.html', title: ['Вопрос - Ответ'], },
+    { chunks: ["reviews"], page: '../reviews.html', template: './src/reviews.html', title: ['Отзывы'], },
 ];
 
 const htmlPlugins = pages.map(page => {
@@ -32,7 +39,7 @@ const htmlPlugins = pages.map(page => {
 
 
 module.exports = {
-    
+
     entry: {
         aboutUs: './src/script/aboutUs.js',
         account: './src/script/account.js',
@@ -52,6 +59,7 @@ module.exports = {
     },
 
     output: {
+        filename: '[name].js',
         path: path.resolve(__dirname, './public/js'),
         clean: true,
     },
@@ -67,12 +75,14 @@ module.exports = {
         }),
     ],
 
-    /*optimization: {
-        splitChunks: {
-            // include all types of chunks
-            chunks: 'all',
-        }, 
+    module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        type: 'asset/inline',
+      },
+    ],
+  },
 
-    },*/
-
+    
 };

@@ -7611,13 +7611,13 @@ main .animateElementsOnScroll {
   list-style-type: none;
   max-height: 0px;
   position: relative;
-  bottom: -26px;
+  bottom: -29px;
   transition: max-height 1s;
   overflow: hidden;
-  padding-bottom: 26px;
+  padding-bottom: 34px;
 }
 .widget .widget__ul.visibleWidgetlist {
-  max-height: 320px;
+  max-height: 309px;
   transition: max-height 1s;
 }
 .widget .widget__ul .widget__ul__li {

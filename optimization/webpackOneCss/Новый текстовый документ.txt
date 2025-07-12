@@ -1,1 +1,7 @@
 public = 3.48mb 3.7mb
+HtmlWebpackPlugin 
+CopyPlugin
+1. in sublime, the general scss is translated into css, css is minified, webpack simply copies it, css is included in each page
+2. img is translated into webp, webpack simply copies it, included via css
+3. the font is simply copied
+4. each html is processed via HtmlWebpackPlugin, header, footer, modal, widget are inserted into each html via <%= require('html-loader!./headerStopAnim.html').default %>

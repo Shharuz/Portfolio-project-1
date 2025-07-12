@@ -1,7 +1,6 @@
 
 @import 'normalize', 'swiper-bundle.min';
 
-
 //$font-main: 'Manrope';
 $accent: #73C167;
 $accent__on-hower: #56B946;
@@ -5590,14 +5589,13 @@ main {
         list-style-type: none;
         max-height: 0px;
         position: relative;
-        bottom: -26px;
+        bottom: -29px;
         transition: max-height 1s;
         overflow: hidden;
-        padding-bottom: 26px;
+        padding-bottom: 34px;
 
         &.visibleWidgetlist {
-            max-height: 320px;
-            //max-height: 17vw;
+            max-height: 309px;
             transition: max-height 1s;
         }
 
