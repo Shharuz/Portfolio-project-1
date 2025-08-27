@@ -18,7 +18,7 @@ askTextarea.addEventListener('input', (e) => {
             askTextarea.style.width = `${initialWidthAskTextarea}px`;//adjust textarea width to initial value
         }
             
-        console.log(e.data);
+        //console.log(e.data);
         if (e.data != null && e.data.length > 1) {//if the entire review is inserted / e.data != null -> null = when pressing enter or backspace
             askTextarea.style.width = '500px';
         } else if (askTextarea.value.length < 1) {//if all text is deleted at once
@@ -37,3 +37,4 @@ askTextarea.addEventListener('input', (e) => {
     askTextarea.style.height = "auto";  //textarea height growth
     askTextarea.style.height = askTextarea.scrollHeight + "px";// 
 })
+

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+//const CompressionPlugin = require("compression-webpack-plugin");
 
 const pages = [
     { chunks: ["aboutUs"], page: '../aboutUs.html', template: './src/aboutUs.html', title: ['О нас'], },
@@ -27,6 +28,13 @@ const pages = [
     { chunks: ["reviews"], page: '../reviews.html', template: './src/reviews.html', title: ['Отзывы'], },
 ];
 
+let fs = require('fs');
+
+const header = fs.readFileSync(__dirname + '/src/header.html');
+const modal = fs.readFileSync(__dirname + '/src/modal.html');
+const widget = fs.readFileSync(__dirname + '/src/widget.html');
+const footer = fs.readFileSync(__dirname + '/src/footer.html');
+
 const htmlPlugins = pages.map(page => {
     return new HtmlWebpackPlugin({
         inject: true,
@@ -34,6 +42,10 @@ const htmlPlugins = pages.map(page => {
         filename: page.page,
         chunks: [...page.chunks],
         title: [...page.title],
+        header: header,
+        modal: modal,
+        widget: widget,
+        footer: footer,
     })
 });
 
@@ -69,20 +81,23 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "./src/img", to: "../img" },
-                { from: "./src/fonts/Manrope-VariableFont_wght.ttf", to: "../fonts" },
+                { from: "./src/fonts/product", to: "../fonts" },
                 { from: "./src/style/style.min.css", to: "../style" },
             ],
         }),
+        /*new CompressionPlugin({
+            test: /\.js$|\.html$/,
+            algorithm: "gzip",
+        }),*/
     ],
 
     module: {
-    rules: [
-      {
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-        type: 'asset/inline',
-      },
-    ],
-  },
 
-    
+        rules: [{
+            test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+            type: 'asset/inline',
+        }, ],
+    },
+
+
 };

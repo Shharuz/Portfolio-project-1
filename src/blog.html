@@ -19,7 +19,7 @@
 <body>
     <div class="forSmoothScroll">
         <div class="forSmoothScroll__wrapper">
-            <%= require('html-loader!./header.html').default %>
+            <%= htmlWebpackPlugin.options.header %>
             <div class="container">
                 <nav class="secondary-nav">
                     <ul>
@@ -173,11 +173,11 @@
                     </div>
                 </section>
             </main>
-            <%= require('html-loader!./footer.html').default %>
+            <%= htmlWebpackPlugin.options.footer %>
         </div>
-        <%= require('html-loader!./widget.html').default %>
+        <%= htmlWebpackPlugin.options.widget %>
     </div>
-    <%= require('html-loader!./modal.html').default %>
+    <%= htmlWebpackPlugin.options.modal %>
 </body>
 
 </html>

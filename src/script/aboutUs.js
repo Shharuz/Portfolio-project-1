@@ -1,13 +1,24 @@
-import './allScripts/headerNavBurgerOnMediaMax-width1120px.js';
-import './allScripts/headerNavBurgerOnMediaMax-width735px.js';
-import './allScripts/secondaryNavArrowLinks320.js';
+//////////////////////////secondaryNavArrowLinks580.js//////////////////////////
+if (window.innerWidth <= 580) {
+    document.addEventListener("DOMContentLoaded", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {
+        const goToPreviousPage = module.goToPreviousPage;
+        goToPreviousPage();
+    }))
+
+}
+window.addEventListener("resize", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {
+        const goToPreviousPage = module.goToPreviousPage;
+        goToPreviousPage();
+    }))
+//////////////////////////////////////////////////////////////////////////////
 import './allScripts/animAboutUsSock.js';
-import './allScripts/Widget.js';
-import './allScripts/modal.js';
-import './allScripts/pass-eye.js';
-import './allScripts/PhoneMask.js';
-import './allScripts/OTP-Input-field(sms).js';
-import './allScripts/textareaGrow.js';
+//import './allScripts/sliderCertificates320.js';
+///////////////////////////////////sliderCertificates320.js/////////////////////////////
+export const slider = document.querySelector('.aboutUs-certificates__block');
+slider.addEventListener("mousedown", e => import( /* webpackChunkName: "sliderCertificates320" */ './allScripts/sliderCertificates320.js').then(module => {
+    const dragStart = module.dragStart;
+    dragStart(e);
+}))
+////////////////////////////////////////////////////////////////////////////////////////
 import './allScripts/buttonFormConsentCheck.js';
-import './allScripts/sliderCertificates320.js';
-import './allScripts/animateFooter.js';
+import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';

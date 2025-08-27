@@ -1,0 +1,13 @@
+/********************************************
+Сгенерированно в Quick Site Upgrade
+https://quick-site-upgrade.com/tools/web-font-optimizer
+********************************************/
+@font-face {
+    font-family: 'manrope-variablefont_wght';
+    font-style: normal;
+    font-weight: 400;
+    src: url('manrope-variablefont_wght-russian.woff2') format('woff2'),
+        url('manrope-variablefont_wght-russian.woff') format('woff'),
+        url('manrope-variablefont_wght-russian.ttf') format('truetype');
+    unicode-range: U+21-23,U+25-5F,U+61-7E,U+AB,U+BB,U+401,U+410-44F,U+451,U+2013-2014,U+2018-2019,U+201C,U+201C-201E,U+2026,U+20BD;
+}

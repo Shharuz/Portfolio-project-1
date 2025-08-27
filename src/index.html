@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style/style.min.css">
     <style>
-    input::-ms-reveal,
+        input::-ms-reveal,
     input::-ms-clear {
         display: none;
     }
@@ -21,7 +21,7 @@
     <div class="progress"></div>
     <div class="forSmoothScroll">
         <div class="forSmoothScroll__wrapper">
-            <%= require('html-loader!./header.html').default %>
+            <%= htmlWebpackPlugin.options.header %>
             <main>
                 <section class="index-offer">
                     <div class="index-offer__container">
@@ -39,7 +39,12 @@
                                             <a href="https://livebacteria.local/card.html" class="swiper-slide__items__more-details">Подробнее</a>
                                         </div>
                                     </div>
-                                    <img loading="lazy" src="img/chicken.webp" alt="chicken">
+                                    <picture>
+                                        <source media="(min-width: 1101px)" srcset="img/chickenLarge.webp">
+                                        <source media="(600px <= width <= 1100px)" srcset="img/chickenMedium.webp">
+                                        <source media="(max-width: 599px)" srcset="img/chickenSmall.webp">
+                                        <img src="img/chickenMedium.webp" alt="chicken">
+                                    </picture>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-slide__items">
@@ -51,7 +56,10 @@
                                             <a href="https://livebacteria.local/card.html" class="swiper-slide__items__more-details">Подробнее</a>
                                         </div>
                                     </div>
-                                    <img src="img/septik.webp" alt="septik">
+                                    <picture>
+                                        <source media="(min-width: 801px)" srcset="img/testTubeLarge.webp" type="image/webp">
+                                        <img loading="lazy" src="img/testTubeMedium.webp" alt="testTube" class="aboutUs-who__conteinerImg__testTube">
+                                    </picture>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-slide__items">
@@ -63,7 +71,13 @@
                                             <a href="https://livebacteria.local/card.html" class="swiper-slide__items__more-details">Подробнее</a>
                                         </div>
                                     </div>
-                                    <img src="img/chicken.webp" alt="chicken">
+                                    <picture>
+                                        <source media="(min-width: 1101px)" srcset="img/PetriDishesLarge.webp">
+                                        <source media="(600px <= width <= 1100px)" srcset="img/PetriDishesMedium.webp">
+                                        <source media="(max-width: 599px)" srcset="img/PetriDishesSmall.webp">
+                                        <img loading="lazy" src="img/PetriDishesMedium.webp" alt="PetriDishes">
+                                    </picture>
+                                    <div class="swiper-lazy-preloader"></div>
                                 </div>
                             </div>
                             <!-- If we need pagination -->
@@ -86,19 +100,19 @@
                     <h1>Живые Бактерии™ для людей, животных и растений</h1>
                     <!--animation.js -> ≈ line 113 and line 176 -> content H1 copy to -> h1.innerHTML -->
                     <div class="index-advantages__block">
-                        <div class="index-advantages__block__item"><img src="img/icons/hand.svg" alt="hand">
+                        <div class="index-advantages__block__item"><img loading="lazy" src="img/icons/hand.webp" width="80" height="80" alt="hand">
                             <div class="index-advantages__block__item__wrapper">
                                 <h4>Бережно к природе</h4>
                                 <p>Безопасно для человека, животных и окружающей среды</p>
                             </div>
                         </div>
-                        <div class="index-advantages__block__item"><img src="img/icons/microscope.svg" alt="microscope">
+                        <div class="index-advantages__block__item"><img loading="lazy" src="img/icons/microscope.webp" width="80" height="80" alt="microscope">
                             <div class="index-advantages__block__item__wrapper">
                                 <h4>Инновационные биотехнологии</h4>
                                 <p>Собственная лаборатория и производство.</p>
                             </div>
                         </div>
-                        <div class="index-advantages__block__item"><img src="img/icons/Ru.svg" alt="ru">
+                        <div class="index-advantages__block__item"><img loading="lazy" src="img/icons/Ru.webp" width="80" height="80" alt="ru">
                             <div class="index-advantages__block__item__wrapper">
                                 <h4>Сделано в РФ</h4>
                                 <p>Строгое соответствие российским стандартам</p>
@@ -114,31 +128,31 @@
                     <h2>Каталог нашей продукции</h2>
                     <div class="catalog-categories">
                         <a href="https://livebacteria.local/catalogCategories.html?bacteria-for-septic" class="catalog-categories__category">
-                            <img src="img/icons/bacteria.svg" alt="bacteria">
+                            <img loading="lazy" src="img/icons/bacteria.webp" width="57" height="57" alt="bacteria">
                             <div class="catalog-categories__category__wrapper">
                                 <p>Бактерии для септика </p><span>10</span>
                             </div>
                         </a>
                         <a href="https://livebacteria.local/catalogCategories.html?Fermentation-mats" class="catalog-categories__category">
-                            <img src="img/icons/bird.svg" alt="bird">
+                            <img loading="lazy" src="img/icons/bird.webp" width="57" height="57" alt="bird">
                             <div class="catalog-categories__category__wrapper">
                                 <p>Ферментационные подстилки</p><span>10</span>
                             </div>
                         </a>
                         <a href="https://livebacteria.local/catalogCategories.html?Composting" class="catalog-categories__category">
-                            <img src="img/icons/compost.svg" alt="compost">
+                            <img loading="lazy" src="img/icons/compost.webp" width="57" height="57" alt="compost">
                             <div class="catalog-categories__category__wrapper">
                                 <p>Компостирование</p><span>10</span>
                             </div>
                         </a>
                         <a href="https://livebacteria.local/catalogCategories.html?clearWater" class="catalog-categories__category">
-                            <img src="img/icons/cleaning.svg" alt="cleaning">
+                            <img loading="lazy" src="img/icons/cleaning.webp" width="57" height="57" alt="cleaning">
                             <div class="catalog-categories__category__wrapper">
                                 <p>Очистка сточных вод</p><span>10</span>
                             </div>
                         </a>
                         <a href="https://livebacteria.local/catalogCategories.html?For-soil-and-plants" class="catalog-categories__category">
-                            <img src="img/icons/soil.svg" alt="soil">
+                            <img loading="lazy" src="img/icons/soil.webp" width="57" height="57" alt="soil">
                             <div class="catalog-categories__category__wrapper">
                                 <p>Для почвы и растений</p> <span>10</span>
                             </div>
@@ -153,16 +167,16 @@
                                 <div class="swiper-card__swiperImg allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href="https://livebacteria.local/card.html"><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href="https://livebacteria.local/card.html"><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href="https://livebacteria.local/card.html"><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href="https://livebacteria.local/card.html"><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href="https://livebacteria.local/card.html"><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
@@ -181,24 +195,24 @@
                                 <p>Биоактиватор глубокой ферментационной (несменяемой) подстилки для птиц</p>
                                 <div class="swiper-card__buy allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img class="swiper-card__buy__a__img allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
                             <div class="swiper-slide allPageCard addAnimSwiperIndex">
                                 <div class="swiper-card__swiperImg allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
@@ -217,24 +231,24 @@
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
                                 <div class="swiper-card__buy allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
                             <div class="swiper-slide allPageCard addAnimSwiperIndex">
                                 <div class="swiper-card__swiperImg allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine300.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine300.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine300.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine300.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine300.webp" alt="bee"></a>
                                         </div>
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
@@ -253,24 +267,24 @@
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
                                 <div class="swiper-card__buy allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
                             <div class="swiper-slide allPageCard addAnimSwiperIndex">
                                 <div class="swiper-card__swiperImg allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine50.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine50.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine50.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/GreenPine50.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/GreenPine50.webp" alt="bee"></a>
                                         </div>
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
@@ -289,24 +303,24 @@
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
                                 <div class="swiper-card__buy allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
                             <div class="swiper-slide allPageCard addAnimSwiperIndex">
                                 <div class="swiper-card__swiperImg allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/Bird-litter.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
                                         </div>
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
@@ -325,24 +339,24 @@
                                 <p>Биоактиватор глубокой ферментационной (несменяемой) подстилки для птиц</p>
                                 <div class="swiper-card__buy allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
                             <div class="swiper-slide allPageCard addAnimSwiperIndex">
                                 <div class="swiper-card__swiperImg allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                         <div class="swiper-slide">
-                                            <a href=""><img src="img/BioActivate.webp" alt="bee"></a>
+                                            <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
                                         </div>
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
@@ -361,8 +375,8 @@
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
                                 <div class="swiper-card__buy allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
+                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
                         </div>
@@ -418,11 +432,11 @@
                     </div>
                 </section>
             </main>
-            <%= require('html-loader!./footer.html').default %>
+            <%= htmlWebpackPlugin.options.footer %>
         </div>
-        <%= require('html-loader!./widget.html').default %>
+        <%= htmlWebpackPlugin.options.widget %>
     </div>
-    <%= require('html-loader!./modal.html').default %>
+    <%= htmlWebpackPlugin.options.modal %>
 </body>
 
 </html>

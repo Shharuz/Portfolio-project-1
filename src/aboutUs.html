@@ -63,7 +63,7 @@
     </div>
     <div id="smooth-wrapper">
         <div id="smooth-content">
-            <%= require('html-loader!./headerStopAnim.html').default %>
+            <%= htmlWebpackPlugin.options.header %>
             <div class="container">
                 <nav class="secondary-nav">
                     <ul>
@@ -91,7 +91,10 @@
                             <a href="https://livebacteria.local/catalogMainPage.html" class="aboutUs-btn bg-accent_col-title-light">Наша продукция</a><a href="https://livebacteria.local/forPartners.html" class="aboutUs-btn bg-none_col-accent_border-accent">Стать партнером</a>
                         </div>
                         <div class="aboutUs-who__conteinerImg">
-                            <img src="img/testTube.webp" alt="testTube" class="aboutUs-who__conteinerImg__testTube">
+                            <picture>
+                            <source media="(min-width: 801px)" srcset="img/testTubeLarge.webp" type="image/webp">
+                            <img src="img/testTubeMedium.webp" alt="testTube" class="aboutUs-who__conteinerImg__testTube">
+                        </picture>
                             <div class="aboutUs-who__conteinerImg__containerForAnim"></div>
                         </div>
                     </div>
@@ -142,7 +145,10 @@
                 </section>
                 <section class="aboutUs-advantages">
                     <div class="container">
-                        <img src="img/aboutUs-advantagesPetriDishes.webp" class="aboutUs-advantages__petriDishes" alt="full-PetriDishes">
+                        <picture>
+                            <source media="(min-width: 801px)" srcset="img/PetriDishesLarge.webp" type="image/webp">
+                            <img loading="lazy" src="img/PetriDishesMedium.webp" alt="PetriDishes" class="aboutUs-advantages__petriDishes" width="830px">
+                        </picture>
                         <div class="aboutUs-advantages__difference-from-others">
                             <h2>Чем мы отличаемся от других?</h2>
                             <ul>
@@ -228,17 +234,17 @@
                             <a href="" class="aboutUs-btn bg-accent_col-title-light">Скачать реквизиты</a>
                         </div>
                         <div class="aboutUs-requisites-map__map">
-                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4472512e9104165c8c9a822edb39bebe597b457eac9c427e9c23e60df29cca2b&amp;source=constructor"></iframe>
+                            <iframe loading="lazy" src="https://yandex.ru/map-widget/v1/?um=constructor%3A4472512e9104165c8c9a822edb39bebe597b457eac9c427e9c23e60df29cca2b&amp;source=constructor"></iframe>
                             <!-- width="829" height="755" -->
                         </div>
                     </div>
                 </section>
             </main>
-            <%= require('html-loader!./footer.html').default %>
+            <%= htmlWebpackPlugin.options.footer %>
         </div>
-        <%= require('html-loader!./widget.html').default %>
+        <%= htmlWebpackPlugin.options.widget %>
     </div>
-    <%= require('html-loader!./modal.html').default %>
+    <%= htmlWebpackPlugin.options.modal %>
 </body>
 
 </html>

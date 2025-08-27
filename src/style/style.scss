@@ -1,4 +1,3 @@
-
 @import 'normalize', 'swiper-bundle.min';
 
 //$font-main: 'Manrope';
@@ -40,10 +39,12 @@ $border_filter: #EBEBEB;
 $p_placingAnOrder_total-paid: #ACACAC;
 
 @font-face {
-  font-family: 'MainFont';
-  src: url('../fonts/Manrope-VariableFont_wght.ttf') format('truetype');
-  //font-weight: 200;
-  font-style: normal;
+    font-family: 'MainFont';
+    src: url('../fonts/manrope-variablefont_wght-russian.woff2') format('woff2'),
+        url('../fonts/manrope-variablefont_wght-russian.woff') format('woff'),
+        url('../fonts/manrope-variablefont_wght-russian.ttf') format('truetype');
+    //font-weight: 200;
+    font-style: normal;
 }
 
 @mixin WH320 {
@@ -60,7 +61,7 @@ body {
     font-family: 'MainFont';
     overflow-y: hidden;
     position: relative;
-    padding: clamp(1rem, 1vw, 1.125rem) 0;
+    padding-top: clamp(1rem, 1vw, 1.125rem);
 
     .sizewindow {
         position: fixed;
@@ -107,18 +108,12 @@ body {
         position: fixed;
         width: 100%;
         height: 100vh;
+
         .forSmoothScroll__wrapper {
             main {
                 overflow-y: hidden;
             }
-            .card-product-description,
-            .card-helpful-information,
-            .card-rewiews,
-            .card-slider {
-                .line {
-                    justify-content: start;
-                }
-            }
+
             @keyframes appear {
                 from {
                     opacity: 0;
@@ -134,9 +129,29 @@ body {
 
     }
 
-    #smooth-wrapper{
+    #smooth-wrapper {
         inset: initial !important;
         overflow: visible !important;
+    }
+}
+
+//for card.html
+.scroll-container {
+    height: 98vh;
+    overflow-y: visible;
+
+    .scroll-container__scroll-content {
+        max-width: 1920px;
+        margin: 0 auto;
+
+        .card-product-description,
+        .card-helpful-information,
+        .card-rewiews,
+        .card-slider {
+            .line {
+                justify-content: start;
+            }
+        }
     }
 }
 
@@ -148,6 +163,7 @@ body {
     .wrapperForWord {
         display: flex;
     }
+
     #smooth-wrapper {
         #smooth-content {
             padding-top: clamp(1rem, 1vw, 1.125rem);
@@ -336,22 +352,9 @@ header {
     align-items: center;
     position: relative;
     z-index: 9;
-
-    @keyframes headerAppear {
-        from {
-            opacity: 0;
-            transform: translateY(-200px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    }
-
-    animation-name: headerAppear;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
 
     .header-container {
@@ -697,35 +700,17 @@ header {
 
 }
 
-.stopCssAnimHeader {
-    animation: none;
-}
-
-@keyframes appearSecondaryNav {
-    from {
-        transform: translateX(-100px);
-    }
-
-    to {
-        transform: translateX(0px);
-    }
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-
+.appearHeader {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .secondary-nav {
     height: 22px;
     margin: clamp(24px, 5vw - 56px, 40px) 0;
-    animation-name: appearSecondaryNav;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
     ul {
         display: flex;
@@ -763,6 +748,11 @@ header {
             }
         }
     }
+}
+
+.appearSecondary-nav {
+    transform: translateX(0px);
+    opacity: 1;
 }
 
 .input-label-custom {
@@ -1044,6 +1034,7 @@ form {
             top: 13px;
             left: 5px;
         }
+
         .OTPinput {
             width: 40px;
             height: 52px;
@@ -1080,9 +1071,10 @@ form {
         text-transform: none;
         text-decoration: underline;
     }
+
     .consent {
 
-        width: 520px;
+        width: 525px;
         height: auto;
         margin: 22px 0 16px 0;
 
@@ -1683,38 +1675,13 @@ main {
             display: flex;
             column-gap: 29px;
 
-            @keyframes index-offer__swiperAppear {
-                from {
-                    opacity: 0;
-                    transform: translateX(-300px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0px);
-                }
-            }
-
-            @keyframes index-offer__online-storeAppear {
-                from {
-                    opacity: 0;
-                    transform: translateX(300px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0px);
-                }
-            }
-
             .index-offer__swiper {
                 overflow: hidden;
                 height: 41.2rem;
                 border-radius: 32px;
-
-                animation-name: index-offer__swiperAppear;
-                animation-duration: 1s;
-                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                opacity: 0;
+                transform: translateX(-300px);
+                transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
                 .swiper-wrapper {
                     height: 97.7%;
@@ -1737,60 +1704,6 @@ main {
                             background-repeat: no-repeat;
                             background-size: 100% 100%;
 
-                            @keyframes appearTop {
-                                from {
-                                    opacity: 0;
-                                }
-
-                                to {
-                                    opacity: 1;
-                                }
-
-                                from {
-                                    transform: translateY(100px);
-                                }
-
-                                to {
-                                    transform: translateY(0px);
-                                }
-                            }
-
-                            @keyframes appearinfo {
-                                from {
-                                    opacity: 0;
-                                }
-
-                                to {
-                                    opacity: 1;
-                                }
-
-                                from {
-                                    transform: translateY(150px);
-                                }
-
-                                to {
-                                    transform: translateY(0px);
-                                }
-                            }
-
-                            @keyframes appearblock-buy {
-                                from {
-                                    opacity: 0;
-                                }
-
-                                to {
-                                    opacity: 1;
-                                }
-
-                                from {
-                                    transform: translateY(200px);
-                                }
-
-                                to {
-                                    transform: translateY(0px);
-                                }
-                            }
-
                             .swiper-slide__items__top {
                                 width: 7.5rem;
                                 height: 2.375rem;
@@ -1801,12 +1714,11 @@ main {
                                 text-align: center;
                                 line-height: 37.8px;
 
-                                animation-name: appearTop;
-                                animation-duration: 1s;
-                                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                                opacity: 0;
+                                transform: translateY(100px);
+                                transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+
                             }
-
-
 
                             .swiper-slide__items__info1 {
                                 width: 21rem;
@@ -1815,9 +1727,9 @@ main {
                                 line-height: 1.38;
                                 display: flex;
                                 align-items: center;
-                                animation-name: appearinfo;
-                                animation-duration: 1s;
-                                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                                opacity: 0;
+                                transform: translateY(200px);
+                                transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
                             }
 
@@ -1827,9 +1739,9 @@ main {
                                 font-size: 1.125rem;
                                 color: $title-light;
                                 line-height: 1.33;
-                                animation-name: appearinfo;
-                                animation-duration: 1s;
-                                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                                opacity: 0;
+                                transform: translateY(250px);
+                                transition: all 1s cubic-bezier(0, 0, 0, 0.9);
                             }
 
                             .swiper-slide__items__block-buy {
@@ -1837,14 +1749,16 @@ main {
                                 column-gap: 0.875rem;
                                 margin-top: auto;
 
-                                animation-name: appearblock-buy;
-                                animation-duration: 1s;
-                                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
-
                                 a {
                                     width: 14.5rem;
                                     height: 3.9375rem;
                                     border: 1px solid $title-light;
+                                    transform: scale(0);
+                                    transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+                                }
+
+                                .appearIndexOfferSwiperItemsBlock-buyA {
+                                    transform: scale(1);
                                 }
 
                                 .swiper-slide__items__buy {
@@ -1880,13 +1794,17 @@ main {
                                 }
                             }
 
+                            .appearIndexOfferSwiperitems {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
                         }
 
                         img {
                             position: absolute;
                             height: 100%;
                             top: 0;
-                            right: 0;
+                            left: 25%;
                             z-index: -1;
                         }
                     }
@@ -1915,6 +1833,12 @@ main {
 
             }
 
+            .appearIndex-offer__swiper {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+
             .index-offer__online-store {
                 display: flex;
                 max-width: 34.1875rem;
@@ -1933,42 +1857,17 @@ main {
                 background-repeat: no-repeat, no-repeat;
                 background-size: 80% 90%, 74%;
 
-                animation-name: index-offer__online-storeAppear;
-                animation-duration: 1s;
-                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
-
-
-                @keyframes index-offer__online-store-contentAppear {
-                    from {
-                        opacity: 0;
-                        transform: translateY(200px);
-                    }
-
-                    to {
-                        opacity: 1;
-                        transform: translateY(0px);
-                    }
-                }
-
-                @keyframes index-offer__online-store-linksAppear {
-                    from {
-
-                        transform: translateY(300px);
-                    }
-
-                    to {
-
-                        transform: translateY(0px);
-                    }
-                }
+                opacity: 0;
+                transform: translateX(300px);
+                transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
                 .index-offer__online-store__wrapper {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    animation-name: index-offer__online-store-contentAppear;
-                    animation-duration: 1s;
-                    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
+                    opacity: 0;
+                    transform: translate(100px, 100px);
+                    transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
                     p {
                         width: 23.5625rem;
@@ -1979,17 +1878,23 @@ main {
 
                 .links-online-store {
                     width: 20.4rem;
-                    animation-name: index-offer__online-store-linksAppear;
-                    animation-duration: 1s;
-                    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
-
-                    a {
-                        img {}
-                    }
+                    opacity: 0;
+                    transform: translate(200px, 200px);
+                    transition: all 1s cubic-bezier(0, 0, 0, 0.9);
                 }
 
+                .appearIndex-offer__online-storeContent {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
 
+                .appearlinks-online-store {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
             }
+
+
         }
 
     }
@@ -2415,7 +2320,7 @@ main {
             .card-product-description__about-the-product {
                 grid-column: 2;
                 grid-row: 2;
-                max-width: 900px;
+                max-width: 905px;
 
                 p {
                     line-height: 1.375;
@@ -2529,7 +2434,7 @@ main {
     }
 
     .card-rewiews {
-        padding-top: 57px;
+        padding-top: 60px;
 
         .container {
             background-color: $title-light;
@@ -2787,6 +2692,10 @@ main {
             display: flex;
             column-gap: clamp(21px, 15vw - 206px, 82px);
 
+            picture {
+                flex-shrink: 0;
+            }
+
             .aboutUs-advantages__petriDishes {
                 width: clamp(474px, 70vw - 511px, 830px);
                 height: 472px;
@@ -2950,13 +2859,6 @@ main {
     /*&&&&&&&&&&&      aboutUs            &&&&&&&&&&&&&&*/
     /*&&&&&&&&&&&      catalog            &&&&&&&&&&&&&&*/
 
-    @keyframes appearcatalogMainPage {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
     .catalogMainPage {
         background-color: $title-light;
         text-align: center;
@@ -2966,10 +2868,7 @@ main {
 
         opacity: 0;
         transform: translateY(50px);
-        animation-name: appearcatalogMainPage;
-        animation-duration: 1s;
-        animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
-        animation-fill-mode: forwards;
+        transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
         h2 {
             .line {
@@ -2985,16 +2884,11 @@ main {
         }
 
         .catalog-categories {
-            @keyframes appearscatalogCategoriesCategory {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
+
 
             a {
-                animation: appearscatalogCategoriesCategory 1s cubic-bezier(0, 0, 0, 0.9) forwards;
                 opacity: 0;
+                transition: all 1s cubic-bezier(0, 0, 0, 0.9);
 
                 &:nth-child(1) {
                     transform: translate(-50px, 30px);
@@ -3018,7 +2912,20 @@ main {
                     transform: translate(50px, 60px);
                 }
             }
+
+            .appearcatalogCategories {
+                &:nth-child(1n) {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+
+            }
         }
+    }
+
+    .appearcatalogMainPage {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     /*&&&&&&&&&&&      catalog            &&&&&&&&&&&&&&*/
@@ -3037,95 +2944,48 @@ main {
 
                 p {
                     transform: scale(0);
-                }
 
-                @keyframes appearbacteria-for-septic {
-
-                    to {
-                        transform: scale(1);
-                    }
                 }
 
                 #bacteria-for-septic {
-                    animation: appearbacteria-for-septic 0.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+                    transition: transform 0.5s 0s;
                 }
 
-                @keyframes appearFermentation-mats {
 
-                    to {
-                        transform: scale(1);
-                    }
-                }
 
                 #Fermentation-mats {
-                    animation: appearFermentation-mats 0.5s cubic-bezier(0, 0, 0, 0.9) 0.2s forwards;
+                    transition: transform 0.5s 0.2s;
                 }
 
-                @keyframes appearclearWater {
 
-                    to {
-                        transform: scale(1);
-                    }
-                }
 
                 #clearWater {
-                    animation: appearclearWater 0.5s cubic-bezier(0, 0, 0, 0.9) 0.4s forwards;
+                    transition: transform 0.5s 0.4s;
                 }
 
-                @keyframes appearComposting {
 
-                    to {
-                        transform: scale(1);
-                    }
-                }
 
                 #Composting {
-                    animation: appearComposting 0.5s cubic-bezier(0, 0, 0, 0.9) 0.6s forwards;
-                }
-
-                @keyframes appearFor-soil-and-plants {
-
-                    to {
-                        transform: scale(1);
-                    }
+                    transition: transform 0.5s 0.6s;
                 }
 
                 #For-soil-and-plants {
-                    animation: appearFor-soil-and-plants 0.5s cubic-bezier(0, 0, 0, 0.9) 0.8s forwards;
+                    transition: transform 0.5s 0.8s;
+                }
+
+                .appearCatagory {
+                    transform: scale(1);
                 }
             }
 
             .catalogCategories__wrapperForFilter {
                 display: flex;
 
-
-
                 .filter {
                     width: clamp(274px, 50vw - 645px, 320px);
                     height: 625px;
                     margin-right: clamp(44px, 50vw - 850px, 110px);
                     min-width: 274px;
-
-
-                    @keyframes appearfilterForm {
-
-                        to {
-
-                            transform: translateY(0px);
-                        }
-
-                        0% {
-                            opacity: 0;
-                        }
-
-                        25% {
-                            opacity: 0;
-                        }
-
-                        100% {
-                            opacity: 1;
-                        }
-                    }
 
                     form {
                         background: none;
@@ -3134,7 +2994,7 @@ main {
 
                         opacity: 0;
                         transform: translateY(200px);
-                        animation: appearfilterForm 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+                        transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
 
                         .filter__form__reset-filter {
                             width: 260px;
@@ -3158,6 +3018,7 @@ main {
                         }
 
                         fieldset {
+                            width: 260px;
                             position: relative;
                             border: none;
                             margin-bottom: 14px;
@@ -3240,29 +3101,14 @@ main {
                                 }
                             }
 
-                            svg {
-                                position: absolute;
-                                top: -40px;
-                                right: -45px;
-                                -webkit-transition: -webkit-transform, $main__transition;
-                                -ms-transition: -ms-transform, $main__transition;
-                                transition: transform, $main__transition;
-
-                            }
-
                         }
 
                         .filter__form__price-range {
-                            width: 260px;
-                            position: relative;
-
-                            div {
-                                top: -100px;
-                                transition: top, $main__transition;
-                            }
+                            border-bottom: none;
+                            margin-bottom: 0;
+                            padding-bottom: 0;
 
                             .wrapperForHidden {
-
                                 overflow: hidden;
                                 max-height: 0;
                                 transition: height, $main__transition;
@@ -3270,13 +3116,6 @@ main {
 
                             .openFilter {
                                 max-height: 140px;
-                            }
-
-                            h5 {
-                                font-size: 20px;
-                                font-weight: 500;
-                                margin-bottom: 20px;
-                                color: $title-p;
                             }
 
                             .price-range__slider {
@@ -3340,7 +3179,7 @@ main {
 
                                 .field {
                                     display: flex;
-                                    width: 100%;
+                                    //width: 100%;
                                     height: 45px;
                                     align-items: center;
                                     position: relative;
@@ -3379,7 +3218,7 @@ main {
                                 }
 
                                 .separator {
-                                    width: 130px;
+                                    width: 33px;
                                     display: flex;
                                     font-size: 19px;
                                     align-items: center;
@@ -3387,14 +3226,7 @@ main {
                                 }
                             }
 
-                            svg {
-                                position: absolute;
-                                top: 5px;
-                                right: 10px;
-                                -webkit-transition: -webkit-transform, $main__transition;
-                                -ms-transition: -ms-transform, $main__transition;
-                                transition: transform, $main__transition;
-                            }
+
                         }
 
                         .openFilterItem {
@@ -3404,8 +3236,27 @@ main {
 
                         #apply-filter {
                             width: inherit;
+                            border-radius: 8px;
                         }
 
+                        .wrapperForSvgFilter {
+                            position: absolute;
+                            top: -54px;
+                            right: 10px;
+
+                            svg {
+                                -webkit-transition: -webkit-transform, $main__transition;
+                                -ms-transition: -ms-transform, $main__transition;
+                                transition: transform, $main__transition;
+                                pointer-events: none;
+                            }
+                        }
+
+                    }
+
+                    .appearfilterForm {
+                        opacity: 1;
+                        transform: translateY(0);
                     }
 
                     .filter__close {
@@ -3423,26 +3274,6 @@ main {
                         justify-content: space-between;
                         margin-bottom: 20px;
 
-                        @keyframes appearcounter-card {
-
-                            to {
-
-                                transform: translateX(0px);
-                            }
-
-                            0% {
-                                opacity: 0;
-                            }
-
-                            25% {
-                                opacity: 0;
-                            }
-
-                            100% {
-                                opacity: 1;
-                            }
-                        }
-
                         .counter-card {
                             font-weight: 500;
                             font-size: 20px;
@@ -3451,7 +3282,8 @@ main {
                             align-items: center;
                             opacity: 0;
                             transform: translateX(-300px);
-                            animation: appearcounter-card 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+
+                            transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
 
                             #amount-card {
                                 font-size: 24px;
@@ -3461,31 +3293,12 @@ main {
                             }
                         }
 
-                        @keyframes appearfilterTwo {
-
-                            to {
-
-                                transform: translateX(0px);
-                            }
-
-                            0% {
-                                opacity: 0;
-                            }
-
-                            25% {
-                                opacity: 0;
-                            }
-
-                            100% {
-                                opacity: 1;
-                            }
-                        }
-
                         .filterTwo {
                             position: relative;
                             opacity: 0;
                             transform: translateX(300px);
-                            animation: appearfilterTwo 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+
+                            transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
 
                             &:after {
                                 content: " ";
@@ -3524,6 +3337,11 @@ main {
                             }
                         }
 
+                        .appearcounter-cardfilterTwo {
+                            opacity: 1;
+                            transform: translateX(0px);
+                        }
+
                         @keyframes appearbth-filter {
 
                             to {
@@ -3543,7 +3361,6 @@ main {
                                 opacity: 1;
                             }
                         }
-
 
                         .bth-filter {
                             display: none;
@@ -3717,32 +3534,8 @@ main {
                 animation-timing-function: linear;
                 animation-fill-mode: forwards;
 
-                @keyframes appearH2chars {
-
-                    to {
-                        transform: translateY(0);
-
-                    }
-
-                    0% {
-                        opacity: 0;
-                    }
-
-                    25% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
-                }
-
                 .wrapperSymbol {
-                    animation-name: appearH2chars;
-                    animation-duration: 1s;
-                    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
-                    animation-fill-mode: forwards;
-
+                    transition: all 0.8s cubic-bezier(0, 0, 0, 0.9);
                 }
 
             }
@@ -3764,35 +3557,9 @@ main {
             animation-timing-function: linear;
             animation-fill-mode: forwards;
 
-            @keyframes appearH2chars {
-
-                to {
-                    transform: translateY(0);
-
-                }
-
-                0% {
-                    opacity: 0;
-                }
-
-                25% {
-                    opacity: 0;
-                }
-
-                100% {
-                    opacity: 1;
-                }
-
-
-            }
-
             .wrapperSymbol {
-                animation-name: appearH2chars;
-                animation-duration: 1s;
-                animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
-                animation-fill-mode: forwards;
+                transition: all 0.8s cubic-bezier(0, 0, 0, 0.9);
             }
-
         }
     }
 
@@ -4052,11 +3819,15 @@ main {
                 }
             }
 
+
             img {
                 width: clamp(533px, 65vw - 418px, 829px);
+                height: 100%;
                 object-fit: cover;
                 border-radius: 24px;
             }
+
+
 
             @keyframes appearforPartnersItems {
 
@@ -4638,36 +4409,8 @@ main {
                 animation-timing-function: linear;
                 animation-fill-mode: forwards;
 
-
-
-                @keyframes appearH2chars {
-
-                    to {
-                        transform: translateY(0);
-
-                    }
-
-                    0% {
-                        opacity: 0;
-                    }
-
-                    25% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
-
-
-                }
-
                 .wrapperSymbol {
-                    animation-name: appearH2chars;
-                    animation-duration: 1s;
-                    animation-timing-function: cubic-bezier(0, 0, 0, 0.9);
-                    animation-fill-mode: forwards;
-
+                    transition: all 0.8s cubic-bezier(0, 0, 0, 0.9);
                 }
             }
 
@@ -5392,8 +5135,6 @@ main {
 
     }
 
-    .modal__login {}
-
     .modal__registr {
 
         margin-top: 223px;
@@ -5468,6 +5209,7 @@ main {
     .modal__callback {
         margin-top: 203px;
         margin-left: 80px;
+        max-width: 800px;
 
         form {
             p {
@@ -5479,6 +5221,7 @@ main {
     .modal__ask-a-question {
         margin-top: 188px;
         margin-left: 81px;
+        max-width: 800px;
 
         form {
 
@@ -5554,7 +5297,7 @@ main {
                 }
             }
 
-            .politic-button-close {
+            .politic-agreement-button-close {
                 display: block;
                 margin: 21px auto 0;
             }
@@ -5653,7 +5396,7 @@ main {
                 //height: 1.55vw;
             }
 
-            &.widget__trigger__main {
+            &.widget__trigger__img {
                 background-color: $accent;
                 opacity: 1;
 
@@ -6188,16 +5931,21 @@ footer {
                     padding-top: 2.0625rem;
                     background-position: calc(100% + 11.4375rem) 100%, -4% 121%;
                     background-size: 27.3125rem, 16.25rem;
-                    animation: none;
+                    /*opacity: 1;
+                    transform: translateX(0);*/
                     opacity: 0;
+                    transform: translateX(0px);
+                    transition: all 0s;
 
                     .index-offer__online-store__wrapper {
-                        animation: none;
+                        opacity: 1;
+                        transform: translate(0, 0);
                     }
 
                     .links-online-store {
                         margin-top: -2.625rem;
-                        animation: none;
+                        opacity: 1;
+                        transform: translate(0, 0);
                     }
                 }
             }
@@ -6491,6 +6239,7 @@ footer {
                 .contacts__more-detail {
                     width: auto;
                     margin: 0;
+
                     .contacts__more-detail__items {
                         &:last-of-type {
 
@@ -6568,6 +6317,7 @@ footer {
         .articleOrVideo {
             .container {
                 grid-template-rows: 109px 27px 307px 63px;
+
                 .articleOrVideo__info-txt {
                     grid-column: 1;
                     grid-row: 3;
@@ -6860,7 +6610,7 @@ footer {
 
                 .footer-container__content__contacts {
                     margin-top: 0;
-                    flex-basis: 325px;
+                    flex-basis: 330px;
                     min-width: auto;
                 }
             }
@@ -6876,6 +6626,7 @@ footer {
 @media screen and (max-width: 1380px) {
     header {
         width: auto;
+
         .header-container {
             .logo {
                 width: 5rem;
@@ -7801,7 +7552,7 @@ footer {
                     grid-template-columns: 1fr;
 
                     margin-top: clamp(24px, 400px - 35vw, 40px);
-                   
+
                 }
             }
         }
@@ -7856,6 +7607,7 @@ footer {
                             letter-spacing: 0.4px;
                             height: 31px;
                         }
+
                         .questions__question-and-answer__item__text {
                             .item__text__row {
                                 p {
@@ -7893,12 +7645,14 @@ footer {
         .articleOrVideo {
             .container {
                 display: block;
+
                 img {
                     width: 236px;
                     height: 283px;
                     margin: 24px 0;
                     justify-self: start;
                 }
+
                 a {
                     margin-top: 24px;
                 }
@@ -8441,6 +8195,7 @@ footer {
                                     &:after {
                                         display: none;
                                     }
+
                                     a {
                                         width: 90%;
                                     }
@@ -8494,6 +8249,7 @@ footer {
                                 max-height: 600px;
                             }
                         }
+
                         &:after {
                             display: none;
                         }
@@ -8501,6 +8257,7 @@ footer {
                         svg {
                             display: none;
                         }
+
                         .header__nav__main-list__item__sub-list {
                             a {
                                 text-transform: none;
@@ -8527,6 +8284,7 @@ footer {
             line-height: 1.33;
             width: 480px;
         }
+
         .consent {
             width: 410px;
         }
@@ -8623,6 +8381,7 @@ footer {
 
                 img {
                     width: 2rem;
+                    height: 2rem;
                 }
 
                 .catalog-categories__category__wrapper {
@@ -8669,6 +8428,7 @@ footer {
 
             aside {
                 width: clamp(16.25rem, 110vw - 7.5rem, 46.1875rem);
+
                 p {
                     line-height: 1.43;
                 }
@@ -8749,6 +8509,7 @@ footer {
                         width: clamp(402px, 65vw - 50px, 427px);
                     }
                 }
+
                 .card-product-description__buy {
                     margin-top: 0;
                 }
@@ -8931,6 +8692,7 @@ footer {
 
         .aboutUs-certificates {
             padding-top: clamp(40px, 20vw - 87px, 60px);
+
             .container {
 
                 p {
@@ -9109,10 +8871,12 @@ footer {
                 .questions__question-and-answer {
                     .questions__question-and-answer__item {
                         padding: 32px clamp(30px, 20vw - 102px, 45px) 32px;
+
                         svg {
                             top: 44px;
                             right: 39px;
                         }
+
                         .questions__question-and-answer__item__text {
 
                             .item__text__row {
@@ -9121,7 +8885,7 @@ footer {
                                     padding-right: 25px;
                                 }
                             }
-                        } 
+                        }
                     }
                 }
             }
@@ -9271,7 +9035,7 @@ footer {
                     }
 
                     .consent {
-                        width: 520px;
+                        width: 525px;
                     }
                 }
             }
@@ -9333,6 +9097,7 @@ footer {
                         &:nth-of-type(n+4) {}
                     }
                 }
+
                 .catalogCategories__wrapperForFilter {
                     .filter {
                         .filter__form {
@@ -9489,10 +9254,10 @@ footer {
 
             label {
                 margin-bottom: 9px;
-                min-width: 119px; 
+                min-width: 119px;
             }
 
-           
+
         }
 
         .form__item__password {
@@ -9501,7 +9266,7 @@ footer {
             }
         }
 
-        
+
 
         #OTPinputs {
             width: 255px;
@@ -9544,6 +9309,7 @@ footer {
                 width: clamp(3.75rem, 16%, 5rem);
 
             }
+
             .header__items {
                 flex: 1 3rem;
 
@@ -9629,6 +9395,7 @@ footer {
                             img {
                                 width: 100%;
                                 height: 37%;
+                                left: 0px;
                                 object-fit: cover;
                             }
                         }
@@ -9669,6 +9436,7 @@ footer {
 
                 .index-advantages__block__item {
                     img {
+                        width: clamp(3.8125rem, 14vw, 5rem);
                         height: clamp(3.8125rem, 14vw, 5rem);
                     }
 
@@ -9931,7 +9699,7 @@ footer {
                     }
 
                     .buy__a {
-                        width: clamp(119px, 35vw, 200px);
+                        width: clamp(119px, 33vw, 200px);
                     }
                 }
 
@@ -10259,6 +10027,7 @@ footer {
                     height: initial;
                     border-radius: initial;
                 }
+
                 @for $i from 1 through 100 {
                     a:nth-child(n + #{$i}) {
                         transform: translate(0, $i * 20px);
@@ -10318,6 +10087,7 @@ footer {
                 .contacts__more-detail {
                     padding: 40px 30px;
                     background-color: $title-light;
+
                     p {
                         font-size: 16px;
                         line-height: 1.36;
@@ -10412,11 +10182,13 @@ footer {
 
             .container {
                 padding: 48px 30px 63px;
+
                 .directory-categories {
 
 
                     .directory-categories__item {
                         max-width: initial;
+
                         span {
                             font-size: 18px;
                             width: 117px;
@@ -10522,6 +10294,7 @@ footer {
                     .questions__question-and-answer__item {
                         padding-right: 7px;
                         padding-bottom: 34px;
+
                         h4 {
                             max-width: 218px;
                             height: auto;
@@ -10651,6 +10424,7 @@ footer {
                             input {
                                 margin-left: 0;
                             }
+
                             h4 {
                                 line-height: 1.3;
                             }
@@ -10675,6 +10449,7 @@ footer {
                         }
                     }
                 }
+
                 .account__place-an-order {
                     width: clamp(260px, 60vw - 28px, 320px);
                     height: clamp(45px, 15vw - 24px, 63px);
@@ -10993,6 +10768,7 @@ footer {
                         width: 1rem;
                     }
                 }
+
                 order: 1;
             }
 
@@ -11048,7 +10824,7 @@ footer {
         .form--radio--legal-entity--personal,
         .form__item {
             padding-left: clamp(0px, 50vw - 180px, 45px);
-            flex-wrap: wrap; 
+            flex-wrap: wrap;
         }
 
         .form__item__password {
@@ -11338,6 +11114,7 @@ footer {
                 .account__content {
                     .account__content__product {
                         .account__content__product__wrapper {
+
                             h4,
                             .allPageCard__raiting,
                             .account__content__product__wrapper__buy {

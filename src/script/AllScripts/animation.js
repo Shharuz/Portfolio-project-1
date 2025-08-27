@@ -1,3 +1,5 @@
+//catalogMainPage contacts directory forPartners howToBuy placingAnOrder questions account
+//article blog catalogCategories reviews
 //smooth scroll
 export const bodyforSmoothScroll = document.querySelector('body');
 
@@ -5,16 +7,16 @@ const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper
 //let heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
 let heightForScroll;
 export function alignBody() { // script/radioPerson  /  script/categoriesRadio
-        heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-        bodyforSmoothScroll.setAttribute('style', `height:${heightForScroll}px`);
-    };
+    heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+    bodyforSmoothScroll.setAttribute('style', `height:${heightForScroll}px`);
+};
 
 if (document.querySelector('.forSmoothScroll')) {
-    
+
 
     //gives the height of the body so that scrolling occurs
     alignBody();
-    
+
     window.addEventListener('resize', alignBody);
 
     let scrPosY = 0; //for scroll positions
@@ -264,12 +266,39 @@ function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6, arg7) {
 //h2 char prep for anim
 
 if (h2 != null) {
-    const h2Char = h2.querySelectorAll('.wrapperSymbol')
+    const h2line = h2.querySelectorAll('.line')
+    h2line.forEach(line => {
+        const h2Char = line.querySelectorAll('.wrapperSymbol')
+        let tmpH2CharTransY = 0;
+        for (let char of h2Char) { //will make a ladder
+            char.style.transform = `translateY(${tmpH2CharTransY * 0.5}px)`;
+            char.style.opacity = `0`;
+            //console.log(char)
+            tmpH2CharTransY += 10;
+        }
+
+        function appearH2chars() {
+            for (let i = 0; i < h2Char.length; ++i) {
+                
+                if (h2Char.length > 10) {
+                    setTimeout(() => {
+                        h2Char[i].style.transform = `translateY(0px)`;
+                        h2Char[i].style.opacity = `1`;
+                    }, 30 * i);
+                    //console.log('>10')
+                } else {
+                    setTimeout(() => {
+                        h2Char[i].style.transform = `translateY(0px)`;
+                        h2Char[i].style.opacity = `1`;
+                    }, 60 * i);
+                    //console.log('<10')
+                }
+
+            }
+        }
+        window.addEventListener('load', appearH2chars)
+
+    })
     //console.log(h2Char);
-    let tmpH2CharTransY = 0;
-    for (let char of h2Char) { //will make a ladder
-        char.style.transform = `translateY(${tmpH2CharTransY * 0.5}px)`;
-        //console.log(char)
-        tmpH2CharTransY += 15;
-    }
+
 }

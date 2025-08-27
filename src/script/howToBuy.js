@@ -1,13 +1,30 @@
+import './allScripts/animateHeaderSecondaryNav.js';
+//////////////////////////secondaryNavArrowLinks580.js//////////////////////////
+if (window.innerWidth <= 580) {
+    document.addEventListener("DOMContentLoaded", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {
+        const goToPreviousPage = module.goToPreviousPage;
+        goToPreviousPage();
+    }))
+
+}
+window.addEventListener("resize", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {
+        const goToPreviousPage = module.goToPreviousPage;
+        goToPreviousPage();
+    }))
+//////////////////////////////////////////////////////////////////////////////
 import './allScripts/animation.js';
-import './allScripts/headerNavBurgerOnMediaMax-width1120px.js';
-import './allScripts/headerNavBurgerOnMediaMax-width735px.js';
-import './allScripts/secondaryNavArrowLinks320.js';
-import './allScripts/categoriesRadio.js';
-import './allScripts/Widget.js';
-import './allScripts/modal.js';
-import './allScripts/pass-eye.js';
-import './allScripts/PhoneMask.js';
-import './allScripts/OTP-Input-field(sms).js';
-import './allScripts/textareaGrow.js';
+/////////////////////categoriesRadio.js/////////////////////
+const itemsCategories = document.querySelectorAll('.forCategoryAllPages p'); //in the element with the class radio-category, all inputs of the radio type are taken
+itemsCategories.forEach(item => {
+    item.addEventListener('click', e => import( /* webpackChunkName: "categoriesRadio" */ './allScripts/categoriesRadio.js').then(module => {
+        let eTarget = e.target;
+        const highlightedElement = module.highlightedElement;
+        highlightedElement(eTarget, itemsCategories);
+    }))
+});
+///////////////////////////////////////////////////////////////
+//import './allScripts/categoriesRadio.js';
 import './allScripts/buttonFormConsentCheck.js';
-import './allScripts/animateFooter.js';
+import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';
+
+

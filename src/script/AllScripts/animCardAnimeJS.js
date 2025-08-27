@@ -1,13 +1,9 @@
 import { onScroll, stagger, utils, createTimeline, eases, createSpring, createScope, animate } from './AnimeJS/anime.esm.min.js';
-const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
+//const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
 const body = document.querySelector('body');
 document.addEventListener("DOMContentLoaded", (event) => {
     //SMOOTH SCROLL
-
-    
-    
-
-    let scrPosY = 0; //for scroll positions
+    /*let scrPosY = 0; //for scroll positions
     let blockPosY = scrPosY; // for forSmoothScrollWrapper position
     let speedAnim = 0.03; //if speedAnim > 0.07 (0.1) animation happens faster
     //if speedAnim < 0.07 (0.02) animation is slower
@@ -41,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function linear(arg1, arg2, arg3) {
         return (1 - arg3) * arg1 + arg3 * arg2;
-    }
+    }*/
 
     ////////////////////////////////////////////////////////////////////////////
 
@@ -190,7 +186,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////Start card-product-description////////////////////////////////////////////////////////////////
 
     const cardProductDescription = document.querySelector('.card-product-description');
     animate(cardProductDescription, {
@@ -220,29 +216,71 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     //card-product-description h3
     const cardH3chars = h3.querySelectorAll('.wrapperSymbol');
+    createScope({
+            mediaQueries: {
+                isDesctop: '(min-width: 769px)',
+                isMobile: '(max-width: 768px)',
+                reduceMotion: '(prefers-reduced-motion)',
+            }
+        })
+        .add(self => {
+            const { isDesctop, isMobile, reduceMotion } = self.matches;
 
-    animate(cardH3chars, {
+            animate(cardH3chars, {
+                x: { from: '17rem' },
+                rotate: { from: '45deg' },
+                opacity: { from: 0 },
+                scale: { from: stagger([1, .1]) },
+                delay: stagger(20),
+                autoplay: isDesctop ? onScroll({
+                    target: h3,
+                    enter: '87% top',
+                    leave: '77% bottom',
+                    sync: 0.05,
+                    //debug: true,
+                }) : onScroll({
+                    target: h3,
+                    enter: '100% top',
+                    leave: '95% center',
+                    sync: 0.05,
+                    //debug: true,
+                })
+            });
+        })
+
+    /*animate(cardH3chars, {
         x: { from: '17rem' },
         rotate: { from: '45deg' },
         opacity: { from: 0 },
         scale: { from: stagger([1, .1]) },
         delay: stagger(20),
-    });
+        autoplay: onScroll({
+                target: h3,
+                enter: '87% top',
+                leave: '77% bottom',
+                sync: 0.05,
+                debug: true,
+            })
+    });*/
+
     //////////////////////////////////////////////////////
-    //card-product-description all headlines
+    //all headlines
+    //console.log(h2h4[0])
+
     h2h4.forEach(headline => {
+        //console.log(headline)
         let charsHeadlines = headline.querySelectorAll('.wrapperSymbol');
         animate(charsHeadlines, {
-            x: { from: '-17rem' },
+            x: { from: '-10rem' },
             opacity: { from: 0 },
             rotate: { from: '45deg' },
-            opacity: { from: 0 },
             scale: { from: 0 },
             delay: stagger(20),
             autoplay: onScroll({
                 target: headline,
-                enter: 'bottom-=100 100',
-                leave: 'center 100',
+                //container: '.scroll-container',*/
+                enter: '100% top',
+                leave: '70% bottom',
                 sync: 0.25,
                 //debug: true,
             })
@@ -287,21 +325,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
             animate(cardProdDescArticleStars, {
                 x: { from: '5rem' },
                 opacity: { from: 0 },
-                autoplay: isDesctop ? true : onScroll({
+                autoplay: onScroll({
                     target: cardProdDescArticleStars,
-                    enter: 'bottom-=100 100',
-                    leave: 'center 100',
-                    sync: 0.25,
+                    enter: '98% bottom',
+                    leave: '88% bottom',
+                    sync: 0.1,
                     //debug: true,
                 })
             });
 
             const tlcardProdDescStars = createTimeline({
-                autoplay: isDesctop ? true : onScroll({
+                autoplay: onScroll({
                     target: cardProdDescArticleStars,
-                    enter: 'bottom-=100 100',
-                    leave: 'center 100',
-                    sync: 0.25,
+                    enter: '98% bottom',
+                    leave: '88% bottom',
+                    sync: 0.1,
                     //debug: true,
                 })
             });
@@ -323,14 +361,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
             animate(cardProdDescAboutMain, {
                 x: { from: '15rem' },
                 opacity: { from: 0 },
-
-                autoplay: isDesctop ? true : onScroll({
-
-                    target: '.card-product-description__about-the-product__main-text',
-                    enter: 'bottom-=100 100',
-                    leave: 'center 100',
-                    sync: 0.25,
-                    // debug: true,
+                autoplay: onScroll({
+                    target: cardProdDescAboutMain,
+                    enter: '100% top',
+                    leave: '90% 30%',
+                    sync: 0.1,
+                    //debug: true,
                 })
             }, )
             animate(cardProdDescAboutFeatures, {
@@ -338,12 +374,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 ease: eases.outCubic,
                 scale: { from: 0 },
                 opacity: { to: 1 },
-                autoplay: isDesctop ? true : onScroll({
-                    target: '.card-product-description__about-the-product__features',
-                    enter: 'bottom-=100 center',
-                    leave: 'center top',
-                    sync: 0.05,
-                    // debug: true,
+                autoplay: onScroll({
+                    target: cardProdDescAboutFeatures,
+                    enter: '95% top',
+                    leave: '85% bottom',
+                    sync: 0.1,
+                    //debug: true,
                 })
             }, )
 
@@ -352,19 +388,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
             //3animate buy
 
             const tlAboutTheProductBuy = createTimeline({
-                defaults: { duration: isDesctop ? 1500 : 1000 },
-                autoplay: isDesctop ? true : onScroll({
+                //defaults: { duration: isDesctop ? 1500 : 1000 },
+                autoplay: isDesctop ? onScroll({
                     target: cardProdDescBuyOnlineStore,
-                    enter: 'bottom-=100 center',
-                    leave: 'center top',
-                    sync: 0.05,
+                    enter: '100% top',
+                    leave: '90% bottom',
+                    sync: 0.1,
+                    //debug: true,
+                }) : onScroll({
+                    target: cardProdDescBuyOnlineStore,
+                    enter: '85% top',
+                    leave: '75% bottom',
+                    sync: 0.07,
                     //debug: true,
                 })
             });
 
             tlAboutTheProductBuy.add(cardProdDescBuyPrice, {
                     delay: stagger(100),
-                    x: { from: "-50rem" },
+                    x: { from: "-15rem" },
                     opacity: { to: 1 },
                 }, 1)
                 .add(cardProdDescBuyCounter, {
@@ -373,90 +415,67 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     opacity: { to: 1 },
                 }, 1)
                 .add(cardProdDescBuyOnlineStore, {
-                    x: { from: '30rem' },
+                    x: { from: '10rem' },
                     opacity: { to: 1 },
                     delay: stagger(100),
                 }, 1)
             /////////////////////////////////////////////////////
 
         });
-
-    //card-helpful-information
+    ///////////////////////////////////End card-product-description////////////////////////////////////////////////////////////////
+    ///////////////////////////////////Start card-helpful-information////////////////////////////////////////////////////////////////  
     //section
     let tmpHelpfulInformationAdaptiv;
 
     function helpfulInformationAdaptiv() {
         const cardHelpfulInformation = document.querySelector(".card-helpful-information")
-        const articlesTitle = cardHelpfulInformation.querySelector('.card-helpful-information__articles h4')
         const articlesBlockItems = cardHelpfulInformation.querySelectorAll('.blog-article-min')
         const documentationTXT = cardHelpfulInformation.querySelectorAll('.card-documentation p');
         if (window.innerWidth > 1401) {
             if (tmpHelpfulInformationAdaptiv != 0) {
                 tmpHelpfulInformationAdaptiv = 0;
                 animate(cardHelpfulInformation, {
-                    y: { from: '15rem' },
+                    y: { from: '13rem' },
                     opacity: { from: 0 },
                     autoplay: onScroll({
+                        //container: '.scroll-container',
                         target: cardHelpfulInformation,
-                        enter: 'bottom-=100 100',
-                        leave: 'center 100',
+                        enter: '100% 1%',
+                        leave: '80% center',
                         sync: 0.25,
                         //debug: true,
                     })
                 });
 
-                //articles
-                //title
-
-
-                animate(articlesTitle, {
-                    width: { from: 0 },
-                    autoplay: onScroll({
-                        target: articlesTitle,
-                        enter: 'bottom-=100 100',
-                        leave: 'center 100',
-                        sync: 0.25,
-                        //debug: true,
-                    })
-                });
                 //article
 
                 animate(articlesBlockItems, {
-                    y: { from: '15rem' },
+                    y: { from: '10rem' },
                     opacity: { from: 0 },
                     delay: stagger(200),
                     autoplay: onScroll({
                         target: articlesBlockItems,
-                        enter: 'bottom-=100 100',
-                        leave: 'center 100',
+                        enter: '100% 1%',
+                        leave: '90% 30%',
                         sync: 0.3,
                         //debug: true,
                     })
                 });
 
                 //documentation
-                documentationTXT.forEach(item => {
-                    //console.log(window.innerWidth)
-
-                    let tldocumentationTXT = createTimeline({
-                        autoplay: onScroll({
-                            target: item,
-                            enter: 'bottom-=100 center',
-                            leave: 'center top',
-                            sync: 0.25,
-                            // debug: true,
-                        })
-                    });
-
-                    tldocumentationTXT.add(item, {
-
-                            x: { from: '15rem' },
-                            y: { from: '10rem' },
-                        }, )
-                        .add(item, {
-                            width: { from: "40%" },
-                            opacity: { from: 0 },
-                        }, "<<")
+                animate(documentationTXT, {
+                    x: { from: '10rem' },
+                    y: { from: '2rem' },
+                    width: { from: "40%" },
+                    opacity: { from: 0 },
+                    delay: stagger(500),
+                    autoplay: onScroll({
+                        target: '.card-documentation',
+                        enter: '98% 20%',
+                        leave: '98% 60%',
+                        sync: 0.25,
+                        //debug: true,
+                    })
                 })
 
             }
@@ -464,7 +483,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             if (tmpHelpfulInformationAdaptiv != 1) {
                 tmpHelpfulInformationAdaptiv = 1;
                 utils.remove(cardHelpfulInformation);
-                utils.remove(articlesTitle);
                 utils.remove(articlesBlockItems);
                 documentationTXT.forEach(item => {
                     utils.remove(item);
@@ -476,21 +494,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
     helpfulInformationAdaptiv();
     window.addEventListener('resize', helpfulInformationAdaptiv)
 
-    ////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////End card-helpful-information////////////////////////////////////////////////////////////////
+    ///////////////////////////////////Start card-rewiews//////////////////////////////////////////////////////////////// 
 
-    //card-rewiews   
     //section
     const cardRewiews = document.querySelector('.card-rewiews');
 
     animate(cardRewiews, {
-        x: { from: '10rem' },
-        y: { from: '10rem' },
+        y: { from: '13rem' },
         opacity: { from: 0 },
         autoplay: onScroll({
             target: cardRewiews,
-            enter: 'bottom-=100 100',
-            leave: 'center 100',
-            sync: 0.1,
+            enter: '100% 1%',
+            leave: '80% 30%',
+            sync: 0.25,
+            //debug: true,
         })
     })
 
@@ -500,11 +518,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tlcardRewiewsTitleitems = createTimeline({
         duraion: 2000,
         autoplay: onScroll({
-                target: cardRewiewsTitleitems[0],
-                enter: 'bottom-=100 100',
-                leave: 'center 100',
-                sync: 'play play reverse reset',
-            })
+            target: cardRewiewsTitleitems[0],
+            enter: '100% top',
+            leave: '70% bottom',
+            sync: 'play play reverse reset',
+        })
     });
 
     tlcardRewiewsTitleitems.add(cardRewiewsTitleitems[0], {
@@ -515,76 +533,75 @@ document.addEventListener("DOMContentLoaded", (event) => {
             scale: { from: 0 },
             opacity: { to: 1 },
             ease: 'outBack',
-            
+
         }, 800)
         .add(cardRewiewsTitleitems[2], {
             x: { from: '5rem' },
             opacity: { to: 1 },
-             
+
         }, 1000)
 
-        //card-rewiews__item
-        const cardRewiewItems = cardRewiews.querySelectorAll('.card-rewiews__item');
+    //card-rewiews__item
+    const cardRewiewItems = cardRewiews.querySelectorAll('.card-rewiews__item');
 
-        animate(cardRewiewItems,{
-            y: { from: '15rem' },
-            opacity: { from: 0 },
-            delay: stagger(200), 
-            autoplay: onScroll({
-                target: cardRewiewItems,
-                enter: 'bottom-=100 100',
-                leave: 'center 100',
-                sync: 0.2,
-            })
+    animate(cardRewiewItems, {
+        y: { from: '10rem' },
+        opacity: { from: 0 },
+        delay: stagger(200),
+        autoplay: onScroll({
+            target: cardRewiewItems,
+            enter: '100% top',
+            leave: '95% center',
+            sync: 0.2,
+            //debug: true,
         })
+    })
 
-        //btn
-        const cardRewiewBtn = cardRewiews.querySelector('.card-rewiews__leave-feedback');
-        animate(cardRewiewBtn,{
-            scale: { from: 0 },
-            opacity: { from: 0 },
-            ease: 'outBack',
-
-            autoplay: onScroll({
-                target: cardRewiewBtn,
-                enter: 'bottom-=100 100',
-                leave: 'center 100',
-                sync: 'play play reverse reset',
-                //debug: true,
-            })
+    //btn
+    const cardRewiewBtn = cardRewiews.querySelector('.card-rewiews__leave-feedback');
+    animate(cardRewiewBtn, {
+        scale: { from: 0 },
+        opacity: { from: 0 },
+        ease: 'outBack',
+        autoplay: onScroll({
+            target: cardRewiews,
+            enter: '95% 70%',
+            leave: '85% 70%',
+            sync: 'play play reverse reverse',
+            //debug: true,
         })
+    })
+    ///////////////////////////////////End card-rewiews//////////////////////////////////////////////////////////////// 
+    ///////////////////////////////////Start card-slider__swiper//////////////////////////////////////////////////////////////// 
 
-        //card-slider__swiper
-        const cardSliderSwiperWrapper = document.querySelector('.card-slider__swiper .swiper-wrapper');
-        const cardSliderSwiperSlides = cardSliderSwiperWrapper.querySelectorAll(':scope > .swiper-slide');
+    const cardSliderSwiperWrapper = document.querySelector('.card-slider__swiper .swiper-wrapper');
+    const cardSliderSwiperSlides = cardSliderSwiperWrapper.querySelectorAll(':scope > .swiper-slide');
 
-         animate(cardSliderSwiperSlides,{
-            x: { from: '30rem' },
-            //scale: { from: 0 },
-            rotateY: {from: '90deg'},
-            delay: stagger(200),
+    animate(cardSliderSwiperSlides, {
+        x: { from: '30rem' },
+        //scale: { from: 0 },
+        rotateY: { from: '90deg' },
+        delay: stagger(200),
 
-            autoplay: onScroll({
-                target: cardSliderSwiperSlides,
-                enter: 'bottom-=100 100',
-                leave: 'center 100',
-                sync: 0.2,
-                //debug: true,
-            })
+        autoplay: onScroll({
+            target: cardSliderSwiperSlides,
+            enter: '100% top',
+            leave: '70% bottom',
+            sync: 0.2,
+            //debug: true,
         })
-
+    })
+    ///////////////////////////////////End card-slider__swiper//////////////////////////////////////////////////////////////// 
 })
 
 
 //gives the height of the body so that scrolling occurs
-let heightForScroll;
+/*let heightForScroll;
 
-window.addEventListener("load", changeBodyStartEndAnimPrep);
+window.addEventListener("DOMContentLoaded", changeBodyStartEndAnimPrep);
 window.addEventListener('resize', changeBodyStartEndAnimPrep)
 
 function changeBodyStartEndAnimPrep() {
-        heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-        body.setAttribute('style', `height:${heightForScroll}px`);
-}
-
-
+    heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+    body.setAttribute('style', `height:${heightForScroll}px`);
+}*/

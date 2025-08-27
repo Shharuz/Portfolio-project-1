@@ -1,5 +1,5 @@
 //let password = document.querySelectorAll('.hide-show-password'); // for ver. 1
-let eye = document.querySelectorAll('.eye');
+const eyes = document.querySelectorAll('.eye');
 const btnPassCheck = document.querySelector('#password-check');
 let messagePassMismatch = document.querySelector('.passwords-do-not-match');
 let twoInputPass = document.querySelectorAll('.passCheck');
@@ -7,7 +7,7 @@ let twoInputPass = document.querySelectorAll('.passCheck');
 
 
 
-function open(e) {
+export function openCloseEye(e) {
 
     //ver.1 This version of the code hid/showed the password for all inputs when clicking on the eye
 
@@ -37,9 +37,9 @@ function open(e) {
 
 };
 
-eye.forEach((elem) => {
-    elem.addEventListener('click', open);
-});
+/*eyes.forEach((elem) => {
+    elem.addEventListener('click', openCloseEye);
+});*/
 
 
 btnPassCheck.addEventListener('click', function(e) {

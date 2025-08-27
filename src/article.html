@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <%= require('html-loader!./header.html').default %>
+    <%= htmlWebpackPlugin.options.header %>
     <div class="container">
         <nav class="secondary-nav">
             <ul>
@@ -52,9 +52,9 @@
             </div>
         </section>
     </main>
-    <%= require('html-loader!./modal.html').default %>
-    <%= require('html-loader!./widget.html').default %>
-    <%= require('html-loader!./footer.html').default %>
+    <%= htmlWebpackPlugin.options.modal %>
+    <%= htmlWebpackPlugin.options.widget %>
+    <%= htmlWebpackPlugin.options.footer %>
 </body>
 
 </html>

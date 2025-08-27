@@ -1,4 +1,5 @@
-const slider = document.querySelector('.aboutUs-certificates__block');
+//const slider = document.querySelector('.aboutUs-certificates__block');
+import { slider } from '../aboutUs.js';
 const wrapper = document.querySelector('.aboutUs-certificates__block__wrapper');
 const firstElem = document.querySelectorAll('.aboutUs-certificates__block__wrapper__item')[0];
 //console.log(firstElem);
@@ -29,7 +30,7 @@ const autoslide = () => {//the slider automatically reaches the desired position
     //while dragging a slide, if false, then the value will be -positionDiff and the slide will return to its original position
 }
 
-const dragStart = (e) => {
+export const dragStart = (e) => {
     isDragstart = true;
     e.preventDefault();
     slider.classList.add('dragging')//for css styles(style.scss on line 8122)
@@ -61,7 +62,7 @@ const dragStop = (e) => {
 }
 
 
-    slider.addEventListener('mousedown', dragStart);
+    //slider.addEventListener('mousedown', dragStart);
     slider.addEventListener('touchstart', dragStart);
 
     slider.addEventListener('mousemove', dragging);

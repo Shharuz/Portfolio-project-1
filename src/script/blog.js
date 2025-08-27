@@ -1,13 +1,17 @@
+import './allScripts/animateHeaderSecondaryNav.js';
 import './allScripts/animation.js';
-import './allScripts/headerNavBurgerOnMediaMax-width1120px.js';
-import './allScripts/headerNavBurgerOnMediaMax-width735px.js';
-import './allScripts/secondaryNavArrowLinks320.js';
+//////////////////////////secondaryNavArrowLinks580.js//////////////////////////
+if (window.innerWidth <= 580) {
+    document.addEventListener("DOMContentLoaded", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {
+        const goToPreviousPage = module.goToPreviousPage;
+        goToPreviousPage();
+    }))
+
+}
+window.addEventListener("resize", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {
+        const goToPreviousPage = module.goToPreviousPage;
+        goToPreviousPage();
+    }))
+//////////////////////////////////////////////////////////////////////////////
 import './allScripts/categoriesRadio.js';
-import './allScripts/Widget.js';
-import './allScripts/modal.js';
-import './allScripts/pass-eye.js';
-import './allScripts/PhoneMask.js';
-import './allScripts/OTP-Input-field(sms).js';
-import './allScripts/textareaGrow.js';
-import './allScripts/buttonFormConsentCheck.js';
-import './allScripts/animateFooter.js';
+import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';

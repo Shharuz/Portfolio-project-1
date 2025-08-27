@@ -1,22 +1,19 @@
-const arrowSvgManufactWeight = document.querySelectorAll('form svg');
-
-
-
 function hideFilter(e) {//rotate Svg 
-    if(e.currentTarget.classList.contains('rotateSvg')){
-        e.currentTarget.classList.remove('rotateSvg')
+    
+    if(e.target.childNodes[0].classList.contains('rotateSvg')){
+        e.target.childNodes[0].classList.remove('rotateSvg')
     }else{
-        e.currentTarget.classList.add('rotateSvg')
+        e.target.childNodes[0].classList.add('rotateSvg')
     };
 
 
-   if(e.currentTarget.previousElementSibling.classList.contains('openFilter')){//form -> <fieldset id="manufacturer"> -> <div class="wrapperForHidden openFilter">
-        e.currentTarget.previousElementSibling.classList.remove('openFilter')
+   if(e.target.previousElementSibling.classList.contains('openFilter')){//form -> <fieldset id="manufacturer"> -> <div class="wrapperForHidden openFilter">
+        e.target.previousElementSibling.classList.remove('openFilter')
    }else{
-        e.currentTarget.previousElementSibling.classList.add('openFilter')
+        e.target.previousElementSibling.classList.add('openFilter')
    };
     
-    e.currentTarget.previousElementSibling.querySelectorAll('div').forEach( (item) =>{//<div class="wrapperForHidden openFilter"> --> all div(with input, label, span)
+    e.target.previousElementSibling.querySelectorAll('div').forEach( (item) =>{//<div class="wrapperForHidden openFilter"> --> all div(with input, label, span)
         if(item.classList.contains('openFilterItem')){
             item.classList.remove('openFilterItem')
         }else{
@@ -26,6 +23,6 @@ function hideFilter(e) {//rotate Svg
     
 };
 
-arrowSvgManufactWeight.forEach( (item) =>{//starts hideFilter() on click svg
-    item.addEventListener('click', hideFilter)
-} );
+export { hideFilter }
+
+

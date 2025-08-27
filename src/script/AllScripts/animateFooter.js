@@ -1,10 +1,5 @@
 const footer = document.querySelector('footer .footer-container');
-
-if (document.querySelector('body').offsetHeight - window.innerHeight == 0) {
-    footer.classList.add('footerVisible');
-}
-
-let scrollPercent;
+/*let scrollPercent;
 
 function getScrollPercent() {
     //console.log(window.scrollY, 'window.scrollY');
@@ -21,9 +16,19 @@ function getScrollPercent() {
         footer.classList.remove('footerVisible');
     }
 
+}*/
+
+export function footerVisibleScroll(scrollPercent) {
+    if (scrollPercent > 95) {
+        footer.classList.add('footerVisible');
+    } else {
+        footer.classList.remove('footerVisible');
+    }
 }
 
-function visibleFooter() {//if the scroll position is at the very bottom
+
+
+export function footerVisibleWithoutScroll() {//if the scroll position is at the very bottom
     if (document.querySelector('body').offsetHeight - window.innerHeight == 0) {
         footer.classList.add('footerVisible');
     } else {
@@ -31,6 +36,7 @@ function visibleFooter() {//if the scroll position is at the very bottom
     }
 }
 
-window.addEventListener('scroll', getScrollPercent);
-window.addEventListener('resize', visibleFooter);
+
+//window.addEventListener('scroll', getScrollPercent);
+window.addEventListener('resize', footerVisibleWithoutScroll);
 

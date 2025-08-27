@@ -1,6 +1,4 @@
-
-
-document.addEventListener('DOMContentLoaded', () => {
+export function phoneMask() {
     let phoneInputs = document.querySelectorAll('input[data-tel-input]');
 
     let getInputNumbersValue = function(input) { //prohibition on entering all symbols except numbers
@@ -9,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let onPhoneInput = function(e) {
         let input = e.target,                               //элемент инпут
-            inputNumbersValue = getInputNumbersValue(input);//хранятся только числа
-        formattedInputValue = "";
-        selectionStart = input.selectionStart;//I don't know why
+            inputNumbersValue = getInputNumbersValue(input),//хранятся только числа
+            formattedInputValue = "",
+            selectionStart = input.selectionStart;//I don't know why
 
         /*if (!inputNumbersValue) {
             return input.value = "";
@@ -54,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let onPhoneInputKeyDown = function(e) {
-        console.log(e.keyCode, e.target.value);//key code and input value (   100 - code         '+7 (984) 56' - input value    )
+        //console.log(e.keyCode, e.target.value);//key code and input value (   100 - code         '+7 (984) 56' - input value    )
         let input = e.target;
         if (e.keyCode == 8 && getInputNumbersValue(input).length == 1) {//if backspace is entered(keyCode == 8), the input value will be replaced with ''
             input.value = '';
@@ -74,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    for (i = 0; i < phoneInputs.length; ++i) {
+    for (let i = 0; i < phoneInputs.length; ++i) {
         let input = phoneInputs[i];
         input.addEventListener('input', onPhoneInput);//on line 10
         input.addEventListener('keydown', onPhoneInputKeyDown);//on line 56
@@ -82,4 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-})
+}
+
+//document.addEventListener('DOMContentLoaded', phoneMask)

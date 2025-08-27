@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import { Pagination, EffectFade, Autoplay} from 'swiper/modules';
 
 const swiper = new Swiper('.index-offer__swiper', {
     // Optional parameters
@@ -24,7 +24,6 @@ const swiper2 = new Swiper('.swiper-card', {
     spaceBetween: 20,
     watchSlidesProgress: true,
     noSwipingSelector: '.bg-accent_col-title-light',
-
     breakpoints: {
         // when window width is >= 320px
         320: {
@@ -77,7 +76,7 @@ const swiper4 = new Swiper('.index-aboutUs__wrapper-forswiper__swiper-reviews', 
     modules: [Pagination],
     direction: 'horizontal',
     loop: true,
-    //centeredSlides: true,
+    centeredSlides: true,
     slidesPerView: 1,
     spaceBetween: 35,
     watchSlidesProgress: true,

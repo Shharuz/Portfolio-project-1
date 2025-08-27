@@ -233,6 +233,8 @@ let endAnimLetterWordH1;
 let startAnimLetterWordH2;
 let endAnimLetterWordH2;
 
+
+
 window.requestAnimationFrame(smooth);
 
 function smooth() {
@@ -287,6 +289,7 @@ function smooth() {
                 }
 
                 //animation indexOnlineStore
+
                 if (window.innerWidth <= 1400) {
                     let startAnimindexOnlineStore = startAnimSection - 299;
                     let endAnimindexOnlineStore = endAnimSection - 299;
@@ -303,8 +306,11 @@ function smooth() {
 
                         indexOnlineStore.setAttribute('style', `transform: translate3d(0px, ${indexOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${indexOnlineStoreOpac.toFixed(4)};`);
 
+
                     } else if (blockPosY > endAnimindexOnlineStore) {
                         indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+
+
                     } else if (blockPosY < startAnimindexOnlineStore) {
                         indexOnlineStore.setAttribute('style', `opacity: 0;`);
                     }
@@ -442,7 +448,17 @@ function smooth() {
 
 
                 } else {
-                    indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                    window.addEventListener('load', () => {
+                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                    })
+                    window.addEventListener('resize', () => {
+                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                    })
+                    document.addEventListener('visibilitychange', () => {
+                        if (document.visibilityState === 'visible') {
+                            indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                        } 
+                    });
 
                     let h3Words = h3.querySelectorAll('.wrapperForWord');
                     let h3AllLetters = [];
@@ -949,11 +965,6 @@ function smooth() {
 
 }
 
-
-/*function linear(arg1, arg2, arg3) {
-    return (1 - arg3) * arg1 + arg3 * arg2;
-}*/
-
 function linear(arg1, arg2, arg3) {
     return (1 - arg3) * arg1 + arg3 * arg2;
 }
@@ -991,6 +1002,6 @@ window.addEventListener("load", changeBodyStartEndAnimPrep);
 window.addEventListener('resize', changeBodyStartEndAnimPrep)
 
 function changeBodyStartEndAnimPrep() {
-        heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
-        body.setAttribute('style', `height:${heightForScroll}px`);
+    heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+    body.setAttribute('style', `height:${heightForScroll}px`);
 }

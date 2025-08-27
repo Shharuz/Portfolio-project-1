@@ -1,6 +1,6 @@
 //for account.html and card.html
 
-const blockThatHasCounter = document.querySelectorAll('.block-that-has-counter');
+//const blockThatHasCounter = document.querySelectorAll('.block-that-has-counter');
 let allGoodsBasket;
 export let total;
 export let totalPrice;
@@ -9,161 +9,158 @@ let additionalInfoCounter;
 
 //for account.html
 if (document.querySelector('.account__basket')) {
-    allGoodsBasket = document.querySelectorAll('.account__basket .price-relative-input');//the price is taken relative to the input
+    allGoodsBasket = document.querySelectorAll('.account__basket .price-relative-input'); //the price is taken relative to the input
     total = document.querySelector('.account__total'); //a block is taken in which there is an element with a total price
-    totalPrice = document.querySelector('.account__total .price');//the total price is taken
+    totalPrice = document.querySelector('.account__total .price'); //the total price is taken
 }
 
-
-
-blockThatHasCounter.forEach((item) => {
+/*blockThatHasCounter.forEach(item => {
     let incrementBtn = item.querySelector('.increment-btn');
     let decrementBtn = item.querySelector('.decrement-btn');
     let inputCount = item.querySelector('.counter-value');
 
     let price = item.querySelector('.price-relative-input'); //takes a string with a price that depends on the input
-    let priceInitialValue = price.innerHTML.slice(0, -2);    //takes the initial price before any actions with the counter
+    let priceInitialValue = price.innerHTML.slice(0, -2); //takes the initial price before any actions with the counter
 
     //for card.html
     let discount;
     let priceInitDiscount;
     if (item.querySelector('sup')) { //check if element with sup tag exists
-        discount = item.querySelector('sup');//takes an element with the sup tag
-        priceInitDiscount = discount.innerHTML.slice(0, -2);//takes the initial value of the old price before any actions with the counter
+        discount = item.querySelector('sup'); //takes an element with the sup tag
+        priceInitDiscount = discount.innerHTML.slice(0, -2); //takes the initial value of the old price before any actions with the counter
     }
 
     //for account.html
     let discAfterCount;
     let priceInitDiscAfterCount;
     if (item.querySelector('.disc span')) { //checks if there is an element with class disc that has span
-        discAfterCount = item.querySelector('.disc span');//takes an element with the span tag
-        priceInitDiscAfterCount = discAfterCount.innerHTML.slice(0, -2);//takes the initial discount value before any actions are performed on the counter
+        discAfterCount = item.querySelector('.disc span'); //takes an element with the span tag
+        priceInitDiscAfterCount = discAfterCount.innerHTML.slice(0, -2); //takes the initial discount value before any actions are performed on the counter
     }
 
     //for account.html
     let tax;
     let priceInitTax;
-    if (item.querySelector('.tax span')) {   //checks if there is an element with class tax that has span
-        tax = item.querySelector('.tax span');//takes an element with the span tag
-        priceInitTax = tax.innerHTML.slice(0, -2);//takes the initial tax value before any actions are performed on the counter
+    if (item.querySelector('.tax span')) { //checks if there is an element with class tax that has span
+        tax = item.querySelector('.tax span'); //takes an element with the span tag
+        priceInitTax = tax.innerHTML.slice(0, -2); //takes the initial tax value before any actions are performed on the counter
     }
+    //console.log(incrementBtn)
+    incrementBtn.addEventListener('click', () => incrementCounter(inputCount, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax));
+    decrementBtn.addEventListener('click', () => decrementCounter(inputCount, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax));
+    inputCount.addEventListener('input', (e) => inputCounter(e, inputCount, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax));
 
+})*/
 
-    incrementBtn.addEventListener('click', () => {
+export function incrementCounter(inputCount, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax) {
 
-        let inputValue = Number(inputCount.value);//takes the string value of the input and converts it to a number
-        let increaseInputValue = ++inputValue;//the variable will be needed to work with discount and price
-        inputCount.value = increaseInputValue;
+    let inputValue = Number(inputCount.value); //takes the string value of the input and converts it to a number
+    let increaseInputValue = ++inputValue; //the variable will be needed to work with discount and price
+    inputCount.value = increaseInputValue;
 
-        changePrice(increaseInputValue); //transition to 109
+    changePrice(increaseInputValue, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax); //transition to 109
 
-        //for account.html
-        growInput(increaseInputValue);//transition to 129
+    //for account.html
+    growInput(increaseInputValue, inputCount); //transition to 129
 
-        //for account.html
-        if (item.nextElementSibling.classList.contains('additional-info-counter')) {
-            additionalInfoCounter = item.nextElementSibling;
-            countTheBoxes(increaseInputValue);//transition to 142
+    //for account.html
+    if (item.nextElementSibling.classList.contains('additional-info-counter')) {
+        additionalInfoCounter = item.nextElementSibling;
+        countTheBoxes(increaseInputValue); //transition to 142
 
-        };
-        if (document.querySelector('.account__basket')){
-            countAllPrice();//transition to 150
-        }
-        
+    };
+    if (document.querySelector('.account__basket')) {
+        countAllPrice(); //transition to 150
+    }
+}
 
+export function decrementCounter(inputCount, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax) {
+    //everything is exactly the same as in incrementBtn.addEventListener('click'...
+    let inputValue = Number(inputCount.value);
+    let decreaseInputValue = --inputValue;
+    if (decreaseInputValue >= 1) { //prevents the counter from going negative
+        inputCount.value = decreaseInputValue;
 
-    });
-    decrementBtn.addEventListener('click', () => {
-        //everything is exactly the same as in incrementBtn.addEventListener('click'...
-        let inputValue = Number(inputCount.value);
-        let decreaseInputValue = --inputValue;
-        if (decreaseInputValue >= 1) { //prevents the counter from going negative
-            inputCount.value = decreaseInputValue;
+        changePrice(decreaseInputValue, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax); //transition to 109
 
-            changePrice(decreaseInputValue); //transition to 109
-
-            growInput(decreaseInputValue);   //transition to 129
-
-            if (item.nextElementSibling.classList.contains('additional-info-counter')) {
-                additionalInfoCounter = item.nextElementSibling;
-                countTheBoxes(decreaseInputValue);//transition to 142
-            }
-
-        }
-        if (document.querySelector('.account__basket')){
-            countAllPrice();//transition to 150
-        }
-
-    });
-
-    inputCount.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/\D/g, "");//You can only enter numbers
-        //everything is exactly the same as in incrementBtn.addEventListener('click'...
-        changePrice(e.target.value);//transition to 109
-        growInput(Number(e.target.value));//transition to 129
+        growInput(decreaseInputValue, inputCount); //transition to 129
 
         if (item.nextElementSibling.classList.contains('additional-info-counter')) {
             additionalInfoCounter = item.nextElementSibling;
-            countTheBoxes(e.target.value);//transition to 142
-        };
-        if (document.querySelector('.account__basket')){
-            countAllPrice();//transition to 150
-        }
-    });
-
-    function changePrice(par) {
-        price.innerHTML = (priceInitialValue * par) + ' ₽';//the initial price value is multiplied by the counter value
-
-        //for card.html
-        if (item.querySelector('sup')) {
-            discount.innerHTML = (priceInitDiscount * par) + ' ₽';//the principle is the same as with price.innerHTML (see above)
-        }
-
-        //for account.html
-        if (item.querySelector('.disc span')) {
-            discAfterCount.innerHTML = (priceInitDiscAfterCount * par) + ' ₽';//the principle is the same as with price.innerHTML (see above)
-        }
-
-        //for account.html
-        if (item.querySelector('.tax span')) {
-            tax.innerHTML = (priceInitTax * par) + ' ₽';//the principle is the same as with price.innerHTML (see above)
+            countTheBoxes(decreaseInputValue); //transition to 142
         }
 
     }
-
-    function growInput(par) {//It is necessary that the input box increases or decreases relative to the number of digits
-        if (par >= 10 && par < 100) {//if input value is >= 10 and < 100, will give the corresponding class to the element to extend the input
-            inputCount.classList.remove('counter-value100')
-            inputCount.classList.add('counter-value10')
-        } else if (par >= 100 && par <= 1000) {
-
-            inputCount.classList.add('counter-value100')
-        } else {
-            inputCount.classList.remove('counter-value10')//will decrease the width of the input if the value of the input decreases
-            inputCount.classList.remove('counter-value100')
-        }
+    if (document.querySelector('.account__basket')) {
+        countAllPrice(); //transition to 150
     }
+}
+
+export function inputCounter(e, inputCount, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax) {
+    
+    e.target.value = e.target.value.replace(/\D/g, ""); //You can only enter numbers
+    //everything is exactly the same as in incrementBtn.addEventListener('click'...
+    changePrice(e.target.value, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax); //transition to 109
+    growInput(Number(e.target.value), inputCount); //transition to 129
+
+    if (item.nextElementSibling.classList.contains('additional-info-counter')) {
+        additionalInfoCounter = item.nextElementSibling;
+        countTheBoxes(e.target.value); //transition to 142
+    };
+    if (document.querySelector('.account__basket')) {
+        countAllPrice(); //transition to 150
+    }
+}
+
+function changePrice(increaseInputValue, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax) {
+    price.innerHTML = (priceInitialValue * increaseInputValue) + ' ₽'; //the initial price value is multiplied by the counter value
+
+    //for card.html
+    if (item.querySelector('sup')) {
+        discount.innerHTML = (priceInitDiscount * increaseInputValue) + ' ₽'; //the principle is the same as with price.innerHTML (see above)
+    }
+
     //for account.html
-    function countTheBoxes(par) {
-        if (Math.floor(par / 10) > 0) {//increaseInputValue divide by 10 and round down
-            additionalInfoCounter.innerHTML = Math.floor(par / 10) + ' кор.'
-        } else {
-            additionalInfoCounter.innerHTML = '';//
-        };
+    if (item.querySelector('.disc span')) {
+        discAfterCount.innerHTML = (priceInitDiscAfterCount * increaseInputValue) + ' ₽'; //the principle is the same as with price.innerHTML (see above)
     }
+
     //for account.html
-    function countAllPrice() {
-        let sumPrice = 0;
-        for (let itemallGoodsBasket of allGoodsBasket) {//each item takes a string with a price, cuts it, converts it to a number, 
-            sumPrice += Number(itemallGoodsBasket.innerHTML.slice(0, -2)); //and adds this number to the value of the sumPrice variable  
-        }
-        
-        totalPrice.innerHTML = sumPrice + " ₽"
+    if (item.querySelector('.tax span')) {
+        tax.innerHTML = (priceInitTax * increaseInputValue) + ' ₽'; //the principle is the same as with price.innerHTML (see above)
     }
-});
 
+}
 
+function growInput(par, inputCount) { //It is necessary that the input box increases or decreases relative to the number of digits
+    if (par >= 10 && par < 100) { //if input value is >= 10 and < 100, will give the corresponding class to the element to extend the input
+        inputCount.classList.remove('counter-value100')
+        inputCount.classList.add('counter-value10')
+    } else if (par >= 100 && par <= 1000) {
 
+        inputCount.classList.add('counter-value100')
+    } else {
+        inputCount.classList.remove('counter-value10') //will decrease the width of the input if the value of the input decreases
+        inputCount.classList.remove('counter-value100')
+    }
+}
+//for account.html
+function countTheBoxes(par) {
+    if (Math.floor(par / 10) > 0) { //increaseInputValue divide by 10 and round down
+        additionalInfoCounter.innerHTML = Math.floor(par / 10) + ' кор.'
+    } else {
+        additionalInfoCounter.innerHTML = ''; //
+    };
+}
+//for account.html
+function countAllPrice() {
+    let sumPrice = 0;
+    for (let itemallGoodsBasket of allGoodsBasket) { //each item takes a string with a price, cuts it, converts it to a number, 
+        sumPrice += Number(itemallGoodsBasket.innerHTML.slice(0, -2)); //and adds this number to the value of the sumPrice variable  
+    }
+
+    totalPrice.innerHTML = sumPrice + " ₽"
+}
 
 
 /*const incrementBtn = document.querySelectorAll('.increment-btn');

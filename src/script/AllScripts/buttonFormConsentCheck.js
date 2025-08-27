@@ -1,5 +1,5 @@
 const consent = document.querySelectorAll('form .consent'); //take all elements with class .consent
-const modalPoliticBtn = document.querySelector('.politic-button-close');
+const modalPoliticBtn = document.querySelector('.politic-agreement-button-close');
 const consentCheckBox = document.querySelectorAll('.consent input[type="checkbox"]');
 
 //there is a div with class concent. In consent there are 2 elements input and label
@@ -20,3 +20,5 @@ modalPoliticBtn.addEventListener('click', () => {
             item.setAttribute('checked', 'checked')
         } )
 })
+
+

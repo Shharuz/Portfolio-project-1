@@ -1,19 +1,17 @@
 import { gsap } from "gsap";
     
-import { GSDevTools } from "gsap/GSDevTools";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+//import { GSDevTools } from "gsap/GSDevTools";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";//6kb
+import { ScrollTrigger } from "gsap/ScrollTrigger";//16.3kb
 // ScrollSmoother requires ScrollTrigger
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, MorphSVGPlugin, GSDevTools);
+import { ScrollSmoother } from "gsap/ScrollSmoother";//4kb
+import { SplitText } from "gsap/SplitText";// 3kb
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, MorphSVGPlugin, /*GSDevTools*/);
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
     document.fonts.ready.then(() => {
-        
-
         ScrollSmoother.create({
             smooth: 1.5,
             effects: true,
@@ -400,8 +398,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             zIndex: 0,
                         })
                         .set(abounUsHtml, { overflow: "auto" })
-                        .from(headerAboutUs, { y: -200, autoAlpha: 0, ease: "expo.out", duration: 1.5, })
-                        .from(secondaryNav, { x: -200, autoAlpha: 0, ease: "expo.out", duration: 1.5 }, "-=1.5")
+                        .to(headerAboutUs, { y: 0, autoAlpha: 1, ease: "expo.out", duration: 1.5, })
+                        .to(secondaryNav, { x: 0, autoAlpha: 1, ease: "expo.out", duration: 1.5 }, "-=1.5")
                         .from(splitAboutUsH2.chars, {
                             y: 50, // animate from 100px below
                             autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
