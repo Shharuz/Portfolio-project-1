@@ -3,10 +3,10 @@
 //smooth scroll
 export const bodyforSmoothScroll = document.querySelector('body');
 
-const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
+export const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
 //let heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
 let heightForScroll;
-export function alignBody() { // script/radioPerson  /  script/categoriesRadio
+export function alignBody() { // script/radioPerson  /  script/categoriesRadio / script/questions
     heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
     bodyforSmoothScroll.setAttribute('style', `height:${heightForScroll}px`);
 };
@@ -296,7 +296,7 @@ if (h2 != null) {
 
             }
         }
-        window.addEventListener('load', appearH2chars)
+        window.addEventListener('DOMContentLoaded', appearH2chars)
 
     })
     //console.log(h2Char);

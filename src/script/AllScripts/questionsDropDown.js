@@ -1,11 +1,18 @@
-const svgDropDown = document.querySelectorAll('.questions__question-and-answer__item svg');
+import { alignBody } from './animation.js';
 
-svgDropDown.forEach( (item) =>{
-    item.addEventListener('click', () =>{         //opens and closes the answer to the question, on adding/removing a class
-           if(!item.classList.contains('rotate-svg-questions')){
+export function questionsDropDown(item) {
+     if(!item.classList.contains('rotate-svg-questions')){
                item.classList.add('rotate-svg-questions')
+               setTimeout(function() {
+                   alignBody();
+                }, 510);
+               
            }else{
                item.classList.remove('rotate-svg-questions')
+               setTimeout(function() {
+                    alignBody();
+                }, 510);
+               
            }
 
            if(!item.nextElementSibling.classList.contains('open-question')){
@@ -13,6 +20,5 @@ svgDropDown.forEach( (item) =>{
            }else{
                 item.nextElementSibling.classList.remove('open-question')
            };
+}
 
-    } );
-} );

@@ -24,11 +24,20 @@ itemsCategories.forEach(item => {
     }))
 });
 ///////////////////////////////////////////////////////////////
+/////////////////////categoriesRadioCount.js/////////////////////
 document.addEventListener("DOMContentLoaded", e => import( /* webpackChunkName: "categoriesRadioCount" */ './allScripts/categoriesRadioCount.js').then(module => {
         const countCategories = module.countCategories;
         countCategories(itemsCategories);
     }))
-//import './allScripts/categoriesRadioCount.js';
-import './allScripts/questionsDropDown.js';
+///////////////////////////////////////////////////////////////
+/////////////////////questionsDropDown.js/////////////////////
+const svgDropDown = document.querySelectorAll('.questions__question-and-answer__item svg');
+svgDropDown.forEach(item => {
+    item.addEventListener('click', e => import( /* webpackChunkName: "questionsDropDown" */ './allScripts/questionsDropDown.js').then(module => {
+        const questionsDropDown = module.questionsDropDown;
+        questionsDropDown(item);
+    }))
+});
+///////////////////////////////////////////////////////////////
 import './allScripts/buttonFormConsentCheck.js';
 import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';
