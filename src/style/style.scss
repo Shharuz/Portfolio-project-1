@@ -1189,6 +1189,7 @@ main {
                 text-align: center;
                 padding-top: 2px;
                 flex-shrink: 0;
+                pointer-events: none;
             }
 
             &:hover {
@@ -4281,14 +4282,7 @@ main {
 
                 .blog-article-min {
                     opacity: 0;
-
-                    @for $i from 1 through 100 {
-                        &:nth-child(n + #{$i}) {
-                            opacity: 0;
-                            transform: translateY(#{$i * 30}px);
-                        }
-                    }
-
+                    transform: translateY(100px);
                 }
             }
 
@@ -5071,9 +5065,9 @@ main {
             opacity: 0;
         }
 
-        25% {
+        /*50% {
             opacity: 0;
-        }
+        }*/
 
         100% {
             opacity: 1;
@@ -7629,6 +7623,9 @@ footer {
 
                     p {
                         font-size: clamp(14px, 2vw - 2px, 20px);
+                        /*span{
+                            pointer-events: none;
+                        }*/
                     }
                 }
 

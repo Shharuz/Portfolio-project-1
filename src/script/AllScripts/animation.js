@@ -37,10 +37,11 @@ if (document.querySelector('.forSmoothScroll')) {
 
     window.requestAnimationFrame(smooth);
 
-    //animate element reviews.html and questions.html
+    //animate element reviews.html, questions.html and blog.html
 
     let windowHeight;
     const elementVisible = 1; //animation will start when the block is 150px away from the bottom of the viewport.
+    const elementVisibleBlog = 30; //animation will start when the block is 150px away from the bottom of the viewport.
     let scrollElements;
     if (document.querySelectorAll(".reviews__wrapper-for-item__item").length > 0) {
         scrollElements = document.querySelectorAll(".reviews__wrapper-for-item__item"); //start by selecting all the block
@@ -57,20 +58,27 @@ if (document.querySelector('.forSmoothScroll')) {
     getWindowHeight();
     window.addEventListener('resize', getWindowHeight);
 
-
-    function appearElement() {
+    
+    function appearElement(arg) {
         //console.log(scrollElements)
         for (let i = 0; i < scrollElements.length; i++) {
+
             let elementTop = +scrollElements[i].getBoundingClientRect().top.toFixed(2); //calculates the distance from the top of the viewport to the top of the block
 
-            //If this condition is true, it means the block is within the viewport, and the class reveal, 
-            //which has the style changes, is added. If the block is not within the defined 
-            //visibility area, the reveal class is removed, reverting the animation.
-            if (elementTop < windowHeight - elementVisible) {
+            if (arg > 0) {
 
-                scrollElements[i].classList.add("animateElementsOnScroll");
+                if (elementTop < windowHeight - elementVisibleBlog) {
+                    scrollElements[i].classList.add("animateElementsOnScroll");
+                } else {
+                    scrollElements[i].classList.remove("animateElementsOnScroll");
+                }
             } else {
-                scrollElements[i].classList.remove("animateElementsOnScroll");
+
+                if (elementTop < windowHeight - elementVisible) {
+                    scrollElements[i].classList.add("animateElementsOnScroll");
+                } else {
+                    scrollElements[i].classList.remove("animateElementsOnScroll");
+                }
             }
 
         }
@@ -99,7 +107,7 @@ if (document.querySelector('.forSmoothScroll')) {
         } else if (document.querySelectorAll(".questions__question-and-answer__item").length > 0) {
             appearElement();
         } else if (document.querySelectorAll(".blog-article-min").length > 0) {
-            appearElement();
+            appearElement(1);
         }
 
     }
@@ -279,7 +287,7 @@ if (h2 != null) {
 
         function appearH2chars() {
             for (let i = 0; i < h2Char.length; ++i) {
-                
+
                 if (h2Char.length > 10) {
                     setTimeout(() => {
                         h2Char[i].style.transform = `translateY(0px)`;

@@ -13,7 +13,7 @@ window.addEventListener("resize", e => import( /* webpackChunkName: "secondaryNa
         goToPreviousPage();
     }))
 //////////////////////////////////////////////////////////////////////////////
-import './allScripts/categoriesRadioCount.js';
+
 /////////////////////categoriesRadio.js/////////////////////
 const itemsCategories = document.querySelectorAll('.forCategoryAllPages p'); //in the element with the class radio-category, all inputs of the radio type are taken
 itemsCategories.forEach(item => {

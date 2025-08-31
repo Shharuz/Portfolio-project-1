@@ -13,5 +13,20 @@ window.addEventListener("resize", e => import( /* webpackChunkName: "secondaryNa
         goToPreviousPage();
     }))
 //////////////////////////////////////////////////////////////////////////////
-import './allScripts/categoriesRadio.js';
+/////////////////////categoriesRadio.js/////////////////////
+const itemsCategories = document.querySelectorAll('.forCategoryAllPages p'); //in the element with the class radio-category, all inputs of the radio type are taken
+itemsCategories.forEach(item => {
+    item.addEventListener('click', e => import( /* webpackChunkName: "categoriesRadio" */ './allScripts/categoriesRadio.js').then(module => {
+        let eTarget = e.target;
+        const highlightedElement = module.highlightedElement;
+        highlightedElement(eTarget, itemsCategories);
+    }))
+});
+///////////////////////////////////////////////////////////////
+/////////////////////categoriesRadioCount.js/////////////////////
+document.addEventListener("DOMContentLoaded", e => import( /* webpackChunkName: "categoriesRadioCount" */ './allScripts/categoriesRadioCount.js').then(module => {
+        const countCategories = module.countCategories;
+        countCategories(itemsCategories);
+    }))
+///////////////////////////////////////////////////////////////
 import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';
