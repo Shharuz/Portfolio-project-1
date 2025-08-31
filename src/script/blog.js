@@ -29,4 +29,5 @@ document.addEventListener("DOMContentLoaded", e => import( /* webpackChunkName: 
         countCategories(itemsCategories);
     }))
 ///////////////////////////////////////////////////////////////
+import './allScripts/buttonFormConsentCheck.js';
 import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';

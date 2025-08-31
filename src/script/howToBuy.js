@@ -23,7 +23,6 @@ itemsCategories.forEach(item => {
     }))
 });
 ///////////////////////////////////////////////////////////////
-//import './allScripts/categoriesRadio.js';
 import './allScripts/buttonFormConsentCheck.js';
 import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';
 

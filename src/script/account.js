@@ -23,8 +23,15 @@ radioPerson.forEach( item => {
     }))
 })
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-import './allScripts/categoriesRadio.js';
-//import './allScripts/counter-goods.js';
+/////////////////////categoriesRadio.js/////////////////////
+const itemsCategories = document.querySelectorAll('.forCategoryAllPages p'); //in the element with the class radio-category, all inputs of the radio type are taken
+itemsCategories.forEach(item => {
+    item.addEventListener('click', e => import( /* webpackChunkName: "categoriesRadio" */ './allScripts/categoriesRadio.js').then(module => {
+        let eTarget = e.target;
+        const highlightedElement = module.highlightedElement;
+        highlightedElement(eTarget, itemsCategories);
+    }))
+});
 ///////////////////////////////////////counter-goods.js////////////////////////////////////////////
 const blockThatHasCounter = document.querySelectorAll('.block-that-has-counter');
 blockThatHasCounter.forEach(item => {
@@ -74,6 +81,14 @@ blockThatHasCounter.forEach(item => {
 
 })
 ///////////////////////////////////////////////////////////////////////////////////
-import './allScripts/workingWithFavoritesContent.js';
+//import './allScripts/workingWithFavoritesContent.js';
+/////////////////////workingWithFavoritesContent.js/////////////////////
+
+itemsCategories.forEach(item => {
+    item.addEventListener('click', e => import( /* webpackChunkName: "workingWithFavoritesContent" */ './allScripts/workingWithFavoritesContent.js').then(module => {
+        
+    }))
+});
+///////////////////////////////////////counter-goods.js////////////////////////////////////////////
 import './allScripts/buttonFormConsentCheck.js';
 import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';
