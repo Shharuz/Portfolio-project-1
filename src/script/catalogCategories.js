@@ -52,7 +52,12 @@ wrapperArrowSvgManufactWeight.forEach( (wrapperSvg) =>{//starts hideFilter() on 
        const hideFilter = module.hideFilter;
         hideFilter(e)
     }))
+    ///////////price-range////////////////////////
+    wrapperSvg.addEventListener('click', e => import( /* webpackChunkName: "price-range" */ './allScripts/price-range.js').then(module => {
+      
+    }))
 } );
+
 
 
 import './allScripts/SWIPERcatalogCategories.js';
