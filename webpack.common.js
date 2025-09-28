@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //const CompressionPlugin = require("compression-webpack-plugin");
 
 const pages = [
@@ -9,8 +10,8 @@ const pages = [
     { chunks: ["article"], page: '../article.html', template: './src/article.html', title: ['Статья'], },
     { chunks: ["blog"], page: '../blog.html', template: './src/blog.html', title: ['Блог'], },
     { chunks: ["card"], page: '../card.html', template: './src/card.html', title: ['Карточка товара'], },
-    { chunks: ["catalogCategories"], page: '../catalogCategories.html', template: './src/catalogCategories.html', title: ['Каталог'], },
-    { chunks: ["catalogMainPage"], page: '../catalogMainPage.html', template: './src/catalogMainPage.html', title: ['Категории каталога'], },
+    { chunks: ["catalogCategories"], page: '../catalogCategories.html', template: './src/catalogCategories.html', title: ['Категории каталога'], },
+    { chunks: ["catalogMainPage"], page: '../catalogMainPage.html', template: './src/catalogMainPage.html', title: ['Каталог'], },
     { chunks: ["contacts"], page: '../contacts.html', template: './src/contacts.html', title: ['Контакты'], },
     { chunks: ["directory"], page: '../directory.html', template: './src/directory.html', title: ['Справочник'], },
     { chunks: ["forPartners"], page: '../forPartners.html', template: './src/forPartners.html', title: ['Стать дилером'], },
@@ -71,7 +72,6 @@ module.exports = {
     },
 
     output: {
-        filename: '[name].js',
         path: path.resolve(__dirname, './public/js'),
         clean: true,
     },
@@ -81,22 +81,30 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "./src/img", to: "../img" },
-                { from: "./src/fonts/product", to: "../fonts" },
-                { from: "./src/style/style.min.css", to: "../style" },
             ],
         }),
         /*new CompressionPlugin({
             test: /\.js$|\.html$/,
             algorithm: "gzip",
         }),*/
+        
     ],
 
     module: {
 
         rules: [{
-            test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-            type: 'asset/inline',
-        }, ],
+                test: /\.(s*)css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader",
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+                type: 'asset/inline',
+            },
+        ],
     },
 
 

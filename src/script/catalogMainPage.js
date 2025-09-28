@@ -1,3 +1,7 @@
+import '../style/normalize.css';
+import '../style/swiper-bundle.min.css';
+import '../style/main.scss';
+import '../style/catalogMainPage.scss';
 import './allScripts/animateHeaderSecondaryNav.js';
 //animation of the first visible elements/////////////////////////////////////////////////
 const catalogMainPage = document.querySelector('.catalogMainPage');

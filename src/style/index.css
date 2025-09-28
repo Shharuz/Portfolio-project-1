@@ -1,0 +1,1858 @@
+@charset "UTF-8";
+body .sizewindow {
+  position: fixed;
+  background: white;
+  border: 2px solid green;
+  z-index: 5;
+}
+body .progress {
+  background: linear-gradient(90deg, rgb(45, 130, 34) 0%, rgb(115, 193, 103) 50%, rgb(176, 230, 129) 100%);
+  height: 0.5vw;
+  position: fixed;
+  top: 0px;
+}
+body .forSmoothScroll {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+body .forSmoothScroll .forSmoothScroll__wrapper main {
+  overflow-y: hidden;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+main {
+  /*&&&&&&&&&&&      index             &&&&&&&&&&&&&&*/
+  /*&&&&&&&&&&&      index             &&&&&&&&&&&&&&*/
+}
+main .links-online-store {
+  display: flex;
+  column-gap: 16px;
+}
+main .links-online-store a {
+  position: relative;
+  padding-top: 0;
+}
+main .links-online-store a:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: 8px;
+}
+main .links-online-store a:hover:before {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 0.5s ease;
+}
+main .links-online-store a:active:before {
+  background-color: rgba(102, 102, 102, 0.4);
+  transition: all 0.5s ease;
+}
+main .stars {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 20px;
+  margin-left: 2px;
+}
+main .stars .star {
+  position: relative;
+  width: 20px;
+}
+main .stars .star:before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1;
+  font-size: 20px;
+}
+main .stars .fill:before {
+  color: #73C167;
+}
+main .stars .empty:before {
+  color: #CCCCCC;
+}
+main .stars .half:before {
+  /*background-image: linear-gradient(90deg, vars.$accent 50%, vars.$star-off-color 50%);*/
+  background-image: -webkit-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  background-image: -moz-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  background-image: -o-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  background-image: -ms-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 22px;
+  top: -1px;
+}
+main .review {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 32px;
+}
+main .review h4 {
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+main .review p {
+  line-height: 1.37;
+}
+main .review .full-review {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+main .review .full-review .name-box {
+  display: flex;
+  flex-direction: column;
+}
+main .review .full-review .name-box .name,
+main .review .full-review .name-box .date {
+  font-weight: 400;
+}
+main .review .full-review .name-box .name {
+  font-size: 16px;
+  color: #0D0D0D;
+  line-height: 2;
+}
+main .review .full-review .name-box .date {
+  font-size: 12px;
+  color: #767676;
+  line-height: 1.7;
+}
+main .custom-input {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+main .custom-input {
+  position: relative;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  height: 16px;
+  color: #767676;
+}
+main .custom-input::before {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #BBBBBB;
+  border-radius: 0px;
+  box-shadow: none;
+}
+main .custom-input:checked::after {
+  content: " ";
+  background-image: url("../img/icons/checkedMark.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: center center;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0px;
+  left: 3px;
+  top: 1px;
+  text-align: center;
+  background-color: transparent;
+  font-size: 10px;
+  height: 16px;
+  width: 16px;
+}
+main .custom-input:checked {
+  color: #73C167;
+}
+main .custom-input:checked::before {
+  border-color: #73C167;
+}
+main .swiper-card {
+  width: clamp(1160px, 100vw - 240px, 1680px);
+  margin: 57px auto 0;
+  position: relative;
+}
+main .swiper-card .swiper-wrapper .swiper-slide-visible {
+  opacity: 1;
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex {
+  transition: transform 1s, opacity 1s;
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+1) {
+  transform: translate3d(150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+2) {
+  transform: translate3d(300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+3) {
+  transform: translate3d(450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+4) {
+  transform: translate3d(600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+5) {
+  transform: translate3d(750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+6) {
+  transform: translate3d(900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+7) {
+  transform: translate3d(1050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+8) {
+  transform: translate3d(1200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+9) {
+  transform: translate3d(1350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+10) {
+  transform: translate3d(1500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+11) {
+  transform: translate3d(1650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+12) {
+  transform: translate3d(1800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+13) {
+  transform: translate3d(1950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+14) {
+  transform: translate3d(2100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+15) {
+  transform: translate3d(2250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+16) {
+  transform: translate3d(2400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+17) {
+  transform: translate3d(2550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+18) {
+  transform: translate3d(2700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+19) {
+  transform: translate3d(2850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+20) {
+  transform: translate3d(3000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+21) {
+  transform: translate3d(3150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+22) {
+  transform: translate3d(3300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+23) {
+  transform: translate3d(3450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+24) {
+  transform: translate3d(3600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+25) {
+  transform: translate3d(3750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+26) {
+  transform: translate3d(3900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+27) {
+  transform: translate3d(4050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+28) {
+  transform: translate3d(4200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+29) {
+  transform: translate3d(4350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+30) {
+  transform: translate3d(4500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+31) {
+  transform: translate3d(4650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+32) {
+  transform: translate3d(4800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+33) {
+  transform: translate3d(4950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+34) {
+  transform: translate3d(5100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+35) {
+  transform: translate3d(5250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+36) {
+  transform: translate3d(5400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+37) {
+  transform: translate3d(5550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+38) {
+  transform: translate3d(5700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+39) {
+  transform: translate3d(5850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+40) {
+  transform: translate3d(6000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+41) {
+  transform: translate3d(6150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+42) {
+  transform: translate3d(6300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+43) {
+  transform: translate3d(6450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+44) {
+  transform: translate3d(6600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+45) {
+  transform: translate3d(6750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+46) {
+  transform: translate3d(6900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+47) {
+  transform: translate3d(7050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+48) {
+  transform: translate3d(7200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+49) {
+  transform: translate3d(7350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+50) {
+  transform: translate3d(7500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+51) {
+  transform: translate3d(7650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+52) {
+  transform: translate3d(7800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+53) {
+  transform: translate3d(7950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+54) {
+  transform: translate3d(8100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+55) {
+  transform: translate3d(8250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+56) {
+  transform: translate3d(8400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+57) {
+  transform: translate3d(8550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+58) {
+  transform: translate3d(8700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+59) {
+  transform: translate3d(8850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+60) {
+  transform: translate3d(9000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+61) {
+  transform: translate3d(9150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+62) {
+  transform: translate3d(9300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+63) {
+  transform: translate3d(9450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+64) {
+  transform: translate3d(9600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+65) {
+  transform: translate3d(9750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+66) {
+  transform: translate3d(9900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+67) {
+  transform: translate3d(10050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+68) {
+  transform: translate3d(10200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+69) {
+  transform: translate3d(10350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+70) {
+  transform: translate3d(10500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+71) {
+  transform: translate3d(10650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+72) {
+  transform: translate3d(10800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+73) {
+  transform: translate3d(10950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+74) {
+  transform: translate3d(11100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+75) {
+  transform: translate3d(11250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+76) {
+  transform: translate3d(11400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+77) {
+  transform: translate3d(11550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+78) {
+  transform: translate3d(11700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+79) {
+  transform: translate3d(11850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+80) {
+  transform: translate3d(12000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+81) {
+  transform: translate3d(12150px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+82) {
+  transform: translate3d(12300px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+83) {
+  transform: translate3d(12450px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+84) {
+  transform: translate3d(12600px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+85) {
+  transform: translate3d(12750px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+86) {
+  transform: translate3d(12900px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+87) {
+  transform: translate3d(13050px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+88) {
+  transform: translate3d(13200px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+89) {
+  transform: translate3d(13350px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+90) {
+  transform: translate3d(13500px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+91) {
+  transform: translate3d(13650px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+92) {
+  transform: translate3d(13800px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+93) {
+  transform: translate3d(13950px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+94) {
+  transform: translate3d(14100px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+95) {
+  transform: translate3d(14250px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+96) {
+  transform: translate3d(14400px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+97) {
+  transform: translate3d(14550px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+98) {
+  transform: translate3d(14700px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+99) {
+  transform: translate3d(14850px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+100) {
+  transform: translate3d(15000px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+1) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+2) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+3) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+4) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+5) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+6) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+7) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+8) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+9) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+10) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+11) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+12) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+13) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+14) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+15) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+16) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+17) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+18) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+19) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+20) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+21) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+22) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+23) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+24) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+25) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+26) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+27) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+28) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+29) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+30) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+31) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+32) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+33) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+34) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+35) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+36) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+37) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+38) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+39) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+40) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+41) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+42) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+43) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+44) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+45) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+46) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+47) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+48) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+49) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+50) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+51) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+52) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+53) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+54) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+55) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+56) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+57) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+58) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+59) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+60) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+61) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+62) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+63) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+64) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+65) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+66) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+67) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+68) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+69) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+70) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+71) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+72) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+73) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+74) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+75) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+76) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+77) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+78) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+79) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+80) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+81) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+82) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+83) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+84) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+85) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+86) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+87) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+88) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+89) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+90) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+91) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+92) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+93) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+94) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+95) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+96) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+97) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+98) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+99) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+100) {
+  transform: translate3d(0px, 0px, 0px);
+}
+main .allPageCard {
+  opacity: 0.5;
+  height: 730px;
+  padding: 24px 18px 24px 17px;
+  display: flex;
+  flex-direction: column;
+}
+main .allPageCard .allPageCard__swiperImg {
+  overflow: hidden;
+}
+main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+  height: 93.5%;
+}
+main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide {
+  padding: 0 0;
+  opacity: 1;
+}
+main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a {
+  padding-top: 0;
+}
+main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination {
+  width: 250px;
+  margin: 0 auto;
+}
+main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .swiper-pagination-bullet {
+  width: 53px;
+  height: 3px;
+  margin: 0 1px;
+  border-radius: 0px;
+  background-color: #73C167;
+}
+main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .swiper-pagination-bullet-active {
+  height: 5px;
+}
+main .allPageCard .allPageCard__raiting {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+main .allPageCard .allPageCard__raiting p {
+  font-size: 12px;
+  line-height: 23px;
+  padding-right: 10px;
+}
+main .allPageCard h4 {
+  margin: 12px 0 14px;
+  line-height: 1.4;
+  text-align: left;
+}
+main .allPageCard p {
+  line-height: 1.35;
+  text-align: left;
+}
+main .swiper-card__buy,
+main .allPageCard__buy {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+main .swiper-card__buy span,
+main .allPageCard__buy span {
+  font-weight: 500;
+  font-size: 24px;
+  color: #73C167;
+}
+main .swiper-card__buy .swiper-card__buy__a,
+main .swiper-card__buy .allPageCard__buy__a,
+main .allPageCard__buy .swiper-card__buy__a,
+main .allPageCard__buy .allPageCard__buy__a {
+  width: 160px;
+  height: 35px;
+  position: relative;
+  padding-left: 1.8125rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+main .swiper-card__buy .swiper-card__buy__a .swiper-card__buy__a__img,
+main .swiper-card__buy .allPageCard__buy__a .swiper-card__buy__a__img,
+main .allPageCard__buy .swiper-card__buy__a .swiper-card__buy__a__img,
+main .allPageCard__buy .allPageCard__buy__a .swiper-card__buy__a__img {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+}
+main .swiper-card__buy button,
+main .allPageCard__buy button {
+  width: 70px;
+  height: 35px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding-left: 27px;
+  border: 1px solid #73C167;
+}
+main .swiper-card__buy button img,
+main .allPageCard__buy button img {
+  width: 13px;
+  height: 13px;
+}
+main .swiper-card__buy button:hover,
+main .allPageCard__buy button:hover {
+  background-color: rgba(115, 193, 103, 0.2);
+  transition: all 0.5s ease;
+}
+main .swiper-card__buy button:active,
+main .allPageCard__buy button:active {
+  background-color: rgba(115, 193, 103, 0.4);
+  transition: all 0.5s ease;
+}
+main .index-offer {
+  width: clamp(1083px, 100vw - 15rem, 1680px);
+  margin: 0 auto;
+  padding-top: clamp(1.1875rem, 10vw - 8rem, 2.5rem);
+  padding-bottom: 4.0625rem;
+  border: 50px solid red;
+}
+main .index-offer .index-offer__container {
+  display: flex;
+  column-gap: 29px;
+}
+main .index-offer .index-offer__container .index-offer__swiper {
+  overflow: hidden;
+  height: 41.2rem;
+  border-radius: 32px;
+  opacity: 0;
+  transform: translateX(-300px);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper {
+  height: 97.7%;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide {
+  overflow: hidden;
+  height: 96.5%;
+  border-radius: 32px;
+  background-color: #FFFFFF;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items {
+  display: flex;
+  flex-direction: column;
+  width: 70.3%;
+  height: 100%;
+  padding-top: 5.9rem;
+  padding-bottom: 3.3rem;
+  padding-left: 3.3rem;
+  background-image: url("../img/Vector.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__top {
+  width: 7.5rem;
+  height: 2.375rem;
+  font-weight: 400;
+  color: #0D0D0D;
+  border-radius: 300px;
+  background-color: #FFD04A;
+  text-align: center;
+  line-height: 37.8px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__info1 {
+  width: 21rem;
+  margin: 0.875rem 0;
+  color: #FFFFFF;
+  line-height: 1.38;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__info2 {
+  width: 20rem;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #FFFFFF;
+  line-height: 1.33;
+  opacity: 0;
+  transform: translateY(250px);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy {
+  display: flex;
+  column-gap: 0.875rem;
+  margin-top: auto;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy a {
+  width: 14.5rem;
+  height: 3.9375rem;
+  border: 1px solid #FFFFFF;
+  transform: scale(0);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy .appearIndexOfferSwiperItemsBlock-buyA {
+  transform: scale(1);
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy .swiper-slide__items__buy {
+  color: #767676;
+  background-color: #FFFFFF;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy .swiper-slide__items__buy:hover {
+  background-color: #E1E1E1;
+  transition: all 0.5s ease;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy .swiper-slide__items__buy:active {
+  background-color: #B1B1B1;
+  transition: all 0.5s ease;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy .swiper-slide__items__more-details {
+  color: #FFFFFF;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy .swiper-slide__items__more-details:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy .swiper-slide__items__more-details:active {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 0.5s ease;
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .appearIndexOfferSwiperitems {
+  opacity: 1;
+  transform: translateY(0);
+}
+main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide img {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 25%;
+  z-index: -1;
+}
+main .index-offer .index-offer__container .index-offer__swiper .index-offer__swiper__pagination {
+  width: 4.5rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+main .index-offer .index-offer__container .index-offer__swiper .index-offer__swiper__pagination span {
+  width: 16px;
+  height: 16px;
+}
+main .index-offer .index-offer__container .index-offer__swiper .index-offer__swiper__pagination span.swiper-pagination-bullet {
+  background-color: #D9D9D9;
+}
+main .index-offer .index-offer__container .index-offer__swiper .index-offer__swiper__pagination span.swiper-pagination-bullet-active {
+  background-color: #73C167;
+}
+main .index-offer .index-offer__container .appearIndex-offer__swiper {
+  opacity: 1;
+  transform: translateY(0px);
+}
+main .index-offer .index-offer__container .index-offer__online-store {
+  display: flex;
+  max-width: 34.1875rem;
+  min-width: 27.5rem;
+  width: 100%;
+  height: 38.8rem;
+  padding-top: 0.75rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 32px;
+  background-color: #FFFFFF;
+  background-image: url("../img/online-store__background__top.webp"), url("../img/online-store__background__bottom.webp");
+  background-position: 145% -457%, -21% 143%;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 80% 90%, 74%;
+  opacity: 0;
+  transform: translateX(300px);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__online-store .index-offer__online-store__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translate(100px, 100px);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__online-store .index-offer__online-store__wrapper p {
+  width: 23.5625rem;
+  margin: 14px 0 25px;
+}
+main .index-offer .index-offer__container .index-offer__online-store .links-online-store {
+  width: 20.4rem;
+  opacity: 0;
+  transform: translate(200px, 200px);
+  transition: all 1s cubic-bezier(0, 0, 0, 0.9);
+}
+main .index-offer .index-offer__container .index-offer__online-store .appearIndex-offer__online-storeContent {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+main .index-offer .index-offer__container .index-offer__online-store .appearlinks-online-store {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+main .index-advantages {
+  max-width: 1214px;
+  margin: 0 auto;
+  padding-bottom: clamp(4.375rem, 6.75rem - 2vw, 5rem);
+  opacity: 0;
+}
+main .index-advantages h1 {
+  text-align: center;
+  line-height: 1.4;
+}
+main .index-advantages .index-advantages__block {
+  display: flex;
+  margin: 1.375rem 0 2.75rem;
+}
+main .index-advantages .index-advantages__block .index-advantages__block__item {
+  text-align: center;
+  flex: 1;
+}
+main .index-advantages .index-advantages__block .index-advantages__block__item:nth-child(2) {
+  flex: 1.14;
+}
+main .index-advantages .index-advantages__block .index-advantages__block__item img {
+  margin: 0 auto;
+}
+main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper h4 {
+  margin: 17px 0 5px;
+  line-height: 1.3;
+}
+main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper p {
+  text-align: center;
+  padding: 0 55px;
+}
+main .index-advantages .index-advantages__wrapper-links {
+  width: auto;
+  justify-content: center;
+  display: flex;
+  column-gap: 24px;
+}
+main .index-advantages .index-advantages__wrapper-links a {
+  width: 320px;
+  height: 63px;
+}
+main .index-catalog {
+  background-color: #FFFFFF;
+  border-radius: clamp(5.625rem, 10vw - 3.125rem, 7.5rem);
+  text-align: center;
+  padding: 80px 0;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+main .index-catalog h2 {
+  line-height: 1.4;
+}
+main .index-catalog h2:first-child .line .wrapperForWord:first-child {
+  color: #73C167;
+}
+main .index-catalog h2:last-of-type .line .wrapperForWord:nth-child(3) {
+  color: #73C167;
+}
+main .catalog-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: clamp(72.5rem, 100vw - 15rem, 105rem);
+  margin: 62px auto 58px;
+}
+main .catalog-categories .catalog-categories__category {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2.625rem;
+  height: 99px;
+  border: 1px solid #D9D9D9;
+  text-transform: none;
+  padding-top: 0px;
+  border-radius: 0;
+}
+main .catalog-categories .catalog-categories__category:hover {
+  background-color: rgba(217, 217, 217, 0.2);
+  transition: all 0.5s ease;
+}
+main .catalog-categories .catalog-categories__category:active {
+  background-color: rgba(217, 217, 217, 0.6);
+  transition: all 0.5s ease;
+}
+main .catalog-categories .catalog-categories__category .catalog-categories__category__wrapper {
+  display: flex;
+  align-items: center;
+}
+main .catalog-categories .catalog-categories__category .catalog-categories__category__wrapper p {
+  max-width: clamp(13.5rem, 17vw - 1.6rem, 21rem);
+  font-weight: 500;
+  font-size: clamp(1.125rem, 2vw - 1rem, 1.25rem);
+  color: #0D0D0D;
+  letter-spacing: 0.4px;
+  line-height: 24px;
+  margin-right: 0.8125rem;
+  margin-left: clamp(0.8125rem, 10vw - 149px, 2.6875rem);
+  text-align: left;
+}
+main .catalog-categories .catalog-categories__category .catalog-categories__category__wrapper span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #D9D9D9;
+  color: #767676;
+  font-weight: 400;
+  font-size: 12px;
+}
+main .catalog-categories .index-catalog__goToCatalog {
+  border-radius: 0px;
+}
+main .index-aboutUs {
+  display: flex;
+  position: relative;
+  max-width: 1755px;
+  margin: 0 auto;
+  padding: 100px 0 clamp(73px, 10vw - 92px, 100px) 30px;
+  column-gap: 98px;
+  margin-bottom: 9px;
+}
+main .index-aboutUs aside {
+  flex: 1 832px;
+}
+main .index-aboutUs aside h2 {
+  margin-bottom: auto;
+  line-height: 1.4;
+}
+main .index-aboutUs aside h2 .line {
+  justify-content: start;
+}
+main .index-aboutUs aside p {
+  margin: 14px 0 46px;
+  line-height: 1.38;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper {
+  flex: 1 880px;
+  overflow: hidden;
+  position: relative;
+  margin-right: -85px;
+  padding-top: 19px;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews {
+  width: 62%;
+  margin: 0 auto;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide {
+  height: 277px;
+  opacity: 0.5;
+  padding: 33px 42px 23px 39px;
+  position: relative;
+  overflow: hidden;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review {
+  background: white;
+  position: absolute;
+  bottom: 20px;
+  width: 86%;
+  height: 59px;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review:after {
+  content: "";
+  width: 100%;
+  height: 70%;
+  background-color: white;
+  position: absolute;
+  left: 0px;
+  bottom: -34px;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review a {
+  width: 160px;
+  height: 30px;
+  padding-top: 3px;
+  font-weight: 700;
+  font-size: 12px;
+  margin-left: auto;
+  border-radius: 4px;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide-visible {
+  opacity: 1;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .index-aboutUs__wrapper-forswiper__swiper-reviews__pagination {
+  width: 73px;
+  margin: 40px auto 0;
+  position: relative;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .index-aboutUs__wrapper-forswiper__swiper-reviews__pagination span {
+  width: 16px;
+  height: 16px;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .index-aboutUs__wrapper-forswiper__swiper-reviews__pagination span.swiper-pagination-bullet {
+  background-color: #D9D9D9;
+}
+main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .index-aboutUs__wrapper-forswiper__swiper-reviews__pagination span.swiper-pagination-bullet-active {
+  background-color: #73C167;
+}
+main .index-aboutUs .index-aboutUs__more-details-reviews {
+  display: flex;
+  position: absolute;
+  bottom: 92px;
+  width: 664px;
+  height: 63px;
+  column-gap: 24px;
+  justify-content: space-between;
+}
+main .index-aboutUs .index-aboutUs__more-details-reviews a {
+  flex: 1;
+}
+
+@media screen and (max-width: 1400px) {
+  main .index-offer {
+    padding-bottom: 4.875rem;
+  }
+  main .index-offer .index-offer__container {
+    flex-direction: column;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper {
+    height: clamp(18.6875rem, 56.4vw, 41.2rem);
+    margin-bottom: clamp(2.0625rem, 30vw - 11.85rem, 4.625rem);
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items {
+    width: 66.3%;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: auto;
+    max-width: none;
+    height: 16.3rem;
+    column-gap: 1.56rem;
+    padding-top: 2.0625rem;
+    background-position: calc(100% + 11.4375rem) 100%, -4% 121%;
+    background-size: 27.3125rem, 16.25rem;
+    /*opacity: 1;
+    transform: translateX(0);*/
+    opacity: 0;
+    transform: translateX(0px);
+    transition: all 0s;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .index-offer__online-store__wrapper {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .links-online-store {
+    margin-top: -2.625rem;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  main .index-advantages {
+    max-width: 70.5rem;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper p {
+    padding: 0 2.625rem;
+  }
+  main .catalog-categories {
+    width: clamp(33.75rem, 100vw - 3.8125rem, 72.5rem);
+  }
+  main .catalog-categories .catalog-categories__category {
+    justify-content: center;
+    padding-left: 0;
+  }
+  main .index-aboutUs {
+    flex-direction: column;
+    width: clamp(45.9375rem, 100vw, 55rem);
+    padding-top: 80px;
+    padding-left: 0;
+  }
+  main .index-aboutUs aside {
+    width: 832px;
+    margin: 0 auto;
+    flex: none;
+  }
+  main .index-aboutUs aside h2 .line {
+    justify-content: center;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper {
+    flex: none;
+    margin-right: 0;
+    padding-top: 0;
+  }
+  main .index-aboutUs .index-aboutUs__more-details-reviews {
+    position: relative;
+    margin: 36px auto 0;
+    bottom: 0px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  main .index-offer {
+    width: auto;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper {
+    overflow: visible;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items {
+    padding-top: clamp(1.94rem, 20vw - 7.1rem, 5.9rem);
+    padding-bottom: clamp(2.1rem, 4vw, 3.3rem);
+    padding-left: clamp(1.875rem, 20vw - 10rem, 3.3rem);
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__info1 {
+    line-height: 1.4;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__info2 {
+    line-height: 1.3;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    width: 19rem;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy a {
+    width: clamp(8.1875rem, 34%, 14.5rem);
+    min-width: 8.1875rem;
+    height: clamp(2.3125rem, 5.5vw, 3.9375rem);
+    min-height: 2.3125rem;
+    font-size: clamp(0.75rem, 2vw, 1.125rem);
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .index-offer__swiper__pagination {
+    margin-top: 0.625rem;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: clamp(16.3rem, 33.875rem - 25.6vw, 19.75rem);
+    padding-top: 0.4rem;
+    background-position: calc(100% + 13.3125rem) 123%, -5% 121%;
+    background-size: 26.0625rem, 12rem 18.6875rem;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .links-online-store {
+    margin-top: 0;
+  }
+  main .index-advantages .index-advantages__block {
+    flex-direction: column;
+    width: 30.3125rem;
+    margin: 1.35rem auto 3rem;
+    row-gap: 1rem;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item {
+    display: flex;
+    text-align: left;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item:not(:first-child) .index-advantages__block__item__wrapper {
+    padding-top: 0.625rem;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item img {
+    margin: 0 1.0625rem 0 0;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper {
+    width: 79%;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper h4 {
+    margin: 0 0 0.4375rem;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper p {
+    padding: 0;
+    text-align: left;
+    line-height: 1.4;
+    letter-spacing: 0px;
+  }
+  main .index-catalog {
+    border-radius: clamp(1.875rem, 15vw - 3.75rem, 5.625rem);
+  }
+  main .index-catalog h2 {
+    line-height: 1.4;
+  }
+  main .index-catalog h2:last-of-type .line:last-child .wrapperForWord:first-child {
+    color: #73C167;
+  }
+  main .catalog-categories {
+    grid-template-columns: 1fr 1fr;
+    margin-top: clamp(1.3125rem, 20vw - 10rem, 3.8125rem);
+    margin-bottom: clamp(3.8125rem, 17.5625rem - 20vw, 6.875rem);
+  }
+  main .swiper-card {
+    width: clamp(320px, 97vw - 36px, 1160px);
+  }
+  main .allPageCard {
+    padding: 1.4375rem 0.8125rem 1.5rem 1.0625rem;
+    height: clamp(40.9375rem, 70vw - 2.5rem, 45.625rem);
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+    height: 92.5%;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
+    max-height: 293px;
+  }
+  main .allPageCard .allPageCard__raiting {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  main .allPageCard h4 {
+    font-size: clamp(1.125rem, 5vw - 1.9375rem, 1.5rem);
+  }
+  main .allPageCard p {
+    font-size: clamp(0.875rem, 5vw - 1.9375rem, 1rem);
+    line-height: 1.4;
+  }
+  main .allPageCard__buy {
+    flex-wrap: wrap;
+  }
+  main .allPageCard__buy span {
+    text-align: left;
+    width: 85%;
+  }
+  main .allPageCard__buy .allPageCard__buy__a {
+    margin: 0;
+  }
+  main .swiper-card__buy span {
+    margin-bottom: 0.3125rem;
+  }
+  main .index-aboutUs aside {
+    width: clamp(46.1875rem, 50vw, 52rem);
+  }
+  main .index-aboutUs aside p {
+    margin-bottom: clamp(2.4375rem, 6vw - 1.25rem, 2.875rem);
+  }
+  main .index-aboutUs .index-aboutUs__more-details-reviews {
+    margin-top: clamp(1.625rem, 10vw - 4.625rem, 2.25rem);
+  }
+}
+@media screen and (max-width: 735px) {
+  main .index-offer {
+    padding-bottom: clamp(3.75rem, 10vw, 4.875rem);
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__top {
+    width: clamp(6.125rem, 20vw - 1.6rem, 7.5rem);
+    height: 2.0625rem;
+    font-size: clamp(0.75rem, 3vw - 0.4rem, 1rem);
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__info1 {
+    line-height: 1.37;
+    margin: clamp(0.5rem, 20vw - 7rem, 0.875rem) 0;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__info2 {
+    font-size: clamp(0.875rem, 2.2vw, 1rem);
+    width: 17rem;
+    line-height: 1.4;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store {
+    height: clamp(15.4375rem, 60vw - 7rem, 19.75rem);
+    padding-top: 0;
+    background-position: calc(101% + 43px) -34%, -5% 121%;
+    background-size: 173px 134px, 134px 173px;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .links-online-store {
+    width: clamp(16rem, 80vw - 16.4rem, 20.4rem);
+  }
+  main .index-advantages {
+    padding-bottom: clamp(3.75rem, 20vw - 4.1875rem, 5rem);
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper p {
+    letter-spacing: 1.1px;
+  }
+  main .index-advantages .index-advantages__wrapper-links a {
+    width: clamp(16.25rem, 50vw - 2.37rem, 20rem);
+  }
+  main .index-catalog {
+    padding: 4.8125rem 0 4.75rem;
+  }
+  main .catalog-categories {
+    margin-top: clamp(1.3125rem, 5.875rem - 10vw, 2rem);
+    margin-bottom: clamp(3.8125rem, 40vw - 11.5rem, 6.875rem);
+  }
+  main .catalog-categories .catalog-categories__category {
+    height: clamp(5rem, 1vw + 4.625rem, 6.1875rem);
+    flex-direction: column;
+    row-gap: 0.125rem;
+  }
+  main .catalog-categories .catalog-categories__category img {
+    width: 2rem;
+    height: 2rem;
+  }
+  main .catalog-categories .catalog-categories__category .catalog-categories__category__wrapper p {
+    font-size: clamp(0.875rem, 3vw - 0.25rem, 1.125rem);
+    margin-left: 0;
+  }
+  main .catalog-categories .index-catalog__goToCatalog {
+    font-size: clamp(0.875rem, 3vw - 0.25rem, 1.125rem);
+  }
+  main .swiper-card {
+    margin: clamp(15px, 40vw - 237px, 57px) 0 0 1rem;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+    height: 91.6%;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
+    max-height: 315px;
+  }
+  main .index-aboutUs {
+    width: auto;
+    margin-bottom: 0px;
+    padding-top: clamp(3.25rem, 15vw - 1.875rem, 5rem);
+    padding-bottom: clamp(61px, 20vw - 74px, 73px);
+  }
+  main .index-aboutUs aside {
+    width: clamp(16.25rem, 110vw - 7.5rem, 46.1875rem);
+  }
+  main .index-aboutUs aside p {
+    line-height: 1.43;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide {
+    padding: clamp(1.875rem, 10vw - 1.8125rem, 2.1875rem) clamp(1.375rem, 15vw - 4.4375rem, 2.4375rem) 28px clamp(1.375rem, 15vw - 4.4375rem, 2.4375rem);
+    height: clamp(15.625rem, 50vw - 5.625rem, 17.3125rem);
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide h4 {
+    font-size: clamp(16px, 5vw - 12px, 24px);
+    margin-bottom: 6px;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide p {
+    font-size: clamp(12px, 5vw - 16px, 16px);
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review {
+    align-items: flex-start;
+    bottom: 12px;
+    width: 90%;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review .name-box .name {
+    line-height: 1.7;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review .name-box .date {
+    line-height: 1.3;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .index-aboutUs__wrapper-forswiper__swiper-reviews__pagination {
+    margin: clamp(14px, 13.5vw - 59px, 40px) auto 0;
+  }
+  main .index-aboutUs .index-aboutUs__more-details-reviews {
+    width: clamp(400px, 91vw - 3px, 664px);
+  }
+}
+@media screen and (max-width: 580px) {
+  main .index-offer .index-offer__container .index-offer__swiper {
+    margin-bottom: 1.5rem;
+    height: 31rem;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    border-radius: 16px;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items {
+    width: inherit;
+    height: 18.5rem;
+    margin-top: auto;
+    background: none;
+    background-color: #73C167;
+    padding-top: 1.0625rem;
+    padding-bottom: 1.75rem;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide .swiper-slide__items .swiper-slide__items__block-buy a {
+    width: 7.5rem;
+    min-width: 7.5rem;
+    height: 2.0625rem;
+    min-height: 2.0625rem;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    height: 37%;
+    left: 0px;
+    object-fit: cover;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store {
+    min-width: auto;
+    height: 22.55rem;
+    padding: 0 1.8125rem 0.5rem 1.8125rem;
+    background-position: calc(100% + 59px) -150px, -32px 225px;
+    background-size: 240px, 220px;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .index-offer__online-store__wrapper h3 {
+    letter-spacing: 0.5px;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .index-offer__online-store__wrapper p {
+    width: 16.5rem;
+  }
+  main .index-offer .index-offer__container .index-offer__online-store .links-online-store {
+    margin-top: 0;
+    width: 13.4rem;
+  }
+  main .index-advantages {
+    padding: 0 1.8125rem 3.75rem;
+  }
+  main .index-advantages .index-advantages__block {
+    width: auto;
+    margin: 1.375rem auto 1.375rem;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item img {
+    width: clamp(3.8125rem, 14vw, 5rem);
+    height: clamp(3.8125rem, 14vw, 5rem);
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item:not(:first-child) .index-advantages__block__item__wrapper {
+    padding-top: 3px;
+  }
+  main .index-advantages .index-advantages__block .index-advantages__block__item .index-advantages__block__item__wrapper p {
+    letter-spacing: 0px;
+  }
+  main .index-advantages .index-advantages__wrapper-links {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 9px;
+  }
+  main .index-advantages .index-advantages__wrapper-links a {
+    height: clamp(2.8125rem, 13vw, 3.9375rem);
+    border-radius: 0.25px;
+    font-size: clamp(0.875rem, 5vw - 0.6rem, 1.125rem);
+  }
+  main .index-catalog {
+    background: none;
+    position: relative;
+    padding-top: 0;
+  }
+  main .index-catalog h2:first-child {
+    display: none;
+  }
+  main .catalog-categories {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  main .catalog-categories .catalog-categories__category:not(:last-child) {
+    display: none;
+  }
+  main .catalog-categories .index-catalog__goToCatalog {
+    position: absolute;
+    bottom: 0.4375rem;
+    left: calc(39vw - 5.9375rem);
+    width: 16.25rem;
+    height: 2.8125rem;
+    border-radius: 4px;
+  }
+  main .swiper-card {
+    margin: 0.9375rem auto 0;
+  }
+  main .swiper-card .swiper-wrapper .swiper-slide {
+    border-radius: 8px;
+    background-color: #FFFFFF;
+  }
+  main .allPageCard {
+    height: clamp(21.625rem, 130vw - 5.875rem, 41.25rem);
+    padding: 1.0625rem 0 1.0625rem 1.0625rem;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+    height: 89%;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a {
+    justify-content: flex-start;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
+    height: clamp(8.1875rem, 80vw - 179px, 285px);
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination {
+    width: 5rem;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .swiper-pagination-bullet {
+    width: 0.8125rem;
+  }
+  main .allPageCard h4 {
+    font-size: clamp(0.75rem, 3vw, 1.125rem);
+    margin: 0.625rem 0 0 0;
+    line-height: 1.3;
+  }
+  main .swiper-card__buy {
+    justify-content: flex-start;
+  }
+  main .swiper-card__buy span {
+    font-size: clamp(1.125rem, 4vw, 1.5rem);
+    margin-bottom: 0.9375rem;
+  }
+  main .swiper-card__buy .swiper-card__buy__a {
+    margin-right: 9px;
+    color: transparent;
+    user-select: none;
+  }
+  main .swiper-card__buy .swiper-card__buy__a .swiper-card__buy__a__img {
+    top: 0.625rem;
+    left: 0.5rem;
+  }
+  main .swiper-card__buy .like {
+    padding-left: 0.625rem;
+  }
+  main .swiper-card__buy .allPageCard__buy__a,
+  main .swiper-card__buy .like {
+    width: 2.1875rem;
+    height: 2.1875rem;
+  }
+  main .index-aboutUs aside p {
+    margin-bottom: clamp(1.4375rem, 10vw - 0.75rem, 2.4375rem);
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide {
+    height: clamp(15.625rem, 30rem - 40vw, 19.375rem);
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review .name-box .name {
+    font-size: clamp(14px, 3vw, 16px);
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review a {
+    width: clamp(6.4375rem, 10vw, 10rem);
+    padding-top: 0;
+    font-size: 9px;
+  }
+  main .index-aboutUs .index-aboutUs__more-details-reviews {
+    margin-top: clamp(0.625rem, 10vw - 2rem, 1.625rem);
+  }
+  main .index-aboutUs .index-aboutUs__more-details-reviews a {
+    font-size: clamp(0.875rem, 2vw + 0.4375rem, 1.125rem);
+  }
+}
+@media screen and (max-width: 450px) {
+  main .stars {
+    width: 5rem;
+    height: 1rem;
+    margin: 0;
+  }
+  main .index-offer {
+    padding-top: 1.5rem;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .index-offer__swiper__pagination {
+    margin-top: 1px;
+  }
+  main .index-offer .index-offer__container .index-offer__swiper .index-offer__swiper__pagination .swiper-pagination-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+    height: 86.1%;
+  }
+  main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination {
+    margin: 0 0.875rem;
+  }
+  main .allPageCard .allPageCard__raiting {
+    margin: 0;
+  }
+  main .allPageCard p {
+    display: none;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide {
+    padding: 31px 13px 30px 22px;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide h4 {
+    padding-right: 85px;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide p {
+    padding-right: 3px;
+    line-height: 1.4;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .swiper-wrapper .swiper-slide .full-review {
+    bottom: 10px;
+    width: 88%;
+  }
+  main .index-aboutUs .index-aboutUs__wrapper-forswiper .index-aboutUs__wrapper-forswiper__swiper-reviews .index-aboutUs__wrapper-forswiper__swiper-reviews__pagination span {
+    width: 8px;
+    height: 8px;
+  }
+  main .index-aboutUs .index-aboutUs__more-details-reviews {
+    flex-direction: column;
+    width: 260px;
+    height: 99px;
+    row-gap: 9px;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
+    height: 78.1%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
