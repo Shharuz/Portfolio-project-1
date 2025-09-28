@@ -1,3 +1,7 @@
+import '../style/normalize.css';
+import '../style/swiper-bundle.min.css';
+import '../style/main.scss';
+import '../style/catalogCategories.scss';
 import './allScripts/animateHeaderSecondaryNav.js';
 //animation of the first visible elements/////////////////////////////////////////////////
 const catalogCategories = document.querySelectorAll('.forCategoryAllPages p');
@@ -38,7 +42,7 @@ window.addEventListener("load", e => import( /* webpackChunkName: "filteringCard
 const categorys = document.querySelectorAll('.forCategoryAllPages p'); //all categories
 categorys.forEach(category => {
     category.addEventListener('click', e => import( /* webpackChunkName: "FilterCategorys" */ './allScripts/FilterCategorys.js').then(module => {
-        console.log(e)
+        
         const filterCard = module.filterCard;
         filterCard(e)
     }))
@@ -57,8 +61,12 @@ wrapperArrowSvgManufactWeight.forEach( (wrapperSvg) =>{//starts hideFilter() on 
       
     }))
 } );
-
-
+//less than 1400 / modalFilter.js
+const openFilter = document.querySelector(".bth-filter");
+ openFilter.addEventListener('click', e => import( /* webpackChunkName: "modalFilter" */ './allScripts/modalFilter.js').then(module => {
+       const openFilterModal = module.openFilterModal;
+        openFilterModal()
+    }))
 
 import './allScripts/SWIPERcatalogCategories.js';
 import './allScripts/buttonFormConsentCheck.js';

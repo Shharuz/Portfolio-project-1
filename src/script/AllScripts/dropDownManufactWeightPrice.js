@@ -1,9 +1,9 @@
 function hideFilter(e) {//rotate Svg 
     
-    if(e.target.childNodes[0].classList.contains('rotateSvg')){
-        e.target.childNodes[0].classList.remove('rotateSvg')
+    if(e.target.childNodes[1].classList.contains('rotateSvg')){
+        e.target.childNodes[1].classList.remove('rotateSvg')
     }else{
-        e.target.childNodes[0].classList.add('rotateSvg')
+        e.target.childNodes[1].classList.add('rotateSvg')
     };
 
 

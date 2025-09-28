@@ -4,7 +4,7 @@ const openFilter = document.querySelector(".bth-filter");
 const filter = document.querySelector(".filter");
 const closeFilter = document.querySelector(".filter__close");
 
-function openFilterModal() {
+export function openFilterModal() {
         filter.classList.add('visible');
 };
 
@@ -18,6 +18,6 @@ function closeFilterModal(e) {
 
 
 
-openFilter.addEventListener("click", openFilterModal);  //open filter by clicking on element with class .bth-filter
+  //open filter by clicking on element with class .bth-filter
 closeFilter.addEventListener("click", closeFilterModal);//close filter by clicking on element with class .filter__close
 filter.addEventListener("click", closeFilterModal);     //close the filter by clicking on any place on the screen except the filter
