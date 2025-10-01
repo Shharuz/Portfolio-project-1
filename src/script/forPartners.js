@@ -1,3 +1,7 @@
+import '../style/normalize.css';
+import '../style/swiper-bundle.min.css';
+import '../style/main.scss';
+import '../style/forPartners.scss';
 import './allScripts/animateHeaderSecondaryNav.js';
 import './allScripts/animation.js';
 //////////////////////////secondaryNavArrowLinks580.js//////////////////////////
