@@ -1776,7 +1776,7 @@ main {
   /*&&&&&&&&&&&      catalog            &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      catalog            &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      catalogCategories            &&&&&&&&&&&&&&*/
-  /*&&&&&&&&&&&      catalogCategories            &&&&&&&&&&&&&&*/
+  /*&&&&&&&&&&&                &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      contacts            &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      contacts            &&&&&&&&&&&&&&*/
   /*&&&&&&&&&&&      forPartners            &&&&&&&&&&&&&&*/
@@ -3078,6 +3078,9 @@ main .index-aboutUs aside h2 {
   margin-bottom: auto;
   line-height: 1.4;
 }
+main .index-aboutUs aside h2 .line {
+  justify-content: start;
+}
 main .index-aboutUs aside p {
   margin: 14px 0 46px;
   line-height: 1.38;
@@ -4169,41 +4172,6 @@ main .blog,
 main .articleOrVideo,
 main .placingAnOrder {
   padding-bottom: clamp(80px, 6vw - 15px, 100px);
-}
-main .contacts .container,
-main .forPartners .container,
-main .directory .container,
-main .reviews .container,
-main .howToBuy .container,
-main .questions .container,
-main .blog .container,
-main .articleOrVideo .container,
-main .placingAnOrder .container {
-  /*
-  @-webkit-keyframes appearH2 {
-      to {
-          -webkit-opacity: 1;
-      }
-  }
-
-  @-moz-keyframes appearH2 {
-      to {
-          -moz-opacity: 1;
-      }
-  }
-
-  @-o-keyframes appearH2 {
-      to {
-          -o-opacity: 1;
-      }
-  }
-
-  @-ms-keyframes appearH2 {
-      to {
-          -ms-opacity: 1;
-      }
-  }
-  */
 }
 @keyframes appearH2 {
   to {
@@ -5783,6 +5751,11 @@ main .articleOrVideo .container h2 {
   grid-row: 1;
   font-size: clamp(40px, 2vw + 10px, 48px);
   animation-duration: 2.5s;
+  justify-items: start;
+}
+main .articleOrVideo .container h2 .line {
+  justify-content: start;
+  column-gap: 2%;
 }
 @keyframes appearImgArticleOrVideo {
   to {
@@ -7498,8 +7471,8 @@ footer .footerVisible {
     margin: 0 auto;
     flex: none;
   }
-  main .index-aboutUs aside h2 {
-    text-align: center;
+  main .index-aboutUs aside h2 .line {
+    justify-content: center;
   }
   main .index-aboutUs .index-aboutUs__wrapper-forswiper {
     flex: none;

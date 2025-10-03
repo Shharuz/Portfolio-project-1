@@ -1,3 +1,7 @@
+import '../style/normalize.css';
+//import '../style/swiper-bundle.min.css';
+import '../style/main.scss';
+import '../style/aboutUs.scss';
 //////////////////////////secondaryNavArrowLinks580.js//////////////////////////
 if (window.innerWidth <= 580) {
     document.addEventListener("DOMContentLoaded", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {

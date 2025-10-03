@@ -5,17 +5,22 @@ export const bodyforSmoothScroll = document.querySelector('body');
 
 export const forSmoothScrollWrapper = document.querySelector('.forSmoothScroll__wrapper');
 //let heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+
 let heightForScroll;
 export function alignBody() { // script/radioPerson  /  script/categoriesRadio / script/questions
-    heightForScroll = parseInt(window.getComputedStyle(forSmoothScrollWrapper).getPropertyValue('height'));
+    /*heightForScroll = forSmoothScrollWrapper.getBoundingClientRect().height;
+    bodyforSmoothScroll.setAttribute('style', `height:${heightForScroll.toFixed(2)}px`);*/
+    heightForScroll = forSmoothScrollWrapper.offsetHeight;
+    //console.log(heightForScroll)
     bodyforSmoothScroll.setAttribute('style', `height:${heightForScroll}px`);
+
 };
 
 if (document.querySelector('.forSmoothScroll')) {
 
 
     //gives the height of the body so that scrolling occurs
-    alignBody();
+    window.addEventListener('load', alignBody);
 
     window.addEventListener('resize', alignBody);
 
@@ -58,7 +63,7 @@ if (document.querySelector('.forSmoothScroll')) {
     getWindowHeight();
     window.addEventListener('resize', getWindowHeight);
 
-    
+
     function appearElement(arg) {
         //console.log(scrollElements)
         for (let i = 0; i < scrollElements.length; i++) {
@@ -118,6 +123,7 @@ if (document.querySelector('.forSmoothScroll')) {
 
 
 }
+
 
 
 //split txt
@@ -310,3 +316,5 @@ if (h2 != null) {
     //console.log(h2Char);
 
 }
+
+
