@@ -1,0 +1,1286 @@
+@charset "UTF-8";
+main .forCategoryAllPages {
+  display: flex;
+}
+main .forCategoryAllPages p {
+  display: flex;
+  border: 1px solid #BBBBBB;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-color: #FFFFFF;
+  padding: 14px 13.5px;
+  font-weight: 500;
+  font-size: clamp(14px, 2vw - 18px, 20px);
+  color: #0D0D0D;
+  letter-spacing: 0.5px;
+}
+main .forCategoryAllPages p span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #D9D9D9;
+  color: #767676;
+  margin-left: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 2px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+main .forCategoryAllPages p:hover {
+  cursor: pointer;
+}
+main .forCategoryAllPages .highlighted {
+  background-color: #73C167;
+  border: 1px solid #73C167;
+  transition: all 0.5s ease;
+  color: #FFFFFF;
+  transition: all 0.5s ease;
+}
+main .forCategoryAllPages .highlighted span {
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+main .allPageCard__buy {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+main .allPageCard__buy span {
+  font-weight: 500;
+  font-size: 24px;
+  color: #73C167;
+}
+main .allPageCard__buy .swiper-card__buy__a,
+main .allPageCard__buy .allPageCard__buy__a {
+  width: 160px;
+  height: 35px;
+  position: relative;
+  padding-left: 1.8125rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+main .allPageCard__buy .swiper-card__buy__a .swiper-card__buy__a__img,
+main .allPageCard__buy .allPageCard__buy__a .swiper-card__buy__a__img {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+}
+main .allPageCard__buy button {
+  width: 70px;
+  height: 35px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding-left: 27px;
+  border: 1px solid #73C167;
+}
+main .allPageCard__buy button img {
+  width: 13px;
+  height: 13px;
+}
+main .allPageCard__buy button:hover {
+  background-color: rgba(115, 193, 103, 0.2);
+  transition: all 0.5s ease;
+}
+main .allPageCard__buy button:active {
+  background-color: rgba(115, 193, 103, 0.4);
+  transition: all 0.5s ease;
+}
+main .stars {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 20px;
+  margin-left: 2px;
+}
+main .stars .star {
+  position: relative;
+  width: 20px;
+}
+main .stars .star:before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1;
+  font-size: 20px;
+}
+main .stars .fill:before {
+  color: #73C167;
+}
+main .stars .empty:before {
+  color: #CCCCCC;
+}
+main .stars .half:before {
+  /*background-image: linear-gradient(90deg, vars.$accent 50%, vars.$star-off-color 50%);*/
+  background-image: -webkit-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  background-image: -moz-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  background-image: -o-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  background-image: -ms-linear-gradient(0deg, #73C167 50%, #CCCCCC 50%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 22px;
+  top: -1px;
+}
+@keyframes appearH2 {
+  to {
+    opacity: 1;
+  }
+}
+main .account .container h2 {
+  line-height: 1.39;
+  opacity: 0;
+  animation-name: appearH2;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+main .account .container h2 .wrapperSymbol {
+  transition: all 0.8s cubic-bezier(0, 0, 0, 0.9);
+}
+main .account .container .account__categories {
+  gap: 4px;
+  margin: 24px 0 clamp(24px, 5vw - 56px, 40px);
+  width: clamp(728px, 95vw - 610px, 1208px);
+}
+@keyframes appearAccountCategories {
+  to {
+    transform: translateY(0px);
+  }
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main .account .container .account__categories p {
+  font-size: 20px;
+}
+main .account .container .account__categories p:nth-child(n+1) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 0.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+2) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 0.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+3) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 0.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+4) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 1.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+5) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 1.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+6) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 1.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+7) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 2.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+8) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 2.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+9) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 2.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+10) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+11) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 3.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+12) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 3.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+13) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 3.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+14) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 4.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+15) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 4.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+16) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 4.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+17) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 5.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+18) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 5.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+19) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 5.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+20) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+21) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 6.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+22) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 6.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+23) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 6.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+24) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 7.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+25) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 7.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+26) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 7.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+27) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 8.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+28) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 8.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+29) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 8.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+30) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+31) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 9.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+32) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 9.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+33) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 9.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+34) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 10.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+35) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 10.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+36) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 10.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+37) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 11.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+38) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 11.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+39) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 11.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+40) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 12s forwards;
+}
+main .account .container .account__categories p:nth-child(n+41) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 12.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+42) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 12.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+43) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 12.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+44) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 13.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+45) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 13.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+46) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 13.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+47) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 14.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+48) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 14.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+49) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 14.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+50) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 15s forwards;
+}
+main .account .container .account__categories p:nth-child(n+51) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 15.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+52) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 15.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+53) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 15.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+54) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 16.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+55) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 16.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+56) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 16.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+57) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 17.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+58) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 17.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+59) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 17.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+60) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 18s forwards;
+}
+main .account .container .account__categories p:nth-child(n+61) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 18.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+62) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 18.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+63) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 18.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+64) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 19.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+65) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 19.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+66) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 19.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+67) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 20.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+68) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 20.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+69) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 20.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+70) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 21s forwards;
+}
+main .account .container .account__categories p:nth-child(n+71) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 21.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+72) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 21.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+73) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 21.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+74) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 22.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+75) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 22.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+76) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 22.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+77) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 23.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+78) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 23.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+79) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 23.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+80) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 24s forwards;
+}
+main .account .container .account__categories p:nth-child(n+81) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 24.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+82) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 24.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+83) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 24.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+84) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 25.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+85) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 25.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+86) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 25.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+87) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 26.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+88) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 26.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+89) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 26.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+90) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 27s forwards;
+}
+main .account .container .account__categories p:nth-child(n+91) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 27.3s forwards;
+}
+main .account .container .account__categories p:nth-child(n+92) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 27.6s forwards;
+}
+main .account .container .account__categories p:nth-child(n+93) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 27.9s forwards;
+}
+main .account .container .account__categories p:nth-child(n+94) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 28.2s forwards;
+}
+main .account .container .account__categories p:nth-child(n+95) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 28.5s forwards;
+}
+main .account .container .account__categories p:nth-child(n+96) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 28.8s forwards;
+}
+main .account .container .account__categories p:nth-child(n+97) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 29.1s forwards;
+}
+main .account .container .account__categories p:nth-child(n+98) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 29.4s forwards;
+}
+main .account .container .account__categories p:nth-child(n+99) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 29.7s forwards;
+}
+main .account .container .account__categories p:nth-child(n+100) {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appearAccountCategories 0.5s cubic-bezier(0, 0, 0, 0.9) 30s forwards;
+}
+main .account .container form {
+  flex-flow: row wrap;
+  padding: 0;
+  gap: 40px 20px;
+  background: none;
+  max-width: 1450px;
+  margin-bottom: clamp(38px, 20vw - 284px, 100px);
+}
+@keyframes appearAccount__form__content__block {
+  to {
+    transform: translateY(0px);
+  }
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main .account .container form .account__form__content__block {
+  flex: 1 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 42px 0;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: appearAccount__form__content__block 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+}
+main .account .container form .account__form__content__block:first-child {
+  height: 510px;
+}
+@keyframes appearAccount__form__button {
+  to {
+    transform: scale(1);
+  }
+}
+main .account .container form button {
+  margin: 0 auto;
+  transform: scale(0);
+  animation: appearAccount__form__button 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+}
+main .account .container .account__content {
+  width: clamp(82.7%, 1400px - 17vw, 100%);
+  padding: 41px 0;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+}
+main .account .container .account__content .account__content__change-content {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 37px;
+  width: 1047px;
+  margin: 0 auto;
+}
+main .account .container .account__content .account__content__change-content .account__content__change-content__item {
+  display: flex;
+  column-gap: 16px;
+  cursor: pointer;
+}
+main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input + label {
+  font-size: 16px;
+  height: 21px;
+}
+main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input + label::before {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input:checked + label::after {
+  background-size: 15px 15px;
+  left: 3px;
+  top: 1px;
+  font-size: 10px;
+  height: 20px;
+  width: 20px;
+}
+main .account .container .account__content .account__content__change-content .account__content__change-content__item svg {
+  flex-shrink: 0;
+}
+main .account .container .account__content .account__content__product {
+  margin: 0 50px;
+  padding: 39px 0;
+  border-bottom: 1px solid #EBEBEB;
+  /*&:first-child{
+      padding: 16px 0;
+      border: 1px solid red;
+  } 
+  &:first-of-type{
+      padding: 16px 0;
+      border: 1px solid red;
+  }  */
+}
+main .account .container .account__content .account__content__product:nth-child(-n+2) {
+  padding: 16px 0;
+}
+main .account .container .account__content .account__content__product:nth-child(-n+2) {
+  border-top: 1px solid #EBEBEB;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper {
+  display: grid;
+  grid-template-columns: 60px 170px 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 1047px;
+  width: 100%;
+  margin: 0 auto;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper input {
+  margin-left: 10px;
+  grid-row: 1/span 2;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper img {
+  grid-row: 1/span 2;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: end;
+  margin-bottom: 3px;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  top: -22px;
+  left: 15px;
+  grid-row: 1/span 2;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting p {
+  font-size: 12px;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+  margin-top: 8px;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+  grid-column: 3;
+  grid-row: 2;
+  margin-top: 8px;
+  justify-content: flex-start;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy span {
+  font-size: 20px;
+  margin-right: 34px;
+  letter-spacing: 0.4px;
+}
+main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #73C167;
+  border-radius: 4px;
+}
+main .account .container .account__favorites {
+  margin-bottom: clamp(80px, 6vw - 15px, 100px);
+}
+main .account .container .account__favorites .account__content__change-content .account__content__change-content__item:first-child {
+  margin-right: 65px;
+}
+main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a {
+  width: 160px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a img {
+  margin-right: 10px;
+}
+main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
+  width: 70px;
+  height: 35px;
+  margin-left: 7px;
+}
+main .account .container .account__basket {
+  margin-bottom: 0px;
+}
+main .account .container .account__basket .account__content__change-content {
+  width: 599px;
+}
+main .account .container .account__total {
+  width: 82.7%;
+  margin-top: 38px;
+  padding: 42px 179.5px;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 0.4fr 0.5fr 1fr;
+  grid-template-rows: 72px 1fr;
+  column-gap: 38px;
+  border-radius: 24px;
+}
+main .account .container .account__total h5:last-of-type {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+main .account .container .account__total .price {
+  font-weight: 500;
+  font-size: 24px;
+  color: #73C167;
+}
+main .account .container .account__total .assembly-time {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  font-weight: 500;
+  font-size: 24px;
+  color: #0D0D0D;
+}
+main .account .container .account__total p {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  font-size: 14px;
+}
+main .account .container .account__place-an-order {
+  width: 320px;
+  height: 62px;
+  margin: 39px 0 52px;
+}
+main .account .container .hide {
+  display: none;
+}
+
+@media screen and (min-width: 1401px) {
+  main .account .container .account__basket {
+    margin-bottom: 0px;
+  }
+  main .account .container .account__basket .account__content__product {
+    padding: 21px 0 17px;
+  }
+  main .account .container .account__basket .account__content__product:nth-child(-n+2) {
+    padding-top: 0;
+    padding-bottom: 16px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper {
+    position: relative;
+    grid-template-columns: 66px 132px 1fr;
+    grid-template-rows: repeat(2, 55px);
+    max-width: 950px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .input-custom-without-label {
+    margin-left: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper img {
+    width: 89px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 i {
+    font-style: normal;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    position: initial;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting p {
+    font-size: 14px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    align-items: center;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy * {
+    flex-shrink: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price {
+    font-size: 16px;
+    letter-spacing: 0px;
+    margin-right: 12px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price-relative-input {
+    font-size: 24px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter {
+    margin-left: 43px;
+    margin-right: 11px;
+    flex-shrink: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter .counter-value {
+    margin: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like,
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 8px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like img {
+    width: auto;
+    height: auto;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .add-info-price span {
+    margin-left: 11px;
+    font-size: 18px;
+    color: #0D0D0D;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .disc {
+    margin-left: 52px;
+    margin-right: 22px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .additional-info-counter {
+    font-size: 12px;
+    position: relative;
+    bottom: 0px;
+    left: 497px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  main .account .container form {
+    flex-flow: column nowrap;
+    gap: 0px;
+    margin-bottom: clamp(38px, 400px - 26vw, 80px);
+  }
+  main .account .container form .account__form__content__block {
+    padding: 42px 104px;
+  }
+  main .account .container form .account__form__content__block:last-of-type {
+    margin: 24px 0 24px;
+  }
+  main .account .container .account__favorites .account__content__change-content {
+    width: 90.5%;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 {
+    margin-bottom: 6px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper h4 i {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+    display: flex;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .price-relative-input {
+    display: block;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter {
+    margin-right: 0;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter .counter-value {
+    margin: 0;
+    width: 30px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like,
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .trash {
+    width: 40px;
+    height: 40px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 8px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .like img {
+    width: auto;
+    height: auto;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .add-info-price {
+    display: none;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .additional-info-counter {
+    display: none;
+  }
+  main .account .container .account__total {
+    display: none;
+  }
+  main .account .container .account__place-an-order {
+    margin: 24px 0 80px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  main .allPageCard__buy {
+    flex-wrap: wrap;
+  }
+  main .allPageCard__buy span {
+    text-align: left;
+    width: 85%;
+  }
+  main .allPageCard__buy .allPageCard__buy__a {
+    margin: 0;
+  }
+  main .account {
+    padding-bottom: 80px;
+  }
+  main .account .container form {
+    margin-bottom: 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    width: 574px;
+    grid-template-columns: 60px 170px 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input {
+    grid-row: 1/span 3;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper img {
+    grid-row: 1/span 3;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: center;
+    justify-self: left;
+    top: 0;
+    left: 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    grid-column: 3;
+    grid-row: 3;
+    flex-wrap: nowrap;
+    margin-top: 1px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy span {
+    width: auto;
+  }
+  main .account .container .account__favorites {
+    margin-bottom: 0;
+  }
+  main .account .container .account__favorites .account__content__change-content {
+    display: grid;
+    grid-template-columns: 1.09fr 1fr;
+    width: 576px;
+    row-gap: 23px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper {
+    width: 566px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    top: -6px;
+  }
+  main .account .container .account__place-an-order {
+    margin: 24px 0 0 0;
+  }
+}
+@media screen and (max-width: 790px) {
+  main .account .container {
+    width: 100%;
+  }
+  main .account .container .account__categories {
+    width: 100%;
+    padding: 0 30.5px;
+  }
+}
+@media screen and (max-width: 735px) {
+  main .account .container form .account__form__content__block {
+    width: 100%;
+    padding: 42px 0;
+  }
+  main .account .container form .account__form__content__block:last-of-type {
+    margin: clamp(16px, 15vw - 84px, 24px) 0 24px;
+  }
+  main .account .container .account__content .account__content__change-content .account__content__change-content__item:first-child .input-label-custom__input + label {
+    font-size: 14px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    grid-template-columns: clamp(37px, 1vw - 1px, 60px) 170px 1fr;
+    grid-template-rows: 1fr 0.8fr 1fr;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input {
+    margin-left: clamp(-12px, -200px + 29vw, 10px);
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    font-size: clamp(20px, 10vw - 49px, 24px);
+    margin-bottom: 10px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting {
+    top: -6px;
+  }
+  main .account .container .account__favorites {
+    margin-bottom: 0;
+  }
+  main .account .container .account__favorites .account__content__change-content {
+    width: 87%;
+    row-gap: 28px;
+  }
+  main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a {
+    width: clamp(128px, 30vw - 60px, 160px);
+  }
+  main .account .container .account__favorites .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy a img {
+    display: none;
+  }
+  main .account .container .account__basket {
+    margin-bottom: 0;
+  }
+  main .account .container .account__basket .account__content__change-content {
+    width: clamp(514px, 83vw - 9px, 599px);
+  }
+}
+@media screen and (max-width: 580px) {
+  main .account {
+    padding-bottom: clamp(60px, 15vw - 7px, 80px);
+  }
+  main .account .container h2 {
+    line-height: 1.29;
+  }
+  main .account .container .account__categories {
+    flex-direction: column;
+  }
+  main .account .container .account__categories p {
+    font-size: clamp(16px, 4vw - 3px, 20px);
+    padding: clamp(9px, 3vw - 3px, 14px) 13.5px;
+    line-height: 1.29;
+  }
+  main .account .container form .account__form__content__block .form__item label {
+    line-height: 1.3;
+  }
+  main .account .container .account__content .account__content__change-content {
+    display: block;
+    width: 82%;
+  }
+  main .account .container .account__content .account__content__change-content .account__content__change-content__item {
+    padding-left: clamp(0px, 50vw - 169px, 120px);
+  }
+  main .account .container .account__content .account__content__change-content .account__content__change-content__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  main .account .container .account__content .account__content__product {
+    margin: 0 clamp(30px, 20vw - 66px, 50px);
+  }
+  main .account .container .account__content .account__content__product:nth-child(-n+2) {
+    padding: 39px 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    grid-template-columns: 37px clamp(145px, 30vw - 4px, 170px) 1fr;
+    grid-template-rows: 0.6fr 0.6fr 0.6fr;
+    width: 100%;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input {
+    margin-left: 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    line-height: 1.3;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting .stars {
+    width: 100px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    flex-wrap: wrap;
+    min-width: 220px;
+    margin-top: 6px;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy span {
+    width: 70%;
+    margin-bottom: 5px;
+  }
+  main .account .container .account__place-an-order {
+    width: clamp(260px, 60vw - 28px, 320px);
+    height: clamp(45px, 15vw - 24px, 63px);
+    font-size: clamp(14px, 5vw - 10px, 18px);
+  }
+}
+@media screen and (max-width: 450px) {
+  main {
+    /* .radio-category {
+        label {
+            height: 40px;
+        }
+    }*/
+  }
+  main .stars {
+    width: 5rem;
+    height: 1rem;
+    margin: 0;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper {
+    display: block;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper input,
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4,
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting,
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    margin-left: auto;
+    margin-right: auto;
+    width: min-content;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper img {
+    margin: 27px auto;
+  }
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4 {
+    margin-bottom: 13px;
+  }
+  main .account .container .account__basket .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy .counter .counter-value {
+    width: 30px;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .account .container .account__content .account__content__product .account__content__product__wrapper h4,
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .allPageCard__raiting,
+  main .account .container .account__content .account__content__product .account__content__product__wrapper .account__content__product__wrapper__buy {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/*# sourceMappingURL=account.css.map */

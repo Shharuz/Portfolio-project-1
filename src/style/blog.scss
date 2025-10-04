@@ -1,0 +1,273 @@
+@use 'vars';
+
+main{
+	.forCategoryAllPages {
+        display: flex;
+
+        p {
+            display: flex;
+            border: 1px solid vars.$border-color;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            //height: 59px;
+            background-color: vars.$title-light;
+            padding: 14px 13.5px;
+            font-weight: 500;
+            font-size: clamp(14px, 2vw - 18px, 20px);
+            color: vars.$title;
+            letter-spacing: 0.5px;
+            //min-width: max-content;
+
+            span {
+                display: inline-block;
+                width: 22px;
+                height: 22px;
+                border: 1px solid vars.$text-light;
+                color: vars.$text;
+                margin-left: 16px;
+                font-weight: 400;
+                font-size: 12px;
+                text-align: center;
+                padding-top: 2px;
+                flex-shrink: 0;
+                pointer-events: none;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .highlighted {
+            background-color: vars.$accent;
+            border: 1px solid vars.$accent;
+            transition: vars.$main__transition;
+            color: vars.$title-light;
+            transition: vars.$main__transition;
+
+            span {
+                border: 1px solid vars.$title-light;
+                color: vars.$title-light;
+
+            }
+        }
+    }
+    .blog-article-min {
+        max-width: 406px;
+
+        a {
+            text-transform: none;
+            padding-top: 0;
+            justify-content: flex-start;
+        }
+
+        .linkToCategoryBlog {
+            width: fit-content;
+            height: 30px;
+            margin-top: 8px;
+            padding: 3px 20px;
+            font-weight: 400;
+            font-size: 12px;
+            color: vars.$color_card_a;
+            background-color: vars.$bg_card_span;
+            border: 1px solid vars.$text;
+            border-radius: 40px;
+            line-height: 2;
+        }
+
+        h5 {
+            margin: 10px 0 6px;
+            //line-height: 1.25;
+            line-height: 1.23;
+
+            a {
+                font-weight: 500;
+                font-size: 20px;
+                text-align: left;
+            }
+
+        }
+
+        p {
+            color: vars.$color_card_a;
+        }
+
+    }
+    .blog {
+        .container {
+            row-gap: clamp(24px, 5vw - 56px, 40px);
+
+            h2 {}
+
+            .blog__categories {
+                width: clamp(59.5%, 1100px - 6vw, 86%);
+                gap: 4px;
+
+                @keyframes appearBlogcategories {
+
+                    to {
+
+                        transform: translateY(0px);
+                    }
+
+                    0% {
+                        opacity: 0;
+                    }
+
+                    25% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                p {
+                    font-size: 20px;
+
+                    @for $i from 1 through 100 {
+                        &:nth-child(n + #{$i}) {
+                            opacity: 0;
+                            transform: translateY(30px);
+                            animation: appearBlogcategories 0.3s cubic-bezier(0, 0, 0, 0.9) #{$i * 0.2}s forwards;
+                        }
+                    }
+                }
+            }
+
+            .blog__reviews {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: 20px;
+                row-gap: 40px;
+
+                .blog-article-min {
+                    opacity: 0;
+                    transform: translateY(100px);
+                }
+            }
+
+            .hide {
+                display: none;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1401px) {
+	main{}
+}
+@media screen and (max-width: 1820px) {
+	main{}
+}
+@media screen and (max-width: 1400px) {
+	main{
+		.blog {
+            .container {
+                .blog__reviews {
+                    grid-template-columns: repeat(3, 1fr);
+                    //padding: 0 3.5px; //потому что дизайнер
+                }
+            }
+        }
+	}
+}
+@media screen and (max-width: 1380px) {
+	main{}
+}
+@media screen and (max-width: 1100px) {
+	main{
+		.blog {
+            .container {
+                .blog__categories {
+                    width: clamp(86%, 1000px - 5vw, 91%);
+
+                    p {
+                        font-size: clamp(14px, 2vw - 2px, 20px);
+                        /*span{
+                            pointer-events: none;
+                        }*/
+                    }
+                }
+
+                .blog__reviews {
+                    grid-template-columns: repeat(2, 1fr);
+                    row-gap: clamp(20px, 7vw - 37px, 40px);
+
+                }
+            }
+        }
+	}
+}
+@media screen and (max-width: 800px) {
+	main{}
+}
+@media screen and (max-width: 790px) {
+	main{}
+}
+@media screen and (max-width: 735px) {
+	main{
+		.blog-article-min {
+            h5 {
+                margin: 10px 0 9px;
+            }
+
+        }
+        .blog {
+            .container {
+                .blog__categories {
+                    justify-content: center;
+                }
+
+                .blog__reviews {
+                    .blog-article-min {
+                        h5 {
+                            a {
+                                font-size: clamp(18px, 4vw - 9px, 20px);
+                            }
+                        }
+
+                        p {
+                            font-size: clamp(14px, 3vw - 6px, 16px);
+                        }
+                    }
+                }
+            }
+        }
+
+	}
+}
+@media screen and (max-width: 590px) {
+	main{}
+}
+@media screen and (max-width: 580px) {
+	main{
+		 .blog {
+            .container {
+                row-gap: clamp(16px, 5vw - 5px, 24px);
+
+                h2 {
+                    line-height: 1.32
+                }
+
+                .blog__categories {
+                    flex-direction: column; //remove for PP
+                    width: 100%; //remove for PP
+                }
+
+                .blog__reviews {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+	}
+}
+@media screen and (max-width: 450px) {
+	main{}
+}
+@media screen and (max-width: 320px) {
+	main{}
+}

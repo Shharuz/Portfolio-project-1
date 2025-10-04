@@ -1,3 +1,7 @@
+import '../style/normalize.css';
+import '../style/swiper-bundle.min.css';
+import '../style/main.scss';
+import '../style/howToBuy.scss';
 import './allScripts/animateHeaderSecondaryNav.js';
 //////////////////////////secondaryNavArrowLinks580.js//////////////////////////
 if (window.innerWidth <= 580) {
