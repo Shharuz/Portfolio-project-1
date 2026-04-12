@@ -66,25 +66,27 @@ main .forCategoryAllPages .highlighted span {
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
 }
+main .howToBuy {
+  /*p {
+          line-height: 1.4;
+          font-size: 16px;
+      }
+
+      & > p {
+          clip-path: polygon(48% 45%, 55% 45%, 55% 52%, 49% 52%);
+          animation: appearhowToBuyTxt 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+      }*/
+}
 main .howToBuy .container {
   max-width: 1038px;
-  /*p {
-      line-height: 1.4;
-      font-size: 16px;
-  }
-
-  & > p {
-      clip-path: polygon(48% 45%, 55% 45%, 55% 52%, 49% 52%);
-      animation: appearhowToBuyTxt 1s cubic-bezier(0, 0, 0, 0.9) forwards;
-  }*/
 }
-main .howToBuy .container p {
+main .howToBuy p {
   line-height: 1.4;
   font-size: 16px;
   clip-path: polygon(48% 45%, 55% 45%, 55% 52%, 49% 52%);
   animation: appearhowToBuyTxt 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 }
-main .howToBuy .container .howToBuy__categories {
+main .howToBuy .howToBuy__categories {
   column-gap: 4px;
   width: 93%;
   margin: 24px 0 clamp(24px, 4vw - 36px, 40px);
@@ -106,375 +108,371 @@ main .howToBuy .container .howToBuy__categories {
     opacity: 1;
   }
 }
-main .howToBuy .container .howToBuy__categories p {
+main .howToBuy .howToBuy__categories p {
   font-size: 20px;
   opacity: 0;
   transform: translateY(120px);
   animation: appearhowToBuy 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 }
-main .howToBuy .container .howToBuy__categories p:nth-child(2) {
+main .howToBuy .howToBuy__categories p:nth-child(2) {
   transform: translateY(70px);
 }
-main .howToBuy .container .howToBuy__marketplace {
+main .howToBuy .howToBuy__marketplace {
   display: flex;
   flex-direction: column;
   align-items: center;
   /*p {
-      clip-path: polygon(48% 45%, 55% 45%, 55% 52%, 49% 52%);
-      animation: appearhowToBuyTxt 1s cubic-bezier(0, 0, 0, 0.9) forwards;
-  }*/
+          clip-path: polygon(48% 45%, 55% 45%, 55% 52%, 49% 52%);
+          animation: appearhowToBuyTxt 1s cubic-bezier(0, 0, 0, 0.9) forwards;
+      }*/
 }
 @keyframes appearhowToBuyTxt {
   to {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
   }
 }
-main .howToBuy .container .howToBuy__marketplace .links-online-store {
+main .howToBuy .howToBuy__marketplace .links-online-store {
   margin-top: 22px;
-  width: 482px;
 }
-main .howToBuy .container .howToBuy__marketplace .links-online-store a {
+main .howToBuy .howToBuy__marketplace .links-online-store a {
   transform: translateY(120px);
   animation: appearhowToBuy 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 }
-main .howToBuy .container .howToBuy__marketplace .links-online-store a:nth-child(2) {
+main .howToBuy .howToBuy__marketplace .links-online-store a:nth-child(2) {
   transform: translateY(70px);
 }
-main .howToBuy .container .hide {
+main .howToBuy .hide {
   display: none;
 }
 
 @media screen and (max-width: 1100px) {
-  main .howToBuy .container p {
+  main .howToBuy p {
     line-height: 1.38;
   }
-  main .howToBuy .container .howToBuy__categories {
+  main .howToBuy .howToBuy__categories {
     width: clamp(93%, 900px - 20vw, 100%);
   }
-  main .howToBuy .container .howToBuy__categories p {
+  main .howToBuy .howToBuy__categories p {
     height: 51px;
     font-size: clamp(14px, 3vw - 13px, 20px);
   }
 }
 @media screen and (max-width: 580px) {
-  main .howToBuy .container h2 {
+  main .howToBuy h2 {
     line-height: 1.29;
   }
-  main .howToBuy .container p {
+  main .howToBuy p {
     font-size: clamp(14px, 10vw - 42px, 16px);
   }
-  main .howToBuy .container .howToBuy__categories {
+  main .howToBuy .howToBuy__categories {
     flex-direction: column;
     margin: clamp(16px, 6vw - 10px, 24px) 0 clamp(16px, 6vw - 10px, 24px);
   }
-  main .howToBuy .container .howToBuy__categories p {
+  main .howToBuy .howToBuy__categories p {
     height: clamp(39px, 10vw - 1px, 51px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+1) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+1) {
     transform: translateY(30px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+2) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+2) {
     transform: translateY(60px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+3) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+3) {
     transform: translateY(90px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+4) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+4) {
     transform: translateY(120px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+5) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+5) {
     transform: translateY(150px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+6) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+6) {
     transform: translateY(180px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+7) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+7) {
     transform: translateY(210px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+8) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+8) {
     transform: translateY(240px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+9) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+9) {
     transform: translateY(270px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+10) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+10) {
     transform: translateY(300px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+11) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+11) {
     transform: translateY(330px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+12) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+12) {
     transform: translateY(360px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+13) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+13) {
     transform: translateY(390px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+14) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+14) {
     transform: translateY(420px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+15) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+15) {
     transform: translateY(450px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+16) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+16) {
     transform: translateY(480px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+17) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+17) {
     transform: translateY(510px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+18) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+18) {
     transform: translateY(540px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+19) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+19) {
     transform: translateY(570px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+20) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+20) {
     transform: translateY(600px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+21) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+21) {
     transform: translateY(630px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+22) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+22) {
     transform: translateY(660px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+23) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+23) {
     transform: translateY(690px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+24) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+24) {
     transform: translateY(720px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+25) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+25) {
     transform: translateY(750px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+26) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+26) {
     transform: translateY(780px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+27) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+27) {
     transform: translateY(810px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+28) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+28) {
     transform: translateY(840px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+29) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+29) {
     transform: translateY(870px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+30) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+30) {
     transform: translateY(900px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+31) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+31) {
     transform: translateY(930px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+32) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+32) {
     transform: translateY(960px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+33) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+33) {
     transform: translateY(990px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+34) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+34) {
     transform: translateY(1020px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+35) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+35) {
     transform: translateY(1050px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+36) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+36) {
     transform: translateY(1080px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+37) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+37) {
     transform: translateY(1110px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+38) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+38) {
     transform: translateY(1140px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+39) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+39) {
     transform: translateY(1170px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+40) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+40) {
     transform: translateY(1200px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+41) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+41) {
     transform: translateY(1230px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+42) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+42) {
     transform: translateY(1260px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+43) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+43) {
     transform: translateY(1290px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+44) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+44) {
     transform: translateY(1320px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+45) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+45) {
     transform: translateY(1350px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+46) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+46) {
     transform: translateY(1380px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+47) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+47) {
     transform: translateY(1410px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+48) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+48) {
     transform: translateY(1440px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+49) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+49) {
     transform: translateY(1470px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+50) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+50) {
     transform: translateY(1500px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+51) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+51) {
     transform: translateY(1530px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+52) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+52) {
     transform: translateY(1560px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+53) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+53) {
     transform: translateY(1590px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+54) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+54) {
     transform: translateY(1620px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+55) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+55) {
     transform: translateY(1650px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+56) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+56) {
     transform: translateY(1680px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+57) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+57) {
     transform: translateY(1710px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+58) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+58) {
     transform: translateY(1740px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+59) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+59) {
     transform: translateY(1770px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+60) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+60) {
     transform: translateY(1800px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+61) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+61) {
     transform: translateY(1830px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+62) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+62) {
     transform: translateY(1860px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+63) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+63) {
     transform: translateY(1890px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+64) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+64) {
     transform: translateY(1920px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+65) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+65) {
     transform: translateY(1950px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+66) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+66) {
     transform: translateY(1980px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+67) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+67) {
     transform: translateY(2010px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+68) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+68) {
     transform: translateY(2040px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+69) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+69) {
     transform: translateY(2070px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+70) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+70) {
     transform: translateY(2100px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+71) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+71) {
     transform: translateY(2130px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+72) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+72) {
     transform: translateY(2160px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+73) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+73) {
     transform: translateY(2190px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+74) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+74) {
     transform: translateY(2220px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+75) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+75) {
     transform: translateY(2250px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+76) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+76) {
     transform: translateY(2280px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+77) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+77) {
     transform: translateY(2310px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+78) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+78) {
     transform: translateY(2340px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+79) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+79) {
     transform: translateY(2370px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+80) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+80) {
     transform: translateY(2400px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+81) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+81) {
     transform: translateY(2430px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+82) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+82) {
     transform: translateY(2460px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+83) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+83) {
     transform: translateY(2490px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+84) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+84) {
     transform: translateY(2520px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+85) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+85) {
     transform: translateY(2550px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+86) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+86) {
     transform: translateY(2580px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+87) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+87) {
     transform: translateY(2610px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+88) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+88) {
     transform: translateY(2640px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+89) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+89) {
     transform: translateY(2670px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+90) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+90) {
     transform: translateY(2700px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+91) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+91) {
     transform: translateY(2730px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+92) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+92) {
     transform: translateY(2760px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+93) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+93) {
     transform: translateY(2790px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+94) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+94) {
     transform: translateY(2820px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+95) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+95) {
     transform: translateY(2850px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+96) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+96) {
     transform: translateY(2880px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+97) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+97) {
     transform: translateY(2910px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+98) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+98) {
     transform: translateY(2940px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+99) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+99) {
     transform: translateY(2970px);
   }
-  main .howToBuy .container .howToBuy__categories p:nth-child(n+100) {
+  main .howToBuy .howToBuy__categories p:nth-child(n+100) {
     transform: translateY(3000px);
   }
-  main .howToBuy .container .howToBuy__marketplace p {
+  main .howToBuy .howToBuy__marketplace p {
     line-height: 1.44;
-  }
-  main .howToBuy .container .howToBuy__marketplace .links-online-store {
-    width: clamp(260px, 100vw - 97px, 482px);
   }
 }
 

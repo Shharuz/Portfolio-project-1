@@ -18,6 +18,7 @@
 <body>
     <div class="sizewindow"></div>
     <div class="progress"></div>
+    <div class="scrPosY"></div>
     <div class="forSmoothScroll">
         <div class="forSmoothScroll__wrapper">
             <%= htmlWebpackPlugin.options.header %>
@@ -97,7 +98,6 @@
                 </section>
                 <section class="index-advantages">
                     <h1>Живые Бактерии™ для людей, животных и растений</h1>
-                    <!--animation.js -> ≈ line 113 and line 176 -> content H1 copy to -> h1.innerHTML -->
                     <div class="index-advantages__block">
                         <div class="index-advantages__block__item"><img loading="lazy" src="img/icons/hand.webp" width="80" height="80" alt="hand">
                             <div class="index-advantages__block__item__wrapper">
@@ -159,11 +159,10 @@
                         <a href="https://livebacteria.local/catalogMainPage.html" class="index-catalog__goToCatalog bg-accent_col-title-light">перейти в каталог</a>
                     </div>
                     <h2>Посмотрите самые популярные товары</h2>
-                    <!--animation.js -> ≈ line 255 and line 296 -> content H2 copy to -> h2[1].innerHTML -->
                     <div class="swiper-card">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide allPageCard addAnimSwiperIndex">
-                                <div class="swiper-card__swiperImg allPageCard__swiperImg">
+                            <div class="swiper-slide allPageCard allPageCardIgnorRemToPx addAnimSwiperIndex">
+                                <div class="allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <a href="https://livebacteria.local/card.html"><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
@@ -180,7 +179,7 @@
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
                                 </div>
-                                <div class="swiper-card__raiting allPageCard__raiting">
+                                <div class="allPageCard__raiting">
                                     <div class="stars">
                                         <div class="star fill"></div>
                                         <div class="star fill"></div>
@@ -192,14 +191,14 @@
                                 </div>
                                 <h4>Скотный двор Глубокая подстилка для птиц</h4>
                                 <p>Биоактиватор глубокой ферментационной (несменяемой) подстилки для птиц</p>
-                                <div class="swiper-card__buy allPageCard__buy">
+                                <div class="allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light allPageCard__buy__a"><img loading="lazy" class="allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket"><span class="allPageCard__buy__a__txt">купить</span></a>
+                                    <button class="allPageCard__buy__btn"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
-                            <div class="swiper-slide allPageCard addAnimSwiperIndex">
-                                <div class="swiper-card__swiperImg allPageCard__swiperImg">
+                            <div class="swiper-slide allPageCard allPageCardIgnorRemToPx addAnimSwiperIndex">
+                                <div class="allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
@@ -216,7 +215,7 @@
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
                                 </div>
-                                <div class="swiper-card__raiting allPageCard__raiting">
+                                <div class="allPageCard__raiting">
                                     <div class="stars">
                                         <div class="star fill"></div>
                                         <div class="star fill"></div>
@@ -228,14 +227,14 @@
                                 </div>
                                 <h4>Биоактиватор</h4>
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
-                                <div class="swiper-card__buy allPageCard__buy">
+                                <div class="allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light allPageCard__buy__a"><img loading="lazy" class="allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket"><span class="allPageCard__buy__a__txt">купить</span></a>
+                                    <button class="allPageCard__buy__btn"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
-                            <div class="swiper-slide allPageCard addAnimSwiperIndex">
-                                <div class="swiper-card__swiperImg allPageCard__swiperImg">
+                            <div class="swiper-slide allPageCard allPageCardIgnorRemToPx addAnimSwiperIndex">
+                                <div class="allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <a href=""><img loading="lazy" src="img/GreenPine300.webp" alt="bee"></a>
@@ -252,7 +251,7 @@
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
                                 </div>
-                                <div class="swiper-card__raiting allPageCard__raiting">
+                                <div class="allPageCard__raiting">
                                     <div class="stars">
                                         <div class="star fill"></div>
                                         <div class="star fill"></div>
@@ -262,16 +261,16 @@
                                     </div>
                                     <p class="product-article">Арт.: 21002050</p>
                                 </div>
-                                <h4>Зеленая сосна, 300 г</h4>
+                                <h4>Зеленая сосна, <span class="weightInGrams">300 г</span></h4>
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
-                                <div class="swiper-card__buy allPageCard__buy">
+                                <div class="allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light allPageCard__buy__a"><img loading="lazy" class="allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket"><span class="allPageCard__buy__a__txt">купить</span></a>
+                                    <button class="allPageCard__buy__btn"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
-                            <div class="swiper-slide allPageCard addAnimSwiperIndex">
-                                <div class="swiper-card__swiperImg allPageCard__swiperImg">
+                            <div class="swiper-slide allPageCard allPageCardIgnorRemToPx addAnimSwiperIndex">
+                                <div class="allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <a href=""><img loading="lazy" src="img/GreenPine50.webp" alt="bee"></a>
@@ -288,7 +287,7 @@
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
                                 </div>
-                                <div class="swiper-card__raiting allPageCard__raiting">
+                                <div class="allPageCard__raiting">
                                     <div class="stars">
                                         <div class="star fill"></div>
                                         <div class="star fill"></div>
@@ -298,16 +297,16 @@
                                     </div>
                                     <p class="product-article">Арт.: 21002050</p>
                                 </div>
-                                <h4>Зеленая сосна, 50 г</h4>
+                                <h4>Зеленая сосна, <span class="weightInGrams">50 г</span></h4>
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
-                                <div class="swiper-card__buy allPageCard__buy">
+                                <div class="allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light allPageCard__buy__a"><img loading="lazy" class="allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket"><span class="allPageCard__buy__a__txt">купить</span></a>
+                                    <button class="allPageCard__buy__btn"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
-                            <div class="swiper-slide allPageCard addAnimSwiperIndex">
-                                <div class="swiper-card__swiperImg allPageCard__swiperImg">
+                            <div class="swiper-slide allPageCard allPageCardIgnorRemToPx addAnimSwiperIndex">
+                                <div class="allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <a href=""><img loading="lazy" src="img/Bird-litter.webp" alt="bee"></a>
@@ -324,7 +323,7 @@
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
                                 </div>
-                                <div class="swiper-card__raiting allPageCard__raiting">
+                                <div class="allPageCard__raiting">
                                     <div class="stars">
                                         <div class="star fill"></div>
                                         <div class="star fill"></div>
@@ -336,14 +335,14 @@
                                 </div>
                                 <h4>Скотный двор Глубокая подстилка для птиц</h4>
                                 <p>Биоактиватор глубокой ферментационной (несменяемой) подстилки для птиц</p>
-                                <div class="swiper-card__buy allPageCard__buy">
+                                <div class="allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light allPageCard__buy__a"><img loading="lazy" class="allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket"><span class="allPageCard__buy__a__txt">купить</span></a>
+                                    <button class="allPageCard__buy__btn"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
-                            <div class="swiper-slide allPageCard addAnimSwiperIndex">
-                                <div class="swiper-card__swiperImg allPageCard__swiperImg">
+                            <div class="swiper-slide allPageCard allPageCardIgnorRemToPx addAnimSwiperIndex">
+                                <div class="allPageCard__swiperImg">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <a href=""><img loading="lazy" src="img/BioActivate.webp" alt="bee"></a>
@@ -360,7 +359,7 @@
                                     </div>
                                     <div class="swiper-card__swiperImg-pagination"></div>
                                 </div>
-                                <div class="swiper-card__raiting allPageCard__raiting">
+                                <div class="allPageCard__raiting">
                                     <div class="stars">
                                         <div class="star fill"></div>
                                         <div class="star fill"></div>
@@ -372,10 +371,10 @@
                                 </div>
                                 <h4>Биоактиватор</h4>
                                 <p>Быстро и эффективно разлагает фекалии, мыло, жир, предотвращает неприятный запах</p>
-                                <div class="swiper-card__buy allPageCard__buy">
+                                <div class="allPageCard__buy">
                                     <span class="price">1086 ₽</span>
-                                    <a href="" class="bg-accent_col-title-light swiper-card__buy__a allPageCard__buy__a"><img loading="lazy" class="swiper-card__buy__a__img" src="img/icons/basket-white.svg" alt="basket">купить</a>
-                                    <button class="like"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
+                                    <a href="https://livebacteria.local/card.html" class="bg-accent_col-title-light allPageCard__buy__a"><img loading="lazy" class="allPageCard__buy__a__img" src="img/icons/basket-white.svg" alt="basket"><span class="allPageCard__buy__a__txt">купить</span></a>
+                                    <button class="allPageCard__buy__btn"><img loading="lazy" src="img/icons/heart.svg" alt="heart"></button>
                                 </div>
                             </div>
                         </div>
@@ -384,7 +383,6 @@
                 <section class="index-aboutUs">
                     <aside>
                         <h2>Мы гарантия качества</h2>
-                        <!--animation.js -> ≈ line 343 and line 176 -> content H2 copy to -> h2[2].innerHTML -->
                         <p>«Живые бактерии» – это небольшая, но динамичная компания. Основное направление – использование технологий микробиологии для переработки отходов и повышения плодородия почв. Постоянно идёт поиск лучших штаммов бактерий, грибов, актиномицетов по всему миру. Для оптимального набора активных компонентов используются культуры из России, Китая, Бельгии, Германии, Великобритании. Конечную продукцию мы поставляем в сетевые и розничные магазины; сотрудничаем с Леруа Мерлен с 2004 года. Мы работаем совместно с микробиологами из Европы и Соединённого Королевства. Сотрудничество с ведущими научными центрами позволяет использовать наработки со всего мира и создавать уникальные продукты для нужд конкретных заказчиков.</p>
                     </aside>
                     <div class="index-aboutUs__wrapper-forswiper">

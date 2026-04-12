@@ -124,8 +124,6 @@ if (document.querySelector('.forSmoothScroll')) {
 
 }
 
-
-
 //split txt
 const h2 = document.querySelector('h2')
 

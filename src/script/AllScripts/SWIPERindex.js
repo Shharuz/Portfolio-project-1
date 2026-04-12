@@ -5,10 +5,10 @@ const swiper = new Swiper('.index-offer__swiper', {
     // Optional parameters
     modules: [Pagination, EffectFade, Autoplay],
     direction: 'horizontal',
-    loop: true,
-    autoplay: {
+    //loop: true,
+    /*autoplay: {
         delay: 5000,
-    },
+    },*/
     effect: "fade",
     noSwipingSelector: 'a',
     pagination: {
@@ -30,13 +30,13 @@ const swiper2 = new Swiper('.swiper-card', {
             slidesPerView: 2.2,
             spaceBetween: 5
         },
-        // when window width is >= 480px
+        
         580: {
             slidesPerView: 1.96,
             spaceBetween: 9
         },
 
-        // when window width is >= 640px
+        
         800: {
             slidesPerView: 2.59,
             spaceBetween: 17
@@ -59,7 +59,7 @@ const swiper2 = new Swiper('.swiper-card', {
 
 });
 
-const swiper3 = new Swiper('.swiper-card__swiperImg', {
+const swiper3 = new Swiper('.allPageCard__swiperImg', {
     // Optional parameters
     modules: [Pagination],
     direction: 'horizontal',
@@ -104,6 +104,10 @@ const swiper4 = new Swiper('.index-aboutUs__wrapper-forswiper__swiper-reviews', 
         },
 
         1100: {
+            slidesPerView: 1,
+            spaceBetween: 35,
+        },
+        1400: {
             slidesPerView: 1,
             spaceBetween: 35,
         },

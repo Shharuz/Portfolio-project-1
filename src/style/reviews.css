@@ -34,55 +34,58 @@ main .review .full-review .name-box .date {
   color: #767676;
   line-height: 1.7;
 }
-main .reviews .container .reviews__wrapper-for-item {
+main .reviews h2 .line {
+  justify-content: start;
+}
+main .reviews .reviews__wrapper-for-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 20px;
   row-gap: 20px;
   margin-top: clamp(24px, 20vw - 343px, 40px);
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item {
   padding: 32px 45px 29px;
   height: max-content;
   opacity: 0;
   transform: translate(100px, 100px);
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item .full-review {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item .full-review {
   margin-top: 31px;
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+1) {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+1) {
   transform: translate(40px, 40px);
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+2) {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+2) {
   transform: translate(80px, 80px);
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+3) {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+3) {
   transform: translate(120px, 120px);
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+4) {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+4) {
   transform: translate(160px, 160px);
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+5) {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+5) {
   transform: translate(200px, 200px);
 }
-main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+6) {
+main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item:nth-child(n+6) {
   transform: translate(240px, 240px);
 }
 
 @media screen and (max-width: 1100px) {
-  main .reviews .container .reviews__wrapper-for-item {
+  main .reviews .reviews__wrapper-for-item {
     grid-template-columns: 1fr;
     margin-top: clamp(24px, 400px - 35vw, 40px);
   }
 }
 @media screen and (max-width: 735px) {
-  main .reviews .container .reviews__wrapper-for-item {
+  main .reviews .reviews__wrapper-for-item {
     margin-top: clamp(24px, 17vw - 84px, 40px);
   }
-  main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item h4 {
+  main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item h4 {
     font-size: clamp(18px, 10vw - 49px, 24px);
   }
-  main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item p {
+  main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item p {
     line-height: 1.45;
   }
 }
@@ -90,14 +93,14 @@ main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__
   main .reviews .container {
     width: clamp(92%, 600px - 14vw, 100%);
   }
-  main .reviews .container h2 {
+  main .reviews h2 {
     padding-left: 29px;
     line-height: 1.29;
   }
-  main .reviews .container .reviews__wrapper-for-item {
+  main .reviews .reviews__wrapper-for-item {
     margin-top: clamp(16px, 7vw - 16px, 24px);
   }
-  main .reviews .container .reviews__wrapper-for-item .reviews__wrapper-for-item__item {
+  main .reviews .reviews__wrapper-for-item .reviews__wrapper-for-item__item {
     padding: 32px clamp(30px, 10vw - 13px, 45px) 28px;
   }
 }

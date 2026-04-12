@@ -6,18 +6,17 @@ main {
 
         p {
             display: flex;
-            border: 1px solid vars.$border-color;
             justify-content: center;
             align-items: center;
+            height: 59px;
+            padding: 0 5px;
             flex-grow: 1;
-            //height: 59px;
             background-color: vars.$title-light;
-            padding: 14px 13.5px;
             font-weight: 500;
             font-size: clamp(14px, 2vw - 18px, 20px);
             color: vars.$title;
             letter-spacing: 0.5px;
-            //min-width: max-content;
+            border: 1px solid vars.$border-color;
 
             span {
                 display: inline-block;
@@ -69,7 +68,7 @@ main {
                 content: "★";
                 position: absolute;
                 left: 0;
-                top: 0;
+                top: -4px;
                 line-height: 1;
                 font-size: 20px;
             }
@@ -104,80 +103,42 @@ main {
         }
     }
 
-    .swiper-card {
-        width: clamp(1160px, 100vw - 240px, 1680px);
-        margin: 57px auto 0;
-        position: relative;
-
-        .swiper-wrapper {
-            .swiper-slide-visible {
-                opacity: 1;
-            }
-
-            .addAnimSwiperIndex {
-                @for $i from 1 through 100 {
-                    &:nth-child(n + #{$i}) {
-                        transform: translate3d($i * 150px, 0px, 0px);
-                    }
-                }
-
-                //opacity: 0;
-                transition: transform 1s,
-                opacity 1s;
-            }
-
-            .swiper-slideIndexVisible {
-
-
-                @for $i from 1 through 100 {
-                    &:nth-child(n + #{$i}) {
-                        transform: translate3d(0px, 0px, 0px);
-                    }
-                }
-
-                //opacity: 1;
-            }
-
-
-
-        }
-    }
-
     .allPageCard {
-        opacity: 0.5;
-        height: 730px;
-        padding: 24px 18px 24px 17px;
         display: flex;
         flex-direction: column;
+        justify-content: end;
+        height: 726px;
+        background-color: vars.$title-light;
+        border-radius: 8px;
 
         .allPageCard__swiperImg {
-            //height: 463px;
             overflow: hidden;
-
+            flex: 7;
 
             .swiper-wrapper {
-                height: 93.5%;
+                height: 98%;
 
                 .swiper-slide {
-                    //height: 432px;
                     padding: 0 0;
                     opacity: 1;
+                    height: inherit;
 
                     a {
                         padding-top: 0;
+                        height: 100%;
 
                         img {
-                            //height: auto;
+                            height: 100%;
                         }
                     }
 
                 }
             }
 
-
             .swiper-card__swiperImg-pagination {
-                width: 250px;
-                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: end;
 
                 .swiper-pagination-bullet {
                     width: 53px;
@@ -191,38 +152,44 @@ main {
                     height: 5px;
                 }
             }
+
         }
 
         .allPageCard__raiting {
             display: flex;
-            justify-content: space-between;
-            margin-top: 7px;
-
+            margin-top: 19px;
 
             p {
                 font-size: 12px;
-                line-height: 23px;
-                padding-right: 10px;
+                text-align: right;
             }
         }
 
         h4 {
-            margin: 12px 0 14px;
+            margin: 14px 0;
             line-height: 1.4;
             text-align: left;
+            color: vars.$title;
         }
 
         p {
             line-height: 1.35;
             text-align: left;
+            flex: 1;
         }
+
     }
 
-    .swiper-card__buy,
+    .allPageCardIgnorRemToPx {
+
+        padding: 24px 18px 24px 17px;
+    }
+
     .allPageCard__buy {
         display: flex;
         justify-content: space-between;
-        margin-top: auto;
+        row-gap: 5px;
+        column-gap: 9px;
 
         span {
             font-weight: 500;
@@ -230,38 +197,39 @@ main {
             color: vars.$accent;
         }
 
-        .swiper-card__buy__a,
         .allPageCard__buy__a {
             width: 160px;
             height: 35px;
+            column-gap: 7%;
             position: relative;
-            padding-left: 1.8125rem;
             border-radius: 4px;
             font-weight: 700;
             font-size: 14px;
             margin-left: auto;
-            margin-right: 10px;
 
-            .swiper-card__buy__a__img {
-                position: absolute;
-                top: 10px;
-                left: 38px;
+            .allPageCard__buy__a__img {}
+
+            .allPageCard__buy__a__txt {
+                font-size: 14px;
+                font-weight: 700;
+                color: vars.$title-light;
 
             }
         }
 
         button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 70px;
             height: 35px;
             background-color: vars.$title-light;
             border-radius: 4px;
-            padding-left: 27px;
             border: 1px solid vars.$accent;
 
             img {
-                width: 13px;
-                height: 13px;
-
+                width: 14px;
+                height: 14px;
             }
 
             &:hover {
@@ -284,582 +252,548 @@ main {
             .hide {
                 display: none;
             }
+        }
 
-            .catalogCategories__select-catagory {
-                margin-bottom: clamp(24px, 5vw - 56px, 40px);
+        .catalogCategories__select-catagory {
+            margin-bottom: clamp(24px, 5vw - 56px, 40px);
 
-                p {
-                    transform: scale(0);
+            p {
+                transform: scale(0);
 
-                }
-
-                #bacteria-for-septic {
-                    transition: transform 0.5s 0s;
-                }
-
-
-
-                #Fermentation-mats {
-                    transition: transform 0.5s 0.2s;
-                }
-
-
-
-                #clearWater {
-                    transition: transform 0.5s 0.4s;
-                }
-
-
-
-                #Composting {
-                    transition: transform 0.5s 0.6s;
-                }
-
-                #For-soil-and-plants {
-                    transition: transform 0.5s 0.8s;
-                }
-
-                .appearCatagory {
-                    transform: scale(1);
-                }
             }
 
-            .catalogCategories__wrapperForFilter {
-                display: flex;
+            #bacteria-for-septic {
+                transition: transform 0.5s 0s;
+            }
 
-                .filter {
-                    width: clamp(274px, 50vw - 645px, 320px);
-                    height: 625px;
-                    margin-right: clamp(44px, 50vw - 850px, 110px);
-                    min-width: 274px;
 
-                    form {
+
+            #Fermentation-mats {
+                transition: transform 0.5s 0.2s;
+            }
+
+
+
+            #clearWater {
+                transition: transform 0.5s 0.4s;
+            }
+
+
+
+            #Composting {
+                transition: transform 0.5s 0.6s;
+            }
+
+            #For-soil-and-plants {
+                transition: transform 0.5s 0.8s;
+            }
+
+            .appearCatagory {
+                transform: scale(1);
+            }
+        }
+
+        .catalogCategories__wrapperForFilter {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 0.5rem;
+
+            .filter {
+
+                .filter__form {
+                    background: none;
+                    padding: 0;
+                    align-items: start;
+
+                    opacity: 0;
+                    transform: translateY(200px);
+                    transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
+
+                    .filter__form__reset-filter {
+                        width: 260px;
+                        height: 41px;
                         background: none;
-                        padding: 0;
-                        align-items: start;
-
-                        opacity: 0;
-                        transform: translateY(200px);
-                        transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
-
-                        .filter__form__reset-filter {
-                            width: 260px;
-                            height: 41px;
-                            background: none;
-                            font-weight: 400;
-                            font-size: 16px;
-                            color: vars.$text;
-                            text-transform: none;
-                            text-decoration: underline;
-                            text-align: left;
-                            border-bottom: 1px solid vars.$border_filter;
-                            margin-bottom: 12px;
-                            display: flex;
-                        }
-
-                        .rotateSvg {
-                            transform: rotate(180deg);
-                            -ms-transform: rotate(180deg);
-                            -webkit-transform: rotate(180deg);
-                        }
-
-                        fieldset {
-                            width: 260px;
-                            position: relative;
-                            border: none;
-                            margin-bottom: 14px;
-                            padding-bottom: 7px;
-                            border-bottom: 1px solid vars.$border_filter;
-
-                            div {
-                                top: -100px;
-                                transition: top, vars.$main__transition;
-                            }
-
-                            .wrapperForHidden {
-
-                                overflow: hidden;
-                                max-height: 0;
-                                transition: height, vars.$main__transition;
-                            }
-
-                            .openFilter {
-                                max-height: 140px;
-
-                            }
-
-                            legend {
-                                font-weight: 500;
-                                font-size: 20px;
-                                color: vars.$title-p;
-                                margin-bottom: 15px;
-                            }
-
-                            .filter__form__item {
-                                display: flex;
-                                width: 205px;
-                                margin-bottom: 10px;
-                                align-items: center;
-                                position: relative;
-                                transition: top, vars.$main__transition;
-
-                                label {
-                                    //margin-left: 10px;
-                                }
-
-                                .input-label-custom__input {
-
-
-                                    &+label {
-                                        font-size: 16px;
-                                        height: 21px;
-
-                                        &::before {
-                                            width: 18px;
-                                            height: 18px;
-                                            margin-right: 10px;
-                                        }
-
-                                    }
-
-                                    &:checked+label::after {
-                                        background-size: 12px 12px;
-                                        left: 3px;
-                                        top: 1px;
-                                        font-size: 10px;
-                                        height: 19px;
-                                        width: 14px;
-                                    }
-                                }
-
-                                .count-goods {
-                                    display: inline-block;
-                                    width: 25px;
-                                    height: 25px;
-                                    margin-left: auto;
-                                    border-radius: 29px;
-                                    color: vars.$title;
-                                    background-color: vars.$text-light;
-                                    text-align: center;
-                                    font-weight: 400;
-                                    font-size: 12px;
-                                    line-height: 1.9;
-                                }
-                            }
-
-                        }
-
-                        .filter__form__price-range {
-                            border-bottom: none;
-                            margin-bottom: 0;
-                            padding-bottom: 0;
-
-                            .wrapperForHidden {
-                                overflow: hidden;
-                                max-height: 0;
-                                transition: height, vars.$main__transition;
-                            }
-
-                            .openFilter {
-                                max-height: 140px;
-                            }
-
-                            .price-range__slider {
-                                margin-top: 3px;
-                                height: 4px;
-                                position: relative;
-                                background: vars.$text-light;
-                                border-radius: 5px;
-
-                                .progress {
-                                    height: 100%;
-                                    left: 25%;
-                                    right: 25%;
-                                    position: absolute;
-                                    border-radius: 5px;
-                                    background: vars.$accent__bg-price-range__oppas28;
-                                }
-                            }
-
-                            .price-range__range-input {
-                                position: relative;
-
-                                input {
-                                    position: absolute;
-                                    width: 100%;
-                                    height: 5px;
-                                    top: -5px;
-                                    background: none;
-                                    pointer-events: none;
-                                    -webkit-appearance: none;
-                                    -moz-appearance: none;
-                                }
-
-                                input[type="range"]::-webkit-slider-thumb {
-                                    height: 12px;
-                                    width: 12px;
-                                    border: 2px solid vars.$title-light;
-                                    border-radius: 50%;
-                                    background: vars.$accent;
-                                    pointer-events: auto;
-                                    -webkit-appearance: none;
-                                    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
-                                }
-
-                                input[type="range"]::-moz-range-thumb {
-                                    height: 12px;
-                                    width: 12px;
-                                    border: 2px solid vars.$title-light;
-                                    border-radius: 50%;
-                                    background: vars.$accent;
-                                    pointer-events: auto;
-                                    -moz-appearance: none;
-                                    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
-                                }
-                            }
-
-                            .price-range__price-input {
-                                width: 100%;
-                                display: flex;
-                                margin: 4px 0 29px;
-
-                                .field {
-                                    display: flex;
-                                    //width: 100%;
-                                    height: 45px;
-                                    align-items: center;
-                                    position: relative;
-
-                                    &:after {
-                                        content: '₽';
-                                        position: absolute;
-                                        width: 20px;
-                                        height: 20px;
-                                        top: 12px;
-                                        left: 83px;
-                                    }
-
-                                    span {
-                                        padding-top: 12px;
-                                    }
-
-                                    input {
-
-                                        width: 90px;
-                                        height: 32px;
-                                        outline: none;
-                                        border: none;
-                                        font-size: 16px;
-                                        margin-left: 5px;
-                                        border-radius: 4px;
-                                        padding-left: 21px;
-                                        -moz-appearance: textfield;
-
-                                    }
-
-                                    input[type="number"]::-webkit-outer-spin-button,
-                                    input[type="number"]::-webkit-inner-spin-button {
-                                        -webkit-appearance: none;
-                                    }
-                                }
-
-                                .separator {
-                                    width: 33px;
-                                    display: flex;
-                                    font-size: 19px;
-                                    align-items: center;
-                                    justify-content: center;
-                                }
-                            }
-
-
-                        }
-
-                        .openFilterItem {
-                            top: 0 !important;
-
-                        }
-
-                        #apply-filter {
-                            width: inherit;
-                            border-radius: 8px;
-                        }
-
-                        .wrapperForSvgFilter {
-                            position: absolute;
-                            top: -54px;
-                            right: 10px;
-
-                            svg {
-                                -webkit-transition: -webkit-transform, vars.$main__transition;
-                                -ms-transition: -ms-transform, vars.$main__transition;
-                                transition: transform, vars.$main__transition;
-                                pointer-events: none;
-                            }
-                        }
-
-                    }
-
-                    .appearfilterForm {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-
-                    .filter__close {
-                        display: none;
-                    }
-                }
-
-                .catalogCategories__cards-goods {
-                    min-width: 1248px;
-                    width: 1248px;
-                    overflow: hidden;
-
-                    .catalogCategories__cards-goods__counter-filterTwo {
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: vars.$text;
+                        text-transform: none;
+                        text-decoration: underline;
+                        text-align: left;
+                        border-bottom: 1px solid vars.$border_filter;
+                        margin-bottom: 12px;
                         display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 20px;
+                    }
 
-                        .counter-card {
+                    .rotateSvg {
+                        transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                        -webkit-transform: rotate(180deg);
+                    }
+
+                    fieldset {
+                        width: 260px;
+                        max-width: 100vw;
+                        position: relative;
+                        border: none;
+                        margin-bottom: 14px;
+                        padding-bottom: 7px;
+                        border-bottom: 1px solid vars.$border_filter;
+
+                        div {
+                            top: -100px;
+                            transition: top, vars.$main__transition;
+                        }
+
+                        .wrapperForHidden {
+
+                            overflow: hidden;
+                            max-height: 0;
+                            transition: height, vars.$main__transition;
+                        }
+
+                        .openFilter {
+                            max-height: 140px;
+
+                        }
+
+                        legend {
                             font-weight: 500;
                             font-size: 20px;
-                            color: vars.$text;
-                            display: flex;
-                            align-items: center;
-                            opacity: 0;
-                            transform: translateX(-300px);
-
-                            transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
-
-                            #amount-card {
-                                font-size: 24px;
-                                color: vars.$accent;
-                                line-height: 1.9;
-                                margin-right: 17px;
-                            }
+                            color: vars.$title-p;
+                            margin-bottom: 15px;
                         }
 
-                        .filterTwo {
+                        .filter__form__item {
+                            display: flex;
+                            width: 205px;
+                            max-width: calc(100vw - 30px);
+                            margin-bottom: 10px;
+                            align-items: center;
                             position: relative;
-                            opacity: 0;
-                            transform: translateX(300px);
-
-                            transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
-
-                            &:after {
-                                content: " ";
-                                position: absolute;
-                                width: 20px;
-                                height: 32px;
-                                background-image: url('../img/icons/ArrowDown.svg');
-                                background-repeat: no-repeat;
-                                background-size: 20px 19px;
-                                top: 12px;
-                                right: 54px;
-                            }
+                            transition: top, vars.$main__transition;
 
                             label {
-                                font-weight: 400;
-                                font-size: 16px;
-                                color: vars.$text;
-                                margin-right: 17px;
+                                //margin-left: 10px;
                             }
 
-                            select {
-                                width: 220px;
-                                height: 42px;
-                                padding-left: 14px;
-                                background-color: vars.$accent__on-hower__oppas20;
-                                border-radius: 6px;
-                                border: none;
-                                font-weight: 400;
-                                font-size: 16px;
-                                color: vars.$title-p;
-                                position: relative;
+                            .input-label-custom__input {
 
-                                option {
-                                    background-color: vars.$title-light;
+
+                                &+label {
+                                    font-size: 16px;
+                                    height: 21px;
+
+                                    &::before {
+                                        width: 18px;
+                                        height: 18px;
+                                        margin-right: 10px;
+                                    }
+
+                                }
+
+                                &:checked+label::after {
+                                    background-size: 12px 12px;
+                                    left: 3px;
+                                    top: 1px;
+                                    font-size: 10px;
+                                    height: 19px;
+                                    width: 14px;
                                 }
                             }
-                        }
 
-                        .appearcounter-cardfilterTwo {
-                            opacity: 1;
-                            transform: translateX(0px);
-                        }
-
-                        @keyframes appearbth-filter {
-
-                            to {
-
-                                transform: translateY(0px);
-                            }
-
-                            0% {
-                                opacity: 0;
-                            }
-
-                            25% {
-                                opacity: 0;
-                            }
-
-                            100% {
-                                opacity: 1;
+                            .count-goods {
+                                display: inline-block;
+                                width: 25px;
+                                height: 25px;
+                                margin-left: auto;
+                                border-radius: 29px;
+                                color: vars.$title;
+                                background-color: vars.$text-light;
+                                text-align: center;
+                                font-weight: 400;
+                                font-size: 12px;
+                                line-height: 1.9;
                             }
                         }
 
-                        .bth-filter {
-                            display: none;
-                            width: 220px;
-                            height: 42px;
-                            text-transform: none;
-                            font-weight: 400;
-                            font-size: 16px;
-                            border-radius: 6px;
-                            opacity: 0;
-                            transform: translateX(-300px);
-                            animation: appearbth-filter 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
-                        }
                     }
 
-                    .catalogCategories__cards-goods__wrapperForCards {
-                        height: 1532px;
-                        display: flex;
-                        flex-wrap: wrap;
-                        flex-direction: column;
-                        //transition: vars.$main__transition;
+                    .filter__form__price-range {
+                        border-bottom: none;
+                        margin-bottom: 0;
+                        padding-bottom: 0;
 
-                        .wrapperFor6Cards {
-                            width: 1272px;
-                            display: flex;
-                            flex-wrap: wrap;
-                            column-gap: 24px;
-                            row-gap: 40px;
+                        .wrapperForHidden {
+                            max-width: calc(100vw - 30px);
+                            width: inherit;
+                            overflow: hidden;
+                            max-height: 0;
+                            transition: height, vars.$main__transition;
                         }
 
-                        .allPageCard {
-                            opacity: 1;
-                            width: 400px;
-                            height: 726px;
-                            background-color: vars.$title-light;
-                            border-radius: 8px;
+                        .openFilter {
+                            max-height: 140px;
+                        }
 
-                            .allPageCard__swiperImg {
-                                height: 460px;
+                        .price-range__slider {
+                            margin-top: 3px;
+                            height: 4px;
+                            position: relative;
+                            background: vars.$text-light;
+                            border-radius: 5px;
 
-                                .swiper-wrapper {
-                                    height: 92%;
+                            .progress {
+                                height: 100%;
+                                left: 25%;
+                                right: 25%;
+                                position: absolute;
+                                border-radius: 5px;
+                                background: vars.$accent__bg-price-range__oppas28;
+                            }
+                        }
 
-                                    .swiper-slide {
-                                        a {
-                                            img {
-                                                height: 431px;
-                                            }
-                                        }
+                        .price-range__range-input {
+                            position: relative;
+
+                            input {
+                                position: absolute;
+                                width: 100%;
+                                height: 5px;
+                                top: -5px;
+                                background: none;
+                                pointer-events: none;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                            }
+
+                            input[type="range"]::-webkit-slider-thumb {
+                                height: 12px;
+                                width: 12px;
+                                border: 2px solid vars.$title-light;
+                                border-radius: 50%;
+                                background: vars.$accent;
+                                pointer-events: auto;
+                                -webkit-appearance: none;
+                                box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+                            }
+
+                            input[type="range"]::-moz-range-thumb {
+                                height: 12px;
+                                width: 12px;
+                                border: 2px solid vars.$title-light;
+                                border-radius: 50%;
+                                background: vars.$accent;
+                                pointer-events: auto;
+                                -moz-appearance: none;
+                                box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+                            }
+                        }
+
+                        .price-range__price-input {
+                            width: 100%;
+                            display: flex;
+                            margin: 4px 0 33px;
+                            justify-content: space-between;
+
+                            .field {
+                                display: flex;
+                                width: 43%;
+                                height: 41px;
+                                align-items: end;
+                                position: relative;
+
+                                span {
+                                    &:first-child {
+                                        margin-right: 4px;
+                                    }
+
+                                    &:last-child {
+                                        position: absolute;
+                                        right: 18%;
+                                        top: 13px;
                                     }
                                 }
 
-                                .swiper-card__swiperImg-pagination {
-                                    width: 220px;
+                                input {
+                                    height: 32px;
+                                    width: 100%;
+                                    //text-align: center;
+                                    padding-left: 19px;
+                                    outline: none;
+                                    border: none;
+                                    font-size: 16px;
+                                    border-radius: 4px;
+                                    -moz-appearance: textfield;
+                                }
 
+                                input[type="number"]::-webkit-outer-spin-button,
+                                input[type="number"]::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
                                 }
                             }
 
-                            .allPageCard__raiting {
-                                margin-top: 0;
-                            }
-
-                            .swiper-card__buy {
-                                .allPageCard__buy__a {
-                                    width: 160px;
-                                    //height: 100px;
-                                }
-
-                                .like {
-                                    width: 70px;
-                                    //height: 100px;
-                                }
-                            }
-
-                        }
-                    }
-
-                    .catalogCategories__cards-goods__pageNavigation {
-                        display: flex;
-                        justify-content: center;
-
-                        .active {
-                            background-color: vars.$accent;
-                            color: vars.$title-light;
-                            border: 1px solid vars.$accent;
-                        }
-
-
-                        button {
-                            width: 48px;
-                            height: 48px;
-                            background: none;
-                        }
-
-                        span {
-                            width: 48px;
-                            height: 48px;
-                            display: block;
-                            border: 1px solid vars.$text;
-                            border-radius: 4px;
-                            margin: 0 2px;
-                            text-align: center;
-                            padding-top: 9px;
-                            color: vars.$text;
-                            font-weight: 500;
-                            cursor: pointer;
+                            /*.separator {
+                                width: 33px;
+                                display: flex;
+                                font-size: 19px;
+                                align-items: center;
+                                justify-content: center;
+                            }*/
                         }
 
 
                     }
+
+                    .openFilterItem {
+                        top: 0 !important;
+
+                    }
+
+                    #apply-filter {
+                        border-radius: 8px;
+                        width: clamp(274px, 18vw - 24px, 320px);
+                    }
+
+                    .wrapperForSvgFilter {
+                        position: absolute;
+                        top: -54px;
+                        right: 10px;
+
+                        svg {
+                            -webkit-transition: -webkit-transform, vars.$main__transition;
+                            -ms-transition: -ms-transform, vars.$main__transition;
+                            transition: transform, vars.$main__transition;
+                            pointer-events: none;
+                        }
+                    }
+
+                }
+
+                .appearfilterForm {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .filter__close {
+                    display: none;
                 }
             }
 
+            .catalogCategories__cards-goods {
+                overflow: hidden;
+
+                .catalogCategories__cards-goods__counter-filterTwo {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+
+                    .counter-card {
+                        font-weight: 500;
+                        font-size: 20px;
+                        color: vars.$text;
+                        display: flex;
+                        align-items: center;
+                        opacity: 0;
+                        transform: translateX(-300px);
+
+                        transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
+
+                        #amount-card {
+                            font-size: 24px;
+                            color: vars.$accent;
+                            line-height: 1.9;
+                            margin-right: 17px;
+                        }
+                    }
+
+                    .filterTwo {
+                        position: relative;
+                        opacity: 0;
+                        transform: translateX(300px);
+
+                        transition: transform 1s cubic-bezier(0, 0, 0, 0.9), opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.5s;
+
+                        /*&:after {
+                            content: " ";
+                            position: absolute;
+                            width: 20px;
+                            height: 32px;
+                            background-image: url('../img/icons/ArrowDown.svg');
+                            background-repeat: no-repeat;
+                            background-size: 20px 19px;
+                            top: 12px;
+                            right: 54px;
+                        }*/
+
+                        label {
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: vars.$text;
+                            margin-right: 17px;
+                        }
+
+                        select {
+                            width: 220px;
+                            height: 42px;
+                            padding-left: 14px;
+                            background-color: vars.$accent__on-hower__oppas20;
+                            border-radius: 6px;
+                            border: none;
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: vars.$title-p;
+                            position: relative;
+
+                            option {
+                                background-color: vars.$title-light;
+                            }
+                        }
+                    }
+
+                    .appearcounter-cardfilterTwo {
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+
+                    @keyframes appearbth-filter {
+
+                        to {
+
+                            transform: translateY(0px);
+                        }
+
+                        0% {
+                            opacity: 0;
+                        }
+
+                        25% {
+                            opacity: 0;
+                        }
+
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+
+                    .bth-filter {
+                        display: none;
+                        width: 220px;
+                        height: 42px;
+                        text-transform: none;
+                        font-weight: 400;
+                        font-size: 16px;
+                        border-radius: 6px;
+                        opacity: 0;
+                        transform: translateX(-300px);
+                        animation: appearbth-filter 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+                    }
+                }
+
+                .catalogCategories__cards-goods__wrapperForCards {
+                    height: 1532px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+
+                    //transition: vars.$main__transition;
+                    .wrapperFor6Cards {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                }
+
+                .catalogCategories__cards-goods__pageNavigation {
+                    display: flex;
+                    justify-content: center;
+
+                    .active {
+                        background-color: vars.$accent;
+                        color: vars.$title-light;
+                        border: 1px solid vars.$accent;
+                    }
+
+
+                    button {
+                        width: 48px;
+                        height: 48px;
+                        background: none;
+                    }
+
+                    span {
+                        width: 48px;
+                        height: 48px;
+                        display: block;
+                        border: 1px solid vars.$text;
+                        border-radius: 4px;
+                        margin: 0 2px;
+                        text-align: center;
+                        padding-top: 9px;
+                        color: vars.$text;
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+
+
+                }
+            }
+
+            .catalogCategories__cards-goodsIgnorRemToPx {
+                min-width: 1255px;
+                //width: 1248px;
+                width: 1255px;
+
+                .catalogCategories__cards-goods__wrapperForCards {
+                    .wrapperFor6Cards {
+                        width: 1279px;
+                        column-gap: 24px;
+                        row-gap: 40px;
+
+                        .allPageCard {
+                            width: 400px;
+                        }
+                    }
+                }
+            }
         }
 
     }
 }
 
-@media screen and (min-width: 1401px) {
-    main {}
-}
 
 @media screen and (max-width: 1820px) {
     main {
         .catalogCategories {
             padding-bottom: 80px;
 
-            .container {
-                .catalogCategories__wrapperForFilter {
-                    .catalogCategories__cards-goods {
-                        min-width: 840px;
-                        width: 840px;
-                        margin: 0 auto;
+            .catalogCategories__wrapperForFilter {
+                .catalogCategories__cards-goods {
+                    margin: 0 auto;
 
-                        .catalogCategories__cards-goods__counter-filterTwo {
-                            align-items: baseline;
-                            margin-bottom: 17px;
+                    .catalogCategories__cards-goods__counter-filterTwo {
+                        align-items: baseline;
+                        margin-bottom: 17px;
 
-                            .counter-card {
-                                #amount-card {
-                                    line-height: 1.2;
-                                }
+                        .counter-card {
+                            #amount-card {
+                                line-height: 1.2;
                             }
                         }
+                    }
 
-                        .catalogCategories__cards-goods__wrapperForCards {
-                            height: 2299px;
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        height: 2299px;
+                    }
+                }
 
-                            //column-gap: 40px;
-                            .wrapperFor6Cards {
-                                width: 864px;
-                                column-gap: 40px;
-                            }
+                .catalogCategories__cards-goodsIgnorRemToPx {
+                    min-width: 840px;
+                    width: 840px;
+
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        .wrapperFor6Cards {
+                            width: 864px;
+                            column-gap: 40px;
+                            row-gap: 40px;
                         }
                     }
                 }
@@ -871,107 +805,99 @@ main {
 @media screen and (max-width: 1400px) {
     main {
         .catalogCategories {
-            .container {
-                .catalogCategories__select-catagory {
-
-
-                    label {
-                        height: 53px;
-
-
-                    }
+            .catalogCategories__select-catagory {
+                p {
+                    height: 53px;
                 }
+            }
 
-                //.radio-category{}
+            .catalogCategories__wrapperForFilter {
+                .catalogCategories__cards-goods {
+                    margin: 0;
+                }
             }
         }
+
     }
 }
 
 @media screen and (max-width: 1380px) {
     main {
         .catalogCategories {
-            .container {
-                .catalogCategories__wrapperForFilter {
-                    justify-content: center;
+            .catalogCategories__wrapperForFilter {
+                justify-content: center;
 
-                    .filter {
-                        display: none;
-                        position: fixed;
-                        top: 0px;
-                        width: 100vw;
-                        height: 100%;
-                        margin-right: 0;
-                        background-color: vars.$bg-modal;
-                        z-index: 11;
+                .filter {
+                    display: none;
+                    position: fixed;
+                    top: 0px;
+                    width: 100vw;
+                    height: 100%;
+                    margin-right: 0;
+                    background-color: vars.$bg-modal;
+                    z-index: 11;
 
-                        .filter__form {
-                            width: 394px;
-                            height: 705px;
-                            padding: 40px 60px;
-                            border-radius: 16px;
-                            background-color: vars.$title-light;
-                            margin: 113px auto 0;
+                    .filter__form {
+                        width: 394px;
+                        height: 705px;
+                        padding: 40px 60px;
+                        border-radius: 16px;
+                        background-color: vars.$title-light;
+                        margin: 99px auto 0;
 
-                            #apply-filter {
-                                width: 274px;
+                        #apply-filter {
+                            width: 274px;
+                        }
+                    }
+
+                    .filter__close {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        top: 45px;
+                        right: 25.4%;
+                        width: 44px;
+                        height: 44px;
+                        background-color: vars.$title-light;
+                        border-radius: 50px;
+
+                        svg {
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                .visible {
+                    display: block;
+                }
+
+                .catalogCategories__cards-goods {
+                    .catalogCategories__cards-goods__counter-filterTwo {
+                        flex-wrap: wrap;
+                        margin-bottom: 22px;
+                        row-gap: 16px;
+
+                        .counter-card {
+                            margin-right: 50%;
+                            margin-bottom: 10px;
+
+                            #amount-card {
+                                line-height: 1.3;
                             }
                         }
 
-                        .filter__close {
-                            display: block;
-                            position: absolute;
-                            top: 60px;
-                            right: 25.4%;
-                            width: 44px;
-                            height: 44px;
-                            background-color: vars.$title-light;
-                            border-radius: 50px;
-                            padding: 13px 13px;
+                        .bth-filter {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
 
                             svg {
-                                pointer-events: none;
+                                margin-right: 14px;
                             }
                         }
                     }
 
-                    .visible {
-                        display: block;
-                    }
-
-                    .catalogCategories__cards-goods {
-                        .catalogCategories__cards-goods__counter-filterTwo {
-                            flex-wrap: wrap;
-                            margin-bottom: 24px;
-
-                            .counter-card {
-                                margin-right: 50%;
-                                margin-bottom: 24px;
-
-                                #amount-card {
-                                    line-height: 1.3;
-                                }
-                            }
-
-                            .bth-filter {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                                svg {
-                                    margin-right: 14px;
-                                }
-                            }
-                        }
-
-                        .catalogCategories__cards-goods__wrapperForCards {
-
-                            .allPageCard {
-                                padding-left: 21.5px;
-                                padding-right: 21.5px;
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -980,22 +906,19 @@ main {
 
 @media screen and (max-width: 1100px) {
     main {
-        .swiper-card {
-            width: clamp(320px, 97vw - 36px, 1160px);
-        }
-
         .allPageCard {
-            padding: 1.4375rem 0.8125rem 1.5rem 1.0625rem;
-            height: clamp(40.9375rem, 70vw - 2.5rem, 45.625rem);
+            height: 656px;
 
             .allPageCard__swiperImg {
+                flex: 4.1;
+
                 .swiper-wrapper {
-                    height: 92.5%;
+                    height: 95%;
 
                     .swiper-slide {
                         a {
                             img {
-                                max-height: 293px;
+                                //max-height: 293px;
                             }
                         }
                     }
@@ -1005,24 +928,33 @@ main {
             .allPageCard__raiting {
                 flex-direction: column;
                 margin-top: 20px;
+
+                p {
+                    text-align: left;
+                }
             }
 
 
             h4 {
-                font-size: clamp(1.125rem, 5vw - 1.9375rem, 1.5rem);
+                font-size: clamp(18px, 5vw - 31px, 24px);
 
             }
 
             p {
-                font-size: clamp(0.875rem, 5vw - 1.9375rem, 1rem);
+                font-size: clamp(14px, 5vw - 31px, 16px);
                 line-height: 1.4;
             }
         }
 
+        .allPageCardIgnorRemToPx {
+            padding: 24px 13px 24px 17px;
+        }
+
         .allPageCard__buy {
             flex-wrap: wrap;
+            justify-content: start;
 
-            span {
+            .price {
                 text-align: left;
                 width: 85%;
             }
@@ -1033,85 +965,43 @@ main {
             }
         }
 
-        .swiper-card__buy {
-            span {
-                margin-bottom: 0.3125rem;
+        .catalogCategories {
+            .catalogCategories__select-catagory {
+                flex-wrap: wrap;
             }
 
-        }
+            //.radio-category{}
+            .catalogCategories__wrapperForFilter {
+                .catalogCategories__cards-goods {
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        height: 1949px;
 
-        .catalogCategories {
-            .container {
-                .catalogCategories__select-catagory {
-                    flex-wrap: wrap;
-
-                    label {
-                        &:nth-of-type(n+4) {
-                            max-width: 209px;
+                        .wrapperFor6Cards {
+                            .allPageCard {
+                                height: 630px;
+                            }
                         }
                     }
                 }
 
-                //.radio-category{}
-                .catalogCategories__wrapperForFilter {
-                    .catalogCategories__cards-goods {
-                        min-width: 740px;
-                        width: 740px;
+                .catalogCategories__cards-goodsIgnorRemToPx {
+                    min-width: 740px;
+                    width: 740px;
 
-                        .catalogCategories__cards-goods__wrapperForCards {
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        .wrapperFor6Cards {
+                            width: 764px;
+                            column-gap: 20px;
+                            row-gap: 20px;
 
-                            height: 1949px;
+                            .allPageCard {
+                                width: 360px;
+                                padding: 24px 21px 24px 21px;
 
-                            .wrapperFor6Cards {
-                                width: 764px;
-                                column-gap: 20px;
-                                row-gap: 20px;
-
-                                .allPageCard {
-                                    width: 360px;
-                                    height: 630px;
-                                    padding-top: 24px;
-
-                                    .allPageCard__swiperImg {
-                                        height: 340px;
-
-                                        .swiper-wrapper {
-                                            height: 86.2%;
-
-                                            .swiper-slide {
-                                                a {
-                                                    img {
-                                                        max-height: 295px;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    .allPageCard__raiting {
-                                        p {
-                                            font-size: 12px;
-                                        }
-                                    }
-
-                                    h4 {
-                                        font-size: 18px;
-                                    }
-
-                                    p {
-                                        font-size: 14px;
-                                    }
-
-                                    .swiper-card__buy {
-                                        justify-content: flex-start;
-
-                                        .allPageCard__buy__a {
-                                            margin-right: 9px;
-                                        }
-                                    }
+                                .allPageCard__swiperImg {
+                                    flex: 6.8;
                                 }
                             }
-
                         }
                     }
                 }
@@ -1120,67 +1010,77 @@ main {
     }
 }
 
-@media screen and (max-width: 800px) {
-    main {}
-}
-
 @media screen and (max-width: 790px) {
     main {
+        
         .catalogCategories {
-            .container {
-                .catalogCategories__wrapperForFilter {
-                    .filter {
-                        .filter__close {
-                            right: 17%;
+            .catalogCategories__wrapperForFilter {
+                .filter {
+                    .filter__close {
+                        right: 17%;
+                    }
+                }
+
+                .catalogCategories__cards-goods {
+
+
+                    .catalogCategories__cards-goods__counter-filterTwo {
+                        .counter-card {
+                            #amount-card {
+                                line-height: 1.5;
+                            }
+                        }
+
+                        .filterTwo {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            width: min-content;
+
+                            label {
+                                margin-bottom: 5px;
+                            }
+
+                            /*&:after {
+                                top: 28px;
+                                right: 33px;
+                            }*/
+                        }
+
+                        .bth-filter {
+                            align-self: flex-end;
                         }
                     }
 
-                    .catalogCategories__cards-goods {
-                        min-width: 540px;
-                        width: 540px;
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        height: 2029px;
 
-                        .catalogCategories__cards-goods__counter-filterTwo {
-                            .counter-card {
-                                #amount-card {
-                                    line-height: 1.5;
-                                }
-                            }
+                        .wrapperFor6Cards {
 
-                            .filterTwo {
-                                display: flex;
-                                align-items: center;
-                                flex-wrap: wrap;
-                                width: min-content;
-
-                                label {
-                                    margin-bottom: 5px;
-                                }
-
-                                &:after {
-                                    top: 28px;
-                                    right: 33px;
-                                }
-                            }
-
-                            .bth-filter {
-                                align-self: flex-end;
+                            .allPageCard {
+                                height: 656px;
                             }
                         }
+                    }
+                }
 
-                        .catalogCategories__cards-goods__wrapperForCards {
-                            height: 2029px;
+                .catalogCategories__cards-goodsIgnorRemToPx {
+                    min-width: 540px;
+                    width: 540px;
 
-                            .wrapperFor6Cards {
-                                width: 564px;
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        .wrapperFor6Cards {
+                            width: 564px;
 
-                                .allPageCard {
-                                    width: 260px;
-                                    height: 656px;
-                                    padding-left: 8.5px;
-                                    padding-right: 8.5px;
+                            .allPageCard {
+                                width: 260px;
+                                padding-left: 8.5px;
+                                padding-right: 8.5px;
+
+                                .allPageCard__swiperImg {
+                                    flex: 4.5;
                                 }
                             }
-
                         }
                     }
                 }
@@ -1191,43 +1091,25 @@ main {
 
 @media screen and (max-width: 735px) {
     main {
-        .swiper-card {
-            margin: clamp(15px, 40vw - 237px, 57px) 0 0 1rem;
-        }
-
         .allPageCard {
-
             .allPageCard__swiperImg {
-                .swiper-wrapper {
-                    height: 91.6%;
+                flex: 4.5;
 
-                    .swiper-slide {
-                        a {
-                            img {
-                                max-height: 315px;
-                            }
-                        }
-                    }
-                }
             }
 
         }
 
         .catalogCategories {
-            .container {
-                .catalogCategories__select-catagory {
 
-                    label {
-                        flex-basis: 50%;
-                        flex-grow: 0;
-                        height: 40px;
-                        padding: 0;
+            .catalogCategories__select-catagory {
+                p {
+                    height: 40px;
+                }
+            }
 
-                        &:nth-of-type(n+4) {
-                            max-width: none;
-                        }
-
-                    }
+            .catalogCategories__wrapperForFilter {
+                .catalogCategories__cards-goods {
+                    .catalogCategories__cards-goods__counter-filterTwo {}
                 }
             }
         }
@@ -1239,287 +1121,105 @@ main {
         .catalogCategories {
             padding-bottom: 60px;
 
-            .container {
-                .catalogCategories__select-catagory {
-                    label {
-                        &:nth-of-type(n+4) {}
-                    }
+            .catalogCategories__select-catagory {
+                p {
+                    padding: 0;
+                    //padding: 0 28px;
                 }
+            }
 
-                .catalogCategories__wrapperForFilter {
-                    .filter {
-                        .filter__form {
-                            width: 320px;
-                            height: 684px;
-                            padding: 40px 30px;
+            .catalogCategories__wrapperForFilter {
+                .filter {
+                    .filter__form {
+                        width: 320px;
+                        max-width: 100vw;
+                        height: 684px;
+                        padding: 40px 30px;
+                        margin-top: 110px;
 
-                            #apply-filter {
-                                width: 260px;
-                                height: 47px;
-                                font-size: 14px;
-                            }
-                        }
+                        .filter__form__price-range {
+                            .price-range__price-input {
+                                .field {
 
-                        .filter__close {
-                            right: 0;
-                        }
-                    }
-
-                    .catalogCategories__cards-goods {
-                        min-width: 260px;
-                        width: 260px;
-
-                        .catalogCategories__cards-goods__counter-filterTwo {
-                            .counter-card {
-                                #amount-card {
-                                    line-height: 1.4;
-                                }
-                            }
-
-                            .filterTwo {
-                                margin-bottom: 16px;
-                            }
-                        }
-
-                        .catalogCategories__cards-goods__wrapperForCards {
-                            height: 4057px;
-
-                            .wrapperFor6Cards {
-                                width: 284px;
-
-                                .allPageCard {
-                                    padding-bottom: 24px;
-
-                                    .allPageCard__swiperImg {
-                                        .swiper-wrapper {
-                                            height: 86.8%;
+                                    span {
+                                        &:first-child {
+                                            flex: 1;
+                                            margin-right: 0;
                                         }
 
-                                        .swiper-card__swiperImg-pagination {
-                                            .swiper-pagination-bullet {
-                                                width: 53px;
-                                            }
+                                        &:last-child {
+                                            flex: 1;
+                                            position: static;
+                                            text-align: left;
                                         }
                                     }
 
-                                    .allPageCard__raiting {
-                                        .stars {
-                                            width: 100px;
-                                            margin-bottom: 5px;
-                                        }
+                                    input {
+                                        flex: 1 0;
+                                        padding-left: 0;
+                                        text-align: right;
+                                        min-width: 43%;
                                     }
-
-                                    h4 {
-                                        margin: 13px 0 14px;
-                                    }
-
-                                    p {}
-
-                                    .swiper-card__buy {
-                                        .price {
-                                            font-size: 24px;
-                                            margin-bottom: 3px;
-                                        }
-
-                                        .swiper-card__buy__a {
-                                            color: vars.$title-light;
-                                            user-select: auto;
-
-                                            .swiper-card__buy__a__img {
-                                                top: 10px;
-                                                left: 38px;
-                                            }
-                                        }
-
-                                        .like {
-                                            padding-left: 23px;
-
-                                            img {
-                                                width: 20px;
-                                                height: 20px;
-                                            }
-                                        }
-                                    }
-
-                                }
-                            }
-
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 580px) {
-    main {
-        .swiper-card {
-            margin: 0.9375rem auto 0;
-
-            .swiper-wrapper {
-                .swiper-slide {
-                    border-radius: 8px;
-                    background-color: vars.$title-light;
-                }
-            }
-        }
-
-        .allPageCard {
-            height: clamp(21.625rem, 130vw - 5.875rem, 41.25rem);
-            padding: 1.0625rem 0 1.0625rem 1.0625rem;
-
-            .allPageCard__swiperImg {
-                .swiper-wrapper {
-                    height: 89%;
-
-                    .swiper-slide {
-                        a {
-                            justify-content: flex-start;
-
-                            img {
-                                height: clamp(8.1875rem, 80vw - 179px, 285px);
-                            }
-                        }
-                    }
-                }
-
-                .swiper-card__swiperImg-pagination {
-                    width: 5rem;
-
-                    .swiper-pagination-bullet {
-                        width: 0.8125rem;
-                    }
-                }
-            }
-
-            h4 {
-                font-size: clamp(0.75rem, 3vw, 1.125rem);
-                margin: 0.625rem 0 0 0;
-                line-height: 1.3;
-            }
-
-        }
-
-        .swiper-card__buy {
-            justify-content: flex-start;
-
-            span {
-                font-size: clamp(1.125rem, 4vw, 1.5rem);
-                margin-bottom: 0.9375rem;
-            }
-
-            .swiper-card__buy__a {
-                margin-right: 9px;
-                color: transparent;
-                user-select: none;
-
-                .swiper-card__buy__a__img {
-                    top: 0.625rem;
-                    left: 0.5rem;
-                }
-            }
-
-            .like {
-                padding-left: 0.625rem;
-            }
-
-            .allPageCard__buy__a,
-            .like {
-                width: 2.1875rem;
-                height: 2.1875rem;
-            }
-
-        }
-
-        .catalogCategories {
-            .container {
-                .catalogCategories__select-catagory {
-                    flex-direction: column;
-                    flex-wrap: nowrap;
-
-                    label {
-                        flex-grow: initial;
-                        flex-basis: initial;
-                        padding: 0 29px;
-
-                        p {
-                            min-width: auto;
-                        }
-                    }
-                }
-
-
-                .catalogCategories__wrapperForFilter {
-                    .catalogCategories__cards-goods {
-                        .catalogCategories__cards-goods__wrapperForCards {
-                            .allPageCard {
-                                p {
-                                    display: initial;
                                 }
                             }
                         }
 
+                        .wrapperForSvgFilter {
+                            right: 38px;
+                        }
 
+                        #apply-filter {
+                            width: 260px;
+                            height: 47px;
+                            font-size: 14px;
+                            max-width: 100%;
+                        }
                     }
 
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 450px) {
-    main {
-        .stars {
-            width: 5rem;
-            height: 1rem;
-            margin: 0;
-        }
-
-        .allPageCard {
-            .allPageCard__swiperImg {
-                .swiper-wrapper {
-                    height: 86.1%;
-                }
-
-                .swiper-card__swiperImg-pagination {
-                    margin: 0 0.875rem;
-                }
-
-            }
-
-            .allPageCard__raiting {
-                margin: 0;
-            }
-
-            p {
-                display: none;
-            }
-        }
-
-        .catalogCategories {
-            .container {
-                .catalogCategories__select-catagory {
-                    label {
-                        justify-content: space-between;
+                    .filter__close {
+                        right: 0;
+                        top: 56px;
                     }
                 }
 
+                .catalogCategories__cards-goods {
 
-            }
-        }
-    }
-}
 
-@media screen and (max-width: 320px) {
-    main {
-        .allPageCard {
-            .allPageCard__swiperImg {
-                .swiper-wrapper {
-                    height: 78.1%;
+                    .catalogCategories__cards-goods__counter-filterTwo {
+                        .counter-card {
+                            #amount-card {
+                                line-height: 1.4;
+                            }
+                        }
+
+                        .filterTwo {
+                            max-width: 100%;
+
+                            #sortingList {
+                                max-width: 100%;
+                            }
+                        }
+                    }
+
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        height: 4057px;
+                    }
                 }
+
+                .catalogCategories__cards-goodsIgnorRemToPx {
+                    min-width: 260px;
+                    width: 260px;
+
+                    .catalogCategories__cards-goods__wrapperForCards {
+                        .wrapperFor6Cards {
+                            width: 284px;
+                        }
+                    }
+                }
+
             }
+
+
         }
     }
 }

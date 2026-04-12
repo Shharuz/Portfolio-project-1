@@ -169,640 +169,38 @@ main .blog-article-min h5 a {
 main .blog-article-min p {
   color: #636363;
 }
-main .swiper-card {
-  width: clamp(1160px, 100vw - 240px, 1680px);
-  margin: 57px auto 0;
-  position: relative;
-}
-main .swiper-card .swiper-wrapper .swiper-slide-visible {
-  opacity: 1;
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex {
-  transition: transform 1s, opacity 1s;
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+1) {
-  transform: translate3d(150px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+2) {
-  transform: translate3d(300px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+3) {
-  transform: translate3d(450px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+4) {
-  transform: translate3d(600px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+5) {
-  transform: translate3d(750px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+6) {
-  transform: translate3d(900px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+7) {
-  transform: translate3d(1050px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+8) {
-  transform: translate3d(1200px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+9) {
-  transform: translate3d(1350px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+10) {
-  transform: translate3d(1500px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+11) {
-  transform: translate3d(1650px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+12) {
-  transform: translate3d(1800px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+13) {
-  transform: translate3d(1950px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+14) {
-  transform: translate3d(2100px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+15) {
-  transform: translate3d(2250px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+16) {
-  transform: translate3d(2400px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+17) {
-  transform: translate3d(2550px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+18) {
-  transform: translate3d(2700px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+19) {
-  transform: translate3d(2850px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+20) {
-  transform: translate3d(3000px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+21) {
-  transform: translate3d(3150px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+22) {
-  transform: translate3d(3300px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+23) {
-  transform: translate3d(3450px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+24) {
-  transform: translate3d(3600px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+25) {
-  transform: translate3d(3750px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+26) {
-  transform: translate3d(3900px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+27) {
-  transform: translate3d(4050px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+28) {
-  transform: translate3d(4200px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+29) {
-  transform: translate3d(4350px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+30) {
-  transform: translate3d(4500px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+31) {
-  transform: translate3d(4650px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+32) {
-  transform: translate3d(4800px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+33) {
-  transform: translate3d(4950px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+34) {
-  transform: translate3d(5100px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+35) {
-  transform: translate3d(5250px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+36) {
-  transform: translate3d(5400px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+37) {
-  transform: translate3d(5550px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+38) {
-  transform: translate3d(5700px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+39) {
-  transform: translate3d(5850px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+40) {
-  transform: translate3d(6000px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+41) {
-  transform: translate3d(6150px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+42) {
-  transform: translate3d(6300px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+43) {
-  transform: translate3d(6450px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+44) {
-  transform: translate3d(6600px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+45) {
-  transform: translate3d(6750px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+46) {
-  transform: translate3d(6900px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+47) {
-  transform: translate3d(7050px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+48) {
-  transform: translate3d(7200px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+49) {
-  transform: translate3d(7350px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+50) {
-  transform: translate3d(7500px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+51) {
-  transform: translate3d(7650px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+52) {
-  transform: translate3d(7800px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+53) {
-  transform: translate3d(7950px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+54) {
-  transform: translate3d(8100px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+55) {
-  transform: translate3d(8250px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+56) {
-  transform: translate3d(8400px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+57) {
-  transform: translate3d(8550px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+58) {
-  transform: translate3d(8700px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+59) {
-  transform: translate3d(8850px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+60) {
-  transform: translate3d(9000px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+61) {
-  transform: translate3d(9150px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+62) {
-  transform: translate3d(9300px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+63) {
-  transform: translate3d(9450px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+64) {
-  transform: translate3d(9600px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+65) {
-  transform: translate3d(9750px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+66) {
-  transform: translate3d(9900px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+67) {
-  transform: translate3d(10050px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+68) {
-  transform: translate3d(10200px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+69) {
-  transform: translate3d(10350px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+70) {
-  transform: translate3d(10500px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+71) {
-  transform: translate3d(10650px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+72) {
-  transform: translate3d(10800px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+73) {
-  transform: translate3d(10950px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+74) {
-  transform: translate3d(11100px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+75) {
-  transform: translate3d(11250px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+76) {
-  transform: translate3d(11400px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+77) {
-  transform: translate3d(11550px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+78) {
-  transform: translate3d(11700px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+79) {
-  transform: translate3d(11850px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+80) {
-  transform: translate3d(12000px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+81) {
-  transform: translate3d(12150px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+82) {
-  transform: translate3d(12300px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+83) {
-  transform: translate3d(12450px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+84) {
-  transform: translate3d(12600px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+85) {
-  transform: translate3d(12750px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+86) {
-  transform: translate3d(12900px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+87) {
-  transform: translate3d(13050px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+88) {
-  transform: translate3d(13200px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+89) {
-  transform: translate3d(13350px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+90) {
-  transform: translate3d(13500px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+91) {
-  transform: translate3d(13650px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+92) {
-  transform: translate3d(13800px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+93) {
-  transform: translate3d(13950px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+94) {
-  transform: translate3d(14100px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+95) {
-  transform: translate3d(14250px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+96) {
-  transform: translate3d(14400px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+97) {
-  transform: translate3d(14550px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+98) {
-  transform: translate3d(14700px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+99) {
-  transform: translate3d(14850px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .addAnimSwiperIndex:nth-child(n+100) {
-  transform: translate3d(15000px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+1) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+2) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+3) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+4) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+5) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+6) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+7) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+8) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+9) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+10) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+11) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+12) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+13) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+14) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+15) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+16) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+17) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+18) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+19) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+20) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+21) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+22) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+23) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+24) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+25) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+26) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+27) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+28) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+29) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+30) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+31) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+32) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+33) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+34) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+35) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+36) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+37) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+38) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+39) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+40) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+41) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+42) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+43) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+44) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+45) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+46) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+47) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+48) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+49) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+50) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+51) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+52) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+53) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+54) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+55) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+56) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+57) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+58) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+59) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+60) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+61) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+62) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+63) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+64) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+65) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+66) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+67) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+68) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+69) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+70) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+71) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+72) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+73) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+74) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+75) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+76) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+77) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+78) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+79) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+80) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+81) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+82) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+83) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+84) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+85) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+86) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+87) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+88) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+89) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+90) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+91) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+92) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+93) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+94) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+95) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+96) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+97) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+98) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+99) {
-  transform: translate3d(0px, 0px, 0px);
-}
-main .swiper-card .swiper-wrapper .swiper-slideIndexVisible:nth-child(n+100) {
-  transform: translate3d(0px, 0px, 0px);
-}
 main .allPageCard {
-  opacity: 0.5;
-  height: 730px;
-  padding: 24px 18px 24px 17px;
   display: flex;
   flex-direction: column;
+  justify-content: end;
+  height: 726px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
 }
 main .allPageCard .allPageCard__swiperImg {
   overflow: hidden;
+  flex: 7;
 }
 main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
-  height: 93.5%;
+  height: 98%;
 }
 main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide {
   padding: 0 0;
   opacity: 1;
+  height: inherit;
 }
 main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a {
   padding-top: 0;
+  height: 100%;
+}
+main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
+  height: 100%;
 }
 main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination {
-  width: 250px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin-top: 4px;
 }
 main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .swiper-pagination-bullet {
   width: 53px;
@@ -816,78 +214,71 @@ main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .sw
 }
 main .allPageCard .allPageCard__raiting {
   display: flex;
-  justify-content: space-between;
-  margin-top: 7px;
+  margin-top: 19px;
 }
 main .allPageCard .allPageCard__raiting p {
   font-size: 12px;
-  line-height: 23px;
-  padding-right: 10px;
+  text-align: right;
 }
 main .allPageCard h4 {
-  margin: 12px 0 14px;
+  margin: 14px 0;
   line-height: 1.4;
   text-align: left;
+  color: #0D0D0D;
 }
 main .allPageCard p {
   line-height: 1.35;
   text-align: left;
+  flex: 1;
 }
-main .swiper-card__buy,
+main .allPageCardIgnorRemToPx {
+  padding: 24px 18px 24px 17px;
+}
 main .allPageCard__buy {
   display: flex;
   justify-content: space-between;
-  margin-top: auto;
+  row-gap: 5px;
+  column-gap: 9px;
 }
-main .swiper-card__buy span,
 main .allPageCard__buy span {
   font-weight: 500;
   font-size: 24px;
   color: #73C167;
 }
-main .swiper-card__buy .swiper-card__buy__a,
-main .swiper-card__buy .allPageCard__buy__a,
-main .allPageCard__buy .swiper-card__buy__a,
 main .allPageCard__buy .allPageCard__buy__a {
   width: 160px;
   height: 35px;
+  column-gap: 7%;
   position: relative;
-  padding-left: 1.8125rem;
   border-radius: 4px;
   font-weight: 700;
   font-size: 14px;
   margin-left: auto;
-  margin-right: 10px;
 }
-main .swiper-card__buy .swiper-card__buy__a .swiper-card__buy__a__img,
-main .swiper-card__buy .allPageCard__buy__a .swiper-card__buy__a__img,
-main .allPageCard__buy .swiper-card__buy__a .swiper-card__buy__a__img,
-main .allPageCard__buy .allPageCard__buy__a .swiper-card__buy__a__img {
-  position: absolute;
-  top: 10px;
-  left: 38px;
+main .allPageCard__buy .allPageCard__buy__a .allPageCard__buy__a__txt {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
 }
-main .swiper-card__buy button,
-main .allPageCard__buy button {
+main .allPageCard__buy .allPageCard__buy__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 70px;
   height: 35px;
   background-color: #FFFFFF;
   border-radius: 4px;
-  padding-left: 27px;
   border: 1px solid #73C167;
 }
-main .swiper-card__buy button img,
-main .allPageCard__buy button img {
-  width: 13px;
-  height: 13px;
+main .allPageCard__buy .allPageCard__buy__btn img {
+  width: 14px;
+  height: 14px;
 }
-main .swiper-card__buy button:hover,
-main .allPageCard__buy button:hover {
+main .allPageCard__buy .allPageCard__buy__btn:hover {
   background-color: rgba(115, 193, 103, 0.2);
   transition: all 0.5s ease;
 }
-main .swiper-card__buy button:active,
-main .allPageCard__buy button:active {
+main .allPageCard__buy .allPageCard__buy__btn:active {
   background-color: rgba(115, 193, 103, 0.4);
   transition: all 0.5s ease;
 }
@@ -897,32 +288,34 @@ main .card-product-description {
 main .card-product-description .container {
   display: grid;
   grid-template-columns: 40.3% 53.8%;
-  grid-template-rows: 193px auto 85px;
+  grid-template-rows: 0.47fr 1.2fr 0fr;
   column-gap: clamp(40px, 12vw - 132px, 98px);
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper {
+main .card-product-description .card-product-description__wrapper-for-swiper {
   display: flex;
   height: clamp(517px, 50vw - 314px, 646px);
   position: relative;
+  grid-column: 1;
+  grid-row: span 3;
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav {
+main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav {
   margin-right: 19px;
   margin-left: 0;
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide {
+main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide {
   width: 124px;
   position: relative;
   background-color: #FFFFFF;
   border-radius: 12px;
   padding: 3px 3px;
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide img {
+main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide-thumb-active:before {
+main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide-thumb-active:before {
   content: "";
   position: absolute;
   width: 124px;
@@ -932,15 +325,15 @@ main .card-product-description .container .card-product-description__wrapper-for
   top: 0;
   left: 0;
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg {
+main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg {
   width: clamp(427px, 50vw - 427px, 533px);
   border-radius: 24px;
   margin: 0;
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg .swiper-wrapper .swiper-slide img {
+main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg .swiper-wrapper .swiper-slide img {
   height: inherit;
 }
-main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg .swiper-wrapper .swiper-slide .zoom-preview {
+main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg .swiper-wrapper .swiper-slide .zoom-preview {
   width: 533px;
   height: 648px;
   background-repeat: no-repeat;
@@ -949,147 +342,147 @@ main .card-product-description .container .card-product-description__wrapper-for
   top: 0;
   left: 0;
 }
-main .card-product-description .container .card-product-description__title-block {
+main .card-product-description .card-product-description__title-block {
   padding-top: 6px;
 }
-main .card-product-description .container .card-product-description__title-block h3 {
+main .card-product-description .card-product-description__title-block h3 {
   font-size: clamp(32px, 4vw - 36px, 40px);
   line-height: 1.4;
 }
-main .card-product-description .container .card-product-description__title-block .allPageCard__raiting {
+main .card-product-description .card-product-description__title-block .allPageCard__raiting {
   display: flex;
   flex-wrap: wrap;
   margin: 26px 0;
 }
-main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .product-article {
+main .card-product-description .card-product-description__title-block .allPageCard__raiting .product-article {
   margin-right: 60%;
-  margin-bottom: 26px;
   font-size: 16px;
 }
-main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .stars {
+main .card-product-description .card-product-description__title-block .allPageCard__raiting .stars {
   display: none;
   margin-right: 16px;
   width: 140px;
   height: 28px;
   margin-left: 0;
 }
-main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .stars .star {
+main .card-product-description .card-product-description__title-block .allPageCard__raiting .stars .star {
   width: 23px;
 }
-main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .stars .star:before {
+main .card-product-description .card-product-description__title-block .allPageCard__raiting .stars .star:before {
   font-size: 26px;
 }
-main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .stars .half:before {
+main .card-product-description .card-product-description__title-block .allPageCard__raiting .stars .half:before {
   font-size: 27px;
 }
-main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .amount-reviews {
+main .card-product-description .card-product-description__title-block .allPageCard__raiting .amount-reviews {
   display: none;
   color: #767676;
 }
-main .card-product-description .container .card-product-description__buy {
+main .card-product-description .card-product-description__buy {
   grid-column: 2;
   grid-row: 3;
   margin-top: 0;
   align-items: center;
   margin-top: 27px;
+  column-gap: 8px;
+  flex-wrap: wrap;
 }
-main .card-product-description .container .card-product-description__buy .links-online-store {
+main .card-product-description .card-product-description__buy .links-online-store {
   order: 1;
   width: clamp(128px, 15vw - 100px, 188px);
   min-width: 128px;
   column-gap: 4px;
   margin-left: auto;
 }
-main .card-product-description .container .card-product-description__buy .links-online-store a {
+main .card-product-description .card-product-description__buy .links-online-store a {
   opacity: 0;
 }
-main .card-product-description .container .card-product-description__buy span {
-  opacity: 0;
-}
-main .card-product-description .container .card-product-description__buy span:first-of-type {
+main .card-product-description .card-product-description__buy .price {
   font-size: 16px;
-  width: 38px;
-  line-height: 1.15;
-  margin-right: 24px;
+  opacity: 0;
 }
-main .card-product-description .container .card-product-description__buy span:last-of-type {
+main .card-product-description .card-product-description__buy .price:first-of-type {
+  width: min-content;
+  line-height: 1;
+  margin-right: 1%;
+}
+main .card-product-description .card-product-description__buy .price-relative-input {
   font-size: 40px;
-  min-width: 127px;
 }
-main .card-product-description .container .card-product-description__buy sup {
+main .card-product-description .card-product-description__buy sup {
   font-size: 20px;
   color: #767676;
+  padding-left: 0.7%;
   text-decoration: line-through;
   align-self: baseline;
-  margin-left: 16px;
-  min-width: 62px;
   opacity: 0;
 }
-main .card-product-description .container .card-product-description__buy .counter {
-  margin-right: 8px;
-  margin-left: 39px;
-  opacity: 0;
+main .card-product-description .card-product-description__buy .counter {
+  margin-left: 3%;
 }
-main .card-product-description .container .card-product-description__buy .buy__a {
+main .card-product-description .card-product-description__buy .allPageCard__buy__a,
+main .card-product-description .card-product-description__buy .allPageCard__buy__btn {
+  height: 40px;
+}
+main .card-product-description .card-product-description__buy .allPageCard__buy__a {
   width: 200px;
   height: 40px;
+  margin-left: 0;
+}
+main .card-product-description .card-product-description__buy .allPageCard__buy__a .allPageCard__buy__a__img {
+  display: none;
+}
+main .card-product-description .card-product-description__buy .allPageCard__buy__a .allPageCard__buy__a__txt {
   font-size: 16px;
-  margin-right: 8px;
-  opacity: 0;
 }
-main .card-product-description .container .card-product-description__buy .like {
+main .card-product-description .card-product-description__buy .allPageCard__buy__btn {
   width: 40px;
-  height: 40px;
-  padding-left: 8px;
-  opacity: 0;
+  flex-shrink: 0;
 }
-main .card-product-description .container .card-product-description__buy .like img {
-  width: initial;
-  height: initial;
+main .card-product-description .card-product-description__buy .allPageCard__buy__btn img {
+  width: 20px;
+  height: 20px;
 }
-main .card-product-description .container .card-product-description__about-the-product {
+main .card-product-description .card-product-description__about-the-product {
   grid-column: 2;
   grid-row: 2;
   max-width: 905px;
 }
-main .card-product-description .container .card-product-description__about-the-product p {
+main .card-product-description .card-product-description__about-the-product p {
   line-height: 1.375;
 }
-main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__main-text {
+main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__main-text {
   margin-bottom: 27px;
 }
-main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__main-text p {
-  font-size: 16px;
-}
-main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__main-text p:not(:last-child) {
+main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__main-text p:not(:last-child) {
   margin-bottom: 5px;
 }
-main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features {
+main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features {
   display: grid;
   grid-template-columns: 249px 1fr;
 }
-main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features p {
+main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features p {
   opacity: 0;
   margin-bottom: 16px;
 }
-main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features p:nth-last-child(-n+2) {
+main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features p:nth-last-child(-n+2) {
   margin-bottom: 0;
 }
-main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features p:nth-child(even) {
+main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features p:nth-child(even) {
   color: #0D0D0D;
 }
 main .card-helpful-information {
-  padding-top: 60px;
+  padding-top: 58px;
 }
 main .card-helpful-information .container {
   display: flex;
   column-gap: 21px;
 }
-main .card-helpful-information .container h4 {
+main .card-helpful-information h4 {
   width: 100%;
   padding-bottom: 25px;
 }
-main .card-helpful-information .container .card-helpful-information__articles {
+main .card-helpful-information .card-helpful-information__articles {
   display: flex;
   flex-direction: column;
   flex: 3 1 972px;
@@ -1099,29 +492,29 @@ main .card-helpful-information .container .card-helpful-information__articles {
   position: relative;
   z-index: 2;
 }
-main .card-helpful-information .container .card-helpful-information__articles h4 {
+main .card-helpful-information .card-helpful-information__articles h4 {
   border-bottom: 1px solid #BBBBBB;
   color: #0D0D0D;
   margin-bottom: 26px;
 }
-main .card-helpful-information .container .card-helpful-information__articles .card-helpful-information__articles__block {
+main .card-helpful-information .card-helpful-information__articles .card-helpful-information__articles__block {
   display: flex;
   column-gap: 20px;
 }
-main .card-helpful-information .container .card-documentation {
+main .card-helpful-information .card-documentation {
   flex: 1 4 686px;
   padding: 39px 50px 14px 50px;
   background-color: #FFFFFF;
   border-radius: 32px;
 }
-main .card-helpful-information .container .card-documentation p {
+main .card-helpful-information .card-documentation p {
   border-top: 1px solid #BBBBBB;
   color: #353535;
   padding: 35px 0 35px 59px;
   position: relative;
   line-height: 1.3;
 }
-main .card-helpful-information .container .card-documentation p:before {
+main .card-helpful-information .card-documentation p:before {
   content: "";
   display: block;
   width: 40px;
@@ -1140,133 +533,145 @@ main .card-rewiews .container {
   padding: clamp(54px, 10vw - 105px, 87px) clamp(142px, 60vw - 730px, 422px) 21px 50px;
   border-radius: 32px;
 }
-main .card-rewiews .container span {
+main .card-rewiews span {
   color: #0D0D0D;
 }
-main .card-rewiews .container .card-rewiews__title {
+main .card-rewiews .card-rewiews__title {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 24px;
   align-items: center;
 }
-main .card-rewiews .container .card-rewiews__title h4 {
+main .card-rewiews .card-rewiews__title h4 {
   color: #0D0D0D;
   margin-right: 106px;
 }
-main .card-rewiews .container .card-rewiews__title span {
+main .card-rewiews .card-rewiews__title span {
   font-weight: 500;
   font-size: 24px;
   opacity: 0;
 }
-main .card-rewiews .container .card-rewiews__title .stars {
+main .card-rewiews .card-rewiews__title .stars {
   width: 160px;
   height: 34px;
   margin: 0 15px 0 18px;
   opacity: 0;
 }
-main .card-rewiews .container .card-rewiews__title .stars .star {
+main .card-rewiews .card-rewiews__title .stars .star {
   width: 34px;
   height: 34px;
 }
-main .card-rewiews .container .card-rewiews__title .stars .star:before {
+main .card-rewiews .card-rewiews__title .stars .star:before {
   line-height: 0.85;
   font-size: 34px;
 }
-main .card-rewiews .container .card-rewiews__title p {
+main .card-rewiews .card-rewiews__title p {
   opacity: 0;
 }
-main .card-rewiews .container .card-rewiews__item {
+main .card-rewiews .card-rewiews__item {
   padding: 26px 0;
   border-bottom: 1px solid #BBBBBB;
 }
-main .card-rewiews .container .card-rewiews__item:nth-child(2) {
+main .card-rewiews .card-rewiews__item:nth-child(2) {
   border-top: 1px solid #BBBBBB;
 }
-main .card-rewiews .container .card-rewiews__item .card-rewiews__item__text {
+main .card-rewiews .card-rewiews__item .card-rewiews__item__text {
   padding: 16px 0;
   line-height: 1.38;
-  font-size: 16px;
 }
-main .card-rewiews .container .card-rewiews__item .card-rewiews__item__name {
+main .card-rewiews .card-rewiews__item .card-rewiews__item__name {
   width: 191px;
   display: flex;
 }
-main .card-rewiews .container .card-rewiews__item .card-rewiews__item__name span {
+main .card-rewiews .card-rewiews__item .card-rewiews__item__name span {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
 }
-main .card-rewiews .container .card-rewiews__item .card-rewiews__item__name p {
+main .card-rewiews .card-rewiews__item .card-rewiews__item__name p {
   margin-left: auto;
   font-size: 12px;
 }
-main .card-rewiews .container .card-rewiews__leave-feedback {
+main .card-rewiews .card-rewiews__leave-feedback {
   width: 200px;
   height: 40px;
-  font-size: 1rem;
+  font-size: 16px;
   margin-top: 26px;
 }
 main .card-slider {
   padding-top: 100px;
   padding-bottom: clamp(80px, 20vw - 234px, 148px);
 }
-main .card-slider .container h2 {
+main .card-slider h2 {
+  line-height: 1.4;
   color: #353535;
 }
-main .card-slider .container .card-slider__swiper {
+main .card-slider .card-slider__swiper {
   margin-top: 42px;
   margin-left: 0;
 }
-main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide {
+main .card-slider .card-slider__swiper .swiper-wrapper .swiper-slide {
   background-color: #FFFFFF;
 }
-main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__swiperImg .swiper-card__swiperImg-pagination {
+main .card-slider .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__swiperImg .swiper-card__swiperImg-pagination {
   width: 223px;
 }
-main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy a {
-  margin-right: 10px;
+main .card-slider .card-slider__swiper .swiper-wrapper .swiper-slide .allPageCard__buy .allPageCard__buy__btn {
+  display: none;
 }
 
 @media screen and (max-width: 1400px) {
   main .card-product-description .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 258.5px 258.5px auto;
+    grid-template-columns: 49.3% 47.8%;
+    grid-template-rows: 0.4fr 0.6fr 1fr;
   }
-  main .card-product-description .container .card-product-description__title-block h3 {
+  main .card-product-description .card-product-description__wrapper-for-swiper {
+    grid-row: span 2;
+  }
+  main .card-product-description .card-product-description__title-block h3 {
     line-height: 1.4;
   }
-  main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .stars {
+  main .card-product-description .card-product-description__title-block h3 .line {
+    column-gap: 6px;
+  }
+  main .card-product-description .card-product-description__title-block .allPageCard__raiting .product-article {
+    margin-right: 70%;
+    margin-bottom: 25px;
+  }
+  main .card-product-description .card-product-description__title-block .allPageCard__raiting .stars {
     display: flex;
   }
-  main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .amount-reviews {
+  main .card-product-description .card-product-description__title-block .allPageCard__raiting .amount-reviews {
     display: initial;
   }
-  main .card-product-description .container .card-product-description__buy {
+  main .card-product-description .card-product-description__buy {
     grid-column: 2;
     grid-row: 2;
     flex-wrap: wrap;
     align-self: start;
-    padding-top: 10px;
+    padding-top: 0;
     justify-content: initial;
     margin-top: 0;
   }
-  main .card-product-description .container .card-product-description__buy .links-online-store {
+  main .card-product-description .card-product-description__buy .links-online-store {
     order: initial;
     margin-right: 60%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     margin-left: 0;
   }
-  main .card-product-description .container .card-product-description__buy span:first-of-type {
+  main .card-product-description .card-product-description__buy .price:first-of-type {
     display: none;
   }
-  main .card-product-description .container .card-product-description__buy sup {
+  main .card-product-description .card-product-description__buy sup {
     display: none;
   }
-  main .card-product-description .container .card-product-description__about-the-product {
+  main .card-product-description .card-product-description__buy .counter {
+    margin-left: 5%;
+  }
+  main .card-product-description .card-product-description__about-the-product {
     grid-column: span 2;
     grid-row: 3;
-    padding-top: 82px;
+    padding-top: 17px;
   }
   main .card-helpful-information {
     display: none;
@@ -1275,10 +680,10 @@ main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide 
     flex-direction: column;
     row-gap: 21px;
   }
-  main .card-helpful-information .container .card-helpful-information__articles {
+  main .card-helpful-information .card-helpful-information__articles {
     flex: auto;
   }
-  main .card-helpful-information .container .card-documentation {
+  main .card-helpful-information .card-documentation {
     display: flex;
     flex-wrap: wrap;
     flex: auto;
@@ -1291,67 +696,67 @@ main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide 
   }
 }
 @media screen and (max-width: 1100px) {
-  main .swiper-card {
-    width: clamp(320px, 97vw - 36px, 1160px);
-  }
   main .allPageCard {
-    padding: 1.4375rem 0.8125rem 1.5rem 1.0625rem;
-    height: clamp(40.9375rem, 70vw - 2.5rem, 45.625rem);
+    height: 656px;
+  }
+  main .allPageCard .allPageCard__swiperImg {
+    flex: 4.1;
   }
   main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
-    height: 92.5%;
-  }
-  main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
-    max-height: 293px;
+    height: 95%;
   }
   main .allPageCard .allPageCard__raiting {
     flex-direction: column;
     margin-top: 20px;
   }
+  main .allPageCard .allPageCard__raiting p {
+    text-align: left;
+  }
   main .allPageCard h4 {
-    font-size: clamp(1.125rem, 5vw - 1.9375rem, 1.5rem);
+    font-size: clamp(18px, 5vw - 31px, 24px);
   }
   main .allPageCard p {
-    font-size: clamp(0.875rem, 5vw - 1.9375rem, 1rem);
+    font-size: clamp(14px, 5vw - 31px, 16px);
     line-height: 1.4;
+  }
+  main .allPageCardIgnorRemToPx {
+    padding: 24px 13px 24px 17px;
   }
   main .allPageCard__buy {
     flex-wrap: wrap;
+    justify-content: start;
   }
-  main .allPageCard__buy span {
+  main .allPageCard__buy .price {
     text-align: left;
     width: 85%;
   }
   main .allPageCard__buy .allPageCard__buy__a {
     margin: 0;
   }
-  main .swiper-card__buy span {
-    margin-bottom: 0.3125rem;
-  }
   main .card-product-description .container {
     display: flex;
     flex-direction: column;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .swiper {
+  main .card-product-description .card-product-description__wrapper-for-swiper .swiper {
     margin-left: 0;
   }
-  main .card-product-description .container .card-product-description__title-block {
+  main .card-product-description .card-product-description__title-block {
     padding-top: 80px;
   }
-  main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .product-article {
+  main .card-product-description .card-product-description__title-block .allPageCard__raiting .product-article {
     margin-bottom: 4px;
     margin-right: 28px;
   }
-  main .card-product-description .container .card-product-description__buy {
+  main .card-product-description .card-product-description__buy {
     padding-top: 0;
   }
-  main .card-product-description .container .card-product-description__buy .links-online-store {
+  main .card-product-description .card-product-description__buy .links-online-store {
     margin-right: 82%;
   }
-  main .card-product-description .container .card-product-description__buy .price {
+  main .card-product-description .card-product-description__buy .price {
     width: initial;
   }
-  main .card-product-description .container .card-product-description__about-the-product {
+  main .card-product-description .card-product-description__about-the-product {
     padding-top: 77px;
   }
   main .card-rewiews {
@@ -1363,231 +768,204 @@ main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide 
   main .card-slider {
     padding-bottom: clamp(80px, 300px - 20vw, 129px);
   }
-  main .card-slider .container h2 {
+  main .card-slider h2 {
     font-size: 48px;
   }
-  main .card-slider .container .card-slider__swiper {
-    margin-top: 48px;
-  }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy {
-    flex-wrap: wrap;
-  }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy span {
-    margin-right: 18%;
-  }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy .swiper-card__buy__a {
-    margin-left: 0;
+  main .card-slider .card-slider__swiper {
+    margin-top: 42px;
   }
 }
 @media screen and (max-width: 735px) {
   main .blog-article-min h5 {
     margin: 10px 0 9px;
   }
-  main .swiper-card {
-    margin: clamp(15px, 40vw - 237px, 57px) 0 0 1rem;
+  main .allPageCard .allPageCard__swiperImg {
+    flex: 4.5;
   }
-  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
-    height: 91.6%;
-  }
-  main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
-    max-height: 315px;
-  }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper {
+  main .card-product-description .card-product-description__wrapper-for-swiper {
     height: clamp(430px, 25vw + 336px, 517px);
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide {
     width: 116px;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide-thumb-active:before {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide-thumb-active:before {
     width: 116px;
     height: 141px;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg {
     width: clamp(402px, 65vw - 50px, 427px);
   }
-  main .card-product-description .container .card-product-description__buy {
+  main .card-product-description .card-product-description__buy {
     margin-top: 0;
   }
-  main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__main-text p {
+  main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__main-text p {
     font-size: 16px;
   }
-  main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features {
+  main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features {
     grid-template-columns: clamp(219px, 40vw - 43px, 249px) 1fr;
   }
-  main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features p {
+  main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features p {
     line-height: 1.42;
   }
-  main .card-helpful-information .container .card-helpful-information__articles {
+  main .card-helpful-information .card-helpful-information__articles {
     padding: 39px 50px 46px 50px;
   }
-  main .card-helpful-information .container .card-helpful-information__articles .card-helpful-information__articles__block {
+  main .card-helpful-information .card-helpful-information__articles .card-helpful-information__articles__block {
     flex-direction: column;
     align-items: center;
   }
-  main .card-helpful-information .container .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item {
+  main .card-helpful-information .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item {
     align-items: center;
   }
-  main .card-helpful-information .container .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item h5 a {
+  main .card-helpful-information .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item h5 a {
     text-align: center;
   }
-  main .card-helpful-information .container .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item p {
+  main .card-helpful-information .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item p {
     text-align: center;
   }
   main .card-rewiews .container {
     padding: 37px 31px 36px;
   }
-  main .card-rewiews .container .card-rewiews__title h4 {
+  main .card-rewiews .card-rewiews__title h4 {
     margin-right: 80%;
     margin-bottom: 15px;
+  }
+  main .card-rewiews .card-rewiews__item .card-rewiews__item__text {
+    line-height: 1.58;
   }
   main .card-slider {
     padding-bottom: clamp(80px, 40vw - 165px, 129px);
   }
-  main .card-slider .container h2 {
+  main .card-slider h2 {
     font-size: clamp(24px, 12vw - 40px, 48px);
-  }
-  main .card-slider .container .card-slider__swiper {
-    margin-top: 46px;
-  }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy {
-    flex-wrap: wrap;
-  }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy span {
-    margin-right: 50%;
-  }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy a {
-    margin-left: 0;
   }
 }
 @media screen and (max-width: 580px) {
-  main .swiper-card {
-    margin: 0.9375rem auto 0;
-  }
-  main .swiper-card .swiper-wrapper .swiper-slide {
-    border-radius: 8px;
-    background-color: #FFFFFF;
-  }
   main .allPageCard {
-    height: clamp(21.625rem, 130vw - 5.875rem, 41.25rem);
-    padding: 1.0625rem 0 1.0625rem 1.0625rem;
-  }
-  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
-    height: 89%;
-  }
-  main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a {
-    justify-content: flex-start;
+    height: 346px;
   }
   main .allPageCard .allPageCard__swiperImg .swiper-wrapper .swiper-slide a img {
-    height: clamp(8.1875rem, 80vw - 179px, 285px);
+    margin-left: -17px;
   }
   main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination {
-    width: 5rem;
+    margin-left: -8px;
+    margin-top: 0;
   }
   main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination .swiper-pagination-bullet {
-    width: 0.8125rem;
+    width: 13px;
+  }
+  main .allPageCard .allPageCard__raiting {
+    margin-top: 10px;
+  }
+  main .allPageCard .allPageCard__raiting p {
+    display: none;
   }
   main .allPageCard h4 {
-    font-size: clamp(0.75rem, 3vw, 1.125rem);
-    margin: 0.625rem 0 0 0;
-    line-height: 1.3;
+    font-size: 12px;
+    margin: 10px 0 5px;
   }
-  main .swiper-card__buy {
-    justify-content: flex-start;
+  main .allPageCard p {
+    display: none;
   }
-  main .swiper-card__buy span {
-    font-size: clamp(1.125rem, 4vw, 1.5rem);
-    margin-bottom: 0.9375rem;
+  main .allPageCardIgnorRemToPx {
+    padding: 17px 0 17px 17px;
   }
-  main .swiper-card__buy .swiper-card__buy__a {
-    margin-right: 9px;
-    color: transparent;
-    user-select: none;
+  main .allPageCard__buy {
+    row-gap: 16px;
   }
-  main .swiper-card__buy .swiper-card__buy__a .swiper-card__buy__a__img {
-    top: 0.625rem;
-    left: 0.5rem;
+  main .allPageCard__buy .price {
+    font-size: 18px;
   }
-  main .swiper-card__buy .like {
-    padding-left: 0.625rem;
+  main .allPageCard__buy .allPageCard__buy__a .allPageCard__buy__a__txt {
+    display: none;
   }
-  main .swiper-card__buy .allPageCard__buy__a,
-  main .swiper-card__buy .like {
-    width: 2.1875rem;
-    height: 2.1875rem;
+  main .allPageCard__buy .allPageCard__buy__a,
+  main .allPageCard__buy .allPageCard__buy__btn {
+    width: 35px;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper {
+  main .card-product-description .card-product-description__wrapper-for-swiper {
     flex-direction: column;
     justify-content: space-between;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav {
     width: 290px;
+    max-width: 90vw;
     order: 2;
     height: 96px;
     margin: 0 auto;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide {
     border-radius: 4px;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide-thumb-active:before {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperNav .swiper-wrapper .swiper-slide-thumb-active:before {
     width: 80px;
     height: 96px;
     border-radius: 4px;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg {
     width: 260px;
+    max-width: 95vw;
     order: 1;
     margin: 0 auto;
+    height: 74%;
+    max-height: 74%;
   }
-  main .card-product-description .container .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg .swiper-wrapper .swiper-slide img {
+  main .card-product-description .card-product-description__wrapper-for-swiper .card-product-description__wrapper-for-swiper__swiperImg .swiper-wrapper .swiper-slide img {
     width: 100%;
   }
-  main .card-product-description .container .card-product-description__title-block {
+  main .card-product-description .card-product-description__title-block {
     padding-top: clamp(40px, 20vw - 36px, 76px);
   }
-  main .card-product-description .container .card-product-description__title-block h3 {
+  main .card-product-description .card-product-description__title-block h3 {
     font-size: clamp(24px, 7vw - 8px, 32px);
     line-height: 1.35;
   }
-  main .card-product-description .container .card-product-description__title-block .allPageCard__raiting .product-article {
+  main .card-product-description .card-product-description__title-block .allPageCard__raiting .product-article {
     width: 100%;
   }
-  main .card-product-description .container .card-product-description__buy {
+  main .card-product-description .card-product-description__buy {
     margin-top: 0;
+    row-gap: 15px;
   }
-  main .card-product-description .container .card-product-description__buy span:last-of-type {
+  main .card-product-description .card-product-description__buy .links-online-store {
+    margin-bottom: 16px;
+  }
+  main .card-product-description .card-product-description__buy .price-relative-input {
     width: 85%;
-    margin-bottom: 14px;
   }
-  main .card-product-description .container .card-product-description__buy .counter {
+  main .card-product-description .card-product-description__buy .counter {
     margin-left: 0;
   }
-  main .card-product-description .container .card-product-description__buy .buy__a {
+  main .card-product-description .card-product-description__buy .allPageCard__buy__a {
     width: clamp(119px, 33vw, 200px);
   }
-  main .card-product-description .container .card-product-description__about-the-product {
+  main .card-product-description .card-product-description__buy .allPageCard__buy__a .allPageCard__buy__a__txt {
+    display: block;
+  }
+  main .card-product-description .card-product-description__about-the-product {
     padding-top: clamp(40px, 20vw - 36px, 80px);
   }
-  main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features {
+  main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features {
     display: flex;
     flex-direction: column;
   }
-  main .card-product-description .container .card-product-description__about-the-product .card-product-description__about-the-product__features p:nth-child(odd) {
+  main .card-product-description .card-product-description__about-the-product .card-product-description__about-the-product__features p:nth-child(odd) {
     margin-bottom: 4px;
   }
-  main .card-helpful-information .container h4 {
+  main .card-helpful-information h4 {
     padding-bottom: 10px;
   }
-  main .card-helpful-information .container .card-helpful-information__articles {
+  main .card-helpful-information .card-helpful-information__articles {
     padding: 30px 20px;
     border-radius: 12px;
   }
-  main .card-helpful-information .container .card-helpful-information__articles .card-helpful-information__articles__block {
+  main .card-helpful-information .card-helpful-information__articles .card-helpful-information__articles__block {
     row-gap: 20px;
   }
-  main .card-helpful-information .container .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item {
+  main .card-helpful-information .card-helpful-information__articles .card-helpful-information__articles__block .card-helpful-information__articles__block__item {
     flex: auto;
   }
-  main .card-helpful-information .container .card-documentation {
+  main .card-helpful-information .card-documentation {
     padding: 30px 20px;
     border-radius: 12px;
   }
@@ -1598,13 +976,13 @@ main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide 
     width: auto;
     padding: 38px 30px;
   }
-  main .card-rewiews .container .card-rewiews__title {
+  main .card-rewiews .card-rewiews__title {
     padding-bottom: 26px;
   }
-  main .card-rewiews .container .card-rewiews__title h4 {
+  main .card-rewiews .card-rewiews__title h4 {
     font-size: 24px;
   }
-  main .card-rewiews .container .card-rewiews__item .card-rewiews__item__text {
+  main .card-rewiews .card-rewiews__item .card-rewiews__item__text {
     font-size: 14px;
     line-height: 1.44;
   }
@@ -1612,45 +990,23 @@ main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide 
     padding-top: clamp(61px, 20vw - 16px, 100px);
     padding-bottom: clamp(60px, 20vw - 11px, 80px);
   }
-  main .card-slider .container .card-slider__swiper {
-    margin-top: clamp(25px, 15vw - 45px, 41px);
+  main .card-slider .card-slider__swiper {
+    margin-top: clamp(23px, 15vw - 45px, 41px);
   }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__swiperImg .swiper-card__swiperImg-pagination {
-    width: 5rem;
+  main .card-slider .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__swiperImg .swiper-card__swiperImg-pagination {
+    width: 80px;
     margin: 0 auto;
-  }
-  main .card-slider .container .card-slider__swiper .swiper-wrapper .swiper-slide .card-slider__swiper-slide__buy a {
-    width: 35px;
-    color: transparent;
-    user-select: none;
   }
 }
 @media screen and (max-width: 450px) {
   main .stars {
-    width: 5rem;
-    height: 1rem;
+    width: 80px;
+    height: 16px;
     margin: 0;
   }
-  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
-    height: 86.1%;
-  }
-  main .allPageCard .allPageCard__swiperImg .swiper-card__swiperImg-pagination {
-    margin: 0 0.875rem;
-  }
-  main .allPageCard .allPageCard__raiting {
-    margin: 0;
-  }
-  main .allPageCard p {
-    display: none;
-  }
-  main .card-rewiews .container .card-rewiews__item .stars {
+  main .card-rewiews .card-rewiews__item .stars {
     width: 100px;
     height: 20px;
-  }
-}
-@media screen and (max-width: 320px) {
-  main .allPageCard .allPageCard__swiperImg .swiper-wrapper {
-    height: 78.1%;
   }
 }
 

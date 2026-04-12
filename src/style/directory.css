@@ -24,11 +24,11 @@ main .directory .container {
   border-radius: 32px;
   background-color: #FFFFFF;
 }
-main .directory .container h2 {
+main .directory h2 {
   text-align: center;
   color: #0D0D0D;
 }
-main .directory .container .directory-categories {
+main .directory .directory-categories {
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -47,7 +47,7 @@ main .directory .container .directory-categories {
     opacity: 1;
   }
 }
-main .directory .container .directory-categories .directory-categories__item {
+main .directory .directory-categories .directory-categories__item {
   width: 31.5%;
   padding: 12px 0;
   display: flex;
@@ -62,23 +62,23 @@ main .directory .container .directory-categories .directory-categories__item {
   opacity: 0;
   animation: appeardirectory-categories__item 1s cubic-bezier(0, 0, 0, 0.9) forwards;
 }
-main .directory .container .directory-categories .directory-categories__item:nth-child(1) {
+main .directory .directory-categories .directory-categories__item:nth-child(1) {
   transform: translate(-100px, 100px);
 }
-main .directory .container .directory-categories .directory-categories__item:nth-child(2) {
+main .directory .directory-categories .directory-categories__item:nth-child(2) {
   transform: translate(0, 100px);
 }
-main .directory .container .directory-categories .directory-categories__item:nth-child(3) {
+main .directory .directory-categories .directory-categories__item:nth-child(3) {
   transform: translate(100px, 100px);
 }
-main .directory .container .directory-categories .directory-categories__item svg {
+main .directory .directory-categories .directory-categories__item svg {
   margin-bottom: 16px;
 }
-main .directory .container .directory-categories .directory-categories__item:hover {
+main .directory .directory-categories .directory-categories__item:hover {
   background-color: rgba(217, 217, 217, 0.2);
   transition: all 0.5s ease;
 }
-main .directory .container .directory-categories .directory-categories__item:active {
+main .directory .directory-categories .directory-categories__item:active {
   background-color: rgba(217, 217, 217, 0.6);
   transition: all 0.5s ease;
 }
@@ -90,10 +90,11 @@ main .directory .container .directory-categories .directory-categories__item:act
   main .directory .container {
     padding: 67px 86px 135px;
   }
-  main .directory .container h2 {
+  main .directory h2 {
     line-height: 1.5;
+    margin: 0 auto;
   }
-  main .directory .container .directory-categories {
+  main .directory .directory-categories {
     margin-top: 61px;
   }
 }
@@ -104,12 +105,12 @@ main .directory .container .directory-categories .directory-categories__item:act
   main .directory .container {
     padding: 48px 0px 72px;
   }
-  main .directory .container .directory-categories {
+  main .directory .directory-categories {
     flex-direction: column;
     align-items: center;
     margin-top: 22px;
   }
-  main .directory .container .directory-categories .directory-categories__item {
+  main .directory .directory-categories .directory-categories__item {
     flex-direction: row;
     justify-content: center;
     width: 100%;
@@ -117,10 +118,10 @@ main .directory .container .directory-categories .directory-categories__item:act
     column-gap: 16px;
     padding: 15px 0;
   }
-  main .directory .container .directory-categories .directory-categories__item svg {
+  main .directory .directory-categories .directory-categories__item svg {
     margin-bottom: 0;
   }
-  main .directory .container .directory-categories .directory-categories__item span {
+  main .directory .directory-categories .directory-categories__item span {
     width: 180px;
     text-align: center;
   }
@@ -129,10 +130,10 @@ main .directory .container .directory-categories .directory-categories__item:act
   main .directory .container {
     padding: 48px 30px 63px;
   }
-  main .directory .container .directory-categories .directory-categories__item {
-    max-width: initial;
+  main .directory .directory-categories .directory-categories__item {
+    column-gap: 21px;
   }
-  main .directory .container .directory-categories .directory-categories__item span {
+  main .directory .directory-categories .directory-categories__item span {
     font-size: 18px;
     width: 117px;
     text-align: left;

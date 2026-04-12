@@ -2,10 +2,11 @@ main .forPartners .container {
   display: flex;
   gap: 20px;
 }
-main .forPartners .container form {
-  max-width: 829px;
+main .forPartners form {
+  max-width: initial;
+  flex: 1 1 829px;
 }
-main .forPartners .container form .hide {
+main .forPartners form .hide {
   display: none;
 }
 @keyframes appearFormItems {
@@ -14,27 +15,27 @@ main .forPartners .container form .hide {
     opacity: 1;
   }
 }
-main .forPartners .container form p,
-main .forPartners .container form fieldset,
-main .forPartners .container form .form__item,
-main .forPartners .container form button {
+main .forPartners form p,
+main .forPartners form fieldset,
+main .forPartners form .form__item,
+main .forPartners form button {
   opacity: 0;
   animation: appearFormItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
 }
-main .forPartners .container form p {
+main .forPartners form p {
   transform: translateY(20px);
+  padding: 0 7vw;
 }
-main .forPartners .container form fieldset {
+main .forPartners form fieldset {
   transform: translateY(40px);
 }
-main .forPartners .container form .form__item {
+main .forPartners form .form__item {
   transform: translateY(60px);
 }
-main .forPartners .container form button {
+main .forPartners form button {
   transform: translateY(80px);
 }
-main .forPartners .container img {
-  width: clamp(533px, 65vw - 418px, 829px);
+main .forPartners img {
   height: 100%;
   object-fit: cover;
   border-radius: 24px;
@@ -53,60 +54,79 @@ main .forPartners .container img {
     opacity: 1;
   }
 }
-main .forPartners .container form,
-main .forPartners .container img {
+main .forPartners form,
+main .forPartners img {
   opacity: 0;
   clip-path: polygon(37% 54%, 46% 55%, 40% 47%, 59% 46%, 54% 55%, 62% 51%, 62% 66%, 54% 61%, 58% 70%, 40% 70%, 46% 61%, 37% 65%);
   animation: appearforPartnersItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
 }
+main .forPartners picture {
+  flex: 1 1.33 829px;
+}
 
 @media screen and (max-width: 1400px) {
-  main {
-    /*.radio-category {
-              label {
-                  p {
-                      line-height: 1.4;
-                  }
-              }
-          }*/
+  main .forPartners form p {
+    padding: 0 2vw;
   }
 }
 @media screen and (max-width: 1380px) {
   main .forPartners .container {
     justify-content: center;
   }
-  main .forPartners .container picture {
+  main .forPartners picture {
     display: none;
   }
 }
 @media screen and (max-width: 1100px) {
-  main .radio-category label {
-    height: 53px;
+  main .forPartners form p {
+    padding: 0 11vw;
+  }
+}
+@media screen and (max-width: 790px) {
+  main .forPartners form .consent label i {
+    padding-top: 3px;
+    padding-right: 0;
+  }
+  main .forPartners form .consent a {
+    padding-top: 3px;
+    display: flex;
+    padding-left: 4px;
   }
 }
 @media screen and (max-width: 735px) {
   main .forPartners .container {
     width: auto;
   }
-  main .forPartners .container form p {
-    font-size: 1rem;
+  main .forPartners form p {
+    font-size: 16px;
+    padding: 0;
   }
 }
 @media screen and (max-width: 590px) {
-  main .forPartners .container form p {
-    font-size: clamp(0.875rem, 2.7vw, 1rem);
+  main .forPartners form p {
+    font-size: clamp(14px, 2.7vw, 16px);
+    padding: 0 3.2vw;
   }
 }
 @media screen and (max-width: 580px) {
-  main .forPartners .container form button {
+  main .forPartners form fieldset {
+    row-gap: 29px;
+  }
+  main .forPartners form .consent label i {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-style: normal;
+    padding-top: 0;
+  }
+  main .forPartners form .consent a {
+    padding-top: 0;
+    display: block;
+    padding-left: 1.8125rem;
+  }
+  main .forPartners form button {
     width: clamp(260px, 60vw - 28px, 320px);
     height: clamp(45px, 15vw - 24px, 63px);
     font-size: clamp(14px, 5vw - 10px, 18px);
-  }
-}
-@media screen and (max-width: 450px) {
-  main .radio-category label {
-    height: 40px;
   }
 }
 

@@ -55,7 +55,7 @@ const swiper2 = new Swiper('.swiper-card', {
     breakpoints: {
         // when window width is >= 320px
         320: {
-            slidesPerView: 2.2,
+            slidesPerView: 1.8,
             spaceBetween: 8
         },
         // when window width is >= 480px
@@ -84,7 +84,7 @@ const swiper2 = new Swiper('.swiper-card', {
 
 });
 
-const swiper3 = new Swiper('.card-slider__swiper-slide__swiperImg', {
+const swiper3 = new Swiper('.allPageCard__swiperImg', {
     modules: [Pagination],
     // Optional parameters
     direction: 'horizontal',

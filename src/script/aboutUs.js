@@ -11,18 +11,32 @@ if (window.innerWidth <= 580) {
 
 }
 window.addEventListener("resize", e => import( /* webpackChunkName: "secondaryNavArrowLinks580" */ './allScripts/secondaryNavArrowLinks580.js').then(module => {
-        const goToPreviousPage = module.goToPreviousPage;
-        goToPreviousPage();
-    }))
+    const goToPreviousPage = module.goToPreviousPage;
+    goToPreviousPage();
+}))
 //////////////////////////////////////////////////////////////////////////////
 import './allScripts/animAboutUsSock.js';
 //import './allScripts/sliderCertificates320.js';
 ///////////////////////////////////sliderCertificates320.js/////////////////////////////
 export const slider = document.querySelector('.aboutUs-certificates__block');
-slider.addEventListener("mousedown", e => import( /* webpackChunkName: "sliderCertificates320" */ './allScripts/sliderCertificates320.js').then(module => {
-    const dragStart = module.dragStart;
-    dragStart(e);
-}))
+slider.addEventListener("mousedown", e => {
+    if (window.innerWidth <= 580) {
+        slider.addEventListener("mousedown", e => import( /* webpackChunkName: "sliderCertificates320" */ './allScripts/sliderCertificates320.js').then(module => {
+            const dragStart = module.dragStart;
+            dragStart(e);
+        }))
+    }
+})
+
+slider.addEventListener("touchstart", e => {
+    if (window.innerWidth <= 580) {
+        slider.addEventListener("touchstart", e => import( /* webpackChunkName: "sliderCertificates320" */ './allScripts/sliderCertificates320.js').then(module => {
+            const dragStart = module.dragStart;
+            dragStart(e);
+        }))
+    }
+})
+
 ////////////////////////////////////////////////////////////////////////////////////////
 import './allScripts/buttonFormConsentCheck.js';
 import './lazyWidgetHeaderBurgerArrowsOpenListModalPass-eyePMaskSmsTextareaGrowAnimateFooter.js';

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklivebacteria_local=self.webpackChunklivebacteria_local||[]).push([[89],{386:(e,t,l)=>{function r(){let e=document.querySelectorAll(".secondary-nav li"),t=e[e.length-2].querySelector("a").getAttribute("href");e[e.length-1].querySelector("a").setAttribute("href",t)}l.r(t),l.d(t,{goToPreviousPage:()=>r})}}]);

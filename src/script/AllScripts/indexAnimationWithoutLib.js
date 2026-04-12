@@ -18,37 +18,23 @@ const elementsIndexAboutUS = document.querySelectorAll('.index-aboutUs aside p, 
 //console.log(elementsIndexAboutUS);
 const indexOnlineStore = document.querySelector('.index-offer__online-store');
 //console.log(indexOnlineStore);
-const p_indexOnlineStore = indexOnlineStore.querySelector('p');
-//console.log(p_indexOnlineStore);
-const linksOnlineStore = indexOnlineStore.querySelectorAll('a');
-//console.log(linksOnlineStore);
+
 const progress = document.querySelector('.progress');
 
 const sizewindow = document.querySelector('.sizewindow');
 sizewindow.innerHTML = window.innerWidth;
 
-
-
 let adjustmentProgressWidth;
 let progressWidth;
 
 
-//Preparing H1(adding wrappers) for animation
+
 const h1 = document.querySelector('h1');
-let stringH;
-let arrayLettersH = [];
-
-//Preparing first H2(adding wrappers) for animation
 const h2 = document.querySelectorAll('h2');
-
-creatingWrappers(h2[0], 'Каталог нашей продукции', 1, 0, 0, 0); //approximately on line 128
-
-////Preparing indexOnlineStore-H3(adding wrappers) for animation
 const h3 = indexOnlineStore.querySelector('h3');
-creatingWrappers(h3, 'Мы на маркетплейсах', 1, 0, 0, 0); //approximately on line 128
 
 
-window.addEventListener('resize', headingPrep); //approximately on line 58
+window.addEventListener('resize', headingPrep); 
 window.addEventListener('DOMContentLoaded', headingPrep);
 
 //variables so that rebuilding during resize works 1 time
@@ -56,34 +42,27 @@ let tmpForPrepH1Adaptiv;
 let tmpForPrepSecondH2Adaptiv;
 let tmpForPrepThirdH2Adaptiv;
 
-
-
-//arg1 = h1 or h2[i]
-//arg2 = content h1 or h2  ( string )
-//arg3 = amount lines
-//arg4 = amount words in 1 line
-//arg5 = amount words in 2 line
-//arg6 = amount words in 3 line
-//arg7 = amount words
-
+//Setting up header construction
 function headingPrep() {
-    //gives the height of the body so that scrolling occurs
-    //bodyPadding = parseInt(window.getComputedStyle(body).getPropertyValue('padding').replace('px 0px', ''));
-    /*setTimeout(() => {
-        
-    }, 1500);*/ // 2000 milliseconds = 2 seconds
+    
     //console.log(forSmoothScrollWrapper);
     //console.log(forSmoothScrollWrapper.scrollHeight);
     //console.log(forSmoothScrollWrapper.offsetHeight);
     //console.log(forSmoothScrollWrapper.clientHeight);
-    //console.log(cet.replace('px 0px', ''));
-    //console.log(bodyPadding);
     sizewindow.innerHTML = window.innerWidth;
+
+    //arg1 = h1 or h2[i]
+    //arg2 = amount lines
+    //arg3 = amount words in 1 line
+    //arg4 = amount words in 2 line
+    //arg5 = amount words in 3 line
+
     //Preparing H1(adding wrappers) for animation
+
     if (window.innerWidth > 736) {
         if (tmpForPrepH1Adaptiv != 0) {
             tmpForPrepH1Adaptiv = 0;
-            creatingWrappers(h1, 'Живые Бактерии™ для людей, животных и растений', 2, 2, 5, 0); //approximately on line 128
+            creatingWrappers(h1, 2, 2, 5, 0, 0); 
         }
         //console.log(tmpForPrepH1Adaptiv);
 
@@ -91,61 +70,89 @@ function headingPrep() {
 
         if (tmpForPrepH1Adaptiv != 1) {
             tmpForPrepH1Adaptiv = 1;
-            creatingWrappers(h1, 'Живые Бактерии™ для людей, животных и растений', 3, 2, 3, 2); //approximately on line 128
+            creatingWrappers(h1, 3, 2, 3, 2, 0); 
         }
         //console.log(tmpForPrepH1Adaptiv);
     }
-
-
+    //Preparing first H2(adding wrappers) for animation(index-catalog)
+    creatingWrappers(h2[0], 1, 0, 0, 0, 0);
     //Preparing second H2(adding wrappers) for animation(index-catalog)
     if (window.innerWidth > 1101) {
         if (tmpForPrepSecondH2Adaptiv != 0) {
             tmpForPrepSecondH2Adaptiv = 0;
-            creatingWrappers(h2[1], 'Посмотрите самые популярные товары', 1, 0, 0, 0) //approximately on line 128
+            creatingWrappers(h2[1], 1, 0, 0, 0, 0) //approximately on line 128
             //console.log('rrrrr')
         }
-
-
     } else if (window.innerWidth <= 1100) {
         if (tmpForPrepSecondH2Adaptiv != 1) {
             tmpForPrepSecondH2Adaptiv = 1;
-            creatingWrappers(h2[1], 'Посмотрите самые популярные товары', 2, 2, 2, 0) //approximately on line 128
+            creatingWrappers(h2[1], 2, 2, 2, 0, 0) //approximately on line 128
         }
-
     }
     //Preparing third H2(adding wrappers) for animation(index-aboutUs)
     if (window.innerWidth > 361) {
         if (tmpForPrepThirdH2Adaptiv != 0) {
             tmpForPrepThirdH2Adaptiv = 0;
-            creatingWrappers(h2[2], 'Мы гарантия качества', 1, 0, 0, 0) //approximately on line 128
+            creatingWrappers(h2[2], 1, 0, 0, 0, 0) //approximately on line 128
         }
-
     } else {
         if (tmpForPrepThirdH2Adaptiv != 1) {
             tmpForPrepThirdH2Adaptiv = 1;
-            creatingWrappers(h2[2], 'Мы гарантия качества', 2, 2, 2, 0) //approximately on line 128
+            creatingWrappers(h2[2], 2, 2, 1, 0, 0) //approximately on line 128
         }
-
     }
+    //Preparing H3(adding wrappers) for animation(index-offer__online-store__wrapper)
+    creatingWrappers(h3, 1, 0, 0, 0, 0); 
 }
 
 //arg1 = h1 or h2[i]
-//arg2 = content h1 or h2  ( string )
-//arg3 = amount lines
-//arg4 = amount words in 1 line
-//arg5 = amount words in 2 line
-//arg6 = amount words in 3 line
-//arg7 = amount words
+//arg2 = amount lines
+//arg3 = amount words in 1 line
+//arg4 = amount words in 2 line
+//arg5 = amount words in 3 line
 
+//An array of letters is taken and N lines (2) are created. For example, the first line should contain two words. The entire array of letters is iterated over, 
+//each letter is placed in a letter wrapper and removed from the array, then placed in a word wrapper. The iteration continues, and if a space is encountered, 
+//the loop breaks (the array of letters has become smaller). According to the parameter, the array of letters is iterated over again, but starting with the next word.
 
-function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6) {
-    //arg1.innerHTML = '';
-    arg1.innerHTML = arg2; //replaces the contents of an element
+function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6, arg7) {
+    //console.log(arg1);
+    //console.log(arg1.childNodes.length);
+    //console.log(arg1.childNodes[0]);
+    //console.log(arg1.childNodes[0].nodeName)
+    /*for (let item of arg1.childNodes) {
+        console.log(item)
+    }*/
+    //clears header from wrappers 
+    if (arg1.childNodes[0].nodeName == 'DIV') { //checks if h2 is split into letters
+        let tmpWord = arg1.querySelectorAll('.wrapperForWord'); //takes all the words
+        let tmpArr = [];
+        for (let i = 0; i < tmpWord.length; ++i) {
+            let char = tmpWord[i].querySelectorAll('.wrapperSymbol'); //takes all characters in each word
+            for (let y = 0; y < char.length; ++y) {
+                //console.log(char[y].innerHTML)   
+                tmpArr.push(char[y].innerHTML); //сhar puts into array
+                if (y == (char.length - 1)) { //if the last character in a word, then it will add a space to the array
+                    tmpArr.push(' ');
+                }
+                //console.log(tmpArr)
+            }
+        }
+        arg1.innerHTML = ""; //will clear h2
+        arg1.innerHTML = tmpArr.join(""); // array.join("") - so that there are no commas after the letters
+        //arg1.append(tmpArr.join(""));
+    }
+    /*if(arg1.childNodes[0].classList.contains('line')){
+             console.log('rrrrrrrr')
+    }*/
+
     stringH = arg1.innerHTML; //the content of the element (string) is put into a variable
+    //console.log(stringH)
     arg1.innerHTML = ''; //zeroing content to add wrappers with content
-    arrayLettersH = [] //array zeroing ??? it seems to be reset to zero around line 209 ???
+    arrayLettersH = [] //array zeroing ??? 
     for (let char of stringH) { //the string is split into characters and added to the array
         arrayLettersH.push(char);
+        //console.log(char)
     }
 
     let count = 1;
@@ -156,30 +163,38 @@ function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6) {
     }
     let lenghtArr = arrayLettersH.length;
 
-    if (arg3 == 1) { //if you need to make a line in 1 line
+    if (arg2 == 1) { //if you need to make a line in 1 line
         let line = document.createElement("div"); //creating a line and adding it to an element (H1 or H2)
         line.classList.add('line');
         arg1.append(line);
         for (let i = 0; i < count; ++i) {
-            creatingWrappersWordsSymbols(line); //approximately on line 176
+            creatingWrappersWordsSymbols(line); 
         }
 
-    } else if (arg3 > 1) { //if you need to make a line in 2 lines or more
-        for (let y = 0; y < arg3; ++y) { // y < arg3(3) = make 3 lines 
+    } else if (arg2 > 1) { //if you need to make a line in 2 lines or more
+        for (let y = 0; y < arg2; ++y) { // y < arg2(3) = make 3 lines 
             let line = document.createElement("div"); //creating a line and adding it to an element (H1 or H2)
             line.classList.add('line');
             arg1.append(line);
             if (y == 0) { //1ST LINE SETTINGS 
-                for (let i = 0; i < arg4; ++i) { //  i < arg4(2) =  2 words in line
-                    creatingWrappersWordsSymbols(line); //approximately on line 176
+                for (let i = 0; i < arg3; ++i) { //  i < arg3(2) =  2 words in line
+                    creatingWrappersWordsSymbols(line); 
                 }
             } else if (y == 1) { //2ND LINE SETTINGS 
-                for (let i = 0; i < arg5; ++i) { // //  i < arg5(3) =  3 words in line 
-                    creatingWrappersWordsSymbols(line) //approximately on line 176
+                for (let i = 0; i < arg4; ++i) { //  i < arg4(3) =  3 words in line 
+                    creatingWrappersWordsSymbols(line) 
                 }
             } else if (y == 2) { //3ND LINE SETTINGS 
-                for (let i = 0; i < arg6; ++i) { // //  i < arg6(2) =  2 words in  line 
-                    creatingWrappersWordsSymbols(line); //approximately on line 176
+                for (let i = 0; i < arg5; ++i) { //  i < arg5(2) =  2 words in  line 
+                    creatingWrappersWordsSymbols(line); 
+                }
+            } else if (y == 3) { //4ND LINE SETTINGS 
+                for (let i = 0; i < arg6; ++i) { //  i < arg6(2) =  2 words in  line 
+                    creatingWrappersWordsSymbols(line); 
+                }
+            } else if (y == 4) { //5ND LINE SETTINGS 
+                for (let i = 0; i < arg7; ++i) { //  i < arg7(2) =  2 words in  line 
+                    creatingWrappersWordsSymbols(line); 
                 }
             }
 
@@ -203,745 +218,649 @@ function creatingWrappers(arg1, arg2, arg3, arg4, arg5, arg6) {
             arrayLettersH.splice(0, 1); //remove added character from array
         }
 
-        arg1.append(wrapperForWord); //adding a word with symbols to the created line (the line was created at about 175 and 184)
+        arg1.append(wrapperForWord); //adding a word with symbols to the created line
     }
-
-
 }
 
 let scrPosY = 0; //for scroll positions
 let blockPosY = scrPosY; // for forSmoothScrollWrapper position
-let speedAnim = 0.03; //if speedAnim > 0.07 (0.1) animation happens faster
+let speedAnim = 0.02; //if speedAnim > 0.07 (0.1) animation happens faster
 //if speedAnim < 0.07 (0.02) animation is slower
 
 
 window.addEventListener('scroll', getsScrollValue); //get scroll position
+const scrPosYContainer = document.querySelector('.scrPosY')//green square in the upper right corner of the page
 
 function getsScrollValue() {
     scrPosY = window.pageYOffset;
     //console.log(scrPosY);
+    scrPosYContainer.innerHTML = scrPosY;
 }
 
-let startAnimSection;
-let endAnimSection;
-let lengthAnimSection;
-let prevSectionHeight;
+//variables for animation start and length
+let startWindow; // window innerHeight
+//index-offer__online-store
+let startIndexOnlineStore;
+//index-offer__online-store h3
+let animH3SymbolPathLength;
+let startAnimH3;
+let startAnimH3Symbol;
+//****************************************
+//index-offer__online-store p
+const p_indexOnlineStore = indexOnlineStore.querySelector('p');
+let animPindexOnlineStorePathLength;
+let startAnimPindexOnlineStore;
+//****************************************
+//index-offer__online-store linksOnlineStore
+const linksOnlineStore = indexOnlineStore.querySelectorAll('a');
+let animlinksOnlineStorePathLength = [];
+let startlinksOnlineStore = [];
+
+//****************************************
+////////////////////////////////////////////////////////////////////////
+
+//section index-advantages index-catalog index-aboutUs
+let animSectionPathLength;
+let animLastSectionPathLength;
+let startAnimSections = [];
+////////////////////////////////////////////////////////////////////////
+
+// h1, h2
+const allHeading = document.querySelectorAll('h1, h2');
+let animHeadingSymbolPathLength;
 let tilt;
-let scrollBarHeight
-let startAnimLetterWordH1;
-let endAnimLetterWordH1;
-let startAnimLetterWordH2;
-let endAnimLetterWordH2;
+let startAnimHeading = [];
+let startAnimHeadingSymbol;
+////////////////////////////////////////////////////////////////////////
+
+//indexAdvantagesBlockItems + links
+let animIndexAdvantagesBlockItemsPathLength = [];
+let startAnimIndexAdvantagesBlockItem = [];
+////////////////////////////////////////////////////////////////////////
+
+//linksIndexCatalog
+let animlinksIndexCatalogPathLength = [];
+let startAnimlinksIndexCatalog = [];
+////////////////////////////////////////////////////////////////////////
+
+//elementsIndexAboutUS
+let animElementsIndexAboutUSPathLength = [];
+let startAnimElementsIndexAboutUS = [];
+////////////////////////////////////////////////////////////////////////
+
+//let scrollBarHeight
+//getting animation start and length values
+//The animation length is calculated relative to the window height.
+//the start of the animation is calculated relative to the height of the window (start at the bottom of the window, in the middle of the window, etc.)
+function getstartAnim(e) {
+    startWindow = window.innerHeight;
+    //console.log(e.type)
+    tilt = startWindow * 0.8 / 100; // for Heading
+
+    //index-offer__online-store
+    startIndexOnlineStore = indexOnlineStore.offsetTop - startWindow;
+    //console.log(indexOnlineStore.offsetTop, "indexOnlineStore")
+    //index-offer__online-store h3
+    animH3SymbolPathLength = (startWindow * 3) / 100; //3%;
+    startAnimH3 = h3.offsetTop - (startWindow * 75) / 100 + indexOnlineStore.offsetTop;
+
+    // During the resize event, offsetTop was calculated from the parent element, and not from forSmoothScroll, for some unknown reason.
+    /*if (e.type == 'load') {
+        startAnimH3 = h3IndexOnlineStore.offsetTop - (startWindow * 80) / 100;
+    } else if (e.type == 'resize') {
+        startAnimH3 = h3IndexOnlineStore.offsetTop - (startWindow * 80) / 100 + indexOnlineStore.offsetTop;
+    }*/
+    //console.log(h3IndexOnlineStore.offsetTop, 'H3')
+    //****************************************
+    //index-offer__online-store p
+    animPindexOnlineStorePathLength = (startWindow * 8) / 100; //10%
+    startAnimPindexOnlineStore = p_indexOnlineStore.offsetTop - (startWindow * 75) / 100 + indexOnlineStore.offsetTop;
+    /*if (e.type == 'load') {
+        startAnimPindexOnlineStore = p_indexOnlineStore.offsetTop - (startWindow * 80) / 100;
+    } else if (e.type == 'resize') {
+        startAnimPindexOnlineStore = p_indexOnlineStore.offsetTop - (startWindow * 80) / 100 + indexOnlineStore.offsetTop;
+    }*/
+
+    //console.log(p_indexOnlineStore.offsetTop, 'P')
+    //console.log(p_indexOnlineStore.offsetTop)
+    //****************************************
+    //index-offer__online-store linksOnlineStore
+    animlinksOnlineStorePathLength = [];
+    startlinksOnlineStore = [];
+    for (let i = 0; i < linksOnlineStore.length; ++i) {
+        startlinksOnlineStore.push(linksOnlineStore[i].offsetTop - (startWindow * 80) / 100 + indexOnlineStore.offsetTop);
+        
+        if (i == 0 || i == 2) {
+            animlinksOnlineStorePathLength.push((startWindow * 10) / 100);
+        } else {
+            animlinksOnlineStorePathLength.push((startWindow * 6) / 100);
+        }
+        /* if (e.type == 'load') {
+             if (i == 0 || i == 2) {
+                 startlinksOnlineStore.push(linksOnlineStore[i].offsetTop - (startWindow * 75) / 100); 
+             } else {
+                 startlinksOnlineStore.push(linksOnlineStore[i].offsetTop - (startWindow * 80) / 100); 
+             }
+         } else if (e.type == 'resize') {
+             if (i == 0 || i == 2) {
+                 startlinksOnlineStore.push(linksOnlineStore[i].offsetTop - (startWindow * 75) / 100 + indexOnlineStore.offsetTop); 
+             } else {
+                 startlinksOnlineStore.push(linksOnlineStore[i].offsetTop - (startWindow * 80) / 100 + indexOnlineStore.offsetTop); 
+             }
+         }*/
+
+    }
+    //console.log(startlinksOnlineStore, 'linksOnlineStore')
+    //****************************************
+    ////////////////////////////////////////////////////////////////////////
+
+    //section index-advantages index-catalog index-aboutUs
+    for (let i = 1; i < allSection.length; ++i) {
+        allSection[i].setAttribute('style', `opacity: 1;`);
+    }
+
+    animSectionPathLength = (startWindow * 40) / 100; //40%
+    animLastSectionPathLength = (startWindow * 50) / 100; //50%
+    startAnimSections = [];
+    for (let i = 0; i < allSection.length; ++i) {
+        startAnimSections.push(allSection[i].offsetTop - startWindow);
+    }
+    ////////////////////////////////////////////////////////////////////////
+
+    // h1, h2
+    animHeadingSymbolPathLength = (startWindow * 3) / 100; //3%;
+    startAnimHeading = [];
+    for (let i = 0; i < allHeading.length; ++i) {
+        startAnimHeading.push(allHeading[i].offsetTop - (startWindow * 80) / 100);
+        startAnimHeadingSymbol = 0;
+        /*console.log(allHeading[i].offsetTop, "top", allHeading[i])
+        console.log((startWindow * 80 / 100) , "window")
+        console.log(allHeading[i].offsetTop - (startWindow * 80 / 100), "top - window")*/
+    }
+    ////////////////////////////////////////////////////////////////////////
+
+    //indexAdvantagesBlockItems + links
+    animIndexAdvantagesBlockItemsPathLength = [];
+    startAnimIndexAdvantagesBlockItem = [];
+
+    for (let i = 0; i < indexAdvantagesBlockItems.length; ++i) {
+        if (window.innerWidth > 1100) {
+            animIndexAdvantagesBlockItemsPathLength.push((startWindow * 10) / 100);
+            if (i == 0 || i == 2) {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 75) / 100);
+            } else if (i == 3) {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 90) / 100);
+                animIndexAdvantagesBlockItemsPathLength.push((startWindow * 7) / 100);
+            } else if (i == 4) {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 85) / 100);
+                animIndexAdvantagesBlockItemsPathLength.push((startWindow * 7) / 100);
+            } else {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 85) / 100);
+            }
+
+        } else if (window.innerWidth <= 1100 && window.innerWidth > 581) {
+            animIndexAdvantagesBlockItemsPathLength.push((startWindow * 8) / 100);
+            if (i == 3) {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 90) / 100);
+                animIndexAdvantagesBlockItemsPathLength.push((startWindow * 7) / 100);
+            } else if (i == 4) {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 85) / 100);
+                animIndexAdvantagesBlockItemsPathLength.push((startWindow * 7) / 100);
+            } else {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 90) / 100);
+            }
+
+        } else if (window.innerWidth <= 580) {
+            animIndexAdvantagesBlockItemsPathLength.push((startWindow * 8) / 100);
+            if (i == 3 || i == 4) {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 95) / 100);
+            } else {
+                startAnimIndexAdvantagesBlockItem.push(indexAdvantagesBlockItems[i].offsetTop - (startWindow * 90) / 100);
+            }
+
+        }
+    }
+    //console.log(startAnimIndexAdvantagesBlockItem)
+    ////////////////////////////////////////////////////////////////////////
+
+    //linksIndexCatalog
+    animlinksIndexCatalogPathLength = [];
+    startAnimlinksIndexCatalog = [];
+
+    for (let i = 0; i < linksIndexCatalog.length; ++i) {
+        animlinksIndexCatalogPathLength.push((startWindow * 8) / 100);
+        //console.log(linksIndexCatalog[i].offsetTop)
+        //startAnimlinksIndexCatalog.push(linksIndexCatalog[i].offsetTop - (startWindow * 80) / 100);
+        if (window.innerWidth > 1100) {
+            if (i == 0 || i == 2 || i == 3 || i == 5) {
+                startAnimlinksIndexCatalog.push(linksIndexCatalog[i].offsetTop - (startWindow * 80) / 100);
+            } else {
+                startAnimlinksIndexCatalog.push(linksIndexCatalog[i].offsetTop - (startWindow * 85) / 100);
+            }
+
+        } else if (window.innerWidth <= 1100 && window.innerWidth > 580) {
+            startAnimlinksIndexCatalog.push(linksIndexCatalog[i].offsetTop - (startWindow * 80) / 100);
+        } else if (window.innerWidth <= 580) {
+            if (i == linksIndexCatalog.length - 1) {
+                animlinksIndexCatalogPathLength.push((startWindow * 7) / 100);
+                startAnimlinksIndexCatalog.push(linksIndexCatalog[i].offsetTop - (startWindow * 90) / 100);
+            }
+
+        }
+
+    }
+    //console.log(startAnimlinksIndexCatalog)
+    ////////////////////////////////////////////////////////////////////////
+
+    //elementsIndexAboutUS
+    animElementsIndexAboutUSPathLength = [];
+    startAnimElementsIndexAboutUS = [];
+    for (let i = 0; i < elementsIndexAboutUS.length; ++i) {
+        if (i == 2) {
+            animElementsIndexAboutUSPathLength.push((startWindow * 7) / 100);
+            startAnimElementsIndexAboutUS.push(elementsIndexAboutUS[i].offsetTop - (startWindow * 90) / 100);
+        } else if (i == 3) {
+            animElementsIndexAboutUSPathLength.push((startWindow * 7) / 100);
+            startAnimElementsIndexAboutUS.push(elementsIndexAboutUS[i].offsetTop - (startWindow * 85) / 100);
+        } else {
+            animElementsIndexAboutUSPathLength.push((startWindow * 15) / 100);
+            startAnimElementsIndexAboutUS.push(elementsIndexAboutUS[i].offsetTop - (startWindow * 80) / 100);
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////
+}
+window.addEventListener('load', getstartAnim)
+window.addEventListener('resize', getstartAnim);
 
 
 
+/*let topSectionTwo = +allSection[1].getBoundingClientRect().top.toFixed(2);
+let startAnimSectionTwo = topSectionTwo - startWindow;
+let topSectionThree = +allSection[2].getBoundingClientRect().top.toFixed(2);
+let startAnimSectionThree = topSectionThree - startWindow;
+let topSectionFour = +allSection[3].getBoundingClientRect().top.toFixed(2);
+let startAnimSectionFour = topSectionFour - startWindow;*/
+
+
+//console.log(animSectionPathLength)
 window.requestAnimationFrame(smooth);
 
 function smooth() {
     blockPosY = linear(blockPosY, scrPosY, speedAnim) //calculate forSmoothScrollWrapper position by linear interpolation method
     blockPosY = Math.floor(blockPosY * 100) / 100;
-
-    //console.log(blockPosY,'blockPosY');
-    //console.log(scrPosY);
-    if (window.innerHeight <= 1440) {
-        startAnimSection = 0;
-        endAnimSection = 0;
-        lengthAnimSection = 200;
-        prevSectionHeight = 0;
-
-        for (let i = 1; i < allSection.length; ++i) {
-            //console.log(allSection.length) == 4
-            if (i == 1) {
-                if (window.innerHeight > 1081 && window.innerWidth > 1401) {
-                    if (startAnimSection != 1) {
-                        startAnimSection = 1;
-                        endAnimSection = 151;
-                    }
-
-                } else if (window.innerHeight <= 1080 && window.innerWidth > 1401) {
-                    if (startAnimSection != 300) {
-                        startAnimSection = 300;
-                        endAnimSection = 450;
-                    }
-
-                } else if (window.innerWidth <= 1400 && window.innerWidth > 1101) {
-                    if (startAnimSection != 600) {
-                        startAnimSection = 600;
-                        endAnimSection = 750;
-                    }
-
-                } else if (window.innerWidth <= 1100 && window.innerWidth > 801) {
-                    if (startAnimSection != 300) {
-                        startAnimSection = 300;
-                        endAnimSection = 450;
-                    }
-
-                } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                    if (startAnimSection != 400) {
-                        startAnimSection = 400;
-                        endAnimSection = 500;
-                    }
-                } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                    if (startAnimSection != 720) {
-                        startAnimSection = 720;
-                        endAnimSection = 790;
-                    }
-                }
-
-                //animation indexOnlineStore
-
-                if (window.innerWidth <= 1400) {
-                    let startAnimindexOnlineStore = startAnimSection - 299;
-                    let endAnimindexOnlineStore = endAnimSection - 299;
-                    //comments see approximately line 303
-                    let animindexOnlineStorePathLength = endAnimindexOnlineStore - startAnimindexOnlineStore;
-                    if (blockPosY > startAnimindexOnlineStore && blockPosY < endAnimindexOnlineStore) {
-                        let indexOnlineStoreTransY = (endAnimindexOnlineStore - blockPosY) * 100 / 100;
-                        let indexOnlineStoreOpac = 0;
-
-                        let stepindexOnlineStoreOpac = 100 / animindexOnlineStorePathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                        if (indexOnlineStoreTransY > 0 && indexOnlineStoreTransY < animindexOnlineStorePathLength) {
-                            indexOnlineStoreOpac = 1 - ((indexOnlineStoreTransY / 100 * stepindexOnlineStoreOpac * 100) / 100);
-                        }
-
-                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, ${indexOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${indexOnlineStoreOpac.toFixed(4)};`);
-
-
-                    } else if (blockPosY > endAnimindexOnlineStore) {
-                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-
-
-                    } else if (blockPosY < startAnimindexOnlineStore) {
-                        indexOnlineStore.setAttribute('style', `opacity: 0;`);
-                    }
-
-                    //animate indexOnlineStore h3
-                    let collectline = h3.querySelectorAll('.line');
-
-                    for (let i = 0; i < collectline.length; ++i) {
-                        let h3Words = collectline[i].querySelectorAll('.wrapperForWord');
-                        let h3AllLetters = [];
-                        for (let word of h3Words) {
-                            let h3Wordletters = word.querySelectorAll('.wrapperSymbol');
-                            for (let letter of h3Wordletters) {
-                                h3AllLetters.push(letter);
-                            }
-                        }
-
-                        if (window.innerWidth > 801) {
-                            startAnimLetterWordh3 = startAnimindexOnlineStore;
-                            endAnimLetterWordh3 = endAnimindexOnlineStore - 120;
-                        } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                            startAnimLetterWordh3 = startAnimindexOnlineStore;
-                            endAnimLetterWordh3 = endAnimindexOnlineStore - 70;
-                        } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                            startAnimLetterWordh3 = startAnimindexOnlineStore;
-                            endAnimLetterWordh3 = endAnimindexOnlineStore - 50;
-                        }
-
-
-
-
-                        for (let i = 0; i < h3AllLetters.length; ++i) {
-                            if (window.innerWidth >= 801) {
-                                tilt = 0.5
-                            } else if ((window.innerWidth <= 800)) {
-                                tilt = 0.4
-                            }
-                            startAnimLetterWordh3 += i * tilt // how much each subsequent letter will 
-                            endAnimLetterWordh3 += i * tilt // be lower than the previous one (the overall slope of the line) 0.2 weaker slope > 0.4 > 0.8 more tilt
-                            //comments see approximately line 303
-                            let animationh3WordLetterPathLength = endAnimLetterWordh3 - startAnimLetterWordh3;
-                            if (blockPosY > startAnimLetterWordh3 && blockPosY < endAnimLetterWordh3) {
-                                let h3WordsLetterTransY = (endAnimLetterWordh3 - blockPosY) * 100 / 100;
-                                let h3WordsLetterOpac = 0;
-
-                                let steph3WordsLetterOpac = 100 / animationh3WordLetterPathLength; // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                                if (h3WordsLetterTransY > 0 && h3WordsLetterTransY < animationh3WordLetterPathLength) {
-                                    h3WordsLetterOpac = 1 - ((h3WordsLetterTransY / 100 * steph3WordsLetterOpac * 100) / 100);
-                                }
-
-                                h3AllLetters[i].setAttribute('style', `transform: translate3d(0px, ${h3WordsLetterTransY.toFixed(2)}px, 0px); opacity: ${h3WordsLetterOpac.toFixed(4)};`);
-                            } else if (blockPosY > endAnimLetterWordh3) {
-                                h3AllLetters[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                            } else if (blockPosY < startAnimLetterWordh3) {
-                                h3AllLetters[i].setAttribute('style', `opacity: 0;`);
-                            }
-                        }
-                    }
-
-                    //animate indexOnlineStore p
-                    let startAnimp_indexOnlineStore;
-                    let endAnimp_indexOnlineStore;
-
-                    if (window.innerWidth > 801) {
-                        startAnimp_indexOnlineStore = startAnimindexOnlineStore;
-                        endAnimp_indexOnlineStore = endAnimindexOnlineStore - 50;
-                    } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                        startAnimp_indexOnlineStore = startAnimindexOnlineStore;
-                        endAnimp_indexOnlineStore = endAnimindexOnlineStore - 30;
-                    } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                        startAnimp_indexOnlineStore = startAnimindexOnlineStore;
-                        endAnimp_indexOnlineStore = endAnimindexOnlineStore - 10;
-                    }
-
-                    let animp_indexOnlineStorePathLength = endAnimp_indexOnlineStore - startAnimp_indexOnlineStore;
-                    if (blockPosY > startAnimp_indexOnlineStore && blockPosY < endAnimp_indexOnlineStore) {
-                        let p_indexOnlineStoreTransY = (endAnimp_indexOnlineStore - blockPosY) * 100 / 100;
-                        let p_indexOnlineStoreOpac = 0;
-
-                        let stepp_indexOnlineStoreOpac = 100 / animp_indexOnlineStorePathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                        if (p_indexOnlineStoreTransY > 0 && p_indexOnlineStoreTransY < animp_indexOnlineStorePathLength) {
-                            p_indexOnlineStoreOpac = 1 - ((p_indexOnlineStoreTransY / 100 * stepp_indexOnlineStoreOpac * 100) / 100);
-                        }
-
-                        p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, ${p_indexOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${p_indexOnlineStoreOpac.toFixed(4)};`);
-
-                    } else if (blockPosY > endAnimp_indexOnlineStore) {
-                        p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                    } else if (blockPosY < startAnimp_indexOnlineStore) {
-                        p_indexOnlineStore.setAttribute('style', `opacity: 0;`);
-                    }
-
-                    //animate linksOnlineStore
-                    let startAnimlinksOnlineStore;
-                    let endAnimlinksOnlineStore;
-                    if (window.innerWidth > 801) {
-                        startAnimlinksOnlineStore = startAnimindexOnlineStore;
-                        endAnimlinksOnlineStore = endAnimindexOnlineStore - 100;
-                    } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                        startAnimlinksOnlineStore = startAnimindexOnlineStore;
-                        endAnimlinksOnlineStore = endAnimindexOnlineStore - 70;
-                    } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                        startAnimlinksOnlineStore = startAnimindexOnlineStore;
-                        endAnimlinksOnlineStore = endAnimindexOnlineStore - 50;
-                    }
-
-
-                    for (let i = 0; i < linksOnlineStore.length; ++i) { //customize the appearance of elements
-
-                        startAnimlinksOnlineStore += 30;
-                        endAnimlinksOnlineStore += 30;
-
-                        let animlinksOnlineStorePathLength = endAnimlinksOnlineStore - startAnimlinksOnlineStore;
-                        if (blockPosY > startAnimlinksOnlineStore && blockPosY < endAnimlinksOnlineStore) {
-                            let linksOnlineStoreTransY = (endAnimlinksOnlineStore - blockPosY) * 100 / 100;
-                            let linksOnlineStoreOpac = 0;
-
-                            let steplinksOnlineStoreOpac = 100 / animlinksOnlineStorePathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                            if (linksOnlineStoreTransY > 0 && linksOnlineStoreTransY < animlinksOnlineStorePathLength) {
-                                linksOnlineStoreOpac = 1 - ((linksOnlineStoreTransY / 100 * steplinksOnlineStoreOpac * 100) / 100);
-                            }
-                            if (window.innerWidth > 1100) {
-                                linksOnlineStore[i].setAttribute('style', `transform: translate3d(${linksOnlineStoreTransY.toFixed(2)}px, 0px, 0px); opacity: ${linksOnlineStoreOpac.toFixed(4)};`);
-                            } else {
-                                linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, ${linksOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${linksOnlineStoreOpac.toFixed(4)};`);
-                            }
-
-
-                        } else if (blockPosY > endAnimlinksOnlineStore) {
-                            linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                        } else if (blockPosY < startAnimlinksOnlineStore) {
-                            linksOnlineStore[i].setAttribute('style', `opacity: 0;`);
-                        }
-                    }
-
-
-                } else {
-                    window.addEventListener('load', () => {
-                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                    })
-                    window.addEventListener('resize', () => {
-                        indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                    })
-                    document.addEventListener('visibilitychange', () => {
-                        if (document.visibilityState === 'visible') {
-                            indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                        } 
-                    });
-
-                    let h3Words = h3.querySelectorAll('.wrapperForWord');
-                    let h3AllLetters = [];
-                    for (let word of h3Words) {
-                        let h3Wordletters = word.querySelectorAll('.wrapperSymbol');
-                        for (let letter of h3Wordletters) {
-                            h3AllLetters.push(letter);
-                        }
-                    }
-                    for (let i = 0; i < h3AllLetters.length; ++i) {
-                        h3AllLetters[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                    }
-
-                    p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-
-                    for (let i = 0; i < linksOnlineStore.length; ++i) {
-                        linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                    }
-
-                }
-
-                //animation h1
-                let collectline = allSection[i].querySelectorAll('.line');
-                for (let line of collectline) {
-                    let h1Words = line.querySelectorAll('.wrapperForWord');
-                    let h1AllLetters = [];
-                    for (let word of h1Words) {
-                        let h1Wordletters = word.querySelectorAll('.wrapperSymbol');
-                        for (let letter of h1Wordletters) { //all characters from a line/word are taken and put into an array
-                            h1AllLetters.push(letter);
-                        }
-                    }
-                    //start and end of animation H1 or H2, relative to section animation
-                    //if startAnimSection + x -> then animation will start later than section animation
-                    //if startAnimSection - x -> then animation will start earlier than section animation
-                    //if startAnimSection is unchanged, and endAnimSection +/- x, then animation length will be adjusted
-                    if (window.innerWidth > 801) {
-                        startAnimLetterWordH1 = startAnimSection;
-                        endAnimLetterWordH1 = endAnimSection - 130;
-                    } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                        startAnimLetterWordH1 = startAnimSection;
-                        endAnimLetterWordH1 = endAnimSection - 80;
-                    } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                        startAnimLetterWordH1 = startAnimSection;
-                        endAnimLetterWordH1 = endAnimSection - 50;
-                    }
-
-
-                    for (let i = 0; i < h1AllLetters.length; ++i) { //loop through all characters
-                        if (window.innerWidth >= 801) {
-                            tilt = 0.5
-                        } else if ((window.innerWidth <= 800)) {
-                            tilt = 0.3
-                        }
-                        startAnimLetterWordH1 += i * tilt // how much each subsequent letter will 
-                        endAnimLetterWordH1 += i * tilt // be lower than the previous one (the overall slope of the line) 0.2 weaker slope > 0.4 > 0.8 more tilt
-                        let animationH1WordLetterPathLength = endAnimLetterWordH1 - startAnimLetterWordH1; //length of animation
-                        if (blockPosY > startAnimLetterWordH1 && blockPosY < endAnimLetterWordH1) { //start and end of animation H1 or H2 relative to scroll
-                            let h1WordsLetterTransY = (endAnimLetterWordH1 - blockPosY) * 100 / 100; //symbol position relative to scroll
-                            let h1WordsLetterOpac = 0;
-
-                            let stepH1WordsLetterOpac = 100 / animationH1WordLetterPathLength; // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                            if (h1WordsLetterTransY > 0 && h1WordsLetterTransY < animationH1WordLetterPathLength) {
-                                h1WordsLetterOpac = 1 - ((h1WordsLetterTransY / 100 * stepH1WordsLetterOpac * 100) / 100); //mathematical wizardry to make the opacity value equal to the animation length
-                                // 18px == 100unit opacity, 9px == 50unit opacity etc.
-                            }
-
-                            //sets the symbol position
-                            h1AllLetters[i].setAttribute('style', `transform: translate3d(0px, ${h1WordsLetterTransY.toFixed(2)}px, 0px); opacity: ${h1WordsLetterOpac.toFixed(4)};`);
-
-                        } else if (blockPosY > endAnimLetterWordH1) { //correct display of the element when
-                            //the scroll value went beyond the start and end of the animation, or the scroll happened too fast
-                            h1AllLetters[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                        } else if (blockPosY < startAnimLetterWordH1) {
-                            h1AllLetters[i].setAttribute('style', `opacity: 0;`);
-                        }
-                    }
-                }
-
-                //animation indexAdvantagesBlockItems + links
-
-                let startAnimIndexAdvantagesBlockItem = startAnimSection;
-                let endAnimIndexAdvantagesBlockItem = endAnimSection;
-
-                for (let i = 0; i < indexAdvantagesBlockItems.length; ++i) { //customize the appearance of elements
-                    if (window.innerWidth > 580) {
-                        if (i == 0 || i == 2) { //after the 2nd element there will be - 1 and 3 elements
-                            startAnimIndexAdvantagesBlockItem += 100;
-                            endAnimIndexAdvantagesBlockItem += 100;
-                        } else if (i == 3 || i == 4) {
-                            startAnimIndexAdvantagesBlockItem += 30; //after 1 and 3 elements 4 and 5 elements will appear in a ladder
-                            endAnimIndexAdvantagesBlockItem += 30;
-                        } else {
-                            startAnimIndexAdvantagesBlockItem = startAnimSection; //2 element will appear first
-                            endAnimIndexAdvantagesBlockItem = endAnimSection;
-                        }
-                    } else if (window.innerWidth <= 580) {
-                        if (i == 0 || i == 2) { //after the 2nd element there will be - 1 and 3 elements
-                            startAnimIndexAdvantagesBlockItem += 50;
-                            endAnimIndexAdvantagesBlockItem += 50;
-                        } else if (i == 3 || i == 4) {
-                            startAnimIndexAdvantagesBlockItem += 30; //after 1 and 3 elements 4 and 5 elements will appear in a ladder
-                            endAnimIndexAdvantagesBlockItem += 30;
-                        } else {
-                            startAnimIndexAdvantagesBlockItem = startAnimSection; //2 element will appear first
-                            endAnimIndexAdvantagesBlockItem = endAnimSection;
-                        }
-                    }
-
-                    /*to remove the ladder you need
-                    else if (i == 3 ) {
-                        startAnimIndexAdvantagesBlockItem += 30;
-                        endAnimIndexAdvantagesBlockItem += 30;
-                    }else if (i == 4) {
-                        startAnimIndexAdvantagesBlockItem ;
-                        endAnimIndexAdvantagesBlockItem ;
-                    } */
-
-                    //comments see approximately line 303
-                    let animIndexAdvantagesBlockItemPathLength = endAnimIndexAdvantagesBlockItem - startAnimIndexAdvantagesBlockItem;
-                    if (blockPosY > startAnimIndexAdvantagesBlockItem && blockPosY < endAnimIndexAdvantagesBlockItem) {
-                        let indexAdvantagesBlockItemTransY = (endAnimIndexAdvantagesBlockItem - blockPosY) * 100 / 100;
-                        let indexAdvantagesBlockItemOpac = 0;
-
-                        let stepindexAdvantagesBlockItemOpac = 100 / animIndexAdvantagesBlockItemPathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                        if (indexAdvantagesBlockItemTransY > 0 && indexAdvantagesBlockItemTransY < animIndexAdvantagesBlockItemPathLength) {
-                            indexAdvantagesBlockItemOpac = 1 - ((indexAdvantagesBlockItemTransY / 100 * stepindexAdvantagesBlockItemOpac * 100) / 100);
-                        }
-                        indexAdvantagesBlockItems[i].setAttribute('style', `transform: translate3d(0px, ${indexAdvantagesBlockItemTransY.toFixed(2)}px, 0px); opacity: ${indexAdvantagesBlockItemOpac.toFixed(4)};`);
-
-                    } else if (blockPosY > endAnimIndexAdvantagesBlockItem) {
-                        indexAdvantagesBlockItems[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                    } else if (blockPosY < startAnimIndexAdvantagesBlockItem) {
-                        indexAdvantagesBlockItems[i].setAttribute('style', `opacity: 0;`);
-                    }
-                }
-
-            } else if (i == 2) {
-                if (window.innerHeight > 1081 && window.innerWidth > 1401) {
-                    if (startAnimSection != 500) {
-                        startAnimSection = 500;
-                        endAnimSection = 700;
-                    }
-
-                } else if (window.innerHeight <= 1080 && window.innerWidth > 1401) {
-                    if (startAnimSection != 800) {
-                        startAnimSection = 800;
-                        endAnimSection = 950;
-                    }
-
-                } else if (window.innerWidth <= 1400 && window.innerWidth > 1101) {
-                    if (startAnimSection != 1100) {
-                        startAnimSection = 1100;
-                        endAnimSection = 1250;
-                    }
-
-                } else if (window.innerWidth <= 1100 && window.innerWidth > 801) {
-                    if (startAnimSection != 1100) {
-                        startAnimSection = 1100;
-                        endAnimSection = 1250;
-                    }
-
-                } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                    if (startAnimSection != 1100) {
-                        startAnimSection = 1100;
-                        endAnimSection = 1200;
-                    }
-                } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                    if (startAnimSection != 900) {
-                        startAnimSection = 900;
-                        endAnimSection = 970;
-                    }
-                }
-
-            } else if (i == 3) {
-                if (window.innerHeight > 1081 && window.innerWidth > 1401) {
-                    if (startAnimSection != 1800) {
-                        startAnimSection = 1800;
-                        endAnimSection = 2000;
-                    }
-
-                } else if (window.innerHeight <= 1080 && window.innerWidth > 1401) {
-                    if (startAnimSection != 2200) {
-                        startAnimSection = 2200;
-                        endAnimSection = 2350;
-                    }
-
-                } else if (window.innerWidth <= 1400 && window.innerWidth > 1101) {
-                    if (startAnimSection != 2600) {
-                        startAnimSection = 2600;
-                        endAnimSection = 2750;
-                    }
-
-                } else if (window.innerWidth <= 1100 && window.innerWidth > 801) {
-                    if (startAnimSection != 2700) {
-                        startAnimSection = 2700;
-                        endAnimSection = 2850;
-                    }
-
-                } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                    if (startAnimSection != 2600) {
-                        startAnimSection = 2600;
-                        endAnimSection = 2700;
-                    }
-                } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                    if (startAnimSection != 1800) {
-                        startAnimSection = 1800;
-                        endAnimSection = 1870;
-                    }
-                }
-
+    //console.log(blockPosY)
+
+    //When the blockPosY value enters the element's animation range, the blockPosY value is subtracted from the final value of the range. 
+    //This increases the blockPosY value, and decreases the element's translate3d value, resulting in the element moving from bottom to top.
+
+    //Opacity. The element's animation path length is taken, some mathematical magic is performed, and the opacity value is set relative to the element's animation path length.
+    //range 0 - 150px. If translate3d is 150px(100%), then opacity is 0. If translate3d is 45px(30%), then opacity is 0.7, etc.
+
+    //index-offer__online-store
+    //h3
+    let collectlineH3 = h3.querySelectorAll('.line');
+    //***********************************************************
+    if (window.innerWidth <= 1400) {
+        // anim index-offer__online-store
+        if (blockPosY > startIndexOnlineStore && blockPosY < (startIndexOnlineStore + animSectionPathLength)) {
+            let indexOnlineStoreTransY = ((startIndexOnlineStore + animSectionPathLength) - blockPosY) * 100 / 100;
+            let sectionOpac = 0;
+            let stepSectionOpac = 100 / animSectionPathLength;
+            if (indexOnlineStoreTransY > 0 && indexOnlineStoreTransY < animSectionPathLength) {
+                sectionOpac = 1 - ((indexOnlineStoreTransY / 100 * stepSectionOpac * 100) / 100);
             }
+            indexOnlineStore.setAttribute('style', `transform: translate3d(0px, ${indexOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${sectionOpac.toFixed(4)};`); //;
+        } else if (blockPosY > startIndexOnlineStore + animSectionPathLength) {
+            indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+        } else if (blockPosY < startIndexOnlineStore) {
+            indexOnlineStore.setAttribute('style', `opacity: 0;`);
+        }
+        //****************************************
+        //index-offer__online-store h3
 
-            //animation h2
-            if (allSection[i].querySelector('h2')) {
+        for (let lineH3 = 0; lineH3 < collectlineH3.length; ++lineH3) {
+            let h3AllLetters = collectlineH3[lineH3].querySelectorAll('.wrapperSymbol');
+            //console.log(hAllLetters)
+            for (let y = 0; y < h3AllLetters.length; ++y) {
+                startAnimH3Symbol = startAnimH3;
+                startAnimH3Symbol += y * tilt
+                endAnimH3Symbol = startAnimH3Symbol + animH3SymbolPathLength
+                // be lower than the previous one (the overall slope of the line) 0.2 weaker slope > 0.4 > 0.8 more tilt
+                if (blockPosY > startAnimH3 && blockPosY < endAnimH3Symbol) {
+                    let h3LetterTransY = endAnimH3Symbol - blockPosY;
+                    //console.log(startAnimSections[i])
 
-
-                let collectH2 = allSection[i].querySelectorAll('h2');
-
-                for (let y = 0; y < collectH2.length; ++y) {
-                    let collectline = collectH2[y].querySelectorAll('.line');
-
-                    for (let i = 0; i < collectline.length; ++i) {
-                        let h2Words = collectline[i].querySelectorAll('.wrapperForWord');
-                        let h2AllLetters = [];
-                        for (let word of h2Words) {
-                            let h2Wordletters = word.querySelectorAll('.wrapperSymbol');
-                            for (let letter of h2Wordletters) {
-                                h2AllLetters.push(letter);
-                            }
-                        }
-                        if (y == 0) {
-                            if (window.innerWidth > 801) {
-                                startAnimLetterWordH2 = startAnimSection;
-                                endAnimLetterWordH2 = endAnimSection - 130;
-                            } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                                startAnimLetterWordH2 = startAnimSection;
-                                endAnimLetterWordH2 = endAnimSection - 80;
-                            } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                                startAnimLetterWordH2 = startAnimSection;
-                                endAnimLetterWordH2 = endAnimSection - 50;
-                            }
-                        } else if (y == 1) {
-                            if (window.innerWidth > 801) {
-                                startAnimLetterWordH2 = startAnimSection + 200;
-                                endAnimLetterWordH2 = (endAnimSection + 200) - 100;
-                            } else if (window.innerWidth <= 800 && window.innerWidth > 581) {
-                                startAnimLetterWordH2 = startAnimSection + 200;
-                                endAnimLetterWordH2 = (endAnimSection + 200) - 80;
-                            } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-                                startAnimLetterWordH2 = startAnimSection + 200;
-                                endAnimLetterWordH2 = (endAnimSection + 200) - 50;
-                            }
-                        }
-
-
-
-                        for (let i = 0; i < h2AllLetters.length; ++i) {
-                            if (window.innerWidth >= 801) {
-                                tilt = 0.5
-                            } else if ((window.innerWidth <= 800)) {
-                                tilt = 0.4
-                            }
-                            startAnimLetterWordH2 += i * tilt // how much each subsequent letter will 
-                            endAnimLetterWordH2 += i * tilt // be lower than the previous one (the overall slope of the line) 0.2 weaker slope > 0.4 > 0.8 more tilt
-                            //comments see approximately line 303
-                            let animationH2WordLetterPathLength = endAnimLetterWordH2 - startAnimLetterWordH2;
-                            if (blockPosY > startAnimLetterWordH2 && blockPosY < endAnimLetterWordH2) {
-                                let h2WordsLetterTransY = (endAnimLetterWordH2 - blockPosY) * 100 / 100;
-                                let h2WordsLetterOpac = 0;
-
-                                let stepH2WordsLetterOpac = 100 / animationH2WordLetterPathLength; // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                                if (h2WordsLetterTransY > 0 && h2WordsLetterTransY < animationH2WordLetterPathLength) {
-                                    h2WordsLetterOpac = 1 - ((h2WordsLetterTransY / 100 * stepH2WordsLetterOpac * 100) / 100);
-                                }
-
-                                h2AllLetters[i].setAttribute('style', `transform: translate3d(0px, ${h2WordsLetterTransY.toFixed(2)}px, 0px); opacity: ${h2WordsLetterOpac.toFixed(4)};`);
-                            } else if (blockPosY > endAnimLetterWordH2) {
-                                h2AllLetters[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                            } else if (blockPosY < startAnimLetterWordH2) {
-                                h2AllLetters[i].setAttribute('style', `opacity: 0;`);
-                            }
-                        }
-                    }
-                }
-
-            }
-
-            //animation linksIndexCatalog
-            if (allSection[i].querySelector('.catalog-categories')) {
-                let startAnimlinksIndexCatalog = startAnimSection + 30;
-                let endAnimlinksIndexCatalog = endAnimSection + 30;
-
-                for (let i = 0; i < linksIndexCatalog.length; ++i) {
-                    let animlinksIndexCatalogPathLength = endAnimlinksIndexCatalog - startAnimlinksIndexCatalog;
-                    if (window.innerWidth > 1100) {
-                        movelinksIndexCatalog(i);
-                        if (i == 2) {
-                            startAnimlinksIndexCatalog += 30;
-                            endAnimlinksIndexCatalog += 30;
-                        }
-                    } else if (window.innerWidth <= 1100) {
-                        movelinksIndexCatalog(i);
-                        if (i == 1 || i == 3 || i == 5) {
-                            startAnimlinksIndexCatalog += 30;
-                            endAnimlinksIndexCatalog += 30;
-                        }
+                    let h3LetterOpac = 0;
+                    let stepH3LetterOpac = 100 / animH3SymbolPathLength; // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
+                    if (h3LetterTransY > 0 && h3LetterTransY < endAnimH3Symbol) {
+                        h3LetterOpac = 1 - ((h3LetterTransY / 100 * stepH3LetterOpac * 100) / 100); //mathematical wizardry to make the opacity value equal to the animation length
+                        //if 18px == 100unit opacity, 9px == 50unit opacity etc.
                     }
 
 
-                    function movelinksIndexCatalog(arg1) {
-                        //comments see approximately line 303
-                        if (blockPosY > startAnimlinksIndexCatalog && blockPosY < endAnimlinksIndexCatalog) {
-                            let linksIndexCatalogTransY = (endAnimlinksIndexCatalog - blockPosY) * 100 / 100;
-                            let linksIndexCatalogOpac = 0;
+                    h3AllLetters[y].setAttribute('style', `transform: translate3d(0px, ${h3LetterTransY.toFixed(2)}px, 0px); opacity: ${h3LetterOpac.toFixed(4)};`); //opacity: ${hWordsLetterOpac.toFixed(4)};
+                } else if (blockPosY > startAnimH3 + animH3SymbolPathLength) {
+                    h3AllLetters[y].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
 
-                            let steplinksIndexCatalogOpac = 100 / animlinksIndexCatalogPathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                            if (linksIndexCatalogTransY > 0 && linksIndexCatalogTransY < animlinksIndexCatalogPathLength) {
-                                linksIndexCatalogOpac = 1 - ((linksIndexCatalogTransY / 100 * steplinksIndexCatalogOpac * 100) / 100);
-                            }
-                            if (window.innerWidth > 1100) {
-                                //some of the elements will be from left to top, others from right to top
-                                linksIndexCatalog[i].setAttribute('style', `transform: translate3d(-${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`);
-                                if (arg1 == 1 || arg1 == 4) {
-                                    linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`);
-                                } else if (arg1 == 2 || arg1 == 5) {
-                                    linksIndexCatalog[i].setAttribute('style', `transform: translate3d(${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`);
-                                }
-                            } else if (window.innerWidth <= 1100) {
+                } else if (blockPosY < startAnimH3) {
+                    h3AllLetters[y].setAttribute('style', `opacity: 0;`);
 
-                                linksIndexCatalog[i].setAttribute('style', `transform: translate3d(-${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`);
-                                if (arg1 == 1 || arg1 == 3 || arg1 == 5) {
-                                    linksIndexCatalog[i].setAttribute('style', `transform: translate3d(${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`);
-                                }
-                            }
-
-
-
-                        } else if (blockPosY > endAnimlinksIndexCatalog) {
-                            linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                        } else if (blockPosY < startAnimlinksIndexCatalog) {
-                            linksIndexCatalog[i].setAttribute('style', `opacity: 0;`);
-                        }
-                    }
-                }
-
-                //animation swiperCard
-                let startAnimswiperCard = startAnimSection + 300;
-                let endAnimswiperCard = endAnimSection + 300;
-                //comments see approximately line 303
-                let animswiperCardPathLength = endAnimswiperCard - startAnimswiperCard;
-                if (blockPosY > startAnimswiperCard && blockPosY < endAnimswiperCard) {
-                    let swiperCardTransY = (endAnimswiperCard - blockPosY) * 100 / 100;
-                    let swiperCardOpac = 0;
-
-                    let stepswiperCardOpac = 100 / animswiperCardPathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                    if (swiperCardTransY > 0 && swiperCardTransY < animswiperCardPathLength) {
-                        swiperCardOpac = 1 - ((swiperCardTransY / 100 * stepswiperCardOpac * 100) / 100);
-                    }
-
-                    swiperCard.setAttribute('style', `transform: translate3d(0px, ${swiperCardTransY.toFixed(2)}px, 0px); opacity: ${swiperCardOpac.toFixed(4)};`);
-
-                } else if (blockPosY > endAnimswiperCard) {
-                    swiperCard.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                } else if (blockPosY < startAnimswiperCard) {
-                    swiperCard.setAttribute('style', `opacity: 0;`);
-                }
-
-            }
-
-            //animation elementsIndexAboutUS
-
-            let startAnimelementsIndexAboutUS = startAnimSection;
-            let endAnimelementsIndexAboutUS = endAnimSection;
-
-
-            for (let i = 0; i < elementsIndexAboutUS.length; ++i) {
-                let animelementsIndexAboutUSPathLength = endAnimelementsIndexAboutUS - startAnimelementsIndexAboutUS;
-                if (window.innerWidth > 1401) {
-
-                    moveelementsIndexAboutUS(i);
-                    if (i == 2 || i == 3) {
-                        startAnimelementsIndexAboutUS += 20
-                        endAnimelementsIndexAboutUS += 20
-
-                    }
-
-                } else if (window.innerWidth <= 1400 && window.innerWidth > 581) {
-                    startAnimelementsIndexAboutUS += 50
-                    endAnimelementsIndexAboutUS += 50
-                    moveelementsIndexAboutUS(i);
-                } else if (window.innerWidth <= 580 && window.innerWidth > 0) {
-
-                    startAnimelementsIndexAboutUS += 230
-                    endAnimelementsIndexAboutUS += 230
-                    if (i == 3) {
-                        startAnimelementsIndexAboutUS -= 180
-                        endAnimelementsIndexAboutUS -= 180
-
-                    }
-                    moveelementsIndexAboutUS(i);
-                }
-
-
-                function moveelementsIndexAboutUS(arg1) {
-                    //comments see approximately line 303
-                    if (blockPosY > startAnimelementsIndexAboutUS && blockPosY < endAnimelementsIndexAboutUS) {
-                        let elementsIndexAboutUSTransY = (endAnimelementsIndexAboutUS - blockPosY) * 100 / 100;
-                        let elementsIndexAboutUSOpac = 0;
-
-                        let stepelementsIndexAboutUSOpac = 100 / animelementsIndexAboutUSPathLength // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
-                        if (elementsIndexAboutUSTransY > 0 && elementsIndexAboutUSTransY < animelementsIndexAboutUSPathLength) {
-                            elementsIndexAboutUSOpac = 1 - ((elementsIndexAboutUSTransY / 100 * stepelementsIndexAboutUSOpac * 100) / 100);
-                        }
-                        if (window.innerWidth > 1400) {
-
-                            elementsIndexAboutUS[i].setAttribute('style', `transform: translate3d(0px, ${elementsIndexAboutUSTransY.toFixed(2)}px, 0px); opacity: ${elementsIndexAboutUSOpac.toFixed(4)};`);
-                            if (arg1 == 1) {
-                                elementsIndexAboutUS[i].setAttribute('style', `transform: translate3d(${elementsIndexAboutUSTransY.toFixed(2)}px, 0px, 0px); opacity: ${elementsIndexAboutUSOpac.toFixed(4)};`);
-                            }
-                        } else if (window.innerWidth <= 1400) {
-
-                            elementsIndexAboutUS[i].setAttribute('style', `transform: translate3d(0px, ${elementsIndexAboutUSTransY.toFixed(2)}px, 0px); opacity: ${elementsIndexAboutUSOpac.toFixed(4)};`);
-
-                        }
-
-
-
-                    } else if (blockPosY > endAnimelementsIndexAboutUS) {
-                        elementsIndexAboutUS[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
-                    } else if (blockPosY < startAnimelementsIndexAboutUS) {
-                        elementsIndexAboutUS[i].setAttribute('style', `opacity: 0;`);
-                    }
                 }
             }
+        }
+        //****************************************
+        //index-offer__online-store p
+        if (blockPosY > startAnimPindexOnlineStore && blockPosY < (startAnimPindexOnlineStore + animPindexOnlineStorePathLength)) {
+            let p_indexOnlineStoreTransY = ((startAnimPindexOnlineStore + animPindexOnlineStorePathLength) - blockPosY);
+            //console.log(startAnimSections[i])
 
-            //animation allSection
-            let animSectionPathLength = endAnimSection - startAnimSection;
-            //comments see approximately line 303
-            if (blockPosY > startAnimSection && blockPosY < endAnimSection) {
-                let sectionTransY = (endAnimSection - blockPosY) * 100 / 100;
+            let p_indexOnlineStoreOpac = 0;
+            let stepp_indexOnlineStoreOpac = 100 / animPindexOnlineStorePathLength;
+            if (p_indexOnlineStoreTransY > 0 && p_indexOnlineStoreTransY < animPindexOnlineStorePathLength) {
+                p_indexOnlineStoreOpac = 1 - ((p_indexOnlineStoreTransY / 100 * stepp_indexOnlineStoreOpac * 100) / 100);
+            }
+            p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, ${p_indexOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${p_indexOnlineStoreOpac.toFixed(4)};`); //;
+        } else if (blockPosY > (startAnimPindexOnlineStore + animPindexOnlineStorePathLength)) {
+            p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+
+        } else if (blockPosY < startAnimPindexOnlineStore) {
+            p_indexOnlineStore.setAttribute('style', `opacity: 0;`);
+        }
+        //****************************************
+        //index-offer__online-store linksOnlineStore
+        for (let i = 0; i < linksOnlineStore.length; ++i) {
+            if (blockPosY > startlinksOnlineStore[i] && blockPosY < (startlinksOnlineStore[i] + animlinksOnlineStorePathLength[i])) {
+                let linksOnlineStoreTransY = ((startlinksOnlineStore[i] + animlinksOnlineStorePathLength[i]) - blockPosY);
+                //console.log(startAnimSections[i])
+
+                let linksOnlineStoreOpac = 0;
+                let steplinksOnlineStoreOpac = 100 / animlinksOnlineStorePathLength[i];
+                if (linksOnlineStoreTransY > 0 && linksOnlineStoreTransY < animlinksOnlineStorePathLength[i]) {
+                    linksOnlineStoreOpac = 1 - ((linksOnlineStoreTransY / 100 * steplinksOnlineStoreOpac * 100) / 100);
+                }
+
+                linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, ${linksOnlineStoreTransY.toFixed(2)}px, 0px); opacity: ${linksOnlineStoreOpac.toFixed(4)};`); //;
+            } else if (blockPosY > (startlinksOnlineStore[i] + animlinksOnlineStorePathLength[i])) {
+                linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+            } else if (blockPosY < startlinksOnlineStore[i]) {
+                linksOnlineStore[i].setAttribute('style', `opacity: 0;`);
+            }
+        }
+        //****************************************
+
+    } else {
+        window.addEventListener('load', () => {
+            indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+            /*for (let lineH3 = 0; lineH3 < collectlineH3.length; ++lineH3){
+                let h3AllLetters = collectlineH3[lineH3].querySelectorAll('.wrapperSymbol');
+                for (let y = 0; y < h3AllLetters.length; ++y){
+                    h3AllLetters[y].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+                }
+            }
+            p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+            for (let i = 0; i < linksOnlineStore.length; ++i){
+                linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+            }*/
+        })
+        window.addEventListener('resize', () => {
+            indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+            p_indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+            for (let i = 0; i < linksOnlineStore.length; ++i) {
+                linksOnlineStore[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+            }
+        })
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                indexOnlineStore.setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`);
+            }
+        });
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////
+
+    //anim section index-advantages index-catalog index-aboutUs
+    for (let i = 1; i < allSection.length; ++i) {
+
+        if (i < allSection.length - 1) {
+            if (blockPosY > startAnimSections[i] && blockPosY < (startAnimSections[i] + animSectionPathLength)) {
+                let sectionTransY = ((startAnimSections[i] + animSectionPathLength) - blockPosY);
+                //console.log(startAnimSections[i])
+
                 let sectionOpac = 0;
-
                 let stepSectionOpac = 100 / animSectionPathLength;
                 if (sectionTransY > 0 && sectionTransY < animSectionPathLength) {
                     sectionOpac = 1 - ((sectionTransY / 100 * stepSectionOpac * 100) / 100);
                 }
                 allSection[i].setAttribute('style', `transform: translate3d(0px, ${sectionTransY.toFixed(2)}px, 0px); opacity: ${sectionOpac.toFixed(4)};`); //;
-            } else if (blockPosY > endAnimSection) {
+            } else if (blockPosY > (startAnimSections[i] + animSectionPathLength)) {
                 allSection[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
 
-            } else if (blockPosY < startAnimSection) {
+            } else if (blockPosY < startAnimSections[i]) {
                 allSection[i].setAttribute('style', `opacity: 0;`);
 
+            }
+        } else {
+            if (blockPosY > startAnimSections[i] && blockPosY < (startAnimSections[i] + animLastSectionPathLength)) {
+                let sectionTransY = ((startAnimSections[i] + animLastSectionPathLength) - blockPosY) * 100 / 100;
+
+
+                let sectionOpac = 0;
+                let stepSectionOpac = 100 / animLastSectionPathLength;
+                if (sectionTransY > 0 && sectionTransY < animLastSectionPathLength) {
+                    sectionOpac = 1 - ((sectionTransY / 100 * stepSectionOpac * 100) / 100);
+                }
+                allSection[i].setAttribute('style', `transform: translate3d(0px, ${sectionTransY.toFixed(2)}px, 0px); opacity: ${sectionOpac.toFixed(4)};`); //;
+            } else if (blockPosY > (startAnimSections[i] + animSectionPathLength)) {
+                allSection[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+
+            } else if (blockPosY < startAnimSections[i]) {
+                allSection[i].setAttribute('style', `opacity: 0;`);
+
+            }
+        }
+
+
+    }
+    ////////////////////////////////////////////////////////////////////////
+
+    //animation h1, h2
+    for (let i = 0; i < allHeading.length; ++i) {
+        let collectline = allHeading[i].querySelectorAll('.line');
+        for (let line = 0; line < collectline.length; ++line) {
+            let hAllLetters = collectline[line].querySelectorAll('.wrapperSymbol');
+            //console.log(hAllLetters)
+            for (let y = 0; y < hAllLetters.length; ++y) {
+
+                /*if (line > 0) {
+                    startAnimHeadingSymbol = startAnimHeading[i] + collectline[line - 1].offsetHeight;
+                    startAnimHeadingSymbol += y * tilt
+                    endAnimLetterWordH = startAnimHeadingSymbol + animHeadingSymbolPathLength
+                } else {
+                    startAnimHeadingSymbol = startAnimHeading[i];
+                    startAnimHeadingSymbol += y * tilt
+                    endAnimLetterWordH = startAnimHeadingSymbol + animHeadingSymbolPathLength
+                }*/
+                startAnimHeadingSymbol = startAnimHeading[i];
+                startAnimHeadingSymbol += y * tilt
+                endAnimHeadingSymbol = startAnimHeadingSymbol + animHeadingSymbolPathLength
+                // be lower than the previous one (the overall slope of the line) 0.2 weaker slope > 0.4 > 0.8 more tilt
+                if (blockPosY > startAnimHeading[i] && blockPosY < endAnimHeadingSymbol) {
+                    let hWordsLetterTransY = endAnimHeadingSymbol - blockPosY;
+                    //console.log(startAnimSections[i])
+
+                    let hWordsLetterOpac = 0;
+                    let stepHWordsLetterOpac = 100 / animHeadingSymbolPathLength; // if the length is 18px, opacity is 100unit, then 1px = 5.5unit (via the operation 100unit / 18px = 5.5unit)
+                    if (hWordsLetterTransY > 0 && hWordsLetterTransY < endAnimHeadingSymbol) {
+                        hWordsLetterOpac = 1 - ((hWordsLetterTransY / 100 * stepHWordsLetterOpac * 100) / 100); //mathematical wizardry to make the opacity value equal to the animation length
+                        //if 18px == 100unit opacity, 9px == 50unit opacity etc.
+                    }
+
+
+                    hAllLetters[y].setAttribute('style', `transform: translate3d(0px, ${hWordsLetterTransY.toFixed(2)}px, 0px); opacity: ${hWordsLetterOpac.toFixed(4)};`); //opacity: ${hWordsLetterOpac.toFixed(4)};
+                } else if (blockPosY > startAnimHeading[i] + animHeadingSymbolPathLength) {
+                    hAllLetters[y].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+
+                } else if (blockPosY < startAnimHeading[i]) {
+                    hAllLetters[y].setAttribute('style', `opacity: 0;`);
+
+                }
+            }
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////
+
+    //animation indexAdvantagesBlockItems + links
+    for (let i = 0; i < indexAdvantagesBlockItems.length; ++i) {
+        if (blockPosY > startAnimIndexAdvantagesBlockItem[i] && blockPosY < (startAnimIndexAdvantagesBlockItem[i] + animIndexAdvantagesBlockItemsPathLength[i])) {
+            let indexAdvantagesBlockItemTransY = ((startAnimIndexAdvantagesBlockItem[i] + animIndexAdvantagesBlockItemsPathLength[i]) - blockPosY);
+            //console.log(startAnimSections[i])
+
+            let advantagesBlockItemOpac = 0;
+            let stepAdvantagesBlockItemOpac = 100 / animIndexAdvantagesBlockItemsPathLength[i];
+            if (indexAdvantagesBlockItemTransY > 0 && indexAdvantagesBlockItemTransY < animIndexAdvantagesBlockItemsPathLength[i]) {
+                advantagesBlockItemOpac = 1 - ((indexAdvantagesBlockItemTransY / 100 * stepAdvantagesBlockItemOpac * 100) / 100);
+            }
+            indexAdvantagesBlockItems[i].setAttribute('style', `transform: translate3d(0px, ${indexAdvantagesBlockItemTransY.toFixed(2)}px, 0px); opacity: ${advantagesBlockItemOpac.toFixed(4)};`); //;
+        } else if (blockPosY > (startAnimIndexAdvantagesBlockItem[i] + animIndexAdvantagesBlockItemsPathLength[i])) {
+            indexAdvantagesBlockItems[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+
+        } else if (blockPosY < startAnimIndexAdvantagesBlockItem[i]) {
+            indexAdvantagesBlockItems[i].setAttribute('style', `opacity: 0;`);
+
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////
+
+    //animation linksIndexCatalog
+    for (let i = 0; i < linksIndexCatalog.length; ++i) {
+
+        if (window.innerWidth > 580) {
+            if (blockPosY > startAnimlinksIndexCatalog[i] && blockPosY < (startAnimlinksIndexCatalog[i] + animlinksIndexCatalogPathLength[i])) {
+                let linksIndexCatalogTransY = ((startAnimlinksIndexCatalog[i] + animlinksIndexCatalogPathLength[i]) - blockPosY);
+                //console.log(startAnimSections[i])
+
+                let linksIndexCatalogOpac = 0;
+                let steplinksIndexCatalogOpac = 100 / animlinksIndexCatalogPathLength[i];
+                if (linksIndexCatalogTransY > 0 && linksIndexCatalogTransY < animlinksIndexCatalogPathLength[i]) {
+                    linksIndexCatalogOpac = 1 - ((linksIndexCatalogTransY / 100 * steplinksIndexCatalogOpac * 100) / 100);
+                }
+
+                if (window.innerWidth > 1100) {
+                    if (i == 0 || i == 3) {
+                        linksIndexCatalog[i].setAttribute('style', `transform: translate3d(-${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //;
+                    } else if (i == 2 || i == 5) {
+                        linksIndexCatalog[i].setAttribute('style', `transform: translate3d(${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //;
+                    } else {
+                        linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //; 
+                    }
+                } else if (window.innerWidth <= 1100 && window.innerWidth > 580) {
+                    if (i == 0 || i == 2 || i == 4) {
+                        linksIndexCatalog[i].setAttribute('style', `transform: translate3d(-${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //;
+                    } else if (i == 1 || i == 3 || i == 5) {
+                        linksIndexCatalog[i].setAttribute('style', `transform: translate3d(${linksIndexCatalogTransY.toFixed(2)}px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //;
+                    } else {
+                        linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //; 
+                    }
+                }
+                //linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //;
+            } else if (blockPosY > (startAnimlinksIndexCatalog[i] + animlinksIndexCatalogPathLength[i])) {
+                linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+            } else if (blockPosY < startAnimlinksIndexCatalog[i]) {
+                linksIndexCatalog[i].setAttribute('style', `opacity: 0;`);
+            }
+        } else if (window.innerWidth <= 580) {
+
+            if (i == linksIndexCatalog.length - 1) {
+
+                if (blockPosY > startAnimlinksIndexCatalog[0] && blockPosY < (startAnimlinksIndexCatalog[0] + animlinksIndexCatalogPathLength[0])) {
+                    let linksIndexCatalogTransY = ((startAnimlinksIndexCatalog[0] + animlinksIndexCatalogPathLength[0]) - blockPosY);
+                    //console.log(startAnimSections[i])
+
+                    let linksIndexCatalogOpac = 0;
+                    let steplinksIndexCatalogOpac = 100 / animlinksIndexCatalogPathLength[0];
+                    if (linksIndexCatalogTransY > 0 && linksIndexCatalogTransY < animlinksIndexCatalogPathLength[0]) {
+                        linksIndexCatalogOpac = 1 - ((linksIndexCatalogTransY / 100 * steplinksIndexCatalogOpac * 100) / 100);
+                    }
+
+
+                    linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, ${linksIndexCatalogTransY.toFixed(2)}px, 0px); opacity: ${linksIndexCatalogOpac.toFixed(4)};`); //;
+                } else if (blockPosY > (startAnimlinksIndexCatalog[0] + animlinksIndexCatalogPathLength[0])) {
+                    linksIndexCatalog[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+                } else if (blockPosY < startAnimlinksIndexCatalog[0]) {
+                    linksIndexCatalog[i].setAttribute('style', `opacity: 0;`);
+                }
             }
 
         }
 
+    }
+    ////////////////////////////////////////////////////////////////////////
 
-    } else {
-        //section
-        for (let i = 1; i < allSection.length; ++i) {
-            allSection[i].setAttribute('style', `opacity: 1;`);
-            //h1 and h2
-            allSection[i].querySelectorAll('.wrapperSymbol').forEach((item) => {
-                item.setAttribute('style', `opacity: 1;`);
-            })
-        }
-        //indexAdvantagesBlockItems + links
-        for (let i = 0; i < indexAdvantagesBlockItems.length; ++i) {
-            indexAdvantagesBlockItems[i].setAttribute('style', `opacity: 1;`);
-        }
-        //linksIndexCatalog
-        for (let i = 0; i < linksIndexCatalog.length; ++i) {
-            linksIndexCatalog[i].setAttribute('style', `opacity: 1;`);
-        }
-        //swiperCard
-        swiperCard.setAttribute('style', `opacity: 1;`);
-        //animation elementsIndexAboutUS
-        for (let i = 0; i < elementsIndexAboutUS.length; ++i) {
-            elementsIndexAboutUS[i].setAttribute('style', `opacity: 1;`);
+    //animation elementsIndexAboutUS
+    for (let i = 0; i < elementsIndexAboutUS.length; ++i) {
+        if (blockPosY > startAnimElementsIndexAboutUS[i] && blockPosY < (startAnimElementsIndexAboutUS[i] + animElementsIndexAboutUSPathLength[i])) {
+            let elementsIndexAboutUSTransY = ((startAnimElementsIndexAboutUS[i] + animElementsIndexAboutUSPathLength[i]) - blockPosY);
+            //console.log(startAnimSections[i])
+
+            let elementsIndexAboutUSOpac = 0;
+            let stepElementsIndexAboutUSOpac = 100 / animElementsIndexAboutUSPathLength[i];
+            if (elementsIndexAboutUSTransY > 0 && elementsIndexAboutUSTransY < animElementsIndexAboutUSPathLength[i]) {
+                elementsIndexAboutUSOpac = 1 - ((elementsIndexAboutUSTransY / 100 * stepElementsIndexAboutUSOpac * 100) / 100);
+            }
+            elementsIndexAboutUS[i].setAttribute('style', `transform: translate3d(0px, ${elementsIndexAboutUSTransY.toFixed(2)}px, 0px); opacity: ${elementsIndexAboutUSOpac.toFixed(4)};`); //;
+        } else if (blockPosY > (startAnimElementsIndexAboutUS[i] + animElementsIndexAboutUSPathLength[i])) {
+            elementsIndexAboutUS[i].setAttribute('style', `transform: translate3d(0px, 0px, 0px); opacity: 1;`); //
+
+        } else if (blockPosY < startAnimElementsIndexAboutUS[i]) {
+            elementsIndexAboutUS[i].setAttribute('style', `opacity: 0;`);
+
         }
     }
+    ////////////////////////////////////////////////////////////////////////
+
+    /*
+    //allSection[1] / index-advantages
+    if (blockPosY > startAnimSectionTwo && blockPosY < (startAnimSectionTwo + animSectionPathLength)) {
+        let sectionTransY = ((startAnimSectionTwo + animSectionPathLength) - blockPosY) * 100 / 100;
+
+
+        let sectionOpac = 0;
+        let stepSectionOpac = 100 / animSectionPathLength;
+        if (sectionTransY > 0 && sectionTransY < animSectionPathLength) {
+            sectionOpac = 1 - ((sectionTransY / 100 * stepSectionOpac * 100) / 100);
+        }
+        allSection[1].setAttribute('style', `transform: translate3d(0px, ${sectionTransY.toFixed(2)}px, 0px); opacity: ${sectionOpac.toFixed(4)};`); //;
+    }
+    ////////////////////////////////////////////////////////////////////////
+    //allSection[2] / index-catalog
+    if (blockPosY > startAnimSectionThree && blockPosY < (startAnimSectionThree + animSectionPathLength)) {
+        let sectionTransY = ((startAnimSectionThree + animSectionPathLength) - blockPosY) * 100 / 100;
+
+
+        let sectionOpac = 0;
+        let stepSectionOpac = 100 / animSectionPathLength;
+        if (sectionTransY > 0 && sectionTransY < animSectionPathLength) {
+            sectionOpac = 1 - ((sectionTransY / 100 * stepSectionOpac * 100) / 100);
+        }
+        allSection[2].setAttribute('style', `transform: translate3d(0px, ${sectionTransY.toFixed(2)}px, 0px); opacity: ${sectionOpac.toFixed(4)};`); //;
+    }
+    ////////////////////////////////////////////////////////////////////////
+    //allSection[3] / index-aboutUs
+    if (blockPosY > startAnimSectionFour && blockPosY < (startAnimSectionFour + animLastSectionPathLength)) {
+        let sectionTransY = ((startAnimSectionFour + animLastSectionPathLength) - blockPosY) * 100 / 100;
+
+
+        let sectionOpac = 0;
+        let stepSectionOpac = 100 / animLastSectionPathLength;
+        if (sectionTransY > 0 && sectionTransY < animLastSectionPathLength) {
+            sectionOpac = 1 - ((sectionTransY / 100 * stepSectionOpac * 100) / 100);
+        }
+        allSection[3].setAttribute('style', `transform: translate3d(0px, ${sectionTransY.toFixed(2)}px, 0px); opacity: ${sectionOpac.toFixed(4)};`); //;
+    }
+    ////////////////////////////////////////////////////////////////////////
+*/
+
 
     //animation progress
     /*The progress bar width is set in %.
@@ -966,7 +885,10 @@ function smooth() {
 }
 
 function linear(arg1, arg2, arg3) {
-    return (1 - arg3) * arg1 + arg3 * arg2;
+    //linear(blockPosY, scrPosY, speedAnim)
+    //return  (1 - arg3) * arg1 + arg3 * arg2;
+    return arg2 + (arg1 - arg2) * (1 - arg3) // start_value + (end_value - start_value) * f(t) /easeOut
+
 }
 
 const swiperCardIndexSlides = swiperCard.querySelectorAll(".addAnimSwiperIndex"); //start by selecting all the Slides
@@ -981,12 +903,14 @@ function reveal() {
         const elementVisible = 150; //animation will start when the block is 150px away from the bottom of the viewport.
 
 
-
+        //console.log(windowHeight + " windowHeight")
+        //console.log(elementTop + " elementTop")
         //If this condition is true, it means the block is within the viewport, and the class swiper-slideIndexVisible, 
         //which has the style changes, is added. If the block is not within the defined 
         //visibility area, the swiper-slideIndexVisible class is removed, reverting the animation.
-        if (elementTop < windowHeight - elementVisible) {
+        if (elementTop < windowHeight) {
             swiperCardIndexSlides[i].classList.add("swiper-slideIndexVisible");
+
         } else {
             swiperCardIndexSlides[i].classList.remove("swiper-slideIndexVisible");
         }

@@ -336,13 +336,7 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
         if (countChangeAmountBlock <= 5) {
             item.onclick = function(e) {
                 widthBlock = forAdaptive(); // for adaptive decrease or increase the distance the block will be moved
-                /*Why did I write this... it is unclear
-                if ((blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10)) != widthBlock) {
-                    widthBlock = blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10);
-                    wrapperForCards.style.transform = `translateX(0px)`;
-                    navCardsGoods.querySelector('.active').classList.remove('active');
-                    navCardsGoods.childNodes[3].classList.add('active');
-                }*/
+                
 
                 //example: 3 nav elements, 1st block is displayed, 1st nav element with class 'active', translateX(0). Click on 3rd element
                 item.parentElement.querySelector('.active').classList.remove('active');
@@ -356,17 +350,7 @@ function moveSlideOnClickNavElem(par) { //par == collection of created navigatio
         if (countChangeAmountBlock > 5) {
             item.onclick = function(e) { //item == span from collection of created navigation elements(span span span...)
                 widthBlock = forAdaptive(); // for adaptive decrease or increase the distance the block will be moved
-                /*Why did I write this... it is unclear
-                if ((blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10)) != widthBlock) {
-                    widthBlock = blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10);
-                    wrapperForCards.style.transform = `translateX(0px)`;
-                    navCardsGoods.querySelector('.active').classList.remove('active');
-                    navCardsGoods.childNodes[3].classList.add('active');
-                    navCardsGoods.childNodes[4].innerHTML = "2";
-                    navCardsGoods.childNodes[5].innerHTML = "3";
-                    navCardsGoods.childNodes[6].innerHTML = "...";
-
-                } */
+                
 
                 if (!(e.target.innerHTML == '...')) { 
                     item.parentElement.querySelector('.active').classList.remove('active');
@@ -493,21 +477,9 @@ catalogCategories__prev.onclick = function() {
 };
 
 catalogCategories__next.onclick = function() {
+    
     widthBlock = forAdaptive(); // for adaptive decrease or increase the distance the block will be moved
-
-    /*Why did I write this... it is unclear
-    if ((blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10)) != widthBlock) {
-        widthBlock = blockCardsGoods.offsetWidth + parseInt(window.getComputedStyle(wrapperForCards).getPropertyValue("column-gap"), 10);
-        wrapperForCards.style.transform = `translateX(0px)`;
-        navCardsGoods.querySelector('.active').classList.remove('active');
-        navCardsGoods.childNodes[3].classList.add('active');
-        if (countChangeAmountBlock > 5) {
-            navCardsGoods.childNodes[4].innerHTML = "2";
-            navCardsGoods.childNodes[5].innerHTML = "3";
-            navCardsGoods.childNodes[6].innerHTML = "...";
-        }
-
-    } else {*/
+    //console.log(widthBlock)
     let transformValue = wrapperForCards.style.transform.slice(11, -3); //get data about the location of the block(wrapperForCards) with cards that is moving
     //console.log(transformValue);
     position = Math.max((Number(transformValue) - widthBlock), -widthBlock * (countChangeAmountBlock - countBlock)); //does not allow wrapperForCards to move more than necessary (to the right)
@@ -560,13 +532,14 @@ catalogCategories__next.onclick = function() {
 };
 
 function forAdaptive() {//changes the step by which the slide moves on different browser window sizes
-    if (blockCardsGoods.offsetWidth == 1248) {
+    console.log(blockCardsGoods.offsetWidth)
+    if (blockCardsGoods.offsetWidth == 1255) {//
         return blockCardsGoods.offsetWidth + 24;
-    } else if (blockCardsGoods.offsetWidth == 840) {
+    } else if (blockCardsGoods.offsetWidth == 840) {//
         return blockCardsGoods.offsetWidth + 24;
-    } else if (blockCardsGoods.offsetWidth == 740) {
+    } else if (blockCardsGoods.offsetWidth == 740) {//
         return blockCardsGoods.offsetWidth + 24;
-    } else if (blockCardsGoods.offsetWidth == 540) {
+    } else if (blockCardsGoods.offsetWidth == 540) {//
         return blockCardsGoods.offsetWidth + 24;
     } else if (blockCardsGoods.offsetWidth == 260) {
         return blockCardsGoods.offsetWidth + 24;
@@ -758,51 +731,3 @@ export { choiceHowToSort };
 export { createSliderNavElemAndMove };
 export { createCollectionFilteredCards };
 export { filterCard };
-
-
-
-/*relative card(s)
-let widthCard = 416;
-let countCard = 3;
-let countChangeAmountCard = 0;
-let position = 0;
-transitionToAnotherSlide
-function callbackAmountBlockOfSortCard(par) {
-    countChangeAmountCard = 0;
-    countChangeAmountCard = par;
-    console.log(countChangeAmountCard);
-};
-function callbackAmountBlockOfFilterUrl(par) {
-    countChangeAmountCard = 0;
-    countChangeAmountCard = par;
-    console.log(countChangeAmountCard);
-};
-
-catalogCategories__prev.onclick = function() {
-    position += widthCard * countCard;
-    position = Math.min(position, 0);
-    wrapperForCards.style.transform = `translateX(${position + 'px'})`;
-    
-  };
-
-catalogCategories__next.onclick = function() {
-    position -= widthCard * countCard;
-    position = Math.max(position, -widthCard * (countChangeAmountCard / 1.74 - countCard));
-    wrapperForCards.style.transform = `translateX(${position + 'px'})`;
-  };
-
-
-
- if (wrapperForCards.querySelectorAll(".wrapper").length > 0) { //extract product cards from created blocks and delete blocks
-
-        collectM = wrapperForCards.querySelectorAll(".wrapper");
-
-
-        collectM.forEach((item) => {
-            let count = item.childNodes.length;
-            for (let i = 0; i < count; ++i) {
-                wrapperForCards.append(item.childNodes[0]);
-            }
-            item.remove();
-        });
-    };*/

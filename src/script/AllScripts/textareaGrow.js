@@ -34,7 +34,7 @@ askTextarea.addEventListener('input', (e) => {
         }
     }
 
-    askTextarea.style.height = "auto";  //textarea height growth
+    askTextarea.style.height = "auto";  //so that there is no delay in decreasing the height when deleting text
     askTextarea.style.height = askTextarea.scrollHeight + "px";// 
 })
 

@@ -1,12 +1,12 @@
 import { gsap } from "gsap";
-    
+
 //import { GSDevTools } from "gsap/GSDevTools";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";//6kb
-import { ScrollTrigger } from "gsap/ScrollTrigger";//16.3kb
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin"; //6kb
+import { ScrollTrigger } from "gsap/ScrollTrigger"; //16.3kb
 // ScrollSmoother requires ScrollTrigger
-import { ScrollSmoother } from "gsap/ScrollSmoother";//4kb
-import { SplitText } from "gsap/SplitText";// 3kb
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, MorphSVGPlugin, /*GSDevTools*/);
+import { ScrollSmoother } from "gsap/ScrollSmoother"; //4kb
+import { SplitText } from "gsap/SplitText"; // 3kb
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, MorphSVGPlugin, /*GSDevTools*/ );
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         //console.log(abounUsHtml);
         gsap.set(abounUsHtml, { overflow: "hidden" });
 
-        //AboutUs: header, secondary-nav, aboutUs-who, variables
+        //AboutUs: header, secondary-nav, aboutUs-who
         const headerAboutUs = document.querySelector('header');
         headerAboutUs.classList.remove('headerAboutUs');
         const secondaryNav = document.querySelector('.secondary-nav');
@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     //console.log(cell.clientWidth);
                     containerForAnim.appendChild(cell);
                     cell.style.backgroundSize = img.width + 'px ' + img.height + "px"; //each cell adds a full-size image as a background
-                    cell.style.backgroundPosition = -y * widthCell + "px " + -i * heightCell + "px, center";//shifts the background to the desired position
+                    cell.style.backgroundPosition = -y * widthCell + "px " + -i * heightCell + "px, center"; //shifts the background to the desired position
 
                 }
             }
 
-            cellImg = containerForAnim.querySelectorAll("span");//creates a collection of variables for future animations
+            cellImg = containerForAnim.querySelectorAll("span"); //creates a collection of variables for future animations
         }
         createImgForAnim();
         window.addEventListener('resize', () => {
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
 
         //AboutUs: preload animated
-        tlpreload.to(preloadOpenTxt, {// txt 'click' animated
+        tlpreload.to(preloadOpenTxt, { // txt 'click' animated
                 scale: 1.5,
                 duration: 1,
             })
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 scale: 1,
                 duration: 0.1,
             })
-            .to(preloadCell, {  // cell animated
+            .to(preloadCell, { // cell animated
                 scale: 0.9,
                 stagger: {
                     each: 0.1,
@@ -353,20 +353,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     reduceMotion: "(prefers-reduced-motion: reduce)",
                 },
                 (context) => {
-                    // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+                    // context.conditions has a boolean property for each condition defined above inditmSvgMorphing if it's matched or not.
                     let { isDesktop, isMobile, reduceMotion } = context.conditions;
 
                     let tlAboutUsWho = gsap.timeline();
                     let splitAboutUsH2 = SplitText.create(aboutUsWhoH2, { type: "words, chars" });
                     tlpreload.kill();
-                    tlAboutUsWho.set(preloadOpenTxt, {//'stop' previous animation txt "click"
+                    tlAboutUsWho.set(preloadOpenTxt, { //'stop' previous animation txt "click"
                             scale: 1,
                         })
                         .to(preloadOpen, { //btn disappearance
                             scale: 0.5,
                             autoAlpha: 0,
                         })
-                        .to(preloadCell, {//last wave
+                        .to(preloadCell, { //last wave
                             scale: 0.9,
                             stagger: {
                                 each: 0.1,
@@ -384,7 +384,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 ease: 'none',
                             }
                         }, "-=1")
-                        .to(preloadCell, {//cell disappearance (wave)
+                        .to(preloadCell, { //cell disappearance (wave)
                             autoAlpha: 0,
                             stagger: {
                                 each: 0.1,
@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                 ease: 'none',
                             }
                         }, "-=1")
-                        .set(preload, {//container for cell - disappearance
+                        .set(preload, { //container for cell - disappearance
                             autoAlpha: 0,
                             zIndex: 0,
                         })
@@ -419,8 +419,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             scrollTrigger: isDesktop ? false : { //on desktop it animates immediately, but on mobile it animates relative to the scroll
                                 trigger: containerForAnim,
                                 scrub: 1.5,
-                                start: "top bottom-=100",
-                                end: "bottom-=100 bottom-=200",
+                                start: "top 90%",
+                                end: "center 80%",
                                 //markers: true
                             },
 
@@ -448,6 +448,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         preloadOpen.addEventListener('click', closePreload)
 
+        window.addEventListener('keydown', function(event) {
+            // Check if the pressed key is 'Enter'
+            if (event.key === 'Enter') {
+                closePreload()
+            }
+        });
+
         gsap.to('.progressAboutUs', {
             value: 100,
             ease: 'none',
@@ -455,7 +462,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             scrollTrigger: { scrub: 0.3 }
         });
         //h2
-        const h2About = document.querySelectorAll('section:not(.aboutUs-who) h2');
+        const h2About = document.querySelectorAll('section:not(.aboutUs-who, .aboutUs-requisites-map) h2');
         h2About.forEach(h2 => {
             SplitText.create(h2, {
                 type: "words, chars",
@@ -478,14 +485,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         scrollTrigger: {
                             trigger: h2,
                             scrub: 1.5,
-                            start: "top center+=110",
-                            end: "bottom center-=100",
+                            start: "top 90%",
+                            end: "center 75%",
                             //markers: true
                         },
-                        onComplete: () => {//after the animation of h2 chars appearing, it starts the color change animation
+                        onComplete: () => { //after the animation of h2 chars appearing, it starts the color change animation
                             change.play();
                         },
-                        onUpdate: () => {//when h2 chars are animating, it resets the color change animation and pauses it
+                        onUpdate: () => { //when h2 chars are animating, it resets the color change animation and pauses it
                             change.progress(0)
                             change.pause();
                         },
@@ -527,10 +534,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 reduceMotion: "(prefers-reduced-motion: reduce)",
             },
             (context) => {
-                // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+                // context.conditions has a boolean property for each condition defined above inditmSvgMorphing if it's matched or not.
                 let { isDesktop, isMobile, reduceMotion } = context.conditions;
                 //animation is set on each element without a cycle to more accurately control the morph of the svg
-                gsap.from(aboutUsAboutProduction__moreDetails__item[0], {
+
+                /*gsap.from(aboutUsAboutProduction__moreDetails__item[0], {
                     y: isDesktop ? 130 : 80,
                     autoAlpha: 0,
                     scrollTrigger: {
@@ -591,14 +599,58 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         tmMorphSVGPetriDishes.progress(0);
                         tmMorphSVGPetriDishes.pause();
                     },
-                })
+                })*/
+                /////////////////////////////////////////////////////////////////////
 
+                for (let i = 0; i < aboutUsAboutProduction__moreDetails__item.length; ++i) {
+                    let tmSvgMorph;
+                    let moreDetailsStart;
+                    let moreDetailsEnd;
+                    if (i == 0) {
+                        tmSvgMorph = tmMorphSVGFlask;
+                        moreDetailsStart = "top 90%";
+                        moreDetailsEnd = "40% 80%";
+                    } else if (i == 1) {
+                        tmSvgMorph = morphSVGMicroscope
+                        moreDetailsStart = "top 98%";
+                        moreDetailsEnd = "40% 88%";
+                    } else if (i == 2) {
+                        tmSvgMorph = tmMorphSVGPetriDishes
+                        moreDetailsStart = "top 90%";
+                        moreDetailsEnd = "40% 80%";
+                    }
+                    gsap.from(aboutUsAboutProduction__moreDetails__item[i], {
+                        y: isDesktop ? 130 : 80,
+                        autoAlpha: 0,
+                        scrollTrigger: {
+                            trigger: aboutUsAboutProduction__moreDetails__item[i],
+                            scrub: 0.1,
+                            start: moreDetailsStart,
+                            end: moreDetailsEnd,
+                            //markers: true,
+                        },
+
+
+                        onComplete: () => {
+                            tmSvgMorph.play();
+                        },
+                        onUpdate: () => {
+                            tmSvgMorph.progress(0);
+                            tmSvgMorph.pause();
+                        },
+
+
+                    });
+
+
+
+                }
 
             }
         );
 
         //aboutUs-advantages
-        const aboutUsAdvantagesImg = document.querySelector('.aboutUs-advantages .aboutUs-advantages__petriDishes');
+        const aboutUsAdvantagesImg = document.querySelector('.aboutUs-advantages picture');
         const aboutUsAdvantages__differenceFromOthers = document.querySelector('.aboutUs-advantages .aboutUs-advantages__difference-from-others');
         const listDifferenceFromOthers = aboutUsAdvantages__differenceFromOthers.querySelectorAll('li');
         const btnDifferenceFromOthers = aboutUsAdvantages__differenceFromOthers.querySelector('a');
@@ -626,15 +678,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 reduceMotion: "(prefers-reduced-motion: reduce)",
             },
             (context) => {
-                // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+                // context.conditions has a boolean property for each condition defined above inditmSvgMorphing if it's matched or not.
                 let { isDesktop, isMobile, reduceMotion } = context.conditions;
 
                 tlAboutUsAdvantages.from(aboutUsAdvantagesImg, {
                         scrollTrigger: {
                             trigger: aboutUsAdvantagesImg,
                             scrub: 1.5,
-                            start: isDesktop ? "top+=100 bottom" : "top bottom",
-                            end: isDesktop ? "bottom-=200 bottom-=300" : "bottom bottom-=100",
+                            start: "top 90%",
+                            end: "center 75%",
                             //markers: true
                         },
                         autoAlpha: 0,
@@ -643,14 +695,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                     .from(aboutUsAdvantages__differenceFromOthers, {
                         scrollTrigger: {
-                            trigger: isDesktop ? aboutUsAdvantagesImg : aboutUsAdvantages__differenceFromOthers,
+                            trigger: aboutUsAdvantages__differenceFromOthers,
                             scrub: isDesktop ? 0.4 : 0.5,
-                            start: isDesktop ? "top center+=300" : "top bottom",
-                            end: isDesktop ? "center-=10 center+=100" : "bottom-=100 bottom-=100",
+                            start: "top 90%",
+                            end: "center 75%",
                             //markers: true
                         },
                         autoAlpha: 0,
-                        x: 500,
+                        x: isDesktop ? 500 : 300,
                         onComplete: () => {
                             tlContentDifferenceFromOthers.play();
                         },
@@ -664,36 +716,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         );
 
-        //aboutUs-certificates
-        const txtAboutUscertificates = document.querySelector('.aboutUs-certificates p');
-        SplitText.create(txtAboutUscertificates, {
+        //aboutUs-certifitmSvgMorphes
+        const txtAboutUsCertificates = document.querySelector('.aboutUs-certificates p');
+        SplitText.create(txtAboutUsCertificates, {
             type: "lines",
             onSplit(self) {
                 for (let i = 0; i < self.lines.length; ++i) {
-                    if ((i + 1) % 2 != 0) {//animated odd
+                    if ((i + 1) % 2 != 0) { //animated odd
                         gsap.from(self.lines[i], {
                             x: -70,
                             y: (i + 1) * 10,
                             autoAlpha: 0,
                             scrollTrigger: {
-                                trigger: txtAboutUscertificates,
+                                trigger: txtAboutUsCertificates,
                                 scrub: 1.5,
-                                start: "top+=50px center+=200",
-                                end: "bottom+=50px center+=100",
+                                start: "top 85%",
+                                end: "center 75%",
                                 //markers: true
                             },
                         });
-                    } else {//animated even
+                    } else { //animated even
                         gsap.from(self.lines[i], {
-
                             x: 70,
                             y: (i + 1) * 10,
                             autoAlpha: 0,
                             scrollTrigger: {
-                                trigger: txtAboutUscertificates,
+                                trigger: txtAboutUsCertificates,
                                 scrub: 1.5,
-                                start: "top+=50px center+=200",
-                                end: "bottom+=50px center+=100",
+                                start: "top 85%",
+                                end: "center 75%",
                                 //markers: true
                             },
                         });
@@ -712,10 +763,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             },
 
             scrollTrigger: {
-                trigger: '.aboutUs-certificates__block__wrapper',
-                scrub: 1.5,
-                start: "top center+=200",
-                end: "bottom-=400 center",
+                trigger: certificatesAboutUs,
+                scrub: 3,
+                start: "top 90%",
+                end: "center 70%",
                 //markers: true
             },
 
@@ -725,7 +776,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         //aboutUs-requisites-map
         const aboutUsRequisitesMap = document.querySelectorAll('.aboutUs-requisites-map__requisites, .aboutUs-requisites-map__map')
-
+        const h2aboutUsRequisitesMap = document.querySelector('.aboutUs-requisites-map h2')
         let tlaboutUsRequisitesMap = gsap.timeline();
         let mmaboutUsRequisitesMap = gsap.matchMedia()
         let breakPointAboutUsRequisitesMap = 1101;
@@ -736,7 +787,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 reduceMotion: "(prefers-reduced-motion: reduce)",
             },
             (context) => {
-                // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+                // context.conditions has a boolean property for each condition defined above inditmSvgMorphing if it's matched or not.
                 let { isDesktop, isMobile, reduceMotion } = context.conditions;
 
 
@@ -747,49 +798,87 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         scrollTrigger: {
                             trigger: aboutUsRequisitesMap[0],
                             scrub: 1.5,
-                            start: isDesktop ? "center-=100 bottom" : "top bottom",
-                            end: isDesktop ? "center bottom-=100" : "top+=100 bottom-=100",
+                            start: "10% 78%",
+                            end: "20% 68%",
                             //markers: true
                         },
-                        y: isDesktop ? 80 : 10,
-                        autoAlpha: 0
+                        clipPath: isDesktop ? "inset(35% round 24px)" : "inset(10% 35% 67% 35% round 24px)"
                     })
                     .from(aboutUsRequisitesMap[0], {
 
                         scrollTrigger: {
                             trigger: aboutUsRequisitesMap[0],
                             scrub: 1.5,
-                            start: isDesktop ? "center bottom-=100" : "top+=120 bottom-=100",
-                            end: isDesktop ? "center+=50 bottom-=200" : "top+=220 bottom-=200",
+                            start: "0% 95%",
+                            end: "10% 80%",
                             //markers: true
                         },
-
-                        clipPath: isDesktop ? "inset(35% round 24px)" : "inset(10% 35% 67% 35% round 24px)"
-                    })
-                    .from(aboutUsRequisitesMap[1], {
-                        scrollTrigger: {
-                            trigger: aboutUsRequisitesMap[1],
-                            scrub: 1.5,
-                            start: isDesktop ? "center-=100 bottom" : "top bottom",
-                            end: isDesktop ? "center bottom-=100" : "top+=200 bottom-=100",
-                            //markers: true
-                        },
-                        y: 80,
+                        y: 200,
                         autoAlpha: 0
+
+                    })
+                    .from(aboutUsRequisitesMap[1], {
+                        scrollTrigger: {
+                            trigger: aboutUsRequisitesMap[1],
+                            scrub: 1.5,
+                            start: "10% 78%",
+                            end: "20% 68%",
+                            //markers: true
+                        },
+                        clipPath: isDesktop ? "inset(35% round 24px)" : "inset(10% 35% 67% 35% round 24px)"
                     })
                     .from(aboutUsRequisitesMap[1], {
 
                         scrollTrigger: {
                             trigger: aboutUsRequisitesMap[1],
                             scrub: 1.5,
-                            start: "center bottom-=100",
-                            end: "center+=100 bottom-=200",
+                            start: "0% 95%",
+                            end: "10% 80%",
                             //markers: true
                         },
+                        y: 200,
+                        autoAlpha: 0
 
-                        clipPath: isDesktop ? "inset(35% round 24px)" : "inset(10% 35% 67% 35% round 24px)"
                     })
 
+
+                SplitText.create(h2aboutUsRequisitesMap, {
+                    type: "words, chars",
+                    onSplit(self) {
+                        let change = gsap.to(self.chars, {
+                            duration: 2,
+                            color: "#73C167",
+                            stagger: {
+                                each: 0.1,
+                                from: "center",
+                                repeat: -1,
+                                repeatDelay: 5,
+                                yoyo: true,
+                            }
+                        });
+                        gsap.from(self.chars, {
+                            y: 30,
+                            autoAlpha: 0,
+                            stagger: 0.05,
+                            scrollTrigger: {
+                                trigger: aboutUsRequisitesMap[0],
+                                scrub: 1.5,
+                                start: isDesktop ? "20% 78%" : "10% 78%",
+                                end: isDesktop ? "30% 68%" : "20% 68%",
+                                //markers: true
+                            },
+                            onComplete: () => { //after the animation of h2 chars appearing, it starts the color change animation
+                                change.play();
+                            },
+                            onUpdate: () => { //when h2 chars are animating, it resets the color change animation and pauses it
+                                change.progress(0)
+                                change.pause();
+                            },
+
+
+                        })
+                    }
+                });
             }
         );
 

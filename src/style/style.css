@@ -1151,9 +1151,11 @@ label {
 }
 
 header {
+  max-width: 100vw;
   width: clamp(1360px, 93vw, 1754px);
   border-radius: 105px;
   margin: 0 auto;
+  padding: 0 15px;
   background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: space-between;
@@ -1177,6 +1179,7 @@ header .header-container a {
 header .header-container .logo {
   padding-top: 0px;
   width: clamp(5rem, 7%, 7.125rem);
+  min-width: 40px;
 }
 header .header-container .header__nav {
   position: relative;
@@ -1360,6 +1363,7 @@ header .header-container .header__tel {
   display: flex;
   flex-direction: column;
   flex: 1 1rem;
+  min-width: 140px;
 }
 header .header-container .header__tel a {
   font-weight: 500;
@@ -7351,9 +7355,6 @@ footer .footerVisible {
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:first-child svg {
     height: 1.4rem;
   }
-  header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:nth-child(2) {
-    flex-basis: 10.0625rem;
-  }
   header .header-container .header__nav .header__nav__main-list .header__nav__main-list__item:nth-child(2) .header__nav__main-list__item__sub-list {
     left: 0;
   }
@@ -9516,6 +9517,7 @@ footer .footerVisible {
   }
   header .header-container .header__items .header__items__call img {
     display: block;
+    margin: 0 auto;
   }
   .secondary-nav {
     margin: clamp(16px, 3vw - 10px, 24px) 0;

@@ -63,12 +63,11 @@ export function incrementCounter(inputCount, item, price, priceInitialValue, dis
     //for account.html
     growInput(increaseInputValue, inputCount); //transition to 129
 
-    //for account.html
-    if (item.nextElementSibling.classList.contains('additional-info-counter')) {
-        additionalInfoCounter = item.nextElementSibling;
-        countTheBoxes(increaseInputValue); //transition to 142
+    if (item.querySelector('.additional-info-counter') != null) { //so that it works in both account.html and card.html
+        additionalInfoCounter = item.querySelector('.additional-info-counter');
+        countTheBoxes(increaseInputValue);
+    }
 
-    };
     if (document.querySelector('.account__basket')) {
         countAllPrice(); //transition to 150
     }
@@ -85,9 +84,9 @@ export function decrementCounter(inputCount, item, price, priceInitialValue, dis
 
         growInput(decreaseInputValue, inputCount); //transition to 129
 
-        if (item.nextElementSibling.classList.contains('additional-info-counter')) {
-            additionalInfoCounter = item.nextElementSibling;
-            countTheBoxes(decreaseInputValue); //transition to 142
+        if (item.querySelector('.additional-info-counter') != null) { //so that it works in both account.html and card.html
+            additionalInfoCounter = item.querySelector('.additional-info-counter');
+            countTheBoxes(decreaseInputValue);
         }
 
     }
@@ -97,16 +96,18 @@ export function decrementCounter(inputCount, item, price, priceInitialValue, dis
 }
 
 export function inputCounter(e, inputCount, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax) {
-    
+
     e.target.value = e.target.value.replace(/\D/g, ""); //You can only enter numbers
-    //everything is exactly the same as in incrementBtn.addEventListener('click'...
+    //everything is exactly the same as in incrementBtn.addEventListener('click'... 
     changePrice(e.target.value, item, price, priceInitialValue, discount, priceInitDiscount, discAfterCount, priceInitDiscAfterCount, tax, priceInitTax); //transition to 109
+    
     growInput(Number(e.target.value), inputCount); //transition to 129
 
-    if (item.nextElementSibling.classList.contains('additional-info-counter')) {
-        additionalInfoCounter = item.nextElementSibling;
-        countTheBoxes(e.target.value); //transition to 142
-    };
+    if( item.querySelector('.additional-info-counter') != null){//so that it works in both account.html and card.html
+        additionalInfoCounter = item.querySelector('.additional-info-counter');
+        countTheBoxes(e.target.value); 
+    }
+
     if (document.querySelector('.account__basket')) {
         countAllPrice(); //transition to 150
     }

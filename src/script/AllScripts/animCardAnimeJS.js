@@ -300,8 +300,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const cardProdDescAboutMain = cardProductDescription.querySelectorAll('.card-product-description__about-the-product__main-text');
     const cardProdDescAboutFeatures = cardProductDescription.querySelectorAll('.card-product-description__about-the-product__features p');
     //3 variable buy
-    const cardProdDescBuyPrice = cardProductDescription.querySelectorAll('.card-product-description__buy span, .card-product-description__buy sup');
-    const cardProdDescBuyCounter = cardProductDescription.querySelectorAll('.card-product-description__buy .counter, .card-product-description__buy .buy__a, .card-product-description__buy .like');
+    const cardProdDescBuyPrice = cardProductDescription.querySelectorAll('.card-product-description__buy .price, .card-product-description__buy sup');
+    const cardProdDescBuyCounter = cardProductDescription.querySelectorAll('.card-product-description__buy .counter, .card-product-description__buy a, .card-product-description__buy button');
     const cardProdDescBuyOnlineStore = cardProductDescription.querySelectorAll('.card-product-description__buy .links-online-store a');
 
 
@@ -405,9 +405,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             });
 
             tlAboutTheProductBuy.add(cardProdDescBuyPrice, {
-                    delay: stagger(100),
                     x: { from: "-15rem" },
                     opacity: { to: 1 },
+                    delay: stagger(100),
+                    
                 }, 1)
                 .add(cardProdDescBuyCounter, {
                     ease: eases.outBounce,
@@ -463,20 +464,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 });
 
                 //documentation
-                animate(documentationTXT, {
+                for ( let i = 0; i < documentationTXT.length; ++i ){
+                     animate(documentationTXT[i], {
                     x: { from: '10rem' },
                     y: { from: '2rem' },
-                    width: { from: "40%" },
+                    //width: { from: "40%" },
                     opacity: { from: 0 },
-                    delay: stagger(500),
+                    //delay: stagger(500),
                     autoplay: onScroll({
-                        target: '.card-documentation',
-                        enter: '98% 20%',
-                        leave: '98% 60%',
+                        target: documentationTXT[i],
+                        enter: '95% -40%',
+                        leave: '95% 0%',
                         sync: 0.25,
                         //debug: true,
                     })
                 })
+                }
+               
 
             }
         } else if (window.innerWidth <= 1400) {

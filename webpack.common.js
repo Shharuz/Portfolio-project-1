@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //const CompressionPlugin = require("compression-webpack-plugin");
@@ -27,6 +28,7 @@ const pages = [
     { chunks: ["placingAnOrder"], page: '../placingAnOrder.html', template: './src/placingAnOrder.html', title: ['Оформление заказа'], },
     { chunks: ["questions"], page: '../questions.html', template: './src/questions.html', title: ['Вопрос - Ответ'], },
     { chunks: ["reviews"], page: '../reviews.html', template: './src/reviews.html', title: ['Отзывы'], },
+    { chunks: ["errorPage"], page: '../errorPage.html', template: './src/errorPage.html', title: ['Не найдено'], },
 ];
 
 let fs = require('fs');
@@ -69,6 +71,7 @@ module.exports = {
         placingAnOrder: './src/script/placingAnOrder.js',
         questions: './src/script/questions.js',
         reviews: './src/script/reviews.js',
+        errorPage: './src/script/errorPage.js',
     },
 
     output: {
@@ -92,14 +95,7 @@ module.exports = {
 
     module: {
 
-        rules: [{
-                test: /\.(s*)css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader",
-                ],
-            },
+        rules: [
             {
                 test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
                 type: 'asset/inline',

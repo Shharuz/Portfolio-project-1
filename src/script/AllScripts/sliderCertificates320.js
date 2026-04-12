@@ -62,7 +62,7 @@ const dragStop = (e) => {
 }
 
 
-    //slider.addEventListener('mousedown', dragStart);
+    slider.addEventListener('mousedown', dragStart);
     slider.addEventListener('touchstart', dragStart);
 
     slider.addEventListener('mousemove', dragging);

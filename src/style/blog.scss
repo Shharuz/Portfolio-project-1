@@ -1,7 +1,7 @@
 @use 'vars';
 
-main{
-	.forCategoryAllPages {
+main {
+    .forCategoryAllPages {
         display: flex;
 
         p {
@@ -12,20 +12,19 @@ main{
             flex-grow: 1;
             //height: 59px;
             background-color: vars.$title-light;
-            padding: 14px 13.5px;
+            padding: 14px 4px;
             font-weight: 500;
             font-size: clamp(14px, 2vw - 18px, 20px);
             color: vars.$title;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.45px;
             //min-width: max-content;
-
+            column-gap: 16px;
             span {
                 display: inline-block;
                 width: 22px;
                 height: 22px;
                 border: 1px solid vars.$text-light;
                 color: vars.$text;
-                margin-left: 16px;
                 font-weight: 400;
                 font-size: 12px;
                 text-align: center;
@@ -53,6 +52,7 @@ main{
             }
         }
     }
+
     .blog-article-min {
         max-width: 406px;
 
@@ -77,9 +77,8 @@ main{
         }
 
         h5 {
-            margin: 10px 0 6px;
-            //line-height: 1.25;
-            line-height: 1.23;
+            margin: 10px 0 8px;
+            line-height: 1.25;
 
             a {
                 font-weight: 500;
@@ -91,183 +90,174 @@ main{
 
         p {
             color: vars.$color_card_a;
+            line-height: 1.45;
+            letter-spacing: -0.1px;
         }
 
     }
+
     .blog {
         .container {
             row-gap: clamp(24px, 5vw - 56px, 40px);
+        }
 
-            h2 {}
 
-            .blog__categories {
-                width: clamp(59.5%, 1100px - 6vw, 86%);
-                gap: 4px;
 
-                @keyframes appearBlogcategories {
+        .blog__categories {
+            width: clamp(59.5%, 1100px - 6vw, 86%);
+            gap: 4px;
 
-                    to {
+            @keyframes appearBlogcategories {
 
-                        transform: translateY(0px);
-                    }
+                to {
 
-                    0% {
-                        opacity: 0;
-                    }
-
-                    25% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
+                    transform: translateY(0px);
                 }
 
-                p {
-                    font-size: 20px;
+                0% {
+                    opacity: 0;
+                }
 
-                    @for $i from 1 through 100 {
-                        &:nth-child(n + #{$i}) {
-                            opacity: 0;
-                            transform: translateY(30px);
-                            animation: appearBlogcategories 0.3s cubic-bezier(0, 0, 0, 0.9) #{$i * 0.2}s forwards;
-                        }
+                25% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            p {
+                font-size: 20px;
+
+                @for $i from 1 through 100 {
+                    &:nth-child(n + #{$i}) {
+                        opacity: 0;
+                        transform: translateY(30px);
+                        animation: appearBlogcategories 0.3s cubic-bezier(0, 0, 0, 0.9) #{$i * 0.2}s forwards;
                     }
+                }
+            }
+        }
+
+        .blog__reviews {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            .blog-article-min {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+        }
+        .blog__reviewsIgnorePxToRem{
+             column-gap: 20px;
+            row-gap: 40px;
+        }
+        .hide {
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1400px) {
+    main {
+        .blog {
+            .container {}
+
+            .blog__reviews {
+                grid-template-columns: repeat(3, 1fr);
+                //padding: 0 3.5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    main {
+        .blog {
+            .container {}
+
+            .blog__categories {
+                width: clamp(86%, 1000px - 5vw, 91%);
+
+                p {
+                    font-size: clamp(14px, 2vw - 2px, 20px);
+                    /*span{
+                            pointer-events: none;
+                        }*/
                 }
             }
 
             .blog__reviews {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                column-gap: 20px;
-                row-gap: 40px;
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: clamp(20px, 7vw - 37px, 40px);
 
-                .blog-article-min {
-                    opacity: 0;
-                    transform: translateY(100px);
-                }
-            }
-
-            .hide {
-                display: none;
             }
         }
     }
-
 }
 
-@media screen and (min-width: 1401px) {
-	main{}
-}
-@media screen and (max-width: 1820px) {
-	main{}
-}
-@media screen and (max-width: 1400px) {
-	main{
-		.blog {
-            .container {
-                .blog__reviews {
-                    grid-template-columns: repeat(3, 1fr);
-                    //padding: 0 3.5px; //потому что дизайнер
-                }
-            }
-        }
-	}
-}
-@media screen and (max-width: 1380px) {
-	main{}
-}
-@media screen and (max-width: 1100px) {
-	main{
-		.blog {
-            .container {
-                .blog__categories {
-                    width: clamp(86%, 1000px - 5vw, 91%);
-
-                    p {
-                        font-size: clamp(14px, 2vw - 2px, 20px);
-                        /*span{
-                            pointer-events: none;
-                        }*/
-                    }
-                }
-
-                .blog__reviews {
-                    grid-template-columns: repeat(2, 1fr);
-                    row-gap: clamp(20px, 7vw - 37px, 40px);
-
-                }
-            }
-        }
-	}
-}
-@media screen and (max-width: 800px) {
-	main{}
-}
-@media screen and (max-width: 790px) {
-	main{}
-}
 @media screen and (max-width: 735px) {
-	main{
-		.blog-article-min {
+    main {
+        .forCategoryAllPages{
+            p{
+                column-gap: 2.67vw;
+            }
+        }
+
+        .blog-article-min {
             h5 {
                 margin: 10px 0 9px;
+                line-height: 1.3;
             }
 
         }
+
         .blog {
-            .container {
-                .blog__categories {
-                    justify-content: center;
-                }
+            .container {}
 
-                .blog__reviews {
-                    .blog-article-min {
-                        h5 {
-                            a {
-                                font-size: clamp(18px, 4vw - 9px, 20px);
-                            }
-                        }
+            .blog__categories {
+                justify-content: center;
+            }
 
-                        p {
-                            font-size: clamp(14px, 3vw - 6px, 16px);
+            .blog__reviews {
+                .blog-article-min {
+                    h5 {
+                        a {
+                            font-size: clamp(18px, 4vw - 9px, 20px);
                         }
+                    }
+
+                    p {
+                        font-size: clamp(14px, 3vw - 6px, 16px);
                     }
                 }
             }
         }
 
-	}
+    }
 }
+
 @media screen and (max-width: 590px) {
-	main{}
-}
-@media screen and (max-width: 580px) {
-	main{
-		 .blog {
+    main {
+        .blog {
             .container {
                 row-gap: clamp(16px, 5vw - 5px, 24px);
+            }
 
-                h2 {
-                    line-height: 1.32
-                }
+            h2 {
+                line-height: 1.32
+            }
 
-                .blog__categories {
-                    flex-direction: column; //remove for PP
-                    width: 100%; //remove for PP
-                }
+            .blog__categories {
+                flex-direction: column; //remove for PP
+                width: 100%; //remove for PP
+            }
 
-                .blog__reviews {
-                    grid-template-columns: 1fr;
-                }
+            .blog__reviews {
+                grid-template-columns: 1fr;
             }
         }
-	}
-}
-@media screen and (max-width: 450px) {
-	main{}
-}
-@media screen and (max-width: 320px) {
-	main{}
+    }
 }

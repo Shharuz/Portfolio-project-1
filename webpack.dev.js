@@ -13,6 +13,21 @@ module.exports = merge(common, {
             filename: "../style/[name].css",
         }),
     ],
+
+    module: {
+
+        rules: [{
+                test: /\.(s*)css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "postcss-loader",
+                    "sass-loader",
+                ],
+            },
+            
+        ],
+    },
     devServer: {
         /*static: {
             directory: path.join(__dirname, './public'),

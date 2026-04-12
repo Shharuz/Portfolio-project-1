@@ -78,6 +78,7 @@ main iframe {
 main .aboutUs-btn {
   width: 320px;
   height: 63px;
+  max-width: 90vw;
 }
 main .aboutUs-who h2 {
   margin-bottom: 24px;
@@ -87,37 +88,38 @@ main .aboutUs-who .container {
   display: flex;
   column-gap: 18px;
 }
-main .aboutUs-who .container .aboutUs-who__description {
+main .aboutUs-who .aboutUs-who__description {
   flex: 1;
 }
-main .aboutUs-who .container .aboutUs-who__description p {
+main .aboutUs-who .aboutUs-who__description p {
   line-height: 1.4;
   margin-bottom: 3px;
 }
-main .aboutUs-who .container .aboutUs-who__description p:last-of-type {
+main .aboutUs-who .aboutUs-who__description p:last-of-type {
   margin-bottom: 24px;
 }
-main .aboutUs-who .container .aboutUs-who__description a {
+main .aboutUs-who .aboutUs-who__description a {
   float: left;
 }
-main .aboutUs-who .container .aboutUs-who__description a:first-of-type {
+main .aboutUs-who .aboutUs-who__description a:first-of-type {
   margin-right: 24px;
 }
-main .aboutUs-who .container .aboutUs-who__conteinerImg {
+main .aboutUs-who .aboutUs-who__conteinerImg {
+  flex: 1;
   position: relative;
   width: clamp(471px, 80vw - 706px, 830px);
 }
-main .aboutUs-who .container .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__testTube {
+main .aboutUs-who .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__testTube {
   visibility: hidden;
 }
-main .aboutUs-who .container .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__containerForAnim {
+main .aboutUs-who .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__containerForAnim {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   position: absolute;
   top: 0;
 }
-main .aboutUs-who .container .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__containerForAnim span {
+main .aboutUs-who .aboutUs-who__conteinerImg .aboutUs-who__conteinerImg__containerForAnim span {
   display: block;
   background: url(../img/testTube.webp);
   background-repeat: no-repeat;
@@ -130,30 +132,30 @@ main .aboutUs-about-production h2 {
   text-align: center;
   line-height: 1.36;
 }
-main .aboutUs-about-production .container .aboutUs-about-production__more-details {
+main .aboutUs-about-production .aboutUs-about-production__more-details {
   display: flex;
   justify-content: space-between;
 }
-main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item {
+main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 546px;
   padding: 0 19.5px;
 }
-main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #flask {
+main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #flask {
   visibility: hidden;
 }
-main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #microscope {
+main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #microscope {
   visibility: hidden;
 }
-main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #petriDishes {
+main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item #petriDishes {
   visibility: hidden;
 }
-main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item h4 {
+main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item h4 {
   margin: 17px 0 5px;
 }
-main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
+main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
   line-height: 1.4;
 }
 main .aboutUs-advantages {
@@ -167,29 +169,31 @@ main .aboutUs-advantages .container {
   display: flex;
   column-gap: clamp(21px, 15vw - 206px, 82px);
 }
-main .aboutUs-advantages .container picture {
-  flex-shrink: 0;
-}
-main .aboutUs-advantages .container .aboutUs-advantages__petriDishes {
-  width: clamp(474px, 70vw - 511px, 830px);
-  height: 472px;
-  object-fit: cover;
+main .aboutUs-advantages picture {
+  flex: 1 1 43.3vw;
   border-radius: 24px;
+  overflow: hidden;
 }
-main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others {
-  margin-top: clamp(0px, 15vw - 244px, 44px);
+main .aboutUs-advantages picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
-main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul {
+main .aboutUs-advantages .aboutUs-advantages__difference-from-others {
+  margin-top: clamp(0rem, 15vw - 244px, 44px);
+  flex: 1 1 40.1vw;
+}
+main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul {
   list-style-type: disc;
   margin-bottom: 24px;
   padding-left: 24px;
 }
-main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul li {
+main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul li {
   line-height: 1.4;
   color: #767676;
 }
-main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul li:not(:last-child) {
-  margin-bottom: 5px;
+main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul li:not(:last-child) {
+  margin-bottom: 4px;
 }
 main .aboutUs-certificates {
   padding-top: 100px;
@@ -200,35 +204,36 @@ main .aboutUs-certificates h2 {
 main .aboutUs-certificates .container {
   text-align: center;
 }
-main .aboutUs-certificates .container p {
+main .aboutUs-certificates p {
   width: 930px;
   margin: 8px auto 24px;
   line-height: 1.35;
+  max-width: 92vw;
 }
-main .aboutUs-certificates .container .aboutUs-certificates__block {
+main .aboutUs-certificates .aboutUs-certificates__block {
   display: flex;
   justify-content: space-between;
 }
-main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
+main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
   display: flex;
   column-gap: 22px;
 }
-main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item {
+main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item {
   text-align: left;
 }
-main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item .aboutUs-certificates__block__wrapper__item__name {
+main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item .aboutUs-certificates__block__wrapper__item__name {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
   padding-right: clamp(4px, 5vw - 67px, 28px);
 }
-main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item .aboutUs-certificates__block__wrapper__item__name h5 {
+main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item .aboutUs-certificates__block__wrapper__item__name h5 {
   text-align: left;
   max-width: 297px;
 }
 main .aboutUs-requisites-map {
-  padding-top: 99px;
+  padding-top: 100px;
   padding-bottom: clamp(80px, 10vw - 92px, 100px);
 }
 main .aboutUs-requisites-map .container {
@@ -236,17 +241,17 @@ main .aboutUs-requisites-map .container {
   justify-content: space-between;
   column-gap: 22px;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites {
-  width: clamp(1210px, 90vw, 1570px);
-  padding: 42px 60px 42px 50px;
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites {
+  flex: 1 1 42%;
+  padding: 42px 1vw 42px 2.6vw;
   background-color: #FFFFFF;
   border-radius: 24px;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites h2 {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites h2 {
   margin-bottom: 39px;
   line-height: 1.395;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites ul li {
   display: grid;
   grid-template-columns: 246px 1fr;
   grid-template-rows: 1fr;
@@ -254,32 +259,32 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul l
   color: #767676;
   line-height: 1.4;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li:not(:last-child) {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites ul li:not(:last-child) {
   margin-bottom: 16px;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li span {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites ul li span {
   color: #0D0D0D;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
   margin-top: 16px;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li {
   align-items: start;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li span {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li span {
   grid-column-start: 2;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites a {
+main .aboutUs-requisites-map .aboutUs-requisites-map__requisites a {
   width: 320px;
   height: 58px;
   margin-top: 39px;
   font-size: 14px;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__map {
+main .aboutUs-requisites-map .aboutUs-requisites-map__map {
   position: relative;
-  width: 100%;
+  flex: 1 1 42%;
 }
-main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
+main .aboutUs-requisites-map .aboutUs-requisites-map__map iframe {
   border: hidden;
 }
 
@@ -287,62 +292,71 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-btn {
     width: clamp(260px, 50vw - 379px, 320px);
   }
-  main .aboutUs-who .container .aboutUs-who__description p {
+  main .aboutUs-who .aboutUs-who__description p {
     margin-bottom: 2px;
   }
-  main .aboutUs-who .container .aboutUs-who__description a:first-of-type {
+  main .aboutUs-who .aboutUs-who__description a:first-of-type {
     margin-right: 24px;
   }
-  main .aboutUs-about-production .container h2 {
+  main .aboutUs-who .aboutUs-who__conteinerImg {
+    flex: initial;
+  }
+  main .aboutUs-about-production h2 {
     text-align: left;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details {
+  main .aboutUs-about-production .aboutUs-about-production__more-details {
     flex-direction: column;
+    row-gap: 22px;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item {
     display: grid;
     width: auto;
     grid-template-columns: 97px 1fr;
-    grid-template-rows: 40px 40px 1fr;
     padding: 0;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item svg {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item svg {
     grid-row: span 2/3;
+    align-self: start;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item h4 {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item h4 {
     grid-column-start: 2;
     grid-row-start: 1;
     margin: 0;
     align-self: start;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
     grid-column-start: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
-    line-height: 1.35;
+    grid-row: 2/span 2;
+    align-self: start;
+    line-height: 1.38;
     padding-right: 120px;
+    padding-top: 5px;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item:not(:last-child) {
-    margin-bottom: 22px;
+  main .aboutUs-advantages picture {
+    flex: 1 1 26.5vw;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites h2 {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others {
+    flex: 1 1 40.3vw;
+    padding-bottom: 16px;
+  }
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites h2 {
     font-size: 24px;
     letter-spacing: 0.5px;
     line-height: 1.365;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites ul li {
     grid-template-columns: 1fr;
     grid-template-rows: 22px 1fr;
     align-items: start;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul li span {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites ul li span {
     margin-top: 7px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
     display: grid;
     grid-template-columns: 235px 220px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li span {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list li span {
     grid-column-start: 1;
   }
 }
@@ -357,7 +371,7 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
     flex-direction: column;
     row-gap: 60px;
   }
-  main .aboutUs-who .container .aboutUs-who__conteinerImg {
+  main .aboutUs-who .aboutUs-who__conteinerImg {
     width: auto;
   }
   main .aboutUs-about-production {
@@ -366,8 +380,9 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-about-production h2 {
     font-size: 48px;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
     padding-right: 0;
+    line-height: 1.36;
   }
   main .aboutUs-advantages {
     padding-top: 60px;
@@ -375,15 +390,17 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-advantages h2 {
     font-size: 48px;
     padding-right: 10px;
+    line-height: 1.4;
   }
   main .aboutUs-advantages .container {
     row-gap: 60px;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__petriDishes {
-    width: auto;
-    height: auto;
-    object-fit: initial;
+  main .aboutUs-advantages picture, main .aboutUs-advantages .aboutUs-advantages__difference-from-others {
+    flex: initial;
+  }
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others {
+    padding-bottom: 0;
   }
   main .aboutUs-certificates {
     padding-top: 60px;
@@ -395,17 +412,19 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-certificates .container {
     text-align: left;
   }
-  main .aboutUs-certificates .container p {
+  main .aboutUs-certificates p {
     width: auto;
     margin: 8px 0 24px;
   }
-  main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
-    display: grid;
-    grid-template-columns: clamp(273px, 45vw - 95px, 400px) clamp(273px, 45vw - 95px, 400px);
-    row-gap: 22px;
-    margin: 0 auto;
+  main .aboutUs-certificates .aboutUs-certificates__block {
+    justify-content: center;
   }
-  main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item .aboutUs-certificates__block__wrapper__item__name {
+  main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
+    display: grid;
+    grid-template-columns: 0.675fr 0.675fr;
+    row-gap: 22px;
+  }
+  main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item .aboutUs-certificates__block__wrapper__item__name {
     padding-top: 18px;
   }
   main .aboutUs-requisites-map {
@@ -415,35 +434,37 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
     flex-direction: column;
     row-gap: 60px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites {
     width: auto;
-    padding: 42px 30px 42px 30px;
+    padding: 42px 33px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites h2 {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites h2 {
     text-align: center;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites ul {
-    width: 473px;
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites ul {
+    width: 480px;
     margin: 0 auto;
+    max-width: 89vw;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
     display: block;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li {
     grid-template-columns: 227px 1fr;
     grid-template-rows: 1fr;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li span {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li span {
     margin-top: 0;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
     margin-top: 11px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites a {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites a {
     margin: 39px auto 0;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__map {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__map {
     height: 402px;
+    flex: initial;
   }
 }
 @media screen and (max-width: 735px) {
@@ -453,28 +474,25 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-who .container {
     row-gap: clamp(40px, 20vw - 87px, 60px);
   }
-  main .aboutUs-who .container .aboutUs-who__description p {
+  main .aboutUs-who .aboutUs-who__description p {
     line-height: 1.6;
     padding-right: 67px;
   }
-  main .aboutUs-who .container .aboutUs-who__description p:last-of-type {
+  main .aboutUs-who .aboutUs-who__description p:last-of-type {
     margin-top: 23px;
   }
-  main .aboutUs-who .container .aboutUs-who__description a:first-of-type {
+  main .aboutUs-who .aboutUs-who__description a:first-of-type {
     margin-right: 14px;
   }
   main .aboutUs-about-production {
     padding-top: clamp(40px, 20vw - 87px, 60px);
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
-    line-height: 1.55;
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
+    line-height: 1.58;
     padding-right: 64px;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item:not(:last-child) {
-    margin-bottom: 24px;
-  }
   main .aboutUs-advantages {
-    padding-top: clamp(40px, 20vw - 87px, 60px);
+    padding-top: clamp(36px, 20vw - 87px, 60px);
   }
   main .aboutUs-advantages h2 {
     padding: 0;
@@ -482,26 +500,23 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-advantages .container {
     row-gap: clamp(40px, 20vw - 87px, 60px);
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__petriDishes {
-    height: 313px;
-  }
-  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul {
     padding-right: 10px;
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul li {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul li {
     line-height: 1.38;
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others a {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others a {
     width: 320px;
   }
   main .aboutUs-certificates {
     padding-top: clamp(40px, 20vw - 87px, 60px);
   }
-  main .aboutUs-certificates .container p {
+  main .aboutUs-certificates p {
     line-height: 1.55;
   }
-  main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
-    grid-template-columns: clamp(236px, 60vw - 168px, 273px) clamp(236px, 60vw - 168px, 273px);
+  main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
+    grid-template-columns: 0.585fr 0.585fr;
   }
   main .aboutUs-requisites-map {
     padding-top: clamp(40px, 20vw - 87px, 60px);
@@ -509,15 +524,21 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-requisites-map .container {
     row-gap: clamp(40px, 20vw - 87px, 60px);
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites p {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li {
+    grid-template-columns: 38vw 1fr;
+  }
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites p {
     font-size: 16px;
     line-height: 1.48;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__map {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__map {
     height: clamp(294px, 80vw - 186px, 402px);
   }
 }
 @media screen and (max-width: 580px) {
+  main h2 {
+    width: 100vw;
+  }
   main .aboutUs-btn {
     width: clamp(260px, 60vw - 28px, 320px);
     height: clamp(45px, 15vw - 24px, 63px);
@@ -531,20 +552,20 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-who .container {
     row-gap: clamp(40px, 156px - 20vw, 60px);
   }
-  main .aboutUs-who .container .aboutUs-who__description p {
+  main .aboutUs-who .aboutUs-who__description p {
     margin-bottom: 2px;
     line-height: 1.445;
     padding-right: 0;
   }
-  main .aboutUs-who .container .aboutUs-who__description p:last-of-type {
+  main .aboutUs-who .aboutUs-who__description p:last-of-type {
     margin-top: 0;
     margin-bottom: 24px;
   }
-  main .aboutUs-who .container .aboutUs-who__description a:first-of-type {
+  main .aboutUs-who .aboutUs-who__description a:first-of-type {
     margin-right: 0;
     margin-bottom: 9px;
   }
-  main .aboutUs-who .container .aboutUs-who__testTube {
+  main .aboutUs-who .aboutUs-who__testTube {
     border-radius: 16px;
   }
   main .aboutUs-about-production {
@@ -553,22 +574,22 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-about-production h2 {
     font-size: clamp(24px, 15vw - 38px, 48px);
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item {
     grid-template-columns: 57px 1fr;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item svg {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item:first-child h4 {
+    padding-right: 13vw;
+  }
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item svg {
     width: 37.5px;
     height: 37.5px;
     grid-row: 1/1;
   }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
+  main .aboutUs-about-production .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item p {
     grid-column: span 2/3;
-    padding-top: 14px;
+    padding-top: 5px;
     padding-right: 0;
     line-height: 1.43;
-  }
-  main .aboutUs-about-production .container .aboutUs-about-production__more-details .aboutUs-about-production__more-details__item:not(:last-child) {
-    margin-bottom: 23px;
   }
   main .aboutUs-advantages {
     padding-top: clamp(40px, 156px - 20vw, 60px);
@@ -580,20 +601,20 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-advantages .container {
     row-gap: clamp(40px, 156px - 20vw, 60px);
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__petriDishes {
-    height: auto;
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others {
+    width: inherit;
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul {
     padding-right: 0;
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul li {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul li {
     font-size: 14px;
     line-height: 1.42;
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others ul li:not(:last-child) {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others ul li:not(:last-child) {
     margin-bottom: 6px;
   }
-  main .aboutUs-advantages .container .aboutUs-advantages__difference-from-others a {
+  main .aboutUs-advantages .aboutUs-advantages__difference-from-others a {
     width: clamp(260px, 60vw - 28px, 320px);
   }
   main .aboutUs-certificates {
@@ -602,23 +623,24 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
   main .aboutUs-certificates h2 {
     font-size: clamp(24px, 15vw - 38px, 48px);
   }
-  main .aboutUs-certificates .container p {
+  main .aboutUs-certificates p {
     line-height: 1.41;
   }
-  main .aboutUs-certificates .container .aboutUs-certificates__block {
+  main .aboutUs-certificates .aboutUs-certificates__block {
     overflow: hidden;
     width: 95vw;
     margin-left: -24px;
     padding-left: 24px;
     scroll-behavior: smooth;
+    justify-content: start;
   }
-  main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
+  main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper {
     display: flex;
   }
-  main .aboutUs-certificates .container .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item {
-    width: 237px;
+  main .aboutUs-certificates .aboutUs-certificates__block .aboutUs-certificates__block__wrapper .aboutUs-certificates__block__wrapper__item {
+    width: 74vw;
   }
-  main .aboutUs-certificates .container .dragging {
+  main .aboutUs-certificates .dragging {
     cursor: grab;
     scroll-behavior: auto;
   }
@@ -630,36 +652,39 @@ main .aboutUs-requisites-map .container .aboutUs-requisites-map__map iframe {
     row-gap: clamp(16px, 10vw - 18px, 40px);
     width: auto;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites {
-    padding: 42px 30px 42px 30px;
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites {
+    padding: 2.625rem 9.3vw;
     background-color: #FFFFFF;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites h2 {
+    text-align: left;
+  }
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
     margin: 0;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li {
     grid-template-columns: 1fr;
     grid-template-rows: 22px 1fr;
     align-items: center;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li span {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list li span {
     margin-top: 8px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__second-list {
     width: auto;
     margin-top: 13px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites a {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites a {
     width: 260px;
     height: 45px;
     margin-top: 33px;
   }
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__map {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__map {
     height: clamp(294px, 600px - 54vw, 379px);
   }
 }
 @media screen and (max-width: 320px) {
-  main .aboutUs-requisites-map .container .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
+  main .aboutUs-requisites-map .aboutUs-requisites-map__requisites .aboutUs-requisites-map__requisites__first-list {
     width: 260px;
   }
 }

@@ -1,196 +1,229 @@
 @use 'vars';
 
-main{
-	.forPartners {
+main {
+    .forPartners {
         .container {
             display: flex;
             gap: 20px;
 
-            form {
-                max-width: 829px;
 
-                .hide {
-                    display: none;
-                }
+        }
 
-                @keyframes appearFormItems {
+        form {
+            max-width: initial;
+            flex: 1 1 829px;
 
-                    to {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                }
-
-                p,
-                fieldset,
-                .form__item,
-                button {
-                    opacity: 0;
-                    animation: appearFormItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
-                }
-
-                p {
-                    transform: translateY(20px);
-                }
-
-                fieldset {
-                    transform: translateY(40px);
-                }
-
-                .form__item {
-                    transform: translateY(60px);
-                }
-
-                button {
-                    transform: translateY(80px);
-                }
+            .hide {
+                display: none;
             }
 
-
-            img {
-                width: clamp(533px, 65vw - 418px, 829px);
-                height: 100%;
-                object-fit: cover;
-                border-radius: 24px;
-            }
-
-
-
-            @keyframes appearforPartnersItems {
+            @keyframes appearFormItems {
 
                 to {
-
-                    clip-path: polygon(0 8%, 0 0, 8% 0, 93% 0, 100% 0, 100% 8%, 100% 93%, 100% 100%, 93% 100%, 7% 100%, 0 100%, 0 94%);
-                }
-
-                0% {
-                    opacity: 0;
-                }
-
-                25% {
+                    transform: translateY(0);
                     opacity: 1;
                 }
-
-                100% {
-                    opacity: 1;
-                }
-
-
             }
 
-            form,
-            img {
+            p,
+            fieldset,
+            .form__item,
+            button {
                 opacity: 0;
-                clip-path: polygon(37% 54%, 46% 55%, 40% 47%, 59% 46%, 54% 55%, 62% 51%, 62% 66%, 54% 61%, 58% 70%, 40% 70%, 46% 61%, 37% 65%);
-                animation: appearforPartnersItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+                animation: appearFormItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
             }
+
+            p {
+                transform: translateY(20px);
+                padding: 0 7vw;
+            }
+
+            fieldset {
+                transform: translateY(40px);
+            }
+
+            .form__item {
+                transform: translateY(60px);
+            }
+
+            button {
+                transform: translateY(80px);
+            }
+        }
+
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+
+
+        @keyframes appearforPartnersItems {
+
+            to {
+
+                clip-path: polygon(0 8%, 0 0, 8% 0, 93% 0, 100% 0, 100% 8%, 100% 93%, 100% 100%, 93% 100%, 7% 100%, 0 100%, 0 94%);
+            }
+
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+
+
+        }
+
+        form,
+        img {
+            opacity: 0;
+            clip-path: polygon(37% 54%, 46% 55%, 40% 47%, 59% 46%, 54% 55%, 62% 51%, 62% 66%, 54% 61%, 58% 70%, 40% 70%, 46% 61%, 37% 65%);
+            animation: appearforPartnersItems 1.5s cubic-bezier(0, 0, 0, 0.9) forwards;
+        }
+
+        picture {
+            flex: 1 1.33 829px;
         }
 
     }
 }
 
-@media screen and (min-width: 1401px) {
-	main{}
-}
-@media screen and (max-width: 1820px) {
-	main{}
-}
 @media screen and (max-width: 1400px) {
-	main{
-		/*.radio-category {
-            label {
+    main {
+        .forPartners {
+            form {
                 p {
-                    line-height: 1.4;
+                    padding: 0 2vw;
                 }
             }
-        }*/
-
-	}
+        }
+    }
 }
+
 @media screen and (max-width: 1380px) {
-	main{
-		.forPartners {
+    main {
+        .forPartners {
             .container {
                 justify-content: center;
 
-                picture {
-                    display: none;
+            }
+
+            picture {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    main {
+        .forPartners {
+            form {
+                p {
+                    padding: 0 11vw;
                 }
             }
         }
-	}
+    }
 }
-@media screen and (max-width: 1100px) {
-	main{
-		.radio-category {
-            label {
-                height: 53px;
+
+@media screen and (max-width: 790px) {
+    main {
+        .forPartners {
+
+            form {
+
+                .consent {
+                    label {
+                        i {
+                            padding-top: 3px;
+                            padding-right: 0;
+                        }
+                    }
+
+                    a {
+                        padding-top: 3px;
+                        display: flex;
+                        padding-left: 4px;
+                    }
+                }
             }
         }
+    }
+}
 
-	}
-}
-@media screen and (max-width: 800px) {
-	main{}
-}
-@media screen and (max-width: 790px) {
-	main{}
-}
 @media screen and (max-width: 735px) {
-	main{
-		.forPartners {
+    main {
+        .forPartners {
             .container {
                 width: auto;
+            }
 
-                form {
-                    p {
-                        font-size: 1rem;
-                    }
+            form {
+                p {
+                    font-size: 16px;
+                    padding: 0;
                 }
             }
         }
-	}
+    }
 }
+
 @media screen and (max-width: 590px) {
-	main{
-		.forPartners {
-            .container {
+    main {
+        .forPartners {
 
-                form {
-                    p {
-                        font-size: clamp(0.875rem, 2.7vw, 1rem);
-                    }
+            form {
+                p {
+                    font-size: clamp(14px, 2.7vw, 16px);
+                    padding: 0 3.2vw;
                 }
-
             }
         }
-	}
+    }
 }
+
 @media screen and (max-width: 580px) {
-	main{
-		.forPartners {
-            .container {
-                form {
-                    button {
-                        width: clamp(260px, 60vw - 28px, 320px);
-                        height: clamp(45px, 15vw - 24px, 63px);
-                        font-size: clamp(14px, 5vw - 10px, 18px);
+    main {
+        .forPartners {
+            .container {}
+
+            form {
+                fieldset {
+                    row-gap: 29px;
+                }
+
+                .consent {
+                    label {
+                        i {
+                            font-size: 0.75rem;
+                            line-height: 1.4;
+                            font-style: normal;
+                            padding-top: 0;
+                        }
                     }
+
+                    a {
+                        padding-top: 0;
+                        display: block;
+                        padding-left: 1.8125rem;
+                    }
+                }
+
+                button {
+                    width: clamp(260px, 60vw - 28px, 320px);
+                    height: clamp(45px, 15vw - 24px, 63px);
+                    font-size: clamp(14px, 5vw - 10px, 18px);
                 }
             }
         }
-	}
-}
-@media screen and (max-width: 450px) {
-	main{
-		.radio-category {
-            label {
-                height: 40px;
-            }
-        }
-        
-	}
-}
-@media screen and (max-width: 320px) {
-	main{}
+    }
 }
